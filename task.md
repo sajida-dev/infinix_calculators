@@ -1,0 +1,23 @@
+# Task List - Enterprise SEO Platform Implementation
+
+- [ ] Core Layout & Config
+  - [ ] Hide `AdFooter` in `app/layout.tsx`
+  - [ ] Add `app/robots.ts`
+  - [ ] Add `app/sitemap.ts`
+- [ ] Data Systems
+  - [ ] Create `app/data/calculatorsData.ts`
+  - [ ] Create `app/data/blogData.ts`
+- [ ] UI / Directory Listing Pages
+  - [ ] Rebuild landing page `app/page.tsx` as a premium SaaS page
+  - [ ] Rebuild categories and directory listing `app/calculators/page.tsx`
+- [ ] Blog Pages (RSC for maximum performance)
+  - [ ] Create blog listing `app/blog/page.tsx`
+  - [ ] Create blog post detail `app/blog/[slug]/page.tsx`
+- [ ] Topsoil Calculator (Flagship Page)
+  - [ ] Restructure `app/calculators/topsoil/page.tsx` with deep SEO text, headings, and JSON-LD schema
+- [ ] Catch-All Dynamic Route
+  - [ ] Create `app/calculators/[slug]/page.tsx` using RSC
+  - [ ] Create client-interactive `app/components/DynamicCalculator.tsx`
+- [ ] Verification
+  - [ ] Run `npm run build` to verify compilation and static generation
+  - [ ] Perform manual visual check of pages
