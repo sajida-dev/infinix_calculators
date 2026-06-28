@@ -12,33 +12,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Infinix Calculators",
-  description: "Calculators for every need",
-  icons: {
-    icon: "/infinix-calculator-icon-blue.png",
-  },
-  keywords: [
-    "affirm calculator",
-    "cbm calculator",
-    "avalara sales tax calculator",
-    "pro rata calculator",
-    "square fee calculator",
-    "hecm calculator",
-    "gross up calculator",
-    "reverse tax calculator",
-    "productivity calculator",
-    "novig calculator",
-    "therapy productivity calculator",
-    "fdic calculator",
-    "laticrete grout calculator",
-    "cash back calculator",
-    "roof calculator",
-    "grout calculator",
-    "mapei grout calculator",
-    "builders risk insurance cost calculator"
-  ],
-};
+import { defaultMetadata, viewport as defaultViewport, themeColor as defaultThemeColor } from "./metadata";
+export const viewport = defaultViewport;
+export const themeColor = defaultThemeColor;
+
+
+export const metadata = defaultMetadata;
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -52,11 +31,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className="min-h-full flex flex-col pb-20">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 left-0 w-full bg-primary text-white text-center py-2">Skip to main content</a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         {/* <AdFooter /> */}
       </body>

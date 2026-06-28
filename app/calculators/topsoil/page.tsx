@@ -16,10 +16,26 @@ export const metadata: Metadata = {
     "topsoil coverage calculator",
     "fill dirt calculator",
     "dirt cubic yard calculator",
-    "how much for yard of topsoil"
+    "how much for yard of topsoil",
   ],
   alternates: {
     canonical: "https://infinixcalculators.com/calculators/topsoil",
+  },
+  openGraph: {
+    title: "Topsoil Calculator – Fast & Accurate",
+    description: "Estimate topsoil volume in cubic yards, feet, tons, or bag counts instantly.",
+    url: "https://infinixcalculators.com/calculators/topsoil",
+    siteName: "Infinix Calculators",
+    images: [{ url: "/og-topsoil.png", width: 1200, height: 630, alt: "Topsoil Calculator" }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Topsoil Calculator – Estimate Soil Volume",
+    description: "Fast online calculator for topsoil, fill dirt, and compost.",
+    images: ["/og-topsoil.png"],
+    creator: "@Infinix",
   },
 };
 
