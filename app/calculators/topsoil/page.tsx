@@ -3,7 +3,6 @@ import Link from "next/link";
 import TopsoilCalculator from "../../components/TopsoilCalculator";
 import CalculatorFaqs from "../../components/CalculatorFaqs";
 import { blogData } from "../../data/blogData";
-import { calculatorsData } from "../../data/calculatorsData";
 
 export const metadata: Metadata = {
   title: "Topsoil Calculator - Estimate Cubic Yards, Feet & Bags of Soil",

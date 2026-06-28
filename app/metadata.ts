@@ -31,9 +31,9 @@ export const defaultMetadata: Metadata = {
   applicationName: "Infinix Calculators",
   metadataBase: new URL(BASE_URL),
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/infinix-calculator-icon-blue.png",
+    shortcut: "/infinix-calculator-icon-blue.png",
+    apple: "/infinix-calculator-icon-blue.png",
   },
   manifest: "/site.webmanifest",
   verification: {
@@ -57,7 +57,7 @@ export const defaultMetadata: Metadata = {
     card: "summary_large_image",
     title: "Infinix Calculators",
     description: "Professional calculators for finance, construction, health, and more.",
-    images: ["/og-image.png"],
+    images: ["/infinix-calculator-brand-logo.png"],
     creator: "@Infinix",
   },
   alternates: {
