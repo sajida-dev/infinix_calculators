@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { calculatorsData, CalculatorInfo } from "../data/calculatorsData";
+import { calculatorsData } from "../data/calculatorsData";
+import { blogData } from "../data/blogData";
+import CalculatorCard from "../components/CalculatorCard";
+import SearchInput from "../components/SearchInput";
 
-// Define PageProps for Next.js 16, where searchParams is a Promise
 interface PageProps {
   searchParams: Promise<{ q?: string }>;
 }
@@ -17,386 +19,283 @@ export default async function CalculatorsPage(props: PageProps) {
   const searchParams = await props.searchParams;
   const searchQuery = (searchParams.q || "").trim().toLowerCase();
 
-  // Define categories and their order
-  const categoriesDef = [
-    { id: "financial", label: "Financial Calculators", desc: "Amortization, installment options, payment planning, and interest models." },
-    { id: "tax", label: "Tax & Payroll Calculators", desc: "Sales tax estimations, payroll conversions, and salary deductions." },
-    { id: "construction", label: "Construction & Landscaping", desc: "Volume estimations for topsoil, concrete, mulch, and roofing angles." },
-    { id: "health", label: "Health & Fitness Calculators", desc: "Standard health indices, BMI calculators, and body composition guidelines." },
-    { id: "math", label: "Math & Business Productivity", desc: "Percentage formulas, Google review targets, and logistics metrics." },
-    { id: "unit-converter", label: "Logistics & Unit Converters", desc: "CBM shipping volume calculations and metric system conversions." }
-  ];
-
-  // We have detailed interactive calculations in calculatorsData.
-  // To keep the directory full and avoid 404, we list all available items from calculatorsData,
-  // and we can also add stubs for the other ones. Let's list the ones present in calculatorsData
-  // and add custom stubs with unique slugs and details.
-  // Let's create an array of all calculators including those that use the dynamic catch-all route!
-  const allCalculatorsList: Omit<CalculatorInfo, "calculate" | "inputs" | "faqs">[] = [
-    // Financial
+  // Define Category Headers and their respective SVGs for the circular icons
+  const categoriesList = [
     {
-      slug: "affirm",
-      name: "Affirm Calculator",
-      category: "financial",
-      categoryLabel: "Financial",
-      hook: "Calculate Monthly Affirm Payments & Interest.",
-      description: "Estimate monthly installment costs, total interest paid, and true APR for checks.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
+      id: "financial",
+      title: "Financial Calculators",
+      desc: "Amortization, loans, and interest planning.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      slugs: ["affirm", "pro-rata", "hecm", "heloc-payoff", "balance-transfer", "square-fee"]
     },
     {
-      slug: "pro-rata",
-      name: "Pro Rata Calculator",
-      category: "financial",
-      categoryLabel: "Financial",
-      hook: "Split Rent, Salaries & Retainer Fees in Seconds.",
-      description: "Calculate daily rates and partial payments based on exact calendar days.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
+      id: "tax",
+      title: "Tax & Payroll Calculators",
+      desc: "Sales tax extraction and state payroll paycheck estimations.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ),
+      slugs: ["avalara-sales-tax", "gross-up", "reverse-tax", "georgia-payroll"]
     },
     {
-      slug: "hecm",
-      name: "HECM Calculator",
-      category: "financial",
-      categoryLabel: "Financial",
-      hook: "Estimate Reverse Mortgage HECM Payout Limits.",
-      description: "Model Home Equity Conversion Mortgages based on appraisal values, ages, and rates.",
-      calcTime: "2 mins",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
+      id: "construction",
+      title: "Construction & Materials",
+      desc: "Slab volume, soil yardage, overhangs, and slope factors.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+      slugs: ["topsoil", "concrete", "roof", "mulch", "drywall", "fence-cost"]
     },
     {
-      slug: "heloc-payoff",
-      name: "HELOC Payoff Calculator",
-      category: "financial",
-      categoryLabel: "Financial",
-      hook: "Model HELOC Principal & Interest Payments.",
-      description: "Plan payoff timelines, draw periods, and interest adjustments for home equity loans.",
-      calcTime: "2 mins",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
+      id: "health",
+      title: "Health & Fitness Tools",
+      desc: "WHO body index formulas and health composition guides.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      ),
+      slugs: ["bmi"]
     },
     {
-      slug: "balance-transfer",
-      name: "Balance Transfer Calculator",
-      category: "financial",
-      categoryLabel: "Financial",
-      hook: "Estimate Credit Card Balance Transfer Savings.",
-      description: "Compare fee rates, interest-free periods, and payoff timelines to save money.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-
-    // Tax
-    {
-      slug: "avalara-sales-tax",
-      name: "Avalara Sales Tax Calculator",
-      category: "tax",
-      categoryLabel: "Tax & Payroll",
-      hook: "Estimate Sales Tax Rates by Zip & State.",
-      description: "Run retail transactions and local sales tax calculations instantly.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
+      id: "math",
+      title: "Math & Business Productivity",
+      desc: "Review totals targets and workspace efficiency indices.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+      slugs: ["productivity", "therapy-productivity", "google-review"]
     },
     {
-      slug: "gross-up",
-      name: "Gross Up Calculator",
-      category: "tax",
-      categoryLabel: "Tax & Payroll",
-      hook: "Calculate Gross Pay from Desired Net Take-Home.",
-      description: "Determine before-tax wages needed to cover payroll withholding and taxes.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-    {
-      slug: "reverse-tax",
-      name: "Reverse Tax Calculator",
-      category: "tax",
-      categoryLabel: "Tax & Payroll",
-      hook: "Calculate Pre-Tax Cost & Sales Tax Paid.",
-      description: "Extract the base price and sales tax portions from any total invoice amount.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-    {
-      slug: "georgia-payroll",
-      name: "Georgia Payroll Calculator",
-      category: "tax",
-      categoryLabel: "Tax & Payroll",
-      hook: "Estimate Georgia State Payroll Tax Deductions.",
-      description: "Calculate GA state withholding, FICA, and net check sizes for hourly workers.",
-      calcTime: "2 mins",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-
-    // Construction
-    {
-      slug: "topsoil",
-      name: "Topsoil Calculator",
-      category: "construction",
-      categoryLabel: "Construction",
-      hook: "Estimate Topsoil, Fill Dirt & Soil Bags in Yards.",
-      description: "Calculate topsoil cubic yards, ground depth, and coverage for raised garden beds.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-    {
-      slug: "concrete",
-      name: "Concrete Calculator",
-      category: "construction",
-      categoryLabel: "Construction",
-      hook: "Estimate Cubic Yards of Concrete for Slabs & Piers.",
-      description: "Calculate concrete slab volumes, bag counts, and yardage requirements with waste buffers.",
-      calcTime: "2 mins",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-    {
-      slug: "roof",
-      name: "Roof Calculator",
-      category: "construction",
-      categoryLabel: "Construction",
-      hook: "Estimate Roof Surface Area & Shingle Bundles.",
-      description: "Factor in roof pitches, slopes, overhangs, and waste allowances for shingles.",
-      calcTime: "2 mins",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-    {
-      slug: "mulch",
-      name: "Mulch Calculator",
-      category: "construction",
-      categoryLabel: "Construction",
-      hook: "Calculate Mulch Yards & Landscape Soil Bags.",
-      description: "Estimate organic mulch or bark requirements for garden beds and yards.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-    {
-      slug: "drywall",
-      name: "Drywall Calculator",
-      category: "construction",
-      categoryLabel: "Construction",
-      hook: "Estimate Drywall Sheets, Joint Compound & Screws.",
-      description: "Calculate how many drywall boards (4x8 or 4x12) are needed to hang walls.",
-      calcTime: "2 mins",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-    {
-      slug: "fence-cost",
-      name: "Fence Cost Calculator",
-      category: "construction",
-      categoryLabel: "Construction",
-      hook: "Estimate Fence Materials & Installation Budgets.",
-      description: "Find post spacings, picket counts, rails, and total budget estimates for fencing.",
-      calcTime: "2 mins",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-
-    // Health
-    {
-      slug: "bmi",
-      name: "BMI Calculator",
-      category: "health",
-      categoryLabel: "Health",
-      hook: "Calculate Body Mass Index (BMI) & Weight Status.",
-      description: "Assess overall body composition ranges according to WHO medical categories.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-
-    // Math & Productivity
-    {
-      slug: "productivity",
-      name: "Productivity Calculator",
-      category: "math",
-      categoryLabel: "Productivity",
-      hook: "Calculate Employee Efficiency & Resource Output.",
-      description: "Measure standard work times, utilization rates, and task productivity metrics.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-    {
-      slug: "therapy-productivity",
-      name: "Therapy Productivity Calculator",
-      category: "math",
-      categoryLabel: "Productivity",
-      hook: "Track Billable Hours for PT/OT Therapists.",
-      description: "Calculate billable minutes, therapist target percentages, and resource usage.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-    {
-      slug: "google-review",
-      name: "Google Review Calculator",
-      category: "math",
-      categoryLabel: "Productivity",
-      hook: "Find Reviews Needed to Raise Your Business Rating.",
-      description: "Calculate how many 5-star Google ratings are required to reach a 4.8 or 5.0 score.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
-    },
-
-    // Logistics & Unit Converters
-    {
-      slug: "cbm",
-      name: "CBM Calculator",
-      category: "unit-converter",
-      categoryLabel: "Logistics",
-      hook: "Calculate Cargo Volume in Cubic Meters.",
-      description: "Determine carton shipping volumes in CBM and CFT for ocean container space.",
-      calcTime: "1 min",
-      seoTitle: "", metaDescription: "", keywords: [], formula: "", formulaDescription: "", example: "", commonMistakes: [], useCases: [], tips: []
+      id: "unit-converter",
+      title: "Logistics & Converters",
+      desc: "Carton volumes in CBM and CFT container limits.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      ),
+      slugs: ["cbm"]
     }
   ];
 
-  // Filter based on search query
-  const filteredCalculators = allCalculatorsList.filter((calc) => {
-    if (!searchQuery) return true;
-    const nameMatch = calc.name.toLowerCase().includes(searchQuery);
-    const descMatch = calc.description.toLowerCase().includes(searchQuery);
-    const hookMatch = calc.hook.toLowerCase().includes(searchQuery);
-    return nameMatch || descMatch || hookMatch;
+  // Helper lists for the right sidebar (stubs / upcoming work)
+  const popularSlugs = ["topsoil", "concrete", "cbm", "affirm"];
+  const popularCalcs = popularSlugs.map(s => calculatorsData[s]).filter(Boolean);
+
+  const upcomingCalcs = [
+    { name: "Siding Estimator", desc: "Wall cladding and flashing panel boards." },
+    { name: "IFTA Fuel Tax", desc: "State mileage splits and fuel tax." },
+    { name: "Deferred Annuity", desc: "Annuity future value growth factors." },
+    { name: "IUL Growth", desc: "Indexed universal life policy growth." }
+  ];
+
+  const recentBlogs = Object.values(blogData).slice(0, 3);
+
+  // If search query is active, filter results and render matching cards instead
+  const allCalcsFlat = Object.values(calculatorsData);
+  const searchResults = allCalcsFlat.filter((calc) => {
+    if (!searchQuery) return false;
+    return (
+      calc.name.toLowerCase().includes(searchQuery) ||
+      calc.description.toLowerCase().includes(searchQuery) ||
+      calc.hook.toLowerCase().includes(searchQuery)
+    );
   });
 
   return (
     <div className="bg-slate-50 min-h-screen py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
-        {/* Header Section */}
-        <div className="mx-auto max-w-3xl text-center mb-12">
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-            Calculators Directory
+
+        {/* Prominent Header block with Search */}
+        <div className="mx-auto max-w-3xl text-center mb-16">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+            Browse Help Topics & Calculators
           </h1>
-          <p className="mt-4 text-base text-slate-600 leading-relaxed">
-            Access our free collection of verified calculations, built for logistics, billing splits, contractor material estimates, and body index metrics.
+          <p className="mt-4 text-sm sm:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
+            Find formulas, examples, and interactive calculators for financial splits, state tax paycheck withholding, and landscaping materials.
           </p>
 
-          {/* Simple Inline Search Form */}
-          <form action="/calculators" method="GET" className="mt-8 max-w-md mx-auto relative flex items-center">
-            <input
-              type="text"
-              name="q"
+          {/* Reusable Autocomplete Search component */}
+          <div className="mt-8">
+            <SearchInput
+              variant="standard"
               defaultValue={searchQuery}
-              placeholder="Search directory (e.g. topsoil, CBM, interest)..."
-              className="w-full rounded-full border border-slate-300 bg-white px-5 py-3 text-sm text-slate-900 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary placeholder-slate-400"
+              placeholder="Search calculator topics (e.g. topsoil, CBM, interest)..."
             />
-            {searchQuery && (
-              <Link
-                href="/calculators"
-                className="absolute right-12 text-slate-400 hover:text-slate-600 p-1"
-                aria-label="Clear Search"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </Link>
-            )}
-            <button
-              type="submit"
-              className="absolute right-2 p-1.5 rounded-full bg-primary text-white hover:bg-primary-hover transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
-              aria-label="Search Submit"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
-          </form>
+          </div>
         </div>
 
-        {/* Search Results Display */}
+        {/* 1. Search Results Layout */}
         {searchQuery ? (
           <div>
-            <h2 className="text-lg font-bold text-slate-700 mb-6">
-              Search Results for "{searchQuery}" ({filteredCalculators.length} items found)
+            <h2 className="text-lg font-bold text-slate-800 mb-6">
+              Search Results for "{searchQuery}" ({searchResults.length} matches found)
             </h2>
-            {filteredCalculators.length > 0 ? (
+
+            {searchResults.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredCalculators.map((calc) => (
-                  <div
-                    key={calc.slug}
-                    className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 flex flex-col justify-between hover:shadow-md hover:border-slate-300 transition-all duration-200"
-                  >
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900">{calc.name}</h3>
-                      <p className="text-xs font-semibold text-primary uppercase mt-1 tracking-wider">{calc.category}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">Est. calculation time: {calc.calcTime}</p>
-                      
-                      <p className="text-sm font-semibold text-slate-800 leading-snug mt-3 italic">
-                        "{calc.hook}"
-                      </p>
-                      <p className="text-sm text-slate-500 leading-relaxed mt-2">
-                        {calc.description}
-                      </p>
-                    </div>
-                    <div className="mt-6 pt-4 border-t border-slate-100">
-                      <Link
-                        href={`/calculators/${calc.slug}`}
-                        className="w-full inline-flex items-center justify-center rounded-lg bg-primary py-2 text-xs font-bold text-white hover:bg-primary-hover shadow-sm transition-colors"
-                      >
-                        Calculate Now
-                      </Link>
-                    </div>
-                  </div>
+                {searchResults.map((calc) => (
+                  <CalculatorCard key={calc.slug} calculator={calc} />
                 ))}
               </div>
             ) : (
-              <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center max-w-xl mx-auto shadow-sm">
-                <p className="text-slate-500 font-medium">No calculators found matching your search query.</p>
+              <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center max-w-md mx-auto">
+                <p className="text-sm text-slate-500 font-semibold">No calculator matches found.</p>
                 <Link
                   href="/calculators"
-                  className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-xs font-bold text-white hover:bg-primary-hover shadow-md transition-colors"
+                  className="mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2 text-xs font-bold text-white hover:bg-primary-hover transition-colors"
                 >
-                  Clear search and browse all
+                  Browse all topics
                 </Link>
               </div>
             )}
           </div>
         ) : (
-          /* Standard Categorized Grid */
-          <div className="space-y-12">
-            {categoriesDef.map((cat) => {
-              const catCalcs = filteredCalculators.filter(c => c.category === cat.id);
-              if (catCalcs.length === 0) return null;
 
-              return (
-                <section key={cat.id} className="pt-6">
-                  <div className="border-b border-slate-200 pb-4 mb-6">
-                    <h2 className="text-2xl font-bold text-slate-900">{cat.label}</h2>
-                    <p className="text-sm text-slate-500 mt-1">{cat.desc}</p>
-                  </div>
+          /* 2. Standard Help Center Layout (Two columns grid: Categories list + Sidebar) */
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {catCalcs.map((calc) => (
-                      <div
-                        key={calc.slug}
-                        className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 flex flex-col justify-between hover:shadow-md hover:border-slate-300 transition-all duration-200"
-                      >
-                        <div>
-                          <div className="flex items-center justify-between">
-                            <h3 className="text-lg font-bold text-slate-900">{calc.name}</h3>
-                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                              {calc.calcTime}
-                            </span>
-                          </div>
-                          
-                          <p className="text-sm font-semibold text-slate-800 leading-snug mt-3 italic">
-                            "{calc.hook}"
-                          </p>
-                          <p className="text-sm text-slate-500 leading-relaxed mt-2">
-                            {calc.description}
-                          </p>
-                        </div>
-                        <div className="mt-6 pt-4 border-t border-slate-100">
-                          <Link
-                            href={`/calculators/${calc.slug}`}
-                            className="w-full inline-flex items-center justify-center rounded-lg bg-primary py-2.5 text-xs font-bold text-white hover:bg-primary-hover shadow-sm transition-colors"
-                          >
-                            Calculate Now
-                          </Link>
-                        </div>
+            {/* Left Column (8 cols on desktop): Browse help topics list */}
+            <div className="lg:col-span-8 space-y-12">
+              <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-4">
+                All Calculators
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {categoriesList.map((cat) => (
+                  <div key={cat.id} className="space-y-4">
+                    {/* Category Title with Blue circular icon */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm shrink-0">
+                        {cat.icon}
                       </div>
-                    ))}
+                      <div>
+                        <h3 className="text-lg sm:text-base font-bold text-slate-900 leading-tight">
+                          {cat.title}
+                        </h3>
+                        <p className="text-[14px] text-slate-400 mt-0.5">{cat.desc}</p>
+                      </div>
+                    </div>
+
+                    {/* Calculator lists under this category */}
+                    <ul className="space-y-3.5 pl-11">
+                      {cat.slugs.map((slug) => {
+                        const calc = calculatorsData[slug];
+                        if (!calc) return null;
+                        return (
+                          <li key={slug}>
+                            <Link href={`/calculators/${slug}`} className="group block text-md hover:text-primary transition-all">
+                              <span className="block font-bold text-slate-800 group-hover:text-primary transition-colors leading-snug">
+                                {calc.name}
+                              </span>
+                              <span className="block text-[14px] text-slate-400 group-hover:text-slate-500 transition-colors mt-0.5 leading-normal">
+                                {calc.description}
+                              </span>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
-                </section>
-              );
-            })}
+                ))}
+              </div>
+            </div>
+
+            {/* Right Sidebar Column (4 cols on desktop, flat transparent layout) */}
+            <div className="lg:col-span-4 space-y-10 pl-0 lg:pl-6">
+
+              {/* Popular calculators (No card bg) */}
+              <div className="pb-6 border-b border-slate-200/80">
+                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
+                  Popular Tools
+                </h3>
+                <ul className="space-y-3">
+                  {popularCalcs.map((calc) => (
+                    <li key={calc.slug}>
+                      <Link
+                        href={`/calculators/${calc.slug}`}
+                        className="group flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-600 hover:text-primary transition-colors py-0.5"
+                      >
+                        <span>{calc.name}</span>
+                        <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Recent guides (No card bg) */}
+              <div className="pb-6 border-b border-slate-200/80">
+                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
+                  Guides & Cost Reports
+                </h3>
+                <ul className="space-y-3">
+                  {recentBlogs.map((post) => (
+                    <li key={post.slug}>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="group block text-xs hover:text-primary transition-colors"
+                      >
+                        <span className="block font-semibold text-slate-700 group-hover:text-primary transition-colors leading-snug">
+                          {post.title}
+                        </span>
+                        <span className="block text-[8px] text-slate-400 mt-1">{post.date}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Problems we're fixing (No card bg) */}
+              <div className="pb-6 border-b border-slate-200/80">
+                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
+                  Problems we're fixing
+                </h3>
+                <ul className="space-y-3.5">
+                  {upcomingCalcs.map((item) => (
+                    <li key={item.name} className="text-xs leading-normal">
+                      <span className="block font-bold text-slate-500">{item.name}</span>
+                      <span className="block text-[10px] text-slate-400 mt-0.5">{item.desc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Sidebar Ad Unit 1 */}
+              <div className="py-4 text-center">
+                <span className="inline-block text-[8px] font-bold uppercase tracking-wider text-slate-400 border border-slate-200 px-1.5 py-0.5 rounded bg-slate-150">
+                  Advertisement
+                </span>
+                <div className="mt-4 py-12 text-xs font-semibold text-slate-400 border border-dashed border-slate-300 rounded-xl bg-slate-100/50">
+                  Sidebar Display Banner 1
+                </div>
+              </div>
+
+              {/* Sidebar Ad Unit 2 (Fills empty vertical space down to page end) */}
+              <div className="py-4 text-center">
+                <span className="inline-block text-[8px] font-bold uppercase tracking-wider text-slate-400 border border-slate-200 px-1.5 py-0.5 rounded bg-slate-150">
+                  Advertisement
+                </span>
+                <div className="mt-4 py-16 text-xs font-semibold text-slate-400 border border-dashed border-slate-300 rounded-xl bg-slate-100/50">
+                  Sidebar Display Banner 2
+                </div>
+              </div>
+
+            </div>
+
           </div>
         )}
 

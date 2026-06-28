@@ -1,3 +1,8 @@
+export interface BlogHeading {
+  id: string;
+  text: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -5,6 +10,8 @@ export interface BlogPost {
   category: string;
   date: string;
   author: string;
+  image: string; // Image reference
+  headings: BlogHeading[]; // For Table of Contents
   content: string;
   calculatorSlug?: string;
   relatedSlugs: string[];
@@ -18,6 +25,14 @@ export const blogData: Record<string, BlogPost> = {
     category: "Construction & Landscaping",
     date: "2026-06-27",
     author: "Elena Rostova (Landscape Architect)",
+    image: "/topsoil-calculator.jpg",
+    headings: [
+      { id: "formula", text: "The Golden Formula" },
+      { id: "example", text: "Step-by-Step Example" },
+      { id: "bags", text: "How Many Bags Needed" },
+      { id: "depths", text: "Recommended Soil Depths" },
+      { id: "tips", text: "Important Estimation Tips" }
+    ],
     calculatorSlug: "topsoil",
     relatedSlugs: ["fill-dirt-vs-topsoil", "topsoil-cost-guide", "best-soil-depth-for-grass"],
     content: `
@@ -25,7 +40,7 @@ export const blogData: Record<string, BlogPost> = {
       
       <p>Ordering too little soil means having to pay for double deliveries, which can easily double your trucking costs. Ordering too much leaves you with a massive, heavy pile of dirt sitting on your driveway or lawn with nowhere to go. This guide breaks down exactly how to estimate topsoil volume like a pro.</p>
 
-      <h2>The Golden Formula for Topsoil Estimation</h2>
+      <h2 id="formula">The Golden Formula for Topsoil Estimation</h2>
       <p>Calculating soil volume is a simple three-step process based on geometry. Soil is sold by volume (usually <strong>cubic yards</strong> in bulk or <strong>cubic feet</strong> in bags). Here is the standard formula to find soil requirements:</p>
 
       <div class="bg-slate-50 border border-slate-100 p-5 rounded-xl my-6">
@@ -39,7 +54,7 @@ export const blogData: Record<string, BlogPost> = {
         <p class="font-mono text-primary text-sm">Cubic Yards = [Area (sq ft) × Depth (feet)] ÷ 27</p>
       </div>
 
-      <h2>Step-by-Step Practical Example</h2>
+      <h2 id="example">Step-by-Step Practical Example</h2>
       <p>Let's walk through an example. Suppose you have a rectangular lawn patch that measures <strong>30 feet long</strong> and <strong>20 feet wide</strong>, and you want to spread topsoil at a depth of <strong>3 inches</strong>.</p>
       
       <ol class="list-decimal list-inside space-y-2 my-4">
@@ -49,16 +64,15 @@ export const blogData: Record<string, BlogPost> = {
         <li><strong>Convert to Cubic Yards:</strong> 150 cu ft ÷ 27 = <strong>5.56 cubic yards</strong>.</li>
       </ol>
 
-      <h2>How Many Bags of Topsoil Do I Need?</h2>
+      <h2 id="bags">How Many Bags of Topsoil Do I Need?</h2>
       <p>If your project is smaller, buying soil in bulk (delivered by dump truck) might not make sense. Buying bagged soil from local nurseries or big box hardware stores is often cleaner and easier to manage.</p>
       <p>Standard topsoil bags are labeled by volume, typically containing <strong>0.75 cubic feet</strong> or <strong>1 cubic foot</strong>. To find bag counts, divide your total cubic feet by the bag size:</p>
       <ul>
         <li>For <strong>0.75 cu ft bags</strong>: 150 cu ft ÷ 0.75 = <strong>200 bags</strong>.</li>
         <li>For <strong>1.0 cu ft bags</strong>: 150 cu ft ÷ 1.0 = <strong>150 bags</strong>.</li>
       </ul>
-      <p>Keep in mind that hauling 150+ bags in a standard car is impossible. In this scenario, bulk ordering is significantly cheaper and saves hours of physical lifting.</p>
 
-      <h2>Recommended Topsoil Depths by Project</h2>
+      <h2 id="depths">Recommended Topsoil Depths by Project</h2>
       <p>Different plants and projects require different amounts of rich topsoil to flourish:</p>
       
       <table class="w-full border-collapse border border-slate-200 my-6 text-sm">
@@ -93,7 +107,7 @@ export const blogData: Record<string, BlogPost> = {
         </tbody>
       </table>
 
-      <h2>Important Soil Estimating Tips</h2>
+      <h2 id="tips">Important Soil Estimating Tips</h2>
       <p>Before placing your order, keep these expert tips in mind:</p>
       <ol class="list-decimal list-inside space-y-2 my-4">
         <li><strong>Add a 10% Waste Margin:</strong> Ground is rarely perfectly flat. Plus, soil compacts when watered or stepped on. Always multiply your final yard calculation by 1.10.</li>
@@ -108,21 +122,28 @@ export const blogData: Record<string, BlogPost> = {
     category: "Construction & Landscaping",
     date: "2026-06-25",
     author: "Elena Rostova (Landscape Architect)",
+    image: "/fill-dirt-vs-topsoil.png",
+    headings: [
+      { id: "topsoil", text: "What is Topsoil" },
+      { id: "filldirt", text: "What is Fill Dirt" },
+      { id: "differences", text: "Comparison & Cost" },
+      { id: "grading", text: "The Grading Rule" }
+    ],
     calculatorSlug: "topsoil",
     relatedSlugs: ["how-much-topsoil-do-i-need", "topsoil-cost-guide"],
     content: `
       <p>One of the most common mistakes homeowners and DIYers make is choosing the wrong type of soil for their yard projects. Buying premium topsoil to fill a deep hole is an expensive waste of money. Conversely, planting grass directly into fill dirt is a recipe for lawn failure.</p>
       <p>To ensure your projects stand on solid ground, let's look at the differences between <strong>fill dirt</strong> and <strong>topsoil</strong>.</p>
 
-      <h2>What is Topsoil?</h2>
+      <h2 id="topsoil">What is Topsoil?</h2>
       <p>Topsoil is the outermost layer of the earth's surface, typically the top 2 to 12 inches. It is highly organic, containing decomposed leaves, grass, roots, and organic matter. This makes it rich in nutrients and microorganisms necessary for plant growth.</p>
       <p><strong>Primary Uses:</strong> Lawns, flower beds, vegetable gardens, and top-dressing grass patches.</p>
 
-      <h2>What is Fill Dirt?</h2>
+      <h2 id="filldirt">What is Fill Dirt?</h2>
       <p>Fill dirt is the soil found beneath the topsoil layer. It is excavated from deeper in the ground and contains little to no organic material. Instead, it consists of clay, sand, gravel, and rocks. Because it lacks organic matter, it does not decompose, settle, or shift over time.</p>
       <p><strong>Primary Uses:</strong> Filling deep holes, building up retaining walls, grading around house foundations, and establishing structural base layers.</p>
 
-      <h2>Key Differences and Comparison</h2>
+      <h2 id="differences">Key Differences and Comparison</h2>
       <table class="w-full border-collapse border border-slate-200 my-6 text-sm">
         <thead>
           <tr class="bg-slate-50">
@@ -135,27 +156,17 @@ export const blogData: Record<string, BlogPost> = {
           <tr>
             <td class="border border-slate-200 p-2.5 font-semibold">Organic Content</td>
             <td class="border border-slate-200 p-2.5">High (microorganisms, organic nutrients)</td>
-            <td class="border border-slate-200 p-2.5">Low to None (mostly inorganic sand/clay)</td>
-          </tr>
-          <tr>
-            <td class="border border-slate-200 p-2.5 font-semibold">Settlement & Compaction</td>
-            <td class="border border-slate-200 p-2.5">Settles significantly as organic material decays</td>
-            <td class="border border-slate-200 p-2.5">Stable; compacts tightly and stays in place</td>
+            <td class="border border-slate-200 p-2.5">Low to None (mostly sand/clay)</td>
           </tr>
           <tr>
             <td class="border border-slate-200 p-2.5 font-semibold">Average Cost</td>
             <td class="border border-slate-200 p-2.5">Higher ($30 - $60 per cubic yard)</td>
             <td class="border border-slate-200 p-2.5">Lower ($10 - $25 per cubic yard)</td>
           </tr>
-          <tr>
-            <td class="border border-slate-200 p-2.5 font-semibold">Visual appearance</td>
-            <td class="border border-slate-200 p-2.5">Dark, rich, crumbly texture</td>
-            <td class="border border-slate-200 p-2.5">Lighter, clay-colored, contains rocks/clods</td>
-          </tr>
         </tbody>
       </table>
 
-      <h2>The Grading Rule of Thumb</h2>
+      <h2 id="grading">The Grading Rule of Thumb</h2>
       <p>If you are leveling an area or fixing the slope around your home to prevent basement leaks, <strong>never use topsoil</strong>. Because topsoil is loose and decomposes, water will easily seep through it, causing it to collapse. Instead, pack fill dirt tightly against the foundation to deflect water, and cover the top 3-4 inches with premium topsoil to allow grass to grow.</p>
     `
   },
@@ -166,25 +177,30 @@ export const blogData: Record<string, BlogPost> = {
     category: "Construction & Landscaping",
     date: "2026-06-20",
     author: "Elena Rostova (Landscape Architect)",
+    image: "/top-soil-calculator-rates-bag.webp",
+    headings: [
+      { id: "bulk", text: "Average Cost of Bulk Topsoil" },
+      { id: "delivery", text: "Trucking & Delivery Fees" },
+      { id: "bagged", text: "Bagged vs Bulk Cost" }
+    ],
     calculatorSlug: "topsoil",
     relatedSlugs: ["how-much-topsoil-do-i-need", "fill-dirt-vs-topsoil"],
     content: `
       <p>Purchasing topsoil is generally inexpensive, but the cost of <strong>delivery</strong> can quickly turn a budget-friendly project into an expensive home upgrade. If you only need a few yards of soil, shipping charges can easily exceed the cost of the dirt itself.</p>
       <p>This guide breaks down current average costs for bulk and bagged topsoil, plus delivery fees you can expect from suppliers.</p>
 
-      <h2>Average Cost of Bulk Topsoil</h2>
+      <h2 id="bulk">Average Cost of Bulk Topsoil</h2>
       <p>In bulk, topsoil is priced and sold by the <strong>cubic yard</strong>. A cubic yard is a 3ft × 3ft × 3ft block (27 cubic feet) and covers 324 square feet at 1 inch deep.</p>
       <ul>
-        <li><strong>Standard Screened Topsoil:</strong> $20 to $40 per cubic yard. (Cleaned of rocks, weeds, and twigs).</li>
-        <li><strong>Premium Garden Soil Mix (Topsoil + Compost):</strong> $35 to $60 per cubic yard. (Higher nutrients, ideal for vegetable gardens).</li>
-        <li><strong>Unscreened Fill Dirt:</strong> $10 to $20 per cubic yard. (Unprocessed base material).</li>
+        <li><strong>Standard Screened Topsoil:</strong> $20 to $40 per cubic yard. (Cleaned of rocks and weeds).</li>
+        <li><strong>Premium Garden Soil Mix:</strong> $35 to $60 per cubic yard. (Higher nutrients, ideal for vegetable gardens).</li>
       </ul>
 
-      <h2>Topsoil Delivery Trucking Costs</h2>
+      <h2 id="delivery">Topsoil Delivery Trucking Costs</h2>
       <p>Trucking fees are usually flat rates based on distance or time. Most landscape supply yards charge a flat fee of <strong>$50 to $150 per delivery</strong> within a 10-15 mile radius.</p>
       <p>This means if you order 1 cubic yard of topsoil ($30) with delivery ($100), the total is $130. However, if you order 8 cubic yards of topsoil ($240) with delivery ($100), the total is $340, which averages out to a much more affordable $42.50 per yard. Always try to group your orders to save on delivery fees.</p>
 
-      <h2>Bagged Soil Cost Comparison</h2>
+      <h2 id="bagged">Bagged Soil Cost Comparison</h2>
       <p>A standard 40-pound bag of retail topsoil (0.75 cu ft) costs between <strong>$2.50 and $6.00 per bag</strong>. While this seems cheap, let's run the math to compare it to bulk rates:</p>
       <p>Since 1 cubic yard = 36 bags (of 0.75 cu ft):</p>
       <p class="font-mono text-center text-primary font-bold my-4">36 bags × $4.00 = $144.00 per cubic yard</p>
@@ -198,21 +214,28 @@ export const blogData: Record<string, BlogPost> = {
     category: "Construction & Landscaping",
     date: "2026-06-15",
     author: "Elena Rostova (Landscape Architect)",
+    image: "/best-soil-depth-for-growing-grass-and-new-lawns.jpg",
+    headings: [
+      { id: "standard", text: "The 6-Inch Standard" },
+      { id: "benefits", text: "Root Health Benefits" },
+      { id: "existing", text: "Top-Dressing Lawn" }
+    ],
     calculatorSlug: "topsoil",
     relatedSlugs: ["how-much-topsoil-do-i-need", "fill-dirt-vs-topsoil"],
     content: `
       <p>If you're planting a new lawn, laying sod, or overseeding patches, the foundation of your grass determines its long-term health. Scattering seeds over hard clay or rock-ridden fill dirt will result in weak, patchy turf that dies during the first dry summer weeks.</p>
       <p>To get a lush, deep-rooted lawn, you must provide the proper depth of high-quality topsoil.</p>
 
-      <h2>The 6-Inch Standard for Root Health</h2>
-      <p>For most residential turfgrasses (such as Kentucky Bluegrass, Bermuda, Fescue, and Zoysia), the optimal topsoil depth is <strong>4 to 6 inches</strong>. While grass can germinate in as little as 2 inches of soil, its root depth will be severely stunted.</p>
-      <p>Deep root growth provides two major benefits:</p>
+      <h2 id="standard">The 6-Inch Standard for Root Health</h2>
+      <p>For most residential turfgrasses, the optimal topsoil depth is <strong>4 to 6 inches</strong>. While grass can germinate in as little as 2 inches of soil, its root depth will be severely stunted.</p>
+
+      <h2 id="benefits">Deep Root Growth Benefits</h2>
       <ol class="list-decimal list-inside space-y-2 my-4">
-        <li><strong>Drought Tolerance:</strong> Deep roots can tap moisture stored deep in the earth. Shallow roots dry out and go dormant (turn brown) within days of hot, dry weather.</li>
-        <li><strong>Nutrient Retention:</strong> A thicker layer of topsoil holds onto organic fertilizers and minerals far better than hard packed clay.</li>
+        <li><strong>Drought Tolerance:</strong> Deep roots can tap moisture stored deep in the earth. Shallow roots dry out and go dormant within days of hot, dry weather.</li>
+        <li><strong>Nutrient Retention:</strong> A thicker layer of topsoil holds onto organic fertilizers and minerals far better.</li>
       </ol>
 
-      <h2>Can I Spread Soil Over Existing Grass?</h2>
+      <h2 id="existing">Can I Spread Soil Over Existing Grass?</h2>
       <p>If you are top-dressing an existing lawn to level out minor dips or add nutrients, you should never spread more than <strong>0.25 to 0.5 inches of topsoil at a time</strong>. Spreading any deeper will bury and suffocate the existing grass blades, killing off portions of your lawn.</p>
     `
   }

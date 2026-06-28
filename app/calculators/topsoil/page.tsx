@@ -1,244 +1,387 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TopsoilCalculator from "../../components/TopsoilCalculator";
+import CalculatorFaqs from "../../components/CalculatorFaqs";
+import { blogData } from "../../data/blogData";
+import { calculatorsData } from "../../data/calculatorsData";
 
 export const metadata: Metadata = {
-  title: "Topsoil Calculator - Estimate Cubic Yards, Feet & Bags",
-  description: "Calculate exactly how much topsoil, dirt, or compost you need. Input dimensions to get results in cubic yards, cubic feet, tons, and bag counts.",
+  title: "Topsoil Calculator - Estimate Cubic Yards, Feet & Bags of Soil",
+  description: "Calculate exactly how much topsoil, fill dirt, or compost you need. Input dimensions to get coverage results in cubic yards, cubic feet, tons, and bag counts.",
   keywords: [
     "topsoil calculator",
     "top soil calculator",
-    "topsoil yard calculator",
-    "mulch calculator",
-    "soil bags calculator",
-    "calculate topsoil needed",
+    "topsoil estimator",
+    "online topsoil calculator",
+    "topsoil coverage calculator",
+    "fill dirt calculator",
+    "dirt cubic yard calculator",
+    "how much for yard of topsoil"
   ],
+  alternates: {
+    canonical: "https://infinixcalculators.com/calculators/topsoil",
+  },
 };
 
 export default function TopsoilPage() {
-  const popularCalculators = [
-    { name: "Affirm Calculator", href: "/calculators/affirm" },
-    { name: "CBM Calculator", href: "/calculators/cbm" },
-    { name: "Avalara Sales Tax", href: "/calculators/avalara-sales-tax" },
-    { name: "Pro Rata Calculator", href: "/calculators/pro-rata" },
-    { name: "Square Fee Calculator", href: "/calculators/square-fee" },
-    { name: "HECM Calculator", href: "/calculators/hecm" },
-    { name: "Gross Up Calculator", href: "/calculators/gross-up" },
-    { name: "Reverse Tax Calculator", href: "/calculators/reverse-tax" },
+  // Get supporting blog articles for topsoil
+  const topsoilBlogs = Object.values(blogData).filter(
+    (post) => post.calculatorSlug === "topsoil"
+  );
+
+  // Related calculators
+  const relatedCalcs = [
+    { name: "Concrete Calculator", href: "/calculators/concrete", desc: "Estimate cubic yards for concrete slabs." },
+    { name: "Mulch Calculator", href: "/calculators/mulch", desc: "Calculate organic bark and mulch coverage." },
+    { name: "Roof Calculator", href: "/calculators/roof", desc: "Estimate roofing shingles and pitch dimensions." },
   ];
 
-  return (
-    <div className="bg-slate-50 min-h-screen py-10 sm:py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
-        {/* Main Columns Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          
-          {/* Main Content Area (3/4 width on desktop) */}
-          <div className="lg:col-span-3 space-y-8">
-            
-            {/* Header Section */}
-            <div>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest">Materials Calculator</span>
-              <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl mt-2 tracking-tight">
-                Topsoil Calculator
-              </h1>
-              <p className="mt-3 text-base text-slate-600 leading-relaxed max-w-2xl">
-                Use our free calculator to estimate the volume and weight of soil, dirt, compost, or mulch needed for your landscaping project. Works for rectangular lawns, raised beds, or circular plant beds.
-              </p>
-            </div>
+  // Structured Data Schema Objects
+  const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Topsoil Calculator & Estimator",
+    "description": "Calculate soil volume in cubic yards, cubic feet, tons, and bag counts based on custom rectangle or circle dimensions.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires HTML5 support",
+    "url": "https://infinixcalculators.com/calculators/topsoil",
+  };
 
-            {/* Interactive Calculator Section */}
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://infinixcalculators.com",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://infinixcalculators.com/calculators",
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Topsoil Calculator",
+        "item": "https://infinixcalculators.com/calculators/topsoil",
+      },
+    ],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate how much topsoil I will need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First, measure the length and width of your area in feet, then multiply these dimensions to get the total square footage. Multiply this area by your desired depth in inches, and divide that number by 12 to find the total cubic feet. To get cubic yards, divide the cubic feet by 27.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a 40 lb bag of topsoil cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard 40 lb bag of topsoil contains approximately 0.75 cubic feet of soil. If you are spreading the soil at a depth of 2 inches, one 40 lb bag will cover about 4.5 square feet of area.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "How many 40 lb bags of topsoil does it take to make 1 yard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It takes 36 bags (each being 40 lbs or 0.75 cubic feet) to equal 1 cubic yard. Because 1 cubic yard is equal to 27 cubic feet: 27 ÷ 0.75 = 36 bags.",
+        },
+      },
+    ],
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate Topsoil Coverage",
+    "description": "Calculate cubic yards of soil or dirt needed for your yard or garden bed.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Measure Footprint Area",
+        "text": "Measure the length and width of your rectangular lawn or garden bed in feet.",
+        "url": "https://infinixcalculators.com/calculators/topsoil#step-area",
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Define Desired Depth",
+        "text": "Decide how deep you want the topsoil (commonly 3 to 6 inches for turf, 12 inches for vegetable beds).",
+        "url": "https://infinixcalculators.com/calculators/topsoil#step-depth",
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate Volume",
+        "text": "Multiply length by width by depth (in inches divided by 12). Divide by 27 to find the total cubic yards of topsoil required.",
+        "url": "https://infinixcalculators.com/calculators/topsoil#step-volume",
+      },
+    ],
+  };
+
+  return (
+    <div className="bg-slate-50 min-h-screen py-8 sm:py-12">
+      {/* Dynamic JSON-LD Schema Scripts */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webAppSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(howToSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+        {/* Breadcrumb Trail */}
+        <nav className="flex mb-8 text-xs font-semibold text-slate-400" aria-label="Breadcrumb">
+          <ol className="inline-flex items-center space-x-1.5 md:space-x-2">
+            <li>
+              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            </li>
+            <li className="flex items-center gap-1.5">
+              <span>/</span>
+              <Link href="/calculators" className="hover:text-primary transition-colors">Calculators</Link>
+            </li>
+            <li className="flex items-center gap-1.5 text-slate-600 font-bold" aria-current="page">
+              <span>/</span>
+              <span>Topsoil Calculator</span>
+            </li>
+          </ol>
+        </nav>
+
+        {/* Page Header */}
+        <header className="mb-10 max-w-4xl">
+          <h1 className="text-3xl font-extrabold text-slate-900 sm:text-5xl tracking-tight">
+            Topsoil Calculator & Estimator
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+            Use this online topsoil calculator to estimate the exact volume and weight of topsoil, compost, mulch, or fill dirt needed for your landscaping projects. Calculates total cubic yards, cubic feet, tons, and individual bag counts instantly.
+          </p>
+        </header>
+
+        {/* Main Grid: Calculator (left) + Sidebar (right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+
+          {/* Main Area (3/4 width) */}
+          <div className="lg:col-span-3 space-y-10">
+            {/* Interactive Client Calculator Form */}
             <div>
               <TopsoilCalculator />
             </div>
 
-            {/* Ad slots placed after calculator (hidden for now) */}
-            <div className="hidden space-y-4">
-              {/* Top Google Ad Slot Placeholder */}
-              <div className="bg-white/80 border border-dashed border-slate-300 rounded-xl p-4 flex flex-col items-center justify-center h-24 text-slate-400 text-xs shadow-sm">
-                <span className="font-semibold uppercase tracking-wider text-[10px] text-slate-400 mb-1">Advertisement</span>
-                <div className="w-full text-center py-2 text-slate-300">Responsive Ad Unit (Google AdSense Slot)</div>
-              </div>
+            {/* In-depth content block */}
+            <section className="p-6 sm:p-10 space-y-8 text-slate-600 leading-relaxed text-sm sm:text-base">
 
-              {/* Middle Google Ad Slot Placeholder */}
-              <div className="bg-white/80 border border-dashed border-slate-300 rounded-xl p-4 flex flex-col items-center justify-center h-24 text-slate-400 text-xs shadow-sm">
-                <span className="font-semibold uppercase tracking-wider text-[10px] text-slate-400 mb-1">Advertisement</span>
-                <div className="w-full text-center py-2 text-slate-300">In-Feed Native Ad Unit</div>
-              </div>
-            </div>
-
-            {/* Explanatory Example Section */}
-            <section className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 space-y-6 shadow-sm">
-              <h2 className="text-xl font-bold text-slate-900">How to Calculate Topsoil: Formulas & Example</h2>
-              
-              <div className="text-sm text-slate-600 space-y-4 leading-relaxed">
+              {/* Formula explanation */}
+              <div id="step-volume" className="space-y-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                  How to Estimate Topsoil Volume: Formula & Principles
+                </h2>
                 <p>
-                  To figure out how much topsoil or compost you need, we determine the volume of the space (length × width × depth) and convert it to industry-standard units like cubic yards or bag counts.
+                  To figure out how much ground cover or landscape soil you need, we determine the three-dimensional volume of the space. This involves multiplying the surface area (length by width) by the desired depth, then converting the result to standard sales metrics (cubic yards or bag counts).
                 </p>
-
-                <div className="bg-slate-50 p-4 rounded-xl space-y-2 border border-slate-100">
-                  <h3 className="font-bold text-slate-800 text-sm">Standard Formula:</h3>
-                  <code className="block text-primary font-mono text-xs leading-relaxed">
-                    Volume (Cubic Feet) = Length (ft) × Width (ft) × [Depth (inches) ÷ 12]
+                <div className="bg-slate-50 border border-slate-100 p-5 rounded-2xl space-y-2">
+                  <span className="block font-bold text-slate-800 text-xs uppercase tracking-wider">Volumetric Formulas:</span>
+                  <code className="block text-primary font-mono text-xs sm:text-sm">
+                    Volume (Cubic Feet) = Length (ft) × Width (ft) × [Depth (in) ÷ 12]
                   </code>
-                  <code className="block text-primary font-mono text-xs leading-relaxed">
+                  <code className="block text-primary font-mono text-xs sm:text-sm">
                     Volume (Cubic Yards) = Volume (Cubic Feet) ÷ 27
                   </code>
                 </div>
+              </div>
 
-                <div className="space-y-3 pt-2">
-                  <h3 className="font-bold text-slate-900 text-base">Step-by-Step Practical Example:</h3>
-                  <p>
-                    Suppose you want to fill a garden bed that is <strong>12 feet long</strong> and <strong>10 feet wide</strong>, with a soil depth of <strong>4 inches</strong>.
-                  </p>
-                  <ol className="list-decimal list-inside space-y-2 pl-2">
-                    <li>
-                      <strong>Convert depth to feet:</strong> 4 inches ÷ 12 = 0.333 feet.
-                    </li>
-                    <li>
-                      <strong>Calculate volume in Cubic Feet:</strong> 12 ft × 10 ft × 0.333 ft = 40 cubic feet.
-                    </li>
-                    <li>
-                      <strong>Convert to Cubic Yards:</strong> 40 cu ft ÷ 27 = 1.48 cubic yards.
-                    </li>
-                    <li>
-                      <strong>Estimate bags needed:</strong> Since a standard 40 lb bag of topsoil contains roughly 0.75 cubic feet: 40 ÷ 0.75 = 54 bags.
-                    </li>
-                  </ol>
-                </div>
+              {/* Example block */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold text-slate-900">
+                  Step-by-Step Practical Soil Example
+                </h3>
+                <p>
+                  Suppose you want to grade a rectangular lawn area that is <strong>24 feet long</strong> and <strong>15 feet wide</strong>, with a required topsoil depth of <strong>4 inches</strong>.
+                </p>
+                <ol className="list-decimal list-inside space-y-2 pl-2">
+                  <li>
+                    <strong>Convert depth to feet:</strong> 4 inches ÷ 12 = 0.333 feet.
+                  </li>
+                  <li>
+                    <strong>Calculate footprint area:</strong> 24 ft × 15 ft = 360 square feet.
+                  </li>
+                  <li>
+                    <strong>Find volume in Cubic Feet:</strong> 360 sq ft × 0.333 ft = 120 cubic feet.
+                  </li>
+                  <li>
+                    <strong>Convert to Cubic Yards:</strong> 120 cu ft ÷ 27 = <strong>4.44 cubic yards of topsoil</strong>.
+                  </li>
+                  <li>
+                    <strong>Estimate bag count:</strong> If buying retail 40 lb bags (which yield approx. 0.75 cu ft of soil): 120 ÷ 0.75 = <strong>160 bags</strong>.
+                  </li>
+                </ol>
+              </div>
+
+              <hr className="border-slate-100" />
+
+              {/* Material Densities */}
+              <div className="space-y-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                  Soil Types & Material Densities
+                </h2>
+                <p>
+                  Not all soils weigh the same. When ordering bulk soil, supply yards often sell by weight (tons) rather than yards. The moisture level and makeup of the organic material heavily dictate the load:
+                </p>
+                <ul className="list-disc list-inside space-y-2.5 pl-2">
+                  <li>
+                    <strong>Standard Topsoil:</strong> Weighs roughly 2,000 to 2,200 lbs per cubic yard (about 1 ton). This is standard screened dirt.
+                  </li>
+                  <li>
+                    <strong>Organic Compost:</strong> Much lighter. Weighs about 1,000 to 1,400 lbs per cubic yard. Made of decomposed organic compost and bark.
+                  </li>
+                  <li>
+                    <strong>Heavy Clay & Topsoil Mix:</strong> Dense. Weighs 2,200 to 2,500 lbs per yard. Compacts tightly, holds water.
+                  </li>
+                  <li>
+                    <strong>Wet Dirt / Mud:</strong> Extremely heavy. Can exceed 2,800 lbs per yard. Avoid ordering wet soil as it is difficult to grade and shovel.
+                  </li>
+                </ul>
+              </div>
+
+              <hr className="border-slate-100" />
+
+              {/* Common mistakes */}
+              <div className="space-y-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                  Common Topsoil Estimation Mistakes & Tips
+                </h2>
+                <p>
+                  Avoid these frequent missteps when ordering bulk dirt cubic yard calculations for landscaping:
+                </p>
+                <ul className="list-disc list-inside space-y-2.5 pl-2">
+                  <li>
+                    <strong>Neglecting Compaction (Settlement):</strong> Soil naturally settles and compacts by 10% to 20% after watering, rain, or tamping. Always add a 10% buffer to your final yards count.
+                  </li>
+                  <li>
+                    <strong>Ignoring Eaves & Overhangs:</strong> If measuring for flower beds along walls, include eave overhangs if you plan to cover the soil under them.
+                  </li>
+                  <li>
+                    <strong>Unscreened vs Screened Soil:</strong> Unscreened soil is cheaper but contains rocks, weed seeds, and roots. Screened topsoil has been processed, making it premium and ready for seeding.
+                  </li>
+                </ul>
               </div>
             </section>
 
-            {/* FAQs Section */}
-            <section className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
-              <h2 className="text-xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
-              
-              <div className="space-y-4 divide-y divide-slate-100">
-                <details className="group pb-4" open>
-                  <summary className="flex cursor-pointer items-center justify-between text-slate-900 font-semibold text-sm sm:text-base list-none">
-                    <span>How do I calculate how much topsoil I will need?</span>
-                    <span className="ml-1.5 shrink-0 rounded-full bg-slate-100 p-1.5 text-slate-900 group-open:rotate-180 transition-transform">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
-                    First, measure the length and width of your area in feet, then multiply these dimensions to get the total area. Multiply this area by your desired depth in inches, and divide that number by 12 to find the total cubic feet. To get cubic yards, divide the cubic feet by 27.
-                  </p>
-                </details>
-
-                <details className="group py-4">
-                  <summary className="flex cursor-pointer items-center justify-between text-slate-900 font-semibold text-sm sm:text-base list-none">
-                    <span>How much does a 40 lb bag of topsoil cover?</span>
-                    <span className="ml-1.5 shrink-0 rounded-full bg-slate-100 p-1.5 text-slate-900 group-open:rotate-180 transition-transform">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
-                    A standard 40 lb bag of topsoil contains approximately <strong>0.75 cubic feet</strong> of soil. If you are spreading the soil at a depth of 2 inches, one 40 lb bag will cover about 4.5 square feet of area.
-                  </p>
-                </details>
-
-                <details className="group py-4">
-                  <summary className="flex cursor-pointer items-center justify-between text-slate-900 font-semibold text-sm sm:text-base list-none">
-                    <span>Is 2 inches of topsoil enough to grow grass?</span>
-                    <span className="ml-1.5 shrink-0 rounded-full bg-slate-100 p-1.5 text-slate-900 group-open:rotate-180 transition-transform">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
-                    While grass can sprout in 2 inches of topsoil, a depth of <strong>4 to 6 inches</strong> is strongly recommended for a healthy, robust lawn. Deeper soil allows grass roots to establish deeply, locking in moisture and preventing turf burn during hot seasons.
-                  </p>
-                </details>
-
-                <details className="group py-4">
-                  <summary className="flex cursor-pointer items-center justify-between text-slate-900 font-semibold text-sm sm:text-base list-none">
-                    <span>How many 40 lb bags of topsoil does it take to make 1 yard?</span>
-                    <span className="ml-1.5 shrink-0 rounded-full bg-slate-100 p-1.5 text-slate-900 group-open:rotate-180 transition-transform">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
-                    It takes <strong>36 bags</strong> (each being 40 lbs or 0.75 cubic feet) to equal 1 cubic yard. Because 1 cubic yard is equal to 27 cubic feet: 27 ÷ 0.75 = 36 bags.
-                  </p>
-                </details>
-
-                <details className="group py-4">
-                  <summary className="flex cursor-pointer items-center justify-between text-slate-900 font-semibold text-sm sm:text-base list-none">
-                    <span>Will 1 yard of topsoil fit in a pickup truck?</span>
-                    <span className="ml-1.5 shrink-0 rounded-full bg-slate-100 p-1.5 text-slate-900 group-open:rotate-180 transition-transform">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
-                    Yes. Most standard full-size pickup trucks can carry 1 to 1.5 cubic yards of topsoil in their bed without exceeding capacity. However, topsoil is heavy (about 2000-2200 lbs per cubic yard), so check your truck's payload capacity limit before loading.
-                  </p>
-                </details>
-
-                <details className="group pt-4">
-                  <summary className="flex cursor-pointer items-center justify-between text-slate-900 font-semibold text-sm sm:text-base list-none">
-                    <span>Can I estimate soil volume without a calculator?</span>
-                    <span className="ml-1.5 shrink-0 rounded-full bg-slate-100 p-1.5 text-slate-900 group-open:rotate-180 transition-transform">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
-                    Yes, you can do quick mental math by multiplying length and width to get the square footage. For a common depth of 3 inches (which is 0.25 feet), simply divide your square footage by 4 to get the cubic feet. For 6 inches, divide by 2.
-                  </p>
-                </details>
-              </div>
-            </section>
-
-            {/* Bottom Google Ad Slot Placeholder (hidden for now) */}
-            <div className="hidden bg-white/80 border border-dashed border-slate-300 rounded-xl p-4 flex flex-col items-center justify-center h-24 text-slate-400 text-xs shadow-sm">
-              <span className="font-semibold uppercase tracking-wider text-[10px] text-slate-400 mb-1">Advertisement</span>
-              <div className="w-full text-center py-2 text-slate-300">Anchor Sticky Ad Placeholder</div>
-            </div>
-
+            {/* Reusable FAQs Section */}
+            <CalculatorFaqs slug="topsoil" />
           </div>
 
-          {/* Sidebar Area (1/4 width on desktop) */}
+          {/* Sidebar Area (1/4 width) */}
           <div className="space-y-6">
-            
-            {/* Sidebar Ad Unit (hidden for now) */}
-            <div className="hidden bg-white/85 border border-dashed border-slate-300 rounded-2xl p-6 flex flex-col items-center justify-center min-h-[250px] text-slate-400 text-xs shadow-sm sticky top-24">
-              <span className="font-semibold uppercase tracking-wider text-[10px] text-slate-400 mb-2">Advertisement</span>
-              <div className="text-center w-full text-slate-300 px-4 py-8">
-                300 x 250 Medium Rectangle Ad
-              </div>
-            </div>
 
-            {/* Popular Tools Directory Cross-Linking */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm sticky top-[360px]">
-              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider pb-3 border-b border-slate-100">
-                Popular Calculators
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {popularCalculators.map((calc) => (
+
+            {/* You May Like - Flat list of related articles (No outer card wrapper) */}
+            {topsoilBlogs.length > 0 && (
+              <div className="pb-6 border-b border-slate-200/80">
+                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">You May Like</h3>
+                <div className="space-y-5">
+                  {topsoilBlogs.map((rel) => (
+                    <Link
+                      key={rel.slug}
+                      href={`/blog/${rel.slug}`}
+                      className="group flex gap-4 hover:text-primary transition-colors"
+                    >
+                      <div className="relative w-16 h-16 bg-slate-100 rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50">
+                        <img
+                          src={rel.image}
+                          alt={rel.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="block text-[9px] font-bold text-primary uppercase tracking-wider">{rel.category}</span>
+                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 leading-snug group-hover:text-primary transition-colors mt-1 line-clamp-2">
+                          {rel.title}
+                        </h4>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+
+
+            {/* Popular Topics / Calculators (No card bg/border) */}
+            <div className="pb-6 border-b border-slate-200/80">
+              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Popular Tools</h3>
+              <ul className="space-y-3.5">
+                {relatedCalcs.map((calc) => (
                   <li key={calc.name}>
                     <Link
                       href={calc.href}
-                      className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors flex items-center justify-between"
+                      className="group ml-5 flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-600 hover:text-primary transition-colors py-0.5"
                     >
                       <span>{calc.name}</span>
-                      <svg className="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                       </svg>
                     </Link>
                   </li>
                 ))}
+              </ul>
+            </div>
+
+            {/* Internal Categories Directory Links */}
+            <div className="pb-6 border-b border-slate-200/80">
+              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider pb-3 border-b border-slate-100">
+                Categories
+              </h3>
+              <ul className="ml-5 space-y-2">
+                <li>
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                    Financial Calculators
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                    Tax & Payroll Calculators
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                    Construction & Materials
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                    Health & Fitness Tools
+                  </Link>
+                </li>
               </ul>
             </div>
 

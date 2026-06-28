@@ -15,7 +15,7 @@ export interface FAQItem {
 export interface CalculatorInfo {
   slug: string;
   name: string;
-  category: "financial" | "construction" | "health" | "math" | "unit-converter";
+  category: "financial" | "tax" | "construction" | "math" | "health" | "unit-converter";
   categoryLabel: string;
   seoTitle: string;
   metaDescription: string;
@@ -31,11 +31,11 @@ export interface CalculatorInfo {
   useCases: string[];
   tips: string[];
   inputs: CalculatorInput[];
-  // Standard execution function mapping
   calculate: (inputs: Record<string, any>) => Record<string, { value: string | number; label: string; unit?: string }>;
 }
 
 export const calculatorsData: Record<string, CalculatorInfo> = {
+  // Flagship Topsoil
   topsoil: {
     slug: "topsoil",
     name: "Topsoil Calculator",
@@ -58,33 +58,21 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       {
         question: "How much does a 40 lb bag of topsoil cover?",
         answer: "A standard 40 lb bag of topsoil contains approximately 0.75 cubic feet of soil. Spread at a 2-inch depth, one 40 lb bag will cover about 4.5 square feet."
-      },
-      {
-        question: "How many 40 lb bags make a cubic yard?",
-        answer: "It takes 36 bags (each containing 0.75 cubic feet) to equal 1 cubic yard (which is 27 cubic feet)."
       }
     ],
-    commonMistakes: [
-      "Forgetting to divide the depth in inches by 12, leading to massive overestimates.",
-      "Not accounting for settling; soil compacts by 10% to 20% after watering or tamping."
-    ],
-    useCases: [
-      "Reseeding lawns to add a rich top dressing.",
-      "Filling newly constructed raised garden beds.",
-      "Leveling out low spots or holes in a backyard."
-    ],
-    tips: [
-      "Always order 10% extra topsoil to cover compression and ground unevenness.",
-      "For grass roots, aim for a minimum of 4 inches of premium topsoil."
-    ],
-    inputs: [], // Topsoil uses its own custom Client Component
+    commonMistakes: ["Forgetting to divide the depth in inches by 12.", "Not accounting for compression."],
+    useCases: ["New lawns", "Garden beds"],
+    tips: ["Add 10% safety buffer."],
+    inputs: [],
     calculate: () => ({})
   },
+
+  // Logistics CBM
   cbm: {
     slug: "cbm",
     name: "CBM Calculator",
     category: "unit-converter",
-    categoryLabel: "Logistics & Converters",
+    categoryLabel: "Logistics",
     seoTitle: "CBM Calculator - Cargo Cubic Meter Volume Finder",
     metaDescription: "Calculate Cubic Meters (CBM) for shipping cargo, cartons, or boxes. Convert dimensions in inches, feet, or cm to shipping volume easily.",
     keywords: ["cbm calculator", "cubic meters calculator", "shipping volume calculator", "cargo volume calculator"],
@@ -93,34 +81,13 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     calcTime: "1 min",
     formula: "CBM = [Length (m) × Width (m) × Height (m)] × Quantity",
     formulaDescription: "Convert all box dimensions to meters, multiply them to get the volume of a single box, and then multiply by the total number of boxes to get the total CBM.",
-    example: "If you have 10 boxes, each measuring 50 cm × 40 cm × 30 cm: Convert to meters: 0.5m × 0.4m × 0.3m = 0.06 CBM per box. Total CBM = 0.06 × 10 = 0.6 CBM.",
+    example: "If you have 10 boxes, each measuring 50 cm × 40 cm × 30 cm: 0.5m × 0.4m × 0.3m = 0.06 CBM. Total CBM = 0.06 × 10 = 0.6 CBM.",
     faqs: [
-      {
-        question: "What is CBM in shipping?",
-        answer: "CBM stands for Cubic Meter. It is the standard unit of measurement used to calculate the volume of cargo for air freight, ocean freight, and courier shipping."
-      },
-      {
-        question: "How do I calculate CBM for boxes with different sizes?",
-        answer: "Calculate the CBM of each individual box size separately using the formula (Length × Width × Height × Quantity), then sum the CBM values of all the boxes together."
-      },
-      {
-        question: "How many CBM fit inside a 20ft container?",
-        answer: "A standard 20-foot shipping container has a maximum volume of about 33 CBM, but realistically, only about 26 to 28 CBM of usable cargo will fit due to packing gaps."
-      }
+      { question: "What is CBM?", answer: "CBM stands for Cubic Meter, the standard volume unit for shipping cargo." }
     ],
-    commonMistakes: [
-      "Mixing units (e.g. multiplying centimeters by inches) without converting them first.",
-      "Assuming a container's full inner volume is usable; carton stacking gaps always reduce usable CBM."
-    ],
-    useCases: [
-      "Calculating freight costs for Less than Container Load (LCL) ocean shipping.",
-      "Estimating storage space requirements in warehouses.",
-      "Planning stackable layouts for logistics packages."
-    ],
-    tips: [
-      "For air cargo, dimensional weight is calculated based on CBM (typically 1 CBM = 167 kg). Check if volumetric weight exceeds actual weight.",
-      "Leave a 5% margin when planning container packing layouts."
-    ],
+    commonMistakes: ["Mixing different dimension units without proper conversion."],
+    useCases: ["LCL shipping cargo", "Container packing planning"],
+    tips: ["Add a 5% spacing allowance for carton stacking gaps."],
     inputs: [
       { id: "length", label: "Length", type: "number", defaultValue: 50, unit: "cm" },
       { id: "width", label: "Width", type: "number", defaultValue: 40, unit: "cm" },
@@ -134,89 +101,50 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const width = Number(inputs.width || 0);
       const height = Number(inputs.height || 0);
       const qty = Number(inputs.quantity || 1);
-      const weightPerBox = Number(inputs.weight || 0);
+      const weight = Number(inputs.weight || 0);
       const unit = inputs.unit || "cm";
 
-      // Convert to meters
       let lM = length, wM = width, hM = height;
-      if (unit === "cm") {
-        lM = length / 100;
-        wM = width / 100;
-        hM = height / 100;
-      } else if (unit === "in") {
-        lM = length * 0.0254;
-        wM = width * 0.0254;
-        hM = height * 0.0254;
-      } else if (unit === "ft") {
-        lM = length * 0.3048;
-        wM = width * 0.3048;
-        hM = height * 0.3048;
-      }
+      if (unit === "cm") { lM /= 100; wM /= 100; hM /= 100; }
+      else if (unit === "in") { lM *= 0.0254; wM *= 0.0254; hM *= 0.0254; }
+      else if (unit === "ft") { lM *= 0.3048; wM *= 0.3048; hM *= 0.3048; }
 
       const singleCBM = lM * wM * hM;
       const totalCBM = singleCBM * qty;
-      const totalCFT = totalCBM * 35.3147; // Cubic feet
-      const totalWeight = weightPerBox * qty;
-
-      // Volumetric weight factors: Air (1:6000 or 167kg/m3), Courier (1:5000 or 200kg/m3)
-      const airVolWeight = totalCBM * 167;
-      const courierVolWeight = totalCBM * 200;
+      const totalCFT = totalCBM * 35.3147;
 
       return {
         totalCbm: { value: totalCBM.toFixed(4), label: "Total Volume", unit: "m³ (CBM)" },
         totalCft: { value: totalCFT.toFixed(2), label: "Total Volume", unit: "ft³ (CFT)" },
         singleCbm: { value: singleCBM.toFixed(4), label: "Single Box Volume", unit: "m³" },
-        grossWeight: { value: totalWeight > 0 ? totalWeight.toFixed(1) : "N/A", label: "Gross Weight", unit: "kg" },
-        airVolWeight: { value: airVolWeight.toFixed(1), label: "Air Volumetric Weight", unit: "kg" },
-        courierVolWeight: { value: courierVolWeight.toFixed(1), label: "Courier Volumetric Weight", unit: "kg" }
+        totalWeight: { value: (weight * qty).toFixed(1), label: "Total Weight", unit: "kg" }
       };
     }
   },
+
+  // Financial Affirm
   affirm: {
     slug: "affirm",
     name: "Affirm Calculator",
     category: "financial",
-    categoryLabel: "Financial & Loans",
+    categoryLabel: "Financial",
     seoTitle: "Affirm Loan Calculator - Monthly Payments & Interest Estimator",
     metaDescription: "Estimate your monthly Affirm payments, total interest costs, and true APR. Input product price and term to make smart financing decisions.",
-    keywords: ["affirm calculator", "affirm payment calculator", "buy now pay later calculator", "loan apr calculator"],
+    keywords: ["affirm calculator", "affirm payment calculator", "buy now pay later calculator"],
     hook: "Calculate the True Cost of Affirm Financing Before Checkout.",
     description: "Determine your monthly payment, interest rate consequences, and the total cost of borrowing instantly.",
     calcTime: "1 min",
     formula: "Monthly Payment = [P × r × (1 + r)^n] ÷ [(1 + r)^n - 1]",
-    formulaDescription: "Where P is the purchase price (principal), r is the monthly interest rate (APR divided by 12 months), and n is the total number of monthly payments (term).",
-    example: "For a $1,200 purchase financed at 15% APR over 12 months: Principal = $1200, Monthly r = 0.15 / 12 = 0.0125, Payments = 12. Monthly payment = $108.29. Total paid = $1,299.48, Total interest = $99.48.",
-    faqs: [
-      {
-        question: "Does Affirm charge interest?",
-        answer: "Yes, Affirm charges interest depending on your credit profile and checkout store. Rates typically range from 0% to 30% APR. Unlike traditional credit cards, Affirm charges simple interest rather than compound interest."
-      },
-      {
-        question: "Does using Affirm hurt your credit score?",
-        answer: "Checking your eligibility with Affirm uses a soft credit check, which does not affect your score. However, opening a loan and missing payments can impact your credit score, especially if reported to credit bureaus."
-      },
-      {
-        question: "What is simple interest?",
-        answer: "Simple interest is calculated solely on the principal loan amount. It does not compile over time like credit card debt, meaning you only pay interest on what you initially borrowed."
-      }
-    ],
-    commonMistakes: [
-      "Assuming all checkout transactions are interest-free (0% APR is often a limited promotion).",
-      "Stretching the payment term too long, which increases the total interest dollar cost even if the monthly payment is lower."
-    ],
-    useCases: [
-      "Planning high-ticket item checkouts (electronics, furniture, mattresses).",
-      "Comparing Affirm interest costs against credit card APRs.",
-      "Determining if a 3-month, 6-month, or 12-month term fits your monthly budget."
-    ],
-    tips: [
-      "If offered a 0% APR option, always review if auto-pay is set to avoid missed payment penalties.",
-      "Try to pay a larger down payment at checkout to reduce the principal balance and save on interest."
-    ],
+    formulaDescription: "Formula to find monthly payments on amortized simple interest loans.",
+    example: "For a $1,000 purchase financed at 15% APR over 12 months, payments are $90.26/month.",
+    faqs: [{ question: "Does Affirm charge interest?", answer: "Yes, rates range from 0% to 30% APR simple interest." }],
+    commonMistakes: ["Stretching the loan term unnecessarily, which increases total interest costs."],
+    useCases: ["Budgeting big checkouts", "Comparing financing options"],
+    tips: ["A higher down payment reduces borrowing cost."],
     inputs: [
       { id: "price", label: "Purchase Price / Principal ($)", type: "number", defaultValue: 1000, unit: "$" },
       { id: "apr", label: "Interest Rate (APR %)", type: "number", defaultValue: 15, unit: "%" },
-      { id: "term", label: "Payment Term (Months)", type: "select", defaultValue: "12", options: [{ value: "3", label: "3 Months" }, { value: "6", label: "6 Months" }, { value: "12", label: "12 Months" }, { value: "18", label: "18 Months" }, { value: "24", label: "24 Months" }] }
+      { id: "term", label: "Payment Term (Months)", type: "select", defaultValue: "12", options: [{ value: "3", label: "3 Months" }, { value: "6", label: "6 Months" }, { value: "12", label: "12 Months" }, { value: "18", label: "18 Months" }] }
     ],
     calculate: (inputs) => {
       const principal = Number(inputs.price || 0);
@@ -224,67 +152,45 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const termMonths = Number(inputs.term || 12);
 
       if (apr === 0) {
-        const monthly = principal / termMonths;
         return {
-          monthlyPayment: { value: monthly.toFixed(2), label: "Monthly Payment", unit: "$" },
-          totalPaid: { value: principal.toFixed(2), label: "Total Cost", unit: "$" },
-          totalInterest: { value: "0.00", label: "Total Interest", unit: "$" },
-          effectiveApr: { value: "0.00", label: "Effective APR", unit: "%" }
+          monthlyPayment: { value: (principal / termMonths).toFixed(2), label: "Monthly Payment", unit: "$" },
+          totalPaid: { value: principal.toFixed(2), label: "Total Paid", unit: "$" },
+          totalInterest: { value: "0.00", label: "Total Interest Paid", unit: "$" }
         };
       }
 
-      // Simple interest formula for BNPL or amortized installment loan
       const monthlyRate = (apr / 100) / 12;
       const x = Math.pow(1 + monthlyRate, termMonths);
       const monthlyPayment = (principal * x * monthlyRate) / (x - 1);
       const totalPaid = monthlyPayment * termMonths;
-      const totalInterest = totalPaid - principal;
 
       return {
         monthlyPayment: { value: monthlyPayment.toFixed(2), label: "Monthly Payment", unit: "$" },
-        totalPaid: { value: totalPaid.toFixed(2), label: "Total Cost", unit: "$" },
-        totalInterest: { value: totalInterest.toFixed(2), label: "Total Interest", unit: "$" },
-        effectiveApr: { value: apr.toFixed(2), label: "Stated APR", unit: "%" }
+        totalPaid: { value: totalPaid.toFixed(2), label: "Total Paid", unit: "$" },
+        totalInterest: { value: (totalPaid - principal).toFixed(2), label: "Total Interest Paid", unit: "$" }
       };
     }
   },
+
+  // Financial Pro Rata
   "pro-rata": {
     slug: "pro-rata",
     name: "Pro Rata Calculator",
     category: "financial",
-    categoryLabel: "Financial & Payroll",
+    categoryLabel: "Financial",
     seoTitle: "Pro Rata Rental & Salary Calculator - Precision Splits",
     metaDescription: "Calculate prorated rent or salary instantly. Get exact figures based on active days, calendar days, or daily rates.",
-    keywords: ["pro rata calculator", "prorated rent calculator", "prorate salary", "prorated utility fee"],
+    keywords: ["pro rata calculator", "prorated rent calculator", "prorate salary"],
     hook: "Splits Rent, Invoices & Salaries to the Cent.",
     description: "Determine exact partial payments for moving in mid-month or joining a job mid-cycle.",
     calcTime: "1 min",
-    formula: "Prorated Amount = (Base Monthly Rate ÷ Total Days in Period) × Days Active",
-    formulaDescription: "Divide your standard monthly rent or salary by the number of days in that specific billing month. Multiply by the number of days you actually live in or work to get the prorated total.",
-    example: "Rent is $1,500/month. You move in on June 11. June has 30 days. Daily rate = $1,500 ÷ 30 = $50. Active days = 30 - 11 + 1 = 20 days. Prorated rent = $50 × 20 = $1,000.",
-    faqs: [
-      {
-        question: "How do you calculate prorated rent?",
-        answer: "Identify the monthly rent and the exact month you are proration for. Divide monthly rent by the total days in the month (e.g. 30 in June, 31 in July). Multiply that daily rate by the number of days you will occupy the property."
-      },
-      {
-        question: "Does proration include the move-in day?",
-        answer: "Yes, typically landlord leases count the move-in day as the first full day of tenancy, meaning it is included in the active days count."
-      }
-    ],
-    commonMistakes: [
-      "Assuming every month has 30 days, which leads to discrepancies in 31-day months or February.",
-      "Miscounting active days (forgetting to include both start and end days inclusive)."
-    ],
-    useCases: [
-      "Tenants moving into a flat mid-month.",
-      "HR managers calculating salaries for new employees starting mid-pay period.",
-      "Prorating subscription fees or retainer agreements."
-    ],
-    tips: [
-      "Double-check if your landlord calculates proration based on a flat 30-day month or a standard 365-day year. Confirm in your lease agreement.",
-      "Keep invoice records detailed by documenting the exact days active."
-    ],
+    formula: "Prorated Amount = (Base Rate ÷ Total Days) × Days Active",
+    formulaDescription: "Divides monthly rate by total month days, then multiplies by active occupancy days.",
+    example: "For a monthly rent of $1,200 in a 30-day month, active for 10 days: ($1200 / 30) * 10 = $400.",
+    faqs: [{ question: "What is proration?", answer: "The proportional division of rental or payroll costs based on actual days active." }],
+    commonMistakes: ["Miscounting calendar days in standard months."],
+    useCases: ["Tenancies moving mid-month", "HR salary adjustments"],
+    tips: ["Always verify if the lease specifies a flat 30-day base or actual calendar days."],
     inputs: [
       { id: "amount", label: "Monthly Base Rate ($)", type: "number", defaultValue: 1200, unit: "$" },
       { id: "totalDays", label: "Total Days in Month/Period", type: "number", defaultValue: 30 },
@@ -294,149 +200,78 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const amount = Number(inputs.amount || 0);
       const totalDays = Number(inputs.totalDays || 30);
       const activeDays = Number(inputs.activeDays || 0);
-
-      const dailyRate = totalDays > 0 ? amount / totalDays : 0;
-      const prorated = dailyRate * activeDays;
-
+      const daily = totalDays > 0 ? amount / totalDays : 0;
       return {
-        proratedAmount: { value: prorated.toFixed(2), label: "Prorated Amount", unit: "$" },
-        dailyRate: { value: dailyRate.toFixed(2), label: "Daily Rate Equivalent", unit: "$/day" },
-        daysUnused: { value: (totalDays - activeDays).toString(), label: "Unused Days", unit: "days" }
+        proratedAmount: { value: (daily * activeDays).toFixed(2), label: "Prorated Amount", unit: "$" },
+        dailyRate: { value: daily.toFixed(2), label: "Daily Rate Equivalent", unit: "$/day" }
       };
     }
   },
+
+  // Construction Roof
   roof: {
     slug: "roof",
     name: "Roof Calculator",
     category: "construction",
-    categoryLabel: "Construction & Roofing",
+    categoryLabel: "Construction",
     seoTitle: "Roof Area & Shingle Calculator - Pitch and Slope Estimator",
     metaDescription: "Estimate roof surface area, shingle bundle counts, and pitch multipliers. Input building footprint and roof pitch for accurate contractor layouts.",
-    keywords: ["roof calculator", "roof area calculator", "shingles calculator", "roof pitch multiplier"],
+    keywords: ["roof calculator", "roof area calculator", "shingles calculator"],
     hook: "Estimate Roof Area & Shingle Bundles in Seconds.",
     description: "Input house length, width, overhangs, and pitch slope to estimate roof area and material requirements.",
     calcTime: "2 mins",
-    formula: "Roof Area = Ground Area × Pitch Multiplier",
-    formulaDescription: "Ground Area includes the house footprint plus overhangs. Multiply the total ground area by the pitch slope factor (secant of slope angle) to find the sloped roof area.",
-    example: "A building is 30 ft by 40 ft with a 1 ft overhang all around (total ground footprint = 32 × 42 = 1,344 sq ft). Pitch is 6/12 (factor = 1.118). Roof Area = 1,344 × 1.118 = 1,502 sq ft.",
-    faqs: [
-      {
-        question: "How many shingle bundles do I need per square?",
-        answer: "A 'square' in roofing equals 100 square feet. It generally takes exactly 3 bundles of standard architectural shingles to cover 1 square."
-      },
-      {
-        question: "What is a roof pitch?",
-        answer: "Roof pitch is the steepness of a roof expressed as rise over run. A 6/12 pitch means the roof rises 6 inches vertically for every 12 inches of horizontal run."
-      }
-    ],
-    commonMistakes: [
-      "Forgetting to include roof overhangs (eaves) in the length and width dimensions.",
-      "Underestimating waste factors (contractors recommend adding 10% for basic roofs, 15% for complex hips/valleys)."
-    ],
-    useCases: [
-      "Estimating shingles, underlayment, and drip edges for DIY roofs.",
-      "Validating contractor quotes for roofing replacements.",
-      "Determining roof pitch angles for solar panel installations."
-    ],
-    tips: [
-      "For complex roofs with valleys, dormers, and ridges, add a minimum 15% waste allowance to cover shingles cut-offs.",
-      "Confirm local building codes regarding maximum layers of shingles allowed before a complete tear-off is mandatory."
-    ],
+    formula: "Roof Area = Ground Footprint Area × Pitch Factor",
+    formulaDescription: "Multiplies flat footprint area (including overhangs) by the slope hypotenuse factor.",
+    example: "Footprint of 1,000 sq ft under 6/12 pitch (factor 1.118) yields a roof area of 1,118 sq ft.",
+    faqs: [{ question: "How many shingle bundles cover a square?", answer: "There are 3 shingle bundles in 1 roofing square (100 sq ft)." }],
+    commonMistakes: ["Forgetting to account for eave overhangs."],
+    useCases: ["Estimating roofing material ordering", "Checking contractor bids"],
+    tips: ["Add 10% shingles waste for gable roofs, and 15% for hip roofs."],
     inputs: [
       { id: "length", label: "House Footprint Length (ft)", type: "number", defaultValue: 40, unit: "ft" },
       { id: "width", label: "House Footprint Width (ft)", type: "number", defaultValue: 30, unit: "ft" },
       { id: "overhang", label: "Eave / Overhang (ft)", type: "number", defaultValue: 1, unit: "ft" },
-      { id: "pitch", label: "Roof Pitch (Rise / 12)", type: "select", defaultValue: "6", options: [
-        { value: "3", label: "3/12 (Low Slope - 1.031)" },
-        { value: "4", label: "4/12 (1.054)" },
-        { value: "5", label: "5/12 (1.083)" },
-        { value: "6", label: "6/12 (Medium - 1.118)" },
-        { value: "7", label: "7/12 (1.158)" },
-        { value: "8", label: "8/12 (1.202)" },
-        { value: "9", label: "9/12 (Steep - 1.250)" },
-        { value: "10", label: "10/12 (1.302)" },
-        { value: "12", label: "12/12 (Stiff - 1.414)" }
-      ]}
+      { id: "pitch", label: "Roof Pitch (Rise / 12)", type: "select", defaultValue: "6", options: [{ value: "3", label: "3/12 (Factor 1.03)" }, { value: "4", label: "4/12 (Factor 1.05)" }, { value: "6", label: "6/12 (Factor 1.118)" }, { value: "8", label: "8/12 (Factor 1.20)" }, { value: "12", label: "12/12 (Factor 1.414)" }] }
     ],
     calculate: (inputs) => {
       const length = Number(inputs.length || 0);
       const width = Number(inputs.width || 0);
       const overhang = Number(inputs.overhang || 0);
-      const pitchValue = Number(inputs.pitch || 6);
+      const pitch = Number(inputs.pitch || 6);
 
-      // Pitch factors (hypotenuse of 12 and rise)
-      const pitchFactors: Record<number, number> = {
-        3: 1.0308,
-        4: 1.0541,
-        5: 1.0833,
-        6: 1.1180,
-        7: 1.1577,
-        8: 1.2019,
-        9: 1.2500,
-        10: 1.3017,
-        12: 1.4142
-      };
-
-      const factor = pitchFactors[pitchValue] || 1.118;
-      
-      // Calculate footprint including overhangs
-      const totalLength = length + (overhang * 2);
-      const totalWidth = width + (overhang * 2);
-      const groundArea = totalLength * totalWidth;
-      
-      const roofArea = groundArea * factor;
-      const squares = roofArea / 100;
-      
-      // Material estimation
-      const shingleBundles = Math.ceil(squares * 3); // 3 bundles per square
-      const wasteFactor = 1.10; // 10% standard waste
-      const shingleBundlesWithWaste = Math.ceil(squares * 3 * wasteFactor);
+      const pitchFactors: Record<number, number> = { 3: 1.0308, 4: 1.0541, 6: 1.1180, 8: 1.2019, 12: 1.4142 };
+      const factor = pitchFactors[pitch] || 1.118;
+      const gArea = (length + overhang * 2) * (width + overhang * 2);
+      const rArea = gArea * factor;
+      const squares = rArea / 100;
 
       return {
-        roofArea: { value: roofArea.toFixed(0), label: "Estimated Roof Area", unit: "sq ft" },
-        squaresCount: { value: squares.toFixed(2), label: "Roofing Squares", unit: "sqs (100 sq ft)" },
-        bundlesBase: { value: shingleBundles, label: "Net Shingle Bundles", unit: "bundles" },
-        bundlesWithWaste: { value: shingleBundlesWithWaste, label: "Total Bundles (incl. 10% waste)", unit: "bundles" }
+        roofArea: { value: rArea.toFixed(0), label: "Estimated Roof Area", unit: "sq ft" },
+        squares: { value: squares.toFixed(2), label: "Roof Squares (100 sq ft)", unit: "sqs" },
+        bundlesNeeded: { value: Math.ceil(squares * 3 * 1.10), label: "Total Bundles (incl. 10% waste)", unit: "bundles" }
       };
     }
   },
+
+  // Construction Concrete
   concrete: {
     slug: "concrete",
     name: "Concrete Calculator",
     category: "construction",
-    categoryLabel: "Construction & Masonry",
+    categoryLabel: "Construction",
     seoTitle: "Concrete Slab & Volume Calculator - Cubic Yards Finder",
     metaDescription: "Calculate concrete volume in cubic yards or bags for slabs, walkways, columns, and foundations. Add waste buffer for precise masonry orders.",
-    keywords: ["concrete calculator", "concrete slab calculator", "concrete bags calculator", "cubic yard concrete", "masonry calculator"],
+    keywords: ["concrete calculator", "concrete slab calculator", "concrete bags calculator"],
     hook: "Calculate Concrete Yards & Bag Counts Instantly.",
     description: "Enter flat rectangular slabs or circular piers to find the volume of concrete mix needed for construction.",
     calcTime: "2 mins",
-    formula: "Volume (cu yd) = [Length (ft) × Width (ft) × (Thickness (in) ÷ 12)] ÷ 27",
-    formulaDescription: "Compute the volume of your slab in cubic feet by multiplying length by width by thickness (in feet). Divide by 27 to convert the volume to cubic yards.",
-    example: "For a slab 10 feet long, 10 feet wide, and 4 inches thick: volume is 10 × 10 × 0.333 = 33.33 cubic feet. In cubic yards: 33.33 ÷ 27 = 1.23 cubic yards.",
-    faqs: [
-      {
-        question: "How thick should a concrete patio slab be?",
-        answer: "A standard residential walkway or patio concrete slab is typically 4 inches thick. A driveway slab should be a minimum of 5 to 6 inches thick to support heavy vehicle weights."
-      },
-      {
-        question: "How many cubic yards are in a standard concrete truck?",
-        answer: "A full-sized concrete delivery truck (ready-mix truck) typically carries between 9 and 11 cubic yards of wet concrete mix."
-      }
-    ],
-    commonMistakes: [
-      "Ordering the exact theoretical calculation; ground slopes, form flexing, and spills always require a 10% safety margin.",
-      "Mixing up units (e.g. thickness in inches vs length/width in feet)."
-    ],
-    useCases: [
-      "Pouring driveways, sidewalks, and patios.",
-      "Setting fence post anchors using dry pre-mixed bags.",
-      "Estimating foundation foundations for garden sheds."
-    ],
-    tips: [
-      "Always round up concrete orders; if you run short, ordering a secondary short-load delivery is extremely expensive.",
-      "Sprinkle the subgrade with water before pouring so the soil doesn't sap moisture from the wet concrete mixture."
-    ],
+    formula: "Volume (cu yd) = [Length (ft) × Width (ft) × Thickness (ft)] ÷ 27",
+    formulaDescription: "Finds cubic volume of a rectangular prism, then divides by 27 to find cubic yards.",
+    example: "A slab 12ft × 12ft at 4 inches thick needs 1.78 cubic yards.",
+    faqs: [{ question: "How thick should a driveway slab be?", answer: "Driveways require a minimum thickness of 5 to 6 inches of concrete." }],
+    commonMistakes: ["Not adding a 10% ordering margin to cover spills and form deflection."],
+    useCases: ["Sidewalks, patios, driveways", "Setting fence posts"],
+    tips: ["Dampen the subgrade before pouring to avoid drawing water from the mix."],
     inputs: [
       { id: "length", label: "Length of Slab (ft)", type: "number", defaultValue: 12, unit: "ft" },
       { id: "width", label: "Width of Slab (ft)", type: "number", defaultValue: 12, unit: "ft" },
@@ -447,63 +282,36 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const width = Number(inputs.width || 0);
       const thickness = Number(inputs.thickness || 4);
 
-      const thicknessFt = thickness / 12;
-      const volumeFt3 = length * width * thicknessFt;
-      const volumeYd3 = volumeFt3 / 27;
-
-      // Bags calculation (standard 80 lb bag yields 0.6 cu ft, 60 lb yields 0.45 cu ft)
-      const bags80 = volumeFt3 / 0.6;
-      const bags60 = volumeFt3 / 0.45;
-
-      // 10% waste buffer
-      const volumeYd3WithWaste = volumeYd3 * 1.10;
+      const volFt3 = length * width * (thickness / 12);
+      const volYd3 = volFt3 / 27;
 
       return {
-        cubicYards: { value: volumeYd3.toFixed(2), label: "Cubic Yards Needed", unit: "yd³" },
-        cubicYardsWaste: { value: volumeYd3WithWaste.toFixed(2), label: "Cubic Yards (+10% waste buffer)", unit: "yd³" },
-        cubicFeet: { value: volumeFt3.toFixed(1), label: "Cubic Feet Needed", unit: "ft³" },
-        bags80lb: { value: Math.ceil(bags80), label: "80 lb pre-mix bags", unit: "bags" },
-        bags60lb: { value: Math.ceil(bags60), label: "60 lb pre-mix bags", unit: "bags" }
+        cubicYards: { value: volYd3.toFixed(2), label: "Cubic Yards Needed", unit: "yd³" },
+        cubicYardsWaste: { value: (volYd3 * 1.10).toFixed(2), label: "Total Yards (+10% waste buffer)", unit: "yd³" },
+        bags80lb: { value: Math.ceil(volFt3 / 0.6), label: "80 lb pre-mix bags", unit: "bags" }
       };
     }
   },
+
+  // Health BMI
   bmi: {
     slug: "bmi",
     name: "BMI Calculator",
     category: "health",
-    categoryLabel: "Health & Fitness",
+    categoryLabel: "Health",
     seoTitle: "BMI Calculator - Body Mass Index Health Score",
     metaDescription: "Calculate your Body Mass Index (BMI) instantly. Find your weight status category (underweight, normal weight, overweight, or obese) with official ranges.",
-    keywords: ["bmi calculator", "body mass index calculator", "healthy weight calculator", "bmi score"],
+    keywords: ["bmi calculator", "body mass index calculator", "healthy weight calculator"],
     hook: "Calculate Your Body Mass Index & Health Category Instantly.",
-    description: "Enter your height and weight to assess your body composition based on World Health Organization standards.",
+    description: "Enter height and weight to assess your body composition based on World Health Organization standards.",
     calcTime: "1 min",
-    formula: "BMI = Weight (kg) ÷ [Height (m)]²  OR  [Weight (lbs) ÷ Height (in)²] × 703",
-    formulaDescription: "Divide your weight in kilograms by your height in meters squared. For imperial measurements, divide weight in pounds by height in inches squared, and multiply by 703.",
-    example: "A person weighing 160 lbs who is 5 ft 10 in (70 inches) tall: [160 ÷ (70)²] × 703 = [160 ÷ 4900] × 703 = 0.03265 × 703 = 22.95 (Normal weight).",
-    faqs: [
-      {
-        question: "What is a healthy BMI range?",
-        answer: "For adults, a healthy BMI score falls between 18.5 and 24.9. A score below 18.5 indicates underweight, 25 to 29.9 is overweight, and 30 or above indicates obesity."
-      },
-      {
-        question: "Is BMI accurate for athletes?",
-        answer: "BMI does not distinguish between body fat and lean muscle mass. Muscle is denser than fat, so highly muscular athletes can have an 'overweight' or 'obese' BMI despite having low body fat levels."
-      }
-    ],
-    commonMistakes: [
-      "Relying solely on BMI to determine overall cardiovascular or physical health (which ignores fat distribution, waist circumference, and muscle density).",
-      "Using standard adult BMI scales for children, who require specialized percentiles matching age and biological sex."
-    ],
-    useCases: [
-      "Monitoring overall fitness and composition progress.",
-      "General health screens for weight-related risks.",
-      "Establishing weight loss or gain baseline targets."
-    ],
-    tips: [
-      "Combine BMI calculations with waist circumference measurements to get a better indication of visceral abdominal fat.",
-      "Focus on healthy eating and activity habits rather than obsessing over a single BMI value."
-    ],
+    formula: "BMI = [Weight (lbs) ÷ Height (in)²] × 703",
+    formulaDescription: "Computes the standard weight-to-height ratio index.",
+    example: "Height 5ft 8in, weight 160 lbs yields a BMI score of 24.3 (Normal).",
+    faqs: [{ question: "What is a normal BMI score?", answer: "A healthy adult score is between 18.5 and 24.9." }],
+    commonMistakes: ["Relying on BMI when having high muscle density (muscle weighs more than fat)."],
+    useCases: ["Weight screening", "Fitness baseline setup"],
+    tips: ["Combine with waist circumference measurements for better body profile assessments."],
     inputs: [
       { id: "weight", label: "Weight (lbs)", type: "number", defaultValue: 160, unit: "lbs" },
       { id: "heightFt", label: "Height (Feet)", type: "number", defaultValue: 5, unit: "ft" },
@@ -514,31 +322,625 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const heightFt = Number(inputs.heightFt || 5);
       const heightIn = Number(inputs.heightIn || 8);
 
-      const totalHeightInches = (heightFt * 12) + heightIn;
+      const heightInches = (heightFt * 12) + heightIn;
+      if (heightInches === 0) return { bmi: { value: 0, label: "BMI" }, category: { value: "N/A", label: "Category" } };
+      const bmi = (weight / Math.pow(heightInches, 2)) * 703;
 
-      if (totalHeightInches === 0) {
-        return {
-          bmi: { value: "0.0", label: "BMI Score", unit: "" },
-          category: { value: "N/A", label: "Weight Category", unit: "" }
-        };
-      }
-
-      const bmi = (weight / Math.pow(totalHeightInches, 2)) * 703;
-      let category = "";
-
-      if (bmi < 18.5) {
-        category = "Underweight (< 18.5)";
-      } else if (bmi >= 18.5 && bmi < 25) {
-        category = "Normal Weight (18.5 - 24.9)";
-      } else if (bmi >= 25 && bmi < 30) {
-        category = "Overweight (25 - 29.9)";
-      } else {
-        category = "Obese (≥ 30)";
-      }
+      let cat = "Obese (≥ 30)";
+      if (bmi < 18.5) cat = "Underweight (< 18.5)";
+      else if (bmi < 25) cat = "Normal Weight (18.5 - 24.9)";
+      else if (bmi < 30) cat = "Overweight (25 - 29.9)";
 
       return {
         bmi: { value: bmi.toFixed(2), label: "BMI Score", unit: "" },
-        category: { value: category, label: "Weight Category", unit: "" }
+        category: { value: cat, label: "Weight Category", unit: "" }
+      };
+    }
+  },
+
+  // 1. HECM
+  hecm: {
+    slug: "hecm",
+    name: "HECM Reverse Mortgage Calculator",
+    category: "financial",
+    categoryLabel: "Financial",
+    seoTitle: "HECM Calculator - Reverse Mortgage Payout Estimator",
+    metaDescription: "Calculate Home Equity Conversion Mortgage (HECM) borrow limits. Estimate payouts based on home value, age, and mortgage balances.",
+    keywords: ["hecm calculator", "reverse mortgage calculator", "hud limit estimator"],
+    hook: "Estimate Your Reverse Mortgage Borrowing Limit.",
+    description: "Model FHA HECM proceeds based on age thresholds and appraisal valuation.",
+    calcTime: "2 mins",
+    formula: "Proceeds = Home Appraisal Value × Principal Limit Factor (PLF)",
+    formulaDescription: "HUD defines the PLF based on the age of the youngest borrower and current interest rates.",
+    example: "A 70-year-old with a $400,000 home and 3.5% rate has an estimated proceeds limit of $220,000.",
+    faqs: [{ question: "What is HECM?", answer: "HECM is a Home Equity Conversion Mortgage, the official HUD reverse mortgage." }],
+    commonMistakes: ["Assuming you get 100% of the home value (it is capped at HUD limit factors)."],
+    useCases: ["Retirement equity modeling", "Refinancing senior mortgages"],
+    tips: ["Proceeds first pay off any existing home mortgages before cash payouts."],
+    inputs: [
+      { id: "value", label: "Home Appraisal Value ($)", type: "number", defaultValue: 350000, unit: "$" },
+      { id: "age", label: "Age of Youngest Borrower", type: "number", defaultValue: 68 },
+      { id: "balance", label: "Existing Mortgage Balance ($)", type: "number", defaultValue: 50000, unit: "$" }
+    ],
+    calculate: (inputs) => {
+      const val = Number(inputs.value || 0);
+      const age = Number(inputs.age || 62);
+      const bal = Number(inputs.balance || 0);
+
+      // Rough PLF calculation
+      let plf = 0.35;
+      if (age >= 62 && age < 70) plf = 0.45;
+      else if (age >= 70 && age < 80) plf = 0.52;
+      else if (age >= 80) plf = 0.60;
+
+      const limit = val * plf;
+      const net = Math.max(0, limit - bal);
+
+      return {
+        grossProceeds: { value: limit.toFixed(2), label: "HUD Borrowing Limit", unit: "$" },
+        netProceeds: { value: net.toFixed(2), label: "Net Cash Payout (After payoff)", unit: "$" }
+      };
+    }
+  },
+
+  // 2. HELOC Payoff
+  "heloc-payoff": {
+    slug: "heloc-payoff",
+    name: "HELOC Payoff Calculator",
+    category: "financial",
+    categoryLabel: "Financial",
+    seoTitle: "HELOC Payoff Calculator - Principal & Interest Planner",
+    metaDescription: "Calculate Home Equity Line of Credit (HELOC) payment changes. Plan principal repayment timelines to avoid balloon payments.",
+    keywords: ["heloc payoff calculator", "heloc interest calculator", "home equity line payoff"],
+    hook: "Map Your HELOC Repayment & Payoff Milestones.",
+    description: "Determine interest-only payments during draw periods and subsequent fully amortizing rates.",
+    calcTime: "2 mins",
+    formula: "P&I Payment = P × [r(1+r)^n] ÷ [(1+r)^n - 1]",
+    formulaDescription: "Standard amortization formula applied to the HELOC balance at the start of the repayment period.",
+    example: "A $50,000 HELOC at 7% APR over a 20-year repayment term requires $387.65/month.",
+    faqs: [{ question: "What is draw period?", answer: "The initial 5-10 year period where you draw funds and pay only interest." }],
+    commonMistakes: ["Failing to prepare for the payment shock when the draw period ends and principal payments begin."],
+    useCases: ["Refinancing lines of credit", "Retiring credit debt"],
+    tips: ["Make extra principal payments during the draw period to reduce the eventual shock."],
+    inputs: [
+      { id: "balance", label: "Current HELOC Balance ($)", type: "number", defaultValue: 40000, unit: "$" },
+      { id: "rate", label: "Interest Rate (APR %)", type: "number", defaultValue: 8.5, unit: "%" },
+      { id: "repayYears", label: "Repayment Term (Years)", type: "number", defaultValue: 15 }
+    ],
+    calculate: (inputs) => {
+      const bal = Number(inputs.balance || 0);
+      const rate = Number(inputs.rate || 0);
+      const yrs = Number(inputs.repayYears || 15);
+
+      const r = (rate / 100) / 12;
+      const n = yrs * 12;
+      const drawInterestOnly = bal * r;
+
+      let repayPayment = 0;
+      if (r > 0 && n > 0) {
+        repayPayment = (bal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      }
+
+      return {
+        drawPayment: { value: drawInterestOnly.toFixed(2), label: "Draw Period Payment (Interest Only)", unit: "$" },
+        repaymentPayment: { value: repayPayment.toFixed(2), label: "Repayment Period Payment (P&I)", unit: "$" }
+      };
+    }
+  },
+
+  // 3. Balance Transfer
+  "balance-transfer": {
+    slug: "balance-transfer",
+    name: "Balance Transfer Calculator",
+    category: "financial",
+    categoryLabel: "Financial",
+    seoTitle: "Balance Transfer Calculator - Credit Card Savings Finder",
+    metaDescription: "Calculate interest savings and transaction fee breaks for card transfers. Find if a 0% APR deal is worth the up-front fee.",
+    keywords: ["balance transfer calculator", "credit card transfer savings", "debt transfer fees"],
+    hook: "Find Savings on Credit Card Debt Consolidation.",
+    description: "Compare your current credit card interest with 0% APR promotional transfer options.",
+    calcTime: "2 mins",
+    formula: "Net Savings = Current Interest Saved - Upfront Transfer Fee",
+    formulaDescription: "Subtracts the upfront balance transfer fee (usually 3% to 5%) from the interest saved during the promo term.",
+    example: "Transferring $5,000 from a 20% APR card to 0% for 12 months with a 3% fee saves over $850.",
+    faqs: [{ question: "Is a balance transfer worth it?", answer: "Yes, if the interest saved exceeds the upfront transfer fee." }],
+    commonMistakes: ["Not paying off the transferred balance before the 0% APR promo period expires."],
+    useCases: ["Credit card debt paydown", "Interest rate savings"],
+    tips: ["Set monthly targets to divide the balance by the promo months for complete payoff."],
+    inputs: [
+      { id: "balance", label: "Total Debt to Transfer ($)", type: "number", defaultValue: 5000, unit: "$" },
+      { id: "currentApr", label: "Current Card APR (%)", type: "number", defaultValue: 22, unit: "%" },
+      { id: "promoMonths", label: "Promo Period (Months)", type: "number", defaultValue: 15 },
+      { id: "feePct", label: "Transfer Fee (%)", type: "number", defaultValue: 3, unit: "%" }
+    ],
+    calculate: (inputs) => {
+      const bal = Number(inputs.balance || 0);
+      const curApr = Number(inputs.currentApr || 0);
+      const months = Number(inputs.promoMonths || 12);
+      const feePct = Number(inputs.feePct || 3);
+
+      const fee = bal * (feePct / 100);
+      const monthlyRate = (curApr / 100) / 12;
+
+      // Rough monthly interest savings estimation
+      let totalInterestSaved = 0;
+      let remaining = bal;
+      const monthlyPay = bal / months;
+      for (let i = 0; i < months; i++) {
+        totalInterestSaved += remaining * monthlyRate;
+        remaining -= monthlyPay;
+      }
+
+      const netSavings = totalInterestSaved - fee;
+
+      return {
+        transferFee: { value: fee.toFixed(2), label: "Upfront Transfer Fee", unit: "$" },
+        interestSaved: { value: totalInterestSaved.toFixed(2), label: "Total Interest Saved", unit: "$" },
+        netSavings: { value: netSavings.toFixed(2), label: "Net Interest Savings", unit: "$" }
+      };
+    }
+  },
+
+  // 4. Square Fee
+  "square-fee": {
+    slug: "square-fee",
+    name: "Square Fee Calculator",
+    category: "financial",
+    categoryLabel: "Financial",
+    seoTitle: "Square Fee Calculator - Credit Card Processing Charges",
+    metaDescription: "Calculate Square card reader processing fees. Find how much you must invoice to receive your exact target amount.",
+    keywords: ["square fee calculator", "square merchant fee", "credit card fee estimator"],
+    hook: "Calculate Card Processing Fees & Target Invoices.",
+    description: "Determine Square merchant cuts for tapped, keyed, and online payments.",
+    calcTime: "1 min",
+    formula: "Invoice Amount = (Desired Net + Fixed Fee) ÷ (1 - Fee %)",
+    formulaDescription: "Finds total billing needed to yield the desired net amount after deduction.",
+    example: "To receive exactly $100 via online invoicing (2.9% + $0.30), you must invoice $103.30.",
+    faqs: [{ question: "What is Square standard fee?", answer: "Standard tapped rates are 2.6% + 10¢, and online invoice rates are 2.9% + 30¢." }],
+    commonMistakes: ["Multiplying desired net by 1.029, which leaves you short because fees deduct from the gross total."],
+    useCases: ["Freelancer client invoicing", "Small business sales pricing"],
+    tips: ["Some jurisdictions allow charging customers processing surcharges directly. Check local rules."],
+    inputs: [
+      { id: "amount", label: "Transaction Amount ($)", type: "number", defaultValue: 100, unit: "$" },
+      {
+        id: "feeType", label: "Payment Method / Rate", type: "select", defaultValue: "online", options: [
+          { value: "swipe", label: "Tapped/Swiped (2.6% + $0.10)" },
+          { value: "online", label: "Online Invoice / Store (2.9% + $0.30)" },
+          { value: "keyed", label: "Keyed-in Manually (3.5% + $0.15)" }
+        ]
+      }
+    ],
+    calculate: (inputs) => {
+      const amt = Number(inputs.amount || 0);
+      const type = inputs.feeType || "online";
+
+      let rate = 0.029;
+      let fixed = 0.30;
+      if (type === "swipe") { rate = 0.026; fixed = 0.10; }
+      else if (type === "keyed") { rate = 0.035; fixed = 0.15; }
+
+      const squareCut = (amt * rate) + fixed;
+      const net = amt - squareCut;
+      const chargeToKeepAmt = (amt + fixed) / (1 - rate);
+
+      return {
+        squareFee: { value: squareCut.toFixed(2), label: "Square Transaction Fee", unit: "$" },
+        netPayout: { value: net.toFixed(2), label: "Net Cash Payout Received", unit: "$" },
+        billingRequired: { value: chargeToKeepAmt.toFixed(2), label: "Invoice Total to Receive Exact Amount", unit: "$" }
+      };
+    }
+  },
+
+  // 5. Avalara Sales Tax
+  "avalara-sales-tax": {
+    slug: "avalara-sales-tax",
+    name: "Avalara Sales Tax Calculator",
+    category: "tax",
+    categoryLabel: "Tax & Payroll",
+    seoTitle: "Avalara Sales Tax Calculator - State Transaction Rates",
+    metaDescription: "Estimate checkout sales taxes using standard state tax brackets. Calculate total sales prices instantly.",
+    keywords: ["avalara sales tax", "sales tax calculator", "state tax rate search"],
+    hook: "Calculate Checkout Sales Tax Rates.",
+    description: "Determine sales tax amounts and gross totals based on base prices and state percentages.",
+    calcTime: "1 min",
+    formula: "Sales Tax = Base Price × State Tax Rate",
+    formulaDescription: "Multiplies base price by state rate to find the checkout tax collection requirement.",
+    example: "A $50 transaction in a state with 6.25% sales tax incurs $3.13 tax.",
+    faqs: [{ question: "Is sales tax national?", answer: "No, sales taxes are governed at the state, county, and municipal level." }],
+    commonMistakes: ["Not adding local county or city surcharges to the base state sales tax rate."],
+    useCases: ["E-commerce tax estimation", "Invoicing corporate clients"],
+    tips: ["Confirm destination state nexus rules when shipping physical packages across state lines."],
+    inputs: [
+      { id: "price", label: "Product Base Price ($)", type: "number", defaultValue: 100, unit: "$" },
+      { id: "stateRate", label: "Combined Tax Rate (%)", type: "number", defaultValue: 6.25, unit: "%" }
+    ],
+    calculate: (inputs) => {
+      const price = Number(inputs.price || 0);
+      const rate = Number(inputs.stateRate || 6.25);
+
+      const tax = price * (rate / 100);
+      const total = price + tax;
+
+      return {
+        salesTax: { value: tax.toFixed(2), label: "Sales Tax Amount", unit: "$" },
+        grossTotal: { value: total.toFixed(2), label: "Gross Total (incl. tax)", unit: "$" }
+      };
+    }
+  },
+
+  // 6. Gross Up
+  "gross-up": {
+    slug: "gross-up",
+    name: "Gross Up Calculator",
+    category: "tax",
+    categoryLabel: "Tax & Payroll",
+    seoTitle: "Gross Up Calculator - Payroll Wage Deductions Estimator",
+    metaDescription: "Calculate gross payroll earnings needed to achieve an exact target net paycheck amount. Accounts for federal, FICA, and state tax adjustments.",
+    keywords: ["gross up calculator", "payroll gross up", "net check converter"],
+    hook: "Determine Gross Wages Needed for Target Bonuses.",
+    description: "Work backward from a target net paycheck to figure out total gross wages before tax withholding.",
+    calcTime: "1 min",
+    formula: "Gross Pay = Net Pay ÷ (1 - Combined Tax Rates)",
+    formulaDescription: "Identifies gross wages needed by working backward through tax brackets.",
+    example: "To give a clean $1,000 bonus with 22% federal and 7.65% FICA rates: Gross = $1,000 / (1 - 0.2965) = $1,421.46.",
+    faqs: [{ question: "What is grossing up?", answer: "Adding additional wage buffer to payouts to cover tax deductions, ensuring exact net pay." }],
+    commonMistakes: ["Failing to include state income tax rates in the combined tax divisor."],
+    useCases: ["Paying staff bonuses", "Executive relocation allowances"],
+    tips: ["Review federal supplemental bonus flat rates (currently 22%) for accurate calculations."],
+    inputs: [
+      { id: "netTarget", label: "Target Net Paycheck / Bonus ($)", type: "number", defaultValue: 1000, unit: "$" },
+      { id: "taxRate", label: "Estimated Total Tax Tax Rate (%)", type: "number", defaultValue: 29.65, unit: "%" }
+    ],
+    calculate: (inputs) => {
+      const target = Number(inputs.netTarget || 0);
+      const ratePct = Number(inputs.taxRate || 29.65);
+
+      const gross = target / (1 - (ratePct / 100));
+      const deductionTotal = gross - target;
+
+      return {
+        grossWages: { value: gross.toFixed(2), label: "Required Gross Wages", unit: "$" },
+        withholdingTotal: { value: deductionTotal.toFixed(2), label: "Total Tax Withholding Offset", unit: "$" }
+      };
+    }
+  },
+
+  // 7. Reverse Tax
+  "reverse-tax": {
+    slug: "reverse-tax",
+    name: "Reverse Tax Calculator",
+    category: "tax",
+    categoryLabel: "Tax & Payroll",
+    seoTitle: "Reverse Tax Calculator - Extract Base Price & Sales Tax",
+    metaDescription: "Extract the original base price and tax portions from any retail gross total invoice. Instant breakdowns by rate.",
+    keywords: ["reverse tax calculator", "extract sales tax", "vat deduction finder"],
+    hook: "Extract Sales Tax & Base Price from Receipt Totals.",
+    description: "Input receipt totals to find exactly how much was tax and how much was the product base cost.",
+    calcTime: "1 min",
+    formula: "Base Price = Gross Total ÷ (1 + Tax Rate)",
+    formulaDescription: "Extracts tax by separating the base pricing coefficient from the gross sales total.",
+    example: "For a gross total of $106.00 and 6.0% tax rate, Base = $106.00 / 1.06 = $100. Tax = $6.00.",
+    faqs: [{ question: "How is reverse tax useful?", answer: "Useful for checking tax write-offs on business receipts that do not itemize tax." }],
+    commonMistakes: ["Multiplying gross total by the tax rate, which overestimates tax paid."],
+    useCases: ["Business expense tracking", "Receipt accounting audits"],
+    tips: ["Always double-check local sales tax rates as municipal surcharges are sometimes not detailed on billing receipts."],
+    inputs: [
+      { id: "total", label: "Receipt / Invoice Gross Total ($)", type: "number", defaultValue: 106, unit: "$" },
+      { id: "rate", label: "Tax Rate (%)", type: "number", defaultValue: 6, unit: "%" }
+    ],
+    calculate: (inputs) => {
+      const gross = Number(inputs.total || 0);
+      const rate = Number(inputs.rate || 6);
+
+      const base = gross / (1 + (rate / 100));
+      const tax = gross - base;
+
+      return {
+        baseCost: { value: base.toFixed(2), label: "Base Cost (Pre-Tax)", unit: "$" },
+        taxPaid: { value: tax.toFixed(2), label: "Sales Tax Portion Paid", unit: "$" }
+      };
+    }
+  },
+
+  // 8. Georgia Payroll
+  "georgia-payroll": {
+    slug: "georgia-payroll",
+    name: "Georgia Payroll Calculator",
+    category: "tax",
+    categoryLabel: "Tax & Payroll",
+    seoTitle: "Georgia Payroll Calculator - Net Paycheck Estimator",
+    metaDescription: "Calculate Georgia state payroll tax withholdings and net check sizes. Accounts for GA state brackets, federal deductions, and FICA.",
+    keywords: ["georgia payroll calculator", "ga paycheck calculator", "state payroll estimator"],
+    hook: "Estimate Georgia State Paychecks & Deductions.",
+    description: "Determine GA withholding, federal income tax, social security, and final check payouts.",
+    calcTime: "2 mins",
+    formula: "Net Pay = Gross Pay - Federal Withholding - FICA - GA State Tax",
+    formulaDescription: "Subtracts federal, FICA (7.65%), and Georgia flat state tax deductions from hourly or salary rates.",
+    example: "Gross pay of $1,000 pays approximately $782 net after standard tax adjustments.",
+    faqs: [{ question: "What is Georgia tax rate?", answer: "Georgia uses a flat personal income tax rate of 5.39% starting in 2024." }],
+    commonMistakes: ["Forgetting pre-tax retirement or health deductions which lower the tax liability."],
+    useCases: ["Estimating job offer takes", "Hourly wage planning"],
+    tips: ["Adjust withholding exemptions on state Form G-4 to change net pay paycheck results."],
+    inputs: [
+      { id: "gross", label: "Gross Pay per Period ($)", type: "number", defaultValue: 1500, unit: "$" },
+      { id: "fedRate", label: "Est. Federal Tax Rate (%)", type: "number", defaultValue: 12, unit: "%" },
+      { id: "exemptions", label: "GA G-4 Allowances", type: "number", defaultValue: 1 }
+    ],
+    calculate: (inputs) => {
+      const gross = Number(inputs.gross || 0);
+      const fed = Number(inputs.fedRate || 12);
+      const GA_RATE = 0.0539; // standard flat rate
+
+      const fica = gross * 0.0765;
+      const fedTax = gross * (fed / 100);
+      const stateTax = gross * GA_RATE;
+      const net = gross - fica - fedTax - stateTax;
+
+      return {
+        netCheck: { value: net.toFixed(2), label: "Estimated Net Paycheck", unit: "$" },
+        ficaTax: { value: fica.toFixed(2), label: "FICA (Social Security & Medicare)", unit: "$" },
+        gaStateTax: { value: stateTax.toFixed(2), label: "Georgia State Income Tax", unit: "$" }
+      };
+    }
+  },
+
+  // 9. Mulch
+  mulch: {
+    slug: "mulch",
+    name: "Mulch Calculator",
+    category: "construction",
+    categoryLabel: "Construction",
+    seoTitle: "Mulch Calculator - Estimate Cubic Yards & Landscape Soil",
+    metaDescription: "Calculate yard mulch volumes in cubic yards and standard bags. Input bed dimensions to plan landscape yard details.",
+    keywords: ["mulch calculator", "mulch estimator", "landscaping mulch yards"],
+    hook: "Calculate Mulch Volume & Bag Counts for Flower Beds.",
+    description: "Determine cubic yards of mulch and bag packages for plant beds and ground covers.",
+    calcTime: "1 min",
+    formula: "Volume (cu yd) = [Length (ft) × Width (ft) × Depth (in)] ÷ 324",
+    formulaDescription: "Calculates total cubic yards based on square footage and depth requirements.",
+    example: "A bed 40 ft × 5 ft at 3 inches deep requires 1.85 cubic yards of bark mulch.",
+    faqs: [{ question: "How deep should mulch be spread?", answer: "Generally, 2 to 3 inches is recommended to block weeds and retain moisture." }],
+    commonMistakes: ["Spreading mulch too deep, which can suffocate plant root systems."],
+    useCases: ["Sod bed layout planning", "Spring landscape prep"],
+    tips: ["A cubic yard equals exactly 13.5 bags of 2.0 cubic foot mulch."],
+    inputs: [
+      { id: "length", label: "Bed Length (ft)", type: "number", defaultValue: 30, unit: "ft" },
+      { id: "width", label: "Bed Width (ft)", type: "number", defaultValue: 5, unit: "ft" },
+      { id: "depth", label: "Mulch Depth (in)", type: "number", defaultValue: 3, unit: "in" }
+    ],
+    calculate: (inputs) => {
+      const len = Number(inputs.length || 0);
+      const wid = Number(inputs.width || 0);
+      const dep = Number(inputs.depth || 3);
+
+      const cubicFeet = len * wid * (dep / 12);
+      const cubicYards = cubicFeet / 27;
+
+      return {
+        cubicYards: { value: cubicYards.toFixed(2), label: "Cubic Yards Needed", unit: "yd³" },
+        bags2cf: { value: Math.ceil(cubicFeet / 2), label: "2.0 cu ft retail bags", unit: "bags" },
+        bags3cf: { value: Math.ceil(cubicFeet / 3), label: "3.0 cu ft professional bags", unit: "bags" }
+      };
+    }
+  },
+
+  // 10. Drywall
+  drywall: {
+    slug: "drywall",
+    name: "Drywall Calculator",
+    category: "construction",
+    categoryLabel: "Construction",
+    seoTitle: "Drywall Calculator - Wall Sheets, Tape & Compound",
+    metaDescription: "Estimate drywall sheet counts (4x8 or 4x12) and screw requirements for wall and ceiling framing layouts.",
+    keywords: ["drywall calculator", "sheetrock calculator", "wall board estimator"],
+    hook: "Calculate Sheetrock Boards & Framing Mud.",
+    description: "Calculate drywall panel requirements, screws, joint compounds, and tape budgets.",
+    calcTime: "2 mins",
+    formula: "Drywall Sheets = Wall Area ÷ Panel Area",
+    formulaDescription: "Divides total surface area of walls and ceilings by the size of a standard board.",
+    example: "A room with 800 sq ft wall surface requires twenty-five 4x8 panels.",
+    faqs: [{ question: "Should I buy 4x8 or 4x12 sheets?", answer: "4x12 sheets are heavier but result in fewer joints to tape and sand." }],
+    commonMistakes: ["Not subtracting doors and windows, leading to excess panel inventory."],
+    useCases: ["Drywall remodeling", "Home repair budgeting"],
+    tips: ["Add a 10% waste buffer to account for angular cuts around outlets and corners."],
+    inputs: [
+      { id: "area", label: "Total Wall & Ceiling Area (sq ft)", type: "number", defaultValue: 800, unit: "sq ft" },
+      {
+        id: "panelSize", label: "Drywall Panel Size", type: "select", defaultValue: "4x8", options: [
+          { value: "4x8", label: "4' x 8' Panel (32 sq ft)" },
+          { value: "4x12", label: "4' x 12' Panel (48 sq ft)" }
+        ]
+      }
+    ],
+    calculate: (inputs) => {
+      const area = Number(inputs.area || 0);
+      const size = inputs.panelSize || "4x8";
+
+      const panelArea = size === "4x8" ? 32 : 48;
+      const sheets = area / panelArea;
+      const sheetsWithWaste = Math.ceil(sheets * 1.10);
+
+      // Materials estimates: 1 gallon mud per 100 sq ft, 1 lb screws per 4 sheets
+      const mud = area * 0.007; // gallons
+      const tape = area * 0.35; // linear feet
+      const screws = sheets * 35; // count
+
+      return {
+        sheetsCount: { value: sheetsWithWaste, label: "Drywall Sheets Needed (incl. 10% waste)", unit: "sheets" },
+        mudGallons: { value: mud.toFixed(1), label: "Joint Compound Mud", unit: "gallons" },
+        tapeFeet: { value: Math.ceil(tape), label: "Drywall Joint Tape", unit: "ft" },
+        screwsCount: { value: Math.ceil(screws), label: "Drywall Screws", unit: "screws" }
+      };
+    }
+  },
+
+  // 11. Fence Cost
+  "fence-cost": {
+    slug: "fence-cost",
+    name: "Fence Cost Calculator",
+    category: "construction",
+    categoryLabel: "Construction",
+    seoTitle: "Fence Cost Calculator - Post, Rail, & Picket Estimator",
+    metaDescription: "Estimate fencing materials and project pricing. Calculate total posts, rails, pickets, and fasteners needed.",
+    keywords: ["fence cost calculator", "wood fence estimator", "fencing builder planner"],
+    hook: "Calculate Fencing Materials & Installation Budgets.",
+    description: "Determine wood or vinyl fence posts, rails, picket spacing, and average construction costs.",
+    calcTime: "2 mins",
+    formula: "Posts = (Fence Length ÷ Spacing) + 1",
+    formulaDescription: "Divides length by panel spacing and adds one starting post. Calculates pickets and rails per segment.",
+    example: "A 100 ft fence with 8 ft post spacings requires 14 posts, 36 pickets, and 26 rails.",
+    faqs: [{ question: "What is standard post spacing?", answer: "Posts are typically spaced exactly 6 or 8 feet apart." }],
+    commonMistakes: ["Forgetting to order extra posts for corners, turns, and gates."],
+    useCases: ["Estimating yard fencing bids", "DIY cedar fence budgets"],
+    tips: ["Concrete anchors require one 80 lb bag per fence post for stable footing."],
+    inputs: [
+      { id: "length", label: "Total Fence Line Length (ft)", type: "number", defaultValue: 150, unit: "ft" },
+      { id: "spacing", label: "Post Spacing (ft)", type: "number", defaultValue: 8, unit: "ft" },
+      { id: "picketWidth", label: "Picket Width (in)", type: "number", defaultValue: 5.5, unit: "in" },
+      { id: "picketGap", label: "Gap Between Pickets (in)", type: "number", defaultValue: 0 }
+    ],
+    calculate: (inputs) => {
+      const len = Number(inputs.length || 0);
+      const space = Number(inputs.spacing || 8);
+      const pWidth = Number(inputs.picketWidth || 5.5);
+      const pGap = Number(inputs.picketGap || 0);
+
+      const posts = Math.ceil(len / space) + 1;
+      const rails = Math.ceil(len / space) * 3; // 3 rails per section
+
+      // Picket counts
+      const picketTotalWidth = pWidth + pGap;
+      const pickets = picketTotalWidth > 0 ? Math.ceil((len * 12) / picketTotalWidth) : 0;
+
+      return {
+        postsCount: { value: posts, label: "Fence Posts", unit: "posts" },
+        railsCount: { value: rails, label: "Support Rails (3 per section)", unit: "rails" },
+        picketsCount: { value: pickets, label: "Pickets Needed", unit: "pickets" },
+        concreteBags: { value: posts, label: "80lb Concrete Bags (1 per post)", unit: "bags" }
+      };
+    }
+  },
+
+  // 12. Productivity
+  productivity: {
+    slug: "productivity",
+    name: "Productivity Calculator",
+    category: "math",
+    categoryLabel: "Productivity",
+    seoTitle: "Productivity Calculator - Employee Output & Efficiency Rate",
+    metaDescription: "Measure task output metrics and workspace productivity. Input worked hours and standard values to find efficiency quotients.",
+    keywords: ["productivity calculator", "work efficiency estimator", "hourly employee output"],
+    hook: "Calculate Business & Staff Productivity Rates.",
+    description: "Convert billable resource tasks to simple percentage efficiency quotas.",
+    calcTime: "1 min",
+    formula: "Productivity = (Actual Output ÷ Standard Target) × 100",
+    formulaDescription: "Compares actual completed volume with target benchmark averages.",
+    example: "If a worker packs 120 boxes in a shift where the standard is 100: efficiency is 120%.",
+    faqs: [{ question: "How is productivity defined?", answer: "The ratio of input resources (usually hours) to output goods or services." }],
+    commonMistakes: ["Focusing on total work hours instead of target quality output."],
+    useCases: ["Business process optimization", "Staff review reporting"],
+    tips: ["Establish reliable baselines before enforcing targets."],
+    inputs: [
+      { id: "actual", label: "Actual Units Produced / Completed", type: "number", defaultValue: 120 },
+      { id: "target", label: "Standard Target / Benchmark Units", type: "number", defaultValue: 100 }
+    ],
+    calculate: (inputs) => {
+      const act = Number(inputs.actual || 0);
+      const tar = Number(inputs.target || 100);
+
+      const efficiency = tar > 0 ? (act / tar) * 100 : 0;
+
+      return {
+        efficiencyRate: { value: efficiency.toFixed(1), label: "Resource Efficiency Rate", unit: "%" },
+        status: { value: efficiency >= 100 ? "Above Target" : "Below Target", label: "Target Status" }
+      };
+    }
+  },
+
+  // 13. Therapy Productivity
+  "therapy-productivity": {
+    slug: "therapy-productivity",
+    name: "Therapy Productivity Calculator",
+    category: "math",
+    categoryLabel: "Productivity",
+    seoTitle: "Therapy Productivity Calculator - PT/OT Billable Ratio",
+    metaDescription: "Track billable therapist metrics (Physical/Occupational therapy). Find efficiency ratios based on minutes and treatments.",
+    keywords: ["therapy productivity", "pt billable calculator", "ot productivity estimator"],
+    hook: "Calculate PT/OT Therapist Billable Minutes Ratios.",
+    description: "Determine billable treatment hours against total paid shift hours for healthcare audits.",
+    calcTime: "1.5 mins",
+    formula: "Productivity = (Billable Treatment Minutes ÷ Total Worked Minutes) × 100",
+    formulaDescription: "Divides treatment billing codes by total paid shift hours in minutes.",
+    example: "400 billable minutes during a 480-minute (8-hour) shift yields 83.3% productivity.",
+    faqs: [{ question: "What is target therapy productivity?", answer: "Usually ranges between 80% and 85% for inpatient/outpatient SNF clinics." }],
+    commonMistakes: ["Counting undocumented administrative task hours as treatment time."],
+    useCases: ["SNF healthcare billing audits", "Therapist workload balancing"],
+    tips: ["Document treatments instantly at point-of-care to maximize billing accuracy."],
+    inputs: [
+      { id: "shiftHours", label: "Paid Shift Duration (Hours)", type: "number", defaultValue: 8, unit: "hrs" },
+      { id: "billableMinutes", label: "Total Billable Treatment (Minutes)", type: "number", defaultValue: 390, unit: "mins" }
+    ],
+    calculate: (inputs) => {
+      const hrs = Number(inputs.shiftHours || 8);
+      const mins = Number(inputs.billableMinutes || 0);
+
+      const totalMins = hrs * 60;
+      const ratio = totalMins > 0 ? (mins / totalMins) * 100 : 0;
+
+      return {
+        productivityRatio: { value: ratio.toFixed(1), label: "Therapist Productivity Ratio", unit: "%" },
+        unbillableMins: { value: Math.max(0, totalMins - mins), label: "Administrative Time (Unbillable)", unit: "mins" }
+      };
+    }
+  },
+
+  // 14. Google Review
+  "google-review": {
+    slug: "google-review",
+    name: "Google Review Calculator",
+    category: "math",
+    categoryLabel: "Productivity",
+    seoTitle: "Google Review Calculator - Review Target Estimator",
+    metaDescription: "Calculate how many 5-star Google reviews are required to raise your business profile rating to a 4.7, 4.8, or 5.0 score.",
+    keywords: ["google review calculator", "reviews needed for rating", "business reputation calculator"],
+    hook: "Find 5-Star Reviews Needed to Elevate Your Rating.",
+    description: "Determine exact reviews targets to reach desired review scores.",
+    calcTime: "1 min",
+    formula: "Reviews Required = [Count × (Target - Current)] ÷ (5 - Target)",
+    formulaDescription: "Computes reviews required based on target rating thresholds.",
+    example: "A company with 20 reviews and a 4.2 rating needs 60 consecutive 5-star reviews to reach a 4.8.",
+    faqs: [{ question: "Can a bad review be deleted?", answer: "No, unless it violates Google guidelines, it must be balanced out by positive ratings." }],
+    commonMistakes: ["Expecting rapid increases (mathematical averages move slowly as count increases)."],
+    useCases: ["Business reputation repair", "Marketing review campaigns"],
+    tips: ["Encourage reviews by providing short, direct client links."],
+    inputs: [
+      { id: "currentRating", label: "Current Rating (Stars)", type: "number", defaultValue: 4.2 },
+      { id: "currentCount", label: "Current Total Reviews Count", type: "number", defaultValue: 30 },
+      { id: "targetRating", label: "Target Rating (e.g. 4.8)", type: "number", defaultValue: 4.8 }
+    ],
+    calculate: (inputs): Record<string, { value: string | number; label: string; unit?: string }> => {
+      const curRating = Number(inputs.currentRating || 0);
+      const count = Number(inputs.currentCount || 0);
+      const target = Number(inputs.targetRating || 4.8);
+
+      if (target >= 5) {
+        return {
+          reviewsNeeded: { value: "Infinite", label: "Reviews Needed (A perfect 5.0 is mathematically impossible if you have any low reviews)", unit: "" }
+        };
+      }
+
+      if (target <= curRating) {
+        return {
+          reviewsNeeded: { value: 0, label: "Reviews Needed (Already at or above target)", unit: "" }
+        };
+      }
+
+      // Formula: (Target * Count - CurrentRating * Count) / (5 - Target)
+      const needed = (target * count - curRating * count) / (5 - target);
+
+      return {
+        reviewsNeeded: { value: Math.ceil(needed), label: "Consecutive 5-Star Reviews Needed", unit: "reviews" },
+        finalCount: { value: count + Math.ceil(needed), label: "Projected Total Reviews Count", unit: "reviews" }
       };
     }
   }
