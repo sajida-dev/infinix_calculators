@@ -28,16 +28,20 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
   });
 
   const [outputs, setOutputs] = useState<Record<string, { value: string | number; label: string; unit?: string }>>({});
+  const [shouldCalculate, setShouldCalculate] = useState(false);
 
-  // Recalculate outputs whenever inputs change
+  // Perform calculation when user clicks Calculate button
   useEffect(() => {
+    if (!shouldCalculate) return;
     try {
       const results = calculator.calculate(inputsState);
       setOutputs(results);
     } catch (err) {
       console.error("Calculation error:", err);
+    } finally {
+      setShouldCalculate(false);
     }
-  }, [inputsState, calculator]);
+  }, [shouldCalculate, inputsState, calculator]);
 
   const handleInputChange = (id: string, value: any) => {
     // Attempt parsing numerical inputs
@@ -117,6 +121,15 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
               );
             })}
           </div>
+          <div className="mt-4">
+            <button
+              type="button"
+              onClick={() => setShouldCalculate(true)}
+              className="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition"
+            >
+              Calculate
+            </button>
+          </div>
         </div>
 
         {/* Right: Results Outputs */}
@@ -126,18 +139,17 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
               2. Output Results
             </h4>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               {Object.entries(outputs).map(([key, item]) => {
                 // If it is a secondary element or specific structure, we adapt.
                 // Normally a grid cell works nicely. Let's make key ones highlighted.
                 const isPrimary = key.toLowerCase().includes("total") || key.toLowerCase().includes("bmi") || key.toLowerCase().includes("prorated");
-                
+
                 return (
                   <div
                     key={key}
-                    className={`bg-white p-4 rounded-lg border border-slate-200/60 shadow-sm ${
-                      isPrimary ? "sm:col-span-2 border-primary/20" : ""
-                    }`}
+                    className={`bg-white p-4 rounded-lg border border-slate-200/60 shadow-sm ${isPrimary ? "sm:col-span-2 border-primary/20" : ""
+                      }`}
                   >
                     <span className="block text-xs font-semibold text-slate-400">
                       {item.label}
@@ -151,11 +163,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
             </div>
           </div>
 
-          <div className="border-t border-slate-200/80 pt-4 text-center">
-            <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider block">
-              Calculations Performed Automatically
-            </span>
-          </div>
+
         </div>
       </div>
     </div>

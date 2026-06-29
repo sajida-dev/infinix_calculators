@@ -29,6 +29,7 @@ export default function TopsoilCalculator() {
   const [bags40lb, setBags40lb] = useState<number>(0);
   const [bags075cf, setBags075cf] = useState<number>(0);
   const [bags1cf, setBags1cf] = useState<number>(0);
+  const [shouldCalculate, setShouldCalculate] = useState(false);
 
   // Density factor (lbs per cubic foot)
   const densities: Record<SoilType, number> = {
@@ -57,41 +58,48 @@ export default function TopsoilCalculator() {
   };
 
   useEffect(() => {
-    let volumeFt3 = 0;
-    const depthFt = convertToFeet(depth, depthUnit);
+    if (!shouldCalculate) return;
+    try {
+      let volumeFt3 = 0;
+      const depthFt = convertToFeet(depth, depthUnit);
 
-    if (shape === "rectangle") {
-      const lengthFt = convertToFeet(length, lengthUnit);
-      const widthFt = convertToFeet(width, widthUnit);
-      volumeFt3 = lengthFt * widthFt * depthFt;
-    } else {
-      const diameterFt = convertToFeet(diameter, diameterUnit);
-      const radiusFt = diameterFt / 2;
-      volumeFt3 = Math.PI * Math.pow(radiusFt, 2) * depthFt;
+      if (shape === "rectangle") {
+        const lengthFt = convertToFeet(length, lengthUnit);
+        const widthFt = convertToFeet(width, widthUnit);
+        volumeFt3 = lengthFt * widthFt * depthFt;
+      } else {
+        const diameterFt = convertToFeet(diameter, diameterUnit);
+        const radiusFt = diameterFt / 2;
+        volumeFt3 = Math.PI * Math.pow(radiusFt, 2) * depthFt;
+      }
+
+      const volumeYd3 = volumeFt3 / 27;
+      const volumeM3 = volumeFt3 * 0.0283168;
+      const volLiters = volumeFt3 * 28.3168;
+
+      // Weight calculation based on soil type density
+      const totalWeightLbs = volumeFt3 * densities[soilType];
+      const totalTons = totalWeightLbs / 2000;
+
+      // Bag calculations
+      const bags40 = totalWeightLbs / 40;
+      const bags075 = volumeFt3 / 0.75;
+      const bags1 = volumeFt3 / 1.0;
+
+      setCubicFeet(volumeFt3);
+      setCubicYards(volumeYd3);
+      setCubicMeters(volumeM3);
+      setLiters(volLiters);
+      setTons(totalTons);
+      setBags40lb(bags40);
+      setBags075cf(bags075);
+      setBags1cf(bags1);
+    } catch (err) {
+      console.error("Calculation error:", err);
+    } finally {
+      setShouldCalculate(false);
     }
-
-    const volumeYd3 = volumeFt3 / 27;
-    const volumeM3 = volumeFt3 * 0.0283168;
-    const volLiters = volumeFt3 * 28.3168;
-    
-    // Weight calculation based on soil type density
-    const totalWeightLbs = volumeFt3 * densities[soilType];
-    const totalTons = totalWeightLbs / 2000;
-
-    // Bag calculations
-    const bags40 = totalWeightLbs / 40;
-    const bags075 = volumeFt3 / 0.75;
-    const bags1 = volumeFt3 / 1.0;
-
-    setCubicFeet(volumeFt3);
-    setCubicYards(volumeYd3);
-    setCubicMeters(volumeM3);
-    setLiters(volLiters);
-    setTons(totalTons);
-    setBags40lb(bags40);
-    setBags075cf(bags075);
-    setBags1cf(bags1);
-  }, [shape, soilType, length, lengthUnit, width, widthUnit, diameter, diameterUnit, depth, depthUnit]);
+  }, [shouldCalculate, shape, soilType, length, lengthUnit, width, widthUnit, diameter, diameterUnit, depth, depthUnit]);
 
   const unitOptions = [
     { value: "ft", label: "Feet (ft)" },
@@ -103,30 +111,14 @@ export default function TopsoilCalculator() {
 
   return (
     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-      {/* Tab Selectors */}
-      <div className="flex border-b border-slate-100">
-        <button
-          onClick={() => setShape("rectangle")}
-          className={`flex-1 py-4 text-sm font-semibold border-b-2 transition-all duration-150 ${
-            shape === "rectangle"
-              ? "border-primary text-primary bg-primary/5"
-              : "border-transparent text-slate-500 hover:text-slate-900"
-          }`}
-        >
-          Rectangular Area
-        </button>
-        <button
-          onClick={() => setShape("circle")}
-          className={`flex-1 py-4 text-sm font-semibold border-b-2 transition-all duration-150 ${
-            shape === "circle"
-              ? "border-primary text-primary bg-primary/5"
-              : "border-transparent text-slate-500 hover:text-slate-900"
-          }`}
-        >
-          Circular Area
-        </button>
-      </div>
+      <div className="p-6 border-b flex justify-center border-slate-100">
 
+        <div className="relative inline-flex items-center w-[512px] p-1 h-12 bg-gray-200 rounded-full p-2 transition-colors">
+          <span className={`absolute left-0 w-1/2 h-12 bg-primary text-white rounded-full shadow-md border-1 border-slate-100 transform transition-transform ${shape === "rectangle" ? "translate-x-0" : "translate-x-full"}`}></span>
+          <button type="button" onClick={() => setShape("rectangle")} className={`relative w-1/2 h-full text-center text-xs font-semibold capitalize ${shape === "rectangle" ? "text-white" : "text-gray-500"}`}>RECTANGLE</button>
+          <button type="button" onClick={() => setShape("circle")} className={`relative w-1/2 text-center h-full text-xs font-semibold capitalize ${shape === "circle" ? "text-white" : "text-gray-500"}`}>CIRCLE</button>
+        </div>
+      </div>
       <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Side: Inputs */}
         <div className="space-y-6">
@@ -245,7 +237,18 @@ export default function TopsoilCalculator() {
               <option value="wet">Wet Topsoil / Muddy dirt (heavy)</option>
             </select>
           </div>
+
+          <div className="mt-4">
+            <button
+              type="button"
+              onClick={() => setShouldCalculate(true)}
+              className="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition"
+            >
+              Calculate
+            </button>
+          </div>
         </div>
+
 
         {/* Right Side: Outputs */}
         <div className="bg-slate-50/60 p-6 rounded-xl border border-slate-100 flex flex-col justify-between space-y-6">
@@ -268,7 +271,7 @@ export default function TopsoilCalculator() {
               <div className="bg-white p-4 rounded-lg border border-slate-200/60 shadow-sm col-span-2">
                 <span className="block text-xs font-semibold text-slate-400">Estimated Weight (Tons)</span>
                 <span className="block text-xl font-extrabold text-slate-800 mt-1">
-                  {tons.toFixed(2)} Tons <span className="text-xs font-medium text-slate-500">({(tons * 2000).toLocaleString(undefined, {maximumFractionDigits: 0})} lbs)</span>
+                  {tons.toFixed(2)} Tons <span className="text-xs font-medium text-slate-500">({(tons * 2000).toLocaleString(undefined, { maximumFractionDigits: 0 })} lbs)</span>
                 </span>
               </div>
             </div>
