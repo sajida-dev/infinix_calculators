@@ -138,7 +138,7 @@ export default function Home() {
               </p>
             </div>
             <Link href="/calculators" className="text-primary font-bold text-xs sm:text-sm hover:underline">
-              All Tools Directory →
+              All Calculators →
             </Link>
           </div>
 
@@ -167,11 +167,8 @@ export default function Home() {
                     return (
                       <li key={slug}>
                         <Link href={`/calculators/${slug}`} className="group block text-base hover:text-primary transition-all">
-                          <span className="block font-bold text-slate-800 group-hover:text-primary transition-colors leading-snug">
+                          <span className="block text-primary group-hover:text-primary transition-colors leading-snug">
                             {calc.name}
-                          </span>
-                          <span className="block text-sm text-slate-400 group-hover:text-slate-500 transition-colors mt-0.5 leading-normal">
-                            {calc.description}
                           </span>
                         </Link>
                       </li>

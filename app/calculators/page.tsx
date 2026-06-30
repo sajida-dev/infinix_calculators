@@ -196,11 +196,8 @@ export default async function CalculatorsPage(props: PageProps) {
                         return (
                           <li key={slug}>
                             <Link href={`/calculators/${slug}`} className="group block text-md hover:text-primary transition-all">
-                              <span className="block font-bold text-slate-800 group-hover:text-primary transition-colors leading-snug">
+                              <span className="block text-primary group-hover:text-primary transition-colors leading-snug">
                                 {calc.name}
-                              </span>
-                              <span className="block text-[14px] text-slate-400 group-hover:text-slate-500 transition-colors mt-0.5 leading-normal">
-                                {calc.description}
                               </span>
                             </Link>
                           </li>
@@ -275,24 +272,24 @@ export default async function CalculatorsPage(props: PageProps) {
               </div>
 
               {/* Sidebar Ad Unit 1 */}
-              <div className="py-4 text-center">
+              {/* <div className="py-4 text-center">
                 <span className="inline-block text-[8px] font-bold uppercase tracking-wider text-slate-400 border border-slate-200 px-1.5 py-0.5 rounded bg-slate-150">
                   Advertisement
                 </span>
                 <div className="mt-4 py-12 text-xs font-semibold text-slate-400 border border-dashed border-slate-300 rounded-xl bg-slate-100/50">
                   Sidebar Display Banner 1
                 </div>
-              </div>
+              </div> */}
 
               {/* Sidebar Ad Unit 2 (Fills empty vertical space down to page end) */}
-              <div className="py-4 text-center">
+              {/* <div className="py-4 text-center">
                 <span className="inline-block text-[8px] font-bold uppercase tracking-wider text-slate-400 border border-slate-200 px-1.5 py-0.5 rounded bg-slate-150">
                   Advertisement
                 </span>
                 <div className="mt-4 py-16 text-xs font-semibold text-slate-400 border border-dashed border-slate-300 rounded-xl bg-slate-100/50">
                   Sidebar Display Banner 2
                 </div>
-              </div>
+              </div> */}
 
             </div>
 

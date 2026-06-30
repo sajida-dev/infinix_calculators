@@ -12,6 +12,7 @@ export interface FAQItem {
   answer: string;
 }
 
+
 export interface CalculatorInfo {
   slug: string;
   name: string;
@@ -34,6 +35,8 @@ export interface CalculatorInfo {
   calculate: (inputs: Record<string, any>) => Record<string, { value: string | number; label: string; unit?: string }>;
 }
 
+
+
 export const calculatorsData: Record<string, CalculatorInfo> = {
   // Flagship Topsoil
   topsoil: {
@@ -53,7 +56,48 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     faqs: [
       {
         question: "How do I calculate how much topsoil I will need?",
-        answer: "Measure the length and width of the area in feet and the desired soil depth in inches. Multiply length by width, multiply by depth (in inches), and divide the total by 12 to find cubic feet. Divide by 27 to convert to cubic yards."
+        answer:
+          "Measure the length and width of the area in feet and the desired soil depth in inches. Multiply length × width × depth (in inches), divide by 12 to convert to cubic feet, then divide by 27 to convert to cubic yards."
+      },
+      {
+        question: "How many cubic yards do I need?",
+        answer:
+          "Enter your area dimensions into the calculator. It automatically converts measurements into cubic yards and includes optional buffer recommendations for compaction."
+      },
+      {
+        question: "How deep should topsoil be?",
+        answer:
+          "For lawns, 4–6 inches is standard. For garden beds, 8–12 inches is recommended depending on plant type and soil quality."
+      },
+      {
+        question: "What is 1 cubic yard of topsoil?",
+        answer:
+          "One cubic yard equals 27 cubic feet of soil. It typically weighs around 2,000 to 2,200 pounds depending on moisture content."
+      },
+      {
+        question: "Is fill dirt the same as topsoil?",
+        answer:
+          "No. Fill dirt is used for structural leveling and contains little organic material. Topsoil is nutrient-rich and used for planting and landscaping."
+      },
+      {
+        question: "How accurate is the calculator?",
+        answer:
+          "The calculator uses precise mathematical formulas. Accuracy depends on correct user inputs and whether you include a 10% buffer for compaction."
+      },
+      {
+        question: "How do I calculate soil manually?",
+        answer:
+          "Use the formula: Length × Width × (Depth ÷ 12) ÷ 27 to get cubic yards."
+      },
+      {
+        question: "Can I convert results into bags?",
+        answer:
+          "Yes. One 40 lb bag contains approximately 0.75 cubic feet. Divide total cubic feet by 0.75 to estimate required bags."
+      },
+      {
+        question: "Do I need extra soil for compaction?",
+        answer:
+          "Yes. It is recommended to add 10–15% extra soil to account for settling and compaction over time."
       },
       {
         question: "How much does a 40 lb bag of topsoil cover?",

@@ -14,11 +14,11 @@ export default function CalculatorFaqs({ slug, title }: CalculatorFaqsProps) {
 
   return (
     <section className="py-6">
-      <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-6 pb-3 border-b border-slate-200">
+      <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-6 pb-3 ">
         {title || `Frequently Asked Questions About ${calc.name}`}
       </h2>
 
-      <div className="border-t border-slate-200 divide-y divide-slate-200">
+      <div>
         {calc.faqs.map((faq, index) => (
           <details key={index} className="group py-4" open={index === 0}>
             <summary className="flex cursor-pointer items-center gap-3 text-slate-900 font-bold text-sm sm:text-base list-none focus:outline-none">
