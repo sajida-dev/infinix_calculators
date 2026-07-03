@@ -5,9 +5,9 @@ import CalculatorFaqs from "../../components/CalculatorFaqs";
 import { blogData } from "../../data/blogData";
 
 export const metadata: Metadata = {
-  title: "Topsoil Calculator – Estimate Cubic Yards, Feet & Bags of Soil",
+  title: "Topsoil Calculator, Estimate Soil in Cubic Yards, Feet & Bags",
   description:
-    "Calculate exactly how much topsoil, fill dirt, or compost you need. Input dimensions to get coverage results in cubic yards, cubic feet, tons, and bag counts instantly.",
+    "Free topsoil calculator to estimate cubic yards, cubic feet, tons and soil bags. Quickly calculate topsoil, fill dirt and compost for any project.",
   keywords: [
     "topsoil calculator",
     "top soil calculator",
@@ -142,9 +142,8 @@ export default function TopsoilPage() {
           <div className="lg:col-span-3 space-y-8">
             <TopsoilCalculator />
 
-
             {/* SEO Authority Article */}
-            <article className="prose prose-slate ml-10 max-w-none text-slate-800 leading-relaxed">
+            <article className="prose prose-slate ml-40 max-w-none text-slate-800 leading-relaxed">
               <h2 className="font-bold text-3xl mb-4">What is a Topsoil Calculator?</h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">A <strong>topsoil calculator</strong> is an online tool that determines the volume of topsoil required for any landscaping project. It’s also known as a <em>top soil calculator</em>, <em>topsoil estimator</em>, or <em>dirt cubic yard calculator</em>. By inputting the dimensions of the area you plan to cover and the desired depth, the calculator instantly converts those measurements into cubic yards, cubic feet, tons, or even the number of bags you’ll need.</p>
 

@@ -74,8 +74,6 @@ export default function Header() {
               All Calculators
             </Link>
           </div>
-
-
         </div>
       </div>
 

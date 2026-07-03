@@ -23,18 +23,15 @@ export default function Footer() {
   ];
 
   const companyLinks = [
+    { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Blog / News", href: "/blog" },
-    { name: "Careers", href: "/careers" },
-    { name: "Press", href: "/press" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   const legalLinks = [
     { name: "Terms of Service", href: "/terms" },
     { name: "Privacy Policy", href: "/privacy" },
-    { name: "Cookies Policy", href: "/cookies" },
-    { name: "Licenses", href: "/licenses" },
   ];
 
   return (
