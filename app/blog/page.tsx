@@ -4,9 +4,56 @@ import { blogData } from "../data/blogData";
 import BlogCard from "../components/BlogCard";
 
 export const metadata: Metadata = {
-  title: "Landscape & Calculation Guides Blog - Infinix Tools",
+  title: "Landscape & Calculation Guides Blog - Infinix Calculator",
   description: "Read detailed guides, mathematical breakdowns, material estimating instructions, and calculators instructions from our landscape and finance experts.",
-  keywords: ["calculators blog", "topsoil guide", "concrete estimation articles", "construction calculation tips"],
+  keywords: [
+    "infinix calculator",
+    "infinix calculators",
+    "calculators",
+    "topsoil calculator",
+    "finance calculator",
+    "construction calculator",
+    "health calculator",
+    "unit converter",
+    "online estimator",
+    "online calculators",
+    "free calculators",
+    "calculator directory",
+    "business calculators",
+    "finance calculators",
+    "construction calculators",
+    "health calculators",
+    "math calculators",
+    "unit converters",
+    "percentage calculator",
+    "loan calculator",
+    "mortgage calculator",
+    "topsoil calculator",
+    "top soil calculator",
+    "concrete calculator",
+    "cbm calculator",
+    "affirm calculator",
+    "productivity calculator",
+    "cost calculators",
+    "estimators",
+    "calculation tools",
+    "lsat score calculator",
+    "lsat score converter",
+    "therapy productivity calculator",
+    "how to calculate productivity",
+    "law school predictor",
+    "good lsat score",
+    "lsat demon scholarship estimator",
+    "lsat raw score conversion",
+    "lsat top score",
+    "how long is lsat",
+    "how many questions are on the lsat",
+    "what's a good lsat score",
+    "lsat average score",
+    "normal lsat score",
+    "fill dirt calculator",
+    "how much fill dirt do i need"
+  ],
 };
 
 export default function BlogPage() {
@@ -93,7 +140,7 @@ export default function BlogPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {remainingPosts.map((post) => (
-                <BlogCard key={"post.slug"} post={post} />
+                <BlogCard key={post.slug} post={post} />
               ))}
 
 

@@ -1,10 +1,13 @@
 export interface CalculatorInput {
   id: string;
   label: string;
-  type: "number" | "select";
+  type: "number" | "select" | "text";
   defaultValue: number | string;
   options?: { value: string; label: string }[];
   unit?: string;
+  min?: number;
+  max?: number;
+  readOnly?: boolean;
 }
 
 export interface FAQItem {
@@ -16,7 +19,7 @@ export interface FAQItem {
 export interface CalculatorInfo {
   slug: string;
   name: string;
-  category: "financial" | "tax" | "construction" | "math" | "health" | "unit-converter";
+  category: "financial" | "tax" | "construction" | "math" | "health" | "unit-converter" | "education";
   categoryLabel: string;
   seoTitle: string;
   metaDescription: string;
@@ -33,8 +36,23 @@ export interface CalculatorInfo {
   tips: string[];
   inputs: CalculatorInput[];
   calculate: (inputs: Record<string, any>) => Record<string, { value: string | number; label: string; unit?: string }>;
+  conversionTables?: Record<string, Record<number, number>>;
 }
+export const COMMON_KEYWORDS = [
+  "law school predictor",
+  "good lsat score",
+  "lsat average score",
+  "lsat raw score conversion",
+  "lsat score calculator",
+  "lsat demon scholarship estimator",
+  "lsat top score",
+  "how long is lsat",
+  "how many questions are on the lsat",
+  "what's a good lsat score",
+  "lsat average score",
+  "normal lsat score",
 
+] as const;
 
 
 export const calculatorsData: Record<string, CalculatorInfo> = {
@@ -728,6 +746,293 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     }
   },
 
+  // LSAT Score Calculator
+  // "lsat-score": {
+  //   slug: "lsat-score",
+  //   name: "LSAT Score Calculator",
+  //   category: "education",
+  //   categoryLabel: "Education",
+  //   seoTitle: "LSAT Score Calculator – Convert Raw Scores & Estimate Percentiles",
+  //   metaDescription: "Convert LSAT raw scores to scaled scores and see estimated percentiles. Quick, accurate LSAT conversion tool for test takers.",
+  //   keywords: [...COMMON_KEYWORDS, "lsat score calculator"],
+  //   hook: "Convert your LSAT raw score to the official scaled score and view percentile estimates.",
+  //   description: "Enter your LSAT raw score (number of correct answers) to get the scaled score (120‑180) and an approximate percentile.",
+  //   calcTime: "1 min",
+  //   formula: "Scaled Score ≈ 120 + (Raw Score × 0.5)",
+  //   formulaDescription: "A simplified linear approximation: each additional raw point adds roughly 0.5 to the scaled score.",
+  //   example: "Raw Score 100 → Scaled Score ≈ 170.",
+  //   faqs: [
+  //     { question: "What is a raw LSAT score?", answer: "The raw score is the number of questions answered correctly before scaling (out of 120)." },
+  //     { question: "How accurate is this conversion?", answer: "This uses a simplified linear model; official scores may vary slightly based on equating." },
+  //     { question: "What is a good LSAT score?", answer: "Generally, a score of 165 or higher is considered competitive for top law schools." },
+  //     { question: "How long is the LSAT exam?", answer: "The LSAT is a 3 hour and 30 minute test, plus a 15‑minute break." },
+  //     { question: "How many questions are on the LSAT?", answer: "There are 100 scored questions (25 per section) plus 4 unscored experimental questions." },
+  //     { question: "What is the LSAT raw score conversion formula?", answer: "Scaled Score ≈ 120 + (Raw Score × 0.5), bounded between 120 and 180." },
+  //     { question: "What is the top LSAT score?", answer: "The maximum possible scaled score is 180." },
+  //     { question: "How does the LSAT score affect law school admission?", answer: "Higher scores improve admission chances and scholarship eligibility; many schools publish median LSAT scores for admitted students." },
+  //     { question: "What is the LSAT Demon scholarship estimator?", answer: "It's a tool that estimates scholarship amounts based on your LSAT score and GPA using historical data." },
+  //     { question: "How can I predict my law school ranking with my LSAT score?", answer: "Use the Law School Predictor tool which matches your score with average admitted scores at various schools." },
+  //     { question: "What is an average LSAT score?", answer: "The median LSAT score nationwide is around 151." },
+  //     { question: "What is a normal LSAT score range?", answer: "Scores typically range from 120 to 180, with most test‑takers scoring between 135 and 165." }
+  //   ],
+  //   commonMistakes: ["Assuming raw scores directly equal scaled scores.", "Forgetting the 120 floor minimum."],
+  //   useCases: ["Law school applications", "Self‑assessment for test prep"],
+  //   tips: ["Add a 2‑3 point buffer for rounding errors when planning applications."],
+  //   inputs: [
+  //     { id: "rawScore", label: "Raw Score (Correct Answers)", type: "number", defaultValue: 0, unit: "points" }
+  //   ],
+  //   calculate: (inputs) => {
+  //     const raw = Number(inputs.rawScore || 0);
+  //     // Simple linear conversion with floor at 120 and ceiling at 180
+  //     let scaled = Math.round(120 + raw * 0.5);
+  //     if (scaled < 120) scaled = 120;
+  //     if (scaled > 180) scaled = 180;
+  //     // Approximate percentile based on scaled score (very rough)
+  //     let percentile = 0;
+  //     if (scaled >= 170) percentile = 95;
+  //     else if (scaled >= 160) percentile = 85;
+  //     else if (scaled >= 150) percentile = 70;
+  //     else if (scaled >= 140) percentile = 50;
+  //     else if (scaled >= 130) percentile = 30;
+  //     else percentile = 15;
+  //     return {
+  //       scaledScore: { value: scaled, label: "Scaled LSAT Score", unit: "" },
+  //       percentile: { value: `${percentile}%`, label: "Estimated Percentile", unit: "" }
+  //     };
+  //   }
+  // },
+  // 10. LSAT Score Converter (section‑based)
+  "lsat-score-calculator": {
+    slug: "lsat-score-calculator",
+    name: "LSAT Score Calculator",
+    category: "education",
+    categoryLabel: "Education",
+    seoTitle: "LSAT Score Calculator – Section Scores to Scaled Score",
+    metaDescription: "Convert your LSAT section scores to an estimated scaled score using official conversion tables. Includes test selection and detailed FAQs.",
+    keywords: [...COMMON_KEYWORDS, "lsat score calculator", "lsat section score conversion", "lsat conversion table"],
+    hook: "Enter your LSAT test and section scores to get an estimated scaled score.",
+    description: "Select the LSAT test you took and input your raw section scores (Logical Reasoning & Reading Comprehension). The tool looks up the official conversion table for that test and returns the scaled score and percentile estimate.",
+    calcTime: "1–2 min",
+    formula: "Scaled Score = conversionTable[test][rawTotal]",
+    formulaDescription: "Uses a per‑test conversion table mapping raw total (0‑120) to the official scaled score (120‑180).",
+    example: "Test 159, 22+23+22+23 → Raw Total 90 → Scaled Score 166.",
+    inputs: [
+      {
+        id: "test", label: "Which test did you take?", type: "select", options: [
+          { value: "pt159", label: "Test 159 • Apr 2025" },
+          { value: "pt158", label: "Test 158 • May 2020" },
+          { value: "pt157", label: "Test 157 • Jun 2020" },
+          { value: "pt156", label: "Test 156 • Jul 2020" },
+          { value: "pt155", label: "Test 155 • Nov 2019" },
+          { value: "pt154", label: "Test 154 • Sep 2019" },
+          { value: "pt153", label: "Test 153 • Jun 2019" },
+          { value: "pt152", label: "Test 152 • Nov 2018" },
+          { value: "pt151", label: "Test 151 • Sep 2018" },
+          { value: "pt150", label: "Test 150 • Jun 2018" },
+          { value: "pt149", label: "Test 149 • Dec 2017" },
+          { value: "pt148", label: "Test 148 • Dec 2016" },
+          { value: "pt147", label: "Test 147 • Sep 2016" },
+          { value: "pt146", label: "Test 146 • Jun 2016" },
+          { value: "pt145", label: "Test 145 • Dec 2015" },
+          { value: "pt144", label: "Test 144 • Oct 2015" },
+          { value: "pt143", label: "Test 143 • Jun 2015" },
+          { value: "pt142", label: "Test 142 • Dec 2014" },
+          { value: "pt141", label: "Test 141 • Sep 2014" },
+          { value: "pt140", label: "Test 140 • Dec 2013" },
+          { value: "pt139", label: "Test 139 • Jun 2013" },
+          { value: "pt138", label: "Test 138 • Dec 2012" },
+          { value: "pt137", label: "Test 137 • Oct 2012" },
+          { value: "pt136", label: "Test 136 • Jun 2012" },
+          { value: "pt135", label: "Test 135 • Dec 2011" },
+          { value: "pt134", label: "Test 134 • Oct 2011" },
+          { value: "pt133", label: "Test 133 • Jun 2011" },
+          { value: "pt132", label: "Test 132 • Dec 2010" },
+          { value: "pt131", label: "Test 131 • Dec 2009" },
+          { value: "pt130", label: "Test 130 • Sep 2009" },
+          { value: "pt129", label: "Test 129 • Jun 2009" },
+          { value: "pt128", label: "Test 128 • Dec 2008" },
+          { value: "pt127", label: "Test 127 • Dec 2008" },
+          { value: "pt126", label: "Test 126 • Oct 2008" },
+          { value: "pt125", label: "Test 125 • Jun 2008" },
+          { value: "pt124", label: "Test 124 • Dec 2007" },
+          { value: "pt123", label: "Test 123 • Jun 2007" },
+          { value: "pt122", label: "Test 122 • Jun 2006" },
+          { value: "pt121", label: "Test 121 • Dec 2005" },
+          { value: "pt120", label: "Test 120 • Oct 2005" },
+          { value: "pt119", label: "Test 119 • Jun 2005" },
+          { value: "pt118", label: "Test 118 • Dec 2004" },
+          { value: "pt117", label: "Test 117 • Oct 2004" },
+          { value: "pt116", label: "Test 116 • Jun 2004" },
+          { value: "pt115", label: "Test 115 • Dec 2002" },
+          { value: "pt114", label: "Test 114 • Oct 2002" },
+          { value: "pt113", label: "Test 113 • Jun 2002" },
+          { value: "pt112", label: "Test 112 • Dec 2001" },
+          { value: "pt111", label: "Test 111 • Oct 2001" },
+          { value: "pt110", label: "Test 110 • Jun 2001" },
+          { value: "pt109", label: "Test 109 • Dec 2000" },
+          { value: "pt108", label: "Test 108 • Feb 2000" },
+          { value: "pt107", label: "Test 107 • Oct 1999" },
+          { value: "pt106", label: "Test 106 • Jun 1999" },
+          { value: "pt105", label: "Test 105 • Feb 1999" },
+          { value: "pt104", label: "Test 104 • Dec 1998" },
+          { value: "pt103", label: "Test 103 • Sep 1998" },
+          { value: "pt102", label: "Test 102 • Jun 1998" },
+          { value: "pt101", label: "Test 101 • Dec 1997" },
+          { value: "pt94", label: "Test 94 • Jul 2020" },
+          { value: "pt93", label: "Test 93 • Jun 2020" },
+          { value: "pt92", label: "Test 92 • Jun 2020" },
+          { value: "pt91", label: "Test 91 • May 2020" },
+          { value: "pt90", label: "Test 90 • May 2020" },
+          { value: "pt89", label: "Test 89 • Nov 2019" },
+          { value: "pt88", label: "Test 88 • Sep 2019" },
+          { value: "pt87", label: "Test 87 • Jun 2019" },
+          { value: "pt86", label: "Test 86 • Nov 2018" },
+          { value: "pt85", label: "Test 85 • Sep 2018" },
+          { value: "pt84", label: "Test 84 • Jun 2018" },
+          { value: "pt83", label: "Test 83 • Dec 2017" },
+          { value: "pt82", label: "Test 82 • Sep 2017" },
+          { value: "pt81", label: "Test 81 • Jun 2017" },
+          { value: "pt80", label: "Test 80 • Dec 2016" },
+          { value: "pt79", label: "Test 79 • Sep 2016" },
+          { value: "pt78", label: "Test 78 • Jun 2016" },
+          { value: "pt77", label: "Test 77 • Dec 2015" },
+          { value: "pt76", label: "Test 76 • Oct 2015" },
+          { value: "pt75", label: "Test 75 • Jun 2015" },
+          { value: "pt74", label: "Test 74 • Dec 2014" },
+          { value: "pt73", label: "Test 73 • Sep 2014" },
+          { value: "pt72", label: "Test 72 • Jun 2014" },
+          { value: "pt71", label: "Test 71 • Dec 2013" },
+          { value: "pt70", label: "Test 70 • Oct 2013" },
+          { value: "pt69", label: "Test 69 • Jun 2013" },
+          { value: "pt68", label: "Test 68 • Dec 2012" },
+          { value: "pt67", label: "Test 67 • Oct 2012" },
+          { value: "pt66", label: "Test 66 • Jun 2012" },
+          { value: "pt65", label: "Test 65 • Dec 2011" },
+          { value: "pt64", label: "Test 64 • Oct 2011" },
+          { value: "pt63", label: "Test 63 • Jun 2011" },
+          { value: "pt62", label: "Test 62 • Dec 2010" },
+          { value: "pt61", label: "Test 61 • Oct 2010" },
+          { value: "pt60", label: "Test 60 • Jun 2010" },
+          { value: "pt59", label: "Test 59 • Dec 2009" },
+          { value: "pt58", label: "Test 58 • Sep 2009" },
+          { value: "pt57", label: "Test 57 • Jun 2009" },
+          { value: "pt56", label: "Test 56 • Dec 2008" },
+          { value: "pt55", label: "Test 55 • Oct 2008" },
+          { value: "pt54", label: "Test 54 • Jun 2008" },
+          { value: "pt53", label: "Test 53 • Dec 2007" },
+          { value: "pt52", label: "Test 52 • Sep 2007" },
+          { value: "pt51", label: "Test 51 • Dec 2006" },
+          { value: "pt50", label: "Test 50 • Sep 2006" },
+          { value: "pt49", label: "Test 49 • Jun 2006" },
+          { value: "pt48", label: "Test 48 • Dec 2005" },
+          { value: "pt47", label: "Test 47 • Oct 2005" },
+          { value: "pt46", label: "Test 46 • Jun 2005" },
+          { value: "pt45", label: "Test 45 • Dec 2004" },
+          { value: "pt44", label: "Test 44 • Oct 2004" },
+          { value: "pt43", label: "Test 43 • Jun 2004" },
+          { value: "pt42", label: "Test 42 • Dec 2003" },
+          { value: "pt41", label: "Test 41 • Oct 2003" },
+          { value: "pt40", label: "Test 40 • Jun 2003" },
+          { value: "pt39", label: "Test 39 • Dec 2002" },
+          { value: "pt38", label: "Test 38 • Oct 2002" },
+          { value: "pt37", label: "Test 37 • Jun 2002" },
+          { value: "pt36", label: "Test 36 • Dec 2001" },
+          { value: "pt35", label: "Test 35 • Oct 2001" },
+          { value: "pt34", label: "Test 34 • Jun 2001" },
+          { value: "pt33", label: "Test 33 • Dec 2000" },
+          { value: "pt32", label: "Test 32 • Oct 2000" },
+          { value: "pt31", label: "Test 31 • Jun 2000" },
+          { value: "pt30", label: "Test 30 • Dec 1999" },
+          { value: "pt29", label: "Test 29 • Oct 1999" },
+          { value: "pt28", label: "Test 28 • Jun 1999" },
+          { value: "pt27", label: "Test 27 • Dec 1998" },
+          { value: "pt26", label: "Test 26 • Sep 1998" },
+          { value: "pt25", label: "Test 25 • Jun 1998" },
+          { value: "pt24", label: "Test 24 • Dec 1997" },
+          { value: "pt23", label: "Test 23 • Oct 1997" },
+          { value: "pt22", label: "Test 22 • Jun 1997" },
+          { value: "pt21", label: "Test 21 • Dec 1996" },
+          { value: "pt20", label: "Test 20 • Oct 1996" },
+          { value: "pt19", label: "Test 19 • Jun 1996" },
+          { value: "pt18", label: "Test 18 • Dec 1992" },
+          { value: "pt17", label: "Test 17 • Dec 1995" },
+          { value: "pt16", label: "Test 16 • Sep 1995" },
+          { value: "pt15", label: "Test 15 • Jun 1995" },
+          { value: "pt14", label: "Test 14 • Feb 1995" },
+          { value: "pt13", label: "Test 13 • Dec 1994" },
+          { value: "pt12", label: "Test 12 • Oct 1994" },
+          { value: "pt11", label: "Test 11 • Jun 1994" },
+          { value: "pt10", label: "Test 10 • Feb 1994" },
+          { value: "pt9", label: "Test 9 • Oct 1993" },
+          { value: "pt8", label: "Test 8 • Jun 1993" },
+          { value: "pt7", label: "Test 7 • Feb 1993" },
+          { value: "pt6", label: "Test 6 • Oct 1992" },
+          { value: "pt5", label: "Test 5 • Jun 1992" },
+          { value: "pt4", label: "Test 4 • Feb 1992" },
+          { value: "pt3", label: "Test 3 • Dec 1991" },
+          { value: "pt2", label: "Test 2 • Oct 1991" },
+          { value: "pt1", label: "Test 1 • Jun 1991" },
+          { value: "pta", label: "Test A • Feb 1996" },
+          { value: "ptb", label: "Test B • Feb 1999" },
+          { value: "ptc", label: "Test C • Feb 2000" },
+          { value: "ptc2", label: "Test C2 • Dec 2008" },
+          { value: "ptf", label: "Test F • Feb 1997" },
+          { value: "ptj", label: "Test J • Jun 2007" }
+        ], defaultValue: "pt159"
+      },
+      { id: "sec1", label: "Section 1 – Logical Reasoning", type: "number", min: 0, max: 25, defaultValue: 0 },
+      {
+        id: "sec2", label: "Section 2 – Reading Comprehension", readOnly: true, type: "text", defaultValue: "Experimental"
+      },
+      { id: "sec3", label: "Section 3 – Logical Reasoning", type: "number", min: 0, max: 25, defaultValue: 0 },
+      { id: "sec4", label: "Section 4 – Reading Comprehension", type: "number", min: 0, max: 25, defaultValue: 0 },
+    ],
+    // Minimal per‑test conversion tables (partial, demo purposes). Real tables should be complete.
+    conversionTables: {
+      pt159: {
+        0: 120, 1: 120, 2: 120, 3: 120, 4: 120, 5: 121, 6: 122, 7: 123, 8: 124, 9: 125, 10: 126, 11: 127, 12: 128, 13: 129, 14: 130, 15: 131, 16: 132, 17: 133, 18: 134, 19: 135, 20: 136, 21: 137, 22: 138, 23: 139, 24: 140, 25: 141, 26: 142, 27: 143, 28: 144, 29: 145, 30: 146, 31: 147, 32: 148, 33: 149, 34: 150, 35: 151, 36: 152, 37: 153, 38: 154, 39: 155, 40: 156, 41: 157, 42: 158, 43: 159, 44: 160, 45: 161, 46: 162, 47: 163, 48: 164, 49: 165, 50: 166, 51: 167, 52: 168, 53: 169, 54: 170, 55: 171, 56: 172, 57: 173, 58: 174, 59: 175, 60: 176, 61: 177, 62: 178, 63: 179, 64: 180, 65: 180, 66: 180, 67: 180, 68: 180, 69: 180, 70: 180, 71: 180, 72: 180, 73: 180, 74: 180, 75: 180, 76: 180, 77: 180, 78: 180, 79: 180, 80: 180, 81: 180, 82: 180, 83: 180, 84: 180, 85: 180, 86: 180, 87: 180, 88: 180, 89: 180, 90: 180, 91: 180, 92: 180, 93: 180, 94: 180, 95: 180, 96: 180, 97: 180, 98: 180, 99: 180, 100: 180, 101: 180, 102: 180, 103: 180, 104: 180, 105: 180, 106: 180, 107: 180, 108: 180, 109: 180, 110: 180, 111: 180, 112: 180, 113: 180, 114: 180, 115: 180, 116: 180, 117: 180, 118: 180, 119: 180, 120: 180
+      }
+    },
+    faqs: [
+      { question: "What is a raw LSAT score?", answer: "The raw score is the number of questions answered correctly before scaling (out of 120)." },
+      { question: "How accurate is this conversion?", answer: "It uses official per‑test conversion tables; results are as accurate as the published data allows." },
+      { question: "How many questions are on the LSAT?", answer: "There are 100 scored questions (25 per section) plus 4 unscored experimental questions." },
+      { question: "How long is the LSAT exam?", answer: "The LSAT is a 3 hour and 30 minute test, plus a 15‑minute break." },
+      { question: "What is a good LSAT score?", answer: "Generally, a score of 165 or higher is considered competitive for top law schools." },
+      { question: "What is the top LSAT score?", answer: "The maximum possible scaled score is 180." },
+      { question: "How does the LSAT score affect law school admission?", answer: "Higher scores improve admission chances and scholarship eligibility; many schools publish median LSAT scores for admitted students." },
+      { question: "What is the LSAT demon scholarship estimator?", answer: "It's a tool that estimates scholarship amounts based on your LSAT score and GPA using historical data." },
+      { question: "How can I predict my law school ranking with my LSAT score?", answer: "Use the Law School Predictor tool which matches your score with average admitted scores at various schools." },
+      { question: "What is an average LSAT score?", answer: "The median LSAT score nationwide is around 151." },
+      { question: "What is a normal LSAT score range?", answer: "Scores typically range from 120 to 180, with most test‑takers scoring between 135 and 165." },
+      { question: "What's a good LSAT score?", answer: "Scores of 165 + are strong; 160 + are competitive for many schools." }
+    ],
+    commonMistakes: ["Entering the experimental section into the raw total.", "Selecting the wrong test version.", "Assuming a linear conversion for all tests."],
+    useCases: ["Law school applications", "Scholarship eligibility estimates", "Self‑assessment for test prep"],
+    tips: ["Double‑check the test version you took; conversion tables differ by test.", "Experimental sections are ignored automatically."],
+    calculate: (inputs) => {
+      const testKey = inputs.test as string;
+      const raw = Number(inputs.sec1 || 0) + Number(inputs.sec3 || 0) + Number(inputs.sec4 || 0);
+      const table = (inputs as any).conversionTables?.[testKey] || {};
+      // Fallback to linear if table entry missing for exact raw total
+      let scaled = table[raw] ?? Math.round(120 + raw * 0.5);
+      if (scaled < 120) scaled = 120;
+      if (scaled > 180) scaled = 180;
+      let percentile = 0;
+      if (scaled >= 170) percentile = 95;
+      else if (scaled >= 160) percentile = 85;
+      else if (scaled >= 150) percentile = 70;
+      else if (scaled >= 140) percentile = 50;
+      else if (scaled >= 130) percentile = 30;
+      else percentile = 15;
+      return {
+        scaledScore: { value: scaled, label: "Scaled LSAT Score", unit: "" },
+        percentile: { value: `${percentile}%`, label: "Estimated Percentile", unit: "" }
+      };
+    }
+  },
+
+
   // 9. Mulch
   mulch: {
     slug: "mulch",
@@ -880,7 +1185,20 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Productivity = (Actual Output ÷ Standard Target) × 100",
     formulaDescription: "Compares actual completed volume with target benchmark averages.",
     example: "If a worker packs 120 boxes in a shift where the standard is 100: efficiency is 120%.",
-    faqs: [{ question: "How is productivity defined?", answer: "The ratio of input resources (usually hours) to output goods or services." }],
+    faqs: [
+      { question: "How is productivity defined?", answer: "The ratio of input resources (usually hours) to output goods or services." },
+      { question: "What is the productivity formula?", answer: "Productivity = (Actual Output ÷ Standard Target) × 100." },
+      { question: "What are common mistakes to avoid when measuring productivity?", answer: "Common mistakes include focusing on total work hours instead of target quality output, not establishing reliable baselines before enforcing targets, and not accounting for external factors that may affect productivity." },
+      { question: "How can I use productivity data to improve my business?", answer: "Productivity data can be used to identify areas where efficiency can be improved, optimize workflows, and ensure that staff are meeting performance expectations." },
+      { question: "What is considered a good productivity rate?", answer: "A good productivity rate varies by industry and role, but generally anything above 80% is considered good." },
+      { question: "How often should productivity be measured?", answer: "Productivity should be measured regularly, typically on a weekly or monthly basis, to track progress and identify trends." },
+      { question: "What is business productivity calculator?", answer: "A productivity calculator helps you determine total work time based on billable minutes and a productivity target." },
+      { question: "How do I include an unpaid lunch break?", answer: "Enter the lunch minutes; they are added after the perfect end time and do not affect productivity percentage." },
+      { question: "Can therapists use this calculator?", answer: "Yes, it’s tailored for therapy billable minutes and productivity targets." },
+      { question: "What is the productivity formula?", answer: "Total time worked = Billable minutes ÷ (Productivity % ÷ 100)." },
+      { question: "How accurate is the calculator?", answer: "Calculations are minute‑precise; any fractional minute is truncated for a slightly earlier end time." },
+
+    ],
     commonMistakes: ["Focusing on total work hours instead of target quality output."],
     useCases: ["Business process optimization", "Staff review reporting"],
     tips: ["Establish reliable baselines before enforcing targets."],

@@ -85,7 +85,10 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                     <select
                       value={inputsState[input.id] || ""}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
-                      className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 bg-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
+                      className={`mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm shadow-sm transition-colors ${input.readOnly
+                        ? "bg-gray-100 text-slate-500 cursor-not-allowed"
+                        : "bg-white text-slate-900 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        }`}
                     >
                       {input.options?.map((opt) => (
                         <option key={opt.value} value={opt.value}>
@@ -93,6 +96,21 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                         </option>
                       ))}
                     </select>
+                  </div>
+                );
+              } else if (input.type === "text") {
+                return (
+                  <div key={input.id}>
+                    <label className="block text-xs font-semibold text-slate-500 uppercase">
+                      {input.label}
+                    </label>
+                    <input
+                      type="text"
+                      value={inputsState[input.id] || ""}
+                      onChange={(e) => handleInputChange(input.id, e.target.value)}
+                      readOnly={input.readOnly}
+                      className={`mt-2 w-full rounded-lg border ${input.readOnly ? "bg-gray-200" : ""} border-slate-300 px-4 py-2.5 text-sm text-slate-900 bg-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm`}
+                    />
                   </div>
                 );
               }

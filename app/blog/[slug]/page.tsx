@@ -183,14 +183,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="lg:col-span-4 space-y-10 pl-0 lg:pl-6">
             
             {/* Search Input Widget (Transparent, bottom line search input) */}
-            <div className="pb-6 border-b border-slate-200/80">
+            <div>
               <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Search Calculators</h3>
               <SearchInput variant="minimal" placeholder="Search tools..." />
             </div>
 
             {/* Popular Topics / Calculators (No card bg/border) */}
             <div className="pb-6 border-b border-slate-200/80">
-              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Popular Tools</h3>
+              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Popular Calculators</h3>
               <ul className="space-y-3.5">
                 {popularCalculators.map((calc) => (
                   <li key={calc.name}>
@@ -239,7 +239,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
 
             {/* Sidebar Ad Slot (Flat unbordered placement) */}
-            <div className="py-4 text-center">
+            {/* <div className="py-4 text-center">
               <span className="inline-block text-[8px] font-bold uppercase tracking-wider text-slate-400 border border-slate-200 px-1.5 py-0.5 rounded bg-slate-150">
                 Advertisement
               </span>
@@ -247,6 +247,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Sidebar Ad Slot
               </div>
             </div>
+            */}
 
           </div>
         </div>

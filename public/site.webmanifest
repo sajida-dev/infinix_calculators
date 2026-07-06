@@ -1,0 +1,21 @@
+{
+    "name": "Infinix Calculators",
+    "short_name": "Infinix",
+    "description": "Free premium calculators for finance, construction, health, and more.",
+    "icons": [
+        {
+            "src": "/infinix-calculator-icon-blue.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/infinix-calculator-icon-blue.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#0ea5e9",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}
