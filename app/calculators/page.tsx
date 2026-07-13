@@ -11,7 +11,7 @@ interface PageProps {
 }
 
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://infinixcalculator.com"),
 
   title: "All Online Calculators | Free Business, Finance, Health & Construction Calculators",
@@ -78,7 +78,7 @@ const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Free Online Calculators Directory | Infinix Calculators",
+      "Free Online Calculators | Infinix Calculators",
 
     description:
       "Discover hundreds of free online calculators covering finance, business, health, construction, landscaping, education, taxes, and more.",

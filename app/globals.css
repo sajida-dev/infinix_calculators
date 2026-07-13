@@ -79,7 +79,8 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.blog-content th, .blog-content td {
+.blog-content th,
+.blog-content td {
   border: 1px solid #e2e8f0;
   padding: 0.75rem;
   text-align: left;
@@ -93,4 +94,22 @@ body {
 
 .blog-content td {
   color: #475569;
+}
+
+.blog-content a,
+.blog-content p a,
+.blog-content li a {
+  color: #1d4ed8 !important;
+  /* Hyperlink Blue */
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  transition: color 0.15s ease-in-out;
+}
+
+.blog-content a:hover,
+.blog-content p a:hover,
+.blog-content li a:hover {
+  color: #1e40af !important;
+  /* Darker Blue on Hover */
 }

@@ -3,9 +3,44 @@ import { calculatorsData } from "./data/calculatorsData";
 import { blogData } from "./data/blogData";
 import SearchInput from "./components/SearchInput";
 import BlogCard from "./components/BlogCard";
+import TopsoilCalculator from "./components/TopsoilCalculator";
 import { categoriesList } from "./data/CategoryData";
-export default function Home() {
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Infinix Calculators – Professional Tools for Finance, Construction & Landscaping',
+  description: 'Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.',
+  keywords: ['calculators', 'financial calculator', 'construction calculator', 'topsoil calculator', 'CBM calculator', 'concrete calculator', 'business finance', 'free online calculators'],
+  // Add more SEO parameters
+  alternates: {
+    canonical: 'https://infinixcalculator.com/', // Replace with your actual domain
+  },
+  openGraph: {
+    title: 'Infinix Calculators – Professional Tools for Finance, Construction & Landscaping',
+    description: 'Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.',
+    url: 'https://infinixcalculator.com/',
+    siteName: 'Infinix Calculators',
+    images: [
+      {
+        url: 'https://infinixcalculator.com/og-image.png', // Optional: Add your OG image
+        width: 1200,
+        height: 630,
+        alt: 'Infinix Calculators Preview',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Infinix Calculators – Professional Tools for Finance, Construction & Landscaping',
+    description: 'Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.',
+    images: ['https://infinixcalculator.com/og-image.png'], // Optional: Add your Twitter image
+    creator: '@yourtwitterhandle', // Optional: Add your Twitter handle
+  },
+};
+
+export default function Home() {
 
   // Latest blog articles
   const latestArticles = Object.values(blogData).slice(0, 3);
@@ -54,6 +89,26 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* 1.5. Featured Topsoil Calculator Showcase */}
+      <section className="py-12 sm:py-16 bg-white border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary mb-3">
+              Featured Tool
+            </span>
+            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Topsoil Calculator – Our Most Popular Tool
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Planning a garden bed, lawn topdressing, or landscaping project? Quickly calculate the exact volume of soil, mulch, or compost you need, in yards, cubic feet, or tons.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <TopsoilCalculator />
           </div>
         </div>
       </section>
