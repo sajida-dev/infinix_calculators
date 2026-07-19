@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { calculatorsData } from "../../../app/data/calculatorsData";
 import { blogData } from "../../../app/data/blogData";
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: CalculatorPageProps): Promise
     description: calc.metaDescription,
     keywords: calc.keywords,
     alternates: {
-      canonical: `https://infinixcalculators.com/calculators/${slug}`,
+      canonical: `https://infinixcalculator.com/calculators/${slug}`,
     },
   };
 }
@@ -66,7 +67,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     "description": calc.metaDescription,
     "applicationCategory": calc.category === "financial" ? "FinanceApplication" : "BusinessApplication",
     "operatingSystem": "All",
-    "url": `https://infinixcalculators.com/calculators/${slug}`,
+    "url": `https://infinixcalculator.com/calculators/${slug}`,
   };
 
   const breadcrumbSchema = {
@@ -77,19 +78,19 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://infinixcalculators.com",
+        "item": "https://infinixcalculator.com",
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Calculators",
-        "item": "https://infinixcalculators.com/calculators",
+        "item": "https://infinixcalculator.com/calculators",
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": calc.name,
-        "item": `https://infinixcalculators.com/calculators/${slug}`,
+        "item": `https://infinixcalculator.com/calculators/${slug}`,
       },
     ],
   };
@@ -246,10 +247,12 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                       className="group flex gap-4 hover:text-primary transition-colors"
                     >
                       <div className="relative w-16 h-16 bg-slate-100 rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50">
-                        <img
+                        <Image
                           src={rel.image}
                           alt={rel.title}
-                          className="w-full h-full object-cover"
+                          fill
+                          sizes="64px"
+                          className="object-cover"
                         />
                       </div>
                       <div className="flex-1 min-w-0">

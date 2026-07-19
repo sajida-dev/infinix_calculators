@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { blogData } from "../data/blogData";
 import BlogCard from "../components/BlogCard";
 
@@ -84,10 +85,13 @@ export default function BlogPage() {
 
               {/* Left Column (Image): 5 cols on desktop */}
               <div className="lg:col-span-5 relative min-h-[250px] lg:min-h-full bg-slate-100">
-                <img
+                <Image
                   src={featuredPost.image}
                   alt={featuredPost.title}
-                  className="w-full h-full object-cover absolute inset-0"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
                 />
               </div>
 

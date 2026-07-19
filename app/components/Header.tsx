@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { categoriesList } from "../data/CategoryData";
 
 export default function Header() {
 
@@ -12,7 +13,7 @@ export default function Header() {
           <div className="flex flex-shrink-0 items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src="/infinix-calculator-brand-logo.png"
+                src="/infinix-calculator-brand-logo.webp"
                 alt="Infinix Calculators"
                 width={150}
                 height={40}
@@ -36,26 +37,13 @@ export default function Header() {
               {/* Pure CSS Hover Dropdown */}
               <div className="absolute left-0 mt-1 w-56 rounded-xl border border-slate-200 bg-white p-3 shadow-lg hidden group-hover:block z-50">
                 <ul className="space-y-1">
-                  <li>
-                    <Link href="/calculators" className="block rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
-                      Financial Calculators
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/calculators" className="block rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
-                      Tax & Payroll Tools
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/calculators" className="block rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
-                      Construction Estimators
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/calculators" className="block rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
-                      Health & Fitness Indices
-                    </Link>
-                  </li>
+                  {categoriesList.map((cat) => (
+                    <li key={cat.id}>
+                      <Link href="/calculators" className="block rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
+                        {cat.title}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

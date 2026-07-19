@@ -1,2 +1,37 @@
-# Infinix Calculators SEO Keywords
-topsoil calculator, construction calculators, business calculators, finance calculators, free online calculators, landscaping calculators, tax calculators, CBM calculator, affirm calculator, roof calculator, grout calculator, drywall calculator, mulch calculator
+# Infinix Calculators
+> A comprehensive directory of high-performance online calculators for construction, finance, tax, health, math, education, and logistics.
+
+## Key Categories
+
+### Construction & Materials
+- [Topsoil Calculator](/calculators/topsoil): Estimate topsoil, fill dirt, and compost volume/weight.
+- [Concrete Calculator](/calculators/concrete): Estimate concrete volume, weight, and bags needed.
+- [Mulch Calculator](/calculators/mulch): Calculate mulch volume and bags for landscaping.
+- [Drywall Calculator](/calculators/drywall): Calculate drywall sheets and joint compound.
+- [Roof Calculator](/calculators/roof): Calculate roof pitch, area, and shingles.
+- [Fence Cost Calculator](/calculators/fence-cost): Estimate fence building materials and costs.
+- [Brick Calculator](/calculators/brick): Estimate bricks and mortar needed for walls.
+- [Siding Calculator](/calculators/siding): Estimate siding panels for exterior walls.
+
+### Financial & Payroll
+- [Affirm Calculator](/calculators/affirm): Estimate monthly payments for Affirm loans.
+- [Pro Rata Calculator](/calculators/pro-rata): Prorate rent, salaries, or other recurring costs.
+- [Gross Up Calculator](/calculators/gross-up): Calculate gross wages from net pay.
+- [Reverse Tax Calculator](/calculators/reverse-tax): Extract tax from total costs.
+- [Georgia Payroll Calculator](/calculators/georgia-payroll): Estimate paycheck withholdings for Georgia.
+- [Square Fee Calculator](/calculators/square-fee): Estimate merchant processing fees.
+
+### Logistics & Unit Converters
+- [CBM Calculator](/calculators/cbm): Calculate Cubic Meters for freight.
+
+### Health & Fitness
+- [BMI Calculator](/calculators/bmi): Calculate Body Mass Index.
+- [Losertown Calorie Calculator](/calculators/losertown-calorie): Predict weight loss based on calorie intake.
+
+## Blog & Guides
+- [Landscaping & Calculation Guides](/blog): Read detailed articles and guides written by landscaping and calculation experts.
+
+## General Information
+- [About Us](/about): Learn more about Infinix Calculators.
+- [Privacy Policy](/privacy): Review our data handling policies.
+- [Terms of Service](/terms): Understand our terms of use.

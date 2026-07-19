@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogData } from "../../data/blogData";
 import { calculatorsData } from "../../data/calculatorsData";
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: `${post.title} - Calculator Guide`,
     description: post.excerpt,
     alternates: {
-      canonical: `https://infinixcalculators.com/blog/${slug}`,
+      canonical: `https://infinixcalculator.com/blog/${slug}`,
     },
   };
 }
@@ -76,13 +77,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       "name": "Infinix Calculators",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://infinixcalculators.com/infinix-calculator-brand-logo.png",
+        "url": "https://infinixcalculator.com/infinix-calculator-brand-logo.png",
       },
     },
-    "image": `https://infinixcalculators.com${post.image}`,
+    "image": `https://infinixcalculator.com${post.image}`,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://infinixcalculators.com/blog/${slug}`,
+      "@id": `https://infinixcalculator.com/blog/${slug}`,
     },
   };
 
@@ -138,11 +139,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </header>
 
               {/* Large Responsive Article Image */}
-              <div className="relative w-full rounded-xl overflow-hidden mb-8 shadow-xs border border-slate-200/50">
-                <img
+              <div className="relative w-full h-64 sm:h-96 md:h-[450px] rounded-xl overflow-hidden mb-8 shadow-xs border border-slate-200/50">
+                <Image
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-auto max-h-[500px] object-cover"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
+                  className="object-cover"
                 />
               </div>
 
@@ -220,10 +224,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       className="group flex gap-4 hover:text-primary transition-colors"
                     >
                       <div className="relative w-16 h-16 bg-slate-100 rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50">
-                        <img
+                        <Image
                           src={rel.image}
                           alt={rel.title}
-                          className="w-full h-full object-cover"
+                          fill
+                          sizes="64px"
+                          className="object-cover"
                         />
                       </div>
                       <div className="flex-1 min-w-0">

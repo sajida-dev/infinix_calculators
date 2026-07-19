@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import TopsoilCalculator from "../../components/TopsoilCalculator";
 import CalculatorFaqs from "../../components/CalculatorFaqs";
 import { blogData } from "../../data/blogData";
@@ -22,13 +23,13 @@ export const metadata: Metadata = {
     "ground cover calculator",
   ],
   alternates: {
-    canonical: "https://infinixcalculators.com/calculators/topsoil",
+    canonical: "https://infinixcalculator.com/calculators/topsoil",
   },
   openGraph: {
     title: "Topsoil Calculator – Fast & Accurate",
     description:
       "Estimate topsoil volume in cubic yards, feet, tons, or bag counts instantly.",
-    url: "https://infinixcalculators.com/calculators/topsoil",
+    url: "https://infinixcalculator.com/calculators/topsoil",
     siteName: "Infinix Calculators",
     images: [{ url: "/og-topsoil.png", width: 1200, height: 630, alt: "Topsoil Calculator" }],
     locale: "en_US",
@@ -70,7 +71,7 @@ export default function TopsoilPage() {
             applicationCategory: "BusinessApplication",
             operatingSystem: "All",
             browserRequirements: "Requires HTML5 support",
-            url: "https://infinixcalculators.com/calculators/topsoil",
+            url: "https://infinixcalculator.com/calculators/topsoil",
           }).replace(/</g, "\\u003c")
         }}
       />
@@ -81,9 +82,9 @@ export default function TopsoilPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://infinixcalculators.com" },
-              { "@type": "ListItem", position: 2, name: "Calculators", item: "https://infinixcalculators.com/calculators" },
-              { "@type": "ListItem", position: 3, name: "Topsoil Calculator", item: "https://infinixcalculators.com/calculators/topsoil" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://infinixcalculator.com" },
+              { "@type": "ListItem", position: 2, name: "Calculators", item: "https://infinixcalculator.com/calculators" },
+              { "@type": "ListItem", position: 3, name: "Topsoil Calculator", item: "https://infinixcalculator.com/calculators/topsoil" },
             ],
           }).replace(/</g, "\\u003c")
         }}
@@ -307,7 +308,13 @@ export default function TopsoilPage() {
                       className="group flex gap-4 hover:text-primary transition-colors"
                     >
                       <div className="relative w-16 h-16 bg-slate-100 rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50">
-                        <img src={rel.image} alt={rel.title} className="w-full h-full object-cover" />
+                        <Image
+                          src={rel.image}
+                          alt={rel.title}
+                          fill
+                          sizes="64px"
+                          className="object-cover"
+                        />
                       </div>
                       <div className="flex-1 min-w-0">
                         <span className="block text-[9px] font-bold text-primary uppercase tracking-wider">

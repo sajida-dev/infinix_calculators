@@ -96,6 +96,7 @@ export default function SearchInput({
             onFocus={() => query.trim() && setIsOpen(true)}
             onChange={(e) => handleInputChange(e.target.value)}
             placeholder={placeholder}
+            aria-label={placeholder || "Search calculators"}
             className="w-full bg-transparent px-4 py-4 sm:py-5 text-sm sm:text-base text-slate-900 focus:outline-none placeholder-slate-400"
             autoComplete="off"
           />
@@ -141,6 +142,7 @@ export default function SearchInput({
             onFocus={() => query.trim() && setIsOpen(true)}
             onChange={(e) => handleInputChange(e.target.value)}
             placeholder={placeholder}
+            aria-label={placeholder || "Search calculators"}
             className="w-full bg-transparent border-b border-slate-300 py-2.5 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-primary placeholder-slate-400"
             autoComplete="off"
           />
@@ -193,6 +195,7 @@ export default function SearchInput({
           onFocus={() => query.trim() && setIsOpen(true)}
           onChange={(e) => handleInputChange(e.target.value)}
           placeholder={placeholder}
+          aria-label={placeholder || "Search calculators"}
           className="w-full bg-transparent px-4 py-3.5 text-xs sm:text-sm text-slate-900 focus:outline-none placeholder-slate-400"
           autoComplete="off"
         />

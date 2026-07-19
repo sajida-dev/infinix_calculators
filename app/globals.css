@@ -14,6 +14,8 @@
   --color-primary: hsl(208, 88%, 47%);
   --color-primary-hover: hsl(208, 88%, 38%);
   --color-primary-light: hsl(208, 88%, 95%);
+  --color-slate-400: #64748b;
+  --color-slate-500: #475569;
   --shadow-primary: 0 4px 14px 0 rgba(23, 115, 216, 0.3);
   --shadow-primary-lg: 0 10px 25px -3px rgba(23, 115, 216, 0.2), 0 4px 6px -4px rgba(23, 115, 216, 0.2);
 }
@@ -96,9 +98,9 @@ body {
   color: #475569;
 }
 
-.blog-content a,
-.blog-content p a,
-.blog-content li a {
+.blog-content a:not(.bg-primary),
+.blog-content p a:not(.bg-primary),
+.blog-content li a:not(.bg-primary) {
   color: #1d4ed8 !important;
   /* Hyperlink Blue */
   text-decoration: underline !important;
@@ -107,9 +109,9 @@ body {
   transition: color 0.15s ease-in-out;
 }
 
-.blog-content a:hover,
-.blog-content p a:hover,
-.blog-content li a:hover {
+.blog-content a:not(.bg-primary):hover,
+.blog-content p a:not(.bg-primary):hover,
+.blog-content li a:not(.bg-primary):hover {
   color: #1e40af !important;
   /* Darker Blue on Hover */
 }

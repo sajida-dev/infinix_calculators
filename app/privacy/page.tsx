@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
 
   alternates: {
-    canonical: "https://infinixcalculators.com/privacy",
+    canonical: "https://infinixcalculator.com/privacy",
   },
 };
 

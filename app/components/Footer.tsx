@@ -45,7 +45,7 @@ export default function Footer() {
           <div className="col-span-2 space-y-4">
             <Link href="/" className="inline-block">
               <Image
-                src="/infinix-calculator-brand-logo.png"
+                src="/infinix-calculator-brand-logo.webp"
                 alt="Infinix Calculators"
                 width={140}
                 height={35}

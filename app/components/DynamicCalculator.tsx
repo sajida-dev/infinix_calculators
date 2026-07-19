@@ -76,13 +76,15 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
 
           <div className="space-y-4">
             {calculator.inputs.map((input) => {
+              const uniqueId = `dc-${input.id}`;
               if (input.type === "select") {
                 return (
                   <div key={input.id}>
-                    <label className="block text-xs font-semibold text-slate-500 uppercase">
+                    <label htmlFor={uniqueId} className="block text-xs font-semibold text-slate-600 uppercase">
                       {input.label}
                     </label>
                     <select
+                      id={uniqueId}
                       value={inputsState[input.id] || ""}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
                       className={`mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm shadow-sm transition-colors ${input.readOnly
@@ -101,10 +103,11 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
               } else if (input.type === "text") {
                 return (
                   <div key={input.id}>
-                    <label className="block text-xs font-semibold text-slate-500 uppercase">
+                    <label htmlFor={uniqueId} className="block text-xs font-semibold text-slate-600 uppercase">
                       {input.label}
                     </label>
                     <input
+                      id={uniqueId}
                       type="text"
                       value={inputsState[input.id] || ""}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
@@ -118,11 +121,12 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
               // Default: Number inputs
               return (
                 <div key={input.id}>
-                  <label className="block text-xs font-semibold text-slate-500 uppercase">
+                  <label htmlFor={uniqueId} className="block text-xs font-semibold text-slate-600 uppercase">
                     {input.label}
                   </label>
                   <div className="mt-2 flex rounded-lg shadow-sm">
                     <input
+                      id={uniqueId}
                       type="number"
                       step="any"
                       value={inputsState[input.id] === undefined ? "" : inputsState[input.id]}

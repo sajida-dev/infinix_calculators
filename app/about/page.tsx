@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'About – Infinix Calculators',
   description: 'Learn about Infinix Calculators, our mission, team, and the powerful tools we provide for finance, construction, health, and more.',
   keywords: ['infinix calculators', 'about us', 'financial calculator', 'construction calculator', 'health calculator', 'online calculators', 'premium calculation tools'],
-  alternates: { canonical: "https://infinixcalculators.com/about" },
+  alternates: { canonical: "https://infinixcalculator.com/about" },
 };
 
 export default function AboutPage() {

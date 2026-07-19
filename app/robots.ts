@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/"],
     },
-    sitemap: "https://infinixcalculators.com/sitemap.xml",
+    sitemap: "https://infinixcalculator.com/sitemap.xml",
   };
 }

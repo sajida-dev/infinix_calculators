@@ -3,7 +3,7 @@ import { calculatorsData } from "./data/calculatorsData";
 import { blogData } from "./data/blogData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://infinixcalculators.com";
+  const baseUrl = "https://infinixcalculator.com";
 
   // Base routes
   const routes = [

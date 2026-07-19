@@ -128,9 +128,10 @@ export default function TopsoilCalculator() {
             <div className="space-y-4">
               {/* Length */}
               <div>
-                <label className="block text-xs font-semibold text-slate-500 uppercase">Length</label>
+                <label htmlFor="ts-length" className="block text-xs font-semibold text-slate-600 uppercase">Length</label>
                 <div className="mt-2 flex rounded-lg shadow-sm">
                   <input
+                    id="ts-length"
                     type="number"
                     min="0.1"
                     step="any"
@@ -141,6 +142,7 @@ export default function TopsoilCalculator() {
                   <select
                     value={lengthUnit}
                     onChange={(e) => setLengthUnit(e.target.value as DimensionUnit)}
+                    aria-label="Select length unit"
                     className="rounded-r-lg border-y border-r border-slate-300 bg-slate-50 px-3 py-2.5 text-xs font-medium text-slate-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                   >
                     {unitOptions.map((opt) => (
@@ -152,9 +154,10 @@ export default function TopsoilCalculator() {
 
               {/* Width */}
               <div>
-                <label className="block text-xs font-semibold text-slate-500 uppercase">Width</label>
+                <label htmlFor="ts-width" className="block text-xs font-semibold text-slate-600 uppercase">Width</label>
                 <div className="mt-2 flex rounded-lg shadow-sm">
                   <input
+                    id="ts-width"
                     type="number"
                     min="0.1"
                     step="any"
@@ -165,6 +168,7 @@ export default function TopsoilCalculator() {
                   <select
                     value={widthUnit}
                     onChange={(e) => setWidthUnit(e.target.value as DimensionUnit)}
+                    aria-label="Select width unit"
                     className="rounded-r-lg border-y border-r border-slate-300 bg-slate-50 px-3 py-2.5 text-xs font-medium text-slate-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                   >
                     {unitOptions.map((opt) => (
@@ -177,9 +181,10 @@ export default function TopsoilCalculator() {
           ) : (
             /* Circular Area / Diameter */
             <div>
-              <label className="block text-xs font-semibold text-slate-500 uppercase">Diameter / Width across</label>
+              <label htmlFor="ts-diameter" className="block text-xs font-semibold text-slate-600 uppercase">Diameter / Width across</label>
               <div className="mt-2 flex rounded-lg shadow-sm">
                 <input
+                  id="ts-diameter"
                   type="number"
                   min="0.1"
                   step="any"
@@ -190,6 +195,7 @@ export default function TopsoilCalculator() {
                 <select
                   value={diameterUnit}
                   onChange={(e) => setDiameterUnit(e.target.value as DimensionUnit)}
+                  aria-label="Select diameter unit"
                   className="rounded-r-lg border-y border-r border-slate-300 bg-slate-50 px-3 py-2.5 text-xs font-medium text-slate-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                 >
                   {unitOptions.map((opt) => (
@@ -202,9 +208,10 @@ export default function TopsoilCalculator() {
 
           {/* Depth */}
           <div>
-            <label className="block text-xs font-semibold text-slate-500 uppercase">Desired Depth</label>
+            <label htmlFor="ts-depth" className="block text-xs font-semibold text-slate-600 uppercase">Desired Depth</label>
             <div className="mt-2 flex rounded-lg shadow-sm">
               <input
+                id="ts-depth"
                 type="number"
                 min="0.1"
                 step="any"
@@ -215,6 +222,7 @@ export default function TopsoilCalculator() {
               <select
                 value={depthUnit}
                 onChange={(e) => setDepthUnit(e.target.value as DimensionUnit)}
+                aria-label="Select depth unit"
                 className="rounded-r-lg border-y border-r border-slate-300 bg-slate-50 px-3 py-2.5 text-xs font-medium text-slate-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               >
                 {unitOptions.map((opt) => (
@@ -225,8 +233,9 @@ export default function TopsoilCalculator() {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-500 uppercase">Material / Soil Type</label>
+            <label htmlFor="ts-soil-type" className="block text-xs font-semibold text-slate-600 uppercase">Material / Soil Type</label>
             <select
+              id="ts-soil-type"
               value={soilType}
               onChange={(e) => setSoilType(e.target.value as SoilType)}
               className="mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 bg-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"

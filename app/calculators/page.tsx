@@ -130,8 +130,8 @@ export default async function CalculatorsPage(props: PageProps) {
   const popularCalcs = popularSlugs.map(s => calculatorsData[s]).filter(Boolean);
 
   const upcomingCalcs = [
-    { name: "Siding Estimator", desc: "Wall cladding and flashing panel boards." },
-    { name: "IFTA Fuel Tax", desc: "State mileage splits and fuel tax." },
+    { name: "Car Depreciation", desc: "Track resale value decay curves by brand." },
+    { name: "Commercial Lease", desc: "Net-triple rental escalation schedules." },
     { name: "Deferred Annuity", desc: "Annuity future value growth factors." },
     { name: "IUL Growth", desc: "Indexed universal life policy growth." }
   ];
