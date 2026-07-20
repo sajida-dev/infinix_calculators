@@ -210,7 +210,7 @@ export default async function CalculatorsPage(props: PageProps) {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {categoriesList.map((cat) => (
-                  <div key={cat.id} className="space-y-4">
+                  <div key={cat.id} id={cat.id} className="space-y-4 scroll-mt-20">
                     {/* Category Title with Blue circular icon */}
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm shrink-0">

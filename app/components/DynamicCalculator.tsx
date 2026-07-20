@@ -27,7 +27,18 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
     return initial;
   });
 
-  const [outputs, setOutputs] = useState<Record<string, { value: string | number; label: string; unit?: string }>>({});
+  const [outputs, setOutputs] = useState<Record<string, { value: string | number; label: string; unit?: string }>>(() => {
+    try {
+      const initial: Record<string, any> = {};
+      calculator.inputs.forEach((input) => {
+        initial[input.id] = input.defaultValue;
+      });
+      return calculator.calculate(initial);
+    } catch (err) {
+      console.error("Initial calculation error:", err);
+      return {};
+    }
+  });
   const [shouldCalculate, setShouldCalculate] = useState(false);
 
   // Perform calculation when user clicks Calculate button

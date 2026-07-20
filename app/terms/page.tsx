@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'Terms and Conditions – Infinix Calculators',
   description: 'Read the Terms and Conditions governing the use of Infinix Calculators, a premium suite of professional online calculators.',
   keywords: ['terms and conditions', 'infinix calculators', 'usage policy', 'privacy terms', 'online calculator terms', 'legal disclaimer', 'service agreement'],
+  alternates: {
+    canonical: "https://infinixcalculator.com/terms",
+  },
 };
 
 export default function TermsPage() {

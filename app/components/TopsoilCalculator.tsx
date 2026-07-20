@@ -20,15 +20,15 @@ export default function TopsoilCalculator() {
   const [depth, setDepth] = useState<number>(3);
   const [depthUnit, setDepthUnit] = useState<DimensionUnit>("in"); // defaults to inches
 
-  // Outputs
-  const [cubicFeet, setCubicFeet] = useState<number>(0);
-  const [cubicYards, setCubicYards] = useState<number>(0);
-  const [cubicMeters, setCubicMeters] = useState<number>(0);
-  const [liters, setLiters] = useState<number>(0);
-  const [tons, setTons] = useState<number>(0);
-  const [bags40lb, setBags40lb] = useState<number>(0);
-  const [bags075cf, setBags075cf] = useState<number>(0);
-  const [bags1cf, setBags1cf] = useState<number>(0);
+  // Outputs (Pre-populated with default dimensions: 10ft x 10ft x 3in standard soil = 25 cu ft)
+  const [cubicFeet, setCubicFeet] = useState<number>(25);
+  const [cubicYards, setCubicYards] = useState<number>(25 / 27);
+  const [cubicMeters, setCubicMeters] = useState<number>(25 * 0.0283168);
+  const [liters, setLiters] = useState<number>(25 * 28.3168);
+  const [tons, setTons] = useState<number>((25 * 75) / 2000);
+  const [bags40lb, setBags40lb] = useState<number>((25 * 75) / 40);
+  const [bags075cf, setBags075cf] = useState<number>(25 / 0.75);
+  const [bags1cf, setBags1cf] = useState<number>(25);
   const [shouldCalculate, setShouldCalculate] = useState(false);
 
   // Density factor (lbs per cubic foot)

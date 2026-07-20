@@ -955,7 +955,7 @@ export const blogData: Record<string, BlogPost> = {
       
       <p>Therefore, your final scaled score is based on a raw total of <strong>75 to 76 scored questions</strong>.</p>
 
-      <img src="/how-many-questions-are-on-the-lsat.webp" alt="How many questions are on the LSAT">
+      <img src="/how-many-questions-are-on-the-lsat.webp" alt="How many questions are on the LSAT" loading="lazy">
 
       <h2 id="test-day-strategy">Pacing and Endurance Strategies for Test Day</h2>
       <p>With only 35 minutes per section, pacing is critical. You have an average of <strong>1 minute and 24 seconds</strong> per question. To maximize your raw score conversion, employ these strategies:</p>
@@ -1104,7 +1104,7 @@ export const blogData: Record<string, BlogPost> = {
 
       <h2 id="score-improvement-math">The Math of Retaking: Average Score Improvements</h2>
       <p>According to historical data published by the Law School Admission Council (LSAC), the average score increase for repeat test-takers is <strong>2.5 to 3 scaled points</strong>. However, this average includes students who did not modify their study habits. If you analyze your diagnostic performance and adjust your approach, larger gains are very common.</p>
-      <img src="/lsat-retake-rules-when-to-take-lsat-calculator.webp" alt="lsat retake rules, when to take lsat, lsat calculator" class="w-full rounded-lg mb-6" />
+      <img src="/lsat-retake-rules-when-to-take-lsat-calculator.webp" alt="lsat retake rules, when to take lsat, lsat calculator" class="w-full rounded-lg mb-6" loading="lazy" />
       <table class="w-full border-collapse border border-slate-200 my-6 text-sm">
         <thead>
           <tr class="bg-slate-50">
@@ -1145,7 +1145,7 @@ export const blogData: Record<string, BlogPost> = {
         <li><strong>Where do you stand relative to school medians?</strong> If your target school has an LSAT median of 162 and you scored a 159, retaking to get those extra 3 points is the single best action you can take to secure admission.</li>
       </ol>
       <p>On the <a href="https://www.reddit.com/r/LSAT/comments/15x2z89/timing_and_accommodations_faq_for_new_testers/" target="_blank" rel="noopener noreferrer nofollow">LSAT</a> forum, users debate the value of a retake. As user <a href="https://www.reddit.com/r/LSAT/comments/17c8y1x/should_you_retake_the_lsat_statistical_guidance/" target="_blank" rel="noopener noreferrer nofollow">retake_champion</a> notes in community threads: <em>"If you have a clear plan to adjust your prep methodology and are scoring higher on practice tests, a retake is always worth it. Law schools generally look at your highest score, not the average of multiple attempts, making a retake low-risk."</em></p>
-      <img src="/lsat-score-increase-on-2nd-attampt-need-to-explain-your-prepration-rules.webp" alt="lsat score increase on 2nd attmpt, need to explain your prepration rules" class="w-full rounded-lg mb-6" />
+      <img src="/lsat-score-increase-on-2nd-attampt-need-to-explain-your-prepration-rules.webp" alt="lsat score increase on 2nd attmpt, need to explain your prepration rules" class="w-full rounded-lg mb-6" loading="lazy" />
 
       <h2 id="retake-study-plan">How to Adjust Your Strategy for a Higher Attempt</h2>
       <p>If you decide to retake, do not simply repeat the same study habits. You must adjust your approach:</p>

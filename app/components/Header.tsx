@@ -39,7 +39,7 @@ export default function Header() {
                 <ul className="space-y-1">
                   {categoriesList.map((cat) => (
                     <li key={cat.id}>
-                      <Link href="/calculators" className="block rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
+                      <Link href={`/calculators#${cat.id}`} className="block rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
                         {cat.title}
                       </Link>
                     </li>

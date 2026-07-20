@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'Contact – Infinix Calculators',
   description: 'Get in touch with the Infinix Calculators team. Find our email, social links, and support information.',
   keywords: ['contact', 'infinix calculators', 'support', 'email', 'social media', 'help'],
+  alternates: {
+    canonical: "https://infinixcalculator.com/contact",
+  },
 };
 
 export default function ContactPage() {

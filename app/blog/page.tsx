@@ -7,6 +7,9 @@ import BlogCard from "../components/BlogCard";
 export const metadata: Metadata = {
   title: "Landscape & Calculation Guides Blog - Infinix Calculator",
   description: "Read detailed guides, mathematical breakdowns, material estimating instructions, and calculators instructions from our landscape and finance experts.",
+  alternates: {
+    canonical: "https://infinixcalculator.com/blog",
+  },
   keywords: [
     "infinix calculator",
     "infinix calculators",
