@@ -6255,6 +6255,752 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
         cumulativeInterest: { value: totalInterest.toFixed(2), label: "Total Interest Paid Over Loan Term", unit: "$" }
       };
     }
+  },
+  "pink-calculator": {
+    slug: "pink-calculator",
+    name: "Pink Aesthetic Calculator",
+    category: "math",
+    categoryLabel: "Math & Aesthetics",
+    seoTitle: "Pink Aesthetic Calculator - Online Math & Design Tool",
+    metaDescription: "Free online pink aesthetic calculator for quick basic and scientific math calculations with custom theme presets.",
+    keywords: ["pink calculator", "aesthetic pink calculator", "pink math calculator", "online pink calculator"],
+    hook: "Cute & functional pink aesthetic calculator for daily math, percentages, and powers.",
+    description: "Perform daily math calculations with a stylish pink aesthetic interface. Supports addition, subtraction, multiplication, division, modulo, and exponentiation with instant results.",
+    calcTime: "1 min",
+    formula: "Result = Num1 [Operator] Num2",
+    formulaDescription: "Applies arithmetic operations between two numeric operands with precision formatting.",
+    example: "Calculating 450 + 15% (450 * 1.15) yields 517.50.",
+    faqs: [
+      { question: "Can I use this for percentage and power calculations?", answer: "Yes, select the % or ^ operator to calculate percentages and exponential power values." }
+    ],
+    commonMistakes: ["Dividing by zero which results in an undefined value."],
+    useCases: ["Daily budget calculations", "Shopping discount math", "Homework and study notes"],
+    tips: ["Use the exponent (^) operator for compound growth and powers."],
+    inputs: [
+      { id: "num1", label: "First Number", type: "number", defaultValue: 100, unit: "" },
+      {
+        id: "op",
+        label: "Operation",
+        type: "select",
+        defaultValue: "+",
+        options: [
+          { value: "+", label: "Addition (+)" },
+          { value: "-", label: "Subtraction (-)" },
+          { value: "*", label: "Multiplication (×)" },
+          { value: "/", label: "Division (÷)" },
+          { value: "%", label: "Modulo / Percentage (%)" },
+          { value: "^", label: "Exponent / Power (^)" }
+        ]
+      },
+      { id: "num2", label: "Second Number", type: "number", defaultValue: 15, unit: "" }
+    ],
+    calculate: (inputs) => {
+      const a = Number(inputs.num1 || 0);
+      const b = Number(inputs.num2 || 0);
+      const op = String(inputs.op || "+");
+
+      let res = 0;
+      if (op === "+") res = a + b;
+      else if (op === "-") res = a - b;
+      else if (op === "*") res = a * b;
+      else if (op === "/") res = b !== 0 ? a / b : 0;
+      else if (op === "%") res = a % b;
+      else if (op === "^") res = Math.pow(a, b);
+
+      return {
+        result: { value: res.toLocaleString("en-US", { maximumFractionDigits: 4 }), label: "Calculated Result", unit: "" },
+        expression: { value: `${a} ${op} ${b}`, label: "Expression Formed", unit: "" }
+      };
+    }
+  },
+  "starbucks-calorie-calculator": {
+    slug: "starbucks-calorie-calculator",
+    name: "Starbucks Calorie & Nutrition Calculator",
+    category: "health",
+    categoryLabel: "Health & Nutrition",
+    seoTitle: "Starbucks Calorie & Caffeine Calculator - Custom Drink Nutrition",
+    metaDescription: "Calculate calories, caffeine, and sugar for your customized Starbucks order including milk type, size, and syrup pumps.",
+    keywords: ["calculate starbucks calories", "starbucks calorie calculator", "starbucks drink nutrition", "starbucks caffeine calculator"],
+    hook: "Calculate accurate calories and caffeine for any customized Starbucks order.",
+    description: "Customize your Starbucks drink size, milk choice, syrup pumps, and toppings to calculate total calories, sugar grams, and caffeine milligrams.",
+    calcTime: "1 min",
+    formula: "Total Calories = Base Drink Calories + Size Multiplier + Milk Delta + Syrup Pumps * 20 cal + Whipped Cream",
+    formulaDescription: "Sums base beverage calories with milk type adjustments, syrup pump additions (20 kcal per pump), and whipped cream (70 kcal).",
+    example: "A Grande (16 oz) Caffe Latte with 2% milk has ~190 kcal and 150 mg of caffeine. Adding 2 pumps of vanilla (+40 kcal) totals 230 kcal.",
+    faqs: [
+      { question: "How many calories are in one pump of Starbucks syrup?", answer: "Most standard Starbucks flavored syrups contain roughly 20 calories and 5g of sugar per pump." }
+    ],
+    commonMistakes: ["Forgetting that non-fat milk reduces calories while oat milk adds carbohydrates."],
+    useCases: ["Weight management and macro tracking", "Dietary restrictions and low-sugar ordering"],
+    tips: ["Switch from Whole Milk to Almond Milk to save up to 100+ calories on Grande drinks."],
+    inputs: [
+      {
+        id: "drinkType",
+        label: "Beverage Type",
+        type: "select",
+        defaultValue: "latte",
+        options: [
+          { value: "latte", label: "Caffè Latte" },
+          { value: "frappuccino", label: "Caramel Frappuccino" },
+          { value: "iced-coffee", label: "Iced Coffee" },
+          { value: "cold-brew", label: "Cold Brew" },
+          { value: "macchiato", label: "Iced Caramel Macchiato" }
+        ]
+      },
+      {
+        id: "size",
+        label: "Drink Size",
+        type: "select",
+        defaultValue: "grande",
+        options: [
+          { value: "tall", label: "Tall (12 oz)" },
+          { value: "grande", label: "Grande (16 oz)" },
+          { value: "venti", label: "Venti (20/24 oz)" },
+          { value: "trenta", label: "Trenta (30 oz - Cold Only)" }
+        ]
+      },
+      {
+        id: "milk",
+        label: "Milk Choice",
+        type: "select",
+        defaultValue: "two-percent",
+        options: [
+          { value: "whole", label: "Whole Milk" },
+          { value: "two-percent", label: "2% Milk (Standard)" },
+          { value: "non-fat", label: "Non-Fat / Skim Milk" },
+          { value: "almond", label: "Almond Milk" },
+          { value: "oat", label: "Oat Milk" },
+          { value: "soy", label: "Soy Milk" }
+        ]
+      },
+      { id: "pumps", label: "Syrup Pumps (20 kcal / 5g sugar each)", type: "number", defaultValue: 2, unit: "pumps" },
+      {
+        id: "whip",
+        label: "Whipped Cream",
+        type: "select",
+        defaultValue: "no",
+        options: [
+          { value: "no", label: "No Whipped Cream" },
+          { value: "yes", label: "Add Whipped Cream (+70 kcal)" }
+        ]
+      }
+    ],
+    calculate: (inputs) => {
+      const drink = String(inputs.drinkType || "latte");
+      const size = String(inputs.size || "grande");
+      const milk = String(inputs.milk || "two-percent");
+      const pumps = Number(inputs.pumps || 0);
+      const whip = String(inputs.whip || "no");
+
+      let baseCal = 150;
+      let baseCaff = 150;
+      let baseSugar = 14;
+
+      if (drink === "frappuccino") { baseCal = 280; baseCaff = 90; baseSugar = 45; }
+      else if (drink === "iced-coffee") { baseCal = 60; baseCaff = 165; baseSugar = 15; }
+      else if (drink === "cold-brew") { baseCal = 5; baseCaff = 205; baseSugar = 0; }
+      else if (drink === "macchiato") { baseCal = 250; baseCaff = 150; baseSugar = 33; }
+
+      let sizeMult = 1.0;
+      if (size === "tall") sizeMult = 0.75;
+      else if (size === "venti") sizeMult = 1.35;
+      else if (size === "trenta") sizeMult = 1.6;
+
+      let milkDelta = 0;
+      if (milk === "whole") milkDelta = 40;
+      else if (milk === "non-fat") milkDelta = -40;
+      else if (milk === "almond") milkDelta = -50;
+      else if (milk === "oat") milkDelta = 20;
+
+      const whipCal = whip === "yes" ? 70 : 0;
+      const totalCal = Math.round(baseCal * sizeMult + milkDelta + pumps * 20 + whipCal);
+      const totalCaff = Math.round(baseCaff * sizeMult);
+      const totalSugar = Math.round(baseSugar * sizeMult + pumps * 5);
+
+      return {
+        calories: { value: totalCal, label: "Estimated Calories", unit: "kcal" },
+        caffeine: { value: totalCaff, label: "Estimated Caffeine", unit: "mg" },
+        sugar: { value: totalSugar, label: "Estimated Sugar", unit: "g" }
+      };
+    }
+  },
+  "strs-calculator": {
+    slug: "strs-calculator",
+    name: "STRS Retirement Benefit Calculator",
+    category: "financial",
+    categoryLabel: "Retirement",
+    seoTitle: "STRS Retirement Benefit Calculator - Teacher Pension Estimator",
+    metaDescription: "Estimate your State Teachers Retirement System (STRS) pension benefit, monthly payout, and service credit multiplier.",
+    keywords: ["strs calculator", "strs retirement calculator", "teacher pension calculator", "strs ohio retirement calculator"],
+    hook: "Calculate your estimated monthly STRS teacher pension and lifetime retirement payout.",
+    description: "Designed for educators under State Teachers Retirement System programs. Calculates benefit percentage multipliers based on years of service credit and final average salary (FAS).",
+    calcTime: "2 mins",
+    formula: "Annual Pension = Final Average Salary (FAS) × (Years of Service × Benefit Multiplier Rate)",
+    formulaDescription: "Applies standard STRS formula (typically 2.2% per year of service for first 30 years) to the average of your highest 3 or 5 consecutive salary years.",
+    example: "30 years of service at 2.2% per year equals a 66% replacement multiplier. With a FAS of $75,000, the annual pension is $49,500 ($4,125/month).",
+    faqs: [
+      { question: "What is Final Average Salary (FAS)?", answer: "FAS is the average of your highest earning years (usually top 3 or 5 consecutive years of teaching compensation)." }
+    ],
+    commonMistakes: ["Not taking into account age reduction factors if retiring prior to unreduced age eligibility."],
+    useCases: ["Teacher retirement age planning", "Pension replacement income budgeting"],
+    tips: ["Purchasing service credit or completing an extra year of teaching can significantly boost your lifetime annual pension multiplier."],
+    inputs: [
+      { id: "fas", label: "Final Average Salary ($)", type: "number", defaultValue: 75000, unit: "$" },
+      { id: "yos", label: "Years of Service Credit", type: "number", defaultValue: 30, unit: "yrs" },
+      { id: "age", label: "Retirement Age", type: "number", defaultValue: 60, unit: "yrs" }
+    ],
+    calculate: (inputs) => {
+      const salary = Number(inputs.fas || 0);
+      const service = Number(inputs.yos || 0);
+      const age = Number(inputs.age || 60);
+
+      let multiplier = service * 0.022; // 2.2% per year
+      if (service > 30) {
+        multiplier = 0.66 + (service - 30) * 0.025; // 2.5% per additional year over 30
+      }
+
+      let ageFactor = 1.0;
+      if (age < 60) ageFactor = Math.max(0.75, 1.0 - (60 - age) * 0.05);
+
+      const finalPct = Math.min(0.88, multiplier * ageFactor);
+      const annualBenefit = salary * finalPct;
+      const monthlyBenefit = annualBenefit / 12;
+
+      return {
+        monthlyPension: { value: monthlyBenefit.toFixed(2), label: "Estimated Monthly Pension", unit: "$" },
+        annualPension: { value: annualBenefit.toFixed(2), label: "Estimated Annual Pension", unit: "$" },
+        multiplierPct: { value: (finalPct * 100).toFixed(1), label: "Income Replacement Multiplier", unit: "%" }
+      };
+    }
+  },
+  "asphalt-driveway-cost": {
+    slug: "asphalt-driveway-cost",
+    name: "Asphalt Driveway Cost Calculator",
+    category: "construction",
+    categoryLabel: "Construction",
+    seoTitle: "Asphalt Driveway Cost Calculator - Paving Materials & Labor Estimator",
+    metaDescription: "Calculate total asphalt driveway paving costs, square footage, and required asphalt tonnage for new installs or replacements.",
+    keywords: ["asphalt driveway cost calculator", "asphalt cost calculator", "driveway paving cost", "asphalt tonnage calculator"],
+    hook: "Estimate total paving costs, asphalt tons, and base gravel required for your driveway.",
+    description: "Calculate total driveway square footage, tons of hot mix asphalt required (based on compacted thickness), and estimated professional paving job cost.",
+    calcTime: "2 mins",
+    formula: "Volume (cu ft) = Length × Width × (Thickness / 12); Tonnage = Volume × 145 lbs/cu ft ÷ 2000",
+    formulaDescription: "Calculates total asphalt volume based on density (approx 145 lbs/cu ft or 2.025 tons per cu yd) plus cost rates per sq ft ($3 to $7/sq ft).",
+    example: "A 60ft × 12ft driveway (720 sq ft) with 3 inches of asphalt requires ~10.45 tons of asphalt, costing approximately $2,880 to $4,320 installed.",
+    faqs: [
+      { question: "How thick should a residential asphalt driveway be?", answer: "Standard residential driveways require 2 to 3 inches of compacted asphalt over a 4 to 8 inch crushed aggregate base." }
+    ],
+    commonMistakes: ["Underestimating excavation and crushed gravel base preparation cost."],
+    useCases: ["New residential driveway budgeting", "Replacing old deteriorated concrete or gravel driveways"],
+    tips: ["Sealcoating your new asphalt driveway 12 months after installation extends lifespan up to 25+ years."],
+    inputs: [
+      { id: "length", label: "Driveway Length (ft)", type: "number", defaultValue: 60, unit: "ft" },
+      { id: "width", label: "Driveway Width (ft)", type: "number", defaultValue: 12, unit: "ft" },
+      { id: "thickness", label: "Compacted Asphalt Thickness (in)", type: "number", defaultValue: 3, unit: "in" },
+      { id: "costPerSqFt", label: "Est. Installed Cost per Sq Ft ($)", type: "number", defaultValue: 5, unit: "$/sq ft" }
+    ],
+    calculate: (inputs) => {
+      const len = Number(inputs.length || 0);
+      const w = Number(inputs.width || 0);
+      const thick = Number(inputs.thickness || 3);
+      const rate = Number(inputs.costPerSqFt || 5);
+
+      const sqft = len * w;
+      const cuFt = sqft * (thick / 12);
+      const weightLbs = cuFt * 145; // 145 lbs per cu ft
+      const tons = weightLbs / 2000;
+      const totalCost = sqft * rate;
+
+      return {
+        totalArea: { value: sqft.toLocaleString(), label: "Total Driveway Area", unit: "sq ft" },
+        asphaltTons: { value: tons.toFixed(2), label: "Hot-Mix Asphalt Required", unit: "tons" },
+        estimatedCost: { value: totalCost.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Estimated Paving Cost", unit: "$" }
+      };
+    }
+  },
+  "mortgage-alabama": {
+    slug: "mortgage-alabama",
+    name: "Alabama Mortgage Payment Calculator",
+    category: "financial",
+    categoryLabel: "Financial",
+    seoTitle: "Alabama Mortgage Calculator - Property Tax & Loan Payment Estimator",
+    metaDescription: "Calculate Alabama home loan payments including local county property tax rates, home insurance, and PMI.",
+    keywords: ["mortgage calculator alabama", "alabama mortgage calculator", "alabama property tax mortgage", "alabama home loan payment"],
+    hook: "Calculate monthly Alabama home loan payments with local county tax rates.",
+    description: "Estimate your total monthly mortgage payment for buying a house in Alabama. Accounts for low Alabama property tax rates (Jefferson, Madison, Mobile, Baldwin, Shelby counties), home insurance, and down payment.",
+    calcTime: "2 mins",
+    formula: "Total Monthly = Monthly P&I + (Home Value × AL County Tax Rate / 12) + Monthly Insurance",
+    formulaDescription: "Uses standard loan amortization plus Alabama county effective property tax averages (~0.41% statewide, among the lowest in the US).",
+    example: "A $300,000 house in Madison County with 10% down ($270k loan) at 6.5% interest has a P&I payment of $1,706/mo + ~$125/mo tax + $100/mo insurance = $1,931/mo.",
+    faqs: [
+      { question: "Are property taxes low in Alabama?", answer: "Yes, Alabama has the 2nd lowest effective property tax rate in the United States, averaging around 0.41% annually." }
+    ],
+    commonMistakes: ["Forgetting homestead exemption deductions available for primary residences in Alabama."],
+    useCases: ["First-time homebuyer planning in Alabama", "Relocation and state-by-state cost comparison"],
+    tips: ["File for Alabama Homestead Exemption immediately after closing to reduce your county property tax bill further."],
+    inputs: [
+      { id: "homePrice", label: "Home Purchase Price ($)", type: "number", defaultValue: 300000, unit: "$" },
+      { id: "downPayment", label: "Down Payment ($)", type: "number", defaultValue: 30000, unit: "$" },
+      { id: "interestRate", label: "Interest Rate (%)", type: "number", defaultValue: 6.5, unit: "%" },
+      { id: "term", label: "Loan Term (years)", type: "number", defaultValue: 30, unit: "yrs" },
+      {
+        id: "county",
+        label: "Alabama County Tax Rate",
+        type: "select",
+        defaultValue: "0.005",
+        options: [
+          { value: "0.005", label: "Statewide Average (0.50%)" },
+          { value: "0.0065", label: "Jefferson County (0.65%)" },
+          { value: "0.0052", label: "Madison County (0.52%)" },
+          { value: "0.0060", label: "Mobile County (0.60%)" },
+          { value: "0.0045", label: "Baldwin County (0.45%)" }
+        ]
+      }
+    ],
+    calculate: (inputs) => {
+      const price = Number(inputs.homePrice || 0);
+      const down = Number(inputs.downPayment || 0);
+      const rateAnn = Number(inputs.interestRate || 6.5);
+      const termYears = Number(inputs.term || 30);
+      const taxRate = Number(inputs.county || 0.005);
+
+      const principal = Math.max(0, price - down);
+      const r = rateAnn / 100 / 12;
+      const n = termYears * 12;
+
+      let monthlyPI = 0;
+      if (r > 0 && n > 0) {
+        monthlyPI = (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      }
+
+      const monthlyTax = (price * taxRate) / 12;
+      const monthlyIns = (price * 0.004) / 12; // ~0.4% insurance rate
+      const totalMonthly = monthlyPI + monthlyTax + monthlyIns;
+
+      return {
+        principalInterest: { value: monthlyPI.toFixed(2), label: "Monthly Principal & Interest", unit: "$" },
+        propertyTax: { value: monthlyTax.toFixed(2), label: "Est. AL Property Tax", unit: "$" },
+        totalMonthlyPayment: { value: totalMonthly.toFixed(2), label: "Total Est. Monthly Payment", unit: "$" }
+      };
+    }
+  },
+  "stock-price-calculator": {
+    slug: "stock-price-calculator",
+    name: "Stock Price & Target Valuation Calculator",
+    category: "financial",
+    categoryLabel: "Financial",
+    seoTitle: "Stock Price Target Calculator - Fair Value & P/E Multiplier Tool",
+    metaDescription: "Calculate projected future stock price targets and present fair intrinsic value using EPS and P/E ratio valuation models.",
+    keywords: ["stock price calculator", "target stock price calculator", "stock valuation calculator", "fair value stock calculator"],
+    hook: "Calculate future stock price targets and intrinsic value based on earnings growth.",
+    description: "Evaluate equity investments by forecasting future stock price targets. Uses EPS growth rate, exit P/E multiple, and discount rate models to determine fair entry prices.",
+    calcTime: "2 mins",
+    formula: "Future Price = Current EPS × (1 + Growth)^Years × Future P/E Ratio; Fair Value = Future Price / (1 + Discount)^Years",
+    formulaDescription: "Projects EPS forward by annual compound growth rate, multiplies by target terminal P/E, and discounts back to present value at required return rate.",
+    example: "A stock with $4.00 EPS growing at 12% annually for 5 years reaches $7.05 EPS. At a 20x P/E, future target price is $141.00. Discounted at 10%, fair value today is $87.55.",
+    faqs: [
+      { question: "What P/E ratio should I use for valuation?", answer: "Use historical median P/E for mature companies (15-20x) or industry peer group averages." }
+    ],
+    commonMistakes: ["Assuming unsustainable hyper-growth rates (>25%) over long 5-10 year horizons."],
+    useCases: ["Fundamental stock valuation and analysis", "Setting target buy prices and profit-taking exits"],
+    tips: ["Always use conservative EPS growth estimates to maintain a margin of safety against earnings misses."],
+    inputs: [
+      { id: "eps", label: "Current EPS ($)", type: "number", defaultValue: 4.0, unit: "$" },
+      { id: "growth", label: "Est. Annual EPS Growth (%)", type: "number", defaultValue: 12, unit: "%" },
+      { id: "pe", label: "Target Exit P/E Multiple", type: "number", defaultValue: 20, unit: "x" },
+      { id: "years", label: "Investment Horizon (Years)", type: "number", defaultValue: 5, unit: "yrs" },
+      { id: "discount", label: "Required Return / Discount Rate (%)", type: "number", defaultValue: 10, unit: "%" }
+    ],
+    calculate: (inputs) => {
+      const eps = Number(inputs.eps || 0);
+      const g = Number(inputs.growth || 12) / 100;
+      const pe = Number(inputs.pe || 20);
+      const yrs = Number(inputs.years || 5);
+      const disc = Number(inputs.discount || 10) / 100;
+
+      const futureEps = eps * Math.pow(1 + g, yrs);
+      const targetPrice = futureEps * pe;
+      const fairValue = targetPrice / Math.pow(1 + disc, yrs);
+
+      return {
+        futureEps: { value: futureEps.toFixed(2), label: "Projected Future EPS", unit: "$" },
+        targetPrice: { value: targetPrice.toFixed(2), label: "Projected Target Stock Price", unit: "$" },
+        fairValue: { value: fairValue.toFixed(2), label: "Present Fair Entry Value", unit: "$" }
+      };
+    }
+  },
+  "ti-30x-calculator": {
+    slug: "ti-30x-calculator",
+    name: "TI-30X Solar & Battery Calculator Guide",
+    category: "math",
+    categoryLabel: "Math & Education",
+    seoTitle: "TI-30X Calculator Guide - Solar Power & Battery Life Estimator",
+    metaDescription: "Calculate battery life, solar lux power requirements, and operation modes for Texas Instruments TI-30X IIS calculators.",
+    keywords: ["ti-30x calculator", "ti 30x iis battery", "ti-30x solar calculator", "ti 30x calculator guide"],
+    hook: "Calculate battery life, solar ambient light requirements, and mode settings for TI-30X calculators.",
+    description: "A utility and power guide for TI-30X Series scientific calculators (TI-30X IIS, TI-30XS MultiView). Estimates battery service life and minimum lux lighting needed for solar operation.",
+    calcTime: "1 min",
+    formula: "Battery Life (Years) = Battery Capacity (mAh) / [ (Daily Hours × Active Current mA) + (Standby Current mA × 24) ] / 365",
+    formulaDescription: "Models dual-power hybrid solar cell assist alongside internal CR2032 lithium button cell draw.",
+    example: "At 3 hours daily classroom use under 300 lux artificial light, a CR2032 battery in a TI-30X IIS lasts over 3.5 to 5 years.",
+    faqs: [
+      { question: "Does the TI-30X IIS have a battery replace compartment?", answer: "Yes, it uses a standard CR2032 3V lithium coin cell battery accessible via back panel screws." }
+    ],
+    commonMistakes: ["Leaving the calculator in low ambient light without battery backup during timed exams."],
+    useCases: ["Exam preparation for SAT/ACT/AP math", "Calculator maintenance and battery replacement scheduling"],
+    tips: ["Press [2nd] [OFF] to turn off the display completely and preserve battery life."],
+    inputs: [
+      { id: "usageHours", label: "Daily Usage (Hours)", type: "number", defaultValue: 3, unit: "hrs" },
+      { id: "lightLevel", label: "Room Lighting (Lux)", type: "number", defaultValue: 300, unit: "lux" }
+    ],
+    calculate: (inputs) => {
+      const hours = Number(inputs.usageHours || 3);
+      const lux = Number(inputs.lightLevel || 300);
+
+      let batteryYears = 4.5;
+      if (hours > 5) batteryYears = 2.8;
+      if (lux > 500) batteryYears += 1.0; // solar assist boost
+
+      const solarActive = lux >= 200 ? "Active (Sufficient Ambient Light)" : "Low (Relying on CR2032 Battery)";
+
+      return {
+        batteryLife: { value: batteryYears.toFixed(1), label: "Est. CR2032 Battery Life", unit: "years" },
+        solarStatus: { value: solarActive, label: "Solar Cell Assistance", unit: "" }
+      };
+    }
+  },
+  "pool-gallons-calculator": {
+    slug: "pool-gallons-calculator",
+    name: "Pool Volume & Gallons Calculator",
+    category: "construction",
+    categoryLabel: "Construction & Home",
+    seoTitle: "Pool Gallons Calculator - Swimming Pool Volume & Water Capacity",
+    metaDescription: "Calculate pool water volume in gallons for rectangular, round, oval, and irregular swimming pools.",
+    keywords: ["pool gallons calculator", "pool volume calculator", "how many gallons in my pool", "swimming pool water calculator"],
+    hook: "Calculate total water volume in US gallons for any pool shape and depth.",
+    description: "Determine total pool volume in US gallons and cubic feet. Supports rectangular, circular, oval, and kidney pool geometries with varying shallow and deep end depths.",
+    calcTime: "1 min",
+    formula: "Gallons = Length × Width × Avg Depth × Multiplier (7.5 for Rect, 5.9 for Circular, 6.7 for Oval)",
+    formulaDescription: "Uses geometric volume formulas multiplied by 7.48 gallons per cubic foot (with shape adjustment coefficients).",
+    example: "A 16ft × 32ft rectangular pool with a shallow depth of 3ft and deep depth of 8ft (avg depth 5.5ft) holds ~21,120 gallons of water.",
+    faqs: [
+      { question: "How many gallons of water per cubic foot?", answer: "1 cubic foot of water equals approximately 7.48 US liquid gallons." }
+    ],
+    commonMistakes: ["Using maximum deep end depth instead of calculating average depth across the pool floor slope."],
+    useCases: ["Sizing pool pumps, filters, and heaters", "Accurate chemical dosing for shock and chlorine treatments"],
+    tips: ["Always calculate average depth as (Shallow Depth + Deep Depth) / 2 for slope-bottom pools."],
+    inputs: [
+      {
+        id: "shape",
+        label: "Pool Shape",
+        type: "select",
+        defaultValue: "rectangle",
+        options: [
+          { value: "rectangle", label: "Rectangular / Square" },
+          { value: "round", label: "Round / Circular" },
+          { value: "oval", label: "Oval" }
+        ]
+      },
+      { id: "length", label: "Length or Diameter (ft)", type: "number", defaultValue: 32, unit: "ft" },
+      { id: "width", label: "Width (ft - if Rect/Oval)", type: "number", defaultValue: 16, unit: "ft" },
+      { id: "shallowDepth", label: "Shallow End Depth (ft)", type: "number", defaultValue: 3, unit: "ft" },
+      { id: "deepDepth", label: "Deep End Depth (ft)", type: "number", defaultValue: 8, unit: "ft" }
+    ],
+    calculate: (inputs) => {
+      const shape = String(inputs.shape || "rectangle");
+      const len = Number(inputs.length || 0);
+      const w = Number(inputs.width || 0);
+      const sDepth = Number(inputs.shallowDepth || 3);
+      const dDepth = Number(inputs.deepDepth || 8);
+
+      const avgDepth = (sDepth + dDepth) / 2;
+      let gallons = 0;
+      let cuFt = 0;
+
+      if (shape === "rectangle") {
+        cuFt = len * w * avgDepth;
+        gallons = cuFt * 7.48;
+      } else if (shape === "round") {
+        const radius = len / 2;
+        cuFt = Math.PI * Math.pow(radius, 2) * avgDepth;
+        gallons = cuFt * 7.48;
+      } else if (shape === "oval") {
+        cuFt = len * w * avgDepth * 0.8;
+        gallons = cuFt * 7.48;
+      }
+
+      return {
+        avgDepth: { value: avgDepth.toFixed(1), label: "Average Pool Depth", unit: "ft" },
+        volumeCuFt: { value: Math.round(cuFt).toLocaleString(), label: "Volume in Cubic Feet", unit: "cu ft" },
+        totalGallons: { value: Math.round(gallons).toLocaleString(), label: "Total Pool Volume", unit: "US Gal" }
+      };
+    }
+  },
+  "price-elasticity-calculator": {
+    slug: "price-elasticity-calculator",
+    name: "Price Elasticity of Demand Calculator",
+    category: "financial",
+    categoryLabel: "Economics & Finance",
+    seoTitle: "Price Elasticity of Demand Calculator - PED & Revenue Sensitivity",
+    metaDescription: "Calculate Price Elasticity of Demand (PED) using the midpoint arc formula. Determine elasticity category and revenue impact.",
+    keywords: ["price elasticity calculator", "price elasticity of demand calculator", "ped calculator", "elasticity calculator economics"],
+    hook: "Calculate Price Elasticity of Demand (PED) and evaluate pricing change revenue impacts.",
+    description: "Compute Price Elasticity of Demand (PED) using the midpoint (arc) formula. Evaluates whether demand is Elastic, Inelastic, or Unitary to optimize product pricing strategy.",
+    calcTime: "2 mins",
+    formula: "PED = [ (Q2 - Q1) / ((Q1 + Q2)/2) ] ÷ [ (P2 - P1) / ((P1 + P2)/2) ]",
+    formulaDescription: "Applies the standard midpoint arc elasticity formula to avoid direction bias between initial and final price-quantity points.",
+    example: "If price increases from $10 to $12 (+18.2%) and sales drop from 100 to 80 units (-22.2%), PED is -1.22 (Elastic demand, total revenue decreases).",
+    faqs: [
+      { question: "What does a PED greater than 1 mean?", answer: "A PED absolute value > 1 indicates Elastic demand, meaning consumers are very sensitive to price changes." }
+    ],
+    commonMistakes: ["Confusing percentage change with absolute unit changes when analyzing price increases."],
+    useCases: ["E-commerce product pricing strategy", "Economics coursework and business revenue optimization"],
+    tips: ["For inelastic goods (|PED| < 1), raising prices increases total gross revenue."],
+    inputs: [
+      { id: "p1", label: "Initial Price P1 ($)", type: "number", defaultValue: 10, unit: "$" },
+      { id: "p2", label: "New Price P2 ($)", type: "number", defaultValue: 12, unit: "$" },
+      { id: "q1", label: "Initial Quantity Sold Q1", type: "number", defaultValue: 100, unit: "units" },
+      { id: "q2", label: "New Quantity Sold Q2", type: "number", defaultValue: 80, unit: "units" }
+    ],
+    calculate: (inputs) => {
+      const p1 = Number(inputs.p1 || 0);
+      const p2 = Number(inputs.p2 || 0);
+      const q1 = Number(inputs.q1 || 0);
+      const q2 = Number(inputs.q2 || 0);
+
+      const pctQ = (q2 - q1) / ((q1 + q2) / 2 || 1);
+      const pctP = (p2 - p1) / ((p1 + p2) / 2 || 1);
+      const ped = pctP !== 0 ? pctQ / pctP : 0;
+      const absPed = Math.abs(ped);
+
+      let classification = "Unitary Elastic (|PED| = 1)";
+      if (absPed > 1) classification = "Elastic Demand (|PED| > 1 - Price Sensitive)";
+      else if (absPed < 1) classification = "Inelastic Demand (|PED| < 1 - Low Sensitivity)";
+
+      const rev1 = p1 * q1;
+      const rev2 = p2 * q2;
+      const revDelta = rev2 - rev1;
+
+      return {
+        pedValue: { value: ped.toFixed(2), label: "Price Elasticity Coefficient (PED)", unit: "" },
+        elasticityType: { value: classification, label: "Demand Classification", unit: "" },
+        revenueImpact: { value: revDelta >= 0 ? `+$${revDelta.toFixed(2)}` : `-$${Math.abs(revDelta).toFixed(2)}`, label: "Net Revenue Impact", unit: "$" }
+      };
+    }
+  },
+  "money-market-rate": {
+    slug: "money-market-rate",
+    name: "Money Market Yield & Interest Calculator",
+    category: "financial",
+    categoryLabel: "Financial",
+    seoTitle: "Money Market Interest Calculator - Account Yield & Growth Planner",
+    metaDescription: "Calculate money market account (MMA) interest earnings, compounding growth, and ending balance with monthly deposits.",
+    keywords: ["money market rate calculator", "money market interest calculator", "mma yield calculator", "money market account calculator"],
+    hook: "Calculate money market account interest growth with compounding interest and monthly deposits.",
+    description: "Calculate returns on Money Market Accounts (MMA). Models compound interest growth, annual percentage yield (APY), and recurring monthly contributions.",
+    calcTime: "2 mins",
+    formula: "A = P(1 + r/n)^(nt) + PMT × [ ((1 + r/n)^(nt) - 1) / (r/n) ]",
+    formulaDescription: "Applies compound interest formula with monthly annuity contributions compounding at rate r = APY/100.",
+    example: "A $10,000 initial deposit at 4.5% APY with $300 monthly deposits grows to $22,785 in 3 years ($1,985 total interest earned).",
+    faqs: [
+      { question: "Are Money Market Accounts safe?", answer: "Yes, MMAs at FDIC-insured banks are protected up to $250,000 per depositor." }
+    ],
+    commonMistakes: ["Confusing Money Market Accounts (bank savings product) with Money Market Mutual Funds (brokerage product)."],
+    useCases: ["Emergency fund yield planning", "Comparing high-yield savings vs money market accounts"],
+    tips: ["Money market accounts often tier rates based on account balance—maintain minimum thresholds for top APY tiers."],
+    inputs: [
+      { id: "deposit", label: "Initial Deposit ($)", type: "number", defaultValue: 10000, unit: "$" },
+      { id: "monthlyAdd", label: "Monthly Contribution ($)", type: "number", defaultValue: 300, unit: "$" },
+      { id: "apy", label: "Annual Percentage Yield APY (%)", type: "number", defaultValue: 4.5, unit: "%" },
+      { id: "years", label: "Time Period (Years)", type: "number", defaultValue: 3, unit: "yrs" }
+    ],
+    calculate: (inputs) => {
+      const p = Number(inputs.deposit || 0);
+      const pmt = Number(inputs.monthlyAdd || 0);
+      const r = Number(inputs.apy || 4.5) / 100 / 12;
+      const n = Number(inputs.years || 3) * 12;
+
+      let balance = p;
+      let totalContrib = p;
+
+      for (let i = 0; i < n; i++) {
+        balance = balance * (1 + r) + pmt;
+        totalContrib += pmt;
+      }
+
+      const interest = Math.max(0, balance - totalContrib);
+
+      return {
+        futureBalance: { value: balance.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Ending Account Balance", unit: "$" },
+        totalDeposited: { value: totalContrib.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Total Principal Deposited", unit: "$" },
+        interestEarned: { value: interest.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Total Interest Earned", unit: "$" }
+      };
+    }
+  },
+  "pool-chemical-calculator": {
+    slug: "pool-chemical-calculator",
+    name: "Pool Chemical & Dosing Calculator",
+    category: "construction",
+    categoryLabel: "Home & Maintenance",
+    seoTitle: "Pool Chemical Dosing Calculator - Chlorine & pH Balancer",
+    metaDescription: "Calculate exact pool chemical dosages for chlorine shock, pH rise/lower, and alkalinity balancing.",
+    keywords: ["pool chemical calculator", "pool chlorine dosage calculator", "pool ph chemical calculator", "swimming pool dosing"],
+    hook: "Calculate exact chlorine shock and pH chemical dosing requirements for your pool.",
+    description: "Maintain clean, clear pool water by calculating precise doses of liquid bleach, cal-hypo shock, muriatic acid, or soda ash based on pool gallon capacity.",
+    calcTime: "2 mins",
+    formula: "Liquid Bleach (oz) = (Target FC - Current FC) × Pool Gallons / 10,000 × 10.5 oz",
+    formulaDescription: "Uses standard pool water treatment ratios per 10,000 gallons of water volume.",
+    example: "Raising Free Chlorine by 3 ppm in a 15,000 gallon pool requires approx 47 fl oz of 12.5% liquid pool shock.",
+    faqs: [
+      { question: "What is the ideal Free Chlorine level for a pool?", answer: "The ideal Free Chlorine level is 1.0 to 3.0 ppm (parts per million)." }
+    ],
+    commonMistakes: ["Adding acid and chlorine simultaneously, which produces toxic chlorine gas fumes."],
+    useCases: ["Weekly pool water balancing", "Clearing cloudy green pool algae outbreaks"],
+    tips: ["Always add chemicals to water (pour into pool deep end), never pour water onto concentrated dry chemicals."],
+    inputs: [
+      { id: "gallons", label: "Pool Volume (Gallons)", type: "number", defaultValue: 15000, unit: "gal" },
+      { id: "currentFC", label: "Current Free Chlorine (ppm)", type: "number", defaultValue: 1.0, unit: "ppm" },
+      { id: "targetFC", label: "Target Free Chlorine (ppm)", type: "number", defaultValue: 4.0, unit: "ppm" }
+    ],
+    calculate: (inputs) => {
+      const g = Number(inputs.gallons || 15000);
+      const cFC = Number(inputs.currentFC || 1);
+      const tFC = Number(inputs.targetFC || 4);
+
+      const deltaFC = Math.max(0, tFC - cFC);
+      const liquidShockOz = (deltaFC * (g / 10000) * 10.5);
+      const calHypoOz = (deltaFC * (g / 10000) * 2.0);
+
+      return {
+        liquidBleach: { value: liquidShockOz.toFixed(1), label: "12.5% Liquid Pool Shock Needed", unit: "fl oz" },
+        calHypoPowder: { value: calHypoOz.toFixed(1), label: "65% Cal-Hypo Granular Shock", unit: "oz (dry)" }
+      };
+    }
+  },
+  "time-clock-calculator": {
+    slug: "time-clock-calculator",
+    name: "Work Time Clock & Hours Calculator",
+    category: "tax",
+    categoryLabel: "Tax & Payroll",
+    seoTitle: "Time Clock Hours Calculator - Employee Work Shift & Pay Estimator",
+    metaDescription: "Calculate decimal work hours, unpaid break deductions, and gross pay from daily clock-in and clock-out times.",
+    keywords: ["time clocks that calculate hours", "time clock calculator", "employee hours calculator", "work shift hours calculator"],
+    hook: "Calculate decimal work hours and gross pay from shift clock-in / clock-out times.",
+    description: "Calculate total daily and weekly work hours from clock-in and clock-out timestamps. Automatically subtracts lunch breaks and converts minutes to decimal hours for payroll.",
+    calcTime: "1 min",
+    formula: "Total Hours = (Shift 1 Duration + Shift 2 Duration - Break Minutes / 60); Gross Pay = Total Hours × Hourly Rate",
+    formulaDescription: "Converts 12-hour or 24-hour clock timestamps to total minutes, subtracts unpaid break times, and formats to decimal hours.",
+    example: "Clocking in at 8:00 AM, out for lunch at 12:00 PM, in at 12:30 PM, and out at 5:00 PM totals 8.5 decimal hours (8 hrs 30 mins). At $20/hr, gross pay is $170.00.",
+    faqs: [
+      { question: "How do I convert minutes to decimal hours?", answer: "Divide the number of minutes by 60. For example, 15 mins = 0.25 hrs, 30 mins = 0.50 hrs, 45 mins = 0.75 hrs." }
+    ],
+    commonMistakes: ["Forgetting to deduct unpaid lunch breaks when calculating billable hours."],
+    useCases: ["Employee payroll time card calculation", "Freelancer hourly billing tracking"],
+    tips: ["Use decimal hours (e.g., 7.75) directly when populating payroll software or invoices."],
+    inputs: [
+      { id: "hoursShift1", label: "Morning Shift Duration (Hours)", type: "number", defaultValue: 4.0, unit: "hrs" },
+      { id: "hoursShift2", label: "Afternoon Shift Duration (Hours)", type: "number", defaultValue: 4.5, unit: "hrs" },
+      { id: "breakMins", label: "Unpaid Break Duration (Minutes)", type: "number", defaultValue: 30, unit: "mins" },
+      { id: "hourlyRate", label: "Hourly Pay Rate ($)", type: "number", defaultValue: 20, unit: "$/hr" }
+    ],
+    calculate: (inputs) => {
+      const s1 = Number(inputs.hoursShift1 || 4);
+      const s2 = Number(inputs.hoursShift2 || 4.5);
+      const bMins = Number(inputs.breakMins || 0);
+      const rate = Number(inputs.hourlyRate || 20);
+
+      const netHours = Math.max(0, (s1 + s2) - (bMins / 60));
+      const pay = netHours * rate;
+
+      return {
+        totalDecimalHours: { value: netHours.toFixed(2), label: "Total Net Work Hours", unit: "hrs" },
+        grossPay: { value: pay.toFixed(2), label: "Estimated Gross Pay", unit: "$" }
+      };
+    }
+  },
+  "differential-equations-calculator": {
+    slug: "differential-equations-calculator",
+    name: "Differential Equations Solver & Step Calculator",
+    category: "education",
+    categoryLabel: "Education & Math",
+    seoTitle: "Differential Equations Calculator - ODE Initial Value Solver",
+    metaDescription: "Solve first-order differential equations y' = ky, compute initial value problems (IVP), and evaluate solution points.",
+    keywords: ["differential equations calculator", "ode solver calculator", "first order differential equation calculator", "differential equation step solver"],
+    hook: "Evaluate ordinary differential equations (ODE) and compute initial value problem solutions.",
+    description: "Solves first-order ordinary differential equations (ODEs) of the exponential form y'(t) = k·y(t) with given initial conditions y(0) = y₀.",
+    calcTime: "2 mins",
+    formula: "Solution: y(t) = y₀ · e^(k·t)",
+    formulaDescription: "Analytical solution of linear homogeneous first-order ODEs using separation of variables.",
+    example: "For y'(t) = 0.5·y(t) with initial condition y(0) = 10, evaluating at t = 4 gives y(4) = 10 · e^(2.0) ≈ 73.89.",
+    faqs: [
+      { question: "What is an Initial Value Problem (IVP)?", answer: "An IVP is a differential equation paired with a specified value of the unknown function at a given point (e.g., y(0) = c)." }
+    ],
+    commonMistakes: ["Confusing exponential growth rate k with half-life decay constants."],
+    useCases: ["Calculus and differential equations homework check", "Population growth and radioactive decay modeling"],
+    tips: ["If rate k is positive, the system models exponential growth; if k is negative, it models exponential decay."],
+    inputs: [
+      { id: "y0", label: "Initial Value y(0)", type: "number", defaultValue: 10, unit: "" },
+      { id: "rateK", label: "Growth / Decay Rate Constant (k)", type: "number", defaultValue: 0.5, unit: "" },
+      { id: "timeT", label: "Target Evaluation Time (t)", type: "number", defaultValue: 4, unit: "t" }
+    ],
+    calculate: (inputs) => {
+      const y0 = Number(inputs.y0 || 10);
+      const k = Number(inputs.rateK || 0.5);
+      const t = Number(inputs.timeT || 4);
+
+      const yt = y0 * Math.exp(k * t);
+      const eqStr = `y(t) = ${y0} · e^(${k}t)`;
+
+      return {
+        evaluatedResult: { value: yt.toFixed(4), label: "Evaluated Solution y(t)", unit: "" },
+        analyticalSolution: { value: eqStr, label: "Analytical Closed Form", unit: "" }
+      };
+    }
+  },
+  "rvu-calculator-2025": {
+    slug: "rvu-calculator-2025",
+    name: "2025 Physician RVU & Compensation Calculator",
+    category: "financial",
+    categoryLabel: "Healthcare Finance",
+    seoTitle: "2025 RVU Calculator - Physician Work RVU & CMS Compensation",
+    metaDescription: "Calculate 2025 physician work RVUs (wRVUs), CMS conversion factor compensation, and productivity bonus thresholds.",
+    keywords: ["rvu calculator 2025", "physician rvu calculator 2025", "wrvu compensation calculator", "cms conversion factor 2025"],
+    hook: "Calculate physician wRVU compensation using updated 2025 CMS conversion rates.",
+    description: "Calculate physician productivity compensation using 2025 Medicare Relative Value Units (wRVUs), conversion factors, and bonus threshold incentives.",
+    calcTime: "2 mins",
+    formula: "Total Compensation = (Work RVUs × CMS Conversion Factor × Specialty Multiplier) + Bonus Compensation",
+    formulaDescription: "Multiplies annual wRVUs by the 2025 CMS Conversion Factor (~$32.35) plus bonus per RVU exceeding benchmark thresholds.",
+    example: "4,500 wRVUs at $32.35/RVU yields $145,575 base CMS pay. With 500 bonus RVUs over a 4,000 threshold paid at $45/RVU (+$22,500 bonus), total pay is $168,075.",
+    faqs: [
+      { question: "What is the 2025 CMS RVU conversion factor?", answer: "The 2025 CMS Physician Fee Schedule conversion factor is approximately $32.35 per RVU." }
+    ],
+    commonMistakes: ["Confusing total RVUs (work + practice expense + malpractice) with Work RVUs (wRVU)."],
+    useCases: ["Physician employment contract negotiation", "Clinical productivity tracking and bonus projections"],
+    tips: ["Negotiate explicit tier bonus rates for wRVUs achieved above your annual contract threshold."],
+    inputs: [
+      { id: "wrvu", label: "Annual Work RVUs (wRVU)", type: "number", defaultValue: 4500, unit: "wRVUs" },
+      { id: "cf", label: "2025 CMS Conversion Factor ($)", type: "number", defaultValue: 32.35, unit: "$/RVU" },
+      { id: "threshold", label: "Annual Bonus Threshold (wRVU)", type: "number", defaultValue: 4000, unit: "wRVUs" },
+      { id: "bonusRate", label: "Bonus Rate per Extra wRVU ($)", type: "number", defaultValue: 45, unit: "$/wRVU" }
+    ],
+    calculate: (inputs) => {
+      const wrvu = Number(inputs.wrvu || 0);
+      const cf = Number(inputs.cf || 32.35);
+      const thresh = Number(inputs.threshold || 4000);
+      const bRate = Number(inputs.bonusRate || 45);
+
+      const baseComp = wrvu * cf;
+      const extraRvu = Math.max(0, wrvu - thresh);
+      const bonus = extraRvu * bRate;
+      const totalComp = baseComp + bonus;
+
+      return {
+        baseCompensation: { value: baseComp.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Base CMS wRVU Pay", unit: "$" },
+        productivityBonus: { value: bonus.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Productivity Bonus Earned", unit: "$" },
+        totalCompensation: { value: totalComp.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Total Projected Compensation", unit: "$" }
+      };
+    }
   }
 };
+
 

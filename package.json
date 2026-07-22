@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run sitemap && next build",
     "sitemap": "npx tsx scripts/generate-sitemap.ts",
     "start": "next start",
     "lint": "next lint",
