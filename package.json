@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "npx tsx scripts/generate-sitemap.ts",
+    "sitemap": "npx tsx scripts/generate-sitemap.ts",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "npm run build"

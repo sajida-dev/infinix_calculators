@@ -5,6 +5,7 @@ import SearchInput from "./components/SearchInput";
 import BlogCard from "./components/BlogCard";
 import TopsoilCalculator from "./components/TopsoilCalculator";
 import { categoriesList } from "./data/CategoryData";
+import CategoryCard from "./components/CategoryCard";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -129,40 +130,14 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoriesList.map((cat) => (
-              <div key={cat.id} className="space-y-4">
-                {/* Category Header */}
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm shrink-0">
-                    {cat.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">
-                      {cat.title}
-                    </h3>
-                    <p className="text-xs text-slate-400 mt-0.5">
-                      {cat.desc}
-                    </p></div>
-                </div>
-
-                {/* Vertical list of matching calculators */}
-                <ul className="space-y-3.5 pl-11">
-                  {cat.slugs.map((slug) => {
-                    const calc = calculatorsData[slug];
-                    if (!calc) return null;
-                    return (
-                      <li key={slug}>
-                        <Link href={`/calculators/${slug}`} className="group block text-base hover:text-primary transition-all">
-                          <span className="block text-primary group-hover:text-primary transition-colors leading-snug">
-                            {calc.name}
-                          </span>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+              <CategoryCard
+                key={cat.id}
+                category={cat}
+                maxItems={6}
+                showViewAllButton={true}
+              />
             ))}
           </div>
 

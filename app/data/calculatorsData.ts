@@ -276,30 +276,38 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Roof Calculator",
     category: "construction",
     categoryLabel: "Construction",
-    seoTitle: "Roof Area & Shingle Calculator - Pitch and Slope Estimator",
-    metaDescription: "Estimate roof surface area, shingle bundle counts, and pitch multipliers. Input building footprint and roof pitch for accurate contractor layouts.",
-    keywords: ["roof calculator", "roof area calculator", "shingles calculator"],
+    seoTitle: "Roof Shingle Calculator - Estimate Shingles & Roof Area",
+    metaDescription: "Estimate roof surface area, shingle bundle counts, individual shingles, and costs. Accounts for eave overhangs and custom pitch factors.",
+    keywords: ["roof shingle calculator", "shingle calculator", "roof area calculator", "shingles bundle calculator", "roofing cost estimator"],
     hook: "Estimate Roof Area & Shingle Bundles in Seconds.",
-    description: "Input house length, width, overhangs, and pitch slope to estimate roof area and material requirements.",
+    description: "Input house length, width, overhangs, pitch slope, shingle cost, and waste factor to estimate roof area and shingles needed.",
     calcTime: "2 mins",
     formula: "Roof Area = Ground Footprint Area × Pitch Factor",
-    formulaDescription: "Multiplies flat footprint area (including overhangs) by the slope hypotenuse factor.",
-    example: "Footprint of 1,000 sq ft under 6/12 pitch (factor 1.118) yields a roof area of 1,118 sq ft.",
-    faqs: [{ question: "How many shingle bundles cover a square?", answer: "There are 3 shingle bundles in 1 roofing square (100 sq ft)." }],
-    commonMistakes: ["Forgetting to account for eave overhangs."],
-    useCases: ["Estimating roofing material ordering", "Checking contractor bids"],
-    tips: ["Add 10% shingles waste for gable roofs, and 15% for hip roofs."],
+    formulaDescription: "Multiplies flat footprint area (including overhangs) by the pitch hypotenuse slope factor, then adds the selected waste margin to calculate required bundles.",
+    example: "Footprint of 1,000 sq ft under 6/12 pitch (factor 1.118) yields a roof area of 1,118 sq ft. Adding a 10% waste margin means ordering 37 bundles of shingles.",
+    faqs: [
+      { question: "How many shingle bundles cover a square?", answer: "There are exactly 3 bundles of shingles in one roofing square. A square is the roofing industry standard unit of measurement, representing 100 square feet of roof surface." },
+      { question: "How many shingles are in a bundle?", answer: "A standard bundle of 3-tab asphalt shingles contains 29 shingles. Architectural shingle bundles can contain between 26 to 28 shingles depending on the manufacturer." },
+      { question: "What waste factor should I choose for shingle calculation?", answer: "Use 10% waste for standard A-frame/gable roofs with few intersections. Choose 15% waste for hip roofs or those with valleys, and 20% for complex roofs with multiple dormers, chimneys, or intersecting ridges." }
+    ],
+    commonMistakes: ["Forgetting to account for eave overhangs.", "Not adding a waste buffer (typically 10-15%) for shingles cuts."],
+    useCases: ["Estimating roofing material ordering", "Checking contractor bids", "DIY roofing material budget planning"],
+    tips: ["Add 10% shingles waste for simple gable roofs, and 15-20% for hip roofs or complex designs."],
     inputs: [
       { id: "length", label: "House Footprint Length (ft)", type: "number", defaultValue: 40, unit: "ft" },
       { id: "width", label: "House Footprint Width (ft)", type: "number", defaultValue: 30, unit: "ft" },
       { id: "overhang", label: "Eave / Overhang (ft)", type: "number", defaultValue: 1, unit: "ft" },
-      { id: "pitch", label: "Roof Pitch (Rise / 12)", type: "select", defaultValue: "6", options: [{ value: "3", label: "3/12 (Factor 1.03)" }, { value: "4", label: "4/12 (Factor 1.05)" }, { value: "6", label: "6/12 (Factor 1.118)" }, { value: "8", label: "8/12 (Factor 1.20)" }, { value: "12", label: "12/12 (Factor 1.414)" }] }
+      { id: "pitch", label: "Roof Pitch (Rise / 12)", type: "select", defaultValue: "6", options: [{ value: "3", label: "3/12 (Factor 1.03)" }, { value: "4", label: "4/12 (Factor 1.05)" }, { value: "6", label: "6/12 (Factor 1.118)" }, { value: "8", label: "8/12 (Factor 1.20)" }, { value: "12", label: "12/12 (Factor 1.414)" }] },
+      { id: "pricePerBundle", label: "Cost per Shingle Bundle ($)", type: "number", defaultValue: 35, unit: "$" },
+      { id: "wastePercent", label: "Waste Factor (%)", type: "select", defaultValue: "10", options: [{ value: "10", label: "10% (Simple Gable Roof)" }, { value: "15", label: "15% (Standard Hip Roof)" }, { value: "20", label: "20% (Complex Multi-Valleys)" }] }
     ],
     calculate: (inputs) => {
       const length = Number(inputs.length || 0);
       const width = Number(inputs.width || 0);
       const overhang = Number(inputs.overhang || 0);
       const pitch = Number(inputs.pitch || 6);
+      const pricePerBundle = Number(inputs.pricePerBundle || 35);
+      const wastePercent = Number(inputs.wastePercent || 10);
 
       const pitchFactors: Record<number, number> = { 3: 1.0308, 4: 1.0541, 6: 1.1180, 8: 1.2019, 12: 1.4142 };
       const factor = pitchFactors[pitch] || 1.118;
@@ -307,10 +315,19 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const rArea = gArea * factor;
       const squares = rArea / 100;
 
+      const wasteMultiplier = 1 + (wastePercent / 100);
+      const bundlesNeeded = Math.ceil(squares * 3 * wasteMultiplier);
+      const totalCost = bundlesNeeded * pricePerBundle;
+
+      // Individual shingles count: 1 bundle is typically 29 shingles
+      const shinglesCount = bundlesNeeded * 29;
+
       return {
         roofArea: { value: rArea.toFixed(0), label: "Estimated Roof Area", unit: "sq ft" },
         squares: { value: squares.toFixed(2), label: "Roof Squares (100 sq ft)", unit: "sqs" },
-        bundlesNeeded: { value: Math.ceil(squares * 3 * 1.10), label: "Total Bundles (incl. 10% waste)", unit: "bundles" }
+        bundlesNeeded: { value: bundlesNeeded, label: `Bundles Needed (${wastePercent}% waste incl.)`, unit: "bundles" },
+        shinglesNeeded: { value: shinglesCount, label: "Approx. Individual Shingles", unit: "shingles" },
+        estimatedCost: { value: totalCost.toFixed(2), label: "Estimated Material Cost", unit: "$" }
       };
     }
   },
@@ -321,39 +338,65 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Concrete Calculator",
     category: "construction",
     categoryLabel: "Construction",
-    seoTitle: "Concrete Slab & Volume Calculator - Cubic Yards Finder",
-    metaDescription: "Calculate concrete volume in cubic yards or bags for slabs, walkways, columns, and foundations. Add waste buffer for precise masonry orders.",
-    keywords: ["concrete calculator", "concrete slab calculator", "concrete bags calculator", "concrete price calculator"],
+    seoTitle: "Concrete Slab & Volume Calculator - Cubic Yards & Bags Finder",
+    metaDescription: "Calculate concrete volume in cubic yards or bags for rectangular slabs or circular pillars. Instantly estimate bags of 40lb, 60lb, or 80lb mix.",
+    keywords: ["concrete calculator", "concrete slab calculator", "concrete bags calculator", "concrete yards calculator", "how many bags of concrete"],
     hook: "Calculate Concrete Yards & Bag Counts Instantly.",
-    description: "Enter flat rectangular slabs or circular piers to find the volume of concrete mix needed for construction.",
+    description: "Enter flat rectangular slabs or circular piers to find the volume of concrete mix and bags of pre-mix needed.",
     calcTime: "2 mins",
-    formula: "Volume (cu yd) = [Length (ft) × Width (ft) × Thickness (ft)] ÷ 27",
-    formulaDescription: "Finds cubic volume of a rectangular prism, then divides by 27 to find cubic yards.",
-    example: "A slab 12ft × 12ft at 4 inches thick needs 1.78 cubic yards.",
-    faqs: [{ question: "How thick should a driveway slab be?", answer: "Driveways require a minimum thickness of 5 to 6 inches of concrete." }],
-    commonMistakes: ["Not adding a 10% ordering margin to cover spills and form deflection."],
-    useCases: ["Sidewalks, patios, driveways", "Setting fence posts"],
-    tips: ["Dampen the subgrade before pouring to avoid drawing water from the mix."],
+    formula: "Slab: Volume = Length × Width × Thickness | Column: Volume = π × Radius² × Depth",
+    formulaDescription: "Finds the cubic volume of a rectangular slab or cylinder in cubic feet, converts it to cubic yards by dividing by 27, and calculates bags by dividing volume by the yield of the selected bag size.",
+    example: "A rectangular slab 12ft × 12ft at 4 inches thick needs 1.78 cubic yards. This requires forty-five 80 lb bags or sixty 60 lb bags of concrete.",
+    faqs: [
+      { question: "How many 80 lb bags of concrete make a cubic yard?", answer: "It takes exactly 45 bags of 80 lb concrete mix to equal one cubic yard (27 cubic feet) of concrete. For 60 lb bags, you will need 60 bags; and for 40 lb bags, you will need 90 bags." },
+      { question: "How thick should concrete slabs be for driveways vs patios?", answer: "Patios, walkways, and garden paths typically require a thickness of 4 inches of concrete. Driveways and structures bearing heavier loads require at least 5 to 6 inches of concrete to prevent cracking under weight." },
+      { question: "How much extra concrete should I order for waste?", answer: "It is standard practice to add a 10% waste buffer to your total volume. This covers spills, uneven subgrades, and form bending during the pour." }
+    ],
+    commonMistakes: ["Not adding a 10% ordering margin to cover spills and form deflection.", "Forgetting to divide slab thickness in inches by 12 when calculating volume in cubic feet."],
+    useCases: ["Concrete driveways, sidewalk slabs, and patios", "Poured concrete columns, footings, and fence posts", "DIY concrete landscaping borders"],
+    tips: ["Dampen the subgrade before pouring to avoid drawing water from the concrete mix, which causes rapid drying and cracks."],
     inputs: [
-      { id: "length", label: "Length of Slab (ft)", type: "number", defaultValue: 12, unit: "ft" },
-      { id: "width", label: "Width of Slab (ft)", type: "number", defaultValue: 12, unit: "ft" },
-      { id: "thickness", label: "Thickness of Concrete (in)", type: "number", defaultValue: 4, unit: "in" },
-      { id: "pricePerYard", label: "Cost per Cubic Yard ($)", type: "number", defaultValue: 135, unit: "$" }
+      { id: "shape", label: "Project Shape", type: "select", defaultValue: "slab", options: [{ value: "slab", label: "Rectangular Slab / Wall" }, { value: "cylinder", label: "Circular Column / Hole" }] },
+      { id: "length", label: "Length (ft) - Ignore for Columns", type: "number", defaultValue: 12, unit: "ft" },
+      { id: "widthOrDia", label: "Width or Column Diameter (ft)", type: "number", defaultValue: 12, unit: "ft" },
+      { id: "thicknessOrHeight", label: "Thickness (in) or Column Depth (in)", type: "number", defaultValue: 4, unit: "in" },
+      { id: "pricePerYard", label: "Cost per Cubic Yard ($)", type: "number", defaultValue: 135, unit: "$" },
+      { id: "bagSize", label: "Concrete Bag Size Option", type: "select", defaultValue: "80", options: [{ value: "80", label: "80 lb bags (0.60 cu ft)" }, { value: "60", label: "60 lb bags (0.45 cu ft)" }, { value: "40", label: "40 lb bags (0.30 cu ft)" }] }
     ],
     calculate: (inputs) => {
+      const shape = inputs.shape || "slab";
       const length = Number(inputs.length || 0);
-      const width = Number(inputs.width || 0);
-      const thickness = Number(inputs.thickness || 4);
+      const widthOrDia = Number(inputs.widthOrDia || 0);
+      const thicknessOrHeight = Number(inputs.thicknessOrHeight || 4);
       const pricePerYard = Number(inputs.pricePerYard || 135);
+      const bagSizeVal = Number(inputs.bagSize || 80);
 
-      const volFt3 = length * width * (thickness / 12);
+      let volFt3 = 0;
+      if (shape === "slab") {
+        volFt3 = length * widthOrDia * (thicknessOrHeight / 12);
+      } else {
+        const radius = widthOrDia / 2;
+        volFt3 = Math.PI * Math.pow(radius, 2) * (thicknessOrHeight / 12);
+      }
+
       const volYd3 = volFt3 / 27;
-      const totalCost = volYd3 * 1.10 * pricePerYard;
+      const volYd3Waste = volYd3 * 1.10;
+      const totalCost = volYd3Waste * pricePerYard;
+
+      let bagYield = 0.6;
+      if (bagSizeVal === 60) bagYield = 0.45;
+      else if (bagSizeVal === 40) bagYield = 0.3;
+
+      const bagsCountWithWaste = Math.ceil((volFt3 * 1.10) / bagYield);
 
       return {
         cubicYards: { value: volYd3.toFixed(2), label: "Cubic Yards Needed", unit: "yd³" },
-        cubicYardsWaste: { value: (volYd3 * 1.10).toFixed(2), label: "Total Yards (+10% waste buffer)", unit: "yd³" },
-        bags80lb: { value: Math.ceil(volFt3 / 0.6), label: "80 lb pre-mix bags", unit: "bags" },
+        cubicYardsWaste: { value: volYd3Waste.toFixed(2), label: "Total Yards (+10% waste buffer)", unit: "yd³" },
+        bagsSelected: { value: bagsCountWithWaste, label: `Required ${bagSizeVal} lb bags (+10% waste)`, unit: "bags" },
+        bagsComparison: { 
+          value: `80lb: ${Math.ceil((volFt3 * 1.10) / 0.6)} | 60lb: ${Math.ceil((volFt3 * 1.10) / 0.45)} | 40lb: ${Math.ceil((volFt3 * 1.10) / 0.3)}`, 
+          label: "Bags Needed by Size (+10% waste)" 
+        },
         estimatedCost: { value: totalCost.toFixed(2), label: "Estimated Material Cost (+10% waste)", unit: "$" }
       };
     }
@@ -603,33 +646,66 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Avalara Sales Tax Calculator",
     category: "tax",
     categoryLabel: "Tax & Payroll",
-    seoTitle: "Avalara Sales Tax Calculator - State Transaction Rates",
-    metaDescription: "Estimate checkout sales taxes using standard state tax brackets. Calculate total sales prices instantly.",
-    keywords: ["avalara sales tax", "sales tax calculator", "state tax rate search"],
+    seoTitle: "Avalara Sales Tax Calculator - ZIP Code Rate Lookup",
+    metaDescription: "Estimate checkout sales taxes. Enter a ZIP code (like San Francisco 94105) to automatically load combined state, county, and local tax rates.",
+    keywords: ["avalara sales tax calculator", "avalara tax calculator", "avalara 94105 sales tax rate", "sales tax by zip code", "california sales tax calculator"],
     hook: "Calculate Checkout Sales Tax Rates.",
-    description: "Determine sales tax amounts and gross totals based on base prices and state percentages.",
+    description: "Determine sales tax amounts and gross totals based on base prices and state percentages. Enter a ZIP code to load local combined rates automatically.",
     calcTime: "1 min",
-    formula: "Sales Tax = Base Price × State Tax Rate",
-    formulaDescription: "Multiplies base price by state rate to find the checkout tax collection requirement.",
-    example: "A $50 transaction in a state with 6.25% sales tax incurs $3.13 tax.",
-    faqs: [{ question: "Is sales tax national?", answer: "No, sales taxes are governed at the state, county, and municipal level." }],
-    commonMistakes: ["Not adding local county or city surcharges to the base state sales tax rate."],
-    useCases: ["E-commerce tax estimation", "Invoicing corporate clients"],
-    tips: ["Confirm destination state nexus rules when shipping physical packages across state lines."],
+    formula: "Sales Tax = Base Price × Combined Tax Rate",
+    formulaDescription: "Multiplies base price by state and local tax rate to find the total sales tax required for collection at checkout.",
+    example: "A $50 transaction in ZIP 94105 (San Francisco, CA) uses a rate of 8.625%, incurring $4.31 sales tax for a total of $54.31.",
+    faqs: [
+      { question: "What is the sales tax rate for ZIP code 94105?", answer: "The combined sales tax rate for ZIP code 94105 (San Francisco, California) is 8.625%. This comprises the California state tax of 6.00%, San Francisco County tax of 0.25%, and local district taxes of 2.375%." },
+      { question: "How does the Avalara tax calculator determine sales tax?", answer: "It calculates sales tax based on the transaction's destination (the buyer's ZIP code). By checking the state, county, and local district rates, it aggregates them into a single combined sales tax rate applied to the purchase price." },
+      { question: "Is the tax calculation accurate for all US locations?", answer: "Yes. The calculator supports custom percentage entries for any jurisdiction and includes a lookup database for popular ZIP codes (such as New York 10001, San Francisco 94105, Seattle 98101, and Chicago 60601) to automate the calculation." }
+    ],
+    commonMistakes: ["Not adding local county or city surcharges to the base state sales tax rate.", "Assuming sales tax rates are identical across all ZIP codes in a state."],
+    useCases: ["E-commerce tax estimation", "Invoicing corporate clients", "Verifying consumer sales receipts"],
+    tips: ["Confirm destination state nexus rules when shipping physical packages across state lines, as nexus dictates whether you must collect tax."],
     inputs: [
       { id: "price", label: "Product Base Price ($)", type: "number", defaultValue: 100, unit: "$" },
-      { id: "stateRate", label: "Combined Tax Rate (%)", type: "number", defaultValue: 6.25, unit: "%" }
+      { id: "zipCode", label: "ZIP Code (e.g. 94105, 10001) - Optional", type: "text", defaultValue: "" },
+      { id: "stateRate", label: "Or Custom Combined Tax Rate (%)", type: "number", defaultValue: 6.25, unit: "%" }
     ],
     calculate: (inputs) => {
       const price = Number(inputs.price || 0);
-      const rate = Number(inputs.stateRate || 6.25);
+      let rate = Number(inputs.stateRate || 6.25);
+      const zip = String(inputs.zipCode || "").trim();
+
+      const zipRates: Record<string, { rate: number; location: string }> = {
+        "94105": { rate: 8.625, location: "San Francisco, CA" },
+        "10001": { rate: 8.875, location: "New York, NY" },
+        "90210": { rate: 9.50, location: "Beverly Hills, CA" },
+        "60601": { rate: 10.25, location: "Chicago, IL" },
+        "77001": { rate: 8.25, location: "Houston, TX" },
+        "33101": { rate: 7.00, location: "Miami, FL" },
+        "98101": { rate: 10.25, location: "Seattle, WA" },
+        "85001": { rate: 8.60, location: "Phoenix, AZ" },
+        "19101": { rate: 8.00, location: "Philadelphia, PA" },
+        "30301": { rate: 8.90, location: "Atlanta, GA" },
+        "02101": { rate: 6.25, location: "Boston, MA" },
+        "20001": { rate: 6.00, location: "Washington, DC" },
+      };
+
+      let infoMsg = "";
+      if (zip && zipRates[zip]) {
+        rate = zipRates[zip].rate;
+        infoMsg = `${zipRates[zip].location}`;
+      } else if (zip) {
+        infoMsg = `Custom ZIP (using manual rate below)`;
+      }
 
       const tax = price * (rate / 100);
       const total = price + tax;
 
       return {
         salesTax: { value: tax.toFixed(2), label: "Sales Tax Amount", unit: "$" },
-        grossTotal: { value: total.toFixed(2), label: "Gross Total (incl. tax)", unit: "$" }
+        grossTotal: { value: total.toFixed(2), label: "Gross Total (incl. tax)", unit: "$" },
+        detectedRate: { 
+          value: rate.toFixed(3) + "%", 
+          label: `Applied Rate ${infoMsg ? `(${infoMsg})` : ""}` 
+        }
       };
     }
   },
@@ -5099,6 +5175,1084 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
         batteryLifeDays: { value: Math.ceil(days), label: "Estimated Battery Life Duration", unit: "days" },
         batteryLifespan: { value: lifespan, label: "Battery Pack Physical Lifespan", unit: "" },
         recommendation: { value: rec, label: "Maintenance Recommendation", unit: "" }
+      };
+    }
+  },
+  "calculator-phone-case": {
+    slug: "calculator-phone-case",
+    name: "Calculator Phone Case",
+    category: "math",
+    categoryLabel: "Productivity & Math",
+    seoTitle: "Calculator Phone Case - Sizing, Scale & Custom Cost Estimator",
+    metaDescription: "Estimate sizing, scale, bulk print pricing, and resolution requirements for retro calculator-style phone cases. Design calculator layout mockups.",
+    keywords: ["calculator phone case", "retro calculator case", "phone case calculator", "custom phone case resolution", "phone case dimensions"],
+    hook: "Design and calculate sizing, print resolution, and cost for custom retro calculator phone cases.",
+    description: "Input your phone model, case materials, printing requirements, and quantity to calculate ideal design resolution, pricing, and bulk discount structures.",
+    calcTime: "2 mins",
+    formula: "Total Price = (Base Price + Material Premium) * Quantity * (1 - Discount Rate)",
+    formulaDescription: "Calculates mock cost with tiered discount rates: 1-5 cases (0%), 6-20 cases (10%), 21+ cases (20%). It also maps screen dimensions to recommended print resolution (DPI).",
+    example: "Order of 10 plastic phone cases ($15 base) gets a 10% discount: 10 × $15 × 0.90 = $135.",
+    faqs: [
+      { question: "What print resolution (DPI) is recommended for phone cases?", answer: "At least 300 DPI (Dots Per Inch) is recommended to avoid pixelation on high-detail designs like calculator keypad prints." },
+      { question: "Are calculator cases functional?", answer: "Most calculator phone cases are aesthetic plastic/silicone prints, although some active game-emulator cases are available for specific models." }
+    ],
+    commonMistakes: ["Using low-resolution images (< 150 DPI) which makes the tiny calculator button prints look fuzzy."],
+    useCases: ["Custom merchandise ordering", "Design mockup scaling"],
+    tips: ["Choose matte finishes if you want to avoid glare on the calculator button prints."],
+    inputs: [
+      {
+        id: "phoneModel",
+        label: "Phone Model Category",
+        type: "select",
+        defaultValue: "iphone-standard",
+        options: [
+          { value: "iphone-standard", label: "iPhone (Standard/Pro models)" },
+          { value: "iphone-max", label: "iPhone (Plus/Max models)" },
+          { value: "galaxy-standard", label: "Samsung Galaxy (Standard/S-Series)" },
+          { value: "galaxy-ultra", label: "Samsung Galaxy (Ultra models)" }
+        ]
+      },
+      {
+        id: "material",
+        label: "Case Material",
+        type: "select",
+        defaultValue: "silicone",
+        options: [
+          { value: "silicone", label: "Soft Silicone / Gel ($14.99)" },
+          { value: "tough", label: "Dual-layer Tough Armor ($19.99)" },
+          { value: "glass", label: "Tempered Glass Back ($24.99)" }
+        ]
+      },
+      { id: "quantity", label: "Quantity Required", type: "number", defaultValue: 2, unit: "units" },
+      { id: "dpi", label: "Uploaded Image Resolution (DPI)", type: "number", defaultValue: 300, unit: "dpi" }
+    ],
+    calculate: (inputs) => {
+      const q = Math.max(1, Number(inputs.quantity || 1));
+      const dpi = Number(inputs.dpi || 300);
+      const material = inputs.material || "silicone";
+      const model = inputs.phoneModel || "iphone-standard";
+
+      let basePrice = 14.99;
+      if (material === "tough") basePrice = 19.99;
+      else if (material === "glass") basePrice = 24.99;
+
+      let discount = 0;
+      if (q >= 21) discount = 0.20;
+      else if (q >= 6) discount = 0.10;
+
+      const subtotal = basePrice * q;
+      const discountVal = subtotal * discount;
+      const total = subtotal - discountVal;
+
+      let resolutionStatus = "Excellent Print Quality";
+      if (dpi < 150) resolutionStatus = "Poor - Image will look pixelated!";
+      else if (dpi < 300) resolutionStatus = "Good - Standard print quality";
+
+      let physicalHeightInches = 6.1;
+      if (model === "iphone-max" || model === "galaxy-ultra") physicalHeightInches = 6.7;
+
+      const printHeightPixels = physicalHeightInches * dpi;
+
+      return {
+        unitPrice: { value: (basePrice * (1 - discount)).toFixed(2), label: "Calculated Price per Unit", unit: "$" },
+        totalCost: { value: total.toFixed(2), label: "Estimated Total Price", unit: "$" },
+        qualityCheck: { value: resolutionStatus, label: "Design Resolution Check", unit: "" },
+        requiredPixels: { value: Math.ceil(printHeightPixels), label: "Required Height in Pixels", unit: "px" }
+      };
+    }
+  },
+  "cd-rates": {
+    slug: "cd-rates",
+    name: "CD Rates Calculator",
+    category: "financial",
+    categoryLabel: "Financial & Investment",
+    seoTitle: "CD Rates Calculator - Certificate of Deposit Earnings Estimator",
+    metaDescription: "Calculate the future balance, earned interest, and Annual Percentage Yield (APY) for Certificates of Deposit (CD). Plan your fixed-income returns.",
+    keywords: ["cd rates calculator", "certificate of deposit calculator", "cd rate estimator", "cd interest earnings", "apy calculator"],
+    hook: "Calculate interest earnings and APY growth for any Certificate of Deposit.",
+    description: "Input your deposit principal, interest rate, CD term, and compounding frequency to find your final maturity balance.",
+    calcTime: "1 min",
+    formula: "A = P * (1 + r/n)^(n*t)",
+    formulaDescription: "Uses the compound interest formula where P is principal, r is annual nominal rate, n is compounding periods per year, and t is term in years.",
+    example: "Deposit of $10,000 for 1 year at 5% interest compounded monthly returns $10,511.62.",
+    faqs: [
+      { question: "What is APY vs interest rate on a CD?", answer: "The interest rate is the nominal rate. APY (Annual Percentage Yield) represents the actual rate of return taking compounding interest into account." },
+      { question: "Is CD interest taxable?", answer: "Yes, CD interest earned is generally taxed as ordinary income in the year it is credited to your account." }
+    ],
+    commonMistakes: ["Withdrawing funds early, which usually results in an early withdrawal penalty that reduces your interest earned."],
+    useCases: ["Fixed income planning", "Comparing bank rates", "Retirement savings allocation"],
+    tips: ["If inflation is high, lock in shorter terms to avoid having your purchasing power eroded over long periods."],
+    inputs: [
+      { id: "deposit", label: "Deposit Principal ($)", type: "number", defaultValue: 10000, unit: "$" },
+      { id: "rate", label: "Interest Rate (%)", type: "number", defaultValue: 4.5, unit: "%" },
+      { id: "term", label: "CD Term (months)", type: "number", defaultValue: 12, unit: "mo" },
+      {
+        id: "compound",
+        label: "Compounding Frequency",
+        type: "select",
+        defaultValue: "monthly",
+        options: [
+          { value: "daily", label: "Daily (365/yr)" },
+          { value: "monthly", label: "Monthly (12/yr)" },
+          { value: "quarterly", label: "Quarterly (4/yr)" },
+          { value: "annual", label: "Annually (1/yr)" }
+        ]
+      }
+    ],
+    calculate: (inputs) => {
+      const P = Number(inputs.deposit || 0);
+      const r = Number(inputs.rate || 0) / 100;
+      const termMonths = Number(inputs.term || 12);
+      const freq = inputs.compound || "monthly";
+
+      const t = termMonths / 12;
+      let n = 12;
+      if (freq === "daily") n = 365;
+      else if (freq === "quarterly") n = 4;
+      else if (freq === "annual") n = 1;
+
+      const A = P * Math.pow(1 + r / n, n * t);
+      const interest = A - P;
+      const APY = (Math.pow(1 + r / n, n) - 1) * 100;
+
+      return {
+        futureValue: { value: A.toFixed(2), label: "Maturity Value", unit: "$" },
+        interestEarned: { value: interest.toFixed(2), label: "Total Interest Earned", unit: "$" },
+        apy: { value: APY.toFixed(3), label: "Annual Percentage Yield (APY)", unit: "%" }
+      };
+    }
+  },
+  "illinois-tax": {
+    slug: "illinois-tax",
+    name: "Illinois Tax Calculator",
+    category: "tax",
+    categoryLabel: "Tax & Payroll",
+    seoTitle: "Illinois State Tax Calculator - Estimate Flat State Withholding",
+    metaDescription: "Calculate Illinois flat state income tax liabilities. Accounts for Illinois flat tax rate, basic personal exemption, and dependents.",
+    keywords: ["illinois tax calculator", "il state income tax", "illinois flat tax estimator", "illinois payroll tax"],
+    hook: "Estimate your Illinois state flat income tax liability instantly.",
+    description: "Calculate your Illinois flat state tax (4.95%) by inputting your gross income, filing status, and dependents to determine taxable income and exemptions.",
+    calcTime: "2 mins",
+    formula: "IL Tax = Taxable Income * 4.95%",
+    formulaDescription: "Illinois levies a flat state income tax of 4.95% on taxable income after applying the state's basic personal exemption.",
+    example: "Single filer with $50,000 gross income and 1 basic exemption ($2,775 for 2024) pays 4.95% of $47,225 = $2,337.64.",
+    faqs: [
+      { question: "Is Illinois income tax progressive?", answer: "No, Illinois uses a constitutionally mandated flat tax rate of 4.95% for individuals." },
+      { question: "What is the Illinois personal exemption?", answer: "For tax year 2024, the basic personal exemption amount is $2,775 per eligible exemption." }
+    ],
+    commonMistakes: ["Failing to claim the standard personal exemption or additional exemptions for being over age 65 or blind."],
+    useCases: ["Relocation planning to Illinois", "Annual budget estimating"],
+    tips: ["Illinois offers a Property Tax Credit where you can deduct 5% of property taxes paid on your primary residence."],
+    inputs: [
+      { id: "income", label: "Gross Annual Income ($)", type: "number", defaultValue: 60000, unit: "$" },
+      {
+        id: "filing",
+        label: "Filing Status",
+        type: "select",
+        defaultValue: "single",
+        options: [
+          { value: "single", label: "Single" },
+          { value: "joint", label: "Married Filing Jointly" }
+        ]
+      },
+      { id: "dependents", label: "Number of Dependents", type: "number", defaultValue: 0 }
+    ],
+    calculate: (inputs) => {
+      const income = Number(inputs.income || 0);
+      const filing = inputs.filing || "single";
+      const deps = Number(inputs.dependents || 0);
+
+      // 2024 basic exemption: $2,775 per person
+      const EXEMPTION_UNIT = 2775;
+      let totalExemptions = 1; // self
+      if (filing === "joint") totalExemptions += 1; // spouse
+      totalExemptions += deps;
+
+      const exemptionVal = totalExemptions * EXEMPTION_UNIT;
+      const taxable = Math.max(0, income - exemptionVal);
+      const taxRate = 0.0495;
+      const stateTax = taxable * taxRate;
+      const net = income - stateTax;
+
+      return {
+        taxableIncome: { value: taxable.toFixed(2), label: "IL Taxable Income", unit: "$" },
+        totalExemptionsVal: { value: exemptionVal.toFixed(2), label: "Total Exemptions Value", unit: "$" },
+        taxLiability: { value: stateTax.toFixed(2), label: "Illinois State Tax Due", unit: "$" },
+        afterTax: { value: net.toFixed(2), label: "Income After IL Tax", unit: "$" }
+      };
+    }
+  },
+  "cd-interest-rate": {
+    slug: "cd-interest-rate",
+    name: "CD Interest Rate Calculator",
+    category: "financial",
+    categoryLabel: "Financial & Investment",
+    seoTitle: "CD Interest Rate Calculator - Calculate Compound Yield",
+    metaDescription: "Calculate the exact compound interest earned on Certificates of Deposit. Compare compounding frequencies and term length yield differences.",
+    keywords: ["cd interest rate calculator", "cd compound interest", "certificate of deposit yield", "rate of return cd"],
+    hook: "Determine the exact compound interest rate return for your savings.",
+    description: "Determine compound returns on CD rates. Compare daily, weekly, monthly, and quarterly compounding options.",
+    calcTime: "1 min",
+    formula: "A = P * (1 + r/n)^(n*t)",
+    formulaDescription: "Standard compounding interest math that computes future value and subtracts the principal to isolate interest growth.",
+    example: "An investment of $5,000 for 5 years at 4.25% compounded quarterly earns $1,175.76 in interest.",
+    faqs: [
+      { question: "How does compounding frequency affect CD yields?", answer: "More frequent compounding (e.g., daily instead of annually) causes your interest to grow faster, resulting in a higher APY." },
+      { question: "Can I add money to a CD after opening it?", answer: "Generally, traditional CDs do not allow additional deposits once the initial term begins. An exception is a 'Add-On' CD." }
+    ],
+    commonMistakes: ["Confusing the nominal interest rate with the yield (APY). Always compare APY across banks."],
+    useCases: ["Savings growth projections", "Comparing CDs vs savings accounts"],
+    tips: ["Daily compounding yields the highest interest. Look for institutions that compound daily rather than monthly."],
+    inputs: [
+      { id: "principal", label: "Initial Principal ($)", type: "number", defaultValue: 5000, unit: "$" },
+      { id: "rate", label: "Annual Nom. Interest Rate (%)", type: "number", defaultValue: 5.0, unit: "%" },
+      { id: "years", label: "Term Length (years)", type: "number", defaultValue: 3, unit: "yrs" },
+      {
+        id: "compound",
+        label: "Compounding Interval",
+        type: "select",
+        defaultValue: "daily",
+        options: [
+          { value: "daily", label: "Daily (Compounded 365/yr)" },
+          { value: "monthly", label: "Monthly (Compounded 12/yr)" },
+          { value: "quarterly", label: "Quarterly (Compounded 4/yr)" },
+          { value: "annual", label: "Annually (Compounded 1/yr)" }
+        ]
+      }
+    ],
+    calculate: (inputs) => {
+      const P = Number(inputs.principal || 0);
+      const r = Number(inputs.rate || 0) / 100;
+      const t = Number(inputs.years || 1);
+      const freq = inputs.compound || "daily";
+
+      let n = 365;
+      if (freq === "monthly") n = 12;
+      else if (freq === "quarterly") n = 4;
+      else if (freq === "annual") n = 1;
+
+      const A = P * Math.pow(1 + r / n, n * t);
+      const interest = A - P;
+      const APY = (Math.pow(1 + r / n, n) - 1) * 100;
+
+      return {
+        futureValue: { value: A.toFixed(2), label: "End Balance Value", unit: "$" },
+        interestEarned: { value: interest.toFixed(2), label: "Total Interest Earned", unit: "$" },
+        apy: { value: APY.toFixed(3), label: "Annual Percentage Yield (APY)", unit: "%" }
+      };
+    }
+  },
+  "pa-tax": {
+    slug: "pa-tax",
+    name: "PA Tax Calculator",
+    category: "tax",
+    categoryLabel: "Tax & Payroll",
+    seoTitle: "Pennsylvania State Tax Calculator - PA 3.07% Flat Income Tax",
+    metaDescription: "Estimate Pennsylvania state income tax liability. Pennsylvania uses a flat state income tax rate of 3.07% with no standard deductions.",
+    keywords: ["pa tax calculator", "pennsylvania tax calculator", "pa flat tax rate", "state tax pennsylvania"],
+    hook: "Calculate your Pennsylvania flat tax liabilities in seconds.",
+    description: "Determine your PA flat income tax (3.07%) based on gross income and taxable distributions.",
+    calcTime: "1 min",
+    formula: "PA Tax = Taxable Income * 3.07%",
+    formulaDescription: "Pennsylvania levies a flat rate of 3.07% on all taxable compensation, with no personal standard deduction allowed.",
+    example: "A salary of $45,000 in PA has a flat state tax of 3.07% = $1,381.50.",
+    faqs: [
+      { question: "Does PA have standard deductions?", answer: "No, Pennsylvania is unique in that it does not allow a standard deduction or personal exemptions on income." },
+      { question: "What is PA Tax Forgiveness?", answer: "PA offers Tax Forgiveness, which provides state tax refunds or exemptions to lower-income families." }
+    ],
+    commonMistakes: ["Expecting standard deductions similar to federal returns. PA taxes gross taxable compensation directly."],
+    useCases: ["Living and working in PA", "Comparing tax burdens between states"],
+    tips: ["While PA doesn't have standard deductions, you can deduct eligible unreimbursed business expenses using Schedule UE."],
+    inputs: [
+      { id: "income", label: "Gross Taxable Compensation ($)", type: "number", defaultValue: 50000, unit: "$" },
+      { id: "businessExpenses", label: "Allowable Business Expenses ($)", type: "number", defaultValue: 0, unit: "$" }
+    ],
+    calculate: (inputs) => {
+      const income = Number(inputs.income || 0);
+      const expenses = Number(inputs.businessExpenses || 0);
+
+      const taxable = Math.max(0, income - expenses);
+      const taxRate = 0.0307;
+      const taxDue = taxable * taxRate;
+      const net = income - taxDue;
+
+      return {
+        taxableIncome: { value: taxable.toFixed(2), label: "PA Taxable Compensation", unit: "$" },
+        taxLiability: { value: taxDue.toFixed(2), label: "PA State Tax Due", unit: "$" },
+        afterTax: { value: net.toFixed(2), label: "Income After PA Tax", unit: "$" }
+      };
+    }
+  },
+  "georgia-tax": {
+    slug: "georgia-tax",
+    name: "Georgia Tax Calculator",
+    category: "tax",
+    categoryLabel: "Tax & Payroll",
+    seoTitle: "Georgia State Tax Calculator - GA Flat 5.39% Estimator",
+    metaDescription: "Estimate Georgia state income tax liabilities. Accounts for Georgia flat tax rate of 5.39% and standard deductions.",
+    keywords: ["georgia tax calculator", "ga state tax calculator", "tax calculator georgia", "georgia income tax"],
+    hook: "Calculate your Georgia State flat income tax liability.",
+    description: "Input your income, filing status, and deductions to calculate your Georgia State income tax under the flat 5.39% system.",
+    calcTime: "2 mins",
+    formula: "GA Tax = (Gross Income - GA Standard Deduction) * 5.39%",
+    formulaDescription: "Georgia uses a flat income tax rate of 5.39% applied to taxable income after standard or itemized deductions.",
+    example: "Single filer earning $60,000 gross with standard GA deduction ($12,000) pays 5.39% of $48,000 = $2,587.20.",
+    faqs: [
+      { question: "What is the GA standard deduction?", answer: "For single filers, the standard deduction is $12,000, and for married couples filing jointly, it is $24,000." },
+      { question: "Did Georgia replace its tax brackets?", answer: "Yes, starting in 2024, Georgia transitioned from graduated brackets to a single flat tax rate of 5.39%." }
+    ],
+    commonMistakes: ["Using federal deduction levels for the state tax calculation. GA uses its own standard deduction values."],
+    useCases: ["GA resident tax planning", "Paycheck budgeting"],
+    tips: ["Georgia residents can exclude up to $65,000 of retirement income if they are 65 or older."],
+    inputs: [
+      { id: "income", label: "Gross Annual Income ($)", type: "number", defaultValue: 60000, unit: "$" },
+      {
+        id: "filing",
+        label: "Filing Status",
+        type: "select",
+        defaultValue: "single",
+        options: [
+          { value: "single", label: "Single ($12,000 deduction)" },
+          { value: "joint", label: "Married Filing Jointly ($24,000 deduction)" }
+        ]
+      },
+      { id: "extraDeductions", label: "Other Allowable Deductions ($)", type: "number", defaultValue: 0, unit: "$" }
+    ],
+    calculate: (inputs) => {
+      const income = Number(inputs.income || 0);
+      const filing = inputs.filing || "single";
+      const extra = Number(inputs.extraDeductions || 0);
+
+      const standardDeduction = filing === "joint" ? 24000 : 12000;
+      const taxable = Math.max(0, income - standardDeduction - extra);
+      const GA_RATE = 0.0539;
+      const stateTax = taxable * GA_RATE;
+      const net = income - stateTax;
+
+      return {
+        deductionValue: { value: standardDeduction.toFixed(2), label: "Georgia Standard Deduction", unit: "$" },
+        taxableIncome: { value: taxable.toFixed(2), label: "GA Taxable Income", unit: "$" },
+        taxLiability: { value: stateTax.toFixed(2), label: "Georgia State Tax Due", unit: "$" },
+        afterTax: { value: net.toFixed(2), label: "Income After GA Tax", unit: "$" }
+      };
+    }
+  },
+  "cd-ladder": {
+    slug: "cd-ladder",
+    name: "CD Ladder Calculator",
+    category: "financial",
+    categoryLabel: "Financial & Investment",
+    seoTitle: "CD Ladder Calculator - Design and Distribute CD Investments",
+    metaDescription: "Design a Certificate of Deposit (CD) laddering strategy. Divide your capital to balance yield advantages with liquid cash availability.",
+    keywords: ["cd ladder calculator", "cd laddering strategy", "liquidity portfolio calculator", "fixed income ladder"],
+    hook: "Optimize yields and liquidity with a custom CD laddering portfolio.",
+    description: "Spread your savings across multiple CDs maturing at different times to maximize yield while maintaining regular cash access.",
+    calcTime: "2 mins",
+    formula: "Sub-investments = Total Principal ÷ Ladder Steps",
+    formulaDescription: "Divides your investment equally across CD terms (e.g. 1, 2, 3, 4, 5-year terms). Re-invests maturing CDs into top-tier yields.",
+    example: "Investing $25,000 into a 5-step ladder puts $5,000 each in 1-year, 2-year, 3-year, 4-year, and 5-year CDs.",
+    faqs: [
+      { question: "What is a CD ladder?", answer: "A CD ladder is a savings strategy where you open multiple CDs with staggered maturity dates so that cash becomes available at regular intervals." },
+      { question: "What are the benefits of CD laddering?", answer: "It balances locking in high long-term rates while ensuring you have liquid funds maturing every year (or month) without paying penalty fees." }
+    ],
+    commonMistakes: ["Failing to reinvest maturing CDs, which defeats the continuous compounding benefit of the ladder structure."],
+    useCases: ["Staging retirement cash reserves", "Preserving emergency funds"],
+    tips: ["Review rate forecasts. If rates are rising, favor shorter-term rungs so you can reinvest at higher yields sooner."],
+    inputs: [
+      { id: "capital", label: "Total Capital to Invest ($)", type: "number", defaultValue: 25000, unit: "$" },
+      { id: "steps", label: "Number of Staggered Steps (Rungs)", type: "number", defaultValue: 5, min: 2, max: 10 },
+      { id: "avgRate", label: "Average Nom. Interest Rate (%)", type: "number", defaultValue: 4.8, unit: "%" }
+    ],
+    calculate: (inputs) => {
+      const capital = Number(inputs.capital || 0);
+      const steps = Math.max(2, Math.min(10, Number(inputs.steps || 5)));
+      const rate = Number(inputs.avgRate || 4.8) / 100;
+
+      const allocation = capital / steps;
+
+      // Estimate total interest earned after one full cycle (years equal to steps)
+      let totalInterestEarned = 0;
+      for (let i = 1; i <= steps; i++) {
+        totalInterestEarned += allocation * (Math.pow(1 + rate, i) - 1);
+      }
+
+      const endPortfolioVal = capital + totalInterestEarned;
+
+      return {
+        rungAllocation: { value: allocation.toFixed(2), label: "Capital Allocation Per CD Rung", unit: "$" },
+        projectedInterest: { value: totalInterestEarned.toFixed(2), label: "Estimated Cumulative Interest Earned", unit: "$" },
+        totalValue: { value: endPortfolioVal.toFixed(2), label: "Total Portfolio Staggered Value", unit: "$" }
+      };
+    }
+  },
+  "santyl": {
+    slug: "santyl",
+    name: "Santyl Ointment Calculator",
+    category: "health",
+    categoryLabel: "Health & Pharmacy",
+    seoTitle: "Santyl Calculator - Estimate Wound Care Tube Requirements",
+    metaDescription: "Calculate Santyl (collagenase) ointment volume and grams required for wound debridement. Estimate 30g and 90g tube order sizes.",
+    keywords: ["santyl calculator", "santyl ointment calculator", "collagenase wound volume", "santyl tube sizing", "wound debridement grams"],
+    hook: "Estimate Santyl ointment usage and tube quantities for wound debridement.",
+    description: "Input wound measurements, application thickness, frequency, and duration to determine the estimated weight of ointment and tubes required.",
+    calcTime: "2 mins",
+    formula: "Grams = Wound Area (cm²) × Application Thickness (cm) × Frequency/Day × Days × Density Factor",
+    formulaDescription: "Computes volume in cubic centimeters (cc), then multiplies by standard ointment density (~1 gram/cc) to estimate ointment usage in grams.",
+    example: "A 5cm × 4cm wound with a nickel-thick (2mm) application once daily for 14 days requires about 56 grams of Santyl.",
+    faqs: [
+      { question: "How thick should Santyl ointment be applied?", answer: "Santyl ointment should be applied at a thickness of 2 millimeters (about the thickness of a nickel) directly to the wound bed." },
+      { question: "What size tubes does Santyl come in?", answer: "Santyl is commercially available in 30-gram and 90-gram tubes." }
+    ],
+    commonMistakes: ["Applying the ointment too thick or spreading it onto healthy surrounding skin, which can cause skin irritation."],
+    useCases: ["Clinical prescription estimating", "Pharmacy cost authorization calculations"],
+    tips: ["Protect surrounding healthy skin by applying a barrier ointment (like zinc oxide) before laying down the Santyl debrider."],
+    inputs: [
+      { id: "length", label: "Wound Length (cm)", type: "number", defaultValue: 5, unit: "cm" },
+      { id: "width", label: "Wound Width (cm)", type: "number", defaultValue: 4, unit: "cm" },
+      {
+        id: "thickness",
+        label: "Application Thickness (cm)",
+        type: "select",
+        defaultValue: "0.2",
+        options: [
+          { value: "0.1", label: "Thin layer (1mm / 0.1cm)" },
+          { value: "0.2", label: "Nickel thickness (2mm / 0.2cm - Recommended)" },
+          { value: "0.3", label: "Thick layer (3mm / 0.3cm)" }
+        ]
+      },
+      { id: "frequency", label: "Applications Per Day", type: "number", defaultValue: 1 },
+      { id: "duration", label: "Duration of Treatment (Days)", type: "number", defaultValue: 14, unit: "days" }
+    ],
+    calculate: (inputs) => {
+      const length = Number(inputs.length || 0);
+      const width = Number(inputs.width || 0);
+      const thickness = Number(inputs.thickness || 0.2);
+      const frequency = Number(inputs.frequency || 1);
+      const duration = Number(inputs.duration || 1);
+
+      const area = length * width;
+      const volumePerApp = area * thickness;
+      const totalVolume = volumePerApp * frequency * duration;
+      const totalGrams = totalVolume * 1.0; 
+
+      const tubes30g = Math.ceil(totalGrams / 30);
+      const tubes90g = Math.ceil(totalGrams / 90);
+
+      return {
+        woundArea: { value: area.toFixed(1), label: "Calculated Wound Surface Area", unit: "cm²" },
+        gramsNeeded: { value: totalGrams.toFixed(1), label: "Estimated Ointment Weight Needed", unit: "grams" },
+        tubesEstimate30: { value: tubes30g, label: "Required 30g Ointment Tubes", unit: "tube(s)" },
+        tubesEstimate90: { value: tubes90g, label: "Required 90g Ointment Tubes", unit: "tube(s)" }
+      };
+    }
+  },
+  "mortgage-nh": {
+    slug: "mortgage-nh",
+    name: "Mortgage Calculator NH",
+    category: "financial",
+    categoryLabel: "Financial & Investment",
+    seoTitle: "New Hampshire Mortgage Calculator - Estimate NH Payments & High Tax Rates",
+    metaDescription: "Calculate monthly mortgage payments in New Hampshire. Includes principal, interest, NH property tax averages (1.86%), and insurance.",
+    keywords: ["mortgage calculator nh", "new hampshire mortgage calculator", "nh property tax rate calculator", "nh monthly house payment"],
+    hook: "Calculate NH home payments with accurate property tax rates.",
+    description: "New Hampshire lacks income tax but has some of the highest property taxes in the US (average 1.86%). Model your real payments here.",
+    calcTime: "2 mins",
+    formula: "M = P * [i(1+i)^n] ÷ [(1+i)^n - 1] + Monthly Tax & Insurance",
+    formulaDescription: "Computes monthly amortized principal and interest using home price, down payment, rate, and term. Adds NH's property taxes and home insurance.",
+    example: "A $400,000 NH home with 10% down at 6.5% interest and 1.86% property tax has a total payment of ~$2,900/month.",
+    faqs: [
+      { question: "Why are NH property taxes so high?", answer: "New Hampshire has no state sales tax and no personal state income tax. Property taxes serve as the primary source of revenue for local town and school budgets." },
+      { question: "What is NH's average property tax rate?", answer: "NH's statewide average property tax rate is approximately 1.86% of assessed home value, though rates vary significantly by municipality." }
+    ],
+    commonMistakes: ["Underestimating the monthly escrow payment by using a standard US average property tax rate (which is about 1.0%), rather than the higher NH rates."],
+    useCases: ["Buying a home in NH", "Escrow budgeting"],
+    tips: ["Look for specific municipal rates in NH (like Hanover vs. Alton) to refine your tax assumptions, as rates can double depending on the town."],
+    inputs: [
+      { id: "homePrice", label: "Home Purchase Price ($)", type: "number", defaultValue: 400000, unit: "$" },
+      { id: "downPayment", label: "Down Payment Amount ($)", type: "number", defaultValue: 40000, unit: "$" },
+      { id: "interestRate", label: "Loan Interest Rate (%)", type: "number", defaultValue: 6.5, unit: "%" },
+      { id: "termYears", label: "Loan Term (years)", type: "number", defaultValue: 30, unit: "yrs" },
+      { id: "taxRate", label: "NH Property Tax Rate (%)", type: "number", defaultValue: 1.86, unit: "%" },
+      { id: "insurance", label: "Homeowners Insurance ($/year)", type: "number", defaultValue: 1200, unit: "$" }
+    ],
+    calculate: (inputs) => {
+      const price = Number(inputs.homePrice || 0);
+      const down = Number(inputs.downPayment || 0);
+      const rate = Number(inputs.interestRate || 6.5) / 100 / 12;
+      const termMonths = Number(inputs.termYears || 30) * 12;
+      const taxRate = Number(inputs.taxRate || 1.86) / 100;
+      const ins = Number(inputs.insurance || 1200);
+
+      const principal = Math.max(0, price - down);
+
+      let monthlyPI = 0;
+      if (rate > 0 && termMonths > 0) {
+        monthlyPI = (principal * rate * Math.pow(1 + rate, termMonths)) / (Math.pow(1 + rate, termMonths) - 1);
+      } else if (termMonths > 0) {
+        monthlyPI = principal / termMonths;
+      }
+
+      const monthlyTax = (price * taxRate) / 12;
+      const monthlyIns = ins / 12;
+      const total = monthlyPI + monthlyTax + monthlyIns;
+
+      return {
+        principalInterest: { value: monthlyPI.toFixed(2), label: "Monthly Principal & Interest", unit: "$" },
+        escrowTax: { value: monthlyTax.toFixed(2), label: "Monthly Property Tax (Escrow)", unit: "$" },
+        escrowIns: { value: monthlyIns.toFixed(2), label: "Monthly Home Insurance", unit: "$" },
+        monthlyTotal: { value: total.toFixed(2), label: "Total Estimated Monthly Payment", unit: "$" }
+      };
+    }
+  },
+  "markup": {
+    slug: "markup",
+    name: "Mark Up Calculator",
+    category: "financial",
+    categoryLabel: "Financial & Investment",
+    seoTitle: "Mark Up Calculator - Calculate Sales Price & Profit Margin",
+    metaDescription: "Determine selling price, margins, and gross profits based on wholesale cost and markup percentage. Fast online pricing tool.",
+    keywords: ["mark up calculator", "markup calculator", "selling price calculator", "profit margin calculator"],
+    hook: "Calculate selling price, gross profit, and profit margin using markup percentages.",
+    description: "Input wholesale costs and target markup percentages to find customer retail pricing and margin metrics.",
+    calcTime: "1 min",
+    formula: "Price = Cost * (1 + Markup%)",
+    formulaDescription: "Applies markup to the item cost to find the selling price. Profit margin is calculated as (Price - Cost) ÷ Price.",
+    example: "An item costing $50 marked up by 40% will retail for $70, earning a $20 gross profit (28.57% profit margin).",
+    faqs: [
+      { question: "What is markup vs profit margin?", answer: "Markup is the percentage added to the cost to find the selling price. Margin is the percentage of the selling price that is profit." },
+      { question: "How do you convert markup to margin?", answer: "Margin% = Markup% ÷ (1 + Markup%). For example, a 50% markup equals a 33.3% profit margin." }
+    ],
+    commonMistakes: ["Setting markup under the belief that it equals profit margin. E.g., a 20% markup is actually a 16.6% margin, which may under-budget operations."],
+    useCases: ["Retail product pricing", "Manufacturing quote estimations"],
+    tips: ["Analyze local competitor markups to ensure your selling price remains in line with retail expectations."],
+    inputs: [
+      { id: "cost", label: "Wholesale Item Cost ($)", type: "number", defaultValue: 50, unit: "$" },
+      { id: "markupPercent", label: "Markup Percentage (%)", type: "number", defaultValue: 40, unit: "%" }
+    ],
+    calculate: (inputs) => {
+      const cost = Number(inputs.cost || 0);
+      const markup = Number(inputs.markupPercent || 0) / 100;
+
+      const price = cost * (1 + markup);
+      const profit = price - cost;
+      const margin = price > 0 ? (profit / price) * 100 : 0;
+
+      return {
+        sellingPrice: { value: price.toFixed(2), label: "Calculated Selling Price", unit: "$" },
+        grossProfit: { value: profit.toFixed(2), label: "Gross Profit", unit: "$" },
+        profitMargin: { value: margin.toFixed(2), label: "Profit Margin", unit: "%" }
+      };
+    }
+  },
+  "swimming-pool": {
+    slug: "swimming-pool",
+    name: "Swimming Pool Calculator",
+    category: "construction",
+    categoryLabel: "Construction & Landscaping",
+    seoTitle: "Swimming Pool Calculator - Estimate Pool Water Volume in Gallons",
+    metaDescription: "Calculate the water volume of rectangular, circular, or oval swimming pools in gallons and liters. Essential tool for chemical dosing.",
+    keywords: ["swimming pool calculator", "pool volume calculator", "pool gallons estimator", "water volume calculator"],
+    hook: "Calculate pool water volume in gallons and liters.",
+    description: "Input your pool's geometric shape, lengths, and depth to instantly calculate the total gallons or liters of water required.",
+    calcTime: "2 mins",
+    formula: "Gallons = Length (ft) × Width (ft) × Average Depth (ft) × 7.48",
+    formulaDescription: "Computes volume in cubic feet, then multiplies by 7.48 (gallons per cubic foot). Oval and circular calculations apply shape multipliers.",
+    example: "A 24ft × 12ft rectangular pool with a 4.5ft average depth holds approximately 9,694 gallons of water.",
+    faqs: [
+      { question: "How do you calculate average pool depth?", answer: "Add the depth of the shallow end to the depth of the deep end and divide by 2. E.g., (3ft + 6ft) ÷ 2 = 4.5ft average depth." },
+      { question: "Why is knowing pool volume important?", answer: "Proper chlorine, pH, and algaecide dosing instructions are always given per 10,000 gallons of pool water, requiring precise volume math." }
+    ],
+    commonMistakes: ["Forgetting that pool depth is usually uneven, leading to an overestimation if the deep-end depth is used instead of the average depth."],
+    useCases: ["Pool opening chemical balancing", "Water utility fee estimation"],
+    tips: ["Add 5% volume cushion if your pool has wide stairs or custom seating configurations in the frame."],
+    inputs: [
+      {
+        id: "shape",
+        label: "Pool Geometric Shape",
+        type: "select",
+        defaultValue: "rectangle",
+        options: [
+          { value: "rectangle", label: "Rectangular / Square" },
+          { value: "round", label: "Circular / Round" },
+          { value: "oval", label: "Oval Shape" }
+        ]
+      },
+      { id: "dimLength", label: "Length / Longest Diameter (ft)", type: "number", defaultValue: 24, unit: "ft" },
+      { id: "dimWidth", label: "Width (ft - ignore for Round pools)", type: "number", defaultValue: 12, unit: "ft" },
+      { id: "avgDepth", label: "Average Depth (ft)", type: "number", defaultValue: 4.5, unit: "ft" }
+    ],
+    calculate: (inputs) => {
+      const shape = inputs.shape || "rectangle";
+      const length = Number(inputs.dimLength || 0);
+      const width = Number(inputs.dimWidth || 0);
+      const depth = Number(inputs.avgDepth || 0);
+
+      let cubicFeet = 0;
+      if (shape === "rectangle") {
+        cubicFeet = length * width * depth;
+      } else if (shape === "round") {
+        const radius = length / 2;
+        cubicFeet = Math.PI * Math.pow(radius, 2) * depth;
+      } else if (shape === "oval") {
+        cubicFeet = length * width * depth * (Math.PI / 4);
+      }
+
+      const gallons = cubicFeet * 7.48052;
+      const liters = gallons * 3.78541;
+      const waterWeightLbs = gallons * 8.34;
+
+      return {
+        volumeCuFt: { value: Math.ceil(cubicFeet), label: "Pool Volume (Cubic Feet)", unit: "cu ft" },
+        volumeGallons: { value: Math.ceil(gallons), label: "Estimated Pool Water Capacity", unit: "gallons" },
+        volumeLiters: { value: Math.ceil(liters), label: "Volume in Liters", unit: "L" },
+        totalWeight: { value: Math.ceil(waterWeightLbs), label: "Estimated Water Weight", unit: "lbs" }
+      };
+    }
+  },
+  "mcat": {
+    slug: "mcat",
+    name: "MCAT Score Calculator",
+    category: "education",
+    categoryLabel: "Education",
+    seoTitle: "MCAT Score Calculator - Estimate Overall MCAT Percentiles",
+    metaDescription: "Estimate your cumulative MCAT score and national percentile rank. Input individual Chem/Phys, CARS, Bio, and Psych scores.",
+    keywords: ["mcat calculator", "mcat score calculator", "mcat score percentile conversion", "mcat scaled score"],
+    hook: "Calculate your total MCAT score and estimate your national percentile rank.",
+    description: "Enter your predicted or raw-equivalent scores for the four MCAT sections to see your total score and national percentile comparison.",
+    calcTime: "1 min",
+    formula: "Total Score = CP + CARS + BB + PS",
+    formulaDescription: "Calculates the sum of the four sections (each scaled between 118 and 132), resulting in a range of 472 to 528.",
+    example: "Scoring 125, 125, 125, and 125 results in a total score of 500 (approx. 50th percentile).",
+    faqs: [
+      { question: "What is a good MCAT score?", answer: "A total score of 511 or higher generally places you in the top 20% of test takers and is considered competitive for MD schools." },
+      { question: "How often are MCAT percentile tables updated?", answer: "The AAMC updates MCAT percentile rankings annually in May to reflect the data from the preceding three years of test-takers." }
+    ],
+    commonMistakes: ["Adding raw correct answers instead of the scaled section score (which ranges from 118 to 132)."],
+    useCases: ["Medical school application preparation", "Practice exam analysis"],
+    tips: ["A balanced score across sections is preferred by admissions committees over an uneven score with one very low section."],
+    inputs: [
+      { id: "cp", label: "Chemical & Physical Foundations (118-132)", type: "number", defaultValue: 125, min: 118, max: 132 },
+      { id: "cars", label: "Critical Analysis & Reasoning Skills (118-132)", type: "number", defaultValue: 125, min: 118, max: 132 },
+      { id: "bb", label: "Biological & Biochemical Foundations (118-132)", type: "number", defaultValue: 125, min: 118, max: 132 },
+      { id: "ps", label: "Psychological, Social & Biological Foundations (118-132)", type: "number", defaultValue: 125, min: 118, max: 132 }
+    ],
+    calculate: (inputs) => {
+      const cp = Math.max(118, Math.min(132, Number(inputs.cp || 125)));
+      const cars = Math.max(118, Math.min(132, Number(inputs.cars || 125)));
+      const bb = Math.max(118, Math.min(132, Number(inputs.bb || 125)));
+      const ps = Math.max(118, Math.min(132, Number(inputs.ps || 125)));
+
+      const total = cp + cars + bb + ps;
+
+      let percentile = 50;
+      let review = "Average";
+
+      if (total >= 524) { percentile = 99.9; review = "Exceptional (Top 0.1%)"; }
+      else if (total >= 520) { percentile = 98; review = "Excellent (Top 2%)"; }
+      else if (total >= 515) { percentile = 90; review = "Very Competitive (Top 10%)"; }
+      else if (total >= 510) { percentile = 78; review = "Competitive (Top 22%)"; }
+      else if (total >= 505) { percentile = 63; review = "Above Average"; }
+      else if (total >= 500) { percentile = 50; review = "Average (50th Percentile)"; }
+      else if (total >= 495) { percentile = 35; review = "Below Average"; }
+      else { percentile = 15; review = "Uncompetitive (Bottom 15%)"; }
+
+      return {
+        mcatTotal: { value: total, label: "Total MCAT Score", unit: "" },
+        mcatPercentile: { value: percentile.toFixed(1), label: "Estimated National Percentile Rank", unit: "%" },
+        reviewStatus: { value: review, label: "Score Interpretation", unit: "" }
+      };
+    }
+  },
+  "newegg-psu": {
+    slug: "newegg-psu",
+    name: "Newegg PSU Calculator",
+    category: "education",
+    categoryLabel: "Productivity & Tech",
+    seoTitle: "Newegg PSU Calculator - Estimate PC Power Supply Wattage Needs",
+    metaDescription: "Calculate power supply unit (PSU) wattage requirements for custom computer builds. Avoid system crashes and get power recommendations.",
+    keywords: ["newegg psu calculator", "pc power supply calculator", "wattage estimator custom pc", "recommended power supply size"],
+    hook: "Calculate your custom PC's power requirements and recommended PSU wattage.",
+    description: "Input your computer processor, graphics card, memory, and accessories to estimate total system power draw in watts.",
+    calcTime: "2 mins",
+    formula: "Recommended PSU = (CPU TDP + GPU TDP + System Base Watts) * 1.30",
+    formulaDescription: "Adds component TDP specifications, includes standard accessory power draw (~50W for boards, RAM, fans), and applies a 30% safety/efficiency overhead.",
+    example: "A PC with a Ryzen 5 CPU (65W) and RTX 4070 GPU (200W) draws ~315W load and recommends a 450W to 550W PSU.",
+    faqs: [
+      { question: "What happens if my PSU wattage is too low?", answer: "An underpowered power supply will cause sudden shutdowns, system instability, crashes during intensive gaming, and potentially damage components." },
+      { question: "Is a higher efficiency rating (Gold/Platinum) important?", answer: "Yes, 80 Plus ratings (Gold, Platinum) represent how much power is converted to system energy rather than wasted as heat, saving electricity costs." }
+    ],
+    commonMistakes: ["Failing to factor in future GPU upgrades or CPU overclocking, which heavily spike total wattage requirements."],
+    useCases: ["Custom PC building budgeting", "Upgrading graphics cards"],
+    tips: ["A power supply operates most efficiently when running at 40% to 60% of its rated capacity. Over-specifying a bit is healthy."],
+    inputs: [
+      {
+        id: "cpuTier",
+        label: "Processor (CPU) Power Tier",
+        type: "select",
+        defaultValue: "mid",
+        options: [
+          { value: "budget", label: "Entry Level (e.g. Intel i3 / Ryzen 3) (~65W)" },
+          { value: "mid", label: "Mid Range (e.g. Intel i5 / Ryzen 5) (~95W)" },
+          { value: "high", label: "High End (e.g. Intel i7 / Ryzen 7) (~125W)" },
+          { value: "extreme", label: "Extreme / Enthusiast (e.g. Intel i9 / Ryzen 9) (~170W)" }
+        ]
+      },
+      {
+        id: "gpuTier",
+        label: "Graphics Card (GPU) Power Tier",
+        type: "select",
+        defaultValue: "mid",
+        options: [
+          { value: "integrated", label: "Integrated Graphics / None (0W)" },
+          { value: "budget", label: "Budget Discrete (e.g. GTX 1650 / RX 6400) (~75W)" },
+          { value: "mid", label: "Mid Range Gaming (e.g. RTX 4060/4070 / RX 7700) (~220W)" },
+          { value: "high", label: "High End Enthusiast (e.g. RTX 4080 / RX 7900XT) (~320W)" },
+          { value: "extreme", label: "Ultimate Power (e.g. RTX 4090) (~450W)" }
+        ]
+      },
+      { id: "ramModules", label: "RAM Stick Count (DDR4 / DDR5)", type: "number", defaultValue: 2 },
+      { id: "fans", label: "Case Fans & LED Strips Count", type: "number", defaultValue: 4 },
+      {
+        id: "cooling",
+        label: "CPU Cooler Type",
+        type: "select",
+        defaultValue: "air",
+        options: [
+          { value: "air", label: "Standard Air Tower Cooler (~10W)" },
+          { value: "aio", label: "Liquid AIO Water Cooler (Pump + Dual/Triple Fans) (~35W)" }
+        ]
+      }
+    ],
+    calculate: (inputs) => {
+      const cpu = inputs.cpuTier || "mid";
+      const gpu = inputs.gpuTier || "mid";
+      const ram = Number(inputs.ramModules || 2);
+      const fans = Number(inputs.fans || 4);
+      const cooler = inputs.cooling || "air";
+
+      let cpuWatts = 95;
+      if (cpu === "budget") cpuWatts = 65;
+      else if (cpu === "high") cpuWatts = 125;
+      else if (cpu === "extreme") cpuWatts = 170;
+
+      let gpuWatts = 220;
+      if (gpu === "integrated") gpuWatts = 0;
+      else if (gpu === "budget") gpuWatts = 75;
+      else if (gpu === "high") gpuWatts = 320;
+      else if (gpu === "extreme") gpuWatts = 450;
+
+      const ramWatts = ram * 4;
+      const fanWatts = fans * 3;
+      const coolerWatts = cooler === "aio" ? 35 : 10;
+      const baseSystemWatts = 60; 
+
+      const totalLoadWatts = cpuWatts + gpuWatts + ramWatts + fanWatts + coolerWatts + baseSystemWatts;
+      const recPsu = totalLoadWatts * 1.30;
+
+      return {
+        loadPower: { value: totalLoadWatts, label: "Peak System Power Draw", unit: "W" },
+        recommendedPsu: { value: Math.ceil(recPsu / 50) * 50, label: "Recommended PSU Wattage Size", unit: "W" }
+      };
+    }
+  },
+  "fabric-yardage": {
+    slug: "fabric-yardage",
+    name: "Fabric Yardage Calculator",
+    category: "unit-converter",
+    categoryLabel: "Unit Converter & Math",
+    seoTitle: "Fabric Yardage Calculator - Estimate Fabric Requirements",
+    metaDescription: "Calculate total yards of fabric needed for sewing, upholstery, and crafts. Stretches rolls of 45-inch or 60-inch width configurations.",
+    keywords: ["fabric yardage calculator", "upholstery fabric calculator", "sewing fabric yardage", "calculate fabric yards"],
+    hook: "Calculate custom fabric lengths and roll yardage for any project.",
+    description: "Input project dimensions and roll widths to calculate the exact yardage requirements needed for custom sewing or upholstery crafts.",
+    calcTime: "2 mins",
+    formula: "Yards = [Project Length (in) × Number of Panels] ÷ 36",
+    formulaDescription: "Finds the required panel count matching project widths with fabric roll widths, multiplies by length, and divides by 36 to convert inches to yards.",
+    example: "Making a project 80 inches long and 40 inches wide on standard 45-inch roll fabric requires 2.22 yards of fabric.",
+    faqs: [
+      { question: "What are standard fabric roll widths?", answer: "Most craft fabrics are sold in rolls of 44/45 inches wide, while apparel and upholstery fabrics are frequently 54 or 60 inches wide." },
+      { question: "Should I wash fabric before measuring?", answer: "Yes, cotton and wool shrink by 5% to 10% after washing. Always calculate with a shrinkage allowance added to your design yardage." }
+    ],
+    commonMistakes: ["Failing to align fabric print patterns (repeat patterns), which requires ordering 15% to 20% more material to align seams."],
+    useCases: ["Sewing curtains or drapes", "Re-upholstering chairs and cushions"],
+    tips: ["When in doubt, round up by at least 1/2 yard. Leftover fabric scraps are always useful for test sewing or pocket liners."],
+    inputs: [
+      { id: "projLength", label: "Project Length Required (inches)", type: "number", defaultValue: 80, unit: "in" },
+      { id: "projWidth", label: "Project Width Required (inches)", type: "number", defaultValue: 40, unit: "in" },
+      {
+        id: "rollWidth",
+        label: "Fabric Roll Width Selection",
+        type: "select",
+        defaultValue: "45",
+        options: [
+          { value: "45", label: "Standard Craft Roll (45 inches)" },
+          { value: "54", label: "Standard Home Decor Roll (54 inches)" },
+          { value: "60", label: "Wide Apparel/Upholstery Roll (60 inches)" }
+        ]
+      },
+      { id: "wasteBuffer", label: "Pattern/Shrinkage Buffer (%)", type: "number", defaultValue: 10, unit: "%" }
+    ],
+    calculate: (inputs) => {
+      const length = Number(inputs.projLength || 0);
+      const width = Number(inputs.projWidth || 0);
+      const roll = Number(inputs.rollWidth || 45);
+      const buffer = Number(inputs.wasteBuffer || 10) / 100;
+
+      const panels = Math.ceil(width / roll);
+      const netInches = length * panels;
+      const grossInches = netInches * (1 + buffer);
+
+      const yards = grossInches / 36;
+      const totalArea = length * width;
+
+      return {
+        requiredPanels: { value: panels, label: "Strips / Panels Required Side-by-Side", unit: "" },
+        fabricYards: { value: yards.toFixed(2), label: "Total Fabric Length to Buy", unit: "yards" },
+        squareInches: { value: totalArea, label: "Net Project Area Required", unit: "sq in" }
+      };
+    }
+  },
+  "mortgage-nevada": {
+    slug: "mortgage-nevada",
+    name: "Mortgage Calculator Nevada",
+    category: "financial",
+    categoryLabel: "Financial & Investment",
+    seoTitle: "Nevada Mortgage Calculator - Estimate Monthly Payments & NV Escrows",
+    metaDescription: "Calculate mortgage payments in Nevada. Includes home purchase prices, loan terms, and Nevada property tax averages (0.48%).",
+    keywords: ["mortgage calculator nevada", "nevada mortgage calculator", "las vegas housing payment", "nv home loan estimator"],
+    hook: "Calculate monthly Nevada home payments with average property tax brackets.",
+    description: "Model monthly home loan payments in Nevada, incorporating the state's below-average property tax rate (approx. 0.48%).",
+    calcTime: "2 mins",
+    formula: "M = P * [i(1+i)^n] ÷ [(1+i)^n - 1] + Monthly Tax & Insurance",
+    formulaDescription: "Computes base principal and interest payments using standard compounding. Stretches Nevada tax rates and standard homeowners insurance.",
+    example: "A $450,000 house in Nevada with 10% down at 6.8% interest and 0.48% property tax has a monthly payment of ~$2,950.",
+    faqs: [
+      { question: "Is property tax in Nevada high?", answer: "No, Nevada has some of the lowest property taxes in the country, with an average effective tax rate of only 0.48%." },
+      { question: "Does Nevada cap property tax increases?", answer: "Yes, Nevada has property tax abatement laws that cap tax bill increases for primary residences at a maximum of 3% per year." }
+    ],
+    commonMistakes: ["Failing to account for Homeowners Association (HOA) fees. Many master-planned communities in NV have additional HOA dues."],
+    useCases: ["Buying a home in Las Vegas or Reno", "Comparing state mortgage escrows"],
+    tips: ["If your community has a SID/LID (Special/Local Improvement District) assessment, add that monthly charge to get your absolute net housing payment."],
+    inputs: [
+      { id: "homePrice", label: "Home Purchase Price ($)", type: "number", defaultValue: 450000, unit: "$" },
+      { id: "downPayment", label: "Down Payment Amount ($)", type: "number", defaultValue: 45000, unit: "$" },
+      { id: "interestRate", label: "Loan Interest Rate (%)", type: "number", defaultValue: 6.8, unit: "%" },
+      { id: "termYears", label: "Loan Term (years)", type: "number", defaultValue: 30, unit: "yrs" },
+      { id: "taxRate", label: "Nevada Property Tax Rate (%)", type: "number", defaultValue: 0.48, unit: "%" },
+      { id: "insurance", label: "Homeowners Insurance ($/year)", type: "number", defaultValue: 1350, unit: "$" }
+    ],
+    calculate: (inputs) => {
+      const price = Number(inputs.homePrice || 0);
+      const down = Number(inputs.downPayment || 0);
+      const rate = Number(inputs.interestRate || 6.8) / 100 / 12;
+      const termMonths = Number(inputs.termYears || 30) * 12;
+      const taxRate = Number(inputs.taxRate || 0.48) / 100;
+      const ins = Number(inputs.insurance || 1350);
+
+      const principal = Math.max(0, price - down);
+
+      let monthlyPI = 0;
+      if (rate > 0 && termMonths > 0) {
+        monthlyPI = (principal * rate * Math.pow(1 + rate, termMonths)) / (Math.pow(1 + rate, termMonths) - 1);
+      } else if (termMonths > 0) {
+        monthlyPI = principal / termMonths;
+      }
+
+      const monthlyTax = (price * taxRate) / 12;
+      const monthlyIns = ins / 12;
+      const total = monthlyPI + monthlyTax + monthlyIns;
+
+      return {
+        principalInterest: { value: monthlyPI.toFixed(2), label: "Monthly Principal & Interest", unit: "$" },
+        escrowTax: { value: monthlyTax.toFixed(2), label: "Monthly Property Tax (Escrow)", unit: "$" },
+        escrowIns: { value: monthlyIns.toFixed(2), label: "Monthly Home Insurance", unit: "$" },
+        monthlyTotal: { value: total.toFixed(2), label: "Total Estimated Monthly Payment", unit: "$" }
+      };
+    }
+  },
+  "529-growth": {
+    slug: "529-growth",
+    name: "529 Growth Calculator",
+    category: "financial",
+    categoryLabel: "Financial & Investment",
+    seoTitle: "529 Growth Calculator - Estimate College Savings Tax Advantages",
+    metaDescription: "Calculate the future balance of a 529 College Savings Plan. Estimate tax savings from tax-free compounding interest growth.",
+    keywords: ["529 growth calculator", "college savings calculator", "529 tax savings estimator", "college education investment"],
+    hook: "Project college savings growth and tax-free compounding advantages.",
+    description: "Input initial funds, monthly additions, terms, and rate of return to estimate future 529 plan savings and tax exclusions.",
+    calcTime: "2 mins",
+    formula: "FV = P*(1+r)^t + PMT * [((1+r)^t - 1) ÷ r]",
+    formulaDescription: "Uses standard future value calculations for compounded investment growth. Quantifies tax savings based on tax-deferred federal distributions.",
+    example: "Starting with $5,000 and contributing $200 monthly for 15 years at 7% annual returns yields $74,868.",
+    faqs: [
+      { question: "What is a 529 plan?", answer: "A 529 plan is a tax-advantaged savings plan designed to encourage saving for future education costs, sponsored by states or educational institutions." },
+      { question: "What are the tax benefits of a 529 plan?", answer: "Earnings grow tax-deferred and withdrawals are 100% tax-free when used for qualified educational expenses like tuition, books, and board." }
+    ],
+    commonMistakes: ["Using 529 distributions for non-qualified expenses. This triggers ordinary income taxes plus a 10% federal penalty on the earnings portion."],
+    useCases: ["Newborn educational savings planning", "Projecting college funding milestones"],
+    tips: ["Some states offer state income tax deductions or credits for contributions made by their residents to the home state's 529 plan."],
+    inputs: [
+      { id: "initial", label: "Initial Account Deposit ($)", type: "number", defaultValue: 5000, unit: "$" },
+      { id: "monthly", label: "Monthly Contribution ($)", type: "number", defaultValue: 250, unit: "$" },
+      { id: "returns", label: "Estimated Annual Return (%)", type: "number", defaultValue: 7.0, unit: "%" },
+      { id: "years", label: "Years Until College", type: "number", defaultValue: 15, unit: "yrs" },
+      { id: "taxRate", label: "Estimated Combined Income Tax Rate (%)", type: "number", defaultValue: 24, unit: "%" }
+    ],
+    calculate: (inputs) => {
+      const P = Number(inputs.initial || 0);
+      const pmt = Number(inputs.monthly || 0);
+      const rAnn = Number(inputs.returns || 7) / 100;
+      const t = Number(inputs.years || 15);
+      const taxRate = Number(inputs.taxRate || 24) / 100;
+
+      const r = rAnn / 12;
+      const n = t * 12;
+
+      const fvLump = P * Math.pow(1 + rAnn, t);
+
+      let fvAnnuity = 0;
+      if (r > 0) {
+        fvAnnuity = pmt * ((Math.pow(1 + r, n) - 1) / r);
+      } else {
+        fvAnnuity = pmt * n;
+      }
+
+      const totalFV = fvLump + fvAnnuity;
+      const totalContributed = P + (pmt * n);
+      const totalEarnings = Math.max(0, totalFV - totalContributed);
+      const taxSaved = totalEarnings * taxRate;
+
+      return {
+        futureBalance: { value: totalFV.toFixed(2), label: "Projected College Balance", unit: "$" },
+        contributions: { value: totalContributed.toFixed(2), label: "Total Cash Contributed", unit: "$" },
+        interestEarned: { value: totalEarnings.toFixed(2), label: "Investment Earnings Growth", unit: "$" },
+        estimatedTaxSavings: { value: taxSaved.toFixed(2), label: "Estimated Tax Savings", unit: "$" }
+      };
+    }
+  },
+  "sterling-silver": {
+    slug: "sterling-silver",
+    name: "Sterling Silver Calculator",
+    category: "financial",
+    categoryLabel: "Financial & Investment",
+    seoTitle: "Sterling Silver Calculator - Estimate Scrap Silver Metal Melt Value",
+    metaDescription: "Calculate the scrap melt value of sterling silver items. Input weights in grams or troy ounces based on current silver spot prices.",
+    keywords: ["sterling silver calculator", "scrap silver melt value", "sterling silver price per gram", "silver value estimator"],
+    hook: "Calculate pure silver weight and scrap melt value for sterling silver.",
+    description: "Input the weight of your sterling silver items and current market spot price to estimate the net precious metal value.",
+    calcTime: "1 min",
+    formula: "Value = Weight * 0.925 * Spot Price per unit",
+    formulaDescription: "Multiplies total weight by 0.925 (the purity of sterling silver) to find fine silver weight, then multiplies by the market spot price.",
+    example: "100 grams of sterling silver with spot price at $30/oz is worth approximately $89.22 in melt value.",
+    faqs: [
+      { question: "What is sterling silver purity?", answer: "Sterling silver has a standard purity of 92.5% pure silver mixed with 7.5% copper or other metals for durability." },
+      { question: "How many grams are in a troy ounce?", answer: "Precious metals are weighed in troy ounces. One troy ounce equals exactly 31.1035 grams." }
+    ],
+    commonMistakes: ["Confusing standard ounces (28.35g) with troy ounces (31.10g) which are used for metal pricing, leading to incorrect value estimates."],
+    useCases: ["Selling scrap silverware or jewelry", "Valuing vintage silver collections"],
+    tips: ["Scrap dealers rarely pay 100% of melt value. Expect offers between 75% to 90% of the scrap value calculated here."],
+    inputs: [
+      { id: "weight", label: "Silver Item Weight", type: "number", defaultValue: 100 },
+      {
+        id: "weightUnit",
+        label: "Weight Unit",
+        type: "select",
+        defaultValue: "grams",
+        options: [
+          { value: "grams", label: "Grams (g)" },
+          { value: "troyOunces", label: "Troy Ounces (ozt)" }
+        ]
+      },
+      { id: "spotPrice", label: "Current Silver Spot Price per Troy Ounce ($)", type: "number", defaultValue: 30, unit: "$" }
+    ],
+    calculate: (inputs) => {
+      const weight = Number(inputs.weight || 0);
+      const unit = inputs.weightUnit || "grams";
+      const spot = Number(inputs.spotPrice || 30);
+
+      const STERLING_PURITY = 0.925;
+      const GRAMS_PER_TROY_OZ = 31.1034768;
+
+      let weightInTroyOz = weight;
+      if (unit === "grams") {
+        weightInTroyOz = weight / GRAMS_PER_TROY_OZ;
+      }
+
+      const pureSilverTroyOz = weightInTroyOz * STERLING_PURITY;
+      const pureSilverGrams = pureSilverTroyOz * GRAMS_PER_TROY_OZ;
+      const meltValue = pureSilverTroyOz * spot;
+
+      return {
+        fineSilverWeightOz: { value: pureSilverTroyOz.toFixed(3), label: "Pure Silver Weight (ozt)", unit: "ozt" },
+        fineSilverWeightGrams: { value: pureSilverGrams.toFixed(2), label: "Pure Silver Weight (g)", unit: "g" },
+        silverMeltValue: { value: meltValue.toFixed(2), label: "Est. Raw Scrap Melt Value", unit: "$" }
+      };
+    }
+  },
+  "manufactured-home-mortgage": {
+    slug: "manufactured-home-mortgage",
+    name: "Manufactured Home Mortgage Calculator",
+    category: "financial",
+    categoryLabel: "Financial & Investment",
+    seoTitle: "Manufactured Home Mortgage Calculator - Chattel vs Real Estate Financing",
+    metaDescription: "Calculate manufactured and mobile home loan payments. Staggers real estate mortgages and chattel loan interest structures.",
+    keywords: ["manufactured home mortgage calculator", "mobile home loan calculator", "chattel loan calculator", "manufactured home payment"],
+    hook: "Estimate manufactured home loan payments for real property or chattel loans.",
+    description: "Compare financing costs for manufactured homes. Models traditional mortgages (real estate land packages) and chattel loans (home-only loans).",
+    calcTime: "2 mins",
+    formula: "Monthly Payment = P * [i(1+i)^n] ÷ [(1+i)^n - 1] + Lot Rent",
+    formulaDescription: "Uses standard amortization calculations based on principal, term, and interest rate. Includes monthly park lot lease rent if the home sits on leased land.",
+    example: "A $120,000 chattel loan at 9% interest for 20 years with $400 monthly lot rent has a total payment of ~$1,480/month.",
+    faqs: [
+      { question: "What is a chattel loan?", answer: "A chattel loan is a personal property loan used to buy movable property like mobile homes on leased land. They carry higher interest rates than real property loans." },
+      { question: "Why do manufactured home loans have higher interest rates?", answer: "If the land isn't owned alongside the home, the loan is considered personal property (chattel), which is higher risk and depreciates faster." }
+    ],
+    commonMistakes: ["Forgetting to factor in monthly lot rent/lease fees if the home is located inside a mobile home community or park land."],
+    useCases: ["Mobile home park financing budgeting", "Comparing home-and-land package financing"],
+    tips: ["If possible, package the manufactured home and land together in a single deed to qualify for lower-interest FHA or conventional mortgage programs."],
+    inputs: [
+      { id: "homeCost", label: "Manufactured Home Price ($)", type: "number", defaultValue: 120000, unit: "$" },
+      { id: "downPayment", label: "Down Payment ($)", type: "number", defaultValue: 12000, unit: "$" },
+      {
+        id: "loanType",
+        label: "Loan & Land Classification",
+        type: "select",
+        defaultValue: "chattel",
+        options: [
+          { value: "chattel", label: "Chattel Loan (Home only on Leased Land - Higher Rate)" },
+          { value: "real-estate", label: "Land/Home Mortgage Package (Lower Rate)" }
+        ]
+      },
+      { id: "rate", label: "Loan Interest Rate (%)", type: "number", defaultValue: 8.5, unit: "%" },
+      { id: "term", label: "Loan Term (years)", type: "number", defaultValue: 20, unit: "yrs" },
+      { id: "lotRent", label: "Monthly Lot Rent / Park Fee ($ - if leased)", type: "number", defaultValue: 400, unit: "$" }
+    ],
+    calculate: (inputs) => {
+      const price = Number(inputs.homeCost || 0);
+      const down = Number(inputs.downPayment || 0);
+      const interestAnn = Number(inputs.rate || 8.5);
+      const termYears = Number(inputs.term || 20);
+      const lot = Number(inputs.lotRent || 0);
+
+      const principal = Math.max(0, price - down);
+      const r = interestAnn / 100 / 12;
+      const n = termYears * 12;
+
+      let monthlyPI = 0;
+      if (r > 0 && n > 0) {
+        monthlyPI = (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      } else if (n > 0) {
+        monthlyPI = principal / n;
+      }
+
+      const totalMonthly = monthlyPI + lot;
+      const totalPayments = monthlyPI * n;
+      const totalInterest = Math.max(0, totalPayments - principal);
+
+      return {
+        basePayment: { value: monthlyPI.toFixed(2), label: "Monthly Principal & Interest", unit: "$" },
+        totalMonthlyCost: { value: totalMonthly.toFixed(2), label: "Total Monthly Payment (incl. Lot Rent)", unit: "$" },
+        cumulativeInterest: { value: totalInterest.toFixed(2), label: "Total Interest Paid Over Loan Term", unit: "$" }
       };
     }
   }

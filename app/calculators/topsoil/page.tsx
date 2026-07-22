@@ -109,10 +109,33 @@ export default function TopsoilPage() {
                 name: "What is 1 cubic yard of topsoil?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "One cubic yard equals 27 cubic feet, roughly 2,000–2,200 lb of screened topsoil."
+                  text: "One cubic yard equals 27 cubic feet, roughly 2,000–2,200 lb of screened topsoil."
                 }
               },
-              // Additional FAQs are generated in the page content below.
+              {
+                "@type": "Question",
+                name: "How deep should topsoil be for a lawn or garden?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "For new lawn installations or sod prep, 4 to 6 inches of topsoil is recommended. For raised garden beds or vegetables, a depth of 8 to 12 inches is suggested to accommodate roots and water retention."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "How many bags of topsoil are in a cubic yard?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "A standard 40 lb bag of topsoil contains approximately 0.75 cubic feet of soil. It takes 36 bags of 0.75 cu ft or 27 bags of 1.0 cu ft to equal one cubic yard (27 cubic feet)."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "Is fill dirt the same as topsoil?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. Fill dirt is structural subsoil that contains rocks, sand, and clay, lacking rich organic material. Topsoil is the nutrient-dense top layer of soil screened of debris, ideal for landscaping and growing plants."
+                }
+              }
             ],
           }).replace(/</g, "\\u003c")
         }}
@@ -144,7 +167,7 @@ export default function TopsoilPage() {
             <TopsoilCalculator />
 
             {/* SEO Authority Article */}
-            <article className="prose prose-slate ml-40 max-w-none text-slate-800 leading-relaxed">
+            <article className="prose prose-slate max-w-none text-slate-800 leading-relaxed space-y-6">
               <h2 className="font-bold text-3xl mb-4">What is a Topsoil Calculator?</h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">A <strong>topsoil calculator</strong> is an online tool that determines the volume of topsoil required for any landscaping project. It’s also known as a <em>top soil calculator</em>, <em>topsoil estimator</em>, or <em>dirt cubic yard calculator</em>. By inputting the dimensions of the area you plan to cover and the desired depth, the calculator instantly converts those measurements into cubic yards, cubic feet, tons, or even the number of bags you’ll need.</p>
 

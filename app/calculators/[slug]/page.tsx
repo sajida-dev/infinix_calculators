@@ -6,6 +6,9 @@ import { calculatorsData } from "../../../app/data/calculatorsData";
 import { blogData } from "../../../app/data/blogData";
 import DynamicCalculator from "../../../app/components/DynamicCalculator";
 import CalculatorFaqs from "../../../app/components/CalculatorFaqs";
+import AvalaraSeoContent from "../../../app/components/seo/AvalaraSeoContent";
+import ConcreteSeoContent from "../../../app/components/seo/ConcreteSeoContent";
+import RoofSeoContent from "../../../app/components/seo/RoofSeoContent";
 
 interface CalculatorPageProps {
   params: Promise<{ slug: string }>;
@@ -95,6 +98,19 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     ],
   };
 
+  const faqSchema = calc.faqs && calc.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": calc.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
   return (
     <div className="bg-slate-50 min-h-screen py-8 sm:py-12">
       {/* Schema Injection */}
@@ -110,6 +126,14 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+      )}
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Trail */}
@@ -220,6 +244,23 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                       <li key={idx}>{tip}</li>
                     ))}
                   </ul>
+                </div>
+              )}
+
+              {/* Custom Premium SEO Article Content */}
+              {slug === "avalara-sales-tax" && (
+                <div className="pt-6 border-t border-slate-200/50">
+                  <AvalaraSeoContent />
+                </div>
+              )}
+              {slug === "concrete" && (
+                <div className="pt-6 border-t border-slate-200/50">
+                  <ConcreteSeoContent />
+                </div>
+              )}
+              {slug === "roof" && (
+                <div className="pt-6 border-t border-slate-200/50">
+                  <RoofSeoContent />
                 </div>
               )}
 

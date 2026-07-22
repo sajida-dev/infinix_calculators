@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { calculatorsData } from "../data/calculatorsData";
 import { blogData } from "../data/blogData";
 import CalculatorCard from "../components/CalculatorCard";
 import SearchInput from "../components/SearchInput";
 import { categoriesList } from "../data/CategoryData";
+import CategoryCard from "../components/CategoryCard";
+
 interface PageProps {
   searchParams: Promise<{ q?: string }>;
 }
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
     "topsoil calculator",
     "top soil calculator",
     "concrete calculator",
-    "cbm calculator",
+    "CBM calculator",
     "affirm calculator",
     "productivity calculator",
     "cost calculators",
@@ -119,9 +122,7 @@ export const metadata: Metadata = {
 
   creator: "Infinix Calculators",
 
-  publisher: "Infinix Calculators",
 };
-
 
 export default async function CalculatorsPage(props: PageProps) {
   const searchParams = await props.searchParams;
@@ -210,51 +211,34 @@ export default async function CalculatorsPage(props: PageProps) {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {categoriesList.map((cat) => (
-                  <div key={cat.id} id={cat.id} className="space-y-4 scroll-mt-20">
-                    {/* Category Title with Blue circular icon */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm shrink-0">
-                        {cat.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-lg sm:text-base font-bold text-slate-900 leading-tight">
-                          {cat.title}
-                        </h3>
-                        <p className="text-[14px] text-slate-400 mt-0.5">{cat.desc}</p>
-                      </div>
-                    </div>
-
-                    {/* Calculator lists under this category */}
-                    <ul className="space-y-3.5 pl-11">
-                      {cat.slugs.map((slug) => {
-                        const calc = calculatorsData[slug];
-                        if (!calc) return null;
-                        return (
-                          <li key={slug}>
-                            <Link href={`/calculators/${slug}`} className="group block text-md hover:text-primary transition-all">
-                              <span className="block text-primary group-hover:text-primary transition-colors leading-snug">
-                                {calc.name}
-                              </span>
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
+                  <CategoryCard
+                    key={cat.id}
+                    id={cat.id}
+                    category={cat}
+                    showViewAllButton={false}
+                  />
                 ))}
               </div>
 
             </div>
 
-            {/* Right Sidebar Column (4 cols on desktop, flat transparent layout) */}
+            {/* Right Sidebar Column (4 cols on desktop, matching blog detail sidebar layout) */}
             <div className="lg:col-span-4 space-y-10 pl-0 lg:pl-6">
 
-              {/* Popular calculators (No card bg) */}
+              {/* Search Widget */}
+              <div>
+                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
+                  Search Calculators
+                </h3>
+                <SearchInput variant="minimal" placeholder="Search tools..." />
+              </div>
+
+              {/* Popular Tools */}
               <div className="pb-6 border-b border-slate-200/80">
                 <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
                   Popular Tools
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-3.5">
                   {popularCalcs.map((calc) => (
                     <li key={calc.slug}>
                       <Link
@@ -271,29 +255,41 @@ export default async function CalculatorsPage(props: PageProps) {
                 </ul>
               </div>
 
-              {/* Recent guides (No card bg) */}
+              {/* Guides & Cost Reports (With thumbnail images like blog detail sidebar) */}
               <div className="pb-6 border-b border-slate-200/80">
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
+                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">
                   Guides & Cost Reports
                 </h3>
-                <ul className="space-y-3">
+                <div className="space-y-5">
                   {recentBlogs.map((post) => (
-                    <li key={post.slug}>
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="group block text-xs hover:text-primary transition-colors"
-                      >
-                        <span className="block font-semibold text-slate-700 group-hover:text-primary transition-colors leading-snug">
-                          {post.title}
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}`}
+                      className="group flex gap-4 hover:text-primary transition-colors"
+                    >
+                      <div className="relative w-16 h-16 bg-slate-100 rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          sizes="64px"
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="block text-[9px] font-bold text-primary uppercase tracking-wider">
+                          {post.category}
                         </span>
-                        <span className="block text-[8px] text-slate-400 mt-1">{post.date}</span>
-                      </Link>
-                    </li>
+                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 leading-snug group-hover:text-primary transition-colors mt-1 line-clamp-2">
+                          {post.title}
+                        </h4>
+                      </div>
+                    </Link>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              {/* Problems we're fixing (No card bg) */}
+              {/* Problems we're fixing */}
               <div className="pb-6 border-b border-slate-200/80">
                 <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
                   Problems we're fixing
@@ -301,8 +297,8 @@ export default async function CalculatorsPage(props: PageProps) {
                 <ul className="space-y-3.5">
                   {upcomingCalcs.map((item) => (
                     <li key={item.name} className="text-xs leading-normal">
-                      <span className="block font-bold text-slate-500">{item.name}</span>
-                      <span className="block text-[10px] text-slate-400 mt-0.5">{item.desc}</span>
+                      <span className="block font-bold text-slate-700">{item.name}</span>
+                      <span className="block text-[11px] text-slate-500 mt-0.5">{item.desc}</span>
                     </li>
                   ))}
                 </ul>
