@@ -2091,7 +2091,7 @@ export const blogData: Record<string, BlogPost> = {
     category: "Logistics & Freight",
     date: "2026-07-24",
     author: "Marcus Vance (Supply Chain Logistics Specialist)",
-    image: "/cbm-calculator.png",
+    image: "/cbm-calculator.webp",
     headings: [
       { id: "what-is-cbm", text: "What is CBM (Cubic Meter) in Shipping?" },
       { id: "how-cbm-is-calculated", text: "How CBM is Calculated: The Core Volume Formula" },
@@ -2243,7 +2243,7 @@ export const blogData: Record<string, BlogPost> = {
     category: "Logistics & Freight",
     date: "2026-07-24",
     author: "Marcus Vance (Supply Chain Logistics Specialist)",
-    image: "/cbm-calculator.png",
+    image: "/cbm-calculator.webp",
     headings: [
       { id: "inches-vs-cm-cbm", text: "Why Unit Conversion Errors Cost Money in Freight Shipping" },
       { id: "cm-to-cbm-formula", text: "How to Calculate CBM from Centimeters (cm to CBM)" },
