@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run sitemap && next build",
+    "build": "next build",
     "sitemap": "npx tsx scripts/generate-sitemap.ts",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "npm run build"
+    "lint": "next lint"
   },
   "engines": {
     "node": ">=18"
