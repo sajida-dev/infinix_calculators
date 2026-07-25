@@ -1568,7 +1568,7 @@ export const blogData: Record<string, BlogPost> = {
     category: "Education",
     date: "2026-07-18",
     author: "Chloe Bennett (LSAT Tutor)",
-    image: "/lsat-score-calculator.webp",
+    image: "/Lsat-score-calculator.webp",
     headings: [
       { id: "introduction", text: "Introduction to the New LSAT Format (2024–2025)" },
       { id: "how-it-works", text: "How the LSAT Score Calculator Works" },
@@ -2091,7 +2091,7 @@ export const blogData: Record<string, BlogPost> = {
     category: "Logistics & Freight",
     date: "2026-07-24",
     author: "Marcus Vance (Supply Chain Logistics Specialist)",
-    image: "/cbm-calculator.webp",
+    image: "/how-to-calculate-cbm-shipping-volume-guide.webp",
     headings: [
       { id: "what-is-cbm", text: "What is CBM (Cubic Meter) in Shipping?" },
       { id: "how-cbm-is-calculated", text: "How CBM is Calculated: The Core Volume Formula" },
@@ -2351,6 +2351,7 @@ export const blogData: Record<string, BlogPost> = {
 <p>As user <em>logistics_guru</em> writes: <em>"When calculating CBM from inches, don't round down your conversion factor. Dividing by 61,000 instead of 61,023.7 might seem tiny on one box, but across a 1,000-carton shipment, that rounding error adds up to noticeable discrepancies when your freight forwarder audits the cargo on their laser dimensioning machine."</em></p>
 <p>In addition, users on <a href="https://www.reddit.com/r/SupplyChainLogistics/comments/1p92k31/how_to_calculate_cbm_in_shipping_volume_vs_weight/" target="_blank" rel="noopener noreferrer nofollow">r/SupplyChainLogistics</a> recommend bookmarking an online CBM calculator to cross-check supplier proforma invoice estimates before submitting payment for sea freight bookings.</p>
 
+
 <div class="mt-8 pt-6 border-t border-slate-200" id="sources">
   <h3 class="text-base font-bold text-slate-900">Sources and Community References</h3>
   <ul class="list-disc list-inside space-y-1.5 mt-3 text-sm text-slate-500">
@@ -2360,7 +2361,323 @@ export const blogData: Record<string, BlogPost> = {
   </ul>
 </div>
 `
+  },
+  "square-fee-calculator-guide": {
+    slug: "square-fee-calculator-guide",
+    title: "Square Processing Fee Calculator 2026: Rates, Reverse Invoicing Math & Passing Fees to Clients",
+    excerpt: "Learn how to calculate Square credit card processing fees for card reader swiped, online invoice, manually keyed, and Cash App transactions. Discover the reverse gross-up formula to net 100% of your invoice amount.",
+    category: "Financial & Business",
+    date: "2026-07-25",
+    author: "Michael Vance (Fintech & Small Business Operations)",
+    image: "/square-fee-calculator.webp",
+    headings: [
+      { id: "standard-rates", text: "Standard Square Card Processing Rates (2026 Breakdown)" },
+      { id: "gross-up-formula", text: "Reverse Square Fee Calculator & Invoicing Math" },
+      { id: "tax-and-tips", text: "Does Square Calculate Fees on Sales Tax, Tips, and Shipping?" },
+      { id: "tax-1099k", text: "Accounting Math: How to Calculate Square Fees from Form 1099-K" },
+      { id: "manual-vs-card-reader", text: "Square Card Reader vs. Manual Keyed Entry vs. Cash App Pay Fees" },
+      { id: "international-rates", text: "Regional & International Square Rates (US, UK, Canada & Australia)" },
+      { id: "nonprofit-rates", text: "Square Fees for Nonprofits & Custom Rate Negotiations" },
+      { id: "passing-fees", text: "Passing Square Fees to Clients: Surcharges vs. Cash Discounts" },
+      { id: "troubleshooting", text: "Why Are My Square Transaction Fee Calculations Off?" },
+      { id: "practical-examples", text: "Comprehensive Invoicing & POS Calculation Examples" },
+      { id: "reddit-insights", text: "Reddit & Small Business Community Experiences" },
+      { id: "faqs-section", text: "Frequently Asked Questions (Square Fee FAQ)" },
+      { id: "sources", text: "Sources and Community References" }
+    ],
+    calculatorSlug: "square-fee",
+    relatedSlugs: ["avalara-sales-tax-calculator-guide", "how-to-calculate-employee-productivity", "california-sales-tax-by-zip-code-94105", "infinix-calculator-suite-guide"],
+    content: `
+<div class="bg-slate-50 border-l-4 border-emerald-500 p-5 rounded-r-xl my-6 shadow-sm">
+  <p class="m-0 text-slate-900 font-semibold"> Quick Answer:</p>
+  <p class="mt-2 mb-0 text-slate-700 text-sm leading-relaxed">
+    To calculate exact Square credit card processing fees or determine how much to invoice a client using a <strong>free Square fee calculator</strong>, use the reverse gross-up equation: <strong>Gross Invoice Total = (Desired Net Payout + Fixed Fee) &divide; (1 - Percentage Rate)</strong>. For a standard online invoice (2.9% + $0.30) where you want to net <strong>$100.00</strong>, you must charge <strong>$103.30</strong> ($100.30 &divide; 0.971).
+  </p>
+</div>
+
+<p>Accepting credit card payments through processors like Square provides unmatched convenience for merchants, freelancers, small business owners, and non-profit organizations. However, understanding <strong>how to calculate Square fees</strong> is crucial for maintaining profitable margins. Because Square deducts transaction charges directly from the gross authorized total—including sales tax, tips, and delivery fees—many merchants inadvertently lose thousands of dollars each year by under-invoicing clients.</p>
+
+<p>Whether you are using a contactless Square card reader, issuing digital invoices, manually keying in transactions over the phone, or reconciling your annual IRS 1099-K tax form, this comprehensive guide covers the exact mathematical formulas, regional fee structures, and reverse fee calculator techniques required to master Square merchant fees in 2026.</p>
+
+<h2 id="standard-rates">Standard Square Card Processing Rates (2026 Breakdown)</h2>
+<p>Square applies variable processing fee percentages based on how a transaction is captured. Higher fraud-risk transaction methods (such as phone orders or virtual terminal manual entries) carry higher percentage rates and fixed per-transaction fees:</p>
+
+<table class="w-full border-collapse border border-slate-200 my-6 text-sm">
+  <thead>
+    <tr class="bg-slate-50">
+      <th class="border border-slate-200 p-2.5 text-left font-semibold">Payment Category / Entry Method</th>
+      <th class="border border-slate-200 p-2.5 text-left font-semibold">Percentage Rate</th>
+      <th class="border border-slate-200 p-2.5 text-left font-semibold">Fixed Fee</th>
+      <th class="border border-slate-200 p-2.5 text-left font-semibold">Common Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border border-slate-200 p-2.5 font-semibold">Square Card Reader (Tap, Swiped, Chip)</td>
+      <td class="border border-slate-200 p-2.5 font-bold text-emerald-600">2.6%</td>
+      <td class="border border-slate-200 p-2.5">$0.10</td>
+      <td class="border border-slate-200 p-2.5">In-Person POS, Apple Pay, Contactless Cards</td>
+    </tr>
+    <tr>
+      <td class="border border-slate-200 p-2.5 font-semibold">Square Invoice & E-Commerce Checkout</td>
+      <td class="border border-slate-200 p-2.5 font-bold text-emerald-600">2.9%</td>
+      <td class="border border-slate-200 p-2.5">$0.30</td>
+      <td class="border border-slate-200 p-2.5">Digital Invoices, Web Storefronts, Cards on File</td>
+    </tr>
+    <tr>
+      <td class="border border-slate-200 p-2.5 font-semibold">Square Manual Entry (Virtual Terminal)</td>
+      <td class="border border-slate-200 p-2.5 font-bold text-emerald-600">3.5%</td>
+      <td class="border border-slate-200 p-2.5">$0.15</td>
+      <td class="border border-slate-200 p-2.5">Phone Orders, Keyed Cards without Reader</td>
+    </tr>
+    <tr>
+      <td class="border border-slate-200 p-2.5 font-semibold">Cash App Pay / Square Online Links</td>
+      <td class="border border-slate-200 p-2.5 font-bold text-emerald-600">2.9%</td>
+      <td class="border border-slate-200 p-2.5">$0.30</td>
+      <td class="border border-slate-200 p-2.5">Mobile Digital Wallet & Social Payment Links</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="gross-up-formula">Reverse Square Fee Calculator & Invoicing Math</h2>
+<p>A common mistake made by freelancers and contractors when creating invoices is simply adding 2.9% + $0.30 onto their target payout. For example, if you want to net $1,000 and invoice $1,029.30, Square deducts 2.9% of the <strong>entire $1,029.30 balance</strong> ($29.85) plus $0.30 = $30.15 in total fees, leaving you with only <strong>$999.15 net</strong>.</p>
+
+<p>To compute the exact billing amount required to offset merchant fees, you must use a <strong>reverse Square fee calculator formula</strong>:</p>
+
+<div class="bg-slate-50 border border-slate-100 p-5 rounded-xl my-6">
+  <h3 class="mt-0 text-slate-800 font-bold text-sm">Reverse Square Fee Calculation Formula</h3>
+  <p class="font-mono text-emerald-600 font-bold text-base my-2">Gross Invoice Amount = (Desired Net Payout + Fixed Fee) &divide; (1 - Percentage Rate)</p>
+  <p class="text-xs text-slate-500 m-0">Where Percentage Rate is expressed in decimal form (e.g., 2.9% = 0.029, 2.6% = 0.026, 3.5% = 0.035).</p>
+</div>
+
+<p>Let's run through a practical reverse calculation for a target payout of $500 under Square online invoicing (2.9% + $0.30):</p>
+<ol class="list-decimal list-inside space-y-2 my-4">
+  <li><strong>Add Fixed Fee to Target Payout:</strong> $500.00 + $0.30 = $500.30</li>
+  <li><strong>Subtract Percentage Rate from 1:</strong> 1 - 0.029 = 0.971</li>
+  <li><strong>Divide Step 1 by Step 2:</strong> $500.30 &divide; 0.971 = <strong>$515.24</strong></li>
+</ol>
+<p>When the customer pays <strong>$515.24</strong>, Square deducts $515.24 &times; 0.029 ($14.94) + $0.30 = $15.24, leaving you with exactly <strong>$500.00 net in your bank account</strong>!</p>
+
+<h2 id="tax-and-tips">Does Square Calculate Fees on Sales Tax, Tips, and Shipping?</h2>
+<p>One of the most frequent merchant inquiries is: <em>"Does Square calculate fees based on gross sales with tip and sales tax included?"</em></p>
+
+<p><strong>Yes. Payment processors like Square assess merchant fees on the TOTAL authorized charge on the customer's payment card.</strong></p>
+<p>If a retail purchase or restaurant tab breaks down as follows:</p>
+<ul class="list-disc list-inside space-y-1.5 my-3 text-sm text-slate-700">
+  <li>Base Subtotal: $100.00</li>
+  <li>State & Local Sales Tax (8%): $8.00</li>
+  <li>Customer Gratuity / Tip (18%): $18.00</li>
+  <li><strong>Grand Authorized Charge Total: $126.00</strong></li>
+</ul>
+<p>Square applies its 2.6% + $0.10 card reader fee to the full <strong>$126.00 total</strong> ($3.28 + $0.10 = $3.38 in processing fees). This means business owners pay merchant fees on sales taxes collected for state revenue and on tips designated for service workers. Accounting for this margin overhead is vital when pricing menu items or retail products.</p>
+
+<h2 id="tax-1099k">Accounting Math: How to Calculate Square Fees from Form 1099-K</h2>
+<p>At tax season, business owners ask: <em>"How do I calculate Square Up processing fees from Form 1099-K?"</em></p>
+<p>IRS regulations require payment settlement entities like Square to report <strong>GROSS unadjusted payment volume</strong> in Box 1a of Form 1099-K. This figure includes all gross card sales before Square transaction fees, refunds, chargebacks, or cash discounts are subtracted.</p>
+
+<div class="bg-slate-50 border border-slate-100 p-5 rounded-xl my-6">
+  <h3 class="mt-0 text-slate-800 font-bold text-sm">IRS Schedule C Bookkeeping Equation</h3>
+  <p class="font-mono text-slate-800 font-bold text-sm my-2">Net Taxable Revenue = 1099-K Box 1a Gross Volume - Total Annual Processing Fees - Returns/Refunds</p>
+</div>
+<p>To find your total deductible Square merchant fees, log into your Square Dashboard, navigate to <strong>Reports &gt; Sales Summary</strong>, select the full calendar year, and locate the total <strong>Fees</strong> line item. You report this full fee amount on Schedule C (Form 1040) under "Commissions and Fees" to ensure you are not taxed on gross merchant processor deductions.</p>
+
+<h2 id="manual-vs-card-reader">Square Card Reader vs. Manual Keyed Entry vs. Cash App Pay Fees</h2>
+<p>Comparing fee differences across transaction channels helps merchants choose the most cost-effective checkout method:</p>
+
+<ul class="list-disc list-inside space-y-2 my-4">
+  <li><strong>Card Reader (Tap / Chip / Swipe):</strong> At 2.6% + $0.10, in-person card reader transactions are Square's cheapest processing method because physical card swiping minimizes fraud risk.</li>
+  <li><strong>Square Manual Entry Fee Calculator (3.5% + $0.15):</strong> Manually typing card numbers via Virtual Terminal incurs the highest fee due to card-not-present fraud vulnerabilities. On a $1,000 transaction, manual entry costs <strong>$35.15</strong> compared to <strong>$26.10</strong> for a card reader tap—a cost difference of nearly $10 per transaction!</li>
+  <li><strong>Square Cash App Pay Fee Calculator:</strong> Accepting Cash App Pay at checkout incurs the standard online rate of 2.9% + $0.30 or in-person rate depending on integration.</li>
+</ul>
+
+<h2 id="international-rates">Regional & International Square Rates (US, UK, Canada & Australia)</h2>
+<p>Square processing rates vary internationally across major English-speaking markets:</p>
+
+<table class="w-full border-collapse border border-slate-200 my-6 text-sm">
+  <thead>
+    <tr class="bg-slate-50">
+      <th class="border border-slate-200 p-2.5 text-left font-semibold">Country / Currency</th>
+      <th class="border border-slate-200 p-2.5 text-left font-semibold">In-Person Swiped Rate</th>
+      <th class="border border-slate-200 p-2.5 text-left font-semibold">Online & Invoice Rate</th>
+      <th class="border border-slate-200 p-2.5 text-left font-semibold">Manually Keyed Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border border-slate-200 p-2.5 font-semibold">United States (USD)</td>
+      <td class="border border-slate-200 p-2.5">2.6% + $0.10</td>
+      <td class="border border-slate-200 p-2.5">2.9% + $0.30</td>
+      <td class="border border-slate-200 p-2.5">3.5% + $0.15</td>
+    </tr>
+    <tr>
+      <td class="border border-slate-200 p-2.5 font-semibold">Canada (CAD)</td>
+      <td class="border border-slate-200 p-2.5">2.6% + $0.00</td>
+      <td class="border border-slate-200 p-2.5">2.9% + $0.30</td>
+      <td class="border border-slate-200 p-2.5">3.4% + $0.15</td>
+    </tr>
+    <tr>
+      <td class="border border-slate-200 p-2.5 font-semibold">United Kingdom (GBP)</td>
+      <td class="border border-slate-200 p-2.5">1.75% + &pound;0.00</td>
+      <td class="border border-slate-200 p-2.5">2.5% + &pound;0.00</td>
+      <td class="border border-slate-200 p-2.5">2.5% + &pound;0.00</td>
+    </tr>
+    <tr>
+      <td class="border border-slate-200 p-2.5 font-semibold">Australia (AUD)</td>
+      <td class="border border-slate-200 p-2.5">1.6% + $0.00</td>
+      <td class="border border-slate-200 p-2.5">2.2% + $0.30</td>
+      <td class="border border-slate-200 p-2.5">2.2% + $0.30</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Note: Cross-border international card payments processed on US Square accounts incur an additional 1.0% foreign transaction surcharge fee.</em></p>
+
+<h2 id="nonprofit-rates">Square Fees for Nonprofits & Custom Rate Negotiations</h2>
+<p>A frequent search on merchant forums is for a <em>"Square fees for nonprofits calculator"</em>. By default, Square does not provide a discounted baseline rate for 501(c)(3) non-profit organizations; standard rates of 2.6% + 10¢ swiped and 2.9% + 30¢ online apply.</p>
+<p>However, non-profits processing over <strong>$250,000 in annual credit card volume</strong> can contact Square sales to request custom enterprise pricing tiers. Additionally, non-profit fundraising platforms allow donors to voluntarily opt-in to add 3% to their donation to cover processing costs.</p>
+
+<h2 id="passing-fees">Passing Square Fees to Clients: Surcharges vs. Cash Discounts</h2>
+<p>Merchants using a <strong>Square surcharge fee calculator</strong> must understand the regulatory distinction between credit card surcharges and cash discounts:</p>
+
+<ul class="list-disc list-inside space-y-2 my-4">
+  <li><strong>Credit Card Surcharging:</strong> Adding an explicit fee (typically capped at 3% or 4%) to customers who pay by credit card. Visa and Mastercard require 30 days prior written notice, and surcharging debit cards (even when processed as credit) is prohibited by federal law under the Durbin Amendment.</li>
+  <li><strong>Cash / ACH Transfer Discounts:</strong> Setting standard prices to incorporate credit card fees and offering a cash/check discount (e.g., 3% off) to buyers paying via non-card methods. Cash discounting is compliant in all 50 US states.</li>
+</ul>
+
+<h2 id="troubleshooting">Why Are My Square Transaction Fee Calculations Off?</h2>
+<p>If your manual calculations or accounting reconciliation don't match your bank deposits, check these common reasons why Square fee math can be slightly off:</p>
+<ul class="list-disc list-inside space-y-2 my-4">
+  <li><strong>Transaction-Level Rounding:</strong> Square calculates and rounds fees to the nearest cent on each individual sale, rather than computing fees on aggregate daily batch totals.</li>
+  <li><strong>International Card Surcharge (+1%):</strong> Processing a foreign credit card adds a 1% cross-border fee (e.g., swiped rate becomes 3.6% + 10¢).</li>
+  <li><strong>Accidental Keyed Entry:</strong> If a chip reader fails and an employee manually types card numbers into POS, the transaction rate jumps from 2.6% + 10¢ to 3.5% + 15¢.</li>
+  <li><strong>Square Risk Hold or Reserve:</strong> New merchant accounts may have a temporary hold or rolling reserve applied during high-volume spikes.</li>
+</ul>
+
+<h2 id="practical-examples">Comprehensive Invoicing & POS Calculation Examples</h2>
+<p>Let's review step-by-step mathematical examples for real-world merchant payment scenarios:</p>
+
+<h3 class="text-base font-bold text-slate-800 mt-4">Scenario 1: Retainer Invoice for $2,000 (Online 2.9% + $0.30)</h3>
+<p class="font-mono text-sm bg-slate-50 p-3 rounded-lg border border-slate-200">
+  Target Net: $2,000.00<br/>
+  Formula: ($2,000.00 + $0.30) &divide; (1 - 0.029) = $2,000.30 &divide; 0.971 = <strong>$2,059.01</strong><br/>
+  Fee Deduction Check: $2,059.01 &times; 0.029 ($59.71) + $0.30 = $60.01 total fee.<br/>
+  Net Payout Received: $2,059.01 - $60.01 = <strong>$1,999.00</strong> (~$2,000.00 net).
+</p>
+
+<h3 class="text-base font-bold text-slate-800 mt-4">Scenario 2: Retail POS Card Reader Sale ($75.00 Swiped 2.6% + $0.10)</h3>
+<p class="font-mono text-sm bg-slate-50 p-3 rounded-lg border border-slate-200">
+  Gross Sale: $75.00<br/>
+  Fee Calculation: ($75.00 &times; 0.026) + $0.10 = $1.95 + $0.10 = <strong>$2.05 total fee</strong><br/>
+  Net Payout Received: $75.00 - $2.05 = <strong>$72.95 net</strong>.
+</p>
+
+<h2 id="reddit-insights">Reddit & Small Business Community Experiences</h2>
+<p>Small business owners on Reddit actively discuss payment processing math and fee mitigation strategies:</p>
+
+<p>On <a href="https://www.reddit.com/r/theydidthemath/comments/1ch92jg/request_what_is_the_formula_to_figure_out_square/" target="_blank" rel="noopener noreferrer nofollow">r/theydidthemath</a>, a popular thread highlights why dividing by <code>(1 - fee_rate)</code> is mathematically necessary to avoid under-billing clients when passing fees.</p>
+
+<p>In <a href="https://www.reddit.com/r/smallbusiness/comments/1dd2ai0/square_charging_processing_fees_for_tax_collected/" target="_blank" rel="noopener noreferrer nofollow">r/smallbusiness</a>, merchants discuss the impact of processing fees on sales tax, noting that state sales taxes increase total processing costs by 2.6% to 2.9% of the tax amount.</p>
+
+<p>On <a href="https://www.reddit.com/r/Entrepreneur/comments/o9vabd/square_fees/" target="_blank" rel="noopener noreferrer nofollow">r/Entrepreneur</a>, founders emphasize tracking keyed vs. swiped transaction logs monthly to prevent staff members from needlessly keying in cards when readers are available.</p>
+
+<h2 id="faqs-section">Frequently Asked Questions (Square Fee FAQ)</h2>
+<div class="space-y-4 my-6">
+  <div class="border-b border-slate-200 pb-3">
+    <h3 class="text-base font-bold text-slate-800 mt-0">What is the standard Square card reader processing fee?</h3>
+    <p class="text-sm text-slate-600 mt-1">In-person tapped, swiped, or chip payments using a Square card reader cost 2.6% + $0.10 per transaction.</p>
+  </div>
+  <div class="border-b border-slate-200 pb-3">
+    <h3 class="text-base font-bold text-slate-800">How do I calculate how much to invoice so I get my exact net amount?</h3>
+    <p class="text-sm text-slate-600 mt-1">Use the reverse gross-up formula: <code>Invoice Total = (Desired Net + Fixed Fee) / (1 - Rate)</code>. For an online invoice (2.9% + $0.30) to net $1,000, charge ($1,000 + $0.30) / 0.971 = $1,030.18.</p>
+  </div>
+  <div class="border-b border-slate-200 pb-3">
+    <h3 class="text-base font-bold text-slate-800">Does Square calculate fees based on gross sales with tip and tax?</h3>
+    <p class="text-sm text-slate-600 mt-1">Yes. Square calculates transaction fee percentages on the full authorized total, including base price, sales tax, shipping, and tips.</p>
+  </div>
+  <div class="border-b border-slate-200 pb-3">
+    <h3 class="text-base font-bold text-slate-800">How do I calculate Square processing fees from Form 1099-K?</h3>
+    <p class="text-sm text-slate-600 mt-1">Form 1099-K lists gross unadjusted payment volume. Obtain your total annual processing fees from Square Sales Summary reports and deduct them on IRS Schedule C line 10 (Commissions & Fees).</p>
+  </div>
+  <div class="border-b border-slate-200 pb-3">
+    <h3 class="text-base font-bold text-slate-800">Are Square processing fees different in Canada, the UK, or Australia?</h3>
+    <p class="text-sm text-slate-600 mt-1">Yes. In Canada, swiped rates are 2.6% + $0.00 CAD; in the UK, swiped rates are 1.75% + &pound;0.00 GBP; and in Australia, swiped rates are 1.6% + $0.00 AUD.</p>
+  </div>
+</div>
+
+<div class="mt-8 pt-6 border-t border-slate-200" id="sources">
+  <h3 class="text-base font-bold text-slate-900">Sources and Community References</h3>
+  <ul class="list-disc list-inside space-y-1.5 mt-3 text-sm text-slate-500">
+    <li>Reddit r/DigitalPayments processing calculator tool: <a href="https://www.reddit.com/r/DigitalPayments/comments/1sf5755/i_built_a_square_processing_calculator_to_show/" target="_blank" rel="noopener noreferrer nofollow">r/DigitalPayments - Square Processing Calculator</a></li>
+    <li>Reddit r/theydidthemath reverse fee formula proof: <a href="https://www.reddit.com/r/theydidthemath/comments/1ch92jg/request_what_is_the_formula_to_figure_out_square/" target="_blank" rel="noopener noreferrer nofollow">r/theydidthemath - Square Fee Formula</a></li>
+    <li>Reddit r/squareup 3.5% + $0.15 keyed math: <a href="https://www.reddit.com/r/squareup/comments/ead1mv/formula_to_calculate_35_015/" target="_blank" rel="noopener noreferrer nofollow">r/squareup - Keyed Rate Formula</a></li>
+    <li>Reddit r/Entrepreneur small business fee strategy: <a href="https://www.reddit.com/r/Entrepreneur/comments/o9vabd/square_fees/" target="_blank" rel="noopener noreferrer nofollow">r/Entrepreneur - Square Fees Discussion</a></li>
+    <li>Reddit r/ProductHunters e-commerce fee calculator: <a href="https://www.reddit.com/r/ProductHunters/comments/1t0q19k/i_built_an_online_calculator_for_ecommerce_fees/" target="_blank" rel="noopener noreferrer nofollow">r/ProductHunters - Online Fee Calculator</a></li>
+    <li>Reddit r/smallbusiness fee deductions thread: <a href="https://www.reddit.com/r/smallbusiness/comments/1hlol9w/square_processing_fees/" target="_blank" rel="noopener noreferrer nofollow">r/smallbusiness - Square Processing Fees</a></li>
+    <li>Reddit r/smallbusiness cash discount & payment strategies: <a href="https://www.reddit.com/r/smallbusiness/comments/nuo3og/question_for_people_that_use_square_for_payment/" target="_blank" rel="noopener noreferrer nofollow">r/smallbusiness - Square Payment Options</a></li>
+    <li>Reddit r/smallbusiness split payment fee breakdown: <a href="https://www.reddit.com/r/smallbusiness/comments/1uvmw0v/need_to_make_a_payment_on_square_using_many/" target="_blank" rel="noopener noreferrer nofollow">r/smallbusiness - Split Payment Processing Math</a></li>
+    <li>Reddit r/smallbusiness sales tax processing fees: <a href="https://www.reddit.com/r/smallbusiness/comments/1dd2ai0/square_charging_processing_fees_for_tax_collected/" target="_blank" rel="noopener noreferrer nofollow">r/smallbusiness - Fees Charged on Tax Collected</a></li>
+    <li>Reddit r/startups founder merchant fee guide: <a href="https://www.reddit.com/r/startups/comments/i4h5ca/i_discovered_merchant_fees_today_and_feel_like_a/" target="_blank" rel="noopener noreferrer nofollow">r/startups - Merchant Fees Discovery</a></li>
+  </ul>
+</div>
+`
+  },
+  "infinix-calculator-suite-guide": {
+    slug: "infinix-calculator-suite-guide",
+    title: "Infinix Calculator Suite: Complete Hub for Business, Construction & Math Tools",
+    excerpt: "Explore the complete suite of free Infinix Calculators. From topsoil and concrete estimators to Square merchant fee and LSAT raw score conversion calculators.",
+    category: "Financial & Business",
+    date: "2026-07-25",
+    author: "Elena Rostova & Infinix Engineering Team",
+    image: "/calculators-infinix-calculators.webp",
+    headings: [
+      { id: "overview", text: "Why Accurate Online Calculators Matter for Modern Businesses & DIY Projects" },
+      { id: "financial-calculators", text: "Financial & Payment Calculators (Square Fee, Sales Tax, Reverse Tax)" },
+      { id: "construction-tools", text: "Construction & Landscaping Tools (Topsoil, Concrete, CBM)" },
+      { id: "education-tools", text: "Education & Academic Estimators (LSAT Raw Score & Law School Predictor)" },
+      { id: "maximizing-efficiency", text: "Maximizing Efficiency with Infinix Free Calculator Suite" }
+    ],
+    relatedSlugs: ["square-fee-calculator-guide", "how-much-topsoil-do-i-need", "avalara-sales-tax-calculator-guide", "lsat-raw-score-conversion-guide"],
+    content: `
+<div class="bg-slate-50 border-l-4 border-slate-600 p-5 rounded-r-xl my-6 shadow-sm">
+  <p class="m-0 text-slate-900 font-semibold"> Infinix Calculator Platform Overview:</p>
+  <p class="mt-2 mb-0 text-slate-700 text-sm leading-relaxed">
+    <strong>Infinix Calculators</strong> provides free, instant, and browser-based calculation engines engineered for accuracy across construction, finance, e-commerce, logistics, and education.
+  </p>
+</div>
+
+<p>In modern workflows, manual calculations and spreadsheet formulas can be prone to human error, rounding mistakes, or outdated fee structures. Whether you are estimating bulk material yardage for a landscaping installation, computing merchant credit card cuts, or predicting law school admissions chances, having an intuitive and instant online calculator streamlines decision-making.</p>
+
+<h2 id="overview">Why Accurate Online Calculators Matter for Modern Businesses & DIY Projects</h2>
+<p>Eliminating guesswork in estimation saves both time and financial capital. For instance, in bulk construction material logistics, an underestimation of 1 cubic yard of topsoil or concrete leads to secondary delivery fees and costly project delays. In e-commerce, miscalculating payment gateway transaction fees reduces net business earnings over time.</p>
+
+<h2 id="financial-calculators">Financial & Payment Calculators (Square Fee, Sales Tax, Reverse Tax)</h2>
+<p>Infinix offers a robust suite of financial calculation tools designed for small business owners, freelancers, and billing specialists:</p>
+<ul class="list-disc list-inside space-y-2 my-4">
+  <li><strong>Square Fee Calculator:</strong> Instantly compute payment fees for tapped, online, and keyed card reader transactions. Includes reverse gross-up math to determine target invoice totals.</li>
+  <li><strong>Avalara Sales Tax & Zip Code Lookups:</strong> Calculate state, county, and municipal sales tax obligations for regional transactions.</li>
+  <li><strong>Reverse Sales Tax Calculator:</strong> Determine pre-tax price points from grand total receipts for clean bookkeeping.</li>
+</ul>
+
+<h2 id="construction-tools">Construction & Landscaping Tools (Topsoil, Concrete, CBM)</h2>
+<p>For contractors, landscapers, and home DIY builders, material estimation requires 3D geometric conversions:</p>
+<ul class="list-disc list-inside space-y-2 my-4">
+  <li><strong>Topsoil Calculator:</strong> Estimate soil volume in cubic yards, cubic feet, and individual bag counts with compaction safety buffers.</li>
+  <li><strong>Concrete Calculator:</strong> Calculate concrete volume for footings, slabs, steps, and posts, plus pre-mixed bag requirements.</li>
+  <li><strong>CBM Freight Calculator:</strong> Calculate cubic meters and volumetric shipping weights for global ocean and air freight shipments.</li>
+</ul>
+
+<h2 id="education-tools">Education & Academic Estimators (LSAT Raw Score & Law School Predictor)</h2>
+<p>For students preparing for law school admissions, understanding test scoring scales is crucial:</p>
+<ul class="list-disc list-inside space-y-2 my-4">
+  <li><strong>LSAT Raw Score Conversion:</strong> Translate correct practice test raw answers into standard 120–180 LSAT scaled scores.</li>
+  <li><strong>Law School Predictor:</strong> Estimate scholarship funding tiers and admissions probabilities based on GPA and LSAT scores.</li>
+</ul>
+
+<h2 id="maximizing-efficiency">Maximizing Efficiency with Infinix Free Calculator Suite</h2>
+<p>All Infinix calculators run client-side in your web browser with zero download requirements or paywalls. Bookmark your frequently used tools to streamline project quotes, invoicing, and academic preparation.</p>
+`
   }
 };
+
 
 

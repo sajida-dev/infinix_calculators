@@ -596,19 +596,75 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Square Fee Calculator",
     category: "financial",
     categoryLabel: "Financial",
-    seoTitle: "Square Fee Calculator - Credit Card Processing Charges",
-    metaDescription: "Calculate Square card reader processing fees. Find how much you must invoice to receive your exact target amount.",
-    keywords: ["square fee calculator", "square merchant fee", "credit card fee estimator"],
+    seoTitle: "Square Fee Calculator 2026 - Processing & Reverse Invoice Fees",
+    metaDescription: "Free Square fee calculator for tapped, online, and keyed credit card payments. Calculate net payout or reverse gross-up invoice totals instantly.",
+    keywords: [
+      "square fee calculator",
+      "fee calculator square",
+      "calculate square fees",
+      "square up fee calculator",
+      "square calculator fee",
+      "square fee calculator 2026",
+      "square processing fee calculator",
+      "square credit card fee calculator",
+      "square invoice fee calculator",
+      "square transaction fee calculator",
+      "free square fee calculator",
+      "how to calculate square fees",
+      "reverse square fee calculator",
+      "square card reader fee calculator",
+      "square manual entry fee calculator",
+      "square payment fees calculator",
+      "square surcharge fee calculator",
+      "calculate square processing fees",
+      "how does square calculate fees",
+      "square reverse fee calculator"
+    ],
     hook: "Calculate Card Processing Fees & Target Invoices.",
-    description: "Determine Square merchant cuts for tapped, keyed, and online payments.",
+    description: "Determine Square merchant cuts for tapped, swiped, keyed, and online payments. Compute exact gross invoice billing to receive your full target amount.",
     calcTime: "1 min",
     formula: "Invoice Amount = (Desired Net + Fixed Fee) ÷ (1 - Fee %)",
-    formulaDescription: "Finds total billing needed to yield the desired net amount after deduction.",
+    formulaDescription: "Finds total billing needed to yield the desired net payout after processor percentage and fixed fees are deducted.",
     example: "To receive exactly $100 via online invoicing (2.9% + $0.30), you must invoice $103.30.",
-    faqs: [{ question: "What is Square standard fee?", answer: "Standard tapped rates are 2.6% + 10¢, and online invoice rates are 2.9% + 30¢." }],
-    commonMistakes: ["Multiplying desired net by 1.029, which leaves you short because fees deduct from the gross total."],
-    useCases: ["Freelancer client invoicing", "Small business sales pricing"],
-    tips: ["Some jurisdictions allow charging customers processing surcharges directly. Check local rules."],
+    faqs: [
+      {
+        question: "What is Square's standard processing fee rate?",
+        answer: "Square charges 2.6% + $0.10 for in-person tapped, swiped, or chip payments, 2.9% + $0.30 for online store checkouts and invoices, and 3.5% + $0.15 for manually keyed transactions."
+      },
+      {
+        question: "How do I calculate how much to invoice so I get my exact desired net amount?",
+        answer: "Use the reverse gross-up formula: Invoice Total = (Desired Net + Fixed Fee) ÷ (1 - Percentage Rate). For example, to net $1,000 on an online invoice (2.9% + $0.30), calculate ($1,000 + $0.30) ÷ (1 - 0.029) = $1,030.18."
+      },
+      {
+        question: "Does Square calculate fees on sales tax and tips?",
+        answer: "Yes. Square calculates transaction fees on the total authorized charge amount, which includes base item price, state/local sales tax, and customer gratuity/tips."
+      },
+      {
+        question: "How do I calculate Square processing fees from my 1099-K tax form?",
+        answer: "Form 1099-K reports gross sales volume before any processor fees are subtracted. To find your net income for tax filing, deduct total annual Square transaction fees as a business expense on IRS Schedule C."
+      },
+      {
+        question: "Why are my Square transaction fee calculations off by a few cents?",
+        answer: "Discrepancies usually occur due to standard transaction-level rounding, using the swiped rate for a manually typed card number, or international card cross-border surcharges (+1%)."
+      },
+      {
+        question: "Are Square processing fees lower for non-profits?",
+        answer: "Square maintains standard processing rates for all accounts regardless of non-profit status. However, non-profit organizations processing large annual volumes can contact Square sales to request custom enterprise rate quotes."
+      }
+    ],
+    commonMistakes: [
+      "Multiplying desired net by 1.029, which leaves you short because Square deducts fees from the gross total amount.",
+      "Forgetting that fees apply to sales tax and customer tip amounts in addition to the item price."
+    ],
+    useCases: [
+      "Freelancer client invoicing and gross-up pricing",
+      "Small business sales pricing and cash discount setup",
+      "Accounting & 1099-K tax deduction calculation"
+    ],
+    tips: [
+      "Offering a cash or ACH transfer discount is legal across the US and helps bypass credit card merchant fees.",
+      "Use the reverse gross-up invoice formula rather than multiplying by 1.029 to avoid undercharging clients."
+    ],
     inputs: [
       { id: "amount", label: "Transaction Amount ($)", type: "number", defaultValue: 100, unit: "$" },
       {
@@ -825,62 +881,6 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       };
     }
   },
-
-  // LSAT Score Calculator
-  // "lsat-score": {
-  //   slug: "lsat-score",
-  //   name: "LSAT Score Calculator",
-  //   category: "education",
-  //   categoryLabel: "Education",
-  //   seoTitle: "LSAT Score Calculator – Convert Raw Scores & Estimate Percentiles",
-  //   metaDescription: "Convert LSAT raw scores to scaled scores and see estimated percentiles. Quick, accurate LSAT conversion tool for test takers.",
-  //   keywords: [...COMMON_KEYWORDS, "lsat score calculator"],
-  //   hook: "Convert your LSAT raw score to the official scaled score and view percentile estimates.",
-  //   description: "Enter your LSAT raw score (number of correct answers) to get the scaled score (120‑180) and an approximate percentile.",
-  //   calcTime: "1 min",
-  //   formula: "Scaled Score ≈ 120 + (Raw Score × 0.5)",
-  //   formulaDescription: "A simplified linear approximation: each additional raw point adds roughly 0.5 to the scaled score.",
-  //   example: "Raw Score 100 → Scaled Score ≈ 170.",
-  //   faqs: [
-  //     { question: "What is a raw LSAT score?", answer: "The raw score is the number of questions answered correctly before scaling (out of 120)." },
-  //     { question: "How accurate is this conversion?", answer: "This uses a simplified linear model; official scores may vary slightly based on equating." },
-  //     { question: "What is a good LSAT score?", answer: "Generally, a score of 165 or higher is considered competitive for top law schools." },
-  //     { question: "How long is the LSAT exam?", answer: "The LSAT is a 3 hour and 30 minute test, plus a 15‑minute break." },
-  //     { question: "How many questions are on the LSAT?", answer: "There are 100 scored questions (25 per section) plus 4 unscored experimental questions." },
-  //     { question: "What is the LSAT raw score conversion formula?", answer: "Scaled Score ≈ 120 + (Raw Score × 0.5), bounded between 120 and 180." },
-  //     { question: "What is the top LSAT score?", answer: "The maximum possible scaled score is 180." },
-  //     { question: "How does the LSAT score affect law school admission?", answer: "Higher scores improve admission chances and scholarship eligibility; many schools publish median LSAT scores for admitted students." },
-  //     { question: "What is the LSAT Demon scholarship estimator?", answer: "It's a tool that estimates scholarship amounts based on your LSAT score and GPA using historical data." },
-  //     { question: "How can I predict my law school ranking with my LSAT score?", answer: "Use the Law School Predictor tool which matches your score with average admitted scores at various schools." },
-  //     { question: "What is an average LSAT score?", answer: "The median LSAT score nationwide is around 151." },
-  //     { question: "What is a normal LSAT score range?", answer: "Scores typically range from 120 to 180, with most test‑takers scoring between 135 and 165." }
-  //   ],
-  //   commonMistakes: ["Assuming raw scores directly equal scaled scores.", "Forgetting the 120 floor minimum."],
-  //   useCases: ["Law school applications", "Self‑assessment for test prep"],
-  //   tips: ["Add a 2‑3 point buffer for rounding errors when planning applications."],
-  //   inputs: [
-  //     { id: "rawScore", label: "Raw Score (Correct Answers)", type: "number", defaultValue: 0, unit: "points" }
-  //   ],
-  //   calculate: (inputs) => {
-  //     const raw = Number(inputs.rawScore || 0);
-  //     // Simple linear conversion with floor at 120 and ceiling at 180
-  //     let scaled = Math.round(120 + raw * 0.5);
-  //     if (scaled < 120) scaled = 120;
-  //     if (scaled > 180) scaled = 180;
-  //     // Approximate percentile based on scaled score (very rough)
-  //     let percentile = 0;
-  //     if (scaled >= 170) percentile = 95;
-  //     else if (scaled >= 160) percentile = 85;
-  //     else if (scaled >= 150) percentile = 70;
-  //     else if (scaled >= 140) percentile = 50;
-  //     else if (scaled >= 130) percentile = 30;
-  //     else percentile = 15;
-  //     return {
-  //       scaledScore: { value: scaled, label: "Scaled LSAT Score", unit: "" },
-  //       percentile: { value: `${percentile}%`, label: "Estimated Percentile", unit: "" }
-  //     };
-  //   }
-  // },
   // 10. LSAT Score Converter (section‑based)
   "lsat-score-calculator": {
     slug: "lsat-score-calculator",

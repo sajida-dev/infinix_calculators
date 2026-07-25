@@ -14,6 +14,7 @@ interface CategoryCardProps {
   maxItems?: number;
   showViewAllButton?: boolean;
   id?: string;
+  itemsGridCols?: 1 | 2;
 }
 
 const getCategoryIconBg = (id: string) => {
@@ -34,13 +35,15 @@ export default function CategoryCard({
   maxItems,
   showViewAllButton = true,
   id,
+  itemsGridCols = 1,
 }: CategoryCardProps) {
   const displayedSlugs = maxItems ? category.slugs.slice(0, maxItems) : category.slugs;
+  const isTwoCol = itemsGridCols === 2;
 
   return (
     <div
       id={id}
-      className="bg-white rounded-2xl  border border-slate-200/80 p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between h-full scroll-mt-20"
+      className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between h-full scroll-mt-20"
     >
       <div>
         {/* Category Header */}
@@ -59,7 +62,7 @@ export default function CategoryCard({
         </div>
 
         {/* List of matching calculators */}
-        <ul className="space-y-3 mt-5">
+        <ul className={isTwoCol ? "grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mt-5" : "space-y-3 mt-5"}>
           {displayedSlugs.map((slug) => {
             const calc = calculatorsData[slug];
             if (!calc) return null;

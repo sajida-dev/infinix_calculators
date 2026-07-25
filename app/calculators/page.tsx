@@ -209,13 +209,14 @@ export default async function CalculatorsPage(props: PageProps) {
                 All Calculators
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-8">
                 {categoriesList.map((cat) => (
                   <CategoryCard
                     key={cat.id}
                     id={cat.id}
                     category={cat}
                     showViewAllButton={false}
+                    itemsGridCols={2}
                   />
                 ))}
               </div>
