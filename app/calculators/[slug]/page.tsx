@@ -6,6 +6,7 @@ import { calculatorsData } from "../../../app/data/calculatorsData";
 import { blogData } from "../../../app/data/blogData";
 import DynamicCalculator from "../../../app/components/DynamicCalculator";
 import CalculatorFaqs from "../../../app/components/CalculatorFaqs";
+import CategoryClusterNav from "../../../app/components/CategoryClusterNav";
 import AvalaraSeoContent from "../../../app/components/seo/AvalaraSeoContent";
 import ConcreteSeoContent from "../../../app/components/seo/ConcreteSeoContent";
 import RoofSeoContent from "../../../app/components/seo/RoofSeoContent";
@@ -54,13 +55,17 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     notFound();
   }
 
-  // Find supporting articles
-  const supportingBlogs = Object.values(blogData).slice(0, 4);
+  // Find supporting articles (min 6 items for sidebar)
+  const supportingBlogs = Object.values(blogData)
+    .filter((b) => b.calculatorSlug === slug)
+    .concat(Object.values(blogData))
+    .filter((b, idx, self) => self.findIndex((t) => t.slug === b.slug) === idx)
+    .slice(0, 6);
 
-  // Filter other calculators for sidebar
+  // Filter other calculators for sidebar (min 6 items)
   const otherCalculators = Object.values(calculatorsData)
     .filter((c) => c.slug !== slug && c.slug !== "topsoil")
-    .slice(0, 4);
+    .slice(0, 6);
 
   // Schema Injection
   const webAppSchema = {
@@ -268,6 +273,9 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
             {/* Reusable FAQs Section */}
             <CalculatorFaqs slug={slug} />
+
+            {/* SEO Topic Cluster Navigation Hub */}
+            <CategoryClusterNav category={calc.categoryLabel} currentSlug={slug} />
           </div>
 
 

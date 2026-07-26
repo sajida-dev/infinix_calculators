@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import TopsoilCalculator from "../../components/TopsoilCalculator";
 import CalculatorFaqs from "../../components/CalculatorFaqs";
+import CategoryClusterNav from "../../components/CategoryClusterNav";
 import { blogData } from "../../data/blogData";
 
 export const metadata: Metadata = {
@@ -45,16 +46,21 @@ export const metadata: Metadata = {
 };
 
 export default function TopsoilPage() {
-  // Pull related blog posts for the “You May Like” section
-  const topsoilBlogs = Object.values(blogData).filter(
-    (post) => post.calculatorSlug === "topsoil"
-  );
+  // Topsoil supporting blogs (min 6 items)
+  const topsoilBlogs = Object.values(blogData)
+    .filter((post) => post.calculatorSlug === "topsoil")
+    .concat(Object.values(blogData))
+    .filter((b, idx, self) => self.findIndex((t) => t.slug === b.slug) === idx)
+    .slice(0, 6);
 
-  // Related calculators
+  // Related calculators (6 items)
   const relatedCalcs = [
-    { name: "Fill Dirt Calculator", href: "/calculators/fill-dirt", desc: "Estimate fill dirt for foundation projects." },
-    { name: "Ground Cover Calculator", href: "/calculators/ground-cover", desc: "Calculate coverage for grass, mulch and stones." },
-    { name: "Dirt Cubic Yard Calculator", href: "/calculators/dirt-cubic-yard", desc: "Convert cubic yards to bags, tons, and weight." },
+    { name: "Concrete Calculator", href: "/calculators/concrete", desc: "Slab volume & bag estimation." },
+    { name: "Roofing Pitch Calculator", href: "/calculators/roof", desc: "Rafter pitch & square coverage." },
+    { name: "Mulch Calculator", href: "/calculators/mulch", desc: "Yardage for flower beds." },
+    { name: "Drywall Estimator", href: "/calculators/drywall", desc: "Sheet count for walls." },
+    { name: "CBM Shipping Calculator", href: "/calculators/cbm", desc: "Freight volume conversion." },
+    { name: "Affirm Loan Calculator", href: "/calculators/affirm", desc: "Monthly installment financing." },
   ];
 
   return (
@@ -306,6 +312,9 @@ export default function TopsoilPage() {
 
               {/* FAQ component */}
               <CalculatorFaqs slug="topsoil" />
+
+              {/* SEO Topic Cluster Navigation Hub */}
+              <CategoryClusterNav category="Construction" currentSlug="topsoil" />
 
               <h2 className="font-bold text-3xl mt-4 mb-4">Related Calculators</h2>
               <ul className="list-disc list-inside ml-5">

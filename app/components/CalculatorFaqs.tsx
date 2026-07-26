@@ -12,13 +12,33 @@ export default function CalculatorFaqs({ slug, title }: CalculatorFaqsProps) {
     return null;
   }
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": calc.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<[^>]*>?/gm, ''), // Strip HTML for schema
+      },
+    })),
+  };
+
   return (
     <section className="py-6">
-      <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-6 pb-3 ">
+      {/* Dynamic JSON-LD FAQ Schema for Google Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-6 pb-3 border-b border-slate-200/80">
         {title || `Frequently Asked Questions About ${calc.name}`}
       </h2>
 
-      <div>
+      <div className="divide-y divide-slate-200/80">
         {calc.faqs.map((faq, index) => (
           <details key={index} className="group py-4" open={index === 0}>
             <summary className="flex cursor-pointer items-center gap-3 text-slate-900 font-bold text-sm sm:text-base list-none focus:outline-none">
@@ -29,9 +49,10 @@ export default function CalculatorFaqs({ slug, title }: CalculatorFaqsProps) {
               </span>
               <span>{faq.question}</span>
             </summary>
-            <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
-              {faq.answer}
-            </p>
+            <div
+              className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pl-7 [&_a]:text-primary [&_a]:font-medium [&_a]:underline [&_a:hover]:text-primary-hover space-y-2"
+              dangerouslySetInnerHTML={{ __html: faq.answer }}
+            />
           </details>
         ))}
       </div>

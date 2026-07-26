@@ -17,12 +17,10 @@ import { defaultMetadata, viewport as defaultViewport, themeColor as defaultThem
 export const viewport = defaultViewport;
 export const themeColor = defaultThemeColor;
 
-
 export const metadata = defaultMetadata;
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import AdFooter from "./components/AdFooter";
 
 export default function RootLayout({
   children,
@@ -32,9 +30,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth`} data-scroll-behavior="smooth"
+      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
     >
       <head>
+        {/* Native script for Google AdSense to prevent data-nscript warning */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869"
+          crossOrigin="anonymous"
+        />
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7NSE8Q4RBL"
@@ -52,12 +58,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-full flex flex-col pb-20">
+      <body className="min-h-full flex flex-col pb-20" suppressHydrationWarning>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 left-0 w-full bg-primary text-white text-center py-2">Skip to main content</a>
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
-        {/* <AdFooter /> */}
       </body>
     </html>
   );

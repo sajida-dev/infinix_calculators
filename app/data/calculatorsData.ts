@@ -70,74 +70,56 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     calcTime: "1 min",
     formula: "Volume (cu yd) = [Length (ft) × Width (ft) × (Depth (in) ÷ 12)] ÷ 27",
     formulaDescription: "Multiply the length and width of the coverage area in feet by the depth in feet (inches divided by 12) to calculate the cubic feet. Divide this value by 27 to convert it to cubic yards.",
-    example: "For an area 20 feet long and 10 feet wide, to be filled 3 inches deep: 20 × 10 × 0.25 = 50 cubic feet. 50 ÷ 27 = 1.85 cubic yards of topsoil.",
     faqs: [
       {
-        question: "How do I calculate how much topsoil I will need?",
-        answer:
-          "Measure the length and width of the area in feet and the desired soil depth in inches. Multiply length × width × depth (in inches), divide by 12 to convert to cubic feet, then divide by 27 to convert to cubic yards."
+        question: "How much topsoil do I need for my yard or garden?",
+        answer: "To calculate your required topsoil volume, multiply your project's Length × Width × Depth in feet to determine total cubic feet, then divide by 27 to convert into cubic yards. Always add a 10% to 15% safety buffer to compensate for natural soil settling, tamping, and compaction. For exact yardage and bag counts for raised beds or grass seeding, use our free <a href=\"/calculators/topsoil\">Topsoil Calculator</a> and read our complete <a href=\"/blog/how-much-topsoil-do-i-need\">topsoil yardage guide</a>."
       },
       {
-        question: "How many cubic yards do I need?",
-        answer:
-          "Enter your area dimensions into the calculator. It automatically converts measurements into cubic yards and includes optional buffer recommendations for compaction."
+        question: "What is the difference between fill dirt and topsoil?",
+        answer: "Topsoil is the nutrient-rich upper layer of soil containing organic matter, compost, and microorganisms necessary for plant and grass root growth. Fill dirt is unrefined subsoil taken from deep beneath the surface, free of organic material, making it ideal for filling deep holes, grading slopes, and stabilizing building foundations. Combining the two correctly saves hundreds of dollars; read our breakdown in <a href=\"/blog/fill-dirt-vs-topsoil\">fill dirt vs. topsoil differences</a> or estimate quantities with our <a href=\"/calculators/topsoil\">Topsoil Volume Calculator</a>."
       },
       {
-        question: "How deep should topsoil be?",
-        answer:
-          "For lawns, 4–6 inches is standard. For garden beds, 8–12 inches is recommended depending on plant type and soil quality."
+        question: "How much does a cubic yard of topsoil cost?",
+        answer: "Bulk topsoil typically costs between $20 and $50 per cubic yard, excluding delivery charges. Delivery fees usually add $50 to $150 per truckload depending on your geographic location and local landscape supplier distance. Buying in bulk is significantly more economical than individual 0.75 cu. ft. bags for projects over 1 cubic yard. Check full pricing benchmarks in our <a href=\"/blog/topsoil-cost-guide\">topsoil cost per yard guide</a>."
       },
       {
-        question: "What is 1 cubic yard of topsoil?",
-        answer:
-          "One cubic yard equals 27 cubic feet of soil. It typically weighs around 2,000 to 2,200 pounds depending on moisture content."
-      },
-      {
-        question: "Is fill dirt the same as topsoil?",
-        answer:
-          "No. Fill dirt is used for structural leveling and contains little organic material. Topsoil is nutrient-rich and used for planting and landscaping."
-      },
-      {
-        question: "How accurate is the calculator?",
-        answer:
-          "The calculator uses precise mathematical formulas. Accuracy depends on correct user inputs and whether you include a 10% buffer for compaction."
-      },
-      {
-        question: "How do I calculate soil manually?",
-        answer:
-          "Use the formula: Length × Width × (Depth ÷ 12) ÷ 27 to get cubic yards."
-      },
-      {
-        question: "Can I convert results into bags?",
-        answer:
-          "Yes. One 40 lb bag contains approximately 0.75 cubic feet. Divide total cubic feet by 0.75 to estimate required bags."
-      },
-      {
-        question: "Do I need extra soil for compaction?",
-        answer:
-          "Yes. It is recommended to add 10–15% extra soil to account for settling and compaction over time."
-      },
-      {
-        question: "How much does a 40 lb bag of topsoil cover?",
-        answer: "A standard 40 lb bag of topsoil contains approximately 0.75 cubic feet of soil. Spread at a 2-inch depth, one 40 lb bag will cover about 4.5 square feet."
+        question: "What is the best topsoil depth for lawn and grass seeding?",
+        answer: "For starting a new lawn from seed or laying sod, a minimum topsoil depth of 4 to 6 inches is recommended to allow healthy root penetration. Top-dressing an existing established lawn requires only a thin layer of 1/4 to 1/2 inch to improve soil structure without suffocating existing grass blades. Calculate exact depth requirements using our <a href=\"/calculators/topsoil\">Topsoil Depth Calculator</a> and read our <a href=\"/blog/best-soil-depth-for-grass\">best soil depth for grass guide</a>."
       }
     ],
-    commonMistakes: ["Forgetting to divide the depth in inches by 12.", "Not accounting for compression."],
-    useCases: ["New lawns", "Garden beds"],
-    tips: ["Add 10% safety buffer."],
-    inputs: [],
-    calculate: () => ({})
+    example: "For an area 20 feet long and 10 feet wide, to be filled 3 inches deep: 20 × 10 × 0.25 = 50 cubic feet. 50 ÷ 27 = 1.85 cubic yards of topsoil.",
+    commonMistakes: ["Forgetting to add a 10% settling buffer for loose soil."],
+    useCases: ["Lawn top-dressing and sod installation", "Raised garden bed preparation"],
+    tips: ["Water soil thoroughly after laying to allow natural settling before planting."],
+    inputs: [
+      { id: "length", label: "Length (Feet)", type: "number", defaultValue: 20, unit: "ft" },
+      { id: "width", label: "Width (Feet)", type: "number", defaultValue: 10, unit: "ft" },
+      { id: "depth", label: "Depth (Inches)", type: "number", defaultValue: 3, unit: "in" }
+    ],
+    calculate: (inputs) => {
+      const length = Number(inputs.length) || 0;
+      const width = Number(inputs.width) || 0;
+      const depth = Number(inputs.depth) || 0;
+      const cubicFeet = length * width * (depth / 12);
+      const cubicYards = cubicFeet / 27;
+      const cuYdsWithBuffer = cubicYards * 1.15;
+      const bags40lb = Math.ceil(cuYdsWithBuffer * 36);
+      return {
+        cuYards: { label: "Volume + 15% Buffer", value: cuYdsWithBuffer.toFixed(2), unit: "cu yd" },
+        cuFeet: { label: "Volume (Cubic Feet)", value: cubicFeet.toFixed(2), unit: "cu ft" },
+        bags: { label: "Estimated 0.75 cu ft Bags", value: bags40lb, unit: "bags" }
+      };
+    }
   },
-
-  // Logistics CBM
   cbm: {
     slug: "cbm",
-    name: "CBM Calculator",
+    name: "CBM Shipping Calculator",
     category: "unit-converter",
     categoryLabel: "Logistics",
-    seoTitle: "CBM Calculator - Cargo Cubic Meter Volume Finder",
-    metaDescription: "Calculate Cubic Meters (CBM) for shipping cargo, cartons, or boxes. Convert dimensions in inches, feet, or cm to shipping volume easily.",
-    keywords: ["cbm calculator", "cubic meters calculator", "shipping volume calculator", "cargo volume calculator"],
+    seoTitle: "CBM Calculator - Calculate Shipping Volume in Cubic Meters",
+    metaDescription: "Free CBM calculator for shipping and freight. Calculate cubic meters from inches, cm, feet, or mm for ocean and air cargo.",
+    keywords: ["cbm calculator", "cubic meter calculator", "shipping volume calculator"],
     hook: "Calculate Shipping Volume & Cargo Space in CBM Instantly.",
     description: "Enter box dimensions in inches, cm, or feet to estimate total volume, weight, and fit in ocean containers.",
     calcTime: "1 min",
@@ -183,66 +165,96 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       };
     }
   },
-
   // Financial Affirm
   affirm: {
     slug: "affirm",
     name: "Affirm Calculator",
     category: "financial",
     categoryLabel: "Financial",
-    seoTitle: "Affirm Loan Calculator - Monthly Payments & Interest Estimator",
-    metaDescription: "Estimate your monthly Affirm payments, total interest costs, and true APR. Input product price and term to make smart financing decisions.",
-    keywords: ["affirm calculator", "affirm payment calculator", "buy now pay later calculator"],
+    seoTitle: "Affirm Loan & Payment Calculator - Credit Card, Credit Bureau & APR Math",
+    metaDescription: "Free Affirm payment calculator. Estimate monthly installments, 0% APR vs simple interest, credit bureau reporting, and whether you can pay Affirm with a credit card.",
+    keywords: [
+      "affirm calculator",
+      "affirm payment calculator",
+      "can you pay affirm with a credit card",
+      "can i pay affirm with a credit card",
+      "does affirm report to credit bureaus",
+      "does affirm affect credit score",
+      "does affirm affect your credit score",
+      "does affirm build credit",
+      "does affirm check credit",
+      "buy now pay later no credit check",
+      "affirm vs klarna",
+      "klarna vs affirm",
+      "affirm vs afterpay",
+      "how does the affirm card work",
+      "companies like affirm",
+      "apps like affirm"
+    ],
     hook: "Calculate the True Cost of Affirm Financing Before Checkout.",
-    description: "Determine your monthly payment, interest rate consequences, and the total cost of borrowing instantly.",
+    description: "Determine your monthly payment, simple interest costs, credit bureau reporting status, and total borrowing costs instantly.",
     calcTime: "1 min",
     formula: "Monthly Payment = [P × r × (1 + r)^n] ÷ [(1 + r)^n - 1]",
     formulaDescription: "Formula to find monthly payments on amortized simple interest loans.",
-    example: "For a $1,000 purchase financed at 15% APR over 12 months, payments are $90.26/month.",
-    faqs: [{ question: "Does Affirm charge interest?", answer: "Yes, rates range from 0% to 30% APR simple interest." }],
-    commonMistakes: ["Stretching the loan term unnecessarily, which increases total interest costs."],
-    useCases: ["Budgeting big checkouts", "Comparing financing options"],
-    tips: ["A higher down payment reduces borrowing cost."],
-    inputs: [
-      { id: "price", label: "Purchase Price / Principal ($)", type: "number", defaultValue: 1000, unit: "$" },
-      { id: "apr", label: "Interest Rate (APR %)", type: "number", defaultValue: 15, unit: "%" },
-      { id: "term", label: "Payment Term (Months)", type: "select", defaultValue: "12", options: [{ value: "3", label: "3 Months" }, { value: "6", label: "6 Months" }, { value: "12", label: "12 Months" }, { value: "18", label: "18 Months" }] }
+    example:
+      "Purchase: $1,200, APR: 12%, Term: 12 months. Estimated monthly payment is about $106.62.",
+
+    commonMistakes: [
+      "Assuming every Affirm purchase is 0% APR.",
+      "Ignoring taxes or down payments.",
+      "Using the wrong loan term."
     ],
-    calculate: (inputs) => {
-      const principal = Number(inputs.price || 0);
-      const apr = Number(inputs.apr || 0);
-      const termMonths = Number(inputs.term || 12);
 
-      if (apr === 0) {
-        return {
-          monthlyPayment: { value: (principal / termMonths).toFixed(2), label: "Monthly Payment", unit: "$" },
-          totalPaid: { value: principal.toFixed(2), label: "Total Paid", unit: "$" },
-          totalInterest: { value: "0.00", label: "Total Interest Paid", unit: "$" }
-        };
+    useCases: [
+      "Estimate monthly Affirm payments.",
+      "Compare Affirm with credit cards.",
+      "Plan Buy Now Pay Later purchases."
+    ],
+
+    tips: [
+      "Choose the shortest affordable repayment term.",
+      "Pay on time to maintain a positive payment history.",
+      "Compare total borrowing costs before checking out."
+    ],
+    faqs: [
+      {
+        question: "Can you pay Affirm with a credit card?",
+        answer: "Generally, no. Affirm requires debit cards, checking accounts (ACH), or bank transfers for ongoing monthly loan payments to prevent consumers from stacking credit debt on top of installment debt. You can only use a credit card for the initial down payment on select merchant offers. For a complete breakdown of financing options and payment math, try our free <a href=\"/calculators/affirm\">Affirm Payment Calculator</a> or read our guide on <a href=\"/blog/why-use-affirm-instead-of-credit-card\">why use Affirm instead of a credit card</a>."
+      },
+      {
+        question: "Does Affirm report to credit bureaus?",
+        answer: "Yes, Affirm reports longer-term monthly installment loans (typically 3, 6, 12, or 24-month terms) to credit bureaus like Experian and TransUnion. On-time payments will be reflected on your credit report and help establish positive payment history. However, 0% interest 'Pay in 4' biweekly plans are usually not reported unless payments become 30+ days delinquent. Check our detailed guide on <a href=\"/blog/does-affirm-hurt-your-credit-score\">does Affirm hurt your credit score</a> to learn how loan reporting impacts your credit profile."
+      },
+      {
+        question: "Does Affirm affect your credit score or build credit?",
+        answer: "Checking your purchasing power on Affirm requires only a soft credit check, which has zero impact on your credit score. When you take out a reported monthly installment plan, making on-time payments builds a positive credit history over time. However, opening multiple new installment accounts in a short period can temporarily dip your credit score by reducing your Average Age of Accounts (AAoA). Model your exact monthly commitment before checking out using our <a href=\"/calculators/affirm\">Affirm Loan Calculator</a>."
+      },
+      {
+        question: "What is the difference between Affirm vs. Klarna vs. Afterpay?",
+        answer: "Affirm specializes in larger retail transactions up to $17,500 with terms stretching up to 36 months, alongside zero late fee policies. Klarna and Afterpay focus primarily on smaller, short-term 'Pay in 4' retail shopping purchases and enforce late payment fees when installments are missed. Affirm also offers simple interest financing options with no compounding interest charges. Read our full comparison matrix in <a href=\"/blog/affirm-vs-klarna-vs-afterpay-comparison\">Affirm vs. Klarna vs. Afterpay</a>."
+      },
+      {
+        question: "How does the Affirm Debit Card work?",
+        answer: "The Affirm Debit Card connects directly to your checking account, allowing you to pay for everyday purchases immediately or split eligible transactions over $50 into 4 biweekly payments or monthly loans inside the Affirm app. You can request loan terms before swiping or within 24 hours after making a store purchase. It provides BNPL flexibility without needing approval at individual online checkouts. Learn how simple interest vs. credit card APR compares in our <a href=\"/blog/how-does-affirm-work-pay-in-4-vs-monthly\">Affirm Pay in 4 vs Monthly guide</a>."
+      },
+      {
+        question: "Are there Buy Now Pay Later options with no credit check?",
+        answer: "Most BNPL providers, including Affirm, perform an initial soft credit pull that does not impact your credit score. While Affirm does not offer zero-check loans, instant approval is based on your income, checking account history, and existing Affirm repayment track record rather than hard credit scores alone. Avoid high-risk unregulated payday loans by planning your repayment terms with our <a href=\"/calculators/affirm\">Affirm Installment Calculator</a> and reading our strategy on <a href=\"/blog/affirm-debt-trap-how-to-pay-off-bnpl\">how to escape BNPL debt traps</a>."
       }
-
-      const monthlyRate = (apr / 100) / 12;
-      const x = Math.pow(1 + monthlyRate, termMonths);
-      const monthlyPayment = (principal * x * monthlyRate) / (x - 1);
-      const totalPaid = monthlyPayment * termMonths;
-
-      return {
-        monthlyPayment: { value: monthlyPayment.toFixed(2), label: "Monthly Payment", unit: "$" },
-        totalPaid: { value: totalPaid.toFixed(2), label: "Total Paid", unit: "$" },
-        totalInterest: { value: (totalPaid - principal).toFixed(2), label: "Total Interest Paid", unit: "$" }
-      };
-    }
+    ],
+    inputs: [],
+    calculate: (inputs) => { return {}; }
   },
 
-  // Financial Pro Rata
+  // Pro Rata
   "pro-rata": {
     slug: "pro-rata",
     name: "Pro Rata Calculator",
     category: "financial",
     categoryLabel: "Financial",
-    seoTitle: "Pro Rata Rental & Salary Calculator - Precision Splits",
-    metaDescription: "Calculate prorated rent or salary instantly. Get exact figures based on active days, calendar days, or daily rates.",
-    keywords: ["pro rata calculator", "prorated rent calculator", "prorate salary"],
+    seoTitle: "Pro Rata Calculator - Calculate Prorated Rent & Salary",
+    metaDescription: "Free pro rata calculator. Calculate prorated rent, salary, or billing amounts by day.",
+    keywords: ["pro rata calculator", "prorated rent calculator"],
     hook: "Splits Rent, Invoices & Salaries to the Cent.",
     description: "Determine exact partial payments for moving in mid-month or joining a job mid-cycle.",
     calcTime: "1 min",
@@ -346,71 +358,49 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     calcTime: "2 mins",
     formula: "Slab: Volume = Length × Width × Thickness | Column: Volume = π × Radius² × Depth",
     formulaDescription: "Finds the cubic volume of a rectangular slab or cylinder in cubic feet, converts it to cubic yards by dividing by 27, and calculates bags by dividing volume by the yield of the selected bag size.",
-    example: "A rectangular slab 12ft × 12ft at 4 inches thick needs 1.78 cubic yards. This requires forty-five 80 lb bags or sixty 60 lb bags of concrete.",
     faqs: [
-      { question: "How many 80 lb bags of concrete make a cubic yard?", answer: "It takes exactly 45 bags of 80 lb concrete mix to equal one cubic yard (27 cubic feet) of concrete. For 60 lb bags, you will need 60 bags; and for 40 lb bags, you will need 90 bags." },
-      { question: "How thick should concrete slabs be for driveways vs patios?", answer: "Patios, walkways, and garden paths typically require a thickness of 4 inches of concrete. Driveways and structures bearing heavier loads require at least 5 to 6 inches of concrete to prevent cracking under weight." },
-      { question: "How much extra concrete should I order for waste?", answer: "It is standard practice to add a 10% waste buffer to your total volume. This covers spills, uneven subgrades, and form bending during the pour." }
+      {
+        question: "How many bags of concrete do I need for a slab or footing?",
+        answer: "One 80 lb bag of concrete yields approximately 0.60 cubic feet of mixed concrete, meaning you need 45 bags to equal 1 cubic yard (27 cubic feet). For a 60 lb bag, yield is 0.45 cubic feet, requiring 60 bags per cubic yard. Calculate exact bag counts for your specific slab dimensions using our <a href=\"/calculators/concrete\">Concrete Calculator</a> and read our step-by-step tutorial in <a href=\"/blog/how-many-bags-of-concrete-do-i-need\">how many bags of concrete do I need</a>."
+      },
+      {
+        question: "How much does ready-mix concrete cost per cubic yard?",
+        answer: "Ready-mix concrete delivered by a mixer truck costs between $125 and $175 per cubic yard nationwide. For small orders under 3 to 4 cubic yards, suppliers may add a short-load fee of $50 to $150. Estimate total material costs and slab volume before ordering by trying our <a href=\"/calculators/concrete\">Concrete Volume Estimator</a> and reviewing our <a href=\"/blog/concrete-price-per-yard-cost-guide\">concrete price per yard guide</a>."
+      }
     ],
-    commonMistakes: ["Not adding a 10% ordering margin to cover spills and form deflection.", "Forgetting to divide slab thickness in inches by 12 when calculating volume in cubic feet."],
-    useCases: ["Concrete driveways, sidewalk slabs, and patios", "Poured concrete columns, footings, and fence posts", "DIY concrete landscaping borders"],
-    tips: ["Dampen the subgrade before pouring to avoid drawing water from the concrete mix, which causes rapid drying and cracks."],
+    example: "A rectangular slab 12ft × 12ft at 4 inches thick needs 1.78 cubic yards. This requires forty-five 80 lb bags or sixty 60 lb bags of concrete.",
+    commonMistakes: ["Not accounting for slab thickness variations across uneven ground."],
+    useCases: ["Patio and driveway slab pour planning", "Fence post footings"],
+    tips: ["Rent a concrete mixer for pours over 20 bags to save time and effort."],
     inputs: [
-      { id: "shape", label: "Project Shape", type: "select", defaultValue: "slab", options: [{ value: "slab", label: "Rectangular Slab / Wall" }, { value: "cylinder", label: "Circular Column / Hole" }] },
-      { id: "length", label: "Length (ft) - Ignore for Columns", type: "number", defaultValue: 12, unit: "ft" },
-      { id: "widthOrDia", label: "Width or Column Diameter (ft)", type: "number", defaultValue: 12, unit: "ft" },
-      { id: "thicknessOrHeight", label: "Thickness (in) or Column Depth (in)", type: "number", defaultValue: 4, unit: "in" },
-      { id: "pricePerYard", label: "Cost per Cubic Yard ($)", type: "number", defaultValue: 135, unit: "$" },
-      { id: "bagSize", label: "Concrete Bag Size Option", type: "select", defaultValue: "80", options: [{ value: "80", label: "80 lb bags (0.60 cu ft)" }, { value: "60", label: "60 lb bags (0.45 cu ft)" }, { value: "40", label: "40 lb bags (0.30 cu ft)" }] }
+      { id: "length", label: "Length (Feet)", type: "number", defaultValue: 12, unit: "ft" },
+      { id: "width", label: "Width (Feet)", type: "number", defaultValue: 12, unit: "ft" },
+      { id: "thickness", label: "Thickness (Inches)", type: "number", defaultValue: 4, unit: "in" }
     ],
     calculate: (inputs) => {
-      const shape = inputs.shape || "slab";
-      const length = Number(inputs.length || 0);
-      const widthOrDia = Number(inputs.widthOrDia || 0);
-      const thicknessOrHeight = Number(inputs.thicknessOrHeight || 4);
-      const pricePerYard = Number(inputs.pricePerYard || 135);
-      const bagSizeVal = Number(inputs.bagSize || 80);
-
-      let volFt3 = 0;
-      if (shape === "slab") {
-        volFt3 = length * widthOrDia * (thicknessOrHeight / 12);
-      } else {
-        const radius = widthOrDia / 2;
-        volFt3 = Math.PI * Math.pow(radius, 2) * (thicknessOrHeight / 12);
-      }
-
-      const volYd3 = volFt3 / 27;
-      const volYd3Waste = volYd3 * 1.10;
-      const totalCost = volYd3Waste * pricePerYard;
-
-      let bagYield = 0.6;
-      if (bagSizeVal === 60) bagYield = 0.45;
-      else if (bagSizeVal === 40) bagYield = 0.3;
-
-      const bagsCountWithWaste = Math.ceil((volFt3 * 1.10) / bagYield);
-
+      const length = Number(inputs.length) || 0;
+      const width = Number(inputs.width) || 0;
+      const thickness = Number(inputs.thickness) || 0;
+      const cubicFeet = length * width * (thickness / 12);
+      const cubicYards = cubicFeet / 27;
+      const bags80lb = Math.ceil(cubicFeet / 0.60);
+      const bags60lb = Math.ceil(cubicFeet / 0.45);
       return {
-        cubicYards: { value: volYd3.toFixed(2), label: "Cubic Yards Needed", unit: "yd³" },
-        cubicYardsWaste: { value: volYd3Waste.toFixed(2), label: "Total Yards (+10% waste buffer)", unit: "yd³" },
-        bagsSelected: { value: bagsCountWithWaste, label: `Required ${bagSizeVal} lb bags (+10% waste)`, unit: "bags" },
-        bagsComparison: { 
-          value: `80lb: ${Math.ceil((volFt3 * 1.10) / 0.6)} | 60lb: ${Math.ceil((volFt3 * 1.10) / 0.45)} | 40lb: ${Math.ceil((volFt3 * 1.10) / 0.3)}`, 
-          label: "Bags Needed by Size (+10% waste)" 
-        },
-        estimatedCost: { value: totalCost.toFixed(2), label: "Estimated Material Cost (+10% waste)", unit: "$" }
+        cuYards: { label: "Volume (Cubic Yards)", value: cubicYards.toFixed(2), unit: "cu yd" },
+        cuFeet: { label: "Volume (Cubic Feet)", value: cubicFeet.toFixed(2), unit: "cu ft" },
+        bags80: { label: "80 lb Pre-mix Bags", value: bags80lb, unit: "bags" },
+        bags60: { label: "60 lb Pre-mix Bags", value: bags60lb, unit: "bags" }
       };
     }
   },
-
-  // Health BMI
   bmi: {
     slug: "bmi",
     name: "BMI Calculator",
     category: "health",
     categoryLabel: "Health",
-    seoTitle: "BMI Calculator - Body Mass Index Health Score",
-    metaDescription: "Calculate your Body Mass Index (BMI) instantly. Find your weight status category (underweight, normal weight, overweight, or obese) with official ranges.",
-    keywords: ["bmi calculator", "body mass index calculator", "healthy weight calculator"],
+    seoTitle: "BMI Calculator - Calculate Body Mass Index",
+    metaDescription: "Free online BMI calculator. Calculate your Body Mass Index (BMI) instantly.",
+    keywords: ["bmi calculator", "body mass index calculator"],
     hook: "Calculate Your Body Mass Index & Health Category Instantly.",
     description: "Enter height and weight to assess your body composition based on World Health Organization standards.",
     calcTime: "1 min",
@@ -758,9 +748,9 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       return {
         salesTax: { value: tax.toFixed(2), label: "Sales Tax Amount", unit: "$" },
         grossTotal: { value: total.toFixed(2), label: "Gross Total (incl. tax)", unit: "$" },
-        detectedRate: { 
-          value: rate.toFixed(3) + "%", 
-          label: `Applied Rate ${infoMsg ? `(${infoMsg})` : ""}` 
+        detectedRate: {
+          value: rate.toFixed(3) + "%",
+          label: `Applied Rate ${infoMsg ? `(${infoMsg})` : ""}`
         }
       };
     }
@@ -2799,17 +2789,17 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     inputs: [
       { id: "currentWeight", label: "Current Weight (lbs)", type: "number", defaultValue: 15, unit: "lbs" },
       { id: "ageWeeks", label: "Age (Weeks)", type: "number", defaultValue: 16, unit: "weeks" },
-      { 
-        id: "breedSize", 
-        label: "Breed Size Group", 
-        type: "select", 
-        defaultValue: "medium", 
+      {
+        id: "breedSize",
+        label: "Breed Size Group",
+        type: "select",
+        defaultValue: "medium",
         options: [
           { value: "small", label: "Toy & Small (<20 lbs adult)" },
           { value: "medium", label: "Medium (20-50 lbs adult)" },
           { value: "large", label: "Large (50-100 lbs adult)" },
           { value: "giant", label: "Giant (>100 lbs adult)" }
-        ] 
+        ]
       }
     ],
     calculate: (inputs) => {
@@ -2856,17 +2846,17 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     inputs: [
       { id: "currentWeight", label: "Current Weight (lbs)", type: "number", defaultValue: 15, unit: "lbs" },
       { id: "ageWeeks", label: "Age (Weeks)", type: "number", defaultValue: 16, unit: "weeks" },
-      { 
-        id: "breedSize", 
-        label: "Breed Size Group", 
-        type: "select", 
-        defaultValue: "medium", 
+      {
+        id: "breedSize",
+        label: "Breed Size Group",
+        type: "select",
+        defaultValue: "medium",
         options: [
           { value: "small", label: "Toy & Small (<20 lbs adult)" },
           { value: "medium", label: "Medium (20-50 lbs adult)" },
           { value: "large", label: "Large (50-100 lbs adult)" },
           { value: "giant", label: "Giant (>100 lbs adult)" }
-        ] 
+        ]
       }
     ],
     calculate: (inputs) => {
@@ -2915,17 +2905,17 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     inputs: [
       { id: "currentWeight", label: "Current Weight (lbs)", type: "number", defaultValue: 15, unit: "lbs" },
       { id: "ageWeeks", label: "Age (Weeks)", type: "number", defaultValue: 16, unit: "weeks" },
-      { 
-        id: "breedSize", 
-        label: "Breed Size Group", 
-        type: "select", 
-        defaultValue: "medium", 
+      {
+        id: "breedSize",
+        label: "Breed Size Group",
+        type: "select",
+        defaultValue: "medium",
         options: [
           { value: "small", label: "Toy & Small (<20 lbs adult)" },
           { value: "medium", label: "Medium (20-50 lbs adult)" },
           { value: "large", label: "Large (50-100 lbs adult)" },
           { value: "giant", label: "Giant (>100 lbs adult)" }
-        ] 
+        ]
       }
     ],
     calculate: (inputs) => {
@@ -3097,16 +3087,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     inputs: [
       { id: "wallLength", label: "Wall Length (ft)", type: "number", defaultValue: 20, unit: "ft" },
       { id: "wallHeight", label: "Wall Height (ft)", type: "number", defaultValue: 8, unit: "ft" },
-      { 
-        id: "brickSize", 
-        label: "Brick Size & Type", 
-        type: "select", 
-        defaultValue: "modular", 
+      {
+        id: "brickSize",
+        label: "Brick Size & Type",
+        type: "select",
+        defaultValue: "modular",
         options: [
           { value: "modular", label: "Modular (6.55 per sq ft)" },
           { value: "queen", label: "Queen (5.20 per sq ft)" },
           { value: "utility", label: "Utility (3.00 per sq ft)" }
-        ] 
+        ]
       },
       { id: "wastePct", label: "Waste Factor (%)", type: "number", defaultValue: 10, unit: "%" }
     ],
@@ -3117,7 +3107,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const waste = Number(inputs.wastePct || 10);
 
       const area = length * height;
-      
+
       let ratio = 6.55;
       if (type === "queen") ratio = 5.2;
       else if (type === "utility") ratio = 3.0;
@@ -3159,18 +3149,18 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     inputs: [
       { id: "totalDistance", label: "Total Trip Distance (miles)", type: "number", defaultValue: 1000, unit: "mi" },
       { id: "totalFuel", label: "Total Fuel Purchased (gallons)", type: "number", defaultValue: 150, unit: "gal" },
-      { 
-        id: "state", 
-        label: "Target Reporting State", 
-        type: "select", 
-        defaultValue: "NY", 
+      {
+        id: "state",
+        label: "Target Reporting State",
+        type: "select",
+        defaultValue: "NY",
         options: [
           { value: "NY", label: "New York ($0.411 / gal)" },
           { value: "CA", label: "California ($0.579 / gal)" },
           { value: "IL", label: "Illinois ($0.454 / gal)" },
           { value: "TX", label: "Texas ($0.200 / gal)" },
           { value: "GA", label: "Georgia ($0.321 / gal)" }
-        ] 
+        ]
       },
       { id: "stateDistance", label: "Distance Traveled in State (miles)", type: "number", defaultValue: 300, unit: "mi" },
       { id: "stateFuelPurchased", label: "Fuel Purchased in State (gallons)", type: "number", defaultValue: 40, unit: "gal" }
@@ -3410,18 +3400,18 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       { id: "length", label: "Building Footprint Length (ft)", type: "number", defaultValue: 40, unit: "ft" },
       { id: "width", label: "Building Footprint Width (ft)", type: "number", defaultValue: 30, unit: "ft" },
       { id: "overhang", label: "Roof Eave / Overhang (ft)", type: "number", defaultValue: 1, unit: "ft" },
-      { 
-        id: "pitch", 
-        label: "Roof Pitch (Rise / 12)", 
-        type: "select", 
-        defaultValue: "6", 
+      {
+        id: "pitch",
+        label: "Roof Pitch (Rise / 12)",
+        type: "select",
+        defaultValue: "6",
         options: [
           { value: "3", label: "3/12 (Factor 1.03)" },
           { value: "4", label: "4/12 (Factor 1.05)" },
           { value: "6", label: "6/12 (Factor 1.118)" },
           { value: "8", label: "8/12 (Factor 1.20)" },
           { value: "12", label: "12/12 (Factor 1.414)" }
-        ] 
+        ]
       },
       { id: "panelWidth", label: "Panel Coverage Width (ft)", type: "number", defaultValue: 3, unit: "ft" },
       { id: "wastePct", label: "Waste Factor (%)", type: "number", defaultValue: 10, unit: "%" }
@@ -3436,7 +3426,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
 
       const pitchFactors: Record<number, number> = { 3: 1.0308, 4: 1.0541, 6: 1.1180, 8: 1.2019, 12: 1.4142 };
       const factor = pitchFactors[pitch] || 1.118;
-      
+
       const footprintArea = (len + overhang * 2) * (w + overhang * 2);
       const slopedArea = footprintArea * factor;
       const totalArea = slopedArea * (1 + waste / 100);
@@ -3611,8 +3601,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
 
       const buyTotal = loanDown + (monthlyLoanPay * term) - resale;
       const difference = Math.abs(leaseTotal - buyTotal);
-      const recommendation = buyTotal < leaseTotal 
-        ? `Buying is estimated to be $${difference.toFixed(0)} cheaper than leasing.` 
+      const recommendation = buyTotal < leaseTotal
+        ? `Buying is estimated to be $${difference.toFixed(0)} cheaper than leasing.`
         : `Leasing is estimated to be $${difference.toFixed(0)} cheaper than buying.`;
 
       return {
@@ -3659,10 +3649,10 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
 
       const netCashSaved = price - fees;
       const realizedCents = points > 0 ? (netCashSaved * 100) / points : 0;
-      
+
       const isGoodDeal = realizedCents >= target;
-      const rec = isGoodDeal 
-        ? `Pay with Points: Realized value of ${realizedCents.toFixed(2)}¢ exceeds your target of ${target}¢.` 
+      const rec = isGoodDeal
+        ? `Pay with Points: Realized value of ${realizedCents.toFixed(2)}¢ exceeds your target of ${target}¢.`
         : `Pay with Cash: Realized value of ${realizedCents.toFixed(2)}¢ is below your target of ${target}¢.`;
 
       return {
@@ -3696,15 +3686,15 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     tips: ["Filing status significantly shifts bracket thresholds. Ensure you select the correct status."],
     inputs: [
       { id: "grossWages", label: "Annual Gross Income ($)", type: "number", defaultValue: 60000, unit: "$" },
-      { 
-        id: "filingStatus", 
-        label: "Filing Status", 
-        type: "select", 
-        defaultValue: "single", 
+      {
+        id: "filingStatus",
+        label: "Filing Status",
+        type: "select",
+        defaultValue: "single",
         options: [
           { value: "single", label: "Single Filer" },
           { value: "married", label: "Married Filing Jointly" }
-        ] 
+        ]
       }
     ],
     calculate: (inputs) => {
@@ -3853,15 +3843,15 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       { id: "serviceCredit", label: "Service Credit (Years)", type: "number", defaultValue: 25, unit: "yrs" },
       { id: "retirementAge", label: "Retirement Age", type: "number", defaultValue: 60, unit: "years" },
       { id: "finalCompensation", label: "Final Compensation Average ($/year)", type: "number", defaultValue: 80000, unit: "$" },
-      { 
-        id: "tier", 
-        label: "CalSTRS Membership Tier", 
-        type: "select", 
-        defaultValue: "before2013", 
+      {
+        id: "tier",
+        label: "CalSTRS Membership Tier",
+        type: "select",
+        defaultValue: "before2013",
         options: [
           { value: "before2013", label: "2% at 60 (Hired before Jan 1, 2013)" },
           { value: "after2013", label: "2% at 62 (Hired on/after Jan 1, 2013)" }
-        ] 
+        ]
       }
     ],
     calculate: (inputs) => {
@@ -3944,16 +3934,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     tips: ["Use CPT code 99024 to document post-op visits within global periods for quality reporting even though they yield zero cash reimbursement."],
     inputs: [
       { id: "daysSinceSurgery", label: "Days Elapsed Since Surgery Date", type: "number", defaultValue: 10 },
-      { 
-        id: "globalPeriod", 
-        label: "CPT Global Days Class", 
-        type: "select", 
-        defaultValue: "90", 
+      {
+        id: "globalPeriod",
+        label: "CPT Global Days Class",
+        type: "select",
+        defaultValue: "90",
         options: [
           { value: "0", label: "0-Day (Minor procedures / Endoscopy)" },
           { value: "10", label: "10-Day (Minor surgeries)" },
           { value: "90", label: "90-Day (Major surgeries)" }
-        ] 
+        ]
       }
     ],
     calculate: (inputs) => {
@@ -4059,16 +4049,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       { id: "tileThickness", label: "Tile Thickness (inches)", type: "number", defaultValue: 0.375 },
       { id: "jointWidth", label: "Joint Width (inches)", type: "number", defaultValue: 0.125 },
       { id: "areaSqft", label: "Total Installation Area (sq ft)", type: "number", defaultValue: 100 },
-      { 
-        id: "groutType", 
-        label: "Grout Product Casing", 
-        type: "select", 
-        defaultValue: "sanded", 
+      {
+        id: "groutType",
+        label: "Grout Product Casing",
+        type: "select",
+        defaultValue: "sanded",
         options: [
           { value: "sanded", label: "Sanded Cementitious (Density 0.065)" },
           { value: "unsanded", label: "Unsanded Cementitious (Density 0.060)" },
           { value: "epoxy", label: "Epoxy Grout (Density 0.068)" }
-        ] 
+        ]
       },
       { id: "wastePct", label: "Waste Factor (%)", type: "number", defaultValue: 10 }
     ],
@@ -4178,16 +4168,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     tips: ["Filing status does not change the Virginia bracket rates but determines standard deduction limits on state tax returns."],
     inputs: [
       { id: "grossPay", label: "Gross Pay per Period ($)", type: "number", defaultValue: 2500, unit: "$" },
-      { 
-        id: "payPeriods", 
-        label: "Pay Schedule / Frequency", 
-        type: "select", 
-        defaultValue: "26", 
+      {
+        id: "payPeriods",
+        label: "Pay Schedule / Frequency",
+        type: "select",
+        defaultValue: "26",
         options: [
           { value: "52", label: "Weekly (52 periods)" },
           { value: "26", label: "Bi-Weekly (26 periods)" },
           { value: "12", label: "Monthly (12 periods)" }
-        ] 
+        ]
       },
       { id: "federalRate", label: "Est. Federal Tax Rate (%)", type: "number", defaultValue: 12, unit: "%" }
     ],
@@ -4246,16 +4236,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     tips: ["Adjust your state withholding allowances on Form MI-W4 to fine-tune your net paycheck calculations."],
     inputs: [
       { id: "grossPay", label: "Gross Pay per Period ($)", type: "number", defaultValue: 2500, unit: "$" },
-      { 
-        id: "payPeriods", 
-        label: "Pay Schedule / Frequency", 
-        type: "select", 
-        defaultValue: "26", 
+      {
+        id: "payPeriods",
+        label: "Pay Schedule / Frequency",
+        type: "select",
+        defaultValue: "26",
         options: [
           { value: "52", label: "Weekly (52 periods)" },
           { value: "26", label: "Bi-Weekly (26 periods)" },
           { value: "12", label: "Monthly (12 periods)" }
-        ] 
+        ]
       },
       { id: "federalRate", label: "Est. Federal Tax Rate (%)", type: "number", defaultValue: 12, unit: "%" }
     ],
@@ -4358,15 +4348,15 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       { id: "amount", label: "Amount / Price ($)", type: "number", defaultValue: 100, unit: "$" },
       { id: "stateRate", label: "Arkansas State Tax Rate (%)", type: "number", defaultValue: 6.5, unit: "%" },
       { id: "localRate", label: "Local / County Tax Rate (%)", type: "number", defaultValue: 2.5, unit: "%" },
-      { 
-        id: "calcMode", 
-        label: "Calculation Method", 
-        type: "select", 
-        defaultValue: "add", 
+      {
+        id: "calcMode",
+        label: "Calculation Method",
+        type: "select",
+        defaultValue: "add",
         options: [
           { value: "add", label: "Add Tax to Base Amount" },
           { value: "extract", label: "Extract Tax from Gross Total" }
-        ] 
+        ]
       }
     ],
     calculate: (inputs) => {
@@ -4447,7 +4437,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const maxRate = initRate + cap;
       const rMax = (maxRate / 100) / 12;
       const nRemaining = (30 - period) * 12;
-      
+
       // Approximate remaining balance at adjustment
       let balanceAtAdjust = loan;
       for (let i = 0; i < (period * 12); i++) {
@@ -4585,11 +4575,11 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     useCases: ["Evaluating trade offers from league mates", "Pre-draft asset valuation", "Roster reconstruction analysis"],
     tips: ["In dynasty, elite QBs retain value the longest, followed by WRs, while RBs have the shortest career lifespans."],
     inputs: [
-      { 
-        id: "teamAPlayer1", 
-        label: "Team A Assets Given - Item 1", 
-        type: "select", 
-        defaultValue: "90", 
+      {
+        id: "teamAPlayer1",
+        label: "Team A Assets Given - Item 1",
+        type: "select",
+        defaultValue: "90",
         options: [
           { value: "90", label: "Elite QB / Tier 1 (e.g. Mahomes, Allen)" },
           { value: "88", label: "Elite WR / Tier 1 (e.g. Jefferson, Lamb)" },
@@ -4600,13 +4590,13 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
           { value: "45", label: "Mid Round Rookie Pick (2nd/3rd)" },
           { value: "20", label: "Depth Bench Player / Prospect" },
           { value: "0", label: "None" }
-        ] 
+        ]
       },
-      { 
-        id: "teamAPlayer2", 
-        label: "Team A Assets Given - Item 2", 
-        type: "select", 
-        defaultValue: "0", 
+      {
+        id: "teamAPlayer2",
+        label: "Team A Assets Given - Item 2",
+        type: "select",
+        defaultValue: "0",
         options: [
           { value: "90", label: "Elite QB / Tier 1" },
           { value: "88", label: "Elite WR / Tier 1" },
@@ -4617,13 +4607,13 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
           { value: "45", label: "Mid Round Rookie Pick" },
           { value: "20", label: "Depth Bench Player" },
           { value: "0", label: "None" }
-        ] 
+        ]
       },
-      { 
-        id: "teamBPlayer1", 
-        label: "Team B Assets Given - Item 1", 
-        type: "select", 
-        defaultValue: "85", 
+      {
+        id: "teamBPlayer1",
+        label: "Team B Assets Given - Item 1",
+        type: "select",
+        defaultValue: "85",
         options: [
           { value: "90", label: "Elite QB / Tier 1" },
           { value: "88", label: "Elite WR / Tier 1" },
@@ -4634,13 +4624,13 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
           { value: "45", label: "Mid Round Rookie Pick" },
           { value: "20", label: "Depth Bench Player" },
           { value: "0", label: "None" }
-        ] 
+        ]
       },
-      { 
-        id: "teamBPlayer2", 
-        label: "Team B Assets Given - Item 2", 
-        type: "select", 
-        defaultValue: "75", 
+      {
+        id: "teamBPlayer2",
+        label: "Team B Assets Given - Item 2",
+        type: "select",
+        defaultValue: "75",
         options: [
           { value: "90", label: "Elite QB / Tier 1" },
           { value: "88", label: "Elite WR / Tier 1" },
@@ -4651,7 +4641,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
           { value: "45", label: "Mid Round Rookie Pick" },
           { value: "20", label: "Depth Bench Player" },
           { value: "0", label: "None" }
-        ] 
+        ]
       }
     ],
     calculate: (inputs) => {
@@ -4708,17 +4698,17 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       { id: "tileThickness", label: "Tile Thickness (inches)", type: "number", defaultValue: 0.375 },
       { id: "jointWidth", label: "Joint Width (inches)", type: "number", defaultValue: 0.125 },
       { id: "areaSqft", label: "Total Installation Area (sq ft)", type: "number", defaultValue: 100 },
-      { 
-        id: "groutType", 
-        label: "Mapei Grout Product Class", 
-        type: "select", 
-        defaultValue: "ultracolor", 
+      {
+        id: "groutType",
+        label: "Mapei Grout Product Class",
+        type: "select",
+        defaultValue: "ultracolor",
         options: [
           { value: "sanded", label: "Keracolor S Sanded (Density 0.065)" },
           { value: "unsanded", label: "Keracolor U Unsanded (Density 0.058)" },
           { value: "ultracolor", label: "Ultracolor Plus FA (Density 0.062)" },
           { value: "epoxy", label: "Kerapoxy Epoxy Grout (Density 0.067)" }
-        ] 
+        ]
       },
       { id: "wastePct", label: "Waste Factor (%)", type: "number", defaultValue: 10 }
     ],
@@ -4773,15 +4763,15 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     tips: ["Check if your county offers local tax credits or homestead credits to reduce your taxable income base."],
     inputs: [
       { id: "grossWages", label: "Annual Gross Income ($)", type: "number", defaultValue: 60000, unit: "$" },
-      { 
-        id: "filingStatus", 
-        label: "Filing Status", 
-        type: "select", 
-        defaultValue: "single", 
+      {
+        id: "filingStatus",
+        label: "Filing Status",
+        type: "select",
+        defaultValue: "single",
         options: [
           { value: "single", label: "Single Filer" },
           { value: "married", label: "Married Filing Jointly" }
-        ] 
+        ]
       },
       { id: "localRate", label: "Local County Tax Rate (%)", type: "number", defaultValue: 3.0, unit: "%" }
     ],
@@ -4799,7 +4789,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       } else {
         deduction = Math.min(2550, Math.max(1700, deduction));
       }
-      
+
       const taxable = Math.max(0, gross - deduction);
 
       // Maryland progressive brackets (Single and Married use same thresholds up to $150k/300k, let's use single brackets)
@@ -4919,16 +4909,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     tips: ["Buying a policy before breaking ground is typically cheaper than buying coverage mid-construction."],
     inputs: [
       { id: "constructionBudget", label: "Total Construction Budget ($)", type: "number", defaultValue: 200000, unit: "$" },
-      { 
-        id: "riskLevel", 
-        label: "Project Risk Profile", 
-        type: "select", 
-        defaultValue: "medium", 
+      {
+        id: "riskLevel",
+        label: "Project Risk Profile",
+        type: "select",
+        defaultValue: "medium",
         options: [
           { value: "low", label: "Low Risk (New home in developed suburb)" },
           { value: "medium", label: "Medium Risk (Custom home or coastal area)" },
           { value: "high", label: "High Risk (High crime area or commercial structure)" }
-        ] 
+        ]
       },
       { id: "projectDurationMonths", label: "Project Duration (Months)", type: "number", defaultValue: 12 }
     ],
@@ -5032,38 +5022,38 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     inputs: [
       { id: "quantity", label: "Print Job Volume (Units)", type: "number", defaultValue: 1000 },
       { id: "pages", label: "Pages per Unit", type: "number", defaultValue: 16 },
-      { 
-        id: "paperType", 
-        label: "Paper Stock Selection", 
-        type: "select", 
-        defaultValue: "glossy", 
+      {
+        id: "paperType",
+        label: "Paper Stock Selection",
+        type: "select",
+        defaultValue: "glossy",
         options: [
           { value: "bond", label: "Standard 20lb Bond (Base: $0.03/page)" },
           { value: "glossy", label: "Premium 80lb Glossy Text (Base: $0.06/page)" },
           { value: "cardstock", label: "Heavy Cardstock Cover (Base: $0.12/page)" }
-        ] 
+        ]
       },
-      { 
-        id: "colorMode", 
-        label: "Ink / Color Style", 
-        type: "select", 
-        defaultValue: "color", 
+      {
+        id: "colorMode",
+        label: "Ink / Color Style",
+        type: "select",
+        defaultValue: "color",
         options: [
           { value: "bw", label: "Grayscale / Black & White ($0.02/page)" },
           { value: "color", label: "Four Color / Full CMYK ($0.10/page)" }
-        ] 
+        ]
       },
-      { 
-        id: "binding", 
-        label: "Binding Type Selection", 
-        type: "select", 
-        defaultValue: "spiral", 
+      {
+        id: "binding",
+        label: "Binding Type Selection",
+        type: "select",
+        defaultValue: "spiral",
         options: [
           { value: "none", label: "None (Loose / Folded only: $0.00)" },
           { value: "stapled", label: "Saddle-Stitch / Stapled ($0.10/unit)" },
           { value: "spiral", label: "Spiral Coil Bound ($1.50/unit)" },
           { value: "perfect", label: "Perfect Bound / Softcover Book ($3.00/unit)" }
-        ] 
+        ]
       },
       { id: "markup", label: "Target Profit Markup (%)", type: "number", defaultValue: 30, unit: "%" }
     ],
@@ -5124,27 +5114,27 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     useCases: ["Preparing for standardized testing (SAT/ACT)", "School supply maintenance audits"],
     tips: ["Store your calculator in a cool place. Extreme heat speeds up battery self-discharge and shortens overall lifespan."],
     inputs: [
-      { 
-        id: "model", 
-        label: "TI-84 Calculator Model", 
-        type: "select", 
-        defaultValue: "ce", 
+      {
+        id: "model",
+        label: "TI-84 Calculator Model",
+        type: "select",
+        defaultValue: "ce",
         options: [
           { value: "ce", label: "TI-84 Plus CE (Color Screen / Rechargeable)" },
           { value: "standard", label: "TI-84 Plus (Monochrome / 4x AAA Batteries)" }
-        ] 
+        ]
       },
       { id: "usageHours", label: "Daily Active Usage (Hours)", type: "number", defaultValue: 2, unit: "hrs" },
-      { 
-        id: "brightness", 
-        label: "Screen Brightness Level (CE only)", 
-        type: "select", 
-        defaultValue: "medium", 
+      {
+        id: "brightness",
+        label: "Screen Brightness Level (CE only)",
+        type: "select",
+        defaultValue: "medium",
         options: [
           { value: "low", label: "Low Brightness (Lasts up to 50 hrs)" },
           { value: "medium", label: "Medium Brightness (Lasts up to 30 hrs)" },
           { value: "high", label: "High Brightness (Lasts up to 15 hrs)" }
-        ] 
+        ]
       }
     ],
     calculate: (inputs) => {
@@ -5633,7 +5623,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const area = length * width;
       const volumePerApp = area * thickness;
       const totalVolume = volumePerApp * frequency * duration;
-      const totalGrams = totalVolume * 1.0; 
+      const totalGrams = totalVolume * 1.0;
 
       const tubes30g = Math.ceil(totalGrams / 30);
       const tubes90g = Math.ceil(totalGrams / 90);
@@ -5944,7 +5934,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       const ramWatts = ram * 4;
       const fanWatts = fans * 3;
       const coolerWatts = cooler === "aio" ? 35 : 10;
-      const baseSystemWatts = 60; 
+      const baseSystemWatts = 60;
 
       const totalLoadWatts = cpuWatts + gpuWatts + ramWatts + fanWatts + coolerWatts + baseSystemWatts;
       const recPsu = totalLoadWatts * 1.30;

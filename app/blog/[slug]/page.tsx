@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { blogData } from "../../data/blogData";
 import { calculatorsData } from "../../data/calculatorsData";
 import CalculatorFaqs from "../../components/CalculatorFaqs";
+import CategoryClusterNav from "../../components/CategoryClusterNav";
 import SearchInput from "../../components/SearchInput";
 
 interface BlogPostPageProps {
@@ -48,17 +49,42 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Find companion calculator
   const calculator = post.calculatorSlug ? calculatorsData[post.calculatorSlug] : null;
 
-  // Find related posts
-  const relatedPosts = post.relatedSlugs
+  // Derive target calculator slug for companion FAQs
+  const targetFaqSlug = post.calculatorSlug || (
+    slug.includes("affirm") ? "affirm" :
+      slug.includes("lsat") ? "lsat-score-calculator" :
+        (slug.includes("topsoil") || slug.includes("soil") || slug.includes("dirt")) ? "topsoil" :
+          slug.includes("concrete") ? "concrete" :
+            (slug.includes("cbm") || slug.includes("shipping")) ? "cbm" :
+              (slug.includes("productivity") || slug.includes("therapy")) ? "therapy-productivity" :
+                (slug.includes("avalara") || slug.includes("sales-tax")) ? "avalara-sales-tax" :
+                  slug.includes("square") ? "square-fee" :
+                    slug.includes("google-review") ? "google-review" :
+                      slug.includes("mortgage") ? "mortgage-calculator-game" : null
+  );
+
+  // Find related posts (min 6 items for sidebar)
+  let relatedPosts = post.relatedSlugs
     .map((s) => blogData[s])
     .filter(Boolean);
 
-  // Popular calculators list for sidebar
+  if (relatedPosts.length < 6) {
+    const extraPosts = Object.values(blogData).filter(
+      (b) => b.slug !== slug && !relatedPosts.some((r) => r.slug === b.slug)
+    );
+    relatedPosts = [...relatedPosts, ...extraPosts].slice(0, 6);
+  } else {
+    relatedPosts = relatedPosts.slice(0, 6);
+  }
+
+  // Popular calculators list for sidebar (min 6 items)
   const popularCalculators = [
     { name: "Topsoil Calculator", href: "/calculators/topsoil", category: "Construction" },
     { name: "Concrete Calculator", href: "/calculators/concrete", category: "Construction" },
     { name: "CBM Calculator", href: "/calculators/cbm", category: "Logistics" },
     { name: "Affirm Calculator", href: "/calculators/affirm", category: "Finance" },
+    { name: "LSAT Score Calculator", href: "/calculators/lsat-score-calculator", category: "Education" },
+    { name: "Square Fee Calculator", href: "/calculators/square-fee", category: "Finance" },
   ];
 
   // Schema Injection
@@ -86,9 +112,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       "@id": `https://infinixcalculator.com/blog/${slug}`,
     },
   };
-
-  // Determine if this post is about topsoil or soil to render companion FAQs
-  const isSoilPost = slug.includes("topsoil") || slug.includes("soil") || slug.includes("dirt");
 
   return (
     <div className="bg-slate-50 min-h-screen py-8 sm:py-12">
@@ -120,7 +143,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Clean 2-Column Layout (Main Content 8/12 width, Sidebar 4/12 width) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Main Content Column (8 cols on desktop, no borders or shadows) */}
           <div className="lg:col-span-8">
             <article>
@@ -145,47 +168,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   alt={post.title}
                   fill
                   priority
+                  loading="eager"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
                   className="object-cover"
                 />
               </div>
 
               {/* Content Body with customized typographic separations */}
-              <div 
+              <div
                 className="blog-content mt-8 text-slate-700 leading-relaxed text-sm sm:text-base space-y-6"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
 
-              {/* Embedded Reusable FAQ Component */}
-              {isSoilPost && (
+              {/* Embedded Reusable FAQ Component for Related Calculator */}
+              {targetFaqSlug && (
                 <div className="mt-12 pt-8 border-t border-slate-200">
-                  <CalculatorFaqs slug="topsoil" title="Frequently Asked Questions About Topsoil Volume" />
+                  <CalculatorFaqs slug={targetFaqSlug} />
                 </div>
               )}
 
-              {/* Direct Tool Redirect Box (Clean light blue callout) */}
-              {calculator && (
-                <div className="mt-12 bg-primary/5 rounded-xl border border-primary/10 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-                  <div>
-                    <h3 className="text-sm sm:text-base font-bold text-slate-900">Run Your Own Calculations</h3>
-                    <p className="text-xs text-slate-500 mt-1">
-                      Apply these metrics directly to your yard layout using our {calculator.name}.
-                    </p>
-                  </div>
-                  <Link
-                    href={`/calculators/${calculator.slug}`}
-                    className="shrink-0 rounded-lg bg-primary px-5 py-2.5 text-xs font-bold text-white hover:bg-primary-hover shadow-sm transition-colors"
-                  >
-                    Open {calculator.name}
-                  </Link>
-                </div>
-              )}
+              {/* Topic Cluster Navigation Hub */}
+              <CategoryClusterNav category={post.category} currentSlug={slug} />
             </article>
           </div>
 
           {/* Sidebar Column (4 cols on desktop, flat transparent DC Rainmaker styles) */}
           <div className="lg:col-span-4 space-y-10 pl-0 lg:pl-6">
-            
+
             {/* Search Input Widget (Transparent, bottom line search input) */}
             <div>
               <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Search Calculators</h3>
