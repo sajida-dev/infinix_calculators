@@ -13,12 +13,23 @@ export default function NotFound() {
         <p className="mt-4 text-sm sm:text-base text-slate-500 leading-relaxed">
           The requested page could not be found. It may have been moved, deleted, or the URL might be incorrect.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+
+        <div className="mt-6 pt-6 border-t border-slate-100 text-left">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Popular Categories</p>
+          <div className="flex flex-wrap gap-2 mb-6">
+            <Link href="/calculators?cat=finance" className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-medium hover:bg-primary/10 hover:text-primary transition-colors">Finance</Link>
+            <Link href="/calculators?cat=construction" className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-medium hover:bg-primary/10 hover:text-primary transition-colors">Construction</Link>
+            <Link href="/calculators?cat=health" className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-medium hover:bg-primary/10 hover:text-primary transition-colors">Health</Link>
+            <Link href="/blog" className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-medium hover:bg-primary/10 hover:text-primary transition-colors">Blog & Guides</Link>
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/calculators"
             className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-xs font-bold text-white hover:bg-primary-hover shadow-md shadow-primary/20 transition-all hover:-translate-y-[1px]"
           >
-            Browse Calculators
+            Browse All Calculators
           </Link>
           <Link
             href="/"
@@ -26,6 +37,10 @@ export default function NotFound() {
           >
             Go Back Home
           </Link>
+        </div>
+
+        <div className="mt-6 text-xs text-slate-400">
+          Looking for site structure? View our <a href="/sitemap.xml" className="text-primary underline hover:text-primary-hover">XML Sitemap</a>.
         </div>
       </div>
     </div>

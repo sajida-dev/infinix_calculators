@@ -1,17 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { categoriesList } from "../data/CategoryData";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 15);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="sticky top-4 z-50 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-6">
-      <div className="rounded-2xl border border-slate-200/80 bg-white/75 backdrop-blur-md px-5 py-3 flex items-center justify-between shadow-md hover:shadow-lg transition-all duration-300">
-        
+      <div
+        className={`rounded-2xl border transition-all duration-300 px-5 py-3 flex items-center justify-between ${scrolled
+          ? "bg-white border-slate-300/90 shadow-xl shadow-slate-900/5 backdrop-blur-lg"
+          : "bg-white/80 border-slate-200/80 backdrop-blur-md shadow-sm hover:shadow-md"
+          }`}
+      >
+
         {/* Logo Branding */}
         <div className="flex flex-shrink-0 items-center">
           <Link href="/" className="flex items-center">
@@ -99,15 +115,15 @@ export default function Header() {
       {/* Mobile Menu Expandable Drawer */}
       {open && (
         <div className="md:hidden rounded-2xl border border-slate-200/80 bg-white/95 backdrop-blur-md p-4 mt-2 shadow-lg flex flex-col gap-2 transition-all duration-300">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
             onClick={() => setOpen(false)}
           >
             Home
           </Link>
-          <Link 
-            href="/calculators" 
+          <Link
+            href="/calculators"
             className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
             onClick={() => setOpen(false)}
           >
@@ -116,8 +132,8 @@ export default function Header() {
           {/* Collapsible/Indented list of categories for mobile */}
           <div className="pl-4 flex flex-col gap-1 border-l border-slate-100 ml-3">
             {categoriesList.map((cat) => (
-              <Link 
-                key={cat.id} 
+              <Link
+                key={cat.id}
                 href={`/calculators#${cat.id}`}
                 className="text-xs font-semibold text-slate-500 hover:text-primary py-1"
                 onClick={() => setOpen(false)}
@@ -126,22 +142,22 @@ export default function Header() {
               </Link>
             ))}
           </div>
-          <Link 
-            href="/blog" 
+          <Link
+            href="/blog"
             className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
             onClick={() => setOpen(false)}
           >
             Blog & Guides
           </Link>
-          <Link 
-            href="/about" 
+          <Link
+            href="/about"
             className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
             onClick={() => setOpen(false)}
           >
             About Us
           </Link>
-          <Link 
-            href="/contact" 
+          <Link
+            href="/contact"
             className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
             onClick={() => setOpen(false)}
           >

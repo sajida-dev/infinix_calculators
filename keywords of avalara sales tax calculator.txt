@@ -1,0 +1,101 @@
+Keyword	Intent	Volume	KD %	CPC (USD)	SF	Updated
+reverse tax calculator	Commercial	3600	15	7.19	Reviews, Video, Related searches	1 month
+mn sales tax calculator	Transactional	2400	30	1.99	People also ask, Related searches	1 month
+taxjar sales tax calculator	Transactional, Navigational	1900	28	13.81	Reviews, Video, Related searches	1 month
+colorado sales tax lookup	Transactional	1600	28	5.2	Video, Related searches	1 month
+irvine sales tax	Informational	1600	21	1.63	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+tax calculator colorado	Commercial	1600	29	1.87	Video, Related searches	1 month
+how to add tax onto a price	Informational	1300	30	1.42	AI Overview, Video, Video carousel, People also ask, Discussions and forums, Related searches	1 month
+arkansas sales tax calculator	Transactional	1000	18	1.7	Reviews, Related searches	1 month
+kentucky sales tax rate	Informational	1000	19	1.06	AI Overview, Video, People also ask, Related searches	1 month
+texas austin sales tax	Informational	1000	22	1.29	AI Overview, Video, People also ask, Related searches	1 month
+tn sales tax calculator	Commercial	1000	28	1.92	Reviews, People also ask, Related searches	1 month
+utah sales tax calculator	Transactional	1000	28	1.96	Reviews, People also ask, Related searches	1 month
+arizona sales tax calculator	Transactional	880	30	1.75	Video, People also ask, Related searches	1 month
+avalara tax calculator	Transactional	880	28	12.01	People also ask, Related searches, Ads top, Ads middle	1 month
+colorado sales tax calculator	Transactional	880	24	2.3	Video, People also ask, Related searches	1 month
+indiana sales tax calculator	Transactional	880	30	1.79	People also ask, Related searches	1 month
+state income tax rate in colorado	Informational	880	28	2.53	AI Overview, Video, People also ask, Related searches	1 month
+wisconsin sales tax calculator	Commercial	880	19	1.69	People also ask, Related searches	1 month
+24.99-13.99	Commercial	720	20	2	Instant answer, Video, People also ask	1 month
+avalara pricing	Commercial	720	29	41.78	Sitelinks, AI Overview, People also ask, Related searches, Ads middle	1 month
+california property tax calculator	Informational	720	27	1.36	Video, People also ask	1 month
+georgia sales tax calculator	Commercial	720	17	2.08	People also ask, Related searches	1 month
+hawaii sales tax calculator	Commercial	720	20	2.75	Video, People also ask, Related searches	1 month
+how much is new jersey sales tax	Informational	720	29	0.83	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+kansas sales tax calculator	Transactional	720	27	1.83	People also ask, Related searches	1 month
+minnesota state sales tax calculator	Transactional	720	29	1.99	People also ask, Related searches	1 month
+oklahoma sales tax calculator	Transactional	720	21	1.62	Video, People also ask, Related searches	1 month
+sales tax calculator arkansas	Transactional	720	23	2.55	Related searches	1 month
+sales tax deduction calculator	Transactional	720	27	4.01	Video, People also ask, Related searches	1 month
+tennessee sales tax calculator	Commercial	720	26	1.81	People also ask, Related searches	1 month
+washington dc sales tax rate	Informational, Transactional	720	15	2.13	AI Overview, Video, People also ask, Related searches	1 month
+what is indiana sales tax	Informational	720	30	0.35	AI Overview, Video, People also ask, Related searches	1 month
+what is the sales tax in nj	Informational	720	29	0.2	AI Overview, Video, People also ask, Related searches	1 month
+zero sales tax states	Informational	720	27	1.1	AI Overview, Video, People also ask	1 month
+alabama sales tax calculator	Transactional	590	26	2.87	People also ask, Related searches	1 month
+austin sales tax rate	Informational	590	21	1.71	AI Overview, Video, People also ask, Related searches	1 month
+how do you add tax	Informational	590	30	2.64	Sitelinks, AI Overview, Reviews, Video, Video carousel, Short videos, People also ask, Discussions and forums, Related searches	1 month
+maryland sales tax calculator	Transactional	590	22	1.94	Sitelinks, People also ask	1 month
+puerto rico tax rate	Informational	590	30	0.91	Sitelinks, AI Overview, Image pack, Video, People also ask, Related searches	1 month
+sales tax calculator ct	Transactional	590	23	2.14	Video, People also ask, Related searches	1 month
+sales tax calculator florida	Transactional	590	29	1.95	AI Overview, Reviews, Related searches	1 month
+sales tax in houston	Informational	590	27	1.73	AI Overview, Video, People also ask, Related searches	1 month
+sales tax rate new jersey	Informational	590	29	1.16	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+vehicle tax calculator texas	Informational	590	28	1	AI Overview, Video, People also ask, Related searches	1 month
+what is va sales tax	Informational	590	23	0.59	AI Overview, People also ask, Related searches	1 month
+houston tx sales tax rate	Informational	480	13	2.25	AI Overview, Video, People also ask, Related searches	1 month
+how much is sales tax in michigan	Informational	480	26	1.28	AI Overview, Video, People also ask, Related searches	1 month
+illinois taxes calculator	Informational, Commercial	480	28	0.92	People also ask, Related searches	1 month
+louisiana sales tax calculator	Transactional	480	25	3.03	Sitelinks, People also ask, Related searches	1 month
+md sales tax calculator	Transactional	480	17	1.94	Sitelinks, Related searches	1 month
+sales tax calculator illinois	Transactional	480	24	2.08	Video, People also ask, Related searches	1 month
+sales tax calculator ohio	Transactional	480	28	2	Video, Related searches	1 month
+sales tax for austin tx	Informational	480	23	1.29	Featured snippet, Video, People also ask, Related searches	1 month
+sales tax for orlando fl	Informational	480	17	0.83	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+sales tax ma	Informational	480	29	1.34	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+sales tax rate denver	Informational	480	25	2.09	AI Overview, Video, People also ask, Related searches	1 month
+sales tax rate houston tx	Informational	480	17	2.25	AI Overview, Video, People also ask, Related searches	1 month
+sales tax reverse calculator	Transactional	480	7	2.86	Video	1 month
+sc sales tax calculator	Transactional	480	21	1.17	People also ask, Related searches	1 month
+what is sales tax in georgia	Informational	480	30	1.11	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+what is sales tax in kentucky	Informational	480	17	0.58	AI Overview, Video, People also ask, Related searches	1 month
+what is sales tax in virginia	Informational	480	28	0.59	AI Overview, Video, People also ask, Related searches	1 month
+what is the sales tax rate in colorado	Informational	480	29	0.94	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+calcul taxes	Commercial	390	29	3.29	Reviews, Video, People also ask, Related searches	1 month
+california sales tax on food	Informational, Transactional	390	30	1.04	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+evaluate the accounting software company xero on sales tax	Informational, Transactional	390	30	29.62	Sitelinks, AI Overview, Video, Video carousel, People also ask, Related searches	1 month
+grocery store calculator	Informational	390	20	1.76	Sitelinks, Video, Video carousel, People also ask, Related searches	1 month
+how much is maryland sales tax	Informational	390	15	1.35	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+maryland state sales tax calculator	Commercial	390	14	1.94	People also ask, Related searches	1 month
+nm sales tax calculator	Commercial	390	22	2.98	People also ask, Related searches	1 month
+sales tax in	Informational	390	5	2.46	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+sales tax rate in washington	Informational	390	25	2.7	AI Overview, Video, People also ask, Related searches	1 month
+sc sales tax rate	Informational, Transactional	390	30	1.79	AI Overview, Video, People also ask, Related searches	1 month
+tax calculator tennessee	Commercial	390	28	0.8	Related searches	1 month
+what is dc sales tax	Informational	390	15	0.08	AI Overview, Video, People also ask, Related searches	1 month
+what is sales tax in connecticut	Informational	390	24	0.49	AI Overview, Video, People also ask, Related searches	1 month
+what is sales tax in indiana	Informational	390	27	0.31	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+calculate arkansas vehicle sales tax	Transactional	320	13	3.54	Video, People also ask, Related searches	1 month
+chicago sales tax calculator	Transactional	320	27	2.18	People also ask, Related searches	1 month
+company tax calculator	Commercial	320	28	2.9	Video, People also ask, Related searches, Ads bottom	1 month
+food tax in california	Informational	320	20	1.01	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+ga sales tax calculator	Transactional	320	22	1.51	People also ask, Related searches	1 month
+how much is indiana sales tax	Informational	320	19	1.26	AI Overview, Video, People also ask, Related searches	1 month
+me sales tax	Informational	320	26	0.88	AI Overview, Video, Video carousel, People also ask, Related searches	1 month
+mississippi tax calculator	Informational	320	27	1.02	AI Overview, People also ask, Related searches	1 month
+new mexico tax calculator	Informational, Commercial	320	25	1.18	Related searches	1 month
+north carolina sales tax rates	Informational, Transactional	320	27	3.01	AI Overview, Video, People also ask, Related searches	1 month
+puerto rico sales tax rate	Informational	320	19	1.75	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+reverse tax calc	Commercial	320	13	7.19	Reviews, Video, Related searches	1 month
+sacramento sales tax rate 2025	Informational	320	16	2.55	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+sales tax calculator utah	Commercial	320	24	1.97	Related searches	1 month
+sales tax code by zip code	Informational	320	29	3.02	AI Overview, People also ask, Related searches	1 month
+sales tax for costa mesa ca	Informational	320	6	1.12	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+sales tax in dallas texas	Informational	320	16	1.4	Sitelinks, AI Overview, Video, People also ask, Related searches	1 month
+sales tax on cars in tn calculator	Transactional	320	14	2.44	Video, People also ask, Related searches	1 month
+sales tax rate connecticut	Informational	320	19	1.12	AI Overview, Video, People also ask, Related searches	1 month
+sales tax rate for san antonio	Informational	320	23	0.81	AI Overview, Video, People also ask, Related searches	1 month
+sales tax vehicle calculator	Transactional	320	19	1.01	Video, People also ask, Related searches	1 month
+south carolina sales taxes	Informational	320	20	3.63	AI Overview, Video, People also ask, Related searches	1 month
+tax on 2000	Informational	320	28	7.06	AI Overview, Reviews, Video, People also ask, Related searches	1 month

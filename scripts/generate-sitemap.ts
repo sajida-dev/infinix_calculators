@@ -12,6 +12,7 @@ const generateSitemap = () => {
   const staticPages = [
     { loc: "", lastmod: new Date().toISOString(), changefreq: "daily", priority: "1.0" },
     { loc: "/calculators", lastmod: new Date().toISOString(), changefreq: "daily", priority: "0.9" },
+    { loc: "/calculators/topsoil", lastmod: new Date().toISOString(), changefreq: "daily", priority: "0.9" },
     { loc: "/blog", lastmod: new Date().toISOString(), changefreq: "weekly", priority: "0.8" },
     { loc: "/about", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.5" },
     { loc: "/contact", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.5" },

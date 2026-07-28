@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geistSans = { variable: "--font-geist-sans" };
+const geistMono = { variable: "--font-geist-mono" };
 
 import { defaultMetadata, viewport as defaultViewport, themeColor as defaultThemeColor } from "./metadata";
 export const viewport = defaultViewport;
@@ -21,6 +13,31 @@ export const metadata = defaultMetadata;
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import JsonLd from "./components/JsonLd";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Infinix Calculators",
+  "url": "https://infinixcalculator.com",
+  "logo": "https://infinixcalculator.com/infinix-calculator-brand-logo.png",
+  "description": "Free, professional online calculators for finance, construction, health, math, and daily productivity.",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Infinix Calculators",
+  "url": "https://infinixcalculator.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://infinixcalculator.com/calculators?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -35,6 +52,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <JsonLd data={organizationSchema} />
+        <JsonLd data={websiteSchema} />
         {/* Native script for Google AdSense to prevent data-nscript warning */}
         <script
           async
@@ -58,7 +77,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-full flex flex-col pb-20" suppressHydrationWarning>
+      <body className="min-h-full bg-white flex flex-col pb-20" suppressHydrationWarning>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 left-0 w-full bg-primary text-white text-center py-2">Skip to main content</a>
         <Header />
         <main id="main-content" className="flex-1">{children}</main>

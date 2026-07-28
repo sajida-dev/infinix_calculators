@@ -586,29 +586,22 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Square Fee Calculator",
     category: "financial",
     categoryLabel: "Financial",
-    seoTitle: "Square Fee Calculator 2026 - Processing & Reverse Invoice Fees",
-    metaDescription: "Free Square fee calculator for tapped, online, and keyed credit card payments. Calculate net payout or reverse gross-up invoice totals instantly.",
+    seoTitle: "Square Fee Calculator (2026) | Square Processing Fee & Payout Estimator",
+    metaDescription: "Use our free Square fee calculator and square processing fee calculator to compute exact credit card processing fees, net payouts, and target invoice totals.",
     keywords: [
       "square fee calculator",
-      "fee calculator square",
-      "calculate square fees",
-      "square up fee calculator",
       "square calculator fee",
-      "square fee calculator 2026",
       "square processing fee calculator",
+      "square fees calculator",
+      "calculate square fees",
+      "fee calculator square",
+      "square up fee calculator",
       "square credit card fee calculator",
-      "square invoice fee calculator",
-      "square transaction fee calculator",
       "free square fee calculator",
-      "how to calculate square fees",
       "reverse square fee calculator",
-      "square card reader fee calculator",
-      "square manual entry fee calculator",
-      "square payment fees calculator",
-      "square surcharge fee calculator",
-      "calculate square processing fees",
-      "how does square calculate fees",
-      "square reverse fee calculator"
+      "how to calculate square fees",
+      "square invoice fee calculator",
+      "square payment fee calculator"
     ],
     hook: "Calculate Card Processing Fees & Target Invoices.",
     description: "Determine Square merchant cuts for tapped, swiped, keyed, and online payments. Compute exact gross invoice billing to receive your full target amount.",
@@ -618,12 +611,28 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     example: "To receive exactly $100 via online invoicing (2.9% + $0.30), you must invoice $103.30.",
     faqs: [
       {
+        question: "Are Square processing fees worth it for small business owners?",
+        answer: "For new, mobile, or low-to-medium volume businesses ($0 to $10,000/month), Square's no-monthly-fee, flat-rate model is highly cost-effective and convenient. However, for high-volume merchants processing over $15,000 to $20,000 monthly, switching to traditional Interchange-Plus merchant accounts often yields lower effective processing rates."
+      },
+      {
         question: "What is Square's standard processing fee rate?",
-        answer: "Square charges 2.6% + $0.10 for in-person tapped, swiped, or chip payments, 2.9% + $0.30 for online store checkouts and invoices, and 3.5% + $0.15 for manually keyed transactions."
+        answer: "Square charges 2.6% + $0.10 for in-person tapped, swiped, or chip payments, 2.9% + $0.30 for online store checkouts, 3.3% + $0.30 for Square Invoices, and 3.5% + $0.15 for manually keyed transactions."
       },
       {
         question: "How do I calculate how much to invoice so I get my exact desired net amount?",
         answer: "Use the reverse gross-up formula: Invoice Total = (Desired Net + Fixed Fee) ÷ (1 - Percentage Rate). For example, to net $1,000 on an online invoice (2.9% + $0.30), calculate ($1,000 + $0.30) ÷ (1 - 0.029) = $1,030.18."
+      },
+      {
+        question: "Is it legal to pass Square credit card processing fees to customers?",
+        answer: "In most US states, surcharging credit card transactions is legal provided you do not surcharge debit cards, cap the surcharge at your actual processing cost (or a max of 3%), and provide clear advance signage. Note that state laws in Massachusetts, Connecticut, and Puerto Rico restrict or ban surcharging."
+      },
+      {
+        question: "What is the difference between a surcharge and a cash discount?",
+        answer: "A surcharge adds an extra percentage to credit card transactions at checkout. A cash discount sets regular prices for credit card users and offers a discount for cash or check payments. Cash discounts are legal in all 50 US states and generally encounter less customer resistance."
+      },
+      {
+        question: "Are Square credit card processing fees tax-deductible?",
+        answer: "Yes! Processing fees paid to Square (and other payment processors) are considered ordinary and necessary business expenses and are 100% tax-deductible on IRS Schedule C or corporate tax returns."
       },
       {
         question: "Does Square calculate fees on sales tax and tips?",
@@ -634,16 +643,13 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
         answer: "Form 1099-K reports gross sales volume before any processor fees are subtracted. To find your net income for tax filing, deduct total annual Square transaction fees as a business expense on IRS Schedule C."
       },
       {
-        question: "Why are my Square transaction fee calculations off by a few cents?",
-        answer: "Discrepancies usually occur due to standard transaction-level rounding, using the swiped rate for a manually typed card number, or international card cross-border surcharges (+1%)."
-      },
-      {
-        question: "Are Square processing fees lower for non-profits?",
-        answer: "Square maintains standard processing rates for all accounts regardless of non-profit status. However, non-profit organizations processing large annual volumes can contact Square sales to request custom enterprise rate quotes."
+        question: "Are there zero-fee payment processor alternatives to Square?",
+        answer: "Zero-fee processing models rely on automatic cash discounting or compliant dual-pricing POS hardware that adds customer-facing technology fees at checkout, offsetting processing costs entirely for the merchant."
       }
     ],
     commonMistakes: [
       "Multiplying desired net by 1.029, which leaves you short because Square deducts fees from the gross total amount.",
+      "Attempting to apply surcharges to debit card or prepaid card payments (illegal under card network rules).",
       "Forgetting that fees apply to sales tax and customer tip amounts in addition to the item price."
     ],
     useCases: [
@@ -653,35 +659,40 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     ],
     tips: [
       "Offering a cash or ACH transfer discount is legal across the US and helps bypass credit card merchant fees.",
-      "Use the reverse gross-up invoice formula rather than multiplying by 1.029 to avoid undercharging clients."
+      "Encourage contactless tap or chip payments instead of manual card entry to lower your rate from 3.5% + $0.15 down to 2.6% + $0.10."
     ],
     inputs: [
       { id: "amount", label: "Transaction Amount ($)", type: "number", defaultValue: 100, unit: "$" },
       {
         id: "feeType", label: "Payment Method / Rate", type: "select", defaultValue: "online", options: [
-          { value: "swipe", label: "Tapped/Swiped (2.6% + $0.10)" },
-          { value: "online", label: "Online Invoice / Store (2.9% + $0.30)" },
-          { value: "keyed", label: "Keyed-in Manually (3.5% + $0.15)" }
+          { value: "swipe", label: "In-Person Chip / Tap / Swipe (2.6% + $0.10)" },
+          { value: "online", label: "Online Store / E-Commerce (2.9% + $0.30)" },
+          { value: "invoice", label: "Square Invoice (3.3% + $0.30)" },
+          { value: "keyed", label: "Keyed-In / Card-on-File (3.5% + $0.15)" },
+          { value: "virtual", label: "Virtual Terminal (3.5% + $0.15)" }
         ]
       }
     ],
     calculate: (inputs) => {
       const amt = Number(inputs.amount || 0);
-      const type = inputs.feeType || "online";
+      const type = String(inputs.feeType || "online");
 
       let rate = 0.029;
       let fixed = 0.30;
       if (type === "swipe") { rate = 0.026; fixed = 0.10; }
-      else if (type === "keyed") { rate = 0.035; fixed = 0.15; }
+      else if (type === "invoice") { rate = 0.033; fixed = 0.30; }
+      else if (type === "keyed" || type === "virtual") { rate = 0.035; fixed = 0.15; }
 
       const squareCut = (amt * rate) + fixed;
       const net = amt - squareCut;
+      const effectiveRate = amt > 0 ? (squareCut / amt) * 100 : 0;
       const chargeToKeepAmt = (amt + fixed) / (1 - rate);
 
       return {
-        squareFee: { value: squareCut.toFixed(2), label: "Square Transaction Fee", unit: "$" },
-        netPayout: { value: net.toFixed(2), label: "Net Cash Payout Received", unit: "$" },
-        billingRequired: { value: chargeToKeepAmt.toFixed(2), label: "Invoice Total to Receive Exact Amount", unit: "$" }
+        squareFee: { value: squareCut.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }), label: "Square Transaction Fee", unit: "$" },
+        netPayout: { value: net.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }), label: "Net Cash Payout Received", unit: "$" },
+        effectiveRate: { value: effectiveRate.toFixed(2), label: "Effective Processing Fee Rate", unit: "%" },
+        billingRequired: { value: chargeToKeepAmt.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }), label: "Invoice Total to Receive Exact Amount", unit: "$" }
       };
     }
   },
@@ -692,8 +703,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Avalara Sales Tax Calculator",
     category: "tax",
     categoryLabel: "Tax & Payroll",
-    seoTitle: "Avalara Sales Tax Calculator - ZIP Code Rate Lookup",
-    metaDescription: "Estimate checkout sales taxes. Enter a ZIP code (like San Francisco 94105) to automatically load combined state, county, and local tax rates.",
+    seoTitle: "Avalara Sales Tax Calculator 2026 | Free ZIP Code Sales Tax Lookup",
+    metaDescription: "Free Avalara sales tax calculator & ZIP code lookup. Automatically compute state, county, and local sales tax rates for 2026 checkout transactions instantly.",
     keywords: ["avalara sales tax calculator", "avalara tax calculator", "avalara 94105 sales tax rate", "sales tax by zip code", "california sales tax calculator"],
     hook: "Calculate Checkout Sales Tax Rates.",
     description: "Determine sales tax amounts and gross totals based on base prices and state percentages. Enter a ZIP code to load local combined rates automatically.",

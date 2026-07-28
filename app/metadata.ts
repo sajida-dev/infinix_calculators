@@ -3,8 +3,8 @@
 
 import type { Metadata } from "next";
 
-// Base URL for canonical links – set via environment variable or fallback.
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+// Base URL for canonical links – set via environment variable or fallback to production domain.
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://infinixcalculator.com";
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -40,6 +40,11 @@ export const defaultMetadata: Metadata = {
     "cbm calculator",
     "affirm calculator",
     "affirm payment calculator",
+    "square fee calculator",
+    "square calculator fee",
+    "square processing fee calculator",
+    "square fees calculator",
+    "calculate square fees",
     "can you pay affirm with a credit card",
     "can i pay affirm with a credit card",
     "does affirm report to credit bureaus",
@@ -78,6 +83,13 @@ export const defaultMetadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   authors: [{ name: "Infinix Development Team" }],
   creator: "Infinix",
@@ -93,6 +105,12 @@ export const defaultMetadata: Metadata = {
   manifest: "/site.webmanifest",
   verification: {
     google: "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
+    other: {
+      "msvalidate.01": "YOUR_BING_SITE_VERIFICATION_CODE",
+    },
+  },
+  other: {
+    "bingbot": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   },
   openGraph: {
     type: "website",
@@ -116,6 +134,7 @@ export const defaultMetadata: Metadata = {
     creator: "@Infinix",
   },
   alternates: {
+    canonical: "/",
     languages: {
       en: "/",
     },
