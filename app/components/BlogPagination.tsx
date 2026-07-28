@@ -39,32 +39,36 @@ export default function BlogPagination({
         <span className="text-slate-900 font-bold">{totalPages}</span>
       </span>
 
-      <nav className="inline-flex items-center gap-1.5" aria-label="Blog Pagination">
-        {/* Previous Button */}
+      <nav className="inline-flex items-center gap-1.5" aria-label="Pagination Navigation">
+        {/* Previous Button (Crawling anchor link with rel="prev") */}
         {currentPage > 1 ? (
           <Link
             href={createPageUrl(currentPage - 1)}
-            className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 hover:text-primary transition-colors"
+            rel="prev"
+            aria-label="Go to previous page"
+            className="px-3.5 py-2 rounded-xl border border-slate-200/90 text-xs font-bold text-slate-700 hover:bg-slate-100 hover:text-primary transition-colors flex items-center gap-1 shadow-xs"
           >
             ← Prev
           </Link>
         ) : (
-          <span className="px-3 py-1.5 rounded-lg border border-slate-100 text-xs font-bold text-slate-300 cursor-not-allowed">
+          <span className="px-3.5 py-2 rounded-xl border border-slate-100 text-xs font-bold text-slate-300 cursor-not-allowed">
             ← Prev
           </span>
         )}
 
-        {/* Numeric Page Buttons */}
+        {/* Numeric Page Buttons (Crawling anchor links) */}
         {pages.map((p) => {
           const isActive = p === currentPage;
           return (
             <Link
               key={p}
               href={createPageUrl(p)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              aria-current={isActive ? "page" : undefined}
+              aria-label={`Go to page ${p}`}
+              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all shadow-xs ${
                 isActive
-                  ? "bg-primary text-white shadow-xs"
-                  : "border border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-primary"
+                  ? "bg-primary text-white shadow-sm ring-2 ring-primary/20"
+                  : "border border-slate-200/90 text-slate-700 hover:bg-slate-100 hover:text-primary"
               }`}
             >
               {p}
@@ -72,16 +76,18 @@ export default function BlogPagination({
           );
         })}
 
-        {/* Next Button */}
+        {/* Next Button (Crawling anchor link with rel="next") */}
         {currentPage < totalPages ? (
           <Link
             href={createPageUrl(currentPage + 1)}
-            className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 hover:text-primary transition-colors"
+            rel="next"
+            aria-label="Go to next page"
+            className="px-3.5 py-2 rounded-xl border border-slate-200/90 text-xs font-bold text-slate-700 hover:bg-slate-100 hover:text-primary transition-colors flex items-center gap-1 shadow-xs"
           >
             Next →
           </Link>
         ) : (
-          <span className="px-3 py-1.5 rounded-lg border border-slate-100 text-xs font-bold text-slate-300 cursor-not-allowed">
+          <span className="px-3.5 py-2 rounded-xl border border-slate-100 text-xs font-bold text-slate-300 cursor-not-allowed">
             Next →
           </span>
         )}

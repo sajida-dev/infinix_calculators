@@ -6,49 +6,6 @@ import BlogCard from "../components/BlogCard";
 import BlogFilterBar from "../components/BlogFilterBar";
 import BlogPagination from "../components/BlogPagination";
 
-export const metadata: Metadata = {
-  title: "Landscape & Calculation Guides Blog - Infinix Calculator",
-  description: "Read detailed guides, mathematical breakdowns, material estimating instructions, and calculators instructions from our landscape and finance experts.",
-  alternates: {
-    canonical: "https://infinixcalculator.com/blog",
-  },
-  keywords: [
-    "infinix calculator",
-    "infinix calculators",
-    "calculators",
-    "topsoil calculator",
-    "finance calculator",
-    "construction calculator",
-    "health calculator",
-    "unit converter",
-    "online estimator",
-    "online calculators",
-    "free calculators",
-    "calculator directory",
-    "business calculators",
-    "finance calculators",
-    "construction calculators",
-    "health calculators",
-    "math calculators",
-    "unit converters",
-    "percentage calculator",
-    "loan calculator",
-    "mortgage calculator",
-    "topsoil calculator",
-    "top soil calculator",
-    "concrete calculator",
-    "cbm calculator",
-    "affirm calculator",
-    "square fee calculator",
-    "square processing fee calculator",
-    "productivity calculator",
-    "cost calculators",
-    "estimators",
-    "calculation tools",
-    "lsat score calculator"
-  ],
-};
-
 interface BlogPageProps {
   searchParams: Promise<{
     q?: string;
@@ -57,6 +14,79 @@ interface BlogPageProps {
     sort?: string;
     page?: string;
   }>;
+}
+
+export async function generateMetadata({ searchParams }: BlogPageProps): Promise<Metadata> {
+  const params = await searchParams;
+  const page = parseInt(params.page || "1", 10);
+  const category = params.category;
+  const q = params.q;
+
+  const baseUrl = "https://infinixcalculator.com/blog";
+  const urlParams = new URLSearchParams();
+
+  if (category && category !== "All") urlParams.set("category", category);
+  if (q) urlParams.set("q", q);
+  if (page > 1) urlParams.set("page", page.toString());
+
+  const canonicalUrl = urlParams.toString() ? `${baseUrl}?${urlParams.toString()}` : baseUrl;
+
+  const pageTitle = page > 1
+    ? `Landscape & Finance Guides (Page ${page}) | Infinix Calculators`
+    : "Landscape & Calculation Guides Blog - Infinix Calculator";
+
+  return {
+    title: pageTitle,
+    description: "Read detailed guides, mathematical breakdowns, material estimating instructions, and calculator advice from our landscape and finance experts.",
+    keywords: [
+      "infinix calculator",
+      "infinix calculators",
+      "calculators",
+      "topsoil calculator",
+      "finance calculator",
+      "construction calculator",
+      "health calculator",
+      "unit converter",
+      "online estimator",
+      "online calculators",
+      "free calculators",
+      "calculator directory",
+      "business calculators",
+      "finance calculators",
+      "construction calculators",
+      "health calculators",
+      "math calculators",
+      "unit converters",
+      "percentage calculator",
+      "loan calculator",
+      "mortgage calculator",
+      "topsoil calculator",
+      "top soil calculator",
+      "concrete calculator",
+      "cbm calculator",
+      "affirm calculator",
+      "square fee calculator",
+      "square processing fee calculator",
+      "productivity calculator",
+      "cost calculators",
+      "estimators",
+      "calculation tools",
+      "lsat score calculator"
+    ],
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+  };
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
