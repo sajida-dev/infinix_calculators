@@ -35,6 +35,10 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
     ? `Landscape & Finance Guides (Page ${page}) | Infinix Calculators`
     : "Landscape & Calculation Guides Blog - Infinix Calculator";
 
+  // Google Search Central directive: Block search queries (q) and alternative sort orders (sort != newest) from indexation to prevent duplicate content bloat
+  const hasSearchOrSortFilter = Boolean(q) || (params.sort && params.sort !== "newest");
+  const shouldIndex = !hasSearchOrSortFilter;
+
   return {
     title: pageTitle,
     description: "Read detailed guides, mathematical breakdowns, material estimating instructions, and calculator advice from our landscape and finance experts.",
@@ -77,10 +81,10 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
       canonical: canonicalUrl,
     },
     robots: {
-      index: true,
+      index: shouldIndex,
       follow: true,
       googleBot: {
-        index: true,
+        index: shouldIndex,
         follow: true,
         "max-image-preview": "large",
         "max-snippet": -1,
