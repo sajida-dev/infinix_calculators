@@ -242,8 +242,77 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
         answer: "Most BNPL providers, including Affirm, perform an initial soft credit pull that does not impact your credit score. While Affirm does not offer zero-check loans, instant approval is based on your income, checking account history, and existing Affirm repayment track record rather than hard credit scores alone. Avoid high-risk unregulated payday loans by planning your repayment terms with our <a href=\"/calculators/affirm\">Affirm Installment Calculator</a> and reading our strategy on <a href=\"/blog/affirm-debt-trap-how-to-pay-off-bnpl\">how to escape BNPL debt traps</a>."
       }
     ],
-    inputs: [],
-    calculate: (inputs) => { return {}; }
+    inputs: [
+      { id: "amount", label: "Purchase Amount ($)", type: "number", defaultValue: 1000, unit: "$" },
+      { id: "downPayment", label: "Down Payment ($)", type: "number", defaultValue: 0, unit: "$" },
+      {
+        id: "term",
+        label: "Loan Term / Payment Plan",
+        type: "select",
+        defaultValue: "12",
+        options: [
+          { value: "4", label: "Pay in 4 (4 Biweekly Payments - 0% APR)" },
+          { value: "3", label: "3 Months" },
+          { value: "6", label: "6 Months" },
+          { value: "12", label: "12 Months" },
+          { value: "18", label: "18 Months" },
+          { value: "24", label: "24 Months" },
+          { value: "36", label: "36 Months" }
+        ]
+      },
+      { id: "apr", label: "Interest Rate (% APR)", type: "number", defaultValue: 15, unit: "%" }
+    ],
+    calculate: (inputs): Record<string, { value: string | number; label: string; unit?: string }> => {
+      const amount = Math.max(0, Number(inputs.amount) || 0);
+      const downPayment = Math.max(0, Number(inputs.downPayment) || 0);
+      const termVal = String(inputs.term || "12");
+      const apr = Math.max(0, Number(inputs.apr) || 0);
+
+      const netLoan = Math.max(0, amount - downPayment);
+
+      if (termVal === "4") {
+        const biweeklyPayment = netLoan / 4;
+        const totalPaid = netLoan + downPayment;
+        return {
+          monthlyPayment: { label: "Payment Amount (Every 2 Weeks)", value: `$${biweeklyPayment.toFixed(2)}`, unit: "biweekly" },
+          totalInterest: { label: "Total Interest Cost", value: "$0.00 (0% APR)", unit: "$" },
+          totalCost: { label: "Total Cost of Order", value: `$${totalPaid.toFixed(2)}`, unit: "$" },
+          creditCardSavings: { label: "Credit Bureau Reporting", value: "Not Reported (Soft Pull)", unit: "" }
+        };
+      }
+
+      const months = parseInt(termVal, 10) || 12;
+
+      if (apr === 0) {
+        const monthlyPayment = netLoan / months;
+        const totalPaid = netLoan + downPayment;
+        return {
+          monthlyPayment: { label: "Estimated Monthly Payment", value: `$${monthlyPayment.toFixed(2)}`, unit: "/ mo" },
+          totalInterest: { label: "Total Interest Paid", value: "$0.00 (0% APR)", unit: "$" },
+          totalCost: { label: "Total Cost of Order", value: `$${totalPaid.toFixed(2)}`, unit: "$" },
+          creditCardSavings: { label: "Credit Bureau Reporting", value: "Reported to Experian/TransUnion", unit: "" }
+        };
+      }
+
+      const monthlyRate = apr / 100 / 12;
+      const monthlyPayment = (netLoan * (monthlyRate * Math.pow(1 + monthlyRate, months))) / (Math.pow(1 + monthlyRate, months) - 1);
+      const totalLoanPayments = monthlyPayment * months;
+      const totalInterest = totalLoanPayments - netLoan;
+      const totalCost = totalLoanPayments + downPayment;
+
+      // Credit card comparison (24.99% compounding APR)
+      const ccRate = 0.2499 / 12;
+      const ccMonthly = (netLoan * (ccRate * Math.pow(1 + ccRate, months))) / (Math.pow(1 + ccRate, months) - 1);
+      const ccTotalInterest = (ccMonthly * months) - netLoan;
+      const savingsVsCC = Math.max(0, ccTotalInterest - totalInterest);
+
+      return {
+        monthlyPayment: { label: "Estimated Monthly Payment", value: `$${monthlyPayment.toFixed(2)}`, unit: "/ mo" },
+        totalInterest: { label: "Total Simple Interest", value: `$${totalInterest.toFixed(2)}`, unit: "$" },
+        totalCost: { label: "Total Amount Paid", value: `$${totalCost.toFixed(2)}`, unit: "$" },
+        creditCardSavings: { label: "Savings vs 24.99% Credit Card", value: `$${savingsVsCC.toFixed(2)}`, unit: "saved" }
+      };
+    }
   },
 
   // Pro Rata
@@ -7352,13 +7421,15 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     ],
     inputs: [
       { id: "numA", label: "First Number (A)", type: "number", defaultValue: 100 },
-      { id: "op", label: "Operation", type: "select", defaultValue: "+", options: [
-        { value: "+", label: "Addition (+)" },
-        { value: "-", label: "Subtraction (-)" },
-        { value: "*", label: "Multiplication (×)" },
-        { value: "/", label: "Division (÷)" },
-        { value: "%", label: "Percentage (% of A)" }
-      ] },
+      {
+        id: "op", label: "Operation", type: "select", defaultValue: "+", options: [
+          { value: "+", label: "Addition (+)" },
+          { value: "-", label: "Subtraction (-)" },
+          { value: "*", label: "Multiplication (×)" },
+          { value: "/", label: "Division (÷)" },
+          { value: "%", label: "Percentage (% of A)" }
+        ]
+      },
       { id: "numB", label: "Second Number (B)", type: "number", defaultValue: 25 }
     ],
     calculate: (inputs) => {

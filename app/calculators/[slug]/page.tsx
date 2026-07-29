@@ -117,7 +117,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
   } : null;
 
   return (
-    <div className="bg-slate-50 min-h-screen py-8 sm:py-12">
+    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen py-8 sm:py-12 transition-colors">
       {/* Schema Injection */}
       <script
         type="application/ld+json"
@@ -142,7 +142,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Trail */}
-        <nav className="flex mb-8 text-xs font-semibold text-slate-400" aria-label="Breadcrumb">
+        <nav className="flex mb-8 text-xs font-semibold text-slate-400 dark:text-slate-500" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1.5 md:space-x-2">
             <li>
               <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -151,7 +151,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
               <span>/</span>
               <Link href="/calculators" className="hover:text-primary transition-colors">Calculators</Link>
             </li>
-            <li className="flex items-center gap-1.5 text-slate-600 font-bold" aria-current="page">
+            <li className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300 font-bold" aria-current="page">
               <span>/</span>
               <span>{calc.name}</span>
             </li>
@@ -160,13 +160,13 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
         {/* Page Header */}
         <header className="mb-10 max-w-4xl">
-          <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary mb-3">
+          <span className="inline-flex items-center rounded-full bg-primary/10 dark:bg-primary/20 px-3 py-1 text-xs font-bold text-primary dark:text-sky-400 mb-3">
             {calc.categoryLabel}
           </span>
-          <h1 className="text-3xl font-extrabold text-slate-900 sm:text-5xl tracking-tight">
+          <h1 className="text-3xl font-extrabold text-slate-900 dark:text-slate-100 sm:text-5xl tracking-tight">
             {calc.name}
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
             {calc.metaDescription}
           </p>
         </header>
@@ -182,17 +182,17 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
             </div>
 
             {/* In-depth content block (Server Rendered) */}
-            <section className="p-6 sm:p-10 space-y-8  text-slate-600 leading-relaxed text-sm sm:text-base">
+            <section className="p-6 sm:p-10 space-y-8 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
 
               {/* Formula & Explanation */}
               <div className="space-y-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
                   How to Calculate: Formula & Steps
                 </h2>
                 <p>{calc.formulaDescription}</p>
-                <div className="bg-slate-50 border border-slate-100 p-5 rounded-2xl space-y-2">
-                  <span className="block font-bold text-slate-800 text-xs uppercase tracking-wider">Formula Used:</span>
-                  <code className="block text-primary font-mono text-xs sm:text-sm">
+                <div className="bg-white dark:bg-[#22242A] border border-slate-100 dark:border-[#4D5156] p-5 rounded-2xl space-y-2">
+                  <span className="block font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-wider">Formula Used:</span>
+                  <code className="block text-primary dark:text-sky-400 font-mono text-xs sm:text-sm">
                     {calc.formula}
                   </code>
                 </div>
@@ -200,18 +200,18 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
               {/* Step-by-Step Example */}
               <div className="space-y-4">
-                <h3 className="text-lg font-bold text-slate-900">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                   Step-by-Step Calculation Example
                 </h3>
                 <p>{calc.example}</p>
               </div>
 
-              <hr className="border-slate-100" />
+              <hr className="border-slate-100 dark:border-[#4D5156]" />
 
               {/* Common Mistakes */}
               {calc.commonMistakes.length > 0 && (
                 <div className="space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
                     Common Mistakes to Avoid
                   </h2>
                   <ul className="list-disc list-inside space-y-2 pl-2">
@@ -222,12 +222,12 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                 </div>
               )}
 
-              <hr className="border-slate-100" />
+              <hr className="border-slate-100 dark:border-[#4D5156]" />
 
               {/* Use Cases */}
               {calc.useCases.length > 0 && (
                 <div className="space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
                     Practical Use Cases
                   </h2>
                   <ul className="list-disc list-inside space-y-2 pl-2">
@@ -240,11 +240,11 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
               {/* Professional Tips */}
               {calc.tips.length > 0 && (
-                <div className="bg-primary/5 rounded-2xl border border-primary/10 p-6 space-y-3">
-                  <h4 className="text-sm font-bold text-slate-800 uppercase tracking-wider">
+                <div className="bg-primary/5 dark:bg-[#22242A] rounded-2xl border border-primary/10 dark:border-[#4D5156] p-6 space-y-3">
+                  <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">
                     Expert Tips
                   </h4>
-                  <ul className="list-disc list-inside space-y-1.5 pl-1 text-slate-700">
+                  <ul className="list-disc list-inside space-y-1.5 pl-1 text-slate-700 dark:text-slate-300">
                     {calc.tips.map((tip, idx) => (
                       <li key={idx}>{tip}</li>
                     ))}
@@ -254,17 +254,17 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
               {/* Custom Premium SEO Article Content */}
               {slug === "avalara-sales-tax" && (
-                <div className="pt-6 border-t border-slate-200/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
                   <AvalaraSeoContent />
                 </div>
               )}
               {slug === "concrete" && (
-                <div className="pt-6 border-t border-slate-200/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
                   <ConcreteSeoContent />
                 </div>
               )}
               {slug === "roof" && (
-                <div className="pt-6 border-t border-slate-200/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
                   <RoofSeoContent />
                 </div>
               )}
@@ -278,16 +278,13 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
             <CategoryClusterNav category={calc.categoryLabel} currentSlug={slug} />
           </div>
 
-
-
           {/* Sidebar Area (1/4 width) */}
           <div className="space-y-6">
 
-
             {/* You May Like - Flat list of related articles (No outer card wrapper) */}
             {supportingBlogs.length > 0 && (
-              <div className="pb-6 border-b border-slate-200/80">
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">You May Like</h3>
+              <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-5">You May Like</h3>
                 <div className="space-y-5">
                   {supportingBlogs.map((rel) => (
                     <Link
@@ -295,7 +292,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                       href={`/blog/${rel.slug}`}
                       className="group flex gap-4 hover:text-primary transition-colors"
                     >
-                      <div className="relative w-16 h-16 bg-slate-100 rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50">
+                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-[#191a1d] rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-[#4D5156]/50">
                         <Image
                           src={rel.image}
                           alt={rel.title}
@@ -305,8 +302,8 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="block text-[9px] font-bold text-primary uppercase tracking-wider">{rel.category}</span>
-                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 leading-snug group-hover:text-primary transition-colors mt-1 line-clamp-2">
+                        <span className="block text-[9px] font-bold text-primary dark:text-sky-400 uppercase tracking-wider">{rel.category}</span>
+                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug group-hover:text-primary transition-colors mt-1 line-clamp-2">
                           {rel.title}
                         </h4>
                       </div>
@@ -316,51 +313,29 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
               </div>
             )}
 
-
-
-            {/* Popular Topics / Calculators (No card bg/border) */}
-            {/* <div className="pb-6 border-b border-slate-200/80">
-              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Popular Tools</h3>
-              <ul className="space-y-3.5">
-                {otherCalculators.map((calc) => (
-                  <li key={calc.name}>
-                    <Link
-                      href={calc.href}
-                      className="group ml-5 flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-600 hover:text-primary transition-colors py-0.5"
-                    >
-                      <span>{calc.name}</span>
-                      <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div> */}
-
             {/* Internal Categories Directory Links */}
-            <div className="pb-6 border-b border-slate-200/80">
-              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider pb-3 border-b border-slate-100">
+            <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-[#4D5156]">
                 Categories
               </h3>
               <ul className="ml-5 space-y-2">
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
                     Financial Calculators
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
                     Tax & Payroll Calculators
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
                     Construction & Materials
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
                     Health & Fitness Tools
                   </Link>
                 </li>
@@ -368,7 +343,6 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
             </div>
 
           </div>
-
 
         </div>
 

@@ -47,22 +47,22 @@ export default function Home() {
   const latestArticles = Object.values(blogData).slice(0, 3);
 
   return (
-    <div className="bg-slate-50 text-slate-900 min-h-screen">
+    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen transition-colors">
       {/* 1. SaaS Hero Section */}
-      <section className="relative bg-white border-b border-slate-200 overflow-hidden py-15 sm:py-28">
+      <section className="relative bg-white dark:bg-[#22242A] border-b border-slate-200 dark:border-[#4D5156] overflow-hidden py-15 sm:py-28 transition-colors">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl leading-[1.1]">
+            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl leading-[1.1]">
               Professional Calculators Built for{" "}
               <span className="text-primary relative inline-block">
                 Exact Decisions
                 <span className="absolute bottom-2 left-0 w-full h-1 bg-primary/20 rounded-full" />
               </span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
+            <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               Run business financial models, estimate construction materials, and assess health metrics instantly. No registration, no cookies, just pure calculations.
             </p>
 
@@ -75,18 +75,18 @@ export default function Home() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="mt-12 pt-8 border-t border-slate-100 grid grid-cols-3 gap-y-4 max-w-2xl mx-auto text-center">
+            <div className="mt-12 pt-8 border-t border-slate-100 dark:border-[#4D5156] grid grid-cols-3 gap-y-4 max-w-2xl mx-auto text-center">
               <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-slate-900">30+</span>
-                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1 block">Precision Tools</span>
+                <span className="block text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">30+</span>
+                <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider mt-1 block">Precision Tools</span>
               </div>
-              <div className="border-x border-slate-100">
+              <div className="border-x border-slate-100 dark:border-[#4D5156]">
                 <span className="block text-2xl sm:text-3xl font-extrabold text-primary">Instant</span>
-                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1 block">Results On-Screen</span>
+                <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider mt-1 block">Results On-Screen</span>
               </div>
               <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-slate-900">100%</span>
-                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1 block">AdSense Ready</span>
+                <span className="block text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">100%</span>
+                <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider mt-1 block">AdSense Ready</span>
               </div>
             </div>
 
@@ -95,16 +95,16 @@ export default function Home() {
       </section>
 
       {/* 1.5. Featured Topsoil Calculator Showcase */}
-      <section className="py-12 sm:py-16 bg-white border-b border-slate-200">
+      <section className="py-12 sm:py-16 bg-white dark:bg-[#22242A] border-b border-slate-200 dark:border-[#4D5156] transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-10">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary mb-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 dark:bg-primary/20 text-primary dark:text-sky-400 mb-3">
               Featured Tool
             </span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
               Topsoil Calculator – Our Most Popular Tool
             </h2>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-4 text-slate-600 dark:text-slate-300">
               Planning a garden bed, lawn topdressing, or landscaping project? Quickly calculate the exact volume of soil, mulch, or compost you need, in yards, cubic feet, or tons.
             </p>
           </div>
@@ -115,13 +115,13 @@ export default function Home() {
       </section>
 
       {/* 2. Structured Directories categories block (Pinterest-style listing directly on Homepage) */}
-      <section className="py-16 sm:py-24 bg-slate-50">
+      <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#191a1d] transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          <div className="mb-12 border-b border-slate-200 pb-4 flex items-end justify-between">
+          <div className="mb-12 border-b border-slate-200 dark:border-[#4D5156] pb-4 flex items-end justify-between">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">Browse Calculator Topics</h2>
-              <p className="text-slate-500 mt-2 text-xs sm:text-sm">
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Browse Calculator Topics</h2>
+              <p className="text-slate-500 dark:text-slate-400 mt-2 text-xs sm:text-sm">
                 Explore individual calculator utilities organized by functional industry.
               </p>
             </div>
@@ -145,13 +145,13 @@ export default function Home() {
       </section>
 
       {/* 3. Featured Guides Blog Section */}
-      <section className="py-16 sm:py-24 bg-white border-t border-slate-200">
+      <section className="py-16 sm:py-24 bg-white dark:bg-[#22242A] border-t border-slate-200 dark:border-[#4D5156] transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">Featured Guides & Cost Studies</h2>
-              <p className="text-slate-500 mt-2 text-sm sm:text-base">
+              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Featured Guides & Cost Studies</h2>
+              <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm sm:text-base">
                 In-depth articles and mathematical breakdowns compiled by our industry experts.
               </p>
             </div>

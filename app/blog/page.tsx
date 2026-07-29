@@ -138,15 +138,15 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   if (params.sort) searchParamsObj.sort = params.sort;
 
   return (
-    <div className="bg-slate-50 min-h-screen py-12 sm:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen py-12 sm:py-16 transition-colors">
+      <div className="mx-auto max-w-7xl px-1 lg:px-2">
 
         {/* Header Section */}
         <div className="mx-auto max-w-3xl text-center mb-12">
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-            Featured Guides & Articles
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
+            Featured Guides &amp; Articles
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             In-depth guides, calculation breakdowns, and expert estimating advice across finance, construction, landscaping, and business tools.
           </p>
         </div>
@@ -165,10 +165,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         {/* Featured Post Card (Default Page 1 view) */}
         {featuredPost && (
           <section className="mb-16">
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 hover:shadow-md transition-shadow duration-200">
+            <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] shadow-xs overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 hover:shadow-md transition-shadow duration-200">
 
               {/* Left Column (Image): 5 cols on desktop */}
-              <div className="lg:col-span-5 relative min-h-[250px] lg:min-h-full bg-slate-100">
+              <div className="lg:col-span-5 relative min-h-[250px] lg:min-h-full bg-slate-100 dark:bg-[#191a1d]">
                 <Image
                   src={featuredPost.image}
                   alt={featuredPost.title}
@@ -182,23 +182,23 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               {/* Right Column (Text): 7 cols on desktop */}
               <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-3 text-xs font-semibold text-slate-400">
-                    <span className="text-primary font-bold uppercase tracking-wider">{featuredPost.category}</span>
+                  <div className="flex items-center gap-3 text-xs font-semibold text-slate-400 dark:text-slate-500">
+                    <span className="text-primary dark:text-sky-400 font-bold uppercase tracking-wider">{featuredPost.category}</span>
                     <span>•</span>
                     <span>{featuredPost.date}</span>
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 mt-4 leading-tight">
-                    <Link href={`/blog/${featuredPost.slug}`} className="hover:text-primary transition-colors">
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-slate-100 mt-4 leading-tight">
+                    <Link href={`/blog/${featuredPost.slug}`} className="hover:text-primary dark:hover:text-sky-400 transition-colors">
                       {featuredPost.title}
                     </Link>
                   </h2>
-                  <p className="text-sm text-slate-500 leading-relaxed mt-4 line-clamp-3">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mt-4 line-clamp-3">
                     {featuredPost.excerpt}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <span className="text-xs text-slate-400 font-semibold">By {featuredPost.author}</span>
+                <div className="mt-8 pt-6 border-t border-slate-100 dark:border-[#4D5156] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <span className="text-xs text-slate-400 dark:text-slate-500 font-semibold">By {featuredPost.author}</span>
                   <div className="flex gap-4 items-center">
                     <Link
                       href={`/blog/${featuredPost.slug}`}
@@ -215,13 +215,13 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
         {/* Paginated Articles Grid Section */}
         <section className="mb-16">
-          <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-8">
-            <h2 className="text-2xl font-bold text-slate-900">
+          <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#4D5156] pb-4 mb-8">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               {q || selectedCategory !== "All" || selectedAuthor !== "All"
                 ? `Filtered Articles (${totalPosts})`
                 : "All Guides"}
             </h2>
-            <span className="text-xs font-semibold text-slate-400">
+            <span className="text-xs font-semibold text-slate-400 dark:text-slate-400">
               Showing {paginatedPosts.length} of {totalPosts} {totalPosts === 1 ? "article" : "articles"}
             </span>
           </div>
@@ -243,12 +243,12 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               />
             </>
           ) : (
-            <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center my-8 shadow-xs">
-              <svg className="w-12 h-12 text-slate-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] p-12 text-center my-8 shadow-xs">
+              <svg className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">No Matching Articles Found</h3>
-              <p className="text-xs sm:text-sm text-slate-500 max-w-md mx-auto mb-6 leading-relaxed">
+              <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">No Matching Articles Found</h3>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto mb-6 leading-relaxed">
                 We couldn't find any articles matching your search query or active category filters. Try adjusting your search term or clearing active filters.
               </p>
               <Link
@@ -262,14 +262,14 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         </section>
 
         {/* Bottom CTA Card */}
-        <section className="bg-primary/5 rounded-2xl border border-primary/10 p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-xs">
-          <span className="text-xs font-bold text-primary uppercase tracking-widest">
+        <section className="bg-primary/5 dark:bg-[#22242A] rounded-2xl border border-primary/10 dark:border-[#4D5156] py-8 sm:py-12 text-center max-w-4xl mx-auto shadow-xs transition-colors">
+          <span className="text-xs font-bold text-primary dark:text-sky-400 uppercase tracking-widest">
             Free Interactive Estimators
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
-            Estimate Volumes, Taxes & Costs Instantly
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 mt-3">
+            Estimate Volumes, Taxes &amp; Costs Instantly
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mt-4 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-xl mx-auto mt-4 leading-relaxed">
             Apply these guide formulas directly to your project. Explore our full library of financial, construction, tax, and business calculation tools.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
@@ -281,7 +281,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             </Link>
             <Link
               href="/calculators"
-              className="rounded-xl bg-white border border-slate-200 px-6 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-all shadow-xs"
+              className="rounded-xl bg-white dark:bg-[#191a1d] border border-slate-200 dark:border-[#4D5156] px-6 py-3 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#22242A] transition-all shadow-xs"
             >
               View All 100+ Calculators
             </Link>

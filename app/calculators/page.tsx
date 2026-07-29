@@ -151,15 +151,15 @@ export default async function CalculatorsPage(props: PageProps) {
   });
 
   return (
-    <div className="bg-slate-50 min-h-screen py-12 sm:py-16">
+    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen py-12 sm:py-16 transition-colors">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Prominent Header block with Search */}
         <div className="mx-auto max-w-3xl text-center mb-16">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
             Browse Help Topics & Calculators
           </h1>
-          <p className="mt-4 text-sm sm:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
             Find formulas, examples, and interactive calculators for financial splits, state tax paycheck withholding, and landscaping materials.
           </p>
 
@@ -176,7 +176,7 @@ export default async function CalculatorsPage(props: PageProps) {
         {/* 1. Search Results Layout */}
         {searchQuery ? (
           <div>
-            <h2 className="text-lg font-bold text-slate-800 mb-6">
+            <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-6">
               Search Results for "{searchQuery}" ({searchResults.length} matches found)
             </h2>
 
@@ -187,8 +187,8 @@ export default async function CalculatorsPage(props: PageProps) {
                 ))}
               </div>
             ) : (
-              <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center max-w-md mx-auto">
-                <p className="text-sm text-slate-500 font-semibold">No calculator matches found.</p>
+              <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] p-12 text-center max-w-md mx-auto">
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-semibold">No calculator matches found.</p>
                 <Link
                   href="/calculators"
                   className="mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2 text-xs font-bold text-white hover:bg-primary-hover transition-colors"
@@ -205,7 +205,7 @@ export default async function CalculatorsPage(props: PageProps) {
 
             {/* Left Column (8 cols on desktop): Browse help topics list */}
             <div className="lg:col-span-8 space-y-12">
-              <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-4">
+              <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-[#4D5156] pb-4">
                 All Calculators
               </h2>
 
@@ -228,15 +228,15 @@ export default async function CalculatorsPage(props: PageProps) {
 
               {/* Search Widget */}
               <div>
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
+                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-3">
                   Search Calculators
                 </h3>
                 <SearchInput variant="minimal" placeholder="Search tools..." />
               </div>
 
               {/* Popular Tools */}
-              <div className="pb-6 border-b border-slate-200/80">
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
+              <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-4">
                   Popular Tools
                 </h3>
                 <ul className="space-y-3.5">
@@ -244,10 +244,10 @@ export default async function CalculatorsPage(props: PageProps) {
                     <li key={calc.slug}>
                       <Link
                         href={`/calculators/${calc.slug}`}
-                        className="group flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-600 hover:text-primary transition-colors py-0.5"
+                        className="group flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors py-0.5"
                       >
                         <span>{calc.name}</span>
-                        <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 group-hover:text-primary transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                         </svg>
                       </Link>
@@ -257,8 +257,8 @@ export default async function CalculatorsPage(props: PageProps) {
               </div>
 
               {/* Guides & Cost Reports (With thumbnail images like blog detail sidebar) */}
-              <div className="pb-6 border-b border-slate-200/80">
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">
+              <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-5">
                   Guides & Cost Reports
                 </h3>
                 <div className="space-y-5">
@@ -268,7 +268,7 @@ export default async function CalculatorsPage(props: PageProps) {
                       href={`/blog/${post.slug}`}
                       className="group flex gap-4 hover:text-primary transition-colors"
                     >
-                      <div className="relative w-16 h-16 bg-slate-100 rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50">
+                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-[#191a1d] rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-[#4D5156]/50">
                         <Image
                           src={post.image}
                           alt={post.title}
@@ -278,10 +278,10 @@ export default async function CalculatorsPage(props: PageProps) {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="block text-[9px] font-bold text-primary uppercase tracking-wider">
+                        <span className="block text-[9px] font-bold text-primary dark:text-sky-400 uppercase tracking-wider">
                           {post.category}
                         </span>
-                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 leading-snug group-hover:text-primary transition-colors mt-1 line-clamp-2">
+                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug group-hover:text-primary transition-colors mt-1 line-clamp-2">
                           {post.title}
                         </h4>
                       </div>
@@ -291,15 +291,15 @@ export default async function CalculatorsPage(props: PageProps) {
               </div>
 
               {/* Problems we're fixing */}
-              <div className="pb-6 border-b border-slate-200/80">
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
+              <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-4">
                   Problems we're fixing
                 </h3>
                 <ul className="space-y-3.5">
                   {upcomingCalcs.map((item) => (
                     <li key={item.name} className="text-xs leading-normal">
-                      <span className="block font-bold text-slate-700">{item.name}</span>
-                      <span className="block text-[11px] text-slate-500 mt-0.5">{item.desc}</span>
+                      <span className="block font-bold text-slate-700 dark:text-slate-200">{item.name}</span>
+                      <span className="block text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">{item.desc}</span>
                     </li>
                   ))}
                 </ul>

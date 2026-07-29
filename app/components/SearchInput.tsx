@@ -82,9 +82,9 @@ export default function SearchInput({
       <div ref={containerRef} className="relative w-full max-w-2xl mx-auto">
         <form
           onSubmit={handleFormSubmit}
-          className="relative flex items-center shadow-lg rounded-2xl bg-white border border-slate-200/85 focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-200"
+          className="relative flex items-center shadow-lg rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200/85 dark:border-[#4D5156] focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-200"
         >
-          <div className="pl-5 text-slate-400">
+          <div className="pl-5 text-slate-400 dark:text-slate-500">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
@@ -97,7 +97,7 @@ export default function SearchInput({
             onChange={(e) => handleInputChange(e.target.value)}
             placeholder={placeholder}
             aria-label={placeholder || "Search calculators"}
-            className="w-full bg-transparent px-4 py-4 sm:py-5 text-sm sm:text-base text-slate-900 focus:outline-none placeholder-slate-400"
+            className="w-full bg-transparent px-4 py-4 sm:py-5 text-sm sm:text-base text-slate-900 dark:text-slate-100 focus:outline-none placeholder-slate-400 dark:placeholder-slate-500"
             autoComplete="off"
           />
           <button
@@ -110,17 +110,17 @@ export default function SearchInput({
 
         {/* Floating suggestion box */}
         {isOpen && suggestions.length > 0 && (
-          <div className="absolute left-0 right-0 mt-2 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden z-50 text-left">
-            <ul className="divide-y divide-slate-100">
+          <div className="absolute left-0 right-0 mt-2 bg-white dark:bg-[#22242A] rounded-xl border border-slate-200 dark:border-[#4D5156] shadow-xl overflow-hidden z-50 text-left">
+            <ul className="divide-y divide-slate-100 dark:divide-[#4D5156]">
               {suggestions.map((calc) => (
                 <li key={calc.slug}>
                   <button
                     type="button"
                     onClick={() => selectSuggestion(calc.slug)}
-                    className="w-full text-left px-5 py-3 hover:bg-slate-50 transition-colors flex flex-col"
+                    className="w-full text-left px-5 py-3 hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-colors flex flex-col"
                   >
-                    <span className="text-xs font-bold text-slate-900">{calc.name}</span>
-                    <span className="text-[10px] text-slate-400 mt-0.5">{calc.description}</span>
+                    <span className="text-xs font-bold text-slate-900 dark:text-slate-100">{calc.name}</span>
+                    <span className="text-[10px] text-slate-400 dark:text-slate-400 mt-0.5">{calc.description}</span>
                   </button>
                 </li>
               ))}
@@ -143,10 +143,10 @@ export default function SearchInput({
             onChange={(e) => handleInputChange(e.target.value)}
             placeholder={placeholder}
             aria-label={placeholder || "Search calculators"}
-            className="w-full bg-transparent border-b border-slate-300 py-2.5 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-primary placeholder-slate-400"
+            className="w-full bg-transparent border-b border-slate-300 dark:border-[#4D5156] py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:border-primary placeholder-slate-400 dark:placeholder-slate-500"
             autoComplete="off"
           />
-          <button type="submit" className="absolute right-0 text-slate-400 hover:text-slate-600" aria-label="Search Submit">
+          <button type="submit" className="absolute right-0 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300" aria-label="Search Submit">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
@@ -155,17 +155,17 @@ export default function SearchInput({
 
         {/* Minimal suggestion box */}
         {isOpen && suggestions.length > 0 && (
-          <div className="absolute left-0 right-0 mt-1 bg-white rounded-lg border border-slate-200 shadow-md overflow-hidden z-50">
-            <ul className="divide-y divide-slate-100">
+          <div className="absolute left-0 right-0 mt-1 bg-white dark:bg-[#22242A] rounded-lg border border-slate-200 dark:border-[#4D5156] shadow-md overflow-hidden z-50">
+            <ul className="divide-y divide-slate-100 dark:divide-[#4D5156]">
               {suggestions.map((calc) => (
                 <li key={calc.slug}>
                   <button
                     type="button"
                     onClick={() => selectSuggestion(calc.slug)}
-                    className="w-full text-left px-4 py-2.5 hover:bg-slate-50 transition-colors flex flex-col"
+                    className="w-full text-left px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-colors flex flex-col"
                   >
-                    <span className="text-[11px] font-bold text-slate-800">{calc.name}</span>
-                    <span className="text-[9px] text-slate-400 mt-0.5 line-clamp-1">{calc.description}</span>
+                    <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">{calc.name}</span>
+                    <span className="text-[9px] text-slate-400 dark:text-slate-400 mt-0.5 line-clamp-1">{calc.description}</span>
                   </button>
                 </li>
               ))}
@@ -181,9 +181,9 @@ export default function SearchInput({
     <div ref={containerRef} className="relative w-full max-w-xl mx-auto">
       <form
         onSubmit={handleFormSubmit}
-        className="relative flex items-center shadow-xs rounded-xl bg-white border border-slate-200 focus-within:ring-2 focus-within:ring-primary/10"
+        className="relative flex items-center shadow-xs rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] focus-within:ring-2 focus-within:ring-primary/10"
       >
-        <div className="pl-4 text-slate-400">
+        <div className="pl-4 text-slate-400 dark:text-slate-500">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
@@ -196,24 +196,24 @@ export default function SearchInput({
           onChange={(e) => handleInputChange(e.target.value)}
           placeholder={placeholder}
           aria-label={placeholder || "Search calculators"}
-          className="w-full bg-transparent px-4 py-3.5 text-xs sm:text-sm text-slate-900 focus:outline-none placeholder-slate-400"
+          className="w-full bg-transparent px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none placeholder-slate-400 dark:placeholder-slate-500"
           autoComplete="off"
         />
       </form>
 
       {/* Floating suggestion box */}
       {isOpen && suggestions.length > 0 && (
-        <div className="absolute left-0 right-0 mt-1.5 bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden z-50 text-left">
-          <ul className="divide-y divide-slate-100">
+        <div className="absolute left-0 right-0 mt-1.5 bg-white dark:bg-[#22242A] rounded-xl border border-slate-200 dark:border-[#4D5156] shadow-lg overflow-hidden z-50 text-left">
+          <ul className="divide-y divide-slate-100 dark:divide-[#4D5156]">
             {suggestions.map((calc) => (
               <li key={calc.slug}>
                 <button
                   type="button"
                   onClick={() => selectSuggestion(calc.slug)}
-                  className="w-full text-left px-4 py-2.5 hover:bg-slate-50 transition-colors flex flex-col"
+                  className="w-full text-left px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-colors flex flex-col"
                 >
-                  <span className="text-[11px] font-bold text-slate-800">{calc.name}</span>
-                  <span className="text-[9px] text-slate-400 mt-0.5 line-clamp-1">{calc.description}</span>
+                  <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">{calc.name}</span>
+                  <span className="text-[9px] text-slate-400 dark:text-slate-400 mt-0.5 line-clamp-1">{calc.description}</span>
                 </button>
               </li>
             ))}

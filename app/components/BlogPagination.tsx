@@ -33,10 +33,10 @@ export default function BlogPagination({
   }
 
   return (
-    <div className="mt-12 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <span className="text-xs font-semibold text-slate-500">
-        Showing Page <span className="text-slate-900 font-bold">{currentPage}</span> of{" "}
-        <span className="text-slate-900 font-bold">{totalPages}</span>
+    <div className="mt-12 pt-6 border-t border-slate-200 dark:border-[#4D5156] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+        Showing Page <span className="text-slate-900 dark:text-slate-100 font-bold">{currentPage}</span> of{" "}
+        <span className="text-slate-900 dark:text-slate-100 font-bold">{totalPages}</span>
       </span>
 
       <nav className="inline-flex items-center gap-1.5" aria-label="Pagination Navigation">
@@ -46,12 +46,12 @@ export default function BlogPagination({
             href={createPageUrl(currentPage - 1)}
             rel="prev"
             aria-label="Go to previous page"
-            className="px-3.5 py-2 rounded-xl border border-slate-200/90 text-xs font-bold text-slate-700 hover:bg-slate-100 hover:text-primary transition-colors flex items-center gap-1 shadow-xs"
+            className="px-3.5 py-2 rounded-xl border border-slate-200/90 dark:border-[#4D5156] text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-400 transition-colors flex items-center gap-1 shadow-xs"
           >
             ← Prev
           </Link>
         ) : (
-          <span className="px-3.5 py-2 rounded-xl border border-slate-100 text-xs font-bold text-slate-300 cursor-not-allowed">
+          <span className="px-3.5 py-2 rounded-xl border border-slate-100 dark:border-[#4D5156]/50 text-xs font-bold text-slate-300 dark:text-slate-600 cursor-not-allowed">
             ← Prev
           </span>
         )}
@@ -68,7 +68,7 @@ export default function BlogPagination({
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all shadow-xs ${
                 isActive
                   ? "bg-primary text-white shadow-sm ring-2 ring-primary/20"
-                  : "border border-slate-200/90 text-slate-700 hover:bg-slate-100 hover:text-primary"
+                  : "border border-slate-200/90 dark:border-[#4D5156] text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-400"
               }`}
             >
               {p}
@@ -82,12 +82,12 @@ export default function BlogPagination({
             href={createPageUrl(currentPage + 1)}
             rel="next"
             aria-label="Go to next page"
-            className="px-3.5 py-2 rounded-xl border border-slate-200/90 text-xs font-bold text-slate-700 hover:bg-slate-100 hover:text-primary transition-colors flex items-center gap-1 shadow-xs"
+            className="px-3.5 py-2 rounded-xl border border-slate-200/90 dark:border-[#4D5156] text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-400 transition-colors flex items-center gap-1 shadow-xs"
           >
             Next →
           </Link>
         ) : (
-          <span className="px-3.5 py-2 rounded-xl border border-slate-100 text-xs font-bold text-slate-300 cursor-not-allowed">
+          <span className="px-3.5 py-2 rounded-xl border border-slate-100 dark:border-[#4D5156]/50 text-xs font-bold text-slate-300 dark:text-slate-600 cursor-not-allowed">
             Next →
           </span>
         )}

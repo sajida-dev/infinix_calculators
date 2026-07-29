@@ -114,14 +114,14 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
   const hub = clusterHubs[hubKey] || clusterHubs.Finance;
 
   return (
-    <nav className="my-10 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs" aria-label="Related Topics and Calculators">
+    <nav className="my-10 bg-white dark:bg-[#22242A] rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-[#4D5156] shadow-xs transition-colors" aria-label="Related Topics and Calculators">
       {/* Header section matching clean site design */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-[#4D5156]">
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-2.5 py-1 rounded-md">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-primary dark:text-sky-400 bg-primary/10 dark:bg-primary/20 px-2.5 py-1 rounded-md">
             {hub.categoryName} Topic Hub
           </span>
-          <h3 className="text-xl font-extrabold text-slate-900 mt-2 tracking-tight">
+          <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100 mt-2 tracking-tight">
             Explore Related Guides &amp; Tools
           </h3>
         </div>
@@ -136,7 +136,7 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
         {/* In-Depth Topic Articles */}
         <div>
-          <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3.5">
+          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-3.5">
             In-Depth Topic Guides
           </h4>
           <ul className="space-y-2.5">
@@ -147,10 +147,10 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
                 <li key={art.href}>
                   <Link
                     href={art.href}
-                    className="group flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-700 hover:text-primary transition-colors py-1"
+                    className="group flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors py-1"
                   >
                     <span className="group-hover:translate-x-0.5 transition-transform leading-snug">{art.title}</span>
-                    <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary dark:group-hover:text-sky-400 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
@@ -161,7 +161,7 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
 
         {/* Related Category Tools */}
         <div>
-          <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3.5">
+          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-3.5">
             Related Category Tools
           </h4>
           <div className="flex flex-wrap gap-2">
@@ -171,14 +171,14 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
                 <Link
                   key={calc.href}
                   href={calc.href}
-                  className="text-xs font-semibold bg-slate-50 hover:bg-primary/5 text-slate-700 hover:text-primary px-3 py-1.5 rounded-lg transition-colors border border-slate-200/80 hover:border-primary/20"
+                  className="text-xs font-semibold bg-slate-50 dark:bg-[#191a1d] hover:bg-primary/5 text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 px-3 py-1.5 rounded-lg transition-colors border border-slate-200/80 dark:border-[#4D5156] hover:border-primary/20"
                 >
                   {calc.name}
                 </Link>
               ))}
             <Link
               href="/calculators"
-              className="text-xs font-semibold bg-primary/10 text-primary hover:bg-primary/20 px-3 py-1.5 rounded-lg transition-colors"
+              className="text-xs font-semibold bg-primary/10 dark:bg-primary/20 text-primary dark:text-sky-400 hover:bg-primary/20 px-3 py-1.5 rounded-lg transition-colors"
             >
               View All Tools →
             </Link>

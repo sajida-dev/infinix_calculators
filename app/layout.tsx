@@ -14,6 +14,8 @@ export const metadata = defaultMetadata;
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import JsonLd from "./components/JsonLd";
+import ThemeScript from "./components/ThemeScript";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -52,6 +54,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head suppressHydrationWarning>
+        <ThemeScript />
         <JsonLd id="org-jsonld" data={organizationSchema} />
         <JsonLd id="website-jsonld" data={websiteSchema} />
         {/* Google AdSense */}
@@ -78,11 +81,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-full bg-white flex flex-col pb-20" suppressHydrationWarning>
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 left-0 w-full bg-primary text-white text-center py-2">Skip to main content</a>
-        <Header />
-        <main id="main-content" className="flex-1">{children}</main>
-        <Footer />
+      <body className="min-h-full bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-200" suppressHydrationWarning>
+        <ThemeProvider>
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 left-0 w-full bg-primary text-white text-center py-2">Skip to main content</a>
+          <Header />
+          <main id="main-content" className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #fafafa;
   --foreground: #0f172a;
   --primary-color: hsl(208, 88%, 47%);
+}
+
+.dark {
+  --background: #191a1d;
+  --foreground: #f8fafc;
+  --primary-color: hsl(208, 88%, 52%);
 }
 
 @theme inline {
@@ -24,6 +32,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .bg-primary {
@@ -40,6 +49,10 @@ body {
   line-height: 1.25;
 }
 
+.dark .blog-content h2 {
+  color: #f1f5f9;
+}
+
 .blog-content h3 {
   font-size: 1.2rem;
   font-weight: 700;
@@ -48,11 +61,19 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.dark .blog-content h3 {
+  color: #e2e8f0;
+}
+
 .blog-content p {
   margin-top: 0;
   margin-bottom: 1.25rem;
   line-height: 1.7;
   color: #334155;
+}
+
+.dark .blog-content p {
+  color: #cbd5e1;
 }
 
 .blog-content ul {
@@ -74,6 +95,10 @@ body {
   color: #475569;
 }
 
+.dark .blog-content li {
+  color: #94a3b8;
+}
+
 .blog-content table {
   width: 100%;
   border-collapse: collapse;
@@ -88,30 +113,71 @@ body {
   text-align: left;
 }
 
+.dark .blog-content th,
+.dark .blog-content td {
+  border-color: #4D5156;
+}
+
 .blog-content th {
   background-color: #f8fafc;
   font-weight: 700;
   color: #1e293b;
 }
 
+.dark .blog-content th {
+  background-color: #22242A;
+  color: #f1f5f9;
+}
+
 .blog-content td {
   color: #475569;
+}
+
+.dark .blog-content td {
+  color: #cbd5e1;
 }
 
 .blog-content a:not(.bg-primary),
 .blog-content p a:not(.bg-primary),
 .blog-content li a:not(.bg-primary) {
-  color: #1d4ed8 !important;
-  /* Hyperlink Blue */
+  color: #2563eb !important;
   text-decoration: underline !important;
   text-underline-offset: 2px;
   font-weight: 500;
   transition: color 0.15s ease-in-out;
 }
 
+.dark .blog-content a:not(.bg-primary),
+.dark .blog-content p a:not(.bg-primary),
+.dark .blog-content li a:not(.bg-primary) {
+  color: #60a5fa !important;
+}
+
 .blog-content a:not(.bg-primary):hover,
 .blog-content p a:not(.bg-primary):hover,
 .blog-content li a:not(.bg-primary):hover {
-  color: #1e40af !important;
-  /* Darker Blue on Hover */
+  color: #1d4ed8 !important;
+}
+
+.dark .blog-content a:not(.bg-primary):hover,
+.dark .blog-content p a:not(.bg-primary):hover,
+.dark .blog-content li a:not(.bg-primary):hover {
+  color: #93c5fd !important;
+}
+
+/* Dark mode custom background blocks inside content */
+.dark .blog-content .bg-slate-50 {
+  background-color: #22242A !important;
+  border-color: #4D5156 !important;
+  color: #e2e8f0 !important;
+}
+
+.dark .blog-content .bg-slate-50 p,
+.dark .blog-content .bg-slate-50 li {
+  color: #cbd5e1 !important;
+}
+
+.dark .blog-content .bg-slate-50 strong,
+.dark .blog-content .bg-slate-50 h3 {
+  color: #f8fafc !important;
 }

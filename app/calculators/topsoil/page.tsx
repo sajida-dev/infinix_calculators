@@ -64,7 +64,7 @@ export default function TopsoilPage() {
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen py-8 sm:py-12">
+    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen py-8 sm:py-12 transition-colors">
       {/* JSON‑LD schemas */}
       <script
         type="application/ld+json"
@@ -149,20 +149,20 @@ export default function TopsoilPage() {
       {/* Page container */}
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="flex mb-8 text-xs font-semibold text-slate-400" aria-label="Breadcrumb">
+        <nav className="flex mb-8 text-xs font-semibold text-slate-400 dark:text-slate-500" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1.5 md:space-x-2">
             <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
             <li className="flex items-center gap-1.5"><span>/</span><Link href="/calculators" className="hover:text-primary transition-colors">Calculators</Link></li>
-            <li className="flex items-center gap-1.5 text-slate-600 font-bold" aria-current="page"><span>/</span>Topsoil Calculator</li>
+            <li className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300 font-bold" aria-current="page"><span>/</span>Topsoil Calculator</li>
           </ol>
         </nav>
 
         {/* HERO + CALCULATOR */}
         <header className="mb-10 max-w-4xl">
-          <h1 className="text-3xl font-extrabold text-slate-900 sm:text-5xl tracking-tight">
+          <h1 className="text-3xl font-extrabold text-slate-900 dark:text-slate-100 sm:text-5xl tracking-tight">
             Topsoil Calculator &amp; Estimator
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
             Estimate how much topsoil you need in cubic yards instantly. Enter your project dimensions below to get accurate coverage for landscaping, gardening, or lawn installations.
           </p>
         </header>
@@ -173,28 +173,28 @@ export default function TopsoilPage() {
             <TopsoilCalculator />
 
             {/* SEO Authority Article */}
-            <article className="prose prose-slate max-w-none text-slate-800 leading-relaxed space-y-6">
-              <h2 className="font-bold text-3xl mb-4">What is a Topsoil Calculator?</h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">A <strong>topsoil calculator</strong> is an online tool that determines the volume of topsoil required for any landscaping project. It’s also known as a <em>top soil calculator</em>, <em>topsoil estimator</em>, or <em>dirt cubic yard calculator</em>. By inputting the dimensions of the area you plan to cover and the desired depth, the calculator instantly converts those measurements into cubic yards, cubic feet, tons, or even the number of bags you’ll need.</p>
+            <article className="prose prose-slate max-w-none text-slate-800 dark:text-slate-200 leading-relaxed space-y-6">
+              <h2 className="font-bold text-3xl mb-4 text-slate-900 dark:text-slate-100">What is a Topsoil Calculator?</h2>
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">A <strong>topsoil calculator</strong> is an online tool that determines the volume of topsoil required for any landscaping project. It’s also known as a <em>top soil calculator</em>, <em>topsoil estimator</em>, or <em>dirt cubic yard calculator</em>. By inputting the dimensions of the area you plan to cover and the desired depth, the calculator instantly converts those measurements into cubic yards, cubic feet, tons, or even the number of bags you’ll need.</p>
 
-              <h2 className="font-bold text-3xl mt-4">How the Topsoil Calculator Works</h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">The calculator uses three simple inputs:</p>
-              <ul className="list-disc list-inside ml-5">
+              <h2 className="font-bold text-3xl mt-4 text-slate-900 dark:text-slate-100">How the Topsoil Calculator Works</h2>
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">The calculator uses three simple inputs:</p>
+              <ul className="list-disc list-inside ml-5 text-slate-600 dark:text-slate-300">
                 <li><strong>Length</strong>: measured in feet (or meters if you toggle units).</li>
                 <li><strong>Width</strong>: also in feet.</li>
                 <li><strong>Depth</strong>: the thickness of the top soil layer, typically entered in inches.</li>
               </ul>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Once you submit these numbers, the tool multiplies length × width × (depth ÷ 12) to get cubic feet, then divides by 27 to convert to cubic yards – the standard unit for bulk soil orders. The calculator can also show you the equivalent weight in tons and how many 40‑lb bags you would need.</p>
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">Once you submit these numbers, the tool multiplies length × width × (depth ÷ 12) to get cubic feet, then divides by 27 to convert to cubic yards – the standard unit for bulk soil orders. The calculator can also show you the equivalent weight in tons and how many 40‑lb bags you would need.</p>
 
-              <h2 className="font-bold text-3xl mt-4">Formula Used</h2>
-              <pre className="ml-5 bg-slate-200 text-slate-800 p-3 w-full rounded-md text-xs sm:text-sm">
+              <h2 className="font-bold text-3xl mt-4 text-slate-900 dark:text-slate-100">Formula Used</h2>
+              <pre className="ml-5 bg-slate-200 dark:bg-[#22242A] text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-[#4D5156] p-3 w-full rounded-md text-xs sm:text-sm">
                 <code>Volume (Cubic Feet) = Length (ft) × Width (ft) × [Depth (in) ÷ 12]</code></pre>
-              <pre className="ml-5 m-1 bg-slate-200 text-slate-800 p-3 w-full rounded-md text-xs sm:text-sm">
+              <pre className="ml-5 m-1 bg-slate-200 dark:bg-[#22242A] text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-[#4D5156] p-3 w-full rounded-md text-xs sm:text-sm">
                 <code>Volume (Cubic Yards) = Volume (Cubic Feet) ÷ 27</code></pre>
 
-              <h2 className="font-bold text-3xl mt-4">How to Calculate Manually</h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">If you prefer to work on paper, follow these steps:</p>
-              <ol className="list-disc list-inside ml-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+              <h2 className="font-bold text-3xl mt-4 text-slate-900 dark:text-slate-100">How to Calculate Manually</h2>
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">If you prefer to work on paper, follow these steps:</p>
+              <ol className="list-disc list-inside ml-5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                 <li>Measure the length and width of the area in feet.</li>
                 <li>Multiply length × width to get the area in square feet.</li>
                 <li>Convert the desired depth from inches to feet (divide by 12).</li>
@@ -203,77 +203,77 @@ export default function TopsoilPage() {
                 <li>Optional: Multiply cubic yards by the average weight of the soil (≈2,200 lb per cubic yard) to get total weight.</li>
               </ol>
 
-              <h2 className="font-bold text-3xl mt-4">Topsoil Depth Guide</h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">Choosing the right depth is crucial for the health of your plants and the durability of your lawn. Below are common depth recommendations:</p>
-              <ul className="list-disc list-inside ml-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+              <h2 className="font-bold text-3xl mt-4 text-slate-900 dark:text-slate-100">Topsoil Depth Guide</h2>
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">Choosing the right depth is crucial for the health of your plants and the durability of your lawn. Below are common depth recommendations:</p>
+              <ul className="list-disc list-inside ml-5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                 <li><strong>Lawn installation:</strong> 4–6 inches of high‑quality topsoil provides a firm base for sod or seed.</li>
                 <li><strong>Garden beds:</strong> 8–12 inches, especially for vegetable gardens, ensures sufficient root space and nutrient holding capacity.</li>
                 <li><strong>Landscape grading:</strong> 2–4 inches for leveling and creating gentle slopes.</li>
                 <li><strong>Sod preparation:</strong> 3–5 inches, depending on soil compaction and the type of grass.</li>
               </ul>
 
-              <h2 className="font-bold text-3xl mt-4 mb-4">Soil Depth Reference Table</h2>
-              <table className="w-full border-collapse border border-slate-200">
-                <thead className="bg-slate-100 border border-slate-200 m-1">
+              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Soil Depth Reference Table</h2>
+              <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156]">
+                <thead className="bg-slate-100 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] m-1 text-slate-900 dark:text-slate-100">
                   <tr>
-                    <th className="p-2 border border-slate-200 text-sm sm:text-base">Application</th>
-                    <th className="p-2 border border-slate-200 text-sm sm:text-base">Recommended Depth (inches)</th>
-                    <th className="p-2 border border-slate-200 text-sm sm:text-base">Typical Use</th>
+                    <th className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Application</th>
+                    <th className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Recommended Depth (inches)</th>
+                    <th className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Typical Use</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="divide-y divide-slate-100 dark:divide-[#4D5156] text-slate-600 dark:text-slate-300">
                   <tr>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">Lawn (new sod)</td>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">4‑6</td>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">Residential lawns, sports fields</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Lawn (new sod)</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">4‑6</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Residential lawns, sports fields</td>
                   </tr>
                   <tr>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">Vegetable garden</td>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">8‑12</td>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">Fruit‑bearing beds, raised beds</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Vegetable garden</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">8‑12</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Fruit‑bearing beds, raised beds</td>
                   </tr>
                   <tr>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">Landscape grading</td>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">2‑4</td>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">Foundation leveling, slope correction</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Landscape grading</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">2‑4</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Foundation leveling, slope correction</td>
                   </tr>
                   <tr>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">Flower beds</td>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">6‑8</td>
-                    <td className="p-2 border border-slate-200 text-sm sm:text-base">Perennial borders, ornamental gardens</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Flower beds</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">6‑8</td>
+                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Perennial borders, ornamental gardens</td>
                   </tr>
                 </tbody>
               </table>
 
-              <h2 className="font-bold text-3xl mt-4 mb-4">Conversion Table</h2>
-              <table className="w-full border-collapse border border-slate-200">
-                <thead className="bg-slate-100 border border-slate-200 m-1">
+              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Conversion Table</h2>
+              <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156]">
+                <thead className="bg-slate-100 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] m-1 text-slate-900 dark:text-slate-100">
                   <tr>
-                    <th className="p-2 border border-slate-200">Unit</th>
-                    <th className="p-2 border border-slate-200">Conversion</th>
+                    <th className="p-2 border border-slate-200 dark:border-[#4D5156]">Unit</th>
+                    <th className="p-2 border border-slate-200 dark:border-[#4D5156]">Conversion</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr><td className="p-2 border border-slate-200">1 foot</td><td className="p-2 border border-slate-200">12 inches</td></tr>
-                  <tr><td className="p-2 border border-slate-200">1 yard</td><td className="p-2 border border-slate-200">3 feet</td></tr>
-                  <tr><td className="p-2 border border-slate-200">1 cubic yard</td><td className="p-2 border border-slate-200">27 cubic feet</td></tr>
-                  <tr><td className="p-2 border border-slate-200">1 cubic foot</td><td className="p-2 border border-slate-200">0.037 cubic yards</td></tr>
+                <tbody className="divide-y divide-slate-100 dark:divide-[#4D5156] text-slate-600 dark:text-slate-300">
+                  <tr><td className="p-2 border border-slate-200 dark:border-[#4D5156]">1 foot</td><td className="p-2 border border-slate-200 dark:border-[#4D5156]">12 inches</td></tr>
+                  <tr><td className="p-2 border border-slate-200 dark:border-[#4D5156]">1 yard</td><td className="p-2 border border-slate-200 dark:border-[#4D5156]">3 feet</td></tr>
+                  <tr><td className="p-2 border border-slate-200 dark:border-[#4D5156]">1 cubic yard</td><td className="p-2 border border-slate-200 dark:border-[#4D5156]">27 cubic feet</td></tr>
+                  <tr><td className="p-2 border border-slate-200 dark:border-[#4D5156]">1 cubic foot</td><td className="p-2 border border-slate-200 dark:border-[#4D5156]">0.037 cubic yards</td></tr>
                 </tbody>
               </table>
 
-              <h2 className="font-bold text-3xl mt-4 mb-4">Real Calculation Examples</h2>
-              <h3 className="font-bold text-xl mt-4 mb-4">Small Garden (10 ft × 8 ft × 4 in depth)</h3>
-              <p>Area = 80 sq ft. <br /> Depth = 0.333 ft. <br /> Volume = 80 × 0.333 ≈ 26.7 cu ft → 0.99 cu yd. <br /> Rounded up, you’d order 1 cubic yard (or 2 bags of 40 lb each for a safety buffer).</p>
+              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Real Calculation Examples</h2>
+              <h3 className="font-bold text-xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Small Garden (10 ft × 8 ft × 4 in depth)</h3>
+              <p className="text-slate-600 dark:text-slate-300">Area = 80 sq ft. <br /> Depth = 0.333 ft. <br /> Volume = 80 × 0.333 ≈ 26.7 cu ft → 0.99 cu yd. <br /> Rounded up, you’d order 1 cubic yard (or 2 bags of 40 lb each for a safety buffer).</p>
 
-              <h3 className="font-bold text-xl mt-4 mb-4">Medium Lawn (30 ft × 20 ft × 5 in depth)</h3>
-              <p>Area = 600 sq ft. <br /> Depth = 0.417 ft. <br /> Volume = 600 × 0.417 ≈ 250 cu ft → 9.26 cu yd. <br /> Add 10 % buffer → 10.2 cu yd (order 11 cubic yards).</p>
+              <h3 className="font-bold text-xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Medium Lawn (30 ft × 20 ft × 5 in depth)</h3>
+              <p className="text-slate-600 dark:text-slate-300">Area = 600 sq ft. <br /> Depth = 0.417 ft. <br /> Volume = 600 × 0.417 ≈ 250 cu ft → 9.26 cu yd. <br /> Add 10 % buffer → 10.2 cu yd (order 11 cubic yards).</p>
 
-              <h3 className="font-bold text-xl mt-4 mb-4">Large Landscaping Project (50 ft × 40 ft × 8 in depth)</h3>
-              <p>Area = 2,000 sq ft. <br /> Depth = 0.667 ft. <br /> Volume = 2,000 × 0.667 ≈ 1,334 cu ft → 49.4 cu yd. <br /> With a 10 % buffer you’ll need about 54 cubic yards.</p>
+              <h3 className="font-bold text-xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Large Landscaping Project (50 ft × 40 ft × 8 in depth)</h3>
+              <p className="text-slate-600 dark:text-slate-300">Area = 2,000 sq ft. <br /> Depth = 0.667 ft. <br /> Volume = 2,000 × 0.667 ≈ 1,334 cu ft → 49.4 cu yd. <br /> With a 10 % buffer you’ll need about 54 cubic yards.</p>
 
-              <h2 className="font-bold text-3xl mt-4 mb-4">How Much Topsoil Do You Need?</h2>
-              <p>When you search for “how much for yard of topsoil” or “4 yards of soil,” the answer depends on the surface area and desired depth. Using the calculator, you can instantly answer questions like:</p>
-              <ul className="list-disc list-inside ml-5">
+              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">How Much Topsoil Do You Need?</h2>
+              <p className="text-slate-600 dark:text-slate-300">When you search for “how much for yard of topsoil” or “4 yards of soil,” the answer depends on the surface area and desired depth. Using the calculator, you can instantly answer questions like:</p>
+              <ul className="list-disc list-inside ml-5 text-slate-600 dark:text-slate-300">
                 <li>What is 1 cubic yard of topsoil?
                   <p className="ml-12"> Approximately 27 cubic ft, 2,000–2,200 lb of screened topsoil.</p>
                 </li>
@@ -285,25 +285,25 @@ export default function TopsoilPage() {
                 </li>
               </ul>
 
-              <h2 className="font-bold text-3xl mt-4 mb-4">Buying Guide</h2>
-              <p>When you’re ready to purchase, consider these factors:</p>
-              <ul className="list-disc list-inside ml-5">
+              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Buying Guide</h2>
+              <p className="text-slate-600 dark:text-slate-300">When you’re ready to purchase, consider these factors:</p>
+              <ul className="list-disc list-inside ml-5 text-slate-600 dark:text-slate-300">
                 <li><strong>Bulk vs. bagged soil:</strong> Bulk deliveries are cost‑effective for large volumes (10 + cubic yards) and reduce packaging waste. Bagged soil is convenient for DIY projects under 2 cubic yards.</li>
                 <li><strong>Delivery pricing:</strong> Most suppliers charge per cubic yard plus a mileage fee. Some offer free delivery for orders over a certain volume.</li>
                 <li><strong>Fill dirt vs. topsoil:</strong> Fill dirt is used for structural fill, foundations, and base layers; it’s typically cheaper but low in nutrients. Topsoil is designed for planting and landscaping.</li>
-                <li><strong>Ground cover calculator context:</strong> If you’re also calculating grass or mulch coverage, use our <Link href="/calculators/ground-cover">ground cover calculator</Link> to ensure consistent material budgeting.</li>
+                <li><strong>Ground cover calculator context:</strong> If you’re also calculating grass or mulch coverage, use our <Link href="/calculators/ground-cover" className="text-primary dark:text-sky-400 hover:underline">ground cover calculator</Link> to ensure consistent material budgeting.</li>
               </ul>
 
-              <h2 className="font-bold text-3xl mt-4 mb-4">Delivery Tips</h2>
-              <p>Getting your soil onto the job site efficiently can save time and money:</p>
-              <ul className="list-disc list-inside ml-5">
+              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Delivery Tips</h2>
+              <p className="text-slate-600 dark:text-slate-300">Getting your soil onto the job site efficiently can save time and money:</p>
+              <ul className="list-disc list-inside ml-5 text-slate-600 dark:text-slate-300">
                 <li><strong>Truck size:</strong> A standard 5‑ton dump truck holds roughly 10 cubic yards. Smaller trucks (2‑ton) carry 4 cubic yards.</li>
                 <li><strong>Unloading strategy:</strong> Use a wheelbarrow or skid‑steer loader for tight spaces. Plan a clear path to avoid damage to existing landscaping.</li>
                 <li><strong>Access constraints:</strong> Verify driveway width, gate clearance, and any steep ramps before the delivery arrives.</li>
               </ul>
 
-              <h2 className="font-bold text-3xl mt-4 mb-4">Common Mistakes</h2>
-              <ul className="list-disc list-inside ml-5">
+              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Common Mistakes</h2>
+              <ul className="list-disc list-inside ml-5 text-slate-600 dark:text-slate-300">
                 <li><strong>Neglecting compaction:</strong> Soil settles 10‑20 % after watering or tamping. Always add a safety buffer.</li>
                 <li><strong>Wrong depth assumption:</strong> Using a depth that’s too shallow will leave your plants under‑nourished; too deep wastes material.</li>
                 <li><strong>Unit conversion errors:</strong> Mixing feet and inches without proper conversion leads to large miscalculations.</li>
@@ -316,11 +316,11 @@ export default function TopsoilPage() {
               {/* SEO Topic Cluster Navigation Hub */}
               <CategoryClusterNav category="Construction" currentSlug="topsoil" />
 
-              <h2 className="font-bold text-3xl mt-4 mb-4">Related Calculators</h2>
+              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Related Calculators</h2>
               <ul className="list-disc list-inside ml-5">
-                <li className="text-primary"><Link href="/calculators/fill-dirt">Fill Dirt Calculator</Link></li>
-                <li className="text-primary"><Link href="/calculators/ground-cover">Ground Cover Calculator</Link></li>
-                <li className="text-primary"><Link href="/calculators/dirt-cubic-yard">Dirt Cubic Yard Calculator</Link></li>
+                <li className="text-primary dark:text-sky-400"><Link href="/calculators/fill-dirt">Fill Dirt Calculator</Link></li>
+                <li className="text-primary dark:text-sky-400"><Link href="/calculators/ground-cover">Ground Cover Calculator</Link></li>
+                <li className="text-primary dark:text-sky-400"><Link href="/calculators/dirt-cubic-yard">Dirt Cubic Yard Calculator</Link></li>
               </ul>
             </article>
           </div>
@@ -328,8 +328,8 @@ export default function TopsoilPage() {
           {/* Sidebar */}
           <aside className="space-y-8">
             {topsoilBlogs.length > 0 && (
-              <section className="pb-6 border-b border-slate-200/80">
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">
+              <section className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">
                   You May Like
                 </h3>
                 <div className="space-y-5">
@@ -339,7 +339,7 @@ export default function TopsoilPage() {
                       href={`/blog/${rel.slug}`}
                       className="group flex gap-4 hover:text-primary transition-colors"
                     >
-                      <div className="relative w-16 h-16 bg-slate-100 rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50">
+                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-[#22242A] rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-[#4D5156]">
                         <Image
                           src={rel.image}
                           alt={rel.title}
@@ -349,10 +349,10 @@ export default function TopsoilPage() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="block text-[9px] font-bold text-primary uppercase tracking-wider">
+                        <span className="block text-[9px] font-bold text-primary dark:text-sky-400 uppercase tracking-wider">
                           {rel.category}
                         </span>
-                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 leading-snug group-hover:text-primary transition-colors mt-1 line-clamp-2">
+                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 leading-snug group-hover:text-primary dark:group-hover:text-sky-400 transition-colors mt-1 line-clamp-2">
                           {rel.title}
                         </h4>
                       </div>
@@ -362,8 +362,8 @@ export default function TopsoilPage() {
               </section>
             )}
 
-            <section className="pb-6 border-b border-slate-200/80">
-              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
+            <section className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+              <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">
                 Popular Tools
               </h3>
               <ul className="space-y-3.5">
@@ -371,11 +371,11 @@ export default function TopsoilPage() {
                   <li key={calc.name}>
                     <Link
                       href={calc.href}
-                      className="group ml-5 flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-600 hover:text-primary transition-colors py-0.5"
+                      className="group ml-5 flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors py-0.5"
                     >
                       <span>{calc.name}</span>
                       <svg
-                        className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-transform"
+                        className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 group-hover:text-primary dark:group-hover:text-sky-400 transition-transform"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -393,28 +393,28 @@ export default function TopsoilPage() {
               </ul>
             </section>
 
-            <section className="pb-6 border-b border-slate-200/80">
-              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider pb-3 border-b border-slate-100">
+            <section className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-[#4D5156]">
                 Categories
               </h3>
               <ul className="ml-5 space-y-2">
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
                     Construction &amp; Materials
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
                     Landscaping &amp; Gardening
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
                     Finance &amp; Payroll
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 hover:text-primary transition-colors block py-1">
+                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
                     Health &amp; Fitness
                   </Link>
                 </li>

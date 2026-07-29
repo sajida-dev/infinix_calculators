@@ -70,10 +70,10 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+    <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] shadow-sm overflow-hidden transition-colors">
       {/* Title Header */}
-      <div className="bg-slate-50/50 border-b border-slate-100 px-6 py-4">
-        <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider">
+      <div className="bg-slate-50/50 dark:bg-[#191a1d] border-b border-slate-100 dark:border-[#4D5156] px-6 py-4">
+        <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">
           Interactive Calculator
         </h3>
       </div>
@@ -81,7 +81,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
       <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left: Interactive Input Fields */}
         <div className="space-y-5">
-          <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest">
             1. Provide Details
           </h4>
 
@@ -91,20 +91,20 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
               if (input.type === "select") {
                 return (
                   <div key={input.id}>
-                    <label htmlFor={uniqueId} className="block text-xs font-semibold text-slate-600 uppercase">
+                    <label htmlFor={uniqueId} className="block text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase">
                       {input.label}
                     </label>
                     <select
                       id={uniqueId}
                       value={inputsState[input.id] || ""}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
-                      className={`mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm shadow-sm transition-colors ${input.readOnly
-                        ? "bg-gray-100 text-slate-500 cursor-not-allowed"
-                        : "bg-white text-slate-900 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      className={`mt-2 w-full rounded-lg border border-slate-300 dark:border-[#4D5156] px-4 py-2.5 text-sm shadow-sm transition-colors ${input.readOnly
+                        ? "bg-gray-100 dark:bg-[#191a1d] text-slate-500 dark:text-slate-400 cursor-not-allowed"
+                        : "bg-white dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                         }`}
                     >
                       {input.options?.map((opt) => (
-                        <option key={opt.value} value={opt.value}>
+                        <option key={opt.value} value={opt.value} className="dark:bg-[#22242A] dark:text-slate-100">
                           {opt.label}
                         </option>
                       ))}
@@ -114,7 +114,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
               } else if (input.type === "text") {
                 return (
                   <div key={input.id}>
-                    <label htmlFor={uniqueId} className="block text-xs font-semibold text-slate-600 uppercase">
+                    <label htmlFor={uniqueId} className="block text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase">
                       {input.label}
                     </label>
                     <input
@@ -123,7 +123,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                       value={inputsState[input.id] || ""}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
                       readOnly={input.readOnly}
-                      className={`mt-2 w-full rounded-lg border ${input.readOnly ? "bg-gray-200" : ""} border-slate-300 px-4 py-2.5 text-sm text-slate-900 bg-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm`}
+                      className={`mt-2 w-full rounded-lg border ${input.readOnly ? "bg-gray-200 dark:bg-[#191a1d]" : "bg-white dark:bg-[#191a1d]"} border-slate-300 dark:border-[#4D5156] px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm`}
                     />
                   </div>
                 );
@@ -132,7 +132,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
               // Default: Number inputs
               return (
                 <div key={input.id}>
-                  <label htmlFor={uniqueId} className="block text-xs font-semibold text-slate-600 uppercase">
+                  <label htmlFor={uniqueId} className="block text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase">
                     {input.label}
                   </label>
                   <div className="mt-2 flex rounded-lg shadow-sm">
@@ -142,10 +142,10 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                       step="any"
                       value={inputsState[input.id] === undefined ? "" : inputsState[input.id]}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
-                      className="flex-1 rounded-l-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 bg-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="flex-1 rounded-l-lg border border-slate-300 dark:border-[#4D5156] px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-[#191a1d] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                     {input.unit && (
-                      <span className="inline-flex items-center rounded-r-lg border-y border-r border-slate-300 bg-slate-50 px-3.5 text-xs font-semibold text-slate-500">
+                      <span className="inline-flex items-center rounded-r-lg border-y border-r border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#22242A] px-3.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
                         {input.unit}
                       </span>
                     )}
@@ -158,7 +158,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
             <button
               type="button"
               onClick={() => setShouldCalculate(true)}
-              className="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition"
+              className="w-full bg-primary text-white font-bold py-3 px-4 rounded-xl hover:bg-primary-hover transition shadow-sm"
             >
               Calculate
             </button>
@@ -166,29 +166,27 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
         </div>
 
         {/* Right: Results Outputs */}
-        <div className="bg-slate-50/60 p-6 rounded-xl border border-slate-100 flex flex-col justify-between space-y-6">
+        <div className="bg-slate-50/60 dark:bg-[#191a1d] p-6 rounded-xl border border-slate-100 dark:border-[#4D5156] flex flex-col justify-between space-y-6">
           <div>
-            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-4">
               2. Output Results
             </h4>
 
             <div className="grid grid-cols-1 gap-4">
               {Object.entries(outputs).map(([key, item]) => {
-                // If it is a secondary element or specific structure, we adapt.
-                // Normally a grid cell works nicely. Let's make key ones highlighted.
                 const isPrimary = key.toLowerCase().includes("total") || key.toLowerCase().includes("bmi") || key.toLowerCase().includes("prorated");
 
                 return (
                   <div
                     key={key}
-                    className={`bg-white p-4 rounded-lg border border-slate-200/60 shadow-sm ${isPrimary ? "sm:col-span-2 border-primary/20" : ""
+                    className={`bg-white dark:bg-[#22242A] p-4 rounded-lg border border-slate-200/60 dark:border-[#4D5156] shadow-sm ${isPrimary ? "sm:col-span-2 border-primary/20 dark:border-sky-500/30" : ""
                       }`}
                   >
-                    <span className="block text-xs font-semibold text-slate-400">
+                    <span className="block text-xs font-semibold text-slate-400 dark:text-slate-400">
                       {item.label}
                     </span>
-                    <span className={`block text-xl font-extrabold mt-1 ${isPrimary ? "text-primary text-2xl" : "text-slate-800"}`}>
-                      {item.value} {item.unit && <span className="text-xs font-medium text-slate-500">{item.unit}</span>}
+                    <span className={`block text-xl font-extrabold mt-1 ${isPrimary ? "text-primary dark:text-sky-400 text-2xl" : "text-slate-800 dark:text-slate-100"}`}>
+                      {item.value} {item.unit && <span className="text-xs font-medium text-slate-500 dark:text-slate-400">{item.unit}</span>}
                     </span>
                   </div>
                 );
