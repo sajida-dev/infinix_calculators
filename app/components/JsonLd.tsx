@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 export default function JsonLd({
   data,
   id,
@@ -8,14 +10,14 @@ export default function JsonLd({
   if (!data) return null;
 
   return (
-    <script
+    <Script
       id={id}
       type="application/ld+json"
-      suppressHydrationWarning
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(data).replace(/</g, "\\u003c"),
       }}
     />
   );
 }
+
 
