@@ -6261,22 +6261,56 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     slug: "pink-calculator",
     name: "Pink Aesthetic Calculator",
     category: "math",
-    categoryLabel: "Math & Aesthetics",
-    seoTitle: "Pink Aesthetic Calculator - Online Math & Design Tool",
-    metaDescription: "Free online pink aesthetic calculator for quick basic and scientific math calculations with custom theme presets.",
-    keywords: ["pink calculator", "aesthetic pink calculator", "pink math calculator", "online pink calculator"],
-    hook: "Cute & functional pink aesthetic calculator for daily math, percentages, and powers.",
-    description: "Perform daily math calculations with a stylish pink aesthetic interface. Supports addition, subtraction, multiplication, division, modulo, and exponentiation with instant results.",
+    categoryLabel: "Education",
+    seoTitle: "Pink Aesthetic Calculator | Online Math, Glossier Pink & STEM Tool",
+    metaDescription: "Free online pink aesthetic calculator. Perform quick arithmetic, scientific math, and percentage calculations with pastel Glossier-pink styling.",
+    keywords: [
+      "pink calculator",
+      "pink online calculator",
+      "aesthetic pink calculator",
+      "pink casio 9750giii",
+      "pink graphing calculator",
+      "glossier pink calculator",
+      "cute pink calculator",
+      "pink math calculator",
+      "calculator app pink",
+      "cute calculator with extra large display",
+      "pink ti 84 plus ce",
+      "pink calculator online"
+    ],
+    hook: "Cute & functional Glossier-pink aesthetic calculator for daily math, percentages, and scientific powers.",
+    description: "Perform daily math calculations with a stylish pastel pink aesthetic interface. Supports addition, subtraction, multiplication, division, modulo, and exponentiation with instant results.",
     calcTime: "1 min",
     formula: "Result = Num1 [Operator] Num2",
     formulaDescription: "Applies arithmetic operations between two numeric operands with precision formatting.",
     example: "Calculating 450 + 15% (450 * 1.15) yields 517.50.",
     faqs: [
-      { question: "Can I use this for percentage and power calculations?", answer: "Yes, select the % or ^ operator to calculate percentages and exponential power values." }
+      {
+        question: "What are the best physical pink calculators for high school & college STEM courses?",
+        answer: "Top-rated physical models include the <strong>Casio FX-9750GIII Pink Edition</strong> (often under $40 on Amazon/US retailer sales), the <strong>Texas Instruments TI-84 Plus CE Rose Gold / Pink</strong>, and the budget-friendly <strong>Casio fx-300ES Plus Pink</strong> scientific calculator."
+      },
+      {
+        question: "Where can I find Glossier pink or pastel aesthetic calculators for my desk setup?",
+        answer: "For desk aesthetics and cozy study spaces, retro-inspired mechanical keyboard calculators (like Lofree pastel pink) and cute desktop calculators with extra-large displays are highly popular on Reddit (<a href=\"/blog/pink-calculator-guide-aesthetic-stem-gear\">read our full Pink Calculator Buyer's Guide</a>). For digital use, try our free <a href=\"/calculators/pink-calculator\">Online Pink Aesthetic Calculator</a>."
+      },
+      {
+        question: "How do I spot a fake vs. genuine Casio or TI pink calculator when buying online?",
+        answer: "Counterfeit calculators often feature flimsy plastic keys, washed-out LCD contrast, non-functional fake solar panels, and missing QR code authenticity checks on the back casing. Read our complete guide on <a href=\"/blog/how-to-spot-fake-casio-ti-calculators\">how to spot fake Casio & TI scientific calculators</a>."
+      },
+      {
+        question: "Will using a pink calculator in class or STEM exams get me penalized?",
+        answer: "No! Standard standardized testing bodies (SAT, ACT, AP Exams) only regulate approved calculator software models (like TI-84 or Casio FX-9750GIII), not color casing options. Expressing your personal aesthetic with a pink calculator is 100% permitted."
+      }
     ],
     commonMistakes: ["Dividing by zero which results in an undefined value."],
-    useCases: ["Daily budget calculations", "Shopping discount math", "Homework and study notes"],
-    tips: ["Use the exponent (^) operator for compound growth and powers."],
+    useCases: [
+      "Cozy study desk aesthetic setups",
+      "Daily budget calculations and shopping discount math",
+      "STEM homework checking with cute digital tools"
+    ],
+    tips: [
+      "Bookmark our online Pink Aesthetic Calculator for instant mobile & desktop calculation without installing extra apps."
+    ],
     inputs: [
       { id: "num1", label: "First Number", type: "number", defaultValue: 100, unit: "" },
       {
@@ -6634,7 +6668,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     slug: "ti-30x-calculator",
     name: "TI-30X Solar & Battery Calculator Guide",
     category: "math",
-    categoryLabel: "Math & Education",
+    categoryLabel: "Education",
     seoTitle: "TI-30X Calculator Guide - Solar Power & Battery Life Estimator",
     metaDescription: "Calculate battery life, solar lux power requirements, and operation modes for Texas Instruments TI-30X IIS calculators.",
     keywords: ["ti-30x calculator", "ti 30x iis battery", "ti-30x solar calculator", "ti 30x calculator guide"],
@@ -6999,6 +7033,354 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
         baseCompensation: { value: baseComp.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Base CMS wRVU Pay", unit: "$" },
         productivityBonus: { value: bonus.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Productivity Bonus Earned", unit: "$" },
         totalCompensation: { value: totalComp.toLocaleString("en-US", { maximumFractionDigits: 2 }), label: "Total Projected Compensation", unit: "$" }
+      };
+    }
+  },
+  "binomial-distribution": {
+    slug: "binomial-distribution",
+    name: "Binomial Distribution & Probability Calculator",
+    category: "math",
+    categoryLabel: "Statistics & Math",
+    seoTitle: "Binomial Distribution Calculator | Probability, PMF & CDF Finder",
+    metaDescription: "Free binomial distribution calculator. Compute exact probability P(X=k), cumulative P(X<=k), at-least P(X>=k), mean, variance, and standard deviation.",
+    keywords: [
+      "binomial distribution calculator",
+      "binomial probability calculator",
+      "binomial probability distribution calculator",
+      "binomial pdf calculator",
+      "calculator for binomial",
+      "find binomial probability calculator",
+      "binomial experiment calculator",
+      "binomials calculator",
+      "binary distribution calculator",
+      "binomial formula calculator",
+      "binomial pmf calculator",
+      "multiplying binomials calculator"
+    ],
+    hook: "Calculate Binomial Experiment Probabilities & Statistics in Seconds.",
+    description: "Find exact probabilities P(X=k), cumulative distribution P(X<=k), expected mean, variance, and standard deviation for any binomial trials.",
+    calcTime: "1 min",
+    formula: "P(X = k) = C(n, k) × p^k × (1 - p)^(n - k)",
+    formulaDescription: "Calculates the exact binomial probability of getting k successes in n independent Bernoulli trials with constant success rate p.",
+    example: "For n = 10 trials, p = 0.5 success rate, and k = 5 successes: P(X = 5) = C(10,5) × 0.5⁵ × 0.5⁵ = 252 × 0.00097656 = 0.2461 (24.61%).",
+    faqs: [
+      {
+        question: "What is a binomial distribution?",
+        answer: "A binomial distribution describes the discrete probability distribution of obtaining exactly k successes in n independent Bernoulli trials, where each trial has a constant success probability p."
+      },
+      {
+        question: "How do I calculate exact probability P(X = k)?",
+        answer: "Use the binomial PMF formula: P(X = k) = [n! / (k! × (n - k)!)] × p^k × (1 - p)^(n - k). Use our free <a href=\"/calculators/binomial-distribution\">Binomial Distribution Calculator</a> to get instant results."
+      },
+      {
+        question: "What is the difference between PMF and CDF in binomial distribution?",
+        answer: "PMF (Probability Mass Function) calculates the exact chance of obtaining exactly k successes. CDF (Cumulative Distribution Function) sums probabilities to find the chance of getting up to k successes, P(X ≤ k)."
+      },
+      {
+        question: "How are mean and variance calculated for a binomial distribution?",
+        answer: "The mean (expected value) is μ = n × p. The variance is σ² = n × p × (1 - p), and the standard deviation is σ = √(n × p × (1 - p))."
+      }
+    ],
+    commonMistakes: [
+      "Entering success probability p as a percentage (e.g. 50) instead of a decimal between 0 and 1 (0.50).",
+      "Confusing exact probability P(X = k) with cumulative probability P(X ≤ k)."
+    ],
+    useCases: [
+      "A/B conversion test trial confidence analysis",
+      "Manufacturing quality control defect sampling",
+      "Coin flip and sports probability forecasting"
+    ],
+    tips: [
+      "Verify that trials (n) are strictly independent and that probability (p) stays constant throughout."
+    ],
+    inputs: [
+      { id: "n", label: "Number of Trials (n)", type: "number", defaultValue: 10, unit: "trials" },
+      { id: "p", label: "Probability of Success (p, 0 to 1)", type: "number", defaultValue: 0.5, unit: "rate" },
+      { id: "k", label: "Number of Successes (k)", type: "number", defaultValue: 5, unit: "successes" }
+    ],
+    calculate: (inputs) => {
+      const n = Math.max(1, Math.min(500, Math.floor(Number(inputs.n || 10))));
+      const p = Math.max(0, Math.min(1, Number(inputs.p || 0.5)));
+      const k = Math.max(0, Math.min(n, Math.floor(Number(inputs.k || 5))));
+
+      const comb = (nVal: number, kVal: number): number => {
+        if (kVal < 0 || kVal > nVal) return 0;
+        if (kVal === 0 || kVal === nVal) return 1;
+        let res = 1;
+        for (let i = 1; i <= Math.min(kVal, nVal - kVal); i++) {
+          res = (res * (nVal - i + 1)) / i;
+        }
+        return res;
+      };
+
+      const pmf = (nVal: number, pVal: number, kVal: number) => {
+        return comb(nVal, kVal) * Math.pow(pVal, kVal) * Math.pow(1 - pVal, nVal - kVal);
+      };
+
+      const exactP = pmf(n, p, k);
+
+      let cdfP = 0;
+      for (let i = 0; i <= k; i++) {
+        cdfP += pmf(n, p, i);
+      }
+
+      const atLeastP = 1 - (cdfP - exactP);
+      const mean = n * p;
+      const variance = n * p * (1 - p);
+      const stdDev = Math.sqrt(variance);
+
+      return {
+        exactProb: { value: (exactP * 100).toFixed(4) + "% (" + exactP.toFixed(6) + ")", label: "Exact Probability P(X = k)", unit: "" },
+        cumProb: { value: (cdfP * 100).toFixed(4) + "% (" + cdfP.toFixed(6) + ")", label: "Cumulative Probability P(X ≤ k)", unit: "" },
+        atLeastProb: { value: (atLeastP * 100).toFixed(4) + "% (" + atLeastP.toFixed(6) + ")", label: "At Least Probability P(X ≥ k)", unit: "" },
+        meanVal: { value: mean.toFixed(4), label: "Expected Value / Mean (μ)", unit: "" },
+        stdDevVal: { value: stdDev.toFixed(4) + " (Var: " + variance.toFixed(4) + ")", label: "Standard Deviation (σ)", unit: "" }
+      };
+    }
+  },
+  "tan-inverse": {
+    slug: "tan-inverse",
+    name: "Tan Inverse Calculator (Arctan)",
+    category: "math",
+    categoryLabel: "Trigonometry & Math",
+    seoTitle: "Tan Inverse Calculator | Calculate Arctan (tan⁻¹) in Degrees & Radians",
+    metaDescription: "Free tan inverse calculator. Calculate arctan(x), arcsin(x), and arccos(x) in degrees and radians instantly with exact ratio output.",
+    keywords: [
+      "tan inverse calculator",
+      "tan inv calculator",
+      "inverse functions calculator",
+      "inverse trigonometric functions calculator",
+      "inverse equation calculator",
+      "exact value calculator",
+      "negative sign on calculator"
+    ],
+    hook: "Calculate Arctan (tan⁻¹) in Degrees & Radians Instantly.",
+    description: "Input any numeric value or ratio to calculate arctan, arcsin, and arccos in degrees and radians with exact geometric relations.",
+    calcTime: "1 min",
+    formula: "θ = arctan(x) = tan⁻¹(x)",
+    formulaDescription: "Finds the angle θ whose tangent is equal to ratio x. Range is between -90° and +90° (-π/2 to +π/2 radians).",
+    example: "For x = 1, arctan(1) = 45° (or π/4 rad ≈ 0.7854). For x = -1, arctan(-1) = -45°.",
+    faqs: [
+      {
+        question: "What is tan inverse (arctan)?",
+        answer: "Tan inverse (tan⁻¹ or arctan) is the inverse function of tangent. Given a ratio x = tan(θ), arctan(x) calculates the original angle θ."
+      },
+      {
+        question: "How do I convert arctan radians to degrees?",
+        answer: "Multiply the angle in radians by (180 / π). For instance, 0.785398 rad × (180 / π) = 45°."
+      },
+      {
+        question: "What is the tan inverse of 1?",
+        answer: "The tan inverse of 1 is 45° (0.7854 radians), since tan(45°) = 1."
+      }
+    ],
+    commonMistakes: [
+      "Confusing tan⁻¹(x) with 1/tan(x) (cotangent).",
+      "Forgetting whether your calculator mode is in Degrees or Radians."
+    ],
+    useCases: [
+      "Roof slope and architectural angle measurement",
+      "Physics vector direction angle computation",
+      "Trigonometric inverse function homework"
+    ],
+    tips: [
+      "Use arctan(rise / run) to quickly determine slope pitch angles."
+    ],
+    inputs: [
+      { id: "x", label: "Ratio Value (x)", type: "number", defaultValue: 1 }
+    ],
+    calculate: (inputs) => {
+      const x = Number(inputs.x || 0);
+
+      const rad = Math.atan(x);
+      const deg = rad * (180 / Math.PI);
+
+      let asinStr = "N/A (|x| > 1)";
+      let acosStr = "N/A (|x| > 1)";
+
+      if (Math.abs(x) <= 1) {
+        const asinRad = Math.asin(x);
+        const asinDeg = asinRad * (180 / Math.PI);
+        const acosRad = Math.acos(x);
+        const acosDeg = acosRad * (180 / Math.PI);
+
+        asinStr = `${asinDeg.toFixed(4)}° (${asinRad.toFixed(4)} rad)`;
+        acosStr = `${acosDeg.toFixed(4)}° (${acosRad.toFixed(4)} rad)`;
+      }
+
+      return {
+        arctanDegrees: { value: deg.toFixed(4) + "°", label: "Arctan Angle (Degrees)", unit: "deg" },
+        arctanRadians: { value: rad.toFixed(6), label: "Arctan Angle (Radians)", unit: "rad" },
+        piFraction: { value: (rad / Math.PI).toFixed(4) + " π rad", label: "Fraction of π Radians", unit: "π rad" },
+        arcsinValue: { value: asinStr, label: "Arcsin Reference (sin⁻¹)", unit: "" },
+        arccosValue: { value: acosStr, label: "Arccos Reference (cos⁻¹)", unit: "" }
+      };
+    }
+  },
+  "polynomial-multiplication": {
+    slug: "polynomial-multiplication",
+    name: "Polynomial Multiplication Calculator",
+    category: "math",
+    categoryLabel: "Algebra & Math",
+    seoTitle: "Polynomial Multiplication Calculator | Multiply Binomials & FOIL Finder",
+    metaDescription: "Free polynomial multiplication calculator. Multiply binomials (ax + b)(cx + d) instantly using FOIL expansion with roots and quadratic term analysis.",
+    keywords: [
+      "polynomial multiplication calculator",
+      "multiplying polynomials calculator",
+      "multiply the polynomials calculator",
+      "rational function calculator",
+      "find the 0 of a function calculator",
+      "explicit formula calculator",
+      "simplify math calculator",
+      "f and g calculator",
+      "calculator algebra 2"
+    ],
+    hook: "Multiply Binomials & Expand Polynomials using FOIL.",
+    description: "Enter linear polynomial coefficients to calculate the expanded quadratic expression ax² + bx + c and find polynomial zeros.",
+    calcTime: "1 min",
+    formula: "(ax + b)(cx + d) = (a·c)x² + (a·d + b·c)x + (b·d)",
+    formulaDescription: "Applies the FOIL (First, Outside, Inside, Last) multiplication algorithm to expand two binomial expressions.",
+    example: "For (2x + 3)(4x - 5): First = 8x², Outside = -10x, Inside = 12x, Last = -15. Combined: 8x² + 2x - 15.",
+    faqs: [
+      {
+        question: "How do you multiply two binomials using FOIL?",
+        answer: "FOIL stands for First, Outside, Inside, Last. Multiply the First terms of each binomial, then the Outside terms, the Inside terms, and the Last terms, then combine like terms."
+      },
+      {
+        question: "How do I find the zeros or roots of a polynomial?",
+        answer: "Set each factor equal to zero: ax + b = 0 => x = -b/a, and cx + d = 0 => x = -d/c."
+      }
+    ],
+    commonMistakes: [
+      "Forgetting to distribute negative signs during multiplication.",
+      "Attempting to add terms with different powers (e.g., x² + x)."
+    ],
+    useCases: [
+      "Algebra 1 & Algebra 2 polynomial expansion",
+      "Quadratics factoring and root verification",
+      "Engineering curve model expansions"
+    ],
+    tips: [
+      "Always write the expanded polynomial in standard descending degree order."
+    ],
+    inputs: [
+      { id: "a", label: "Coeff a in (ax + b)", type: "number", defaultValue: 2 },
+      { id: "b", label: "Constant b in (ax + b)", type: "number", defaultValue: 3 },
+      { id: "c", label: "Coeff c in (cx + d)", type: "number", defaultValue: 4 },
+      { id: "d", label: "Constant d in (cx + d)", type: "number", defaultValue: -5 }
+    ],
+    calculate: (inputs) => {
+      const a = Number(inputs.a || 0);
+      const b = Number(inputs.b || 0);
+      const c = Number(inputs.c || 0);
+      const d = Number(inputs.d || 0);
+
+      const quadCoeff = a * c;
+      const linCoeff = (a * d) + (b * c);
+      const constCoeff = b * d;
+
+      let expStr = "";
+      if (quadCoeff !== 0) expStr += `${quadCoeff}x²`;
+      if (linCoeff > 0) expStr += ` + ${linCoeff}x`;
+      else if (linCoeff < 0) expStr += ` - ${Math.abs(linCoeff)}x`;
+      if (constCoeff > 0) expStr += ` + ${constCoeff}`;
+      else if (constCoeff < 0) expStr += ` - ${Math.abs(constCoeff)}`;
+      if (!expStr) expStr = "0";
+
+      const root1 = a !== 0 ? (-b / a).toFixed(4) : "N/A";
+      const root2 = c !== 0 ? (-d / c).toFixed(4) : "N/A";
+
+      return {
+        expandedExpression: { value: expStr, label: "Expanded Polynomial (Standard Form)", unit: "" },
+        quadraticTerm: { value: `${quadCoeff}x²`, label: "Quadratic Term (x²)", unit: "" },
+        linearTerm: { value: `${linCoeff}x`, label: "Linear Term (x)", unit: "" },
+        constantTerm: { value: `${constCoeff}`, label: "Constant Term", unit: "" },
+        zerosRoots: { value: `x₁ = ${root1}, x₂ = ${root2}`, label: "Polynomial Zeros / Roots", unit: "" }
+      };
+    }
+  },
+  "4-function-calculator": {
+    slug: "4-function-calculator",
+    name: "4-Function & 10-Key Tape Calculator",
+    category: "math",
+    categoryLabel: "Basic Tools",
+    seoTitle: "4-Function Calculator | Online 10-Key Tape & Desk Calculator",
+    metaDescription: "Free online 4-function & 10-key desk calculator. Perform addition, subtraction, multiplication, division, and percentage with paper tape audit log.",
+    keywords: [
+      "10 key calculator",
+      "4-function calculator",
+      "what is a 4 function calculator",
+      "four-function calculator",
+      "5 function calculator",
+      "calculator tape",
+      "calculator with tape",
+      "ten key calculators",
+      "calculator with print",
+      "calculator keyboard",
+      "desk calculator",
+      "big calculator",
+      "fast calculator",
+      "smart calculator",
+      "large button calculator"
+    ],
+    hook: "Fast 4-Function & 10-Key Desk Calculator with Audit Tape.",
+    description: "Perform fast addition, subtraction, multiplication, and division calculations with continuous digital tape logging and percentage math.",
+    calcTime: "1 min",
+    formula: "Result = Number A [ + | - | × | ÷ ] Number B",
+    formulaDescription: "Executes foundational 4-function arithmetic operations and formats tape history logs for accounting validation.",
+    example: "100 + 25 = 125. 100 × 25% = 25.",
+    faqs: [
+      {
+        question: "What is a 4-function calculator?",
+        answer: "A 4-function calculator performs the four core mathematical operations: addition (+), subtraction (-), multiplication (×), and division (÷)."
+      },
+      {
+        question: "What is a 10-key calculator with tape?",
+        answer: "A 10-key desk calculator features a numeric keypad layout and continuous printing paper tape to verify line-item transaction entry totals."
+      }
+    ],
+    commonMistakes: [
+      "Dividing by zero, which results in an undefined mathematical error."
+    ],
+    useCases: [
+      "Daily accounting, invoices, and expense auditing",
+      "Fast basic arithmetic calculations",
+      "Elementary math problem checking"
+    ],
+    tips: [
+      "Use percentage (%) operation to calculate instant tax or discount values."
+    ],
+    inputs: [
+      { id: "numA", label: "First Number (A)", type: "number", defaultValue: 100 },
+      { id: "op", label: "Operation", type: "select", defaultValue: "+", options: [
+        { value: "+", label: "Addition (+)" },
+        { value: "-", label: "Subtraction (-)" },
+        { value: "*", label: "Multiplication (×)" },
+        { value: "/", label: "Division (÷)" },
+        { value: "%", label: "Percentage (% of A)" }
+      ] },
+      { id: "numB", label: "Second Number (B)", type: "number", defaultValue: 25 }
+    ],
+    calculate: (inputs) => {
+      const numA = Number(inputs.numA || 0);
+      const numB = Number(inputs.numB || 0);
+      const op = String(inputs.op || "+");
+
+      let result = 0;
+      let symbol = "+";
+
+      if (op === "+") { result = numA + numB; symbol = "+"; }
+      else if (op === "-") { result = numA - numB; symbol = "-"; }
+      else if (op === "*") { result = numA * numB; symbol = "×"; }
+      else if (op === "/") { result = numB !== 0 ? numA / numB : 0; symbol = "÷"; }
+      else if (op === "%") { result = (numA * numB) / 100; symbol = "% of"; }
+
+      const tapeEntry = `${numA} ${symbol} ${numB} = ${result}`;
+
+      return {
+        calculatedResult: { value: result.toLocaleString("en-US", { maximumFractionDigits: 6 }), label: "Calculated Result", unit: "" },
+        tapeEntryLog: { value: tapeEntry, label: "Digital Tape Record", unit: "" },
+        inverseResult: { value: result !== 0 ? (1 / result).toFixed(6) : "N/A", label: "Reciprocal (1 / Result)", unit: "" }
       };
     }
   }

@@ -51,14 +51,16 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <head>
-        <JsonLd data={organizationSchema} />
-        <JsonLd data={websiteSchema} />
+      <head suppressHydrationWarning>
+        <JsonLd id="org-jsonld" data={organizationSchema} />
+        <JsonLd id="website-jsonld" data={websiteSchema} />
         {/* Native script for Google AdSense to prevent data-nscript warning */}
         <script
+          id="google-adsense"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869"
           crossOrigin="anonymous"
+          suppressHydrationWarning
         />
         {/* Google tag (gtag.js) */}
         <Script

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { blogData } from "../data/blogData";
+import { blogKeywords } from "../data/keywords";
 import BlogCard from "../components/BlogCard";
 import BlogFilterBar from "../components/BlogFilterBar";
 import BlogPagination from "../components/BlogPagination";
@@ -42,41 +43,7 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
   return {
     title: pageTitle,
     description: "Read detailed guides, mathematical breakdowns, material estimating instructions, and calculator advice from our landscape and finance experts.",
-    keywords: [
-      "infinix calculator",
-      "infinix calculators",
-      "calculators",
-      "topsoil calculator",
-      "finance calculator",
-      "construction calculator",
-      "health calculator",
-      "unit converter",
-      "online estimator",
-      "online calculators",
-      "free calculators",
-      "calculator directory",
-      "business calculators",
-      "finance calculators",
-      "construction calculators",
-      "health calculators",
-      "math calculators",
-      "unit converters",
-      "percentage calculator",
-      "loan calculator",
-      "mortgage calculator",
-      "topsoil calculator",
-      "top soil calculator",
-      "concrete calculator",
-      "cbm calculator",
-      "affirm calculator",
-      "square fee calculator",
-      "square processing fee calculator",
-      "productivity calculator",
-      "cost calculators",
-      "estimators",
-      "calculation tools",
-      "lsat score calculator"
-    ],
+    keywords: blogKeywords,
     alternates: {
       canonical: canonicalUrl,
     },

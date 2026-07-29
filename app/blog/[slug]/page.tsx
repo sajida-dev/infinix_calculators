@@ -142,13 +142,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <div className="bg-slate-50 min-h-screen py-8 sm:py-12">
       {/* Schema Injection */}
       <script
+        id="blog-posting-schema"
         type="application/ld+json"
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(blogPostingSchema).replace(/</g, "\\u003c"),
         }}
       />
       <script
+        id="breadcrumb-schema"
         type="application/ld+json"
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
