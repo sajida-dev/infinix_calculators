@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { blogData } from "../../data/blogData";
 import { calculatorsData } from "../../data/calculatorsData";
@@ -141,18 +142,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <div className="bg-slate-50 min-h-screen py-8 sm:py-12">
       {/* Schema Injection */}
-      <script
+      <Script
         id="blog-posting-schema"
         type="application/ld+json"
-        suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(blogPostingSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <script
+      <Script
         id="breadcrumb-schema"
         type="application/ld+json"
-        suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
