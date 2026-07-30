@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen transition-colors">
       {/* 1. SaaS Hero Section */}
-      <section className="relative bg-white dark:bg-[#22242A] border-b border-slate-200 dark:border-[#4D5156] overflow-hidden py-15 sm:py-28 transition-colors">
+      <section className="relative bg-slate/50 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] overflow-hidden py-15 sm:py-28 transition-colors">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -115,7 +115,7 @@ export default function Home() {
       </section>
 
       {/* 2. Structured Directories categories block (Pinterest-style listing directly on Homepage) */}
-      <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#191a1d] transition-colors">
+      <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="mb-12 border-b border-slate-200 dark:border-[#4D5156] pb-4 flex items-end justify-between">
@@ -145,7 +145,7 @@ export default function Home() {
       </section>
 
       {/* 3. Featured Guides Blog Section */}
-      <section className="py-16 sm:py-24 bg-white dark:bg-[#22242A] border-t border-slate-200 dark:border-[#4D5156] transition-colors">
+      <section className="py-16 sm:py-24 bg-white dark:bg-[#22242A] transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">

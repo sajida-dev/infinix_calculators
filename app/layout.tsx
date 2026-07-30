@@ -58,10 +58,9 @@ export default function RootLayout({
         <JsonLd id="org-jsonld" data={organizationSchema} />
         <JsonLd id="website-jsonld" data={websiteSchema} />
         {/* Google AdSense */}
-        <Script
-          id="google-adsense"
+        <script
+          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869"
-          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
         {/* Google tag (gtag.js) */}
@@ -81,7 +80,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-full bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-200" suppressHydrationWarning>
+      <body className="min-h-full bg-white dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-200" suppressHydrationWarning>
         <ThemeProvider>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 left-0 w-full bg-primary text-white text-center py-2">Skip to main content</a>
           <Header />

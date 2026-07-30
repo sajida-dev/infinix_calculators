@@ -22,7 +22,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "how-much-topsoil-do-i-need",
     title: "How Much Topsoil Do I Need? Complete Landscaping Guide",
     excerpt: "Learn how to estimate topsoil for lawns, raised beds, and landscaping. Calculate cubic yards, feet, bag counts, and 10% compaction margins with precision.",
-    category: "Construction & Landscaping",
+    category: "Construction & Materials",
     date: "2026-06-27",
     author: "Elena Rostova (Landscape Architect)",
     image: "/topsoil-calculator.webp",
@@ -171,7 +171,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "fill-dirt-vs-topsoil",
     title: "Fill Dirt vs Topsoil: Key Differences, Costs & Uses (2026)",
     excerpt: "Discover the key differences between fill dirt and topsoil. Compare cost per yard, organic nutrients, lawn grading, and structural foundation stability.",
-    category: "Construction & Landscaping",
+    category: "Construction & Materials",
     date: "2026-06-25",
     author: "Tom Harrison (Soil Scientist & Agronomist)",
     image: "/fill-dirt-vs-topsoil.webp",
@@ -304,7 +304,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "topsoil-cost-guide",
     title: "Topsoil Cost Guide 2026: Bulk Price Per Yard, Delivery & Bag Cost",
     excerpt: "Free topsoil cost breakdown for 2026. Calculate exact price per cubic yard ($20-$60/yd), truck delivery fees ($50-$150), and bag costs to budget landscaping projects.",
-    category: "Construction & Landscaping",
+    category: "Construction & Materials",
     date: "2026-06-20",
     author: "Clara Adams (Residential Landscape Contractor)",
     image: "/top-soil-calculator-rates-bag.webp",
@@ -436,7 +436,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "best-soil-depth-for-grass",
     title: "Best Soil Depth for Grass: Lawn Seeding & Sod Guide 2026",
     excerpt: "Discover the ideal soil depth for new lawn seeding, sod prep, and top-dressing. Learn root penetration requirements to build thick, healthy green grass.",
-    category: "Construction & Landscaping",
+    category: "Construction & Materials",
     date: "2026-06-15",
     author: "Elena Rostova (Landscape Architect)",
     image: "/best-soil-depth-for-growing-grass-and-new-lawns.webp",
@@ -500,7 +500,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "topsoil-delivery-basics",
     title: "Topsoil Delivery Basics: Preparing Your Property and Checklist",
     excerpt: "Planning a bulk soil delivery? Learn how to prepare your driveway, protect your property, and ensure a seamless delivery process using our checklist.",
-    category: "Construction & Landscaping",
+    category: "Construction & Materials",
     date: "2026-07-13",
     author: "Elena Rostova (Landscape Architect)",
     image: "/topsoil-calculator.webp",
@@ -567,7 +567,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "lsat-raw-score-conversion-guide",
     title: "Your Raw Score vs. LSAT Score: How the Conversion Works (2026 Format)",
     excerpt: "Confused by how your raw LSAT correct answers translate to a scaled score out of 180? Read our 2026 guide to raw-to-scaled conversion, including 75% and 67% thresholds.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-05",
     author: "Marcus Vance (LSAT Coach)",
     image: "/lsat-score-conversion.webp",
@@ -690,7 +690,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "what-is-a-good-lsat-score",
     title: "What is a Good LSAT Score? Law School Percentiles Guide",
     excerpt: "Discover what counts as a good LSAT score for T14, top 50, and regional law schools. Explore score distribution curves, averages, and admissions odds.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-05",
     author: "Dr. Abigail Sterling (Former Law School Admissions Officer)",
     image: "/what-is-a-good-lsat-score.webp",
@@ -798,7 +798,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "law-school-predictor-scholarships",
     title: "Law School Predictor: Using Your LSAT and GPA to Estimate Scholarships",
     excerpt: "Learn how law school admission predictors and scholarship estimators work, how your academic index is calculated, and tips to maximize merit aid.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-05",
     author: "Ethan Caldwell (Admissions Consultant)",
     image: "/Law-School-Predictor-Using-Your-LSAT-and-GPA-to-Estimate-scholarships.webp",
@@ -871,7 +871,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "how-long-is-the-lsat-exam",
     title: "How Long is the LSAT? Exam Timing, Structure, and Pacing Strategy",
     excerpt: "A complete breakdown of the LSAT exam length, section timings, question counts, and strategies for the modern 3-scored-section layout.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-05",
     author: "Chloe Bennett (LSAT Tutor)",
     image: "/how-long-is-the-lsat-exam.webp",
@@ -978,7 +978,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "best-lsat-prep-courses-reviews",
     title: "Best LSAT Prep Blogs and Sites to Help You Study 2026",
     excerpt: "Choosing an LSAT prep course is a major financial and academic decision. Read our comprehensive review of 7Sage, Kaplan, Blueprint, and others to find the best fit.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-05",
     author: "Marcus Vance (LSAT Prep Expert)",
     image: "/Best-LSAT-prep-blogs-and-sites-to-help-you-study 2026.webp",
@@ -1068,7 +1068,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "should-i-retake-the-lsat-improvement",
     title: "Should I Retake the LSAT? Calculate Your Score Improvement and Admissions Chances",
     excerpt: "Should you retake the LSAT? Learn the statistics behind score improvements, how law schools view multiple scores, and how to make a data-backed decision.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-05",
     author: "Jordan Lee (Pre-Law Counseling Director)",
     image: "/should-i-retake-the-lsat-calculate-your-score-improvement-and-admissions-chances.webp",
@@ -1167,7 +1167,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "how-to-calculate-employee-productivity",
     title: "How to Calculate Employee Productivity: Formulas & Metrics",
     excerpt: `Learn the standard formulas to calculate <a href="/calculators/productivity">Employee Productivity Calculator</a>, DevOps DORA metrics, freelancer billing ratios, and labor efficiency.`,
-    category: "Productivity",
+    category: "Technology & Productivity",
     date: "2026-07-05",
     author: "Sarah Jenkins (Operations Consultant)",
     image: "/employee-productivity-guide.webp",
@@ -1276,7 +1276,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "snf-therapy-productivity-guide",
     title: "Understanding SNF Therapy Productivity Metrics: A Therapist's Survival Guide",
     excerpt: "Master employee productivity calculations with simple business metrics and formulas. Measure revenue per employee, billable hours, and labor efficiency.",
-    category: "Productivity",
+    category: "Technology & Productivity",
     date: "2026-07-01",
     author: "Megan Rossi, OTR/L (Rehabilitation Director)",
     image: "/snf-therapy-productivity-calculator.webp",
@@ -1373,7 +1373,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "free-vs-paid-productivity-tools",
     title: "Free vs Paid Productivity Calculators: ROI & Feature Guide",
     excerpt: "Compare free vs paid online productivity calculators for business finance and project estimation. Evaluate feature depth, ROI, and workflow automation.",
-    category: "Productivity",
+    category: "Technology & Productivity",
     date: "2026-07-13",
     author: "Liam Vance (Minimalist Tech Blogger)",
     image: "/top-10-free-productivity-tools-for-you-and-your-teams.webp",
@@ -1476,7 +1476,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "google-review-math-rating-boost",
     title: "Google Review Math: How Many 5-Star Reviews to Reach 4.8?",
     excerpt: "Calculate how many 5-star Google reviews you need to elevate your rating to 4.8 or 5.0. Explore mathematical weighted averages and reputation strategies.",
-    category: "Productivity",
+    category: "Technology & Productivity",
     date: "2026-07-05",
     author: "Devon Albright (Local SEO Specialist)",
     image: "/google-review-calculator-how-to-get-a-5-star-reviews.webp",
@@ -1565,7 +1565,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "lsat-score-calculator",
     title: "LSAT Score Calculator: 2026 Scale & Score Conversion Guide",
     excerpt: "Convert your Logical Reasoning and Reading Comprehension raw scores to an estimated scaled score (120–180) and percentile under the new 2025 LSAT format.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-18",
     author: "Chloe Bennett (LSAT Tutor)",
     image: "/Lsat-score-calculator.webp",
@@ -1695,7 +1695,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "mortgage-calculator-game",
     title: "The Mortgage Payoff Game: How to Win, Save Thousands, and Gamify Your Debt",
     excerpt: "Learn the math, strategies, and interactive games to pay down your mortgage faster. Compare prepaying vs. investing, and track your Savings Score.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "2026-07-19",
     author: "Liam Vance (Financial Advisor)",
     image: "/mortgage-calculator-game.webp",
@@ -1765,7 +1765,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "avalara-sales-tax-calculator-guide",
     title: "Avalara Sales Tax Calculator: AvaTax Rates & Zip Lookup",
     excerpt: "Calculate sales tax rates by ZIP code with our Avalara tax guide. Explore state, county, and local rates for San Francisco 94105, Houston, and Chicago.",
-    category: "Tax & Compliance",
+    category: "Tax & Payroll Calculators",
     date: "2026-07-21",
     author: "Chloe Bennett (Tax Compliance Specialist)",
     image: "/avalara-sales-tax-calculator.webp",
@@ -1832,7 +1832,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "california-sales-tax-by-zip-code-94105",
     title: "California Sales Tax Sourcing: San Francisco ZIP 94105",
     excerpt: "Master California sales tax sourcing guidelines and local district surtaxes. Learn rules for ZIP code 94105, San Francisco county, and grocery food tax.",
-    category: "Tax & Compliance",
+    category: "Tax & Payroll Calculators",
     date: "2026-07-21",
     author: "Chloe Bennett (Tax Compliance Specialist)",
     image: "/california-sales-tax-by-zip-code-94105.webp",
@@ -1934,7 +1934,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "how-many-bags-of-concrete-do-i-need",
     title: "How Many Bags of Concrete Do I Need? Slabs & Post Math",
     excerpt: "Calculate how many 60lb and 80lb bags of concrete you need for slabs, post holes, and footings. Convert cubic yards to bag counts with simple formulas.",
-    category: "Construction & Landscaping",
+    category: "Construction & Materials",
     date: "2026-07-21",
     author: "Marcus Vance (Civil Engineer)",
     image: "/how-many-bags-of-concrete-do-i-need-Informational.webp",
@@ -2017,7 +2017,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "concrete-price-per-yard-cost-guide",
     title: "Concrete Price Per Cubic Yard: Delivery & Slab Cost Guide",
     excerpt: "Explore concrete prices per cubic yard, ready-mix delivery fees, and slab installation budgets. Learn how to estimate materials for driveways and patios.",
-    category: "Construction & Landscaping",
+    category: "Construction & Materials",
     date: "2026-07-21",
     author: "Marcus Vance (Civil Engineer)",
     image: "/concrete-price-per-yard-Informational.webp",
@@ -2088,7 +2088,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "how-to-calculate-cbm-shipping-volume-guide",
     title: "How to Calculate CBM for Shipping: Container Volume Guide",
     excerpt: "Master CBM calculations for ocean freight, air cargo, and Amazon FBA. Learn how to convert inches and cm to cubic meters and estimate container loading.",
-    category: "Logistics & Freight",
+    category: "Logistics & Converters",
     date: "2026-07-24",
     author: "Marcus Vance (Supply Chain Logistics Specialist)",
     image: "/how-to-calculate-cbm-shipping-volume-guide.webp",
@@ -2240,7 +2240,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "calculate-cbm-from-inches-and-centimeters",
     title: "Calculate CBM from Inches & Centimeters: Freight Guide",
     excerpt: "Learn how to calculate Cubic Meters (CBM) from box dimensions in inches or centimeters. Convert shipping volume, volumetric weight, and carton limits.",
-    category: "Logistics & Freight",
+    category: "Logistics & Converters",
     date: "2026-07-24",
     author: "Marcus Vance (Supply Chain Logistics Specialist)",
     image: "/cbm-calculator.webp",
@@ -2366,7 +2366,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "square-fee-calculator-guide",
     title: "Square Processing Fee Calculator 2026: Merchant Rates",
     excerpt: "Calculate Square credit card processing fees for swiped, keyed, and invoice payments. Learn the reverse gross-up formula to net 100% of your invoice value.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "2026-07-25",
     author: "Michael Vance (Fintech & Small Business Operations)",
     image: "/square-fee-calculator.webp",
@@ -2625,7 +2625,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "infinix-calculator-suite-guide",
     title: "Infinix Calculator Suite: Business, Math & Material Hub",
     excerpt: "Discover the complete Infinix Calculator suite for business finance, construction materials, health metrics, and math. Free precision tools for fast decisions.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "2026-07-25",
     author: "Elena Rostova & Infinix Engineering Team",
     image: "/calculators-infinix-calculators.webp",
@@ -2681,7 +2681,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "why-use-affirm-instead-of-credit-card",
     title: "Why Use Affirm Instead of a Credit Card? Rates & Fees",
     excerpt: "Compare Affirm BNPL installment loans against revolving credit card debt. Explore fixed simple interest rates, credit score impacts, and payment control.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "2026-07-26",
     author: "Samantha Vance (Senior Financial Analyst)",
     image: "/why-use-affirm-instead-of-credit-card.webp",
@@ -2799,7 +2799,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "does-affirm-hurt-your-credit-score",
     title: "Does Affirm Hurt Your Credit Score? Soft vs Hard Pulls",
     excerpt: "Learn how Affirm affects your credit score. Understand soft credit inquiries, monthly loan reporting, payment history benefits, and hard pull risks.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "2026-07-26",
     author: "Samantha Vance (Senior Financial Analyst)",
     image: "/does-affirm-hurt-your-credit-score.webp",
@@ -2878,7 +2878,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "how-does-affirm-work-pay-in-4-vs-monthly",
     title: "How Does Affirm Work? Pay in 4 vs Monthly Loan Options",
     excerpt: "Discover how Affirm works: 0% interest Pay-in-4 biweekly plans vs 3, 6, 12, or 24-month monthly installment loans. Learn approval rules and terms.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "2026-07-26",
     author: "Marcus Vance (Consumer Credit Expert)",
     image: "/how-does-affirm-work-pay-in-4-vs-monthly.webp",
@@ -2973,7 +2973,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "affirm-debt-trap-how-to-pay-off-bnpl",
     title: "Escape Affirm Debt Traps: How to Pay Off BNPL Early",
     excerpt: "Learn proven strategies to escape Buy Now Pay Later debt traps. Discover how early payoff works with zero prepayment penalties on Affirm installment loans.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "2026-07-26",
     author: "Elena Rostova (Financial Coach)",
     image: "/affirm-debt-trap-how-to-pay-off-bnpl.webp",
@@ -3044,7 +3044,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "lsat-exam-breakdown-timing-sections-prep",
     title: "LSAT Exam Breakdown (2026): Sections, Timing & Prep Guide",
     excerpt: "Explore the complete LSAT exam structure, section timing, break rules, and scoring scales. Learn pacing strategies for Logical Reasoning and Reading Comp.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-26",
     author: "Marcus Vance (LSAT Coach)",
     image: "/lsat-exam-breakdown-timing-sections-prep.webp",
@@ -3146,7 +3146,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "affirm-vs-klarna-vs-afterpay-comparison",
     title: "Affirm vs Klarna vs Afterpay: BNPL Rates & Credit Impact",
     excerpt: "Compare Affirm vs Klarna vs Afterpay BNPL apps. Explore 0% interest options, late fee policies, soft vs hard credit checks, and credit bureau reporting.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "2026-07-26",
     author: "Samantha Vance (Senior Financial Analyst)",
     image: "/affirm-vs-klarna-vs-afterpay.webp",
@@ -3282,7 +3282,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "avalara-pricing-hidden-fees-and-tax-calculator-alternatives",
     title: "Avalara AvaTax Pricing Guide: Hidden Fees & Alternatives",
     excerpt: "Explore Avalara AvaTax pricing tiers, transaction overage charges, and multi-year contract traps. Compare top alternatives like TaxJar, Anrok, and Numeral.",
-    category: "Tax & Compliance",
+    category: "Tax & Payroll Calculators",
     date: "2026-07-27",
     author: "Marcus Vance (Senior E-Commerce Tax Strategist)",
     image: "/avalara-pricing-hidden-fees-and-tax-calculator-alternatives.webp",
@@ -3401,7 +3401,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "reverse-sales-tax-calculator-how-to-extract-pre-tax-price-formula",
     title: "Reverse Sales Tax Calculator & Formula: Pre-Tax Price Math",
     excerpt: "Learn how to calculate reverse sales tax with simple step-by-step formulas. Extract original pre-tax prices and sales tax from receipts and invoices.",
-    category: "Tax & Compliance",
+    category: "Tax & Payroll Calculators",
     date: "2026-07-27",
     author: "Elena Rostova (Accounting & Audit Specialist)",
     image: "/reverse-sales-tax-calculator.webp",
@@ -3482,7 +3482,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "state-by-state-sales-tax-rates-by-zip-code-and-state-calculator-guide-2026",
     title: "State Sales Tax Rates by Zip Code 2026: 50-State Guide",
     excerpt: "Explore 2026 state sales tax rates, local surtaxes, economic nexus rules, zero sales tax states (NOMAD), and city rates for CA, TX, FL, NY, CO, and IL.",
-    category: "Tax & Compliance",
+    category: "Tax & Payroll Calculators",
     date: "2026-07-27",
     author: "Marcus Vance (Tax & Compliance Strategist)",
     image: "/state-by-state-sales-tax-rates-by-zip-code-and-state-calculator-guide-2026.gif",
@@ -3586,7 +3586,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "woocommerce-netsuite-odoo-shopify-sales-tax-integration-guide",
     title: "E-Commerce Sales Tax Setup: WooCommerce, NetSuite & Odoo",
     excerpt: "Technical sales tax integration guide for WooCommerce, NetSuite (SuiteTax vs Avalara), Odoo, and Shopify. Learn remote seller address validation math.",
-    category: "Tax & Compliance",
+    category: "Tax & Payroll Calculators",
     date: "2026-07-27",
     author: "Marcus Vance (Senior E-Commerce Tax Strategist)",
     image: "/woocommerce-netsuite-odoo-shopify-sales-tax-integration-guide.webp",
@@ -3648,7 +3648,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "cheapest-sales-tax-filing-software-and-cpa-pricing-guide",
     title: "Cheapest Sales Tax Filing Software 2026: TaxJar & Anrok",
     excerpt: "Discover the cheapest sales tax filing software for e-commerce. Compare TaxJar, Anrok, Numeral, Quaderno, open-source tax APIs, and CPA filing fees.",
-    category: "Tax & Compliance",
+    category: "Tax & Payroll Calculators",
     date: "2026-07-27",
     author: "Marcus Vance (Senior E-Commerce Tax Strategist)",
     image: "/cheapest-sales-tax-filing-software-and-cpa-pricing-guide.webp",
@@ -3709,7 +3709,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "are-square-processing-fees-worth-it-for-small-business",
     title: "Are Square Processing Fees Worth It? Honest Cost Analysis for Small Businesses",
     excerpt: "An in-depth merchant cost breakdown evaluating whether Square's 2.6% + $0.10 flat rate processing fees are worth it compared to Stripe, Toast, Clover, and Interchange-Plus pricing.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "July 28, 2026",
     author: "Financial Operations Team",
     image: "/are-square-processing-fees-worth-it-for-small-business.webp",
@@ -3786,7 +3786,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "how-to-pass-square-fees-to-customers-legally",
     title: "How to Pass Credit Card Processing Fees to Customers Legally (Surcharging vs Cash Discounts)",
     excerpt: "Learn how small business owners pass Square fees to customers legally. Explore credit card surcharges, state legal restrictions, cash discounts, and compliance rules.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "July 28, 2026",
     author: "Merchant Compliance Team",
     image: "/how-to-pass-square-fees-to-customers-legally.webp",
@@ -3850,7 +3850,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "square-credit-card-processing-fee-guide",
     title: "Square Processing Fee Calculator & Complete Merchant Guide (2026 Rates)",
     excerpt: "Free Square processing fee calculator to compute exact credit card transaction fees (2.6% + $0.10 in-person, 2.9% + $0.30 online). Learn how to calculate net payouts.",
-    category: "Finance & Business",
+    category: "Financial Calculators",
     date: "July 28, 2026",
     author: "Payment Systems Specialist",
     image: "/square-credit-card-processing-fee-guide.webp",
@@ -3925,7 +3925,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "pink-calculator-guide-aesthetic-stem-gear",
     title: "The Ultimate Pink Calculator Guide: Best Aesthetic & STEM Graphing Tools",
     excerpt: "Discover top pink scientific and graphing calculators (Casio FX-9750GIII, TI-84 Rose Gold), Glossier desk aesthetics, cute large-display desktop models, and custom pink web tools.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-28",
     author: "Sophia Lin (STEM Design Specialist)",
     image: "/pink-calculator-guide-aesthetic-stem-gear.webp",
@@ -3986,7 +3986,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "how-to-spot-fake-casio-ti-calculators",
     title: "How to Spot a Fake Calculator: Authentic Casio, TI & Secret Vault Guide",
     excerpt: "Detect counterfeit Casio fx-991EX, ClassWiz, and TI-84 calculators online. Master QR code checks, SHIFT+7+ON diagnostic tests, solar panel checks, and smartphone secret calculator vault apps.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-29",
     author: "Marcus Vance (Hardware Verification Specialist)",
     image: "/how-to-spot-fake-casio-ti-calculators.webp",
@@ -4132,7 +4132,7 @@ export const blogData: Record<string, BlogPost> = {
     slug: "human-calculator-mental-math-vs-digital-tools",
     title: "Human Calculators, Digital Tools & The AI Debate: Speed, Math & Accuracy",
     excerpt: "From Guinness World Record prodigies like Aaryan Shukla to the 1980s calculator debate vs modern LLMs—explore how mental math, digital tools, and AI compare in speed, logic, and accuracy.",
-    category: "Education",
+    category: "Education & GPA",
     date: "2026-07-29",
     author: "Dr. Aris Thorne (Mathematics Educator)",
     image: "/human-calculator-mental-math-vs-digital-tools.webp",
@@ -4266,6 +4266,168 @@ export const blogData: Record<string, BlogPost> = {
   <li><a href="https://www.reddit.com/r/changemyview/comments/6tok9t/cmv_calculators_should_never_be_artificially/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/changemyview: Should Calculators Ever Be Artificially Banned?</a></li>
   <li><a href="https://www.reddit.com/r/aiwars/comments/1ktwa3c/hating_ai_is_no_different_from_hating_people_for/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/aiwars: Hating AI vs. Hating Handheld Calculators</a></li>
   <li><a href="https://www.reddit.com/r/changemyview/comments/1s8c3yk/cmv_the_llmcalculator_analogy_is_stupid_and_is_a/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/changemyview: Why the LLM-Calculator Analogy is Mathematically Flawed</a></li>
+</ul>
+`
+  },
+  "3d-printing-cost-calculator-guide": {
+    slug: "3d-printing-cost-calculator-guide",
+    title: "3D Printing Cost Calculator: Filament, Power & Machine Wear Breakdown",
+    excerpt: "Master FDM 3D printing cost estimation. Calculate PLA/PETG/ABS filament weight per gram, electricity power draw (kWh), nozzle wear depreciation, and failure rate markups.",
+    category: "Technology & Productivity",
+    date: "2026-07-30",
+    author: "Marcus Vance (Additive Manufacturing Engineer)",
+    image: "/3d-printing-cost-calculator.webp",
+    headings: [
+      { id: "formula", text: "The FDM 3D Print Cost Formula" },
+      { id: "filament", text: "Calculating Filament Cost Per Gram ($/g)" },
+      { id: "electricity", text: "Power Draw and Electricity Calculation (kWh)" },
+      { id: "depreciation", text: "Machine Wear, Nozzles & Maintenance" },
+      { id: "failure-buffer", text: "Why You Must Include a 10-15% Misprint Buffer" },
+      { id: "community-sources", text: "Community Reddit References & Discussions" }
+    ],
+    calculatorSlug: "3d-printing-cost",
+    relatedSlugs: ["resin-3d-printing-cost-guide", "3d-print-pricing-formula-guide", "human-calculator-mental-math-vs-digital-tools"],
+    content: `
+<div class="bg-slate-50 border-l-4 border-primary p-5 rounded-r-xl my-6 shadow-sm">
+  <p class="m-0 text-slate-900 font-semibold"> Quick Summary:</p>
+  <p class="mt-2 mb-0 text-slate-700 text-sm leading-relaxed">
+    To compute true 3D printing costs, sum <strong>Filament Weight (g) × (Spool $/1,000)</strong> + <strong>(Power kW × Print Hours × $/kWh)</strong> + <strong>(Printer Cost / 3,000 hrs) × Hours</strong>, then apply a <strong>10% to 15% misprint buffer</strong>. Calculate unit costs instantly using our <a href="/calculators/3d-printing-cost">3D Printing Cost Calculator</a>.
+  </p>
+</div>
+
+<p>Whether you are operating a single desktop 3D printer (such as a Bambu Lab P1P, Creality Ender 3, or Prusa MK4) or managing a commercial print farm, underestimating 3D print costs is the single most common cause of negative margins. Most makers only look at spool price per kilogram, ignoring electricity draw during bed heating, nozzle and extruder wear, and unavoidable print failures.</p>
+
+<h2 id="formula">The FDM 3D Print Cost Formula</h2>
+<p>The mathematical equation for single-unit FDM 3D print cost is structured as:</p>
+<div class="bg-slate-900 text-slate-100 p-4 rounded-xl font-mono text-sm my-4">
+  Total Print Cost = Material Cost + Electricity Cost + Machine Depreciation + Failure Buffer
+</div>
+
+<h2 id="filament">Calculating Filament Cost Per Gram ($/g)</h2>
+<p>Standard 1kg (1,000g) spools of PLA, PETG, or ABS range from $15 to $30. Divide the purchase price by 1,000 to determine cost per gram:</p>
+<ul class="list-disc list-inside space-y-1 text-sm text-slate-700 my-3">
+  <li><strong>Budget PLA ($18/kg)</strong>: $0.018 per gram (150g print = $2.70)</li>
+  <li><strong>Standard PETG ($24/kg)</strong>: $0.024 per gram (150g print = $3.60)</li>
+  <li><strong>Engineering Fiber / ASA ($45/kg)</strong>: $0.045 per gram (150g print = $6.75)</li>
+</ul>
+
+<h2 id="electricity">Power Draw and Electricity Calculation (kWh)</h2>
+<p>Modern 3D printers consume 100W to 350W during active printing. The formula for electricity cost is:</p>
+<p class="font-mono text-xs bg-slate-100 p-3 rounded my-2">Electricity Cost = (Watts ÷ 1000) × Duration (Hours) × Local Rate ($/kWh)</p>
+<p>For a 150W printer running a 6-hour print at $0.15/kWh: <code>(0.150 kW) × 6 hrs × $0.15 = $0.135</code>.</p>
+
+<h2 id="depreciation">Machine Wear, Nozzles & Maintenance</h2>
+<p>A typical consumer desktop 3D printer has an expected lifespan of 3,000 to 5,000 operational hours before major mechanical overhauls (belts, lead screws, hotends). Dividing a $600 printer price by 3,000 hours yields a depreciation rate of <strong>$0.20 per print hour</strong>.</p>
+
+<h2 id="failure-buffer">Why You Must Include a 10-15% Misprint Buffer</h2>
+<p>No 3D printer operates at 100% reliability. Nozzle clogs, bed adhesion detachment, filament tangles, and power hiccups cause 5% to 15% of prints to fail. Adding a 10% safety margin ensures failed attempts do not erode profitability.</p>
+
+<h2 id="community-sources">Verified Community References & Discussions</h2>
+<ul class="list-disc list-inside space-y-2 my-4 text-sm text-slate-700">
+  <li><a href="https://www.reddit.com/r/BambuLab/comments/1ga4tfv/print_cost_calculator/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/BambuLab: Community Print Cost Calculator Discussion</a></li>
+  <li><a href="https://www.reddit.com/r/3Dprinting/comments/1amqcza/3d_printing_cost_calculator_site/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/3Dprinting: 3D Printing Cost Estimator Tool Thread</a></li>
+  <li><a href="https://www.reddit.com/r/Creality/comments/1szoy0z/free_3d_print_cost_calculator_no_paywalls_no/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/Creality: Open Print Cost Estimator Guide</a></li>
+  <li><a href="https://www.reddit.com/r/3Dprinting/comments/1utqw5q/3d_printing_cost_calculator/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/3Dprinting: Comprehensive Print Pricing Mechanics</a></li>
+</ul>
+`
+  },
+  "resin-3d-printing-cost-guide": {
+    slug: "resin-3d-printing-cost-guide",
+    title: "Resin 3D Printing Cost Calculator: Photopolymer, IPA Wash & FEP Film Costs",
+    excerpt: "Calculate liquid SLA/MSLA resin printing expenses. Factor in photopolymer cost per ml, Isopropyl Alcohol (IPA) wash bath consumption, UV curing, and FEP film depreciation.",
+    category: "Technology & Productivity",
+    date: "2026-07-30",
+    author: "Elena Rostova (Industrial Designer)",
+    image: "/resin-3d-printing-cost-guide.webp",
+    headings: [
+      { id: "resin-basics", text: "Understanding Resin vs FDM Printing Cost Factors" },
+      { id: "volume-cost", text: "Calculating Liquid Resin Volume in Milliliters ($/ml)" },
+      { id: "post-processing", text: "IPA Alcohol Washing Bath & Solvent Consumption" },
+      { id: "fep-screen", text: "FEP Film & LCD Screen Depreciation Costs" },
+      { id: "community-sources", text: "Community Reddit References & Discussions" }
+    ],
+    calculatorSlug: "3d-printing-cost",
+    relatedSlugs: ["3d-printing-cost-calculator-guide", "3d-print-pricing-formula-guide"],
+    content: `
+<div class="bg-slate-50 border-l-4 border-primary p-5 rounded-r-xl my-6 shadow-sm">
+  <p class="m-0 text-slate-900 font-semibold"> Quick Summary:</p>
+  <p class="mt-2 mb-0 text-slate-700 text-sm leading-relaxed">
+    Resin (SLA/MSLA) printing costs include <strong>Liquid Resin Volume (ml) × ($/ml)</strong> + <strong>IPA Solvent Consumption</strong> + <strong>FEP Film & Mono LCD Screen Wear</strong>. Estimate costs instantly using our <a href="/calculators/3d-printing-cost">3D Printing Cost Calculator</a>.
+  </p>
+</div>
+
+<p>Stereolithography (SLA) and Masked SLA (MSLA) resin 3D printing offer unmatched surface detail for miniatures, dental models, and jewelry prototypes. However, calculating resin print costs differs substantially from FDM printing due to liquid consumables, wash solvents, and consumable release films.</p>
+
+<h2 id="resin-basics">Understanding Resin vs FDM Printing Cost Factors</h2>
+<p>Unlike FDM filaments measured by weight (grams), liquid photopolymer resin is sold by volume (liters or milliliters). Furthermore, resin printing demands chemical post-processing (cleaning in 99% Isopropyl Alcohol and UV light curing).</p>
+
+<h2 id="volume-cost">Calculating Liquid Resin Volume in Milliliters ($/ml)</h2>
+<p>A standard 1-Liter (1,000ml) bottle of resin costs between $30 and $60 depending on formula (standard, water-washable, or tough/ABS-like):</p>
+<ul class="list-disc list-inside space-y-1 text-sm text-slate-700 my-3">
+  <li><strong>Standard UV Resin ($35/L)</strong>: $0.035 per ml (40ml model = $1.40)</li>
+  <li><strong>High-Detail Tough Resin ($55/L)</strong>: $0.055 per ml (40ml model = $2.20)</li>
+</ul>
+
+<h2 id="post-processing">IPA Alcohol Washing Bath & Solvent Consumption</h2>
+<p>Each resin print requires washing in Isopropyl Alcohol (IPA). A 5-liter wash station container ($25 of IPA) degrades after processing ~50 prints, adding roughly <strong>$0.50 per print</strong> in solvent degradation costs.</p>
+
+<h2 id="fep-screen">FEP Film & LCD Screen Depreciation Costs</h2>
+<p>Resin printer vats rely on transparent FEP or nFEP film sheets ($5 each, lasting ~30–50 prints) and monochrome LCD screens ($80–$150, lasting ~2,000 hours). Combined consumable wear adds approximately <strong>$0.30 to $0.60 per print job</strong>.</p>
+
+<h2 id="community-sources">Verified Community References & Discussions</h2>
+<ul class="list-disc list-inside space-y-2 my-4 text-sm text-slate-700">
+  <li><a href="https://www.reddit.com/r/resinprinting/comments/1ojsmjh/resin_printing_cost_calculator_spreadsheet/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/resinprinting: Resin Printing Cost Calculator Spreadsheet Thread</a></li>
+  <li><a href="https://www.reddit.com/r/3Dprinting/comments/1mgcyai/built_a_3d_print_cost_estimator_free_no_login_now/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/3Dprinting: Open Resin & FDM Estimator Breakdown</a></li>
+</ul>
+`
+  },
+  "3d-print-pricing-formula-guide": {
+    slug: "3d-print-pricing-formula-guide",
+    title: "How to Price 3D Prints for Etsy & Commercial Sales: Profit Margin Formula",
+    excerpt: "Learn how commercial print farms and Etsy sellers price 3D printed products. Balance raw materials, machine hourly rates, labor, platform fees, and target profit markups.",
+    category: "Financial Calculators",
+    date: "2026-07-30",
+    author: "David Sterling (Print Farm Owner)",
+    image: "/3d-print-pricing-formula-guide.webp",
+    headings: [
+      { id: "pricing-models", text: "The Commercial 3D Print Pricing Formula" },
+      { id: "hourly-rate", text: "Setting Machine Hourly Rates ($/hr)" },
+      { id: "labor-postprocess", text: "Accounting for CAD Prep, Support Removal & Labor" },
+      { id: "marketplace-fees", text: "Factoring in Etsy, Shopify & Payment Processor Fees" },
+      { id: "community-sources", text: "Community Reddit References & Discussions" }
+    ],
+    calculatorSlug: "3d-printing-cost",
+    relatedSlugs: ["3d-printing-cost-calculator-guide", "resin-3d-printing-cost-guide", "square-fee-calculator-guide"],
+    content: `
+<div class="bg-slate-50 border-l-4 border-primary p-5 rounded-r-xl my-6 shadow-sm">
+  <p class="m-0 text-slate-900 font-semibold"> Quick Summary:</p>
+  <p class="mt-2 mb-0 text-slate-700 text-sm leading-relaxed">
+    To set profitable prices for 3D printed products, use the commercial formula: <strong>(Direct Material Cost + Machine Rate × Hours + Labor Rate × Manual Time) × (1 + Markup %) ÷ (1 - Platform Fee %)</strong>. Estimate quotes instantly with our <a href="/calculators/3d-printing-cost">3D Printing Cost Calculator</a>.
+  </p>
+</div>
+
+<p>Selling 3D printed products on Etsy, Shopify, or through local custom print services is a lucrative business model. However, many beginners make the fatal mistake of charging only 2x the raw filament cost, leading to razor-thin or negative profits once transaction fees and labor are deducted.</p>
+
+<h2 id="pricing-models">The Commercial 3D Print Pricing Formula</h2>
+<p>Industry-standard print farm pricing follows a structured formula:</p>
+<div class="bg-slate-200 text-slate-900 p-4 rounded-xl font-mono text-sm my-4">
+Customer Quote=[Material Cost + (Machine $/hr × Print Hours) + (Labor $/hr × Hands-on Hours)] × (1 + Profit Markup %)
+</div>
+<img src="/3d-printing-cost.webp" alt="3D Printing Cost Calculator" width="500" height="500" class="w-full max-w-lg mx-auto my-6 rounded-xl shadow-md" />
+<h2 id="hourly-rate">Setting Machine Hourly Rates ($/hr)</h2>
+<p>Machine hourly rates cover electricity, maintenance, and capital recovery. Standard rates range from <strong>$1.50/hr to $3.50/hr</strong> per desktop printer (e.g. $2.00/hr × 8-hour print = $16.00 machine fee).</p>
+
+<h2 id="labor-postprocess">Accounting for CAD Prep, Support Removal & Labor</h2>
+<p>Manual labor (slicing, bed clearing, support removal, sanding, packaging) should be billed at an hourly rate ($20–$35/hr). Spending 15 minutes (0.25 hrs) cleaning a model at $24/hr adds $6.00 in direct labor cost.</p>
+
+<h2 id="marketplace-fees">Factoring in Etsy, Shopify & Payment Processor Fees</h2>
+<p>Etsy listing, transaction, and processing fees total ~10% to 15% of the gross sale price (learn more with our <a href="/calculators/square-fee">Fee Calculator</a>). Always divide your target baseline quote by <code>(1 - Fee %)</code> to ensure platform fees do not reduce net margins.</p>
+
+<h2 id="community-sources">Verified Community References & Discussions</h2>
+<ul class="list-disc list-inside space-y-2 my-4 text-sm text-slate-700">
+  <li><a href="https://www.reddit.com/r/3DprintEntrepreneurs/comments/1n9x0gl/calcmyprint_3d_printing_cost_calculator_save_your/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/3DprintEntrepreneurs: Commercial Print Pricing Strategy</a></li>
+  <li><a href="https://www.reddit.com/r/BambuLab/comments/1kyxx8g/ive_created_a_helper_website_to_calculate_the/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/BambuLab: Helper Tools to Calculate Print Pricing</a></li>
+  <li><a href="https://www.reddit.com/r/3Dprinting/comments/1kd0kux/i_built_a_universal_3d_print_pricing_calculator/" target="_blank" rel="noopener noreferrer nofollow">Reddit r/3Dprinting: Universal 3D Print Pricing Formula Thread</a></li>
 </ul>
 `
   }

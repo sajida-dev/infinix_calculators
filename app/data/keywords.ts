@@ -239,7 +239,43 @@ export const globalKeywords: string[] = [
   "normal lsat score",
   "calculate starbucks calories",
   "strs calculator",
-  "rvu calculator 2025"
+  "rvu calculator 2025",
+
+  // Book, Catalog & Commercial Printing SEO Keywords
+  "catalog printing",
+  "coloring book printing",
+  "printing paper thickness",
+  "how much does it cost to print a book",
+  "book printing cost calculator",
+  "booklet printing online",
+  "custom catalog printing",
+  "custom coloring book printing",
+  "cheapest way to print pdf books",
+  "spiral bound booklet printing",
+  "workbook printing",
+  "cheap pdf printing and binding",
+  "paper thickness gsm chart",
+  "hardcover book printer",
+  "self publishing cost",
+  "textbook printing costs",
+  "paper weight conversion chart",
+  "catalog printing services",
+
+  // 3D Printing & Additive Manufacturing SEO Keywords
+  "3d printing cost calculator",
+  "3d printing near me",
+  "how much does 3d printing cost",
+  "calculate cost of 3d printing",
+  "3d print cost estimator",
+  "3d print farm",
+  "prices for 3d printing",
+  "3d printer that prints metal",
+  "large 3d printer",
+  "best resin 3d printer",
+  "multi color 3d printer",
+  "filament cost calculator",
+  "3d print pricing formula",
+  "resin 3d printing cost"
 ];
 
 export const blogKeywords: string[] = [

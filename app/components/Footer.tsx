@@ -118,10 +118,11 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom Row */}
-        <div className="pt-8 border-t border-slate-200 dark:border-slate-800/80 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-slate-200 dark:border-[#4D5156]/80 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-400 dark:text-slate-500">
             © {currentYear} Infinix Calculators. All rights reserved. Built with precision.
           </p>
+
           <div className="flex space-x-5 text-slate-400 dark:text-slate-500">
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-primary dark:hover:text-sky-400 transition-colors">
               <span className="sr-only">Twitter</span>
