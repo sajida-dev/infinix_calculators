@@ -1,3 +1,4 @@
+import * as Faqs from "./faqs";
 export interface CalculatorInput {
   id: string;
   label: string;
@@ -64,30 +65,114 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Construction & Materials",
     seoTitle: "Topsoil Calculator - Estimate Cubic Yards, Feet & Bags",
     metaDescription: "Calculate exactly how much topsoil, dirt, or compost you need. Input dimensions to get results in cubic yards, cubic feet, tons, and bag counts.",
-    keywords: ["topsoil calculator", "top soil calculator", "topsoil estimator", "online topsoil calculator", "topsoil coverage calculator"],
+    keywords: [
+      "affirm login",
+      "buy now pay later no credit check",
+      "does affirm affect your credit score",
+      "does affirm build credit",
+      "does affirm affect credit score",
+      "affirm prequalify",
+      "instant credit online shopping no down payment",
+      "affirm calculator",
+      "affirm confidently",
+      "affirm español",
+      "can i pay affirm with a credit card",
+      "whats affirm",
+      "affirm merchant login",
+      "affirm payment calculator",
+      "affirm pre qualify",
+      "affirm debit card",
+      "does affirm help your credit score",
+      "affirm statements",
+      "can i use affirm to pay a bill",
+      "can you use affirm to pay bills",
+      "ebay affirm",
+      "how to get approved with affirm",
+      "is it work",
+      "stores that use affirm",
+      "affirm cash advance",
+      "affirm gift card",
+      "affirm money account",
+      "affirm pre approval",
+      "credit score for affirm",
+      "does affirm do a credit check",
+      "does best buy use affirm",
+      "how does affirm card work",
+      "sign up for affirm",
+      "what credit score do you need for affirm",
+      "what happens if you don't pay affirm",
+      "affirm credit score needed",
+      "affirm gift cards",
+      "affirm merchants",
+      "affrim login",
+      "bjs nintendo switch 2",
+      "finwise/aff",
+      "que es affirm",
+      "shop now pay later no credit check",
+      "stores that take affirm",
+      "what stores accept affirm",
+      "affirm car rental",
+      "affirm como funciona",
+      "affirm en español",
+      "affirm one time card",
+      "affirm review",
+      "buy now and pay later no credit check",
+      "credit score needed for affirm",
+      "does lowes take affirm",
+      "is affirm worth it",
+      "stores that accept affirm",
+      "affirm accepted stores",
+      "affirm at walmart",
+      "affirm mattress financing",
+      "affirm promo code",
+      "affirm statement",
+      "afirm card",
+      "aform",
+      "can i get cash from affirm",
+      "can you buy food with affirm",
+      "can you pay bills with affirm",
+      "can you pay off affirm with a credit card",
+      "can you pay rent with affirm",
+      "does academy have layaway",
+      "does walmart use affirm",
+      "home depot affirm",
+      "is the affirm card a credit card",
+      "paylater login",
+      "retailers that accept affirm",
+      "what credit score is needed for affirm",
+      "affirm for ebay",
+      "affirm gift card mall",
+      "affirm pay bill",
+      "affirm stores list",
+      "apple affirm",
+      "can affirm help your credit",
+      "how to sign up for affirm",
+      "minimum credit score for affirm",
+      "online stores with credit lines",
+      "what stores use affirm",
+      "affirm cruises",
+      "affirm jewelry",
+      "affirm retailers list",
+      "affirm royal caribbean",
+      "affirm savings account",
+      "affirm spending power",
+      "affirm with ebay",
+      "bjs ps5",
+      "can i pay rent with affirm",
+      "can you buy a car with affirm",
+      "can you pay off an affirm loan early",
+      "can you use affirm to pay rent",
+      "como funciona affirm",
+      "klarna afterpay affirm",
+      "no credit check online stores",
+      "pay in store"
+],
     hook: "Estimate Topsoil, Fill Dirt & Landscaping Soil in Seconds.",
     description: "Calculate cubic yards, soil depth, and coverage instantly for lawns, raised beds, or circular gardens.",
     calcTime: "1 min",
     formula: "Volume (cu yd) = [Length (ft) × Width (ft) × (Depth (in) ÷ 12)] ÷ 27",
     formulaDescription: "Multiply the length and width of the coverage area in feet by the depth in feet (inches divided by 12) to calculate the cubic feet. Divide this value by 27 to convert it to cubic yards.",
-    faqs: [
-      {
-        question: "How much topsoil do I need for my yard or garden?",
-        answer: "To calculate your required topsoil volume, multiply your project's Length × Width × Depth in feet to determine total cubic feet, then divide by 27 to convert into cubic yards. Always add a 10% to 15% safety buffer to compensate for natural soil settling, tamping, and compaction. For exact yardage and bag counts for raised beds or grass seeding, use our free <a href=\"/calculators/topsoil\">Topsoil Calculator</a> and read our complete <a href=\"/blog/how-much-topsoil-do-i-need\">topsoil yardage guide</a>."
-      },
-      {
-        question: "What is the difference between fill dirt and topsoil?",
-        answer: "Topsoil is the nutrient-rich upper layer of soil containing organic matter, compost, and microorganisms necessary for plant and grass root growth. Fill dirt is unrefined subsoil taken from deep beneath the surface, free of organic material, making it ideal for filling deep holes, grading slopes, and stabilizing building foundations. Combining the two correctly saves hundreds of dollars; read our breakdown in <a href=\"/blog/fill-dirt-vs-topsoil\">fill dirt vs. topsoil differences</a> or estimate quantities with our <a href=\"/calculators/topsoil\">Topsoil Volume Calculator</a>."
-      },
-      {
-        question: "How much does a cubic yard of topsoil cost?",
-        answer: "Bulk topsoil typically costs between $20 and $50 per cubic yard, excluding delivery charges. Delivery fees usually add $50 to $150 per truckload depending on your geographic location and local landscape supplier distance. Buying in bulk is significantly more economical than individual 0.75 cu. ft. bags for projects over 1 cubic yard. Check full pricing benchmarks in our <a href=\"/blog/topsoil-cost-guide\">topsoil cost per yard guide</a>."
-      },
-      {
-        question: "What is the best topsoil depth for lawn and grass seeding?",
-        answer: "For starting a new lawn from seed or laying sod, a minimum topsoil depth of 4 to 6 inches is recommended to allow healthy root penetration. Top-dressing an existing established lawn requires only a thin layer of 1/4 to 1/2 inch to improve soil structure without suffocating existing grass blades. Calculate exact depth requirements using our <a href=\"/calculators/topsoil\">Topsoil Depth Calculator</a> and read our <a href=\"/blog/best-soil-depth-for-grass\">best soil depth for grass guide</a>."
-      }
-    ],
+    faqs: Faqs.topsoilFaqs || [],
     example: "For an area 20 feet long and 10 feet wide, to be filled 3 inches deep: 20 × 10 × 0.25 = 50 cubic feet. 50 ÷ 27 = 1.85 cubic yards of topsoil.",
     commonMistakes: ["Forgetting to add a 10% settling buffer for loose soil."],
     useCases: ["Lawn top-dressing and sod installation", "Raised garden bed preparation"],
@@ -126,9 +211,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "CBM = [Length (m) × Width (m) × Height (m)] × Quantity",
     formulaDescription: "Convert all box dimensions to meters, multiply them to get the volume of a single box, and then multiply by the total number of boxes to get the total CBM.",
     example: "If you have 10 boxes, each measuring 50 cm × 40 cm × 30 cm: 0.5m × 0.4m × 0.3m = 0.06 CBM. Total CBM = 0.06 × 10 = 0.6 CBM.",
-    faqs: [
-      { question: "What is CBM?", answer: "CBM stands for Cubic Meter, the standard volume unit for shipping cargo." }
-    ],
+    faqs: Faqs.cbmFaqs || [],
     commonMistakes: ["Mixing different dimension units without proper conversion."],
     useCases: ["LCL shipping cargo", "Container packing planning"],
     tips: ["Add a 5% spacing allowance for carton stacking gaps."],
@@ -171,7 +254,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Affirm Calculator",
     category: "financial",
     categoryLabel: "Financial Calculators",
-    seoTitle: "Affirm Loan & Payment Calculator - Credit Card, Credit Bureau & APR Math",
+    seoTitle: "Affirm Calculator & Payment Estimator - Interest, Credit Bureau & Spending Power",
     metaDescription: "Free Affirm payment calculator. Estimate monthly installments, 0% APR vs simple interest, credit bureau reporting, and whether you can pay Affirm with a credit card.",
     keywords: [
       "affirm calculator",
@@ -216,32 +299,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       "Pay on time to maintain a positive payment history.",
       "Compare total borrowing costs before checking out."
     ],
-    faqs: [
-      {
-        question: "Can you pay Affirm with a credit card?",
-        answer: "Generally, no. Affirm requires debit cards, checking accounts (ACH), or bank transfers for ongoing monthly loan payments to prevent consumers from stacking credit debt on top of installment debt. You can only use a credit card for the initial down payment on select merchant offers. For a complete breakdown of financing options and payment math, try our free <a href=\"/calculators/affirm\">Affirm Payment Calculator</a> or read our guide on <a href=\"/blog/why-use-affirm-instead-of-credit-card\">why use Affirm instead of a credit card</a>."
-      },
-      {
-        question: "Does Affirm report to credit bureaus?",
-        answer: "Yes, Affirm reports longer-term monthly installment loans (typically 3, 6, 12, or 24-month terms) to credit bureaus like Experian and TransUnion. On-time payments will be reflected on your credit report and help establish positive payment history. However, 0% interest 'Pay in 4' biweekly plans are usually not reported unless payments become 30+ days delinquent. Check our detailed guide on <a href=\"/blog/does-affirm-hurt-your-credit-score\">does Affirm hurt your credit score</a> to learn how loan reporting impacts your credit profile."
-      },
-      {
-        question: "Does Affirm affect your credit score or build credit?",
-        answer: "Checking your purchasing power on Affirm requires only a soft credit check, which has zero impact on your credit score. When you take out a reported monthly installment plan, making on-time payments builds a positive credit history over time. However, opening multiple new installment accounts in a short period can temporarily dip your credit score by reducing your Average Age of Accounts (AAoA). Model your exact monthly commitment before checking out using our <a href=\"/calculators/affirm\">Affirm Loan Calculator</a>."
-      },
-      {
-        question: "What is the difference between Affirm vs. Klarna vs. Afterpay?",
-        answer: "Affirm specializes in larger retail transactions up to $17,500 with terms stretching up to 36 months, alongside zero late fee policies. Klarna and Afterpay focus primarily on smaller, short-term 'Pay in 4' retail shopping purchases and enforce late payment fees when installments are missed. Affirm also offers simple interest financing options with no compounding interest charges. Read our full comparison matrix in <a href=\"/blog/affirm-vs-klarna-vs-afterpay-comparison\">Affirm vs. Klarna vs. Afterpay</a>."
-      },
-      {
-        question: "How does the Affirm Debit Card work?",
-        answer: "The Affirm Debit Card connects directly to your checking account, allowing you to pay for everyday purchases immediately or split eligible transactions over $50 into 4 biweekly payments or monthly loans inside the Affirm app. You can request loan terms before swiping or within 24 hours after making a store purchase. It provides BNPL flexibility without needing approval at individual online checkouts. Learn how simple interest vs. credit card APR compares in our <a href=\"/blog/how-does-affirm-work-pay-in-4-vs-monthly\">Affirm Pay in 4 vs Monthly guide</a>."
-      },
-      {
-        question: "Are there Buy Now Pay Later options with no credit check?",
-        answer: "Most BNPL providers, including Affirm, perform an initial soft credit pull that does not impact your credit score. While Affirm does not offer zero-check loans, instant approval is based on your income, checking account history, and existing Affirm repayment track record rather than hard credit scores alone. Avoid high-risk unregulated payday loans by planning your repayment terms with our <a href=\"/calculators/affirm\">Affirm Installment Calculator</a> and reading our strategy on <a href=\"/blog/affirm-debt-trap-how-to-pay-off-bnpl\">how to escape BNPL debt traps</a>."
-      }
-    ],
+    faqs: Faqs.affirmFaqs || [],
     inputs: [
       { id: "amount", label: "Purchase Amount ($)", type: "number", defaultValue: 1000, unit: "$" },
       { id: "downPayment", label: "Down Payment ($)", type: "number", defaultValue: 0, unit: "$" },
@@ -330,7 +388,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Prorated Amount = (Base Rate ÷ Total Days) × Days Active",
     formulaDescription: "Divides monthly rate by total month days, then multiplies by active occupancy days.",
     example: "For a monthly rent of $1,200 in a 30-day month, active for 10 days: ($1200 / 30) * 10 = $400.",
-    faqs: [{ question: "What is proration?", answer: "The proportional division of rental or payroll costs based on actual days active." }],
+    faqs: Faqs.proRataFaqs || [],
     commonMistakes: ["Miscounting calendar days in standard months."],
     useCases: ["Tenancies moving mid-month", "HR salary adjustments"],
     tips: ["Always verify if the lease specifies a flat 30-day base or actual calendar days."],
@@ -366,11 +424,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Roof Area = Ground Footprint Area × Pitch Factor",
     formulaDescription: "Multiplies flat footprint area (including overhangs) by the pitch hypotenuse slope factor, then adds the selected waste margin to calculate required bundles.",
     example: "Footprint of 1,000 sq ft under 6/12 pitch (factor 1.118) yields a roof area of 1,118 sq ft. Adding a 10% waste margin means ordering 37 bundles of shingles.",
-    faqs: [
-      { question: "How many shingle bundles cover a square?", answer: "There are exactly 3 bundles of shingles in one roofing square. A square is the roofing industry standard unit of measurement, representing 100 square feet of roof surface." },
-      { question: "How many shingles are in a bundle?", answer: "A standard bundle of 3-tab asphalt shingles contains 29 shingles. Architectural shingle bundles can contain between 26 to 28 shingles depending on the manufacturer." },
-      { question: "What waste factor should I choose for shingle calculation?", answer: "Use 10% waste for standard A-frame/gable roofs with few intersections. Choose 15% waste for hip roofs or those with valleys, and 20% for complex roofs with multiple dormers, chimneys, or intersecting ridges." }
-    ],
+    faqs: Faqs.roofFaqs || [],
     commonMistakes: ["Forgetting to account for eave overhangs.", "Not adding a waste buffer (typically 10-15%) for shingles cuts."],
     useCases: ["Estimating roofing material ordering", "Checking contractor bids", "DIY roofing material budget planning"],
     tips: ["Add 10% shingles waste for simple gable roofs, and 15-20% for hip roofs or complex designs."],
@@ -427,16 +481,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     calcTime: "2 mins",
     formula: "Slab: Volume = Length × Width × Thickness | Column: Volume = π × Radius² × Depth",
     formulaDescription: "Finds the cubic volume of a rectangular slab or cylinder in cubic feet, converts it to cubic yards by dividing by 27, and calculates bags by dividing volume by the yield of the selected bag size.",
-    faqs: [
-      {
-        question: "How many bags of concrete do I need for a slab or footing?",
-        answer: "One 80 lb bag of concrete yields approximately 0.60 cubic feet of mixed concrete, meaning you need 45 bags to equal 1 cubic yard (27 cubic feet). For a 60 lb bag, yield is 0.45 cubic feet, requiring 60 bags per cubic yard. Calculate exact bag counts for your specific slab dimensions using our <a href=\"/calculators/concrete\">Concrete Calculator</a> and read our step-by-step tutorial in <a href=\"/blog/how-many-bags-of-concrete-do-i-need\">how many bags of concrete do I need</a>."
-      },
-      {
-        question: "How much does ready-mix concrete cost per cubic yard?",
-        answer: "Ready-mix concrete delivered by a mixer truck costs between $125 and $175 per cubic yard nationwide. For small orders under 3 to 4 cubic yards, suppliers may add a short-load fee of $50 to $150. Estimate total material costs and slab volume before ordering by trying our <a href=\"/calculators/concrete\">Concrete Volume Estimator</a> and reviewing our <a href=\"/blog/concrete-price-per-yard-cost-guide\">concrete price per yard guide</a>."
-      }
-    ],
+    faqs: Faqs.concreteFaqs || [],
     example: "A rectangular slab 12ft × 12ft at 4 inches thick needs 1.78 cubic yards. This requires forty-five 80 lb bags or sixty 60 lb bags of concrete.",
     commonMistakes: ["Not accounting for slab thickness variations across uneven ground."],
     useCases: ["Patio and driveway slab pour planning", "Fence post footings"],
@@ -476,7 +521,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "BMI = [Weight (lbs) ÷ Height (in)²] × 703",
     formulaDescription: "Computes the standard weight-to-height ratio index.",
     example: "Height 5ft 8in, weight 160 lbs yields a BMI score of 24.3 (Normal).",
-    faqs: [{ question: "What is a normal BMI score?", answer: "A healthy adult score is between 18.5 and 24.9." }],
+    faqs: Faqs.bmiFaqs || [],
     commonMistakes: ["Relying on BMI when having high muscle density (muscle weighs more than fat)."],
     useCases: ["Weight screening", "Fitness baseline setup"],
     tips: ["Combine with waist circumference measurements for better body profile assessments."],
@@ -521,7 +566,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Proceeds = Home Appraisal Value × Principal Limit Factor (PLF)",
     formulaDescription: "HUD defines the PLF based on the age of the youngest borrower and current interest rates.",
     example: "A 70-year-old with a $400,000 home and 3.5% rate has an estimated proceeds limit of $220,000.",
-    faqs: [{ question: "What is HECM?", answer: "HECM is a Home Equity Conversion Mortgage, the official HUD reverse mortgage." }],
+    faqs: Faqs.hecmFaqs || [],
     commonMistakes: ["Assuming you get 100% of the home value (it is capped at HUD limit factors)."],
     useCases: ["Retirement equity modeling", "Refinancing senior mortgages"],
     tips: ["Proceeds first pay off any existing home mortgages before cash payouts."],
@@ -566,7 +611,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "P&I Payment = P × [r(1+r)^n] ÷ [(1+r)^n - 1]",
     formulaDescription: "Standard amortization formula applied to the HELOC balance at the start of the repayment period.",
     example: "A $50,000 HELOC at 7% APR over a 20-year repayment term requires $387.65/month.",
-    faqs: [{ question: "What is draw period?", answer: "The initial 5-10 year period where you draw funds and pay only interest." }],
+    faqs: Faqs.helocPayoffFaqs || [],
     commonMistakes: ["Failing to prepare for the payment shock when the draw period ends and principal payments begin."],
     useCases: ["Refinancing lines of credit", "Retiring credit debt"],
     tips: ["Make extra principal payments during the draw period to reduce the eventual shock."],
@@ -611,7 +656,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Net Savings = Current Interest Saved - Upfront Transfer Fee",
     formulaDescription: "Subtracts the upfront balance transfer fee (usually 3% to 5%) from the interest saved during the promo term.",
     example: "Transferring $5,000 from a 20% APR card to 0% for 12 months with a 3% fee saves over $850.",
-    faqs: [{ question: "Is a balance transfer worth it?", answer: "Yes, if the interest saved exceeds the upfront transfer fee." }],
+    faqs: Faqs.balanceTransferFaqs || [],
     commonMistakes: ["Not paying off the transferred balance before the 0% APR promo period expires."],
     useCases: ["Credit card debt paydown", "Interest rate savings"],
     tips: ["Set monthly targets to divide the balance by the promo months for complete payoff."],
@@ -655,7 +700,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Square Fee Calculator",
     category: "financial",
     categoryLabel: "Financial Calculators",
-    seoTitle: "Square Fee Calculator (2026) | Square Processing Fee & Payout Estimator",
+    seoTitle: "Square Fee Calculator & App Processing Rate Estimator (2026)",
     metaDescription: "Use our free Square fee calculator and square processing fee calculator to compute exact credit card processing fees, net payouts, and target invoice totals.",
     keywords: [
       "square fee calculator",
@@ -678,44 +723,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Invoice Amount = (Desired Net + Fixed Fee) ÷ (1 - Fee %)",
     formulaDescription: "Finds total billing needed to yield the desired net payout after processor percentage and fixed fees are deducted.",
     example: "To receive exactly $100 via online invoicing (2.9% + $0.30), you must invoice $103.30.",
-    faqs: [
-      {
-        question: "Are Square processing fees worth it for small business owners?",
-        answer: "For new, mobile, or low-to-medium volume businesses ($0 to $10,000/month), Square's no-monthly-fee, flat-rate model is highly cost-effective and convenient. However, for high-volume merchants processing over $15,000 to $20,000 monthly, switching to traditional Interchange-Plus merchant accounts often yields lower effective processing rates."
-      },
-      {
-        question: "What is Square's standard processing fee rate?",
-        answer: "Square charges 2.6% + $0.10 for in-person tapped, swiped, or chip payments, 2.9% + $0.30 for online store checkouts, 3.3% + $0.30 for Square Invoices, and 3.5% + $0.15 for manually keyed transactions."
-      },
-      {
-        question: "How do I calculate how much to invoice so I get my exact desired net amount?",
-        answer: "Use the reverse gross-up formula: Invoice Total = (Desired Net + Fixed Fee) ÷ (1 - Percentage Rate). For example, to net $1,000 on an online invoice (2.9% + $0.30), calculate ($1,000 + $0.30) ÷ (1 - 0.029) = $1,030.18."
-      },
-      {
-        question: "Is it legal to pass Square credit card processing fees to customers?",
-        answer: "In most US states, surcharging credit card transactions is legal provided you do not surcharge debit cards, cap the surcharge at your actual processing cost (or a max of 3%), and provide clear advance signage. Note that state laws in Massachusetts, Connecticut, and Puerto Rico restrict or ban surcharging."
-      },
-      {
-        question: "What is the difference between a surcharge and a cash discount?",
-        answer: "A surcharge adds an extra percentage to credit card transactions at checkout. A cash discount sets regular prices for credit card users and offers a discount for cash or check payments. Cash discounts are legal in all 50 US states and generally encounter less customer resistance."
-      },
-      {
-        question: "Are Square credit card processing fees tax-deductible?",
-        answer: "Yes! Processing fees paid to Square (and other payment processors) are considered ordinary and necessary business expenses and are 100% tax-deductible on IRS Schedule C or corporate tax returns."
-      },
-      {
-        question: "Does Square calculate fees on sales tax and tips?",
-        answer: "Yes. Square calculates transaction fees on the total authorized charge amount, which includes base item price, state/local sales tax, and customer gratuity/tips."
-      },
-      {
-        question: "How do I calculate Square processing fees from my 1099-K tax form?",
-        answer: "Form 1099-K reports gross sales volume before any processor fees are subtracted. To find your net income for tax filing, deduct total annual Square transaction fees as a business expense on IRS Schedule C."
-      },
-      {
-        question: "Are there zero-fee payment processor alternatives to Square?",
-        answer: "Zero-fee processing models rely on automatic cash discounting or compliant dual-pricing POS hardware that adds customer-facing technology fees at checkout, offsetting processing costs entirely for the merchant."
-      }
-    ],
+    faqs: Faqs.squareFeeFaqs || [],
     commonMistakes: [
       "Multiplying desired net by 1.029, which leaves you short because Square deducts fees from the gross total amount.",
       "Attempting to apply surcharges to debit card or prepaid card payments (illegal under card network rules).",
@@ -772,7 +780,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Avalara Sales Tax Calculator",
     category: "tax",
     categoryLabel: "Tax & Payroll Calculators",
-    seoTitle: "Avalara Sales Tax Calculator 2026 | Free ZIP Code Sales Tax Lookup",
+    seoTitle: "Avalara Sales Tax Calculator & Zip Code Rate Lookup (2026)",
     metaDescription: "Free Avalara sales tax calculator & ZIP code lookup. Automatically compute state, county, and local sales tax rates for 2026 checkout transactions instantly.",
     keywords: ["avalara sales tax calculator", "avalara tax calculator", "avalara 94105 sales tax rate", "sales tax by zip code", "california sales tax calculator"],
     hook: "Calculate Checkout Sales Tax Rates.",
@@ -781,11 +789,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Sales Tax = Base Price × Combined Tax Rate",
     formulaDescription: "Multiplies base price by state and local tax rate to find the total sales tax required for collection at checkout.",
     example: "A $50 transaction in ZIP 94105 (San Francisco, CA) uses a rate of 8.625%, incurring $4.31 sales tax for a total of $54.31.",
-    faqs: [
-      { question: "What is the sales tax rate for ZIP code 94105?", answer: "The combined sales tax rate for ZIP code 94105 (San Francisco, California) is 8.625%. This comprises the California state tax of 6.00%, San Francisco County tax of 0.25%, and local district taxes of 2.375%." },
-      { question: "How does the Avalara tax calculator determine sales tax?", answer: "It calculates sales tax based on the transaction's destination (the buyer's ZIP code). By checking the state, county, and local district rates, it aggregates them into a single combined sales tax rate applied to the purchase price." },
-      { question: "Is the tax calculation accurate for all US locations?", answer: "Yes. The calculator supports custom percentage entries for any jurisdiction and includes a lookup database for popular ZIP codes (such as New York 10001, San Francisco 94105, Seattle 98101, and Chicago 60601) to automate the calculation." }
-    ],
+    faqs: Faqs.avalaraSalesTaxFaqs || [],
     commonMistakes: ["Not adding local county or city surcharges to the base state sales tax rate.", "Assuming sales tax rates are identical across all ZIP codes in a state."],
     useCases: ["E-commerce tax estimation", "Invoicing corporate clients", "Verifying consumer sales receipts"],
     tips: ["Confirm destination state nexus rules when shipping physical packages across state lines, as nexus dictates whether you must collect tax."],
@@ -842,16 +846,91 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Gross Up Calculator",
     category: "tax",
     categoryLabel: "Tax & Payroll Calculators",
-    seoTitle: "Gross Up Calculator - Payroll Wage Deductions Estimator",
+    seoTitle: "Gross Up Calculator - Paycheck, Net to Gross & Reverse Tax Estimator",
     metaDescription: "Calculate gross payroll earnings needed to achieve an exact target net paycheck amount. Accounts for federal, FICA, and state tax adjustments.",
-    keywords: ["gross up calculator", "payroll gross up", "net check converter"],
+    keywords: [
+      "annual gross income",
+      "gross earnings",
+      "gross up calculator",
+      "ytd calculator",
+      "60k a year is how much a month after taxes",
+      "how do you find out your annual income",
+      "usd 4000",
+      "amount net",
+      "gross pay and net pay",
+      "gross-up calculator",
+      "income calculator pa",
+      "what is the gross pay and net pay",
+      "gross pay is what",
+      "gross up payroll calculator",
+      "grossed up calculator",
+      "how to find out gross profit",
+      "reverse income tax",
+      "reverse tax calc",
+      "surepayroll paycheck calculator",
+      "what is grossing",
+      "what is monthly gross pay",
+      "gross monthly payment",
+      "how do you figure out your yearly gross income",
+      "how to find monthly gross income",
+      "how to get gross monthly income",
+      "paycheck calculator surepayroll",
+      "surepayroll payroll calculator",
+      "gross up paycheck calculator",
+      "grossing up calculator",
+      "gm pay calculator",
+      "gross-up calculator for taxes",
+      "grossed up tax calculations",
+      "paycheck gross up calculator",
+      "paycheckcity calculator texas",
+      "annual income before tax",
+      "gross up calculation for payroll",
+      "how do you calculate your gross monthly income",
+      "how to get gross income from w2",
+      "income statement calculator",
+      "payroll gross up calculator",
+      "surepayroll calculator",
+      "tax gross up calculator",
+      "what is a gross payment",
+      "calculate gross up",
+      "gross-up payroll calculator",
+      "grossing up payroll",
+      "income ytd calculator",
+      "what is the gross salary",
+      "what's gross pay",
+      "gross paid",
+      "grosup",
+      "whats a gross pay",
+      "california gross pay calculator",
+      "gross up tax calculator",
+      "grossed up tax calculator",
+      "how can i make 60k a year",
+      "how do you calculate gross income from net income",
+      "net / gross",
+      "ytd pay calculator",
+      "gross payments",
+      "netto price",
+      "what is the gross payment",
+      "gross receipts tax calculator",
+      "how to gross up a paycheck",
+      "how to gross up for taxes",
+      "take home pay calculator texas",
+      "tax 2 jobs calculator",
+      "1600 after tax",
+      "grossup calculator",
+      "how do i calculate monthly gross income",
+      "how do you gross up a paycheck",
+      "how to gross up payroll for taxes",
+      "reverse payroll calculator",
+      "up your gross"
+],
     hook: "Determine Gross Wages Needed for Target Bonuses.",
     description: "Work backward from a target net paycheck to figure out total gross wages before tax withholding.",
     calcTime: "1 min",
     formula: "Gross Pay = Net Pay ÷ (1 - Combined Tax Rates)",
     formulaDescription: "Identifies gross wages needed by working backward through tax brackets.",
     example: "To give a clean $1,000 bonus with 22% federal and 7.65% FICA rates: Gross = $1,000 / (1 - 0.2965) = $1,421.46.",
-    faqs: [{ question: "What is grossing up?", answer: "Adding additional wage buffer to payouts to cover tax deductions, ensuring exact net pay." }],
+    faqs: Faqs.grossUpFaqs || [],
     commonMistakes: ["Failing to include state income tax rates in the combined tax divisor."],
     useCases: ["Paying staff bonuses", "Executive relocation allowances"],
     tips: ["Review federal supplemental bonus flat rates (currently 22%) for accurate calculations."],
@@ -888,7 +967,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Base Price = Gross Total ÷ (1 + Tax Rate)",
     formulaDescription: "Extracts tax by separating the base pricing coefficient from the gross sales total.",
     example: "For a gross total of $106.00 and 6.0% tax rate, Base = $106.00 / 1.06 = $100. Tax = $6.00.",
-    faqs: [{ question: "How is reverse tax useful?", answer: "Useful for checking tax write-offs on business receipts that do not itemize tax." }],
+    faqs: Faqs.reverseTaxFaqs || [],
     commonMistakes: ["Multiplying gross total by the tax rate, which overestimates tax paid."],
     useCases: ["Business expense tracking", "Receipt accounting audits"],
     tips: ["Always double-check local sales tax rates as municipal surcharges are sometimes not detailed on billing receipts."],
@@ -925,7 +1004,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Net Pay = Gross Pay - Federal Withholding - FICA - GA State Tax",
     formulaDescription: "Subtracts federal, FICA (7.65%), and Georgia flat state tax deductions from hourly or salary rates.",
     example: "Gross pay of $1,000 pays approximately $782 net after standard tax adjustments.",
-    faqs: [{ question: "What is Georgia tax rate?", answer: "Georgia uses a flat personal income tax rate of 5.39% starting in 2024." }],
+    faqs: Faqs.georgiaPayrollFaqs || [],
     commonMistakes: ["Forgetting pre-tax retirement or health deductions which lower the tax liability."],
     useCases: ["Estimating job offer takes", "Hourly wage planning"],
     tips: ["Adjust withholding exemptions on state Form G-4 to change net pay paycheck results."],
@@ -959,7 +1038,104 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Education & GPA",
     seoTitle: "LSAT Score Calculator – Section Scores to Scaled Score",
     metaDescription: "Convert your LSAT section scores to an estimated scaled score using official conversion tables. Includes test selection and detailed FAQs.",
-    keywords: [...COMMON_KEYWORDS, "lsat score calculator", "lsat section score conversion", "lsat conversion table"],
+    keywords: [
+      "best law schools",
+      "lsat score calculator",
+      "law school predictor",
+      "lsac gpa calculator",
+      "lsat range",
+      "law school admissions",
+      "lsat demon scholarship estimator",
+      "lsat raw score conversion",
+      "lsdata",
+      "lsat login",
+      "lsat max score",
+      "top 10 schools for law",
+      "apply to law schools",
+      "best colleges for law",
+      "easiest law schools to get into",
+      "law colleges",
+      "law schools in the united states of america",
+      "lsdlaw",
+      "calculate lsac gpa",
+      "law schools in the us",
+      "lawschooladmissions",
+      "lsat calculator",
+      "top schools for law",
+      "american bar association accredited law schools",
+      "best law colleges",
+      "colleges with law",
+      "list of top law schools",
+      "lsac jd login",
+      "lsat demon scholarship",
+      "aba wizard",
+      "admissions calculator",
+      "colleges for law",
+      "colleges for lawyers",
+      "good colleges for law",
+      "good law programs",
+      "good schools for law",
+      "t14 schools",
+      "the best law schools in the us",
+      "top rated law schools",
+      "what is lsac",
+      "best law schools in the usa",
+      "jd application",
+      "law chool",
+      "law schools in america",
+      "lawhub status checker",
+      "ls data",
+      "lsat score predictor",
+      "schools with good law programs",
+      "what are the top law schools in the us",
+      "best corporate law schools",
+      "colleges good for law",
+      "colleges with law programs",
+      "jd applicants",
+      "lawschool",
+      "tier 1 law schools",
+      "aba certified law schools",
+      "best law schools in the south",
+      "good law schools in the us",
+      "law schools admissions predictor",
+      "law schools gpa requirements",
+      "lawhub application tracker",
+      "lsac jd",
+      "lsat eligibility number",
+      "lsat gpa calculator",
+      "lsat requirements",
+      "lsat scores for law schools",
+      "ranked law schools",
+      "top law programs",
+      "what are the top law schools",
+      "best colleges for lawyers",
+      "colleges that are good for law",
+      "colleges with good law programs",
+      "good law colleges",
+      "good universities for law",
+      "gpa calculator lsac",
+      "law data",
+      "law schools and lsat scores",
+      "law schools by acceptance rate",
+      "acceptance chance calculator",
+      "american bar association approved law schools",
+      "best universities for law",
+      "calculate lsat score",
+      "colleges that major in law",
+      "colleges with the best law programs",
+      "easier law schools to get into",
+      "law admissions",
+      "law schools by lsat score",
+      "law schools gpa",
+      "law schools in the south",
+      "list of best law schools",
+      "lsac law schools",
+      "lsacorg",
+      "lsat application",
+      "rankings of law schools",
+      "top law schools in usa",
+      "what do law schools look for"
+],
     hook: "Enter your LSAT test and section scores to get an estimated scaled score.",
     description: "Select the LSAT test you took and input your raw section scores (Logical Reasoning & Reading Comprehension). The tool looks up the official conversion table for that test and returns the scaled score and percentile estimate.",
     calcTime: "1–2 min",
@@ -1143,20 +1319,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
         0: 120, 1: 120, 2: 120, 3: 120, 4: 120, 5: 121, 6: 122, 7: 123, 8: 124, 9: 125, 10: 126, 11: 127, 12: 128, 13: 129, 14: 130, 15: 131, 16: 132, 17: 133, 18: 134, 19: 135, 20: 136, 21: 137, 22: 138, 23: 139, 24: 140, 25: 141, 26: 142, 27: 143, 28: 144, 29: 145, 30: 146, 31: 147, 32: 148, 33: 149, 34: 150, 35: 151, 36: 152, 37: 153, 38: 154, 39: 155, 40: 156, 41: 157, 42: 158, 43: 159, 44: 160, 45: 161, 46: 162, 47: 163, 48: 164, 49: 165, 50: 166, 51: 167, 52: 168, 53: 169, 54: 170, 55: 171, 56: 172, 57: 173, 58: 174, 59: 175, 60: 176, 61: 177, 62: 178, 63: 179, 64: 180, 65: 180, 66: 180, 67: 180, 68: 180, 69: 180, 70: 180, 71: 180, 72: 180, 73: 180, 74: 180, 75: 180, 76: 180, 77: 180, 78: 180, 79: 180, 80: 180, 81: 180, 82: 180, 83: 180, 84: 180, 85: 180, 86: 180, 87: 180, 88: 180, 89: 180, 90: 180, 91: 180, 92: 180, 93: 180, 94: 180, 95: 180, 96: 180, 97: 180, 98: 180, 99: 180, 100: 180, 101: 180, 102: 180, 103: 180, 104: 180, 105: 180, 106: 180, 107: 180, 108: 180, 109: 180, 110: 180, 111: 180, 112: 180, 113: 180, 114: 180, 115: 180, 116: 180, 117: 180, 118: 180, 119: 180, 120: 180
       }
     },
-    faqs: [
-      { question: "What is a raw LSAT score?", answer: "The raw score is the number of questions answered correctly before scaling (out of 120)." },
-      { question: "How accurate is this conversion?", answer: "It uses official per‑test conversion tables; results are as accurate as the published data allows." },
-      { question: "How many questions are on the LSAT?", answer: "There are 100 scored questions (25 per section) plus 4 unscored experimental questions." },
-      { question: "How long is the LSAT exam?", answer: "The LSAT is a 3 hour and 30 minute test, plus a 15‑minute break." },
-      { question: "What is a good LSAT score?", answer: "Generally, a score of 165 or higher is considered competitive for top law schools." },
-      { question: "What is the top LSAT score?", answer: "The maximum possible scaled score is 180." },
-      { question: "How does the LSAT score affect law school admission?", answer: "Higher scores improve admission chances and scholarship eligibility; many schools publish median LSAT scores for admitted students." },
-      { question: "What is the LSAT demon scholarship estimator?", answer: "It's a tool that estimates scholarship amounts based on your LSAT score and GPA using historical data." },
-      { question: "How can I predict my law school ranking with my LSAT score?", answer: "Use the Law School Predictor tool which matches your score with average admitted scores at various schools." },
-      { question: "What is an average LSAT score?", answer: "The median LSAT score nationwide is around 151." },
-      { question: "What is a normal LSAT score range?", answer: "Scores typically range from 120 to 180, with most test‑takers scoring between 135 and 165." },
-      { question: "What's a good LSAT score?", answer: "Scores of 165 + are strong; 160 + are competitive for many schools." }
-    ],
+    faqs: Faqs.lsatFaqs || [],
     commonMistakes: ["Entering the experimental section into the raw total.", "Selecting the wrong test version.", "Assuming a linear conversion for all tests."],
     useCases: ["Law school applications", "Scholarship eligibility estimates", "Self‑assessment for test prep"],
     tips: ["Double‑check the test version you took; conversion tables differ by test.", "Experimental sections are ignored automatically."],
@@ -1198,7 +1361,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Volume (cu yd) = [Length (ft) × Width (ft) × Depth (in)] ÷ 324",
     formulaDescription: "Calculates total cubic yards based on square footage and depth requirements.",
     example: "A bed 40 ft × 5 ft at 3 inches deep requires 1.85 cubic yards of bark mulch.",
-    faqs: [{ question: "How deep should mulch be spread?", answer: "Generally, 2 to 3 inches is recommended to block weeds and retain moisture." }],
+    faqs: Faqs.mulchFaqs || [],
     commonMistakes: ["Spreading mulch too deep, which can suffocate plant root systems."],
     useCases: ["Sod bed layout planning", "Spring landscape prep"],
     tips: ["A cubic yard equals exactly 13.5 bags of 2.0 cubic foot mulch."],
@@ -1238,7 +1401,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Drywall Sheets = Wall Area ÷ Panel Area",
     formulaDescription: "Divides total surface area of walls and ceilings by the size of a standard board.",
     example: "A room with 800 sq ft wall surface requires twenty-five 4x8 panels.",
-    faqs: [{ question: "Should I buy 4x8 or 4x12 sheets?", answer: "4x12 sheets are heavier but result in fewer joints to tape and sand." }],
+    faqs: Faqs.drywallFaqs || [],
     commonMistakes: ["Not subtracting doors and windows, leading to excess panel inventory."],
     useCases: ["Drywall remodeling", "Home repair budgeting"],
     tips: ["Add a 10% waste buffer to account for angular cuts around outlets and corners."],
@@ -1288,7 +1451,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Posts = (Fence Length ÷ Spacing) + 1",
     formulaDescription: "Divides length by panel spacing and adds one starting post. Calculates pickets and rails per segment.",
     example: "A 100 ft fence with 8 ft post spacings requires 14 posts, 36 pickets, and 26 rails.",
-    faqs: [{ question: "What is standard post spacing?", answer: "Posts are typically spaced exactly 6 or 8 feet apart." }],
+    faqs: Faqs.fenceCostFaqs || [],
     commonMistakes: ["Forgetting to order extra posts for corners, turns, and gates."],
     useCases: ["Estimating yard fencing bids", "DIY cedar fence budgets"],
     tips: ["Concrete anchors require one 80 lb bag per fence post for stable footing."],
@@ -1348,13 +1511,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Productivity = (Actual Output ÷ Standard Target) × 100",
     formulaDescription: "Compares actual completed volume with target benchmark averages.",
     example: "If a worker packs 120 boxes in a shift where the standard is 100, the productivity rate is 120%.",
-    faqs: [
-      { question: "How is productivity calculated in the workplace?", answer: "Productivity is calculated by dividing the actual output (units produced, services rendered, tasks completed) by the standard target or benchmark value, then multiplying by 100 to get a percentage efficiency quotient." },
-      { question: "What is the standard productivity formula?", answer: "The basic productivity formula is: Productivity % = (Actual Output ÷ Standard Target) × 100." },
-      { question: "How do you work out employee productivity?", answer: "Identify a target baseline (e.g., 50 client files processed per day) and measure the employee's actual completed task count. Enter these values into our productivity calculator to find the efficiency rate." },
-      { question: "How do I compute productivity for physical units?", answer: "Simply count the physical items produced (e.g., widgets packed, lines of code, articles written) and divide by the target goal for that specific duration." },
-      { question: "What is a good workplace productivity rate?", answer: "Generally, a productivity rate of 90% to 100% indicates that targets are being met efficiently. Rates above 100% show outstanding performance, while rates below 80% suggest potential workflow bottlenecks." }
-    ],
+    faqs: Faqs.productivityFaqs || [],
     commonMistakes: ["Focusing on total work hours instead of target quality output."],
     useCases: ["Business process optimization", "Staff review reporting"],
     tips: ["Establish reliable baselines before enforcing targets."],
@@ -1401,13 +1558,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Productivity = (Billable Treatment Minutes ÷ Total Worked Minutes) × 100",
     formulaDescription: "Divides treatment minutes under billable CPT codes by the total paid shift duration in minutes.",
     example: "400 billable minutes during an 8-hour (480-minute) paid shift yields 83.3% productivity.",
-    faqs: [
-      { question: "What is a therapy productivity calculator?", answer: "A tool used by physical therapists (PT), occupational therapists (OT), and speech-language pathologists (SLP) to calculate their billable clinical treatment time against their total paid shift duration." },
-      { question: "How do I calculate PT productivity with a 30-minute unpaid lunch break?", answer: "Input your paid shift hours (e.g. 8 hours) and unpaid lunch break (e.g. 30 minutes). The calculator will compute your total scheduled work window (8.5 hours) and let you know the target billable minutes needed based on your clinic's productivity target." },
-      { question: "What is a typical productivity target for therapists?", answer: "Most skilled nursing facilities (SNFs) and outpatient clinics enforce a therapy productivity target between 80% and 85%. Outpatient pediatric clinics may have lower targets (around 70-75%) due to administrative overhead." },
-      { question: "What counts as billable minutes for therapists?", answer: "Only direct patient care (evaluations, therapeutic exercises, manual therapy) under active CPT codes is billable. Administrative tasks like chart documentation, scheduling, meetings, and sanitizing equipment are unbillable." },
-      { question: "How does the 30 minute lunch break calculator work?", answer: "It adds your unpaid break minutes to your total paid minutes to show the exact duration of your overall shift. For an 8-hour shift with a 30-minute lunch, you will be at the facility for 8 hours and 30 minutes." }
-    ],
+    faqs: Faqs.therapyProductivityFaqs || [],
     commonMistakes: ["Counting undocumented administrative task hours as treatment time.", "Excluding unpaid lunch breaks from overall site attendance calculations."],
     useCases: ["SNF healthcare billing audits", "Therapist workload balancing", "Shift and break schedule planning"],
     tips: ["Document treatments instantly at point-of-care to maximize billing accuracy.", "Utilize bookmark timers or shift trackers to segment admin tasks from treatment blocks."],
@@ -1483,13 +1634,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Reviews Required = [Count × (Target - Current)] ÷ (5 - Target)",
     formulaDescription: "Computes reviews required based on target rating thresholds using weighted averages, plus simulates rating growth based on prospective positive reviews.",
     example: "A company with 20 reviews and a 4.2 rating needs 60 consecutive 5-star reviews to reach a 4.8. Simulating 10 new 5-star reviews yields a 4.46 rating.",
-    faqs: [
-      { question: "How many 5-star Google reviews do I need to raise my rating?", answer: "This depends on your current review count and rating. Because Google uses a weighted arithmetic average, the more existing reviews you have, the more 5-star reviews you need to budge the score. For example, raising a 4.0 rating with 10 reviews to a 4.5 requires 10 five-star reviews. With 100 reviews, it requires 100 five-star reviews." },
-      { question: "How is the Google star rating calculated?", answer: "Google calculates ratings as a weighted average: (Sum of all star values) ÷ (Total number of reviews). It then truncates or rounds the result to one decimal place for public display." },
-      { question: "How can I increase my Google star rating?", answer: "To increase your rating, you must gather new 5-star reviews to dilute the statistical weight of low ratings. Sending direct review link requests to satisfied customers right after transactions is the most effective approach." },
-      { question: "Why is a perfect 5.0 Google rating mathematically impossible after a bad review?", answer: "Once you have even one 1-star, 2-star, or 3-star review, the mathematical average of your score can never reach exactly 5.0, regardless of how many 5-star reviews you receive (since any value less than 5 in the average pulls it below 5.0). However, you can easily reach a rounded 4.9." },
-      { question: "Can a bad Google review be deleted or removed?", answer: "You cannot delete a Google review simply because it is negative. However, you can flag and report reviews that violate Google's terms of service (such as fake accounts, harassment, or conflicts of interest). If the review is valid, the only solution is to get more 5-star reviews to out-average it." }
-    ],
+    faqs: Faqs.googleReviewFaqs || [],
     commonMistakes: ["Expecting rapid increases (mathematical averages move slowly as count increases).", "Trying to delete real negative reviews instead of driving new 5-star submissions."],
     useCases: ["Business reputation repair", "Marketing review campaigns", "Customer experience analytics"],
     tips: ["Encourage reviews by providing short, direct client links.", "Follow up with customers within 24 hours of service to get the highest conversion rate."],
@@ -1556,13 +1701,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "TDEE = BMR × Activity Multiplier; Weekly Deficit = (TDEE - Daily Calories) × 7; Weight Change = Deficit ÷ 3500",
     formulaDescription: "Calculates BMR using the Mifflin-St Jeor formula, adjusts for activity level to find TDEE, and calculates projected fat loss by dividing the weekly calorie deficit by 3,500 (the calories in 1 lb of fat).",
     example: "A 30-year-old active female with a TDEE of 2,000 kcal consuming 1,500 kcal daily creates a 500 kcal daily deficit (3,500 kcal/week), losing 1 lb per week.",
-    faqs: [
-      { question: "What is the Losertown calorie calculator?", answer: "The Losertown calculator is a weight loss projection tool that helps you visualize your fat loss progress over a prolonged timeline (4 weeks, 8 weeks, 12 weeks, 6 months, and 1 year) by estimating your daily energy expenditure against your food intake." },
-      { question: "How does the Losertown calculator project weight loss?", answer: "It determines your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE). If your target daily calorie intake is lower than your TDEE, it multiplies the daily calorie deficit by 7 to find your weekly deficit. Since 3,500 kcal equals roughly 1 pound of fat, it divides your weekly deficit by 3,500 to estimate weekly loss." },
-      { question: "Are search typos like 'losertowm' or 'losetown' referring to this calculator?", answer: "Yes, 'losertowm' and 'losetown' are common search typos for the popular Losertown calorie tracking page. This tool provides the exact same mathematical formulas to project your weight loss journey." },
-      { question: "How accurate is the Losertown fat loss projection?", answer: "The projection assumes a constant activity level and precise calorie tracking. In reality, as you lose weight, your BMR drops slightly because your body requires less energy to sustain a lighter frame. To maintain high accuracy, re-calculate your BMR every 5 to 10 pounds lost." },
-      { question: "What is the difference between BMR and TDEE?", answer: "BMR (Basal Metabolic Rate) is the number of calories your body burns to perform basic life-sustaining functions at rest. TDEE (Total Daily Energy Expenditure) is your BMR multiplied by an activity factor representing your daily physical movement." }
-    ],
+    faqs: Faqs.losertownCalorieFaqs || [],
     commonMistakes: ["Underestimating daily calorie intake.", "Overestimating physical activity level.", "Assuming BMR remains identical after losing substantial weight."],
     useCases: ["Diet planning", "Weight loss tracking", "Weekly calorie deficit calculations"],
     tips: ["Tracking foods precisely with a digital scale yields the most accurate deficit results.", "Under-report activity levels slightly if you have a desk job to avoid overestimating TDEE."],
@@ -1721,13 +1860,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "FV = Contribution × [((1 + r)^n - 1) / r]; Traditional Net = FV × (1 - Retirement Tax); Conversion Tax = Balance × Current Tax",
     formulaDescription: "Traditional plans defer taxes until withdrawal, while Roth plans are funded with post-tax dollars to allow tax-free growth. Employer matching is added to the traditional pre-tax portion.",
     example: "Contributing $6,500 annually at 7% for 25 years yields $411,114. Traditional is taxed at retirement, Roth is tax-free. Converting a $50k Traditional IRA at a 22% tax rate triggers $11,000 in tax due today.",
-    faqs: [
-      { question: "What is the difference between a Roth and Traditional retirement account?", answer: "Traditional accounts are funded with pre-tax dollars, lowering your taxable income today, but withdrawals are taxed at retirement. Roth accounts are funded with post-tax dollars, meaning no tax deduction today, but all future compound interest, growth, and withdrawals are 100% tax-free." },
-      { question: "Does a Roth IRA earn interest or grow?", answer: "A Roth IRA is an investment container (not a single interest-bearing account like a bank CD). Within the IRA, you invest in assets like stock index funds, mutual funds, or bonds. The account grows through compound interest, capital gains, and dividend payouts, which are entirely tax-free." },
-      { question: "What is a Roth conversion, and how are the taxes calculated?", answer: "A Roth conversion is transferring assets from a Traditional (pre-tax) IRA or 401(k) to a Roth (post-tax) IRA. Because these funds have never been taxed, the entire converted amount is added to your taxable income for the year, and taxes are due at your current income tax rate. For example, converting $50,000 in a 22% tax bracket costs $11,000 in conversion taxes." },
-      { question: "How does employer matching work in a Traditional vs. Roth 401(k)?", answer: "If you select a 401(k), employers can match your contributions (e.g. 50% match up to 6%). Historically, all employer matching funds must go into a Traditional pre-tax account, which will be taxed upon withdrawal. Even if you contribute to a Roth 401(k), the matched portion usually grows pre-tax in a traditional sleeve." },
-      { question: "What is a good rate of return for an IRA?", answer: "Historically, the average rate of return for a balanced stock market index fund (like the S&P 500) inside an IRA is roughly 7% to 10% per year, adjusted for inflation, over a long-term (20+ year) horizon." }
-    ],
+    faqs: Faqs.rothVsTraditionalIraFaqs || [],
     commonMistakes: [
       "Assuming Roth is always superior without calculating tax bracket shifts.",
       "Not maximizing contributions early to exploit compound interest.",
@@ -1899,14 +2032,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Amortized P&I = P × [r(1+r)^n] ÷ [(1+r)^n - 1]; Interest-Only Payment = P × r",
     formulaDescription: "Calculates monthly payments based on loan amortization type, then projects the remaining balance using standard mortgage formulas at the balloon deadline.",
     example: "A $200k loan at 6.5% interest amortized over 30 years with a 5-year balloon requires $1,264/mo with a $187,902 balloon due. If interest-only, the monthly payment is $1,083 with a $200,000 balloon due.",
-    faqs: [
-      { question: "What is seller financing and how does it work?", answer: "Seller financing (or owner financing) is a real estate transaction where the seller acts as the lender. Instead of the buyer getting a traditional bank mortgage, the buyer makes monthly payments directly to the seller based on an agreed-upon interest rate and schedule." },
-      { question: "What is a hard money loan?", answer: "A hard money loan is a short-term, asset-backed loan secured by real estate, typically used by house flippers or real estate investors. Hard money loans are usually structured with interest-only payments and a short-term balloon payoff (typically 1 to 3 years) when the property is sold or refinanced." },
-      { question: "What does it mean when a listing says 'owner will carry'?", answer: "This means the owner is willing to offer seller financing. They will carry the mortgage note, allowing the buyer to buy the house without a traditional bank mortgage." },
-      { question: "How does a balloon payment work?", answer: "A balloon payment is a large lump-sum payment due at the end of a loan's term. Many owner financing deals use a 30-year amortization schedule (to keep monthly payments low) but have a 5-year balloon clause. This means the buyer makes low payments for 5 years, then must pay off the entire remaining loan balance in full (usually by selling the home or refinancing)." },
-      { question: "What is the difference between an amortized and an interest-only balloon loan?", answer: "In an amortized loan, each monthly payment covers both interest and a small amount of the principal, meaning your balloon balance drops slightly over time. In an interest-only loan, your monthly payments cover only the interest accrued, meaning the balloon balance at the end is exactly equal to the initial loan amount." },
-      { question: "How do you calculate a finance charge on a loan?", answer: "The finance charge is the total cost of borrowing the money, which primarily consists of the total interest paid. To find this, multiply your monthly payment by the number of months paid up to the balloon payoff, add the balloon payment, and subtract the initial loan principal." }
-    ],
+    faqs: Faqs.sellerFinancingFaqs || [],
     commonMistakes: [
       "Assuming the loan is fully amortized over the balloon term (a balloon term requires a massive lump-sum payoff at the end).",
       "Forgetting to factor in property taxes and insurance when estimating monthly real estate carrying costs."
@@ -2084,13 +2210,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Fixed Term PMT = B × [r(1+r)^n] ÷ [(1+r)^n - 1]; Minimum Payment = Max($25, B × Rate + B × r)",
     formulaDescription: "Calculates required payments to be debt-free in a target number of months, or models a fixed monthly payment using monthly compounding interest formulas.",
     example: "A $5,000 balance at 20% APR paid off at $150/month takes 51 months and incurs $2,544 in interest. To pay it off in 24 months, a monthly payment of $254 is required.",
-    faqs: [
-      { question: "How long does it take to pay off a credit card making only minimum payments?", answer: "Credit card minimum payments are usually set to 1% to 2% of your balance plus interest, or a flat $25 to $35 (whichever is higher). Because this barely covers the monthly interest, it can take 15 to 30 years to fully wipe out a large balance, costing you thousands of dollars in unnecessary interest charges." },
-      { question: "What is CareCredit, and how do I calculate its promotional payments?", answer: "CareCredit is a healthcare credit card often offering 6, 12, 18, or 24-month promotional periods with deferred interest. If you do not pay off the entire promotional balance by the deadline, interest is retroactively charged from the purchase date at a very high rate (usually 29.99%). To avoid this, divide your starting balance by the number of promotional months (e.g., $1,200 ÷ 12 months = $100/month) and make that payment monthly." },
-      { question: "How do I calculate the interest accrued on my credit card?", answer: "To calculate monthly interest, divide your APR by 365 to get your daily interest rate, multiply it by your average daily balance, and then multiply by the number of days in the billing cycle. In our calculator, this is simplified using monthly compounding: monthly interest = balance × (APR ÷ 12)." },
-      { question: "What is the best strategy to pay off multiple credit cards?", answer: "The two most popular strategies are the Debt Snowball and the Debt Avalanche. The Debt Snowball focuses on paying off the smallest balances first to gain momentum. The Debt Avalanche focuses on paying off the cards with the highest interest rates (APR) first to minimize overall interest costs." },
-      { question: "Does paying off my credit card balance help my credit score?", answer: "Yes, significantly. Paying down your credit card balances lowers your credit utilization ratio (how much credit you are using compared to your limits). Keeping your utilization below 30%—and ideally below 10%—is one of the fastest ways to boost your credit score." }
-    ],
+    faqs: Faqs.creditCardPayoffFaqs || [],
     commonMistakes: [
       "Paying only the minimum balance, which keeps you in debt for decades.",
       "Not realizing that promotional 'no interest' terms actually defer the interest, risking massive retroactive interest charges.",
@@ -2201,13 +2321,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "A · B = AxBx + AyBy + AzBz; A × B = [AyBz - AzBy, AzBx - AxBz, AxBy - AyBx]",
     formulaDescription: "Computes the scalar dot product by summing the products of corresponding components, and computes the 3D cross product vector perpendicular to both input vectors.",
     example: "For A = [3, -5, 4] and B = [2, 7, -3]: Dot Product is -41; Cross Product is [-13, 17, 31].",
-    faqs: [
-      { question: "What is a dot product (scalar product)?", answer: "The dot product is an algebraic operation that takes two equal-length sequences of numbers (usually coordinate vectors) and returns a single scalar number. It measures how much the vectors point in the same direction." },
-      { question: "What is a cross product (vector product)?", answer: "The cross product is a binary operation on two vectors in a three-dimensional space. It results in a third vector that is perpendicular (orthogonal) to both of the original vectors, with a magnitude equal to the area of the parallelogram that the vectors span." },
-      { question: "How do you calculate the dot product of two vectors?", answer: "Multiply the corresponding components of the two vectors together and sum the results: A · B = (Ax × Bx) + (Ay × By) + (Az × Bz)." },
-      { question: "How do you calculate the cross product of two vectors?", answer: "Use the determinant formula for 3D vectors: AxB = [ (Ay × Bz - Az × By), (Az × Bx - Ax × Bz), (Ax × By - Ay × Bx) ]. The result is always a 3D vector, not a scalar." },
-      { question: "What is the angle between perpendicular and parallel vectors?", answer: "If the dot product of two vectors is exactly 0, the vectors are perpendicular (90 degrees). If the cross product of two vectors is [0, 0, 0], the vectors are parallel (0 or 180 degrees)." }
-    ],
+    faqs: Faqs.vectorProductFaqs || [],
     commonMistakes: [
       "Confusing the dot product (which outputs a single number) with the cross product (which outputs a new 3D vector).",
       "Attempting to calculate a cross product for 2D vectors directly (the cross product is only defined in three dimensions, though 2D vectors can be represented in 3D by setting the Z component to 0)."
@@ -2275,9 +2389,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Seed Required (lbs) = (Area ÷ 1000) × Seeding Rate",
     formulaDescription: "Calculates seed requirements based on recommended seeding weights per 1,000 square feet.",
     example: "A 5,000 sq ft new lawn with Tall Fescue requires 40 lbs of grass seed (8 lbs per 1,000 sq ft).",
-    faqs: [
-      { question: "Is seeding rate different for new lawns vs overseeding?", answer: "Yes, new lawns require about double the seeding rate of overseeding because there is no existing grass structure." }
-    ],
+    faqs: Faqs.grassSeedFaqs || [],
     commonMistakes: ["Failing to keep the seed consistently moist during the first 2-3 weeks of germination."],
     useCases: ["Lawn seeding", "Yard landscaping"],
     tips: ["Always add starter fertilizer to accelerate root development during planting."],
@@ -2323,9 +2435,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Speed (MPH) = (RPM × Tire Diameter) ÷ (Transmission Ratio × Axle Ratio × 336)",
     formulaDescription: "Computes ground speed by determining wheel RPM and multiplying by tire circumference.",
     example: "At 3,000 RPM with 26\" tires, 1.0 transmission gear, and 3.73 axle, the speed is 62.2 MPH.",
-    faqs: [
-      { question: "What is axle ratio?", answer: "The ratio between the driveshaft rotations and differential axle rotations, indicating how many times the driveshaft spins to turn the wheels once." }
-    ],
+    faqs: Faqs.gearRatioFaqs || [],
     commonMistakes: ["Confusing tire radius with tire diameter in inputs."],
     useCases: ["Drivetrain gearing optimizations", "Transmission speed checking"],
     tips: ["A lower gear ratio increases acceleration, while a higher ratio improves highway fuel efficiency."],
@@ -2367,9 +2477,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Annual Rent Cashflow = (Rent - Costs) × 12; Sale Proceeds = Value - Mortgage - Fees; ROE = Cashflow ÷ Proceeds",
     formulaDescription: "Finds net cash proceeds from an immediate sale and compares it with net rental income to calculate Return on Equity.",
     example: "Selling nets $100,000. Renting nets $500/mo ($6,000/yr), yielding a 6% Return on Equity.",
-    faqs: [
-      { question: "What is landlord Return on Equity (ROE)?", answer: "A financial metric comparing net rental income to the cash equity that would be unlocked by selling the property." }
-    ],
+    faqs: Faqs.rentVsSellFaqs || [],
     commonMistakes: ["Failing to account for vacancies, landlord insurance premiums, and ongoing maintenance reserves in expenses."],
     useCases: ["Home relocation planning", "Real estate investment reviews"],
     tips: ["A landlord ROE below 5-6% usually suggests selling is more profitable than renting."],
@@ -2414,9 +2522,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "P&I = P × [r(1+r)^n] ÷ [(1+r)^n - 1]; Score = (Interest Saved ÷ Base Interest) × 1000",
     formulaDescription: "Simulates mortgage amortization month-by-month and calculates savings multipliers based on extra cash payments.",
     example: "Adding $150/mo to a standard 30-year mortgage saves $36,000 and scores a 280 point Savings rating.",
-    faqs: [
-      { question: "How does the Savings Score work?", answer: "It represents the percentage of total mortgage interest saved, scaled out of 1000 possible points." }
-    ],
+    faqs: Faqs.mortgageCalculatorGameFaqs || [],
     commonMistakes: ["Failing to confirm whether your mortgage lender charges pre-payment penalty fees."],
     useCases: ["Financial literacy training", "Mortgage payoff optimization planning"],
     tips: ["Making a single extra mortgage payment each year can shave 4-5 years off your loan term."],
@@ -2485,10 +2591,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Drinks = Guests × (1 + Duration); splits based on preference templates",
     formulaDescription: "Assumes guests drink 2 servings in the first hour and 1 serving hourly thereafter.",
     example: "120 guests over 5 hours consume 720 drinks. Balanced: 360 beers, 36 bottles of wine, and 11 bottles of liquor.",
-    faqs: [
-      { question: "How many glasses of wine are in a bottle?", answer: "A standard 750ml bottle contains approximately 5 glasses of wine." },
-      { question: "How many drinks are in a standard liquor bottle?", answer: "A standard fifth (750ml) bottle provides approximately 16 standard mixed drinks." }
-    ],
+    faqs: Faqs.weddingAlcoholFaqs || [],
     commonMistakes: ["Forgetting to account for ice, cups, and non-alcoholic alternatives."],
     useCases: ["Wedding planning", "Large event beverage budgets"],
     tips: ["Buy from retailers who offer returns on unopened cases of beer or bottles of wine."],
@@ -2536,9 +2639,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Max Loan = (Value × LTV Limit) - Mortgage Balance",
     formulaDescription: "Applies maximum Loan-to-Value constraints to current property value, then subtracts existing mortgages.",
     example: "A $400,000 home with a $200,000 mortgage at 80% LTV provides a bridge limit of $120,000.",
-    faqs: [
-      { question: "What is a bridge loan?", answer: "A short-term loan used to bridge the gap between buying a new home and selling your existing home." }
-    ],
+    faqs: Faqs.bridgeLoanFaqs || [],
     commonMistakes: ["Assuming bridge loan terms last for standard amortizations (they are usually short-term, 6 to 12 months, interest-only)."],
     useCases: ["Home relocation", "Transitional real estate financing"],
     tips: ["Budget for high transaction fees when closing bridge loans."],
@@ -2578,9 +2679,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Bottom Mount Height = Eye Level - (TV Screen Height ÷ 2)",
     formulaDescription: "Lines up the vertical center of the TV with your seating eye-line to prevent neck fatigue.",
     example: "A 65-inch TV with eye-level at 42 inches should be mounted 26.3 inches off the ground.",
-    faqs: [
-      { question: "What is standard seating eye height?", answer: "For standard couches, the average sitting eye height is 42 inches from the floor." }
-    ],
+    faqs: Faqs.tvMountingHeightFaqs || [],
     commonMistakes: ["Mounting the TV too high (e.g. above fireplaces without tilting mounts), which strains neck muscles."],
     useCases: ["Living room setups", "Home theater installations"],
     tips: ["If mounting above eye level, use a tilt mount and tilt the screen downward by 5 to 15 degrees."],
@@ -2620,9 +2719,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Liner Dimension = Size + (2 × Depth) + (2 × Overlap)",
     formulaDescription: "Adds twice the pond depth and twice the edge overlap buffer to the length and width.",
     example: "A pond 10ft × 8ft at 3ft depth with 1.5ft overlap needs an 19ft × 17ft liner sheet.",
-    faqs: [
-      { question: "How much edge overlap is recommended?", answer: "A minimum border overlap of 1 to 2 feet is recommended to anchor the liner beneath stone borders." }
-    ],
+    faqs: Faqs.pondLinerFaqs || [],
     commonMistakes: ["Forgetting to measure from the deepest point of the pond, which under-calculates required sheet width."],
     useCases: ["Backyard garden pond installation", "Koi pond excavation planning"],
     tips: ["Always add geotextile underlayment beneath the liner to prevent root and stone punctures."],
@@ -2664,9 +2761,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Payment = P&I + Monthly Tax (0.63% annual) + Monthly Insurance (0.35% annual)",
     formulaDescription: "Finds the amortized monthly mortgage payment and adds standard property reserves for the state of Idaho.",
     example: "A $350k home in Idaho with 10% down at 6.5% interest costs approximately $2,279/mo.",
-    faqs: [
-      { question: "What is the average Idaho property tax rate?", answer: "Idaho has an average property tax rate of approximately 0.63% of the home value annually." }
-    ],
+    faqs: Faqs.mortgageIdahoFaqs || [],
     commonMistakes: ["Forgetting that local tax rates can vary significantly by county or municipality in Idaho."],
     useCases: ["Idaho real estate buying", "Home budgeting planning"],
     tips: ["Idaho offers a homeowner's exemption that can reduce property tax assessments by up to 50% for primary residences."],
@@ -2720,9 +2815,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Soft Drinks = Guests × 2 + NonDrinkers × Duration; Alcohol = Drinkers × (1 + Duration)",
     formulaDescription: "Calculates beverage requirements using standard party consumption rates, accounting for designated non-drinkers.",
     example: "150 guests over 5 hours with 15% non-drinkers needs 720 alcoholic servings, 350 soft drinks, and 225 lbs of ice.",
-    faqs: [
-      { question: "How much ice is needed per guest?", answer: "We recommend approximately 1.5 pounds of ice per guest to keep drinks chilled and coolers stocked." }
-    ],
+    faqs: Faqs.weddingDrinkFaqs || [],
     commonMistakes: ["Failing to adjust soda and water counts upward if the event is held outdoors during summer months."],
     useCases: ["Wedding bar shopping list planning", "Large event beverage coordination"],
     tips: ["Rent dispensers for water and punch to reduce plastic bottle waste."],
@@ -2765,9 +2858,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Payment = P&I + Monthly Tax (1.34% annual) + Monthly Insurance (0.65% annual)",
     formulaDescription: "Finds the amortized monthly mortgage payment and adds standard property reserves for the state of Kansas.",
     example: "A $250k home in Kansas with 10% down at 6.5% interest costs approximately $1,838/mo.",
-    faqs: [
-      { question: "What is the average Kansas property tax rate?", answer: "Kansas has an average property tax rate of approximately 1.34% of the home value annually." }
-    ],
+    faqs: Faqs.mortgageKansasFaqs || [],
     commonMistakes: ["Failing to review local county tax adjustments, which can alter the overall payment amount."],
     useCases: ["Kansas home purchases", "Refinancing properties in Kansas"],
     tips: ["A higher down payment cuts mortgage insurance premiums (PMI), saving money monthly."],
@@ -2821,9 +2912,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Base = Gross ÷ (1 + Tax Rate); Tax = Gross - Base",
     formulaDescription: "Works backward from invoice gross total using standard percentage division.",
     example: "Receipt total of $108 with 8% sales tax has a base cost of $100 and tax portion of $8.",
-    faqs: [
-      { question: "What is reverse sales tax?", answer: "A calculation used to determine the pre-tax price of an item or service when only the total paid price is known." }
-    ],
+    faqs: Faqs.reverseSalesTaxCalculatorFaqs || [],
     commonMistakes: ["Multiplying the total price by the tax percentage to find the tax amount, which is mathematically incorrect."],
     useCases: ["Business expensing", "Auditing checkout invoices"],
     tips: ["Ensure you are using the correct combined state and local tax rate for accurate extraction."],
@@ -2859,10 +2948,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Adult Weight = Current Weight ÷ (Age in Weeks ÷ Growth Period Weeks)",
     formulaDescription: "Estimates growth curves based on breed size group. Smaller dogs reach maturity faster (38 weeks), while larger dogs grow for up to 78 weeks.",
     example: "A 16-week medium breed puppy weighing 15 lbs has a growth factor of 16/52 (0.308). Estimated adult weight is 15 ÷ 0.308 ≈ 48.7 lbs.",
-    faqs: [
-      { question: "When do puppies stop growing?", answer: "Toy/small breeds stop growing around 9-10 months. Medium dogs reach adult weight around 12 months, large dogs at 12-15 months, and giant breeds can take up to 2 years." },
-      { question: "Is the puppy weight calculator 100% accurate?", answer: "No, it is an estimate. Genetics, nutrition, and general health also influence a dog's final size." }
-    ],
+    faqs: Faqs.puppyToDogWeightFaqs || [],
     commonMistakes: ["Using months instead of weeks for the age input.", "Incorrect breed size classification (e.g. labeling a giant breed as medium)."],
     useCases: ["Choosing puppy food portion sizes", "Sizing crates, beds, and collars", "Estimating adult veterinary care requirements"],
     tips: ["Consult your veterinarian if your puppy is growing too fast or too slow compared to breed averages."],
@@ -2917,9 +3003,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Weekly Growth Rate = Current Weight ÷ Age (Weeks)",
     formulaDescription: "Computes average weekly weight gain to date and projects the remaining growth required to reach adult size.",
     example: "A 16-week puppy weighing 16 lbs has gained an average of 1 lb per week. It will gain approximately 32.7 lbs more to reach a 48.7 lb adult weight.",
-    faqs: [
-      { question: "How much weight should a puppy gain per week?", answer: "Small breeds gain a few ounces per week, medium breeds gain 1-2 lbs per week, while large and giant breeds can gain 2-5 lbs weekly during peak growth." }
-    ],
+    faqs: Faqs.puppyGrowthFaqs || [],
     commonMistakes: ["Expecting constant linear weight gain, as growth rates typically slow down after 6 months."],
     useCases: ["Monitoring healthy growth trajectories", "Detecting growth spurts or stagnation"],
     tips: ["A healthy puppy should have a visible waistline and ribs that are easily felt but not protruding."],
@@ -2976,9 +3060,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Height Projection = Base Category Height × Weight Growth Factor",
     formulaDescription: "Converts estimated adult weight to shoulder height range brackets standardized for major dog breed groups.",
     example: "A puppy with a projected 48.7 lb adult weight falls in the Medium category with an estimated shoulder height of 15-20 inches.",
-    faqs: [
-      { question: "How tall will my puppy get?", answer: "Usually, shoulder height corresponds to adult weight group: Small (8-15\"), Medium (15-20\"), Large (20-26\"), Giant (26-35\")." }
-    ],
+    faqs: Faqs.dogSizeFaqs || [],
     commonMistakes: ["Confusing height at the head with height at the shoulders (withers)."],
     useCases: ["Checking suitability for small apartments", "Selecting dog doors, crates, and travel boxes"],
     tips: ["A dog's height is measured from the ground to the top of its shoulders (the withers) while standing."],
@@ -3046,10 +3128,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Due Date = Mating Date + 63 Days",
     formulaDescription: "Standard dog gestation lasts approximately 63 days (can vary from 58 to 68 days).",
     example: "If mating occurred 10 days ago, due date is in 53 days. Ultrasound window starts in 15 days.",
-    faqs: [
-      { question: "How long is a dog pregnant?", answer: "Normally 63 days from ovulation, though birth can occur safely between 58 and 68 days." },
-      { question: "When can a vet confirm pregnancy?", answer: "Ultrasound can confirm pregnancy at days 25-35. X-rays can detect puppy skeletons after day 45." }
-    ],
+    faqs: Faqs.dogPregnancyFaqs || [],
     commonMistakes: ["Failing to log multiple mating dates, which can shift the whelping window by a few days."],
     useCases: ["Preparing whelping box timelines", "Scheduling vet checkups and scans", "Predicting birth dates"],
     tips: ["Begin monitoring your dog's temperature daily around day 58. A drop below 99°F indicates labor should start within 24 hours."],
@@ -3101,9 +3180,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Payment = P&I + Monthly Tax (1.36% annual) + Monthly Insurance (0.55% annual)",
     formulaDescription: "Calculates the amortized monthly mortgage payment and appends standard Maine property tax rates.",
     example: "A $300k home in Maine with 10% down ($30k) at 6.5% interest costs approximately $2,185/month.",
-    faqs: [
-      { question: "What is the property tax rate in Maine?", answer: "Maine's state average property tax rate is approximately 1.36% of the home value annually, though county rates vary." }
-    ],
+    faqs: Faqs.mortgageMaineFaqs || [],
     commonMistakes: ["Failing to account for local Maine municipal property tax adjustments.", "Not budgeting for private mortgage insurance (PMI) if putting down less than 20%."],
     useCases: ["Maine house shopping", "Refinancing properties in Portland, Bangor, or Augusta"],
     tips: ["Review Maine Housing (MaineHousing) first-time homebuyer programs for lower interest rates or down payment grants."],
@@ -3157,10 +3234,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Bricks = Wall Area × Bricks per Sq Ft × (1 + Waste %)",
     formulaDescription: "Finds the total wall surface area in square feet, multiplies by standard brick layout densities, and appends a materials waste margin.",
     example: "A 20ft long, 8ft tall wall (160 sq ft) using standard modular bricks (6.55/sq ft) requires 1,048 bricks. Adding 10% waste results in 1,153 bricks.",
-    faqs: [
-      { question: "How many bricks are in a square foot?", answer: "Standard modular brick layouts require approximately 6.55 bricks per square foot with standard 3/8\" mortar joints. Queen size requires ~5.2, and utility size requires ~3.0." },
-      { question: "How much mortar do I need?", answer: "One standard 80 lb bag of mortar mix is typically required to lay about 30 modular bricks." }
-    ],
+    faqs: Faqs.brickFaqs || [],
     commonMistakes: ["Forgetting to add a waste buffer (10% is standard) for corners, half-cuts, and breakage."],
     useCases: ["Building brick walls or retaining structures", "Laying brick patios or garden paths"],
     tips: ["Order all bricks at once to ensure consistent color matching across the entire shipment."],
@@ -3219,10 +3293,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Tax Due = (State Distance ÷ Average MPG - Fuel Purchased in State) × State Tax Rate",
     formulaDescription: "Divides total trip distance by total fuel consumed to get the vehicle MPG. Computes fuel consumed in the target state, deducts fuel purchased there, and multiplies by the state tax rate.",
     example: "Driving 300 miles in New York (tax rate $0.41/gal) on a 1,000-mile, 150-gallon trip (6.67 MPG) consumes 45 gallons. If you bought 40 gallons in NY, you owe tax on the 5-gallon difference: 5 × $0.41 = $2.05.",
-    faqs: [
-      { question: "What is IFTA?", answer: "The International Fuel Tax Agreement is an agreement between US states and Canadian provinces to simplify reporting of fuel use taxes by commercial carriers." },
-      { question: "What happens if my tax due is negative?", answer: "A negative amount represents a tax credit, meaning you purchased more fuel in that state than you consumed, resulting in a refund balance." }
-    ],
+    faqs: Faqs.iftaFaqs || [],
     commonMistakes: ["Failing to account for toll vs non-toll mileage or mixed fuel types.", "Inaccurate record-keeping of retail fuel purchase receipts."],
     useCases: ["Quarterly IFTA tax preparation", "Fleet fuel cost auditing", "Owner-operator route optimization"],
     tips: ["Purchase fuel in lower-tax states while maintaining compliance to improve cash flow credit balances."],
@@ -3287,10 +3358,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "FV = P × (1 + r)^n + PMT × [((1 + r)^n - 1) ÷ r]",
     formulaDescription: "Standard future value formula compounded monthly, where PMT is the monthly contribution and r is the monthly rate of return.",
     example: "Starting with $10,000 and contributing $1,000/month for 25 years at an 8% annual return yields a projected balance of $968,266.",
-    faqs: [
-      { question: "What is a 457(b) plan?", answer: "A 457(b) plan is a tax-advantaged deferred compensation retirement plan available to state and local government employees and some non-profits." },
-      { question: "What are the 2024 contribution limits for 457(b)?", answer: "The employee contribution limit is $23,000. For those age 50 or older, the catch-up contribution allows up to $30,500." }
-    ],
+    faqs: Faqs.faqs_457Retirement || [],
     commonMistakes: ["Failing to account for age 50+ catch-up contributions.", "Underestimating compound growth benefits over long timeframes."],
     useCases: ["Government or municipal employee retirement planning", "Supplemental retirement saving analysis"],
     tips: ["A major benefit of 457(b) plans is no 10% early withdrawal penalty after leaving employment, regardless of age."],
@@ -3341,9 +3409,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Squares Needed = [Net Wall Area × (1 + Waste %)] ÷ 100",
     formulaDescription: "Finds the gross wall area, deducts window (~15 sq ft) and door (~20 sq ft) cutouts, multiplies by a waste factor, and divides by 100 to get 'Squares' (the standard industry siding unit of 100 sq ft).",
     example: "For a wall 100ft long and 10ft tall (1,000 sq ft) with 6 windows and 2 doors, Net Area = 1,000 - 90 - 40 = 870 sq ft. With 10% waste, you need 9.57 Squares.",
-    faqs: [
-      { question: "What is a 'square' of siding?", answer: "In construction, one square of siding equals 100 square feet of material coverage." }
-    ],
+    faqs: Faqs.sidingFaqs || [],
     commonMistakes: ["Failing to subtract large window and door areas, resulting in significant over-ordering.", "Not ordering enough waste buffer for complex gable cuts."],
     useCases: ["Contractor siding quotes", "DIY house exterior renovations"],
     tips: ["A standard waste factor is 10% for rectangular walls, but increase it to 15-20% if your walls contain steep gables."],
@@ -3392,9 +3458,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Net Worth Impact = Future Savings Balance - Outstanding Debt Balance",
     formulaDescription: "Compunds savings balance monthly, amortizes debt payments, and calculates the net difference at the end of the term.",
     example: "Saving $500/month for 10 years at 6% yield gives $79,085. Paying $250/month on a $5,000, 18% APR credit card wipes it out in 24 months, costing $1,015 in interest. Net worth delta is $78,070.",
-    faqs: [
-      { question: "Why compare debt and savings together?", answer: "High-interest debt drains wealth faster than typical savings accounts grow it. Reviewing both helps balance wealth-building with debt reduction." }
-    ],
+    faqs: Faqs.dinkytownFaqs || [],
     commonMistakes: ["Failing to pay down high-interest credit cards before prioritizing lower-yield savings."],
     useCases: ["Consolidated household financial planning", "Debt snowball/avalanche decisions"],
     tips: ["If your debt APR is higher than your savings return rate, focus surplus cash on paying off the debt first."],
@@ -3469,10 +3533,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Roof Area = Footprint Area × Slope Factor × (1 + Waste %)",
     formulaDescription: "Computes the total sloped surface area including overhangs, then calculates the number of full panels needed based on panel width, adding standard roofing screws (80 screws per 100 sq ft).",
     example: "A 40ft × 30ft building under a 6/12 pitch (factor 1.118) and 1ft overhang yields 1,476 sq ft of roof area. Using 3ft wide panels with a 10% waste buffer requires approximately 18 panels and 1,180 screws.",
-    faqs: [
-      { question: "How many screws do I need for a metal roof?", answer: "Usually, 80 to 100 specialized roofing screws are required per square (100 square feet) of metal roofing material." },
-      { question: "What is the standard width of metal roof panels?", answer: "Most metal roofing panels are sold in standard widths of 36 inches (3 feet) of coverage." }
-    ],
+    faqs: Faqs.metalRoofFaqs || [],
     commonMistakes: ["Failing to account for roof pitch multipliers, which increases slope lengths.", "Not ordering enough screws for edge trims and ridges."],
     useCases: ["Ordering barn or residential metal roof packages", "Comparing metal roof vs asphalt shingle material volumes"],
     tips: ["Order specialized neoprene-washer screws that seal the sheet metal screw holes to prevent leaks."],
@@ -3543,10 +3604,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Repayment = Loan Principal + (Loan Principal × Monthly Interest Rate × Term in Months)",
     formulaDescription: "Pawn shops charge simple monthly interest fees. Standard APR equals monthly interest multiplied by 12.",
     example: "Pawning a $1,000 item at 40% valuation yields a $400 loan. At a 10% monthly interest rate for 3 months, total interest is $120. Total repayment is $520.",
-    faqs: [
-      { question: "How do pawn loans work?", answer: "You exchange a valuable item for a short-term cash loan. If you repay the loan plus interest within the term, you reclaim the item. Otherwise, the pawn shop keeps and sells the item." },
-      { question: "What is the APR on a pawn loan?", answer: "Pawn loan APRs are very high, often ranging from 120% to 240% annually depending on local regulations." }
-    ],
+    faqs: Faqs.pawnFaqs || [],
     commonMistakes: ["Failing to reclaim the item before the loan duration expires, resulting in collateral forfeiture."],
     useCases: ["Estimating cash offers for personal items", "Short-term budgeting planner"],
     tips: ["Only pawn items you are willing to lose if your financial situation does not allow for quick repayment."],
@@ -3590,10 +3648,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Payment = Loan Principal × Interest Rate ÷ 12; Points Fee = Loan Principal × Points %",
     formulaDescription: "Calculates monthly interest payments and adds upfront underwriting points fee coefficients.",
     example: "Borrowing $187,500 (75% LTV on $250k total) at 12% interest with 2.5 points for 6 months costs $1,875/month in interest and $4,687 in points fees. Total cost: $15,937.",
-    faqs: [
-      { question: "What is a hard money loan?", answer: "A short-term, high-interest loan secured by real estate, commonly used by house flippers and developers to purchase and rehab properties." },
-      { question: "What are 'points' on a hard money loan?", answer: "Points are upfront lender origination fees. 1 point equals 1% of the total loan principal." }
-    ],
+    faqs: Faqs.hardMoneyFaqs || [],
     commonMistakes: ["Failing to budget for holding costs or rehab delays, which prolong high-interest payment terms."],
     useCases: ["Analyzing house flipping property deals", "Comparing lender terms and interest charges"],
     tips: ["Lenders often lend based on ARV (After Repair Value) rather than purchase price. Confirm the loan structure before closing."],
@@ -3640,10 +3695,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Lease Cost = Down + (Payment × Term); Buy Cost = Down + (Loan Payment × Term) - Resale Value",
     formulaDescription: "Calculates the total cost to lease including monthly lease payments, and compares it to the purchase amortization minus the vehicle's projected resale value at the end of the term.",
     example: "Leasing a $35k car for 36 months at $399/mo with $3k down costs $17,364. Buying with $5k down and a 6.5% interest loan costs $30,940, but subtracting $18k resale value leaves a net cost of $12,940. Buying is cheaper by $4,424.",
-    faqs: [
-      { question: "Is it better to lease or buy a car?", answer: "Buying is generally cheaper in the long run because you build vehicle equity. Leasing is best if you want lower monthly payments and plan to change cars every 2-3 years." },
-      { question: "What is car residual value?", answer: "The estimated value of the car at the end of the lease term, set by the leasing company." }
-    ],
+    faqs: Faqs.leaseVsBuyCarFaqs || [],
     commonMistakes: ["Failing to account for vehicle equity at the end of the loan term, which makes leasing look cheaper than it actually is."],
     useCases: ["Evaluating dealership car offers", "Personal transportation budgeting"],
     tips: ["Negotiate the purchase price (capitalized cost) of the car before discussing lease options to lower your monthly payments."],
@@ -3708,10 +3760,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Redemption Value (cents/point) = (Cash Price - Fees) × 100 ÷ Points Required",
     formulaDescription: "Compares the cash-equivalent value of using points against a target redemption benchmark (e.g. 1.2 or 1.5 cents per point).",
     example: "A $500 flight costs 30,000 points + $5.60 in fees. Value is ($500 - $5.60) × 100 ÷ 30,000 = 1.65 cents/point. If your target is 1.2 cents, booking with points is recommended.",
-    faqs: [
-      { question: "What is a good value per credit card point?", answer: "Typically, a redemption value above 1.5 cents per point is considered excellent. Standard cash back redemptions offer exactly 1.0 cent per point." },
-      { question: "Should I book flights or hotels with points?", answer: "Flights (especially business class) often offer much higher point value redemptions than standard hotels." }
-    ],
+    faqs: Faqs.pointsVsCashFaqs || [],
     commonMistakes: ["Forgetting to subtract award taxes and carrier fees from the cash price before dividing by points."],
     useCases: ["Evaluating airline frequent flyer options", "Credit card points transfer decisions"],
     tips: ["Always search both cash rates and award space on the same day as reward availability can fluctuate."],
@@ -3757,10 +3806,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Taxable Income = Gross Wages - Standard Deduction; Apply Progressive Brackets",
     formulaDescription: "Subtracts the Oklahoma standard deduction and calculates tax using state marginal tax rates (0.25% to 4.75%).",
     example: "A single taxpayer earning $60,000 deducts $6,350. Taxable income of $53,650 falls into progressive brackets, leading to an estimated tax of $2,347.",
-    faqs: [
-      { question: "What is Oklahoma's top income tax rate?", answer: "Oklahoma's top marginal income tax rate is 4.75%, which applies to single incomes over $7,200 and married joint incomes over $12,200." },
-      { question: "What is the Oklahoma standard deduction?", answer: "For 2024, Oklahoma's standard deduction is $6,350 for single filers and $12,700 for married joint filers." }
-    ],
+    faqs: Faqs.oklahomaTaxFaqs || [],
     commonMistakes: ["Applying the tax rate to total gross earnings without subtracting standard deductions first."],
     useCases: ["Estimating state tax liability", "Quarterly tax planning for independent contractors"],
     tips: ["Filing status significantly shifts bracket thresholds. Ensure you select the correct status."],
@@ -3838,10 +3884,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Fair Probability = Implied Probability ÷ Total Implied Probabilities",
     formulaDescription: "Converts American odds to decimal rates, calculates the combined overround (vig), and normalizes individual probabilities to find the 'fair' odds.",
     example: "Odds of -110 (52.38% probability) and +110 (47.62% probability) sum to 100%. If both are -110 (52.38% each), the sum is 104.76%. Removing the 4.76% vig gives a fair probability of 50.00% and fair odds of +100.",
-    faqs: [
-      { question: "What is 'vig' in sports betting?", answer: "Vig (short for vigorish, juice, or margin) is the fee the sportsbook charges for taking a bet. It is built directly into the odds." },
-      { question: "How does a no-vig calculator help?", answer: "It allows you to compare different sportsbooks' odds against a 'fair' baseline, helping you identify positive expected value (+EV) opportunities." }
-    ],
+    faqs: Faqs.novigFaqs || [],
     commonMistakes: ["Entering fractional or decimal odds. This calculator is designed specifically for American odds format (e.g. -110, +150)."],
     useCases: ["Hedging and arbitrage calculation", "Expected value (+EV) betting audits", "Removing sportsbook overround"],
     tips: ["A lower vig percentage indicates a more competitive market with better pricing for bettors."],
@@ -3912,10 +3955,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Benefit = Service Credit × Age Factor × Final Compensation ÷ 12",
     formulaDescription: "Multiplies service credit years by age-factor coefficients (based on membership tier and retirement age) and final salary compensation averages.",
     example: "Hired before 2013, retiring at age 60 with 25 service years and final compensation of $80,000 (factor 2.0%). Benefit: 25 × 2.0% × $80,000 = $40,000 annual / $3,333.33 monthly.",
-    faqs: [
-      { question: "What are the two CalSTRS tiers?", answer: "Members hired before January 1, 2013, are in the 2% at 60 tier. Members hired on or after that date are in the 2% at 62 tier." },
-      { question: "What is CalSTRS Career Factor?", answer: "For the 2% at 60 tier, if you retire with 30 or more years of service credit, CalSTRS adds 0.2% to your age factor (up to a maximum of 2.40%)." }
-    ],
+    faqs: Faqs.calstrsFaqs || [],
     commonMistakes: ["Failing to adjust filing tiers based on your actual hire date, which significantly shifts age factor thresholds."],
     useCases: ["California public school teacher retirement planning", "Evaluating final compensation payout scenarios"],
     tips: ["Sick leave balances can sometimes be converted to add partial service credit years at retirement. Check with your district."],
@@ -4005,10 +4045,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "End Date = Surgery Date + Global Days; Billing Resumes = End Date + 1 Day",
     formulaDescription: "Adds CPT designated global postoperative period days (000, 010, or 090) to the date of operation to find the final global care window.",
     example: "A surgery on July 1 with a 90-day global period has its global period end on September 29. Separate billing resumes September 30 (Day 91 post-op).",
-    faqs: [
-      { question: "What is a global surgery period?", answer: "A global period is the timeframe during which routine post-operative care is bundled into the surgical procedure payment and cannot be billed separately." },
-      { question: "What modifiers bypass global periods?", answer: "Modifiers like -24 (unrelated E/M), -58 (staged procedure), -78 (return to OR for complications), and -79 (unrelated procedure by same physician) are used to report services during global periods." }
-    ],
+    faqs: Faqs.globalSurgeryFaqs || [],
     commonMistakes: ["Failing to count the surgery date as Day 0 when counting 10 or 90 days for post-op calculations.", "Forgetting that commercial insurance companies can differ from Medicare rules."],
     useCases: ["Medical billing post-op checks", "Surgical practice scheduling coordination"],
     tips: ["Use CPT code 99024 to document post-op visits within global periods for quality reporting even though they yield zero cash reimbursement."],
@@ -4060,9 +4097,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Payment = P&I + Monthly Tax (0.85% annual) + Monthly Insurance (0.62% annual)",
     formulaDescription: "Finds the amortized monthly mortgage payment and adds standard property reserves for the state of Kentucky.",
     example: "A $250k home in Kentucky with 10% down ($25k) at 6.5% interest costs approximately $1,729/month.",
-    faqs: [
-      { question: "What is the average property tax rate in Kentucky?", answer: "Kentucky has a very competitive average property tax rate of approximately 0.85% of the home value annually." }
-    ],
+    faqs: Faqs.mortgageKentuckyFaqs || [],
     commonMistakes: ["Failing to account for local municipal or school district taxes, which can alter the overall payment amount."],
     useCases: ["Kentucky home purchases", "Refinancing properties in Louisville, Lexington, or Bowling Green"],
     tips: ["A higher down payment cuts mortgage insurance premiums (PMI), saving money monthly."],
@@ -4116,10 +4151,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Weight (lbs) = Volume (cu in) × density × Area (sq ft) × (1 + Waste %)",
     formulaDescription: "Computes joint volume based on tile perimeter-to-area ratio and joint width, then converts to weight using product-specific densities (sanded: 0.065, unsanded: 0.060, epoxy: 0.068 lbs/cu in).",
     example: "Tiling 100 sq ft using 12x12x3/8\" tiles and a 1/8\" joint requires 9.0 lbs of sanded grout. With a 10% waste buffer, you should order 9.9 lbs.",
-    faqs: [
-      { question: "How much extra grout should I order for waste?", answer: "We recommend adding a standard 10% waste factor. For unglazed tiles, increase this buffer to 15%." },
-      { question: "What is the difference between sanded and unsanded grout?", answer: "Sanded grout contains sand which prevents shrinkage in joints wider than 1/8\". Unsanded grout is used for thin joints (under 1/8\") to prevent scratching delicate tiles." }
-    ],
+    faqs: Faqs.laticreteGroutFaqs || [],
     commonMistakes: ["Using mix units without proper conversions.", "Failing to account for tile thickness in joint depth calculations."],
     useCases: ["Kitchen backsplash tiling projects", "Bathroom floor remodel material calculations"],
     tips: ["Keep joints clean before grouting to ensure even color distribution and material bonding."],
@@ -4183,9 +4215,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Payment = P&I + Monthly Tax (0.61% annual) + Monthly Insurance (0.70% annual)",
     formulaDescription: "Finds the amortized monthly mortgage payment and adds standard property reserves for the state of Arkansas.",
     example: "A $250k home in Arkansas with 10% down ($25k) at 6.5% interest costs approximately $1,697/month.",
-    faqs: [
-      { question: "What is the average property tax rate in Arkansas?", answer: "Arkansas has one of the lowest property tax rates in the nation, averaging approximately 0.61% of the home value annually." }
-    ],
+    faqs: Faqs.mortgageArkansasFaqs || [],
     commonMistakes: ["Failing to account for local municipal or county sales tax components, which can alter the overall payment amount."],
     useCases: ["Arkansas home purchases", "Refinancing properties in Little Rock, Fayetteville, or Fort Smith"],
     tips: ["Review first-time homebuyer programs through ADFA for down payment assistance."],
@@ -4239,10 +4269,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Net Pay = Gross Pay - FICA - Federal Tax - VA State Tax",
     formulaDescription: "Subtracts federal tax rates, FICA (7.65%), and Virginia state progressive tax brackets (2% to 5.75%) from periodic earnings.",
     example: "Earning $2,500 bi-weekly ($65,000/year gross) pays approximately $1,885 net after standard tax adjustments.",
-    faqs: [
-      { question: "What are Virginia's tax brackets?", answer: "Virginia uses four tax brackets: 2.0% (first $3k), 3.0% (next $2k), 5.0% (next $12k), and 5.75% (incomes over $17k)." },
-      { question: "What deductions apply to VA salary?", answer: "Standard payroll deductions include FICA (7.65% combined Social Security and Medicare), Federal Income Tax, and Virginia State Income Tax." }
-    ],
+    faqs: Faqs.virginiaSalaryFaqs || [],
     commonMistakes: ["Applying a single flat tax rate to total gross earnings rather than marginal progressive brackets."],
     useCases: ["Estimating job offer takes in Virginia", "Budgeting monthly expenses based on paycheck schedules"],
     tips: ["Filing status does not change the Virginia bracket rates but determines standard deduction limits on state tax returns."],
@@ -4307,10 +4334,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Net Pay = Gross Pay - FICA - Federal Tax - MI State Tax (4.25%)",
     formulaDescription: "Subtracts federal tax rates, FICA (7.65%), and Michigan's flat state tax rate (4.25% for 2024) from periodic earnings.",
     example: "Earning $2,500 bi-weekly ($65,000/year gross) pays approximately $1,922 net after flat Michigan state tax and adjustments.",
-    faqs: [
-      { question: "What is Michigan's income tax rate?", answer: "Michigan has a flat personal income tax rate of 4.25% for the tax year 2024." },
-      { question: "Are city income taxes applicable in Michigan?", answer: "Yes. Many cities in Michigan (like Detroit, Grand Rapids, and Lansing) levy additional local municipal income taxes, which are not calculated by this state-wide tool." }
-    ],
+    faqs: Faqs.michiganTaxFaqs || [],
     commonMistakes: ["Failing to account for local municipal city taxes if living or working in a taxing Michigan municipality."],
     useCases: ["Job salary modeling in Michigan", "Estimating paycheck takes"],
     tips: ["Adjust your state withholding allowances on Form MI-W4 to fine-tune your net paycheck calculations."],
@@ -4361,9 +4385,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Payment = P&I + Monthly Tax (0.56% annual) + Monthly Insurance (0.58% annual)",
     formulaDescription: "Finds the amortized monthly mortgage payment and adds standard property reserves for the state of South Carolina.",
     example: "A $250k home in South Carolina with 10% down ($25k) at 6.5% interest costs approximately $1,662/month.",
-    faqs: [
-      { question: "What is the average property tax rate in South Carolina?", answer: "South Carolina has one of the lowest average property tax rates in the United States at approximately 0.56% of the home value annually." }
-    ],
+    faqs: Faqs.mortgageScFaqs || [],
     commonMistakes: ["Failing to account for local municipal or school district taxes, which can alter the overall payment amount."],
     useCases: ["South Carolina home purchases", "Refinancing properties in Charleston, Columbia, or Greenville"],
     tips: ["Check eligibility for the South Carolina state homestead exemption if you are over 65 or disabled to lower your tax reserves."],
@@ -4417,10 +4439,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Tax = Base Price × Combined Tax Rate; Combined Rate = State Rate (6.5%) + Local Rate",
     formulaDescription: "Calculates sales tax based on standard Arkansas rules or reverses the formula to extract tax from a gross invoice total.",
     example: "A $100 purchase with 6.5% state tax and 2.5% local tax incurs $9.00 sales tax, totaling $109.00.",
-    faqs: [
-      { question: "What is the statewide sales tax rate in Arkansas?", answer: "The state of Arkansas has a base sales tax rate of 6.5%." },
-      { question: "Do cities in Arkansas charge additional sales tax?", answer: "Yes, local city and county sales tax rates are added to the state rate and commonly range from 1.0% to 3.5%, leading to combined rates of 8.0% to 10.0%." }
-    ],
+    faqs: Faqs.arkansasSalesTaxFaqs || [],
     commonMistakes: ["Applying the state sales tax rate only and ignoring local municipal or county sales taxes."],
     useCases: ["Business invoice generation in Arkansas", "Accounting receipt verification"],
     tips: ["Make sure to verify if your municipality has special district taxes for transit or tourism projects."],
@@ -4483,10 +4502,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "P&I Payment = Loan Balance × (r(1+r)^n) ÷ ((1+r)^n - 1)",
     formulaDescription: "Calculates the initial payment based on the teaser rate, then models the maximum possible monthly payment utilizing lifetime interest rate caps.",
     example: "A $300k 5/1 ARM with a 6.0% initial rate and 5.0% lifetime cap (max rate 11.0%) starts at $1,798/month. If the rate adjusts to its max of 11.0% after year 5, the payment rises to $2,809/month.",
-    faqs: [
-      { question: "What does 5/1 ARM mean?", answer: "The interest rate is fixed for the first 5 years. After that, it can adjust once every year for the remaining life of the loan." },
-      { question: "What is an ARM lifetime cap?", answer: "The maximum amount the interest rate can increase over the life of the loan above the initial interest rate." }
-    ],
+    faqs: Faqs.armMortgageFaqs || [],
     commonMistakes: ["Budgeting only for the initial teaser payment and forgetting to prepare for potential future payment shock when rate adjustments begin."],
     useCases: ["Comparing fixed-rate vs adjustable-rate mortgages", "Short-term homeownership financial modeling"],
     tips: ["Choose an ARM if you plan to sell the home or refinance before the initial fixed-rate period ends."],
@@ -4555,10 +4571,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Cost = Power (kW) × Time (Hours) × Electricity Rate ($/kWh)",
     formulaDescription: "Converts appliance wattage to kilowatts, calculates daily consumption in kilowatt-hours (kWh), and multiplies by standard electric utility rates.",
     example: "A 1,000-watt space heater run for 8 hours daily at $0.16/kWh uses 8 kWh of energy, costing $1.28 per day, or $38.91 per month.",
-    faqs: [
-      { question: "What is a kWh?", answer: "A kilowatt-hour (kWh) is a unit of energy equivalent to using 1,000 watts of power for one hour." },
-      { question: "Which home appliances use the most electricity?", answer: "Space heaters, air conditioners, water heaters, clothes dryers, and refrigerators are typically the largest energy consumers in a home." }
-    ],
+    faqs: Faqs.electricFaqs || [],
     commonMistakes: ["Entering kilowatts instead of watts for the wattage input. (e.g. putting 1 instead of 1000 for a 1 kW heater)."],
     useCases: ["Auditing high utility bills", "Estimating operating costs of new electronics", "Comparing appliance energy efficiency profiles"],
     tips: ["Look for Energy Star labels on appliances for certified energy-efficient products that help reduce electricity costs."],
@@ -4600,9 +4613,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Tiles Needed = Room Area ÷ Tile Area; Include Waste Factor",
     formulaDescription: "Finds the total square footage of tiling required, divides by the area of a single tile, and rounds up to support packaging boxes.",
     example: "Tiling a 120 sq ft room with 12x12\" tiles needs exactly 120 tiles. Adding a 10% waste buffer increases the order requirement to 132 tiles.",
-    faqs: [
-      { question: "How much extra tile should I buy for waste?", answer: "Buy 10% extra for standard square layouts. If laying tiles in a diagonal or herringbone pattern, buy 15% extra to account for additional cutting waste." }
-    ],
+    faqs: Faqs.tileSqftFaqs || [],
     commonMistakes: ["Failing to account for grout lines in tile spacing or buying exactly the net room area without a waste margin."],
     useCases: ["Bathroom remodels", "Kitchen backsplash installation planning"],
     tips: ["Always keep a few extra tiles from the same batch for future repairs, as colors can vary between manufacturing runs."],
@@ -4647,10 +4658,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Package Balance % = Team A Value ÷ Team B Value",
     formulaDescription: "Sums industry-standard dynasty value indices (scaled 0-100) for all assets on both sides of the trade to evaluate package margins.",
     example: "Trading an Elite QB (90 pts) for an Elite RB (85 pts) + a First Round Pick (75 pts). Team A receives 90 pts, Team B receives 160 pts. Team B wins the trade by 70 points (highly unbalanced).",
-    faqs: [
-      { question: "What is a 'dynasty' league?", answer: "A fantasy football league where you keep your entire roster of players from year to year, drafting rookies annually." },
-      { question: "Why is trade value modeling important?", answer: "It prevents you from overpaying for a single premium asset or falling victim to lopsided multi-player deals." }
-    ],
+    faqs: Faqs.dynastyDaddyFaqs || [],
     commonMistakes: ["Overvaluing minor depth players. A package of three bench players is rarely worth one elite starter, despite what total points sum to."],
     useCases: ["Evaluating trade offers from league mates", "Pre-draft asset valuation", "Roster reconstruction analysis"],
     tips: ["In dynasty, elite QBs retain value the longest, followed by WRs, while RBs have the shortest career lifespans."],
@@ -4766,9 +4774,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Weight (lbs) = Volume (cu in) × density × Area (sq ft) × (1 + Waste %)",
     formulaDescription: "Computes joint volume based on tile perimeter-to-area ratio and joint width, then converts to weight using Mapei product-specific densities (Keracolor Sanded: 0.065, Keracolor Unsanded: 0.058, Ultracolor Plus FA: 0.062, Kerapoxy: 0.067 lbs/cu in).",
     example: "Tiling 100 sq ft using 12x12x3/8\" tiles and a 1/8\" joint requires 8.5 lbs of Ultracolor Plus FA grout. With a 10% waste buffer, you should order 9.4 lbs.",
-    faqs: [
-      { question: "What is Mapei Ultracolor Plus FA?", answer: "An ultra-premium, fast-setting, polymer-modified grout that is color-consistent and does not require sealing. It uses a hybrid density of 0.062 lbs/cu in." }
-    ],
+    faqs: Faqs.mapeiGroutFaqs || [],
     commonMistakes: ["Using standard grout calculations for epoxy grout without adjusting the density coefficient."],
     useCases: ["Kitchen backsplash tiling projects", "Bathroom floor remodel material calculations"],
     tips: ["Mapei recommends mixing grout at low speeds to prevent trapping air bubbles in the mix."],
@@ -4834,10 +4840,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Taxable Income = Gross - Deduction; Apply Progressive Brackets + County Rate (2.25% - 3.2%)",
     formulaDescription: "Subtracts Maryland standard deduction (capped at $2,550 single / $5,100 married), calculates progressive state tax, and adds local county tax.",
     example: "A single taxpayer earning $60,000 deducts $2,550. Taxable income of $57,450 falls into progressive brackets (2.0% to 4.75%) totaling $2,624. Adding a 3.0% county tax ($1,800) yields a total tax of $4,424.",
-    faqs: [
-      { question: "What is Maryland's state tax rate?", answer: "Maryland uses a progressive state tax system with rates ranging from 2.0% to 5.75% depending on income brackets." },
-      { question: "What is Maryland's county income tax?", answer: "Every county in Maryland (and Baltimore City) levies a local income tax. Rates are flat and range from 2.25% to 3.20% of your taxable income." }
-    ],
+    faqs: Faqs.marylandTaxFaqs || [],
     commonMistakes: ["Failing to add the county tax rate to the state tax rate, which significantly underestimates the total tax liability."],
     useCases: ["Estimating state tax liability", "Quarterly tax planning for Maryland residents"],
     tips: ["Check if your county offers local tax credits or homestead credits to reduce your taxable income base."],
@@ -4929,10 +4932,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Scale Score = 200 + Raw Score Ratio × 600",
     formulaDescription: "Converts raw score performance to standard SAT scale sections bounded between 200 and 800.",
     example: "Reading 45/52 and Writing 38/44 gives a scaled Verbal score of 720. Math 50/58 gives a scaled Math score of 720. Combined score is 1440.",
-    faqs: [
-      { question: "What is the maximum SAT score?", answer: "The maximum score is 1600. Verbal and Math are each worth up to 800 scale points." },
-      { question: "How accurate is the SAT scale score calculator?", answer: "It is an approximation. The official College Board SAT curve changes slightly for each test administration based on exam difficulty." }
-    ],
+    faqs: Faqs.satTestFaqs || [],
     commonMistakes: ["Entering incorrect question count instead of correct raw count values."],
     useCases: ["SAT diagnostic test evaluation", "SAT preparation tracking"],
     tips: ["There is no penalty for guessing on the SAT. Fill in every single question on the exam."],
@@ -4980,10 +4980,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Premium = Budget × Rate Coefficient; Monthly Rate = Premium ÷ Term",
     formulaDescription: "Applies risk tier rates (1% to 3.5% of total construction cost) adjusted for project duration.",
     example: "A $200k construction budget at a medium risk level (2% rate) costs $4,000 for a 12-month policy, translating to $333/month.",
-    faqs: [
-      { question: "What does builders risk insurance cover?", answer: "It covers physical damage to the structure under construction, materials on-site, and materials in transit due to fire, wind, theft, or vandalism." },
-      { question: "Who pays for builders risk insurance?", answer: "Either the property owner or the general contractor can purchase the policy, depending on the contract agreement." }
-    ],
+    faqs: Faqs.buildersRiskInsuranceFaqs || [],
     commonMistakes: ["Failing to update policy duration when construction projects encounter delays, which can void coverage."],
     useCases: ["Construction loan closing preparations", "Home remodeling risk planning"],
     tips: ["Buying a policy before breaking ground is typically cheaper than buying coverage mid-construction."],
@@ -5038,10 +5035,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Payment = P × (r(1+r)^n) ÷ ((1+r)^n - 1)",
     formulaDescription: "Computes periodic payments using chattel loan amortization (often shorter terms and higher interest than traditional properties).",
     example: "A $120k manufactured home with 10% down ($12k) financed with a 20-year chattel loan at 8.5% costs $936/month.",
-    faqs: [
-      { question: "What is a chattel loan?", answer: "A loan for personal property rather than real estate. If you own the manufactured home but rent the land/lot, you will typically use a chattel loan." },
-      { question: "Can I get an FHA loan for a mobile home?", answer: "Yes, FHA Title I loans offer financing for manufactured homes on leased lots with shorter terms (typically 20 years)." }
-    ],
+    faqs: Faqs.manufacturedHomeLoanFaqs || [],
     commonMistakes: ["Expecting standard mortgage interest rates for mobile homes without owning the underlying land."],
     useCases: ["Mobile home purchases", "Evaluating lot rent vs land purchases"],
     tips: ["Affixing the manufactured home to a permanent foundation on land you own makes it eligible for standard, cheaper real estate loans."],
@@ -5093,9 +5087,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Price = (Printing Cost + Binding Cost) × (1 + Markup %)",
     formulaDescription: "Sums sheet costs, ink selections, and binding rates, then adds a target markup percentage to establish final sales price.",
     example: "Printing 1,000 units of a 16-page booklet on glossy paper with color ink and spiral binding costs $2,560. With a 30% markup, the total customer quote is $3,328 ($3.33 per book).",
-    faqs: [
-      { question: "How does print volume affect pricing?", answer: "Printing features high setup costs. Larger print volumes (economies of scale) significantly lower the unit price of booklets and flyers." }
-    ],
+    faqs: Faqs.printingFaqs || [],
     commonMistakes: ["Failing to add binding costs to saddle-stitch or spiral bound jobs, underpricing the final customer invoice."],
     useCases: ["Print shop job quoting", "Marketing brochure budget estimation"],
     tips: ["Saddle-stitching (stapled binding) is the most cost-effective booklet option for documents under 64 pages."],
@@ -5186,10 +5178,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Days Life = Max Capacity Hours ÷ Daily Usage Hours",
     formulaDescription: "Models battery capacities (TI-84 Plus CE: 1200mAh Lithium-Ion, TI-84 Plus: 4x AAA cells) and adjusts for brightness profiles.",
     example: "TI-84 Plus CE used 2 hours daily at medium brightness has a 30-hour capacity, lasting approximately 15 days per full charge.",
-    faqs: [
-      { question: "How long does a TI-84 Plus CE battery charge last?", answer: "A full charge typically lasts between 15 to 30 hours of active screen time, which represents 1 to 2 weeks of normal school usage." },
-      { question: "When should I replace my TI-84 CE rechargeable battery?", answer: "Lithium-ion batteries inside the CE model degrade after 300 to 500 charge cycles, which typically represents 4 to 5 years of school usage." }
-    ],
+    faqs: Faqs.ti84BatteryFaqs || [],
     commonMistakes: ["Leaving screen brightness at max level, which cuts battery runtimes by more than half."],
     useCases: ["Preparing for standardized testing (SAT/ACT)", "School supply maintenance audits"],
     tips: ["Store your calculator in a cool place. Extreme heat speeds up battery self-discharge and shortens overall lifespan."],
@@ -5262,10 +5251,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Price = (Base Price + Material Premium) * Quantity * (1 - Discount Rate)",
     formulaDescription: "Calculates mock cost with tiered discount rates: 1-5 cases (0%), 6-20 cases (10%), 21+ cases (20%). It also maps screen dimensions to recommended print resolution (DPI).",
     example: "Order of 10 plastic phone cases ($15 base) gets a 10% discount: 10 × $15 × 0.90 = $135.",
-    faqs: [
-      { question: "What print resolution (DPI) is recommended for phone cases?", answer: "At least 300 DPI (Dots Per Inch) is recommended to avoid pixelation on high-detail designs like calculator keypad prints." },
-      { question: "Are calculator cases functional?", answer: "Most calculator phone cases are aesthetic plastic/silicone prints, although some active game-emulator cases are available for specific models." }
-    ],
+    faqs: Faqs.calculatorPhoneCaseFaqs || [],
     commonMistakes: ["Using low-resolution images (< 150 DPI) which makes the tiny calculator button prints look fuzzy."],
     useCases: ["Custom merchandise ordering", "Design mockup scaling"],
     tips: ["Choose matte finishes if you want to avoid glare on the calculator button prints."],
@@ -5345,10 +5331,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "A = P * (1 + r/n)^(n*t)",
     formulaDescription: "Uses the compound interest formula where P is principal, r is annual nominal rate, n is compounding periods per year, and t is term in years.",
     example: "Deposit of $10,000 for 1 year at 5% interest compounded monthly returns $10,511.62.",
-    faqs: [
-      { question: "What is APY vs interest rate on a CD?", answer: "The interest rate is the nominal rate. APY (Annual Percentage Yield) represents the actual rate of return taking compounding interest into account." },
-      { question: "Is CD interest taxable?", answer: "Yes, CD interest earned is generally taxed as ordinary income in the year it is credited to your account." }
-    ],
+    faqs: Faqs.cdRatesFaqs || [],
     commonMistakes: ["Withdrawing funds early, which usually results in an early withdrawal penalty that reduces your interest earned."],
     useCases: ["Fixed income planning", "Comparing bank rates", "Retirement savings allocation"],
     tips: ["If inflation is high, lock in shorter terms to avoid having your purchasing power eroded over long periods."],
@@ -5406,10 +5389,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "IL Tax = Taxable Income * 4.95%",
     formulaDescription: "Illinois levies a flat state income tax of 4.95% on taxable income after applying the state's basic personal exemption.",
     example: "Single filer with $50,000 gross income and 1 basic exemption ($2,775 for 2024) pays 4.95% of $47,225 = $2,337.64.",
-    faqs: [
-      { question: "Is Illinois income tax progressive?", answer: "No, Illinois uses a constitutionally mandated flat tax rate of 4.95% for individuals." },
-      { question: "What is the Illinois personal exemption?", answer: "For tax year 2024, the basic personal exemption amount is $2,775 per eligible exemption." }
-    ],
+    faqs: Faqs.illinoisTaxFaqs || [],
     commonMistakes: ["Failing to claim the standard personal exemption or additional exemptions for being over age 65 or blind."],
     useCases: ["Relocation planning to Illinois", "Annual budget estimating"],
     tips: ["Illinois offers a Property Tax Credit where you can deduct 5% of property taxes paid on your primary residence."],
@@ -5466,10 +5446,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "A = P * (1 + r/n)^(n*t)",
     formulaDescription: "Standard compounding interest math that computes future value and subtracts the principal to isolate interest growth.",
     example: "An investment of $5,000 for 5 years at 4.25% compounded quarterly earns $1,175.76 in interest.",
-    faqs: [
-      { question: "How does compounding frequency affect CD yields?", answer: "More frequent compounding (e.g., daily instead of annually) causes your interest to grow faster, resulting in a higher APY." },
-      { question: "Can I add money to a CD after opening it?", answer: "Generally, traditional CDs do not allow additional deposits once the initial term begins. An exception is a 'Add-On' CD." }
-    ],
+    faqs: Faqs.cdInterestRateFaqs || [],
     commonMistakes: ["Confusing the nominal interest rate with the yield (APY). Always compare APY across banks."],
     useCases: ["Savings growth projections", "Comparing CDs vs savings accounts"],
     tips: ["Daily compounding yields the highest interest. Look for institutions that compound daily rather than monthly."],
@@ -5526,10 +5503,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "PA Tax = Taxable Income * 3.07%",
     formulaDescription: "Pennsylvania levies a flat rate of 3.07% on all taxable compensation, with no personal standard deduction allowed.",
     example: "A salary of $45,000 in PA has a flat state tax of 3.07% = $1,381.50.",
-    faqs: [
-      { question: "Does PA have standard deductions?", answer: "No, Pennsylvania is unique in that it does not allow a standard deduction or personal exemptions on income." },
-      { question: "What is PA Tax Forgiveness?", answer: "PA offers Tax Forgiveness, which provides state tax refunds or exemptions to lower-income families." }
-    ],
+    faqs: Faqs.paTaxFaqs || [],
     commonMistakes: ["Expecting standard deductions similar to federal returns. PA taxes gross taxable compensation directly."],
     useCases: ["Living and working in PA", "Comparing tax burdens between states"],
     tips: ["While PA doesn't have standard deductions, you can deduct eligible unreimbursed business expenses using Schedule UE."],
@@ -5567,10 +5541,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "GA Tax = (Gross Income - GA Standard Deduction) * 5.39%",
     formulaDescription: "Georgia uses a flat income tax rate of 5.39% applied to taxable income after standard or itemized deductions.",
     example: "Single filer earning $60,000 gross with standard GA deduction ($12,000) pays 5.39% of $48,000 = $2,587.20.",
-    faqs: [
-      { question: "What is the GA standard deduction?", answer: "For single filers, the standard deduction is $12,000, and for married couples filing jointly, it is $24,000." },
-      { question: "Did Georgia replace its tax brackets?", answer: "Yes, starting in 2024, Georgia transitioned from graduated brackets to a single flat tax rate of 5.39%." }
-    ],
+    faqs: Faqs.georgiaTaxFaqs || [],
     commonMistakes: ["Using federal deduction levels for the state tax calculation. GA uses its own standard deduction values."],
     useCases: ["GA resident tax planning", "Paycheck budgeting"],
     tips: ["Georgia residents can exclude up to $65,000 of retirement income if they are 65 or older."],
@@ -5621,10 +5592,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Sub-investments = Total Principal ÷ Ladder Steps",
     formulaDescription: "Divides your investment equally across CD terms (e.g. 1, 2, 3, 4, 5-year terms). Re-invests maturing CDs into top-tier yields.",
     example: "Investing $25,000 into a 5-step ladder puts $5,000 each in 1-year, 2-year, 3-year, 4-year, and 5-year CDs.",
-    faqs: [
-      { question: "What is a CD ladder?", answer: "A CD ladder is a savings strategy where you open multiple CDs with staggered maturity dates so that cash becomes available at regular intervals." },
-      { question: "What are the benefits of CD laddering?", answer: "It balances locking in high long-term rates while ensuring you have liquid funds maturing every year (or month) without paying penalty fees." }
-    ],
+    faqs: Faqs.cdLadderFaqs || [],
     commonMistakes: ["Failing to reinvest maturing CDs, which defeats the continuous compounding benefit of the ladder structure."],
     useCases: ["Staging retirement cash reserves", "Preserving emergency funds"],
     tips: ["Review rate forecasts. If rates are rising, favor shorter-term rungs so you can reinvest at higher yields sooner."],
@@ -5669,10 +5637,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Grams = Wound Area (cm²) × Application Thickness (cm) × Frequency/Day × Days × Density Factor",
     formulaDescription: "Computes volume in cubic centimeters (cc), then multiplies by standard ointment density (~1 gram/cc) to estimate ointment usage in grams.",
     example: "A 5cm × 4cm wound with a nickel-thick (2mm) application once daily for 14 days requires about 56 grams of Santyl.",
-    faqs: [
-      { question: "How thick should Santyl ointment be applied?", answer: "Santyl ointment should be applied at a thickness of 2 millimeters (about the thickness of a nickel) directly to the wound bed." },
-      { question: "What size tubes does Santyl come in?", answer: "Santyl is commercially available in 30-gram and 90-gram tubes." }
-    ],
+    faqs: Faqs.santylFaqs || [],
     commonMistakes: ["Applying the ointment too thick or spreading it onto healthy surrounding skin, which can cause skin irritation."],
     useCases: ["Clinical prescription estimating", "Pharmacy cost authorization calculations"],
     tips: ["Protect surrounding healthy skin by applying a barrier ointment (like zinc oxide) before laying down the Santyl debrider."],
@@ -5730,10 +5695,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "M = P * [i(1+i)^n] ÷ [(1+i)^n - 1] + Monthly Tax & Insurance",
     formulaDescription: "Computes monthly amortized principal and interest using home price, down payment, rate, and term. Adds NH's property taxes and home insurance.",
     example: "A $400,000 NH home with 10% down at 6.5% interest and 1.86% property tax has a total payment of ~$2,900/month.",
-    faqs: [
-      { question: "Why are NH property taxes so high?", answer: "New Hampshire has no state sales tax and no personal state income tax. Property taxes serve as the primary source of revenue for local town and school budgets." },
-      { question: "What is NH's average property tax rate?", answer: "NH's statewide average property tax rate is approximately 1.86% of assessed home value, though rates vary significantly by municipality." }
-    ],
+    faqs: Faqs.mortgageNhFaqs || [],
     commonMistakes: ["Underestimating the monthly escrow payment by using a standard US average property tax rate (which is about 1.0%), rather than the higher NH rates."],
     useCases: ["Buying a home in NH", "Escrow budgeting"],
     tips: ["Look for specific municipal rates in NH (like Hanover vs. Alton) to refine your tax assumptions, as rates can double depending on the town."],
@@ -5788,10 +5750,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Price = Cost * (1 + Markup%)",
     formulaDescription: "Applies markup to the item cost to find the selling price. Profit margin is calculated as (Price - Cost) ÷ Price.",
     example: "An item costing $50 marked up by 40% will retail for $70, earning a $20 gross profit (28.57% profit margin).",
-    faqs: [
-      { question: "What is markup vs profit margin?", answer: "Markup is the percentage added to the cost to find the selling price. Margin is the percentage of the selling price that is profit." },
-      { question: "How do you convert markup to margin?", answer: "Margin% = Markup% ÷ (1 + Markup%). For example, a 50% markup equals a 33.3% profit margin." }
-    ],
+    faqs: Faqs.markupFaqs || [],
     commonMistakes: ["Setting markup under the belief that it equals profit margin. E.g., a 20% markup is actually a 16.6% margin, which may under-budget operations."],
     useCases: ["Retail product pricing", "Manufacturing quote estimations"],
     tips: ["Analyze local competitor markups to ensure your selling price remains in line with retail expectations."],
@@ -5828,10 +5787,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Gallons = Length (ft) × Width (ft) × Average Depth (ft) × 7.48",
     formulaDescription: "Computes volume in cubic feet, then multiplies by 7.48 (gallons per cubic foot). Oval and circular calculations apply shape multipliers.",
     example: "A 24ft × 12ft rectangular pool with a 4.5ft average depth holds approximately 9,694 gallons of water.",
-    faqs: [
-      { question: "How do you calculate average pool depth?", answer: "Add the depth of the shallow end to the depth of the deep end and divide by 2. E.g., (3ft + 6ft) ÷ 2 = 4.5ft average depth." },
-      { question: "Why is knowing pool volume important?", answer: "Proper chlorine, pH, and algaecide dosing instructions are always given per 10,000 gallons of pool water, requiring precise volume math." }
-    ],
+    faqs: Faqs.swimmingPoolFaqs || [],
     commonMistakes: ["Forgetting that pool depth is usually uneven, leading to an overestimation if the deep-end depth is used instead of the average depth."],
     useCases: ["Pool opening chemical balancing", "Water utility fee estimation"],
     tips: ["Add 5% volume cushion if your pool has wide stairs or custom seating configurations in the frame."],
@@ -5893,10 +5849,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Score = CP + CARS + BB + PS",
     formulaDescription: "Calculates the sum of the four sections (each scaled between 118 and 132), resulting in a range of 472 to 528.",
     example: "Scoring 125, 125, 125, and 125 results in a total score of 500 (approx. 50th percentile).",
-    faqs: [
-      { question: "What is a good MCAT score?", answer: "A total score of 511 or higher generally places you in the top 20% of test takers and is considered competitive for MD schools." },
-      { question: "How often are MCAT percentile tables updated?", answer: "The AAMC updates MCAT percentile rankings annually in May to reflect the data from the preceding three years of test-takers." }
-    ],
+    faqs: Faqs.mcatFaqs || [],
     commonMistakes: ["Adding raw correct answers instead of the scaled section score (which ranges from 118 to 132)."],
     useCases: ["Medical school application preparation", "Practice exam analysis"],
     tips: ["A balanced score across sections is preferred by admissions committees over an uneven score with one very low section."],
@@ -5947,10 +5900,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Recommended PSU = (CPU TDP + GPU TDP + System Base Watts) * 1.30",
     formulaDescription: "Adds component TDP specifications, includes standard accessory power draw (~50W for boards, RAM, fans), and applies a 30% safety/efficiency overhead.",
     example: "A PC with a Ryzen 5 CPU (65W) and RTX 4070 GPU (200W) draws ~315W load and recommends a 450W to 550W PSU.",
-    faqs: [
-      { question: "What happens if my PSU wattage is too low?", answer: "An underpowered power supply will cause sudden shutdowns, system instability, crashes during intensive gaming, and potentially damage components." },
-      { question: "Is a higher efficiency rating (Gold/Platinum) important?", answer: "Yes, 80 Plus ratings (Gold, Platinum) represent how much power is converted to system energy rather than wasted as heat, saving electricity costs." }
-    ],
+    faqs: Faqs.neweggPsuFaqs || [],
     commonMistakes: ["Failing to factor in future GPU upgrades or CPU overclocking, which heavily spike total wattage requirements."],
     useCases: ["Custom PC building budgeting", "Upgrading graphics cards"],
     tips: ["A power supply operates most efficiently when running at 40% to 60% of its rated capacity. Over-specifying a bit is healthy."],
@@ -6039,10 +5989,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Yards = [Project Length (in) × Number of Panels] ÷ 36",
     formulaDescription: "Finds the required panel count matching project widths with fabric roll widths, multiplies by length, and divides by 36 to convert inches to yards.",
     example: "Making a project 80 inches long and 40 inches wide on standard 45-inch roll fabric requires 2.22 yards of fabric.",
-    faqs: [
-      { question: "What are standard fabric roll widths?", answer: "Most craft fabrics are sold in rolls of 44/45 inches wide, while apparel and upholstery fabrics are frequently 54 or 60 inches wide." },
-      { question: "Should I wash fabric before measuring?", answer: "Yes, cotton and wool shrink by 5% to 10% after washing. Always calculate with a shrinkage allowance added to your design yardage." }
-    ],
+    faqs: Faqs.fabricYardageFaqs || [],
     commonMistakes: ["Failing to align fabric print patterns (repeat patterns), which requires ordering 15% to 20% more material to align seams."],
     useCases: ["Sewing curtains or drapes", "Re-upholstering chairs and cushions"],
     tips: ["When in doubt, round up by at least 1/2 yard. Leftover fabric scraps are always useful for test sewing or pocket liners."],
@@ -6096,10 +6043,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "M = P * [i(1+i)^n] ÷ [(1+i)^n - 1] + Monthly Tax & Insurance",
     formulaDescription: "Computes base principal and interest payments using standard compounding. Stretches Nevada tax rates and standard homeowners insurance.",
     example: "A $450,000 house in Nevada with 10% down at 6.8% interest and 0.48% property tax has a monthly payment of ~$2,950.",
-    faqs: [
-      { question: "Is property tax in Nevada high?", answer: "No, Nevada has some of the lowest property taxes in the country, with an average effective tax rate of only 0.48%." },
-      { question: "Does Nevada cap property tax increases?", answer: "Yes, Nevada has property tax abatement laws that cap tax bill increases for primary residences at a maximum of 3% per year." }
-    ],
+    faqs: Faqs.mortgageNevadaFaqs || [],
     commonMistakes: ["Failing to account for Homeowners Association (HOA) fees. Many master-planned communities in NV have additional HOA dues."],
     useCases: ["Buying a home in Las Vegas or Reno", "Comparing state mortgage escrows"],
     tips: ["If your community has a SID/LID (Special/Local Improvement District) assessment, add that monthly charge to get your absolute net housing payment."],
@@ -6154,10 +6098,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "FV = P*(1+r)^t + PMT * [((1+r)^t - 1) ÷ r]",
     formulaDescription: "Uses standard future value calculations for compounded investment growth. Quantifies tax savings based on tax-deferred federal distributions.",
     example: "Starting with $5,000 and contributing $200 monthly for 15 years at 7% annual returns yields $74,868.",
-    faqs: [
-      { question: "What is a 529 plan?", answer: "A 529 plan is a tax-advantaged savings plan designed to encourage saving for future education costs, sponsored by states or educational institutions." },
-      { question: "What are the tax benefits of a 529 plan?", answer: "Earnings grow tax-deferred and withdrawals are 100% tax-free when used for qualified educational expenses like tuition, books, and board." }
-    ],
+    faqs: Faqs.faqs_529Growth || [],
     commonMistakes: ["Using 529 distributions for non-qualified expenses. This triggers ordinary income taxes plus a 10% federal penalty on the earnings portion."],
     useCases: ["Newborn educational savings planning", "Projecting college funding milestones"],
     tips: ["Some states offer state income tax deductions or credits for contributions made by their residents to the home state's 529 plan."],
@@ -6214,10 +6155,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Value = Weight * 0.925 * Spot Price per unit",
     formulaDescription: "Multiplies total weight by 0.925 (the purity of sterling silver) to find fine silver weight, then multiplies by the market spot price.",
     example: "100 grams of sterling silver with spot price at $30/oz is worth approximately $89.22 in melt value.",
-    faqs: [
-      { question: "What is sterling silver purity?", answer: "Sterling silver has a standard purity of 92.5% pure silver mixed with 7.5% copper or other metals for durability." },
-      { question: "How many grams are in a troy ounce?", answer: "Precious metals are weighed in troy ounces. One troy ounce equals exactly 31.1035 grams." }
-    ],
+    faqs: Faqs.sterlingSilverFaqs || [],
     commonMistakes: ["Confusing standard ounces (28.35g) with troy ounces (31.10g) which are used for metal pricing, leading to incorrect value estimates."],
     useCases: ["Selling scrap silverware or jewelry", "Valuing vintage silver collections"],
     tips: ["Scrap dealers rarely pay 100% of melt value. Expect offers between 75% to 90% of the scrap value calculated here."],
@@ -6273,10 +6211,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Monthly Payment = P * [i(1+i)^n] ÷ [(1+i)^n - 1] + Lot Rent",
     formulaDescription: "Uses standard amortization calculations based on principal, term, and interest rate. Includes monthly park lot lease rent if the home sits on leased land.",
     example: "A $120,000 chattel loan at 9% interest for 20 years with $400 monthly lot rent has a total payment of ~$1,480/month.",
-    faqs: [
-      { question: "What is a chattel loan?", answer: "A chattel loan is a personal property loan used to buy movable property like mobile homes on leased land. They carry higher interest rates than real property loans." },
-      { question: "Why do manufactured home loans have higher interest rates?", answer: "If the land isn't owned alongside the home, the loan is considered personal property (chattel), which is higher risk and depreciates faster." }
-    ],
+    faqs: Faqs.manufacturedHomeMortgageFaqs || [],
     commonMistakes: ["Forgetting to factor in monthly lot rent/lease fees if the home is located inside a mobile home community or park land."],
     useCases: ["Mobile home park financing budgeting", "Comparing home-and-land package financing"],
     tips: ["If possible, package the manufactured home and land together in a single deed to qualify for lower-interest FHA or conventional mortgage programs."],
@@ -6353,24 +6288,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Result = Num1 [Operator] Num2",
     formulaDescription: "Applies arithmetic operations between two numeric operands with precision formatting.",
     example: "Calculating 450 + 15% (450 * 1.15) yields 517.50.",
-    faqs: [
-      {
-        question: "What are the best physical pink calculators for high school & college STEM courses?",
-        answer: "Top-rated physical models include the <strong>Casio FX-9750GIII Pink Edition</strong> (often under $40 on Amazon/US retailer sales), the <strong>Texas Instruments TI-84 Plus CE Rose Gold / Pink</strong>, and the budget-friendly <strong>Casio fx-300ES Plus Pink</strong> scientific calculator."
-      },
-      {
-        question: "Where can I find Glossier pink or pastel aesthetic calculators for my desk setup?",
-        answer: "For desk aesthetics and cozy study spaces, retro-inspired mechanical keyboard calculators (like Lofree pastel pink) and cute desktop calculators with extra-large displays are highly popular on Reddit (<a href=\"/blog/pink-calculator-guide-aesthetic-stem-gear\">read our full Pink Calculator Buyer's Guide</a>). For digital use, try our free <a href=\"/calculators/pink-calculator\">Online Pink Aesthetic Calculator</a>."
-      },
-      {
-        question: "How do I spot a fake vs. genuine Casio or TI pink calculator when buying online?",
-        answer: "Counterfeit calculators often feature flimsy plastic keys, washed-out LCD contrast, non-functional fake solar panels, and missing QR code authenticity checks on the back casing. Read our complete guide on <a href=\"/blog/how-to-spot-fake-casio-ti-calculators\">how to spot fake Casio & TI scientific calculators</a>."
-      },
-      {
-        question: "Will using a pink calculator in class or STEM exams get me penalized?",
-        answer: "No! Standard standardized testing bodies (SAT, ACT, AP Exams) only regulate approved calculator software models (like TI-84 or Casio FX-9750GIII), not color casing options. Expressing your personal aesthetic with a pink calculator is 100% permitted."
-      }
-    ],
+    faqs: Faqs.pinkCalculatorFaqs || [],
     commonMistakes: ["Dividing by zero which results in an undefined value."],
     useCases: [
       "Cozy study desk aesthetic setups",
@@ -6431,9 +6349,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Calories = Base Drink Calories + Size Multiplier + Milk Delta + Syrup Pumps * 20 cal + Whipped Cream",
     formulaDescription: "Sums base beverage calories with milk type adjustments, syrup pump additions (20 kcal per pump), and whipped cream (70 kcal).",
     example: "A Grande (16 oz) Caffe Latte with 2% milk has ~190 kcal and 150 mg of caffeine. Adding 2 pumps of vanilla (+40 kcal) totals 230 kcal.",
-    faqs: [
-      { question: "How many calories are in one pump of Starbucks syrup?", answer: "Most standard Starbucks flavored syrups contain roughly 20 calories and 5g of sugar per pump." }
-    ],
+    faqs: Faqs.starbucksCalorieCalculatorFaqs || [],
     commonMistakes: ["Forgetting that non-fat milk reduces calories while oat milk adds carbohydrates."],
     useCases: ["Weight management and macro tracking", "Dietary restrictions and low-sugar ordering"],
     tips: ["Switch from Whole Milk to Almond Milk to save up to 100+ calories on Grande drinks."],
@@ -6542,9 +6458,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Annual Pension = Final Average Salary (FAS) × (Years of Service × Benefit Multiplier Rate)",
     formulaDescription: "Applies standard STRS formula (typically 2.2% per year of service for first 30 years) to the average of your highest 3 or 5 consecutive salary years.",
     example: "30 years of service at 2.2% per year equals a 66% replacement multiplier. With a FAS of $75,000, the annual pension is $49,500 ($4,125/month).",
-    faqs: [
-      { question: "What is Final Average Salary (FAS)?", answer: "FAS is the average of your highest earning years (usually top 3 or 5 consecutive years of teaching compensation)." }
-    ],
+    faqs: Faqs.strsCalculatorFaqs || [],
     commonMistakes: ["Not taking into account age reduction factors if retiring prior to unreduced age eligibility."],
     useCases: ["Teacher retirement age planning", "Pension replacement income budgeting"],
     tips: ["Purchasing service credit or completing an extra year of teaching can significantly boost your lifetime annual pension multiplier."],
@@ -6591,9 +6505,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Volume (cu ft) = Length × Width × (Thickness / 12); Tonnage = Volume × 145 lbs/cu ft ÷ 2000",
     formulaDescription: "Calculates total asphalt volume based on density (approx 145 lbs/cu ft or 2.025 tons per cu yd) plus cost rates per sq ft ($3 to $7/sq ft).",
     example: "A 60ft × 12ft driveway (720 sq ft) with 3 inches of asphalt requires ~10.45 tons of asphalt, costing approximately $2,880 to $4,320 installed.",
-    faqs: [
-      { question: "How thick should a residential asphalt driveway be?", answer: "Standard residential driveways require 2 to 3 inches of compacted asphalt over a 4 to 8 inch crushed aggregate base." }
-    ],
+    faqs: Faqs.asphaltDrivewayCostFaqs || [],
     commonMistakes: ["Underestimating excavation and crushed gravel base preparation cost."],
     useCases: ["New residential driveway budgeting", "Replacing old deteriorated concrete or gravel driveways"],
     tips: ["Sealcoating your new asphalt driveway 12 months after installation extends lifespan up to 25+ years."],
@@ -6636,9 +6548,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Monthly = Monthly P&I + (Home Value × AL County Tax Rate / 12) + Monthly Insurance",
     formulaDescription: "Uses standard loan amortization plus Alabama county effective property tax averages (~0.41% statewide, among the lowest in the US).",
     example: "A $300,000 house in Madison County with 10% down ($270k loan) at 6.5% interest has a P&I payment of $1,706/mo + ~$125/mo tax + $100/mo insurance = $1,931/mo.",
-    faqs: [
-      { question: "Are property taxes low in Alabama?", answer: "Yes, Alabama has the 2nd lowest effective property tax rate in the United States, averaging around 0.41% annually." }
-    ],
+    faqs: Faqs.mortgageAlabamaFaqs || [],
     commonMistakes: ["Forgetting homestead exemption deductions available for primary residences in Alabama."],
     useCases: ["First-time homebuyer planning in Alabama", "Relocation and state-by-state cost comparison"],
     tips: ["File for Alabama Homestead Exemption immediately after closing to reduce your county property tax bill further."],
@@ -6702,9 +6612,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Future Price = Current EPS × (1 + Growth)^Years × Future P/E Ratio; Fair Value = Future Price / (1 + Discount)^Years",
     formulaDescription: "Projects EPS forward by annual compound growth rate, multiplies by target terminal P/E, and discounts back to present value at required return rate.",
     example: "A stock with $4.00 EPS growing at 12% annually for 5 years reaches $7.05 EPS. At a 20x P/E, future target price is $141.00. Discounted at 10%, fair value today is $87.55.",
-    faqs: [
-      { question: "What P/E ratio should I use for valuation?", answer: "Use historical median P/E for mature companies (15-20x) or industry peer group averages." }
-    ],
+    faqs: Faqs.stockPriceCalculatorFaqs || [],
     commonMistakes: ["Assuming unsustainable hyper-growth rates (>25%) over long 5-10 year horizons."],
     useCases: ["Fundamental stock valuation and analysis", "Setting target buy prices and profit-taking exits"],
     tips: ["Always use conservative EPS growth estimates to maintain a margin of safety against earnings misses."],
@@ -6747,9 +6655,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Battery Life (Years) = Battery Capacity (mAh) / [ (Daily Hours × Active Current mA) + (Standby Current mA × 24) ] / 365",
     formulaDescription: "Models dual-power hybrid solar cell assist alongside internal CR2032 lithium button cell draw.",
     example: "At 3 hours daily classroom use under 300 lux artificial light, a CR2032 battery in a TI-30X IIS lasts over 3.5 to 5 years.",
-    faqs: [
-      { question: "Does the TI-30X IIS have a battery replace compartment?", answer: "Yes, it uses a standard CR2032 3V lithium coin cell battery accessible via back panel screws." }
-    ],
+    faqs: Faqs.ti30xCalculatorFaqs || [],
     commonMistakes: ["Leaving the calculator in low ambient light without battery backup during timed exams."],
     useCases: ["Exam preparation for SAT/ACT/AP math", "Calculator maintenance and battery replacement scheduling"],
     tips: ["Press [2nd] [OFF] to turn off the display completely and preserve battery life."],
@@ -6787,9 +6693,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Gallons = Length × Width × Avg Depth × Multiplier (7.5 for Rect, 5.9 for Circular, 6.7 for Oval)",
     formulaDescription: "Uses geometric volume formulas multiplied by 7.48 gallons per cubic foot (with shape adjustment coefficients).",
     example: "A 16ft × 32ft rectangular pool with a shallow depth of 3ft and deep depth of 8ft (avg depth 5.5ft) holds ~21,120 gallons of water.",
-    faqs: [
-      { question: "How many gallons of water per cubic foot?", answer: "1 cubic foot of water equals approximately 7.48 US liquid gallons." }
-    ],
+    faqs: Faqs.poolGallonsCalculatorFaqs || [],
     commonMistakes: ["Using maximum deep end depth instead of calculating average depth across the pool floor slope."],
     useCases: ["Sizing pool pumps, filters, and heaters", "Accurate chemical dosing for shock and chlorine treatments"],
     tips: ["Always calculate average depth as (Shallow Depth + Deep Depth) / 2 for slope-bottom pools."],
@@ -6854,9 +6758,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "PED = [ (Q2 - Q1) / ((Q1 + Q2)/2) ] ÷ [ (P2 - P1) / ((P1 + P2)/2) ]",
     formulaDescription: "Applies the standard midpoint arc elasticity formula to avoid direction bias between initial and final price-quantity points.",
     example: "If price increases from $10 to $12 (+18.2%) and sales drop from 100 to 80 units (-22.2%), PED is -1.22 (Elastic demand, total revenue decreases).",
-    faqs: [
-      { question: "What does a PED greater than 1 mean?", answer: "A PED absolute value > 1 indicates Elastic demand, meaning consumers are very sensitive to price changes." }
-    ],
+    faqs: Faqs.priceElasticityCalculatorFaqs || [],
     commonMistakes: ["Confusing percentage change with absolute unit changes when analyzing price increases."],
     useCases: ["E-commerce product pricing strategy", "Economics coursework and business revenue optimization"],
     tips: ["For inelastic goods (|PED| < 1), raising prices increases total gross revenue."],
@@ -6906,9 +6808,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "A = P(1 + r/n)^(nt) + PMT × [ ((1 + r/n)^(nt) - 1) / (r/n) ]",
     formulaDescription: "Applies compound interest formula with monthly annuity contributions compounding at rate r = APY/100.",
     example: "A $10,000 initial deposit at 4.5% APY with $300 monthly deposits grows to $22,785 in 3 years ($1,985 total interest earned).",
-    faqs: [
-      { question: "Are Money Market Accounts safe?", answer: "Yes, MMAs at FDIC-insured banks are protected up to $250,000 per depositor." }
-    ],
+    faqs: Faqs.moneyMarketRateFaqs || [],
     commonMistakes: ["Confusing Money Market Accounts (bank savings product) with Money Market Mutual Funds (brokerage product)."],
     useCases: ["Emergency fund yield planning", "Comparing high-yield savings vs money market accounts"],
     tips: ["Money market accounts often tier rates based on account balance—maintain minimum thresholds for top APY tiers."],
@@ -6955,9 +6855,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Liquid Bleach (oz) = (Target FC - Current FC) × Pool Gallons / 10,000 × 10.5 oz",
     formulaDescription: "Uses standard pool water treatment ratios per 10,000 gallons of water volume.",
     example: "Raising Free Chlorine by 3 ppm in a 15,000 gallon pool requires approx 47 fl oz of 12.5% liquid pool shock.",
-    faqs: [
-      { question: "What is the ideal Free Chlorine level for a pool?", answer: "The ideal Free Chlorine level is 1.0 to 3.0 ppm (parts per million)." }
-    ],
+    faqs: Faqs.poolChemicalCalculatorFaqs || [],
     commonMistakes: ["Adding acid and chlorine simultaneously, which produces toxic chlorine gas fumes."],
     useCases: ["Weekly pool water balancing", "Clearing cloudy green pool algae outbreaks"],
     tips: ["Always add chemicals to water (pour into pool deep end), never pour water onto concentrated dry chemicals."],
@@ -6995,9 +6893,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Hours = (Shift 1 Duration + Shift 2 Duration - Break Minutes / 60); Gross Pay = Total Hours × Hourly Rate",
     formulaDescription: "Converts 12-hour or 24-hour clock timestamps to total minutes, subtracts unpaid break times, and formats to decimal hours.",
     example: "Clocking in at 8:00 AM, out for lunch at 12:00 PM, in at 12:30 PM, and out at 5:00 PM totals 8.5 decimal hours (8 hrs 30 mins). At $20/hr, gross pay is $170.00.",
-    faqs: [
-      { question: "How do I convert minutes to decimal hours?", answer: "Divide the number of minutes by 60. For example, 15 mins = 0.25 hrs, 30 mins = 0.50 hrs, 45 mins = 0.75 hrs." }
-    ],
+    faqs: Faqs.timeClockCalculatorFaqs || [],
     commonMistakes: ["Forgetting to deduct unpaid lunch breaks when calculating billable hours."],
     useCases: ["Employee payroll time card calculation", "Freelancer hourly billing tracking"],
     tips: ["Use decimal hours (e.g., 7.75) directly when populating payroll software or invoices."],
@@ -7036,9 +6932,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Solution: y(t) = y₀ · e^(k·t)",
     formulaDescription: "Analytical solution of linear homogeneous first-order ODEs using separation of variables.",
     example: "For y'(t) = 0.5·y(t) with initial condition y(0) = 10, evaluating at t = 4 gives y(4) = 10 · e^(2.0) ≈ 73.89.",
-    faqs: [
-      { question: "What is an Initial Value Problem (IVP)?", answer: "An IVP is a differential equation paired with a specified value of the unknown function at a given point (e.g., y(0) = c)." }
-    ],
+    faqs: Faqs.differentialEquationsCalculatorFaqs || [],
     commonMistakes: ["Confusing exponential growth rate k with half-life decay constants."],
     useCases: ["Calculus and differential equations homework check", "Population growth and radioactive decay modeling"],
     tips: ["If rate k is positive, the system models exponential growth; if k is negative, it models exponential decay."],
@@ -7075,9 +6969,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Compensation = (Work RVUs × CMS Conversion Factor × Specialty Multiplier) + Bonus Compensation",
     formulaDescription: "Multiplies annual wRVUs by the 2025 CMS Conversion Factor (~$32.35) plus bonus per RVU exceeding benchmark thresholds.",
     example: "4,500 wRVUs at $32.35/RVU yields $145,575 base CMS pay. With 500 bonus RVUs over a 4,000 threshold paid at $45/RVU (+$22,500 bonus), total pay is $168,075.",
-    faqs: [
-      { question: "What is the 2025 CMS RVU conversion factor?", answer: "The 2025 CMS Physician Fee Schedule conversion factor is approximately $32.35 per RVU." }
-    ],
+    faqs: Faqs.rvuCalculator2025Faqs || [],
     commonMistakes: ["Confusing total RVUs (work + practice expense + malpractice) with Work RVUs (wRVU)."],
     useCases: ["Physician employment contract negotiation", "Clinical productivity tracking and bonus projections"],
     tips: ["Negotiate explicit tier bonus rates for wRVUs achieved above your annual contract threshold."],
@@ -7132,24 +7024,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "P(X = k) = C(n, k) × p^k × (1 - p)^(n - k)",
     formulaDescription: "Calculates the exact binomial probability of getting k successes in n independent Bernoulli trials with constant success rate p.",
     example: "For n = 10 trials, p = 0.5 success rate, and k = 5 successes: P(X = 5) = C(10,5) × 0.5⁵ × 0.5⁵ = 252 × 0.00097656 = 0.2461 (24.61%).",
-    faqs: [
-      {
-        question: "What is a binomial distribution?",
-        answer: "A binomial distribution describes the discrete probability distribution of obtaining exactly k successes in n independent Bernoulli trials, where each trial has a constant success probability p."
-      },
-      {
-        question: "How do I calculate exact probability P(X = k)?",
-        answer: "Use the binomial PMF formula: P(X = k) = [n! / (k! × (n - k)!)] × p^k × (1 - p)^(n - k). Use our free <a href=\"/calculators/binomial-distribution\">Binomial Distribution Calculator</a> to get instant results."
-      },
-      {
-        question: "What is the difference between PMF and CDF in binomial distribution?",
-        answer: "PMF (Probability Mass Function) calculates the exact chance of obtaining exactly k successes. CDF (Cumulative Distribution Function) sums probabilities to find the chance of getting up to k successes, P(X ≤ k)."
-      },
-      {
-        question: "How are mean and variance calculated for a binomial distribution?",
-        answer: "The mean (expected value) is μ = n × p. The variance is σ² = n × p × (1 - p), and the standard deviation is σ = √(n × p × (1 - p))."
-      }
-    ],
+    faqs: Faqs.binomialDistributionFaqs || [],
     commonMistakes: [
       "Entering success probability p as a percentage (e.g. 50) instead of a decimal between 0 and 1 (0.50).",
       "Confusing exact probability P(X = k) with cumulative probability P(X ≤ k)."
@@ -7229,20 +7104,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "θ = arctan(x) = tan⁻¹(x)",
     formulaDescription: "Finds the angle θ whose tangent is equal to ratio x. Range is between -90° and +90° (-π/2 to +π/2 radians).",
     example: "For x = 1, arctan(1) = 45° (or π/4 rad ≈ 0.7854). For x = -1, arctan(-1) = -45°.",
-    faqs: [
-      {
-        question: "What is tan inverse (arctan)?",
-        answer: "Tan inverse (tan⁻¹ or arctan) is the inverse function of tangent. Given a ratio x = tan(θ), arctan(x) calculates the original angle θ."
-      },
-      {
-        question: "How do I convert arctan radians to degrees?",
-        answer: "Multiply the angle in radians by (180 / π). For instance, 0.785398 rad × (180 / π) = 45°."
-      },
-      {
-        question: "What is the tan inverse of 1?",
-        answer: "The tan inverse of 1 is 45° (0.7854 radians), since tan(45°) = 1."
-      }
-    ],
+    faqs: Faqs.tanInverseFaqs || [],
     commonMistakes: [
       "Confusing tan⁻¹(x) with 1/tan(x) (cotangent).",
       "Forgetting whether your calculator mode is in Degrees or Radians."
@@ -7310,16 +7172,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "(ax + b)(cx + d) = (a·c)x² + (a·d + b·c)x + (b·d)",
     formulaDescription: "Applies the FOIL (First, Outside, Inside, Last) multiplication algorithm to expand two binomial expressions.",
     example: "For (2x + 3)(4x - 5): First = 8x², Outside = -10x, Inside = 12x, Last = -15. Combined: 8x² + 2x - 15.",
-    faqs: [
-      {
-        question: "How do you multiply two binomials using FOIL?",
-        answer: "FOIL stands for First, Outside, Inside, Last. Multiply the First terms of each binomial, then the Outside terms, the Inside terms, and the Last terms, then combine like terms."
-      },
-      {
-        question: "How do I find the zeros or roots of a polynomial?",
-        answer: "Set each factor equal to zero: ax + b = 0 => x = -b/a, and cx + d = 0 => x = -d/c."
-      }
-    ],
+    faqs: Faqs.polynomialMultiplicationFaqs || [],
     commonMistakes: [
       "Forgetting to distribute negative signs during multiplication.",
       "Attempting to add terms with different powers (e.g., x² + x)."
@@ -7398,16 +7251,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Result = Number A [ + | - | × | ÷ ] Number B",
     formulaDescription: "Executes foundational 4-function arithmetic operations and formats tape history logs for accounting validation.",
     example: "100 + 25 = 125. 100 × 25% = 25.",
-    faqs: [
-      {
-        question: "What is a 4-function calculator?",
-        answer: "A 4-function calculator performs the four core mathematical operations: addition (+), subtraction (-), multiplication (×), and division (÷)."
-      },
-      {
-        question: "What is a 10-key calculator with tape?",
-        answer: "A 10-key desk calculator features a numeric keypad layout and continuous printing paper tape to verify line-item transaction entry totals."
-      }
-    ],
+    faqs: Faqs.faqs_4FunctionCalculator || [],
     commonMistakes: [
       "Dividing by zero, which results in an undefined mathematical error."
     ],
@@ -7469,20 +7313,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     formula: "Total Cost = [Filament Weight (g) × (Spool $/1000)] + [(Power Watts / 1000) × Hours × $/kWh] + [(Machine $/Lifespan Hrs) × Hours]",
     formulaDescription: "Combines raw material cost per gram, electricity power draw, and machine depreciation wear per print hour, applying a safety margin for print failures.",
     example: "A 150g PLA print taking 5 hours on a 150W printer using $20/kg filament and $0.15/kWh electricity costs $3.00 (filament) + $0.11 (power) + $0.83 (depreciation) = $3.94 total cost ($4.33 with 10% failure buffer).",
-    faqs: [
-      {
-        question: "How do I calculate 3D print cost per gram?",
-        answer: "Divide your filament spool cost by the total spool weight in grams. For example, a 1,000g (1kg) spool of PLA costing $20 equals $0.02 per gram ($20 / 1,000g). Multiplied by a 150g print model, the material cost is $3.00."
-      },
-      {
-        question: "How much electricity does a 3D printer use?",
-        answer: "Most desktop FDM printers (Bambu Lab, Creality, Prusa) average between 100W and 250W during printing (higher during bed heating, lower during steady extrusion). Running a 150W printer for 10 hours at $0.15/kWh costs approximately $0.23 in electricity."
-      },
-      {
-        question: "What profit margin should I charge for custom 3D printing services?",
-        answer: "Commercial 3D print sellers on Etsy and local services typically charge a 100% to 300% markup on direct material and machine costs, plus an hourly labor rate ($20–$35/hr) for CAD design or post-processing."
-      }
-    ],
+    faqs: Faqs.faqs_3dPrintingCost || [],
     commonMistakes: [
       "Forgetting to include electricity and machine wear depreciation.",
       "Ignoring failed prints (misprints) in final cost buffers."

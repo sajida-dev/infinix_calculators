@@ -32,9 +32,9 @@ export const defaultMetadata: Metadata = {
   applicationName: "Infinix Calculators",
   metadataBase: new URL(BASE_URL),
   icons: {
-    icon: "/infinix-calculator-icon-blue.png",
-    shortcut: "/infinix-calculator-icon-blue.png",
-    apple: "/infinix-calculator-icon-blue.png",
+    icon: "/infinix-calculator-icon-blue.webp",
+    shortcut: "/infinix-calculator-icon-blue.webp",
+    apple: "/infinix-calculator-icon-blue.webp",
   },
   manifest: "/site.webmanifest",
   verification: {
