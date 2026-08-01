@@ -12,8 +12,8 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
 
   if (!calculator) {
     return (
-      <div className="bg-white rounded-2xl border border-slate-200 p-8 text-center shadow-sm">
-        <p className="text-slate-500 font-medium">Calculator utility configuration not found.</p>
+      <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] p-8 text-center shadow-sm">
+        <p className="text-slate-500 dark:text-slate-400 font-medium">Calculator utility configuration not found.</p>
       </div>
     );
   }

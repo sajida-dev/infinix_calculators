@@ -171,19 +171,63 @@ body {
   color: #93c5fd !important;
 }
 
-/* Dark mode custom background blocks inside content */
-.dark .blog-content .bg-slate-50 {
+/* Dark mode custom background blocks, cards, & callouts inside blog content */
+.dark .blog-content .bg-slate-50,
+.dark .blog-content .bg-slate-100,
+.dark .blog-content .bg-white,
+.dark .blog-content .bg-gray-50,
+.dark .blog-content .bg-gray-100,
+.dark .blog-content .bg-blue-50,
+.dark .blog-content .bg-emerald-50,
+.dark .blog-content .bg-amber-50,
+.dark .blog-content .bg-indigo-50 {
   background-color: #22242A !important;
   border-color: #4D5156 !important;
   color: #e2e8f0 !important;
 }
 
+.dark .blog-content .border-slate-100,
+.dark .blog-content .border-slate-200,
+.dark .blog-content .border-slate-300,
+.dark .blog-content .border-slate-400 {
+  border-color: #4D5156 !important;
+}
+
+.dark .blog-content .text-slate-900,
+.dark .blog-content .text-slate-800,
+.dark .blog-content .text-slate-700,
+.dark .blog-content .text-slate-600 {
+  color: #f1f5f9 !important;
+}
+
+.dark .blog-content .text-slate-500,
+.dark .blog-content .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
 .dark .blog-content .bg-slate-50 p,
-.dark .blog-content .bg-slate-50 li {
+.dark .blog-content .bg-slate-50 li,
+.dark .blog-content .bg-slate-100 p,
+.dark .blog-content .bg-slate-100 li,
+.dark .blog-content .bg-white p,
+.dark .blog-content .bg-white li,
+.dark .blog-content .bg-gray-50 p,
+.dark .blog-content .bg-gray-50 li {
   color: #cbd5e1 !important;
 }
 
 .dark .blog-content .bg-slate-50 strong,
-.dark .blog-content .bg-slate-50 h3 {
+.dark .blog-content .bg-slate-50 h3,
+.dark .blog-content .bg-slate-50 h4,
+.dark .blog-content .bg-slate-100 strong,
+.dark .blog-content .bg-slate-100 h3,
+.dark .blog-content .bg-white strong,
+.dark .blog-content .bg-white h3 {
   color: #f8fafc !important;
+}
+
+.dark .blog-content tr.bg-slate-50,
+.dark .blog-content tr.bg-slate-100,
+.dark .blog-content tr.bg-gray-50 {
+  background-color: #191a1d !important;
 }

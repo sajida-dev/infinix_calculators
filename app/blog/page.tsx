@@ -123,7 +123,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const gridPosts = isDefaultView ? filtered.slice(1) : filtered;
 
   // Pagination Math
-  const POSTS_PER_PAGE = 9;
+  const POSTS_PER_PAGE = 15;
   const totalPosts = gridPosts.length;
   const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE) || 1;
   const validPage = Math.min(currentPage, totalPages);
