@@ -353,8 +353,16 @@ export const sidingFaqs: FAQItem[] = [
 
 export const dinkytownFaqs: FAQItem[] = [
   {
-    "question": "Why compare debt and savings together?",
-    "answer": "High-interest debt drains wealth faster than typical savings accounts grow it. Reviewing both helps balance wealth-building with debt reduction."
+    "question": "What are Dinkytown Financial Calculators?",
+    "answer": "Dinkytown Financial Calculators are traditional financial web utilities widely licensed by banks, credit unions, and financial advisor websites for mortgage, loan, and retirement math."
+  },
+  {
+    "question": "Why use Infinix Calculators as a modern free Dinkytown alternative?",
+    "answer": "Infinix Calculators offers a fast, modern, mobile-first alternative to legacy Dinkytown calculators. Features include responsive glassmorphism UI, dark mode support, real-time interactive sliders, instant export calculations, and 100% free access without ads or registration wall."
+  },
+  {
+    "question": "Why compare debt payoff and savings goals together?",
+    "answer": "High-interest credit card debt (18–29% APR) drains wealth significantly faster than standard savings or money market accounts build interest. Comparing both side-by-side helps optimize your debt-avalanche or debt-snowball strategy while maintaining emergency liquidity."
   }
 ];
 

@@ -64,8 +64,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Topsoil Calculator",
     category: "construction",
     categoryLabel: "Construction & Materials",
-    seoTitle: "Topsoil Calculator - Estimate Cubic Yards, Feet & Bags",
-    metaDescription: "Calculate exactly how much topsoil, dirt, or compost you need. Input dimensions to get results in cubic yards, cubic feet, tons, and bag counts.",
+    seoTitle: "Topsoil Calculator - How Much Soil Do I Need? (Yards, Tons & Bags)",
+    metaDescription: "Free topsoil calculator. Calculate how much topsoil or fill dirt you need in cubic yards, tons, and bags. Includes depth formulas and price per yard estimator.",
     keywords: [
       "affirm login",
       "buy now pay later no credit check",
@@ -167,7 +167,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       "klarna afterpay affirm",
       "no credit check online stores",
       "pay in store"
-],
+    ],
     hook: "Estimate Topsoil, Fill Dirt & Landscaping Soil in Seconds.",
     description: "Calculate cubic yards, soil depth, and coverage instantly for lawns, raised beds, or circular gardens.",
     calcTime: "1 min",
@@ -203,9 +203,9 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "CBM Shipping Calculator",
     category: "unit-converter",
     categoryLabel: "Logistics & Converters",
-    seoTitle: "CBM Calculator - Calculate Shipping Volume in Cubic Meters",
-    metaDescription: "Free CBM calculator for shipping and freight. Calculate cubic meters from inches, cm, feet, or mm for ocean and air cargo.",
-    keywords: ["cbm calculator", "cubic meter calculator", "shipping volume calculator"],
+    seoTitle: "CBM Calculator - Cubic Meter Shipping Formula (Inches, CM & Feet)",
+    metaDescription: "Free CBM calculator for freight shipping & cargo containers. Easily convert dimensions (cm, inches, ft) to cubic meters (m³), calculate total CBM & container fit.",
+    keywords: ["cbm calculator", "how to calculate cbm from dimensions", "how to calculate cbm", "cm to cbm", "cbm calculator in inches", "cbm formula", "cbm calculator formula", "calculate cubic meters", "cbm to m3", "cbm calculation"],
     hook: "Calculate Shipping Volume & Cargo Space in CBM Instantly.",
     description: "Enter box dimensions in inches, cm, or feet to estimate total volume, weight, and fit in ocean containers.",
     calcTime: "1 min",
@@ -255,8 +255,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Affirm Calculator",
     category: "financial",
     categoryLabel: "Financial Calculators",
-    seoTitle: "Affirm Calculator & Payment Estimator - Interest, Credit Bureau & Spending Power",
-    metaDescription: "Free Affirm payment calculator. Estimate monthly installments, 0% APR vs simple interest, credit bureau reporting, and whether you can pay Affirm with a credit card.",
+    seoTitle: "Free Affirm Calculator - Monthly Payment, APR & Loan Interest",
+    metaDescription: "Free Affirm payment calculator. Estimate monthly payments, total loan interest, down payments, and APR financing for purchases with zero credit impact.",
     keywords: [
       "affirm calculator",
       "affirm payment calculator",
@@ -416,8 +416,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Roof Calculator",
     category: "construction",
     categoryLabel: "Construction & Materials",
-    seoTitle: "Roof Shingle Calculator - Estimate Shingles & Roof Area",
-    metaDescription: "Estimate roof surface area, shingle bundle counts, individual shingles, and costs. Accounts for eave overhangs and custom pitch factors.",
+    seoTitle: "Roof Shingle Calculator - Estimate Squares, Bundles & Cost",
+    metaDescription: "Free roof shingle estimator. Calculate roofing squares, bundles of shingles needed, waste factors, and total roof replacement cost per square.",
     keywords: ["roof shingle calculator", "shingle calculator", "roof area calculator", "shingles bundle calculator", "roofing cost estimator"],
     hook: "Estimate Roof Area & Shingle Bundles in Seconds.",
     description: "Input house length, width, overhangs, pitch slope, shingle cost, and waste factor to estimate roof area and shingles needed.",
@@ -474,8 +474,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Concrete Calculator",
     category: "construction",
     categoryLabel: "Construction & Materials",
-    seoTitle: "Concrete Slab & Volume Calculator - Cubic Yards & Bags Finder",
-    metaDescription: "Calculate concrete volume in cubic yards or bags for rectangular slabs or circular pillars. Instantly estimate bags of 40lb, 60lb, or 80lb mix.",
+    seoTitle: "Concrete Calculator - Yards, Slab Volume & Bag Count Estimator",
+    metaDescription: "Free concrete calculator for slabs, footings, and steps. Calculate cubic yards, price per yard, and how many 80lb/60lb bags of concrete you need instantly.",
     keywords: ["concrete calculator", "concrete slab calculator", "concrete bags calculator", "concrete yards calculator", "how many bags of concrete"],
     hook: "Calculate Concrete Yards & Bag Counts Instantly.",
     description: "Enter flat rectangular slabs or circular piers to find the volume of concrete mix and bags of pre-mix needed.",
@@ -701,8 +701,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Square Fee Calculator",
     category: "financial",
     categoryLabel: "Financial Calculators",
-    seoTitle: "Square Fee Calculator & App Processing Rate Estimator (2026)",
-    metaDescription: "Use our free Square fee calculator and square processing fee calculator to compute exact credit card processing fees, net payouts, and target invoice totals.",
+    seoTitle: "Square Fee Calculator - Credit Card & Invoice Processing Fees",
+    metaDescription: "Calculate exact Square transaction fees (2.6% + 10¢, 3.3% + 30¢). Gross up invoices to ensure you receive 100% of your payout without hidden fees.",
     keywords: [
       "square fee calculator",
       "square calculator fee",
@@ -781,9 +781,9 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Avalara Sales Tax Calculator",
     category: "tax",
     categoryLabel: "Tax & Payroll Calculators",
-    seoTitle: "Avalara Sales Tax Calculator & Zip Code Rate Lookup (2026)",
-    metaDescription: "Free Avalara sales tax calculator & ZIP code lookup. Automatically compute state, county, and local sales tax rates for 2026 checkout transactions instantly.",
-    keywords: ["avalara sales tax calculator", "avalara tax calculator", "avalara 94105 sales tax rate", "sales tax by zip code", "california sales tax calculator"],
+    seoTitle: "Avalara Sales Tax Calculator & Rate Lookup (2026 Free Tool)",
+    metaDescription: "Instant Avalara sales tax calculator & 94105 ZIP code rate lookup. Calculate exact city, county, and state sales tax rates, Avatax pricing, and reverse tax fees.",
+    keywords: ["avalara sales tax calculator", "avalara tax calculator", "avalara 94105 sales tax rate", "avalara tax rate lookup", "avalara sales tax", "sales tax calculator avalara", "avalara pricing", "avatax pricing", "avalara calculator"],
     hook: "Calculate Checkout Sales Tax Rates.",
     description: "Determine sales tax amounts and gross totals based on base prices and state percentages. Enter a ZIP code to load local combined rates automatically.",
     calcTime: "1 min",
@@ -847,8 +847,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Gross Up Calculator",
     category: "tax",
     categoryLabel: "Tax & Payroll Calculators",
-    seoTitle: "Gross Up Calculator - Paycheck, Net to Gross & Reverse Tax Estimator",
-    metaDescription: "Calculate gross payroll earnings needed to achieve an exact target net paycheck amount. Accounts for federal, FICA, and state tax adjustments.",
+    seoTitle: "Gross Up Calculator - Paycheck & Bonus Tax Grossing Up Tool",
+    metaDescription: "Free paycheck gross up calculator. Calculate exact gross pay needed for net bonuses, stipends, and payroll with state & federal tax deductions.",
     keywords: grossUpKeywords,
     hook: "Determine Gross Wages Needed for Target Bonuses.",
     description: "Work backward from a target net paycheck to figure out total gross wages before tax withholding.",
@@ -962,8 +962,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "LSAT Score Calculator",
     category: "education",
     categoryLabel: "Education & GPA",
-    seoTitle: "LSAT Score Calculator – Section Scores to Scaled Score",
-    metaDescription: "Convert your LSAT section scores to an estimated scaled score using official conversion tables. Includes test selection and detailed FAQs.",
+    seoTitle: "LSAT Score Predictor & Raw Score Converter - 2026 Percentile Tool",
+    metaDescription: "Free LSAT raw score conversion & percentile predictor. Calculate your scaled score (120-180), target law school probability, and total exam timing.",
     keywords: [
       "best law schools",
       "lsat score calculator",
@@ -1061,7 +1061,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       "rankings of law schools",
       "top law schools in usa",
       "what do law schools look for"
-],
+    ],
     hook: "Enter your LSAT test and section scores to get an estimated scaled score.",
     description: "Select the LSAT test you took and input your raw section scores (Logical Reasoning & Reading Comprehension). The tool looks up the official conversion table for that test and returns the scaled score and percentile estimate.",
     calcTime: "1–2 min",
@@ -1415,21 +1415,21 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Productivity Calculator",
     category: "math",
     categoryLabel: "Math & Business Productivity",
-    seoTitle: "Productivity Calculator - Employee Output & Efficiency Rate",
-    metaDescription: "Measure task output metrics, workplace efficiency rates, and employee productivity using the standard productivity formula. Input actual units and targets.",
+    seoTitle: "Productivity Calculator - Employee Output & Therapy Hours (With Lunch)",
+    metaDescription: "Free productivity calculator for employees, teams & therapy clinics. Calculate daily average output, billable hours, target percentages & lunch breaks.",
     keywords: [
       "productivity calculator",
-      "productivity formula",
-      "how to calculate productivity",
-      "productivity calc",
-      "how to work out productivity",
-      "how do you calculate productivity",
-      "how to compute productivity",
-      "how to figure out productivity",
+      "therapy productivity calculator with lunch",
+      "productivity calculation",
+      "therapy productivity calculator",
+      "productivity calculator with lunch break",
+      "therapist productivity calculator",
+      "productivity calculator therapy",
+      "ot productivity calculator",
       "calculate productivity",
-      "calculating productivity",
-      "how do we calculate productivity",
-      "work efficiency estimator"
+      "productivity calc",
+      "how to measure employee productivity",
+      "how to calculate productivity"
     ],
     hook: "Calculate Business & Staff Productivity Rates.",
     description: "Convert billable resource tasks to simple percentage efficiency quotas.",
@@ -1464,8 +1464,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Therapy Productivity Calculator",
     category: "math",
     categoryLabel: "Math & Business Productivity",
-    seoTitle: "Therapy Productivity Calculator - PT/OT Billable Ratio & Lunch Breaks",
-    metaDescription: "Calculate PT/OT therapy productivity. Support for 30-minute unpaid lunch breaks, therapist billable minutes targets (80-85%), and administrative unbillable tracking.",
+    seoTitle: "Therapy Productivity Calculator - PT, OT & SLP Hours (With Lunch Break)",
+    metaDescription: "Free therapy productivity calculator for PTs, OTs & SLPs. Easily compute billable treatment minutes, target percentages (80-85%), and 30-min unpaid lunch breaks.",
     keywords: [
       "therapy productivity calculator",
       "therapist productivity calculator",
@@ -1520,8 +1520,8 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Google Review Calculator",
     category: "math",
     categoryLabel: "Math & Business Productivity",
-    seoTitle: "Google Review Calculator - How Many 5-Star Reviews Do You Need?",
-    metaDescription: "Calculate how many 5-star Google reviews your business needs to reach a 4.7, 4.8, or 4.9 rating. Free Google rating calculator and reputation analyzer.",
+    seoTitle: "Google Review Calculator - Calculate 5 Star Ratings Needed",
+    metaDescription: "Free 5 star Google review score calculator. Calculate exact 5-star reviews needed to raise your Google rating from 4.2 or 4.5 to 4.8 or 5.0 stars.",
     keywords: [
       "google review calculator",
       "reputation calculator",
@@ -2439,9 +2439,9 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Mortgage Calculator Game",
     category: "education",
     categoryLabel: "Education & GPA",
-    seoTitle: "Mortgage Calculator Game - Beat the Bank!",
-    metaDescription: "An interactive educational calculator game. Test how extra monthly payments reduce mortgage timelines and lifetime interest expenses.",
-    keywords: ["mortgage calculator games", "mortgage calculator game", "extra payment calculator game", "interest savings game"],
+    seoTitle: "Mortgage Calculator Game - Interactive Home Loan Simulator",
+    metaDescription: "Play our interactive mortgage calculator game! Learn home buying, amortization schedules, down payments, and interest rates in a fun financial game.",
+    keywords: ["mortgagecalculatorgame", "mortgage calculator game", "mortgage calculator games", "interactive mortgage simulator"],
     hook: "Play the extra payment challenge to save thousands in interest.",
     description: "Input mortgage details and model custom extra monthly payments to calculate your financial Savings Score.",
     calcTime: "2 mins",
@@ -3375,9 +3375,9 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Dinkytown Financial Suite Calculator",
     category: "financial",
     categoryLabel: "Financial Calculators",
-    seoTitle: "Dinkytown Financial Suite Calculator - Wealth & Debt Modeler",
-    metaDescription: "Model simultaneous savings building and high-interest debt paydowns. A premium, comprehensive financial planning dashboard.",
-    keywords: ["dinkytown calculators", "dinkytown financial planner", "wealth builder calculator", "debt payoff savings planner"],
+    seoTitle: "Dinkytown Financial Calculator - Free Alternative Suite",
+    metaDescription: "Free Dinkytown financial calculator alternative. Model credit card debt paydown, savings growth, mortgage loan terms, and retirement goals fast with zero ads.",
+    keywords: ["dinkytown calculators", "dinkytown calculator", "dinkytown financial calculator", "dinkytown financial calculators", "dinkytown financial planner"],
     hook: "Evaluate how savings contributions and debt paydowns impact your net worth.",
     description: "Input monthly savings plans alongside outstanding credit card debts to see your future consolidated net worth projections.",
     calcTime: "2 mins",
@@ -7288,7 +7288,364 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
         profitMargin: { value: `$${profitAmount.toFixed(2)}`, label: "Estimated Net Profit", unit: "" }
       };
     }
+  },
+
+  // Seller Closing Cost Calculator
+  "seller-closing-cost": {
+    slug: "seller-closing-cost",
+    name: "Seller Closing Cost Calculator",
+    category: "financial",
+    categoryLabel: "Finance & Real Estate",
+    seoTitle: "Seller Closing Cost Calculator - Real Estate Net Sheet Estimator",
+    metaDescription: "Calculate home seller closing costs, commission fees, title insurance, transfer taxes, and net proceeds from your house sale.",
+    keywords: ["seller closing cost calculator", "closing cost calculator for seller", "home sale net proceeds"],
+    hook: "Estimate exact closing costs and net seller payout when selling a home.",
+    description: "This seller net sheet calculator breaks down real estate agent commissions, escrow fees, state transfer taxes, and title policy costs to give home sellers their net cash at closing.",
+    calcTime: "Instant",
+    formula: "Net Proceeds = Sale Price - (Commission + Title Insurance + Transfer Tax + Escrow + Outstanding Mortgage)",
+    formulaDescription: "Commissions usually account for 5%-6%, while seller fees and taxes add 1%-3% of total home price.",
+    example: "$400,000 home sale with 5% commission ($20,000) and $4,000 closing costs yields $376,000 before mortgage payoff.",
+    faqs: Faqs.closingCostsAndCreditFaqs,
+    commonMistakes: ["Forgetting state/county transfer taxes", "Omitting prorated property taxes"],
+    useCases: ["Home selling budgeting", "Evaluating realtor commission structures"],
+    tips: ["Negotiate agent commission to lower total closing costs."],
+    inputs: [
+      { id: "salePrice", label: "Home Sale Price ($)", type: "number", defaultValue: 400000, unit: "$" },
+      { id: "commissionRate", label: "Agent Commission Rate (%)", type: "number", defaultValue: 5, unit: "%" },
+      { id: "mortgagePayoff", label: "Mortgage Balance Payoff ($)", type: "number", defaultValue: 250000, unit: "$" },
+      { id: "transferTaxRate", label: "Transfer Tax / Stamp Duty (%)", type: "number", defaultValue: 0.5, unit: "%" },
+      { id: "miscFees", label: "Title & Escrow Fees ($)", type: "number", defaultValue: 2500, unit: "$" }
+    ],
+    calculate: (inputs) => {
+      const price = Number(inputs.salePrice || 0);
+      const commRate = Number(inputs.commissionRate || 0);
+      const mortgage = Number(inputs.mortgagePayoff || 0);
+      const transferRate = Number(inputs.transferTaxRate || 0);
+      const fees = Number(inputs.miscFees || 0);
+
+      const commission = (price * commRate) / 100;
+      const transferTax = (price * transferRate) / 100;
+      const totalClosingCosts = commission + transferTax + fees;
+      const netProceeds = price - totalClosingCosts - mortgage;
+
+      return {
+        netProceeds: { value: `$${netProceeds.toFixed(2)}`, label: "Estimated Net Cash to Seller", unit: "" },
+        totalClosingCosts: { value: `$${totalClosingCosts.toFixed(2)}`, label: "Total Seller Closing Costs", unit: "" },
+        commissionFee: { value: `$${commission.toFixed(2)}`, label: "Realtor Commission Fee", unit: "" },
+        transferTaxFee: { value: `$${transferTax.toFixed(2)}`, label: "Transfer Tax & Government Fees", unit: "" }
+      };
+    }
+  },
+
+  // Mortgage Recast Calculator
+  "mortgage-recast": {
+    slug: "mortgage-recast",
+    name: "Mortgage Recast Calculator",
+    category: "financial",
+    categoryLabel: "Mortgage & Loans",
+    seoTitle: "Mortgage Recast Calculator - Lower Monthly Mortgage Payment",
+    metaDescription: "Calculate your new lower monthly mortgage payment and interest savings after making a lump-sum principal recast payment.",
+    keywords: ["mortgage recast calculator", "recast mortgage calculator", "lump sum mortgage principal reduction"],
+    hook: "Recalculate monthly mortgage payments after a lump-sum payment.",
+    description: "A mortgage recast lowers your monthly payment without changing your original interest rate or loan end date.",
+    calcTime: "Instant",
+    formula: "New Payment = Amortize(Remaining Principal - Lump Sum, Interest Rate, Remaining Months)",
+    formulaDescription: "The lender re-amortizes the reduced loan balance over the remaining term length.",
+    example: "Lump sum of $50,000 on a $300,000 mortgage reduces monthly payment significantly while maintaining existing rate.",
+    faqs: Faqs.helocRecastFaqs,
+    commonMistakes: ["Confusing recast with refinancing", "Assuming all lenders offer zero-fee recasting"],
+    useCases: ["Lump sum windfall application", "Lowering monthly fixed expenses"],
+    tips: ["Check if your mortgage servicer charges a minor recast processing fee ($150-$300)."],
+    inputs: [
+      { id: "currentBalance", label: "Current Loan Principal Balance ($)", type: "number", defaultValue: 300000, unit: "$" },
+      { id: "interestRate", label: "Mortgage Interest Rate (%)", type: "number", defaultValue: 6.5, unit: "%" },
+      { id: "remainingYears", label: "Remaining Term (Years)", type: "number", defaultValue: 25, unit: "yrs" },
+      { id: "lumpSum", label: "Lump-Sum Recast Payment ($)", type: "number", defaultValue: 50000, unit: "$" }
+    ],
+    calculate: (inputs) => {
+      const balance = Number(inputs.currentBalance || 0);
+      const rate = Number(inputs.interestRate || 0) / 100 / 12;
+      const months = Number(inputs.remainingYears || 0) * 12;
+      const lump = Number(inputs.lumpSum || 0);
+
+      const oldPayment = (balance * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+      const newBalance = Math.max(0, balance - lump);
+      const newPayment = (newBalance * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+      const monthlySavings = oldPayment - newPayment;
+
+      return {
+        newPayment: { value: `$${newPayment.toFixed(2)}`, label: "New Recast Monthly Payment", unit: "" },
+        monthlySavings: { value: `$${monthlySavings.toFixed(2)}`, label: "Monthly Payment Savings", unit: "" },
+        newBalance: { value: `$${newBalance.toFixed(2)}`, label: "New Loan Principal Balance", unit: "" },
+        originalPayment: { value: `$${oldPayment.toFixed(2)}`, label: "Original Monthly Payment", unit: "" }
+      };
+    }
+  },
+
+  // Bench 1 Rep Max Calculator
+
+  "bench-1rm": {
+    slug: "bench-1rm",
+    name: "Bench Press 1 Rep Max Calculator",
+    category: "health",
+    categoryLabel: "Fitness & Strength",
+    seoTitle: "Bench 1 Rep Max Calculator - Estimate 1RM Peak Lift",
+    metaDescription: "Calculate your bench press 1 Rep Max (1RM) using Epley and Brzycki strength formulas from submaximal rep sets.",
+    keywords: ["bench 1 rep max calculator", "bench press 1rm calculator", "one rep max bench"],
+    hook: "Estimate your maximum 1-rep bench press strength safely.",
+    description: "Calculate your peak single-rep max for bench press, squat, or deadlift using scientific strength equations.",
+    calcTime: "Instant",
+    formula: "Epley 1RM = Weight x (1 + Reps / 30); Brzycki 1RM = Weight / (1.0278 - 0.0278 x Reps)",
+    formulaDescription: "Accurate for sets between 1 and 10 reps performed to failure.",
+    example: "Lifting 225 lbs for 5 reps yields an estimated 1RM of ~262 lbs.",
+    faqs: Faqs.healthAndFoodExpandedFaqs,
+    commonMistakes: ["Calculating failure reps on warm-up sets", "Using high rep sets (>12 reps)"],
+    useCases: ["Powerlifting programming", "Strength progression tracking"],
+    tips: ["Use failure sets of 3 to 6 reps for maximum 1RM estimation accuracy."],
+    inputs: [
+      { id: "liftWeight", label: "Weight Lifted (lbs)", type: "number", defaultValue: 225, unit: "lbs" },
+      { id: "repsCompleted", label: "Reps Completed", type: "number", defaultValue: 5, unit: "reps" }
+    ],
+    calculate: (inputs) => {
+      const w = Number(inputs.liftWeight || 0);
+      const r = Number(inputs.repsCompleted || 0);
+
+      const epley = w * (1 + r / 30);
+      const brzycki = r === 1 ? w : w / (1.0278 - 0.0278 * r);
+      const avgMax = (epley + brzycki) / 2;
+
+      return {
+        estimatedMax: { value: `${Math.round(avgMax)} lbs`, label: "Estimated 1 Rep Max (1RM)", unit: "" },
+        epleyFormula: { value: `${Math.round(epley)} lbs`, label: "Epley Formula Result", unit: "" },
+        brzyckiFormula: { value: `${Math.round(brzycki)} lbs`, label: "Brzycki Formula Result", unit: "" },
+        working80Percent: { value: `${Math.round(avgMax * 0.8)} lbs`, label: "80% Working Weight Target", unit: "" }
+      };
+    }
+  },
+
+  // Gold & Silver Scrap Calculator
+  "gold-scrap": {
+    slug: "gold-scrap",
+    name: "Gold & Silver Scrap Calculator",
+    category: "unit-converter",
+    categoryLabel: "Precious Metals",
+    seoTitle: "Gold & Silver Scrap Calculator - Melt Value Estimator",
+    metaDescription: "Calculate scrap gold and silver value by weight, karat, purity, and live precious metal spot prices.",
+    keywords: ["gold price per gram calculator", "silver scrap calculator", "scrap gold value calculator"],
+    hook: "Calculate scrap gold and silver jewelry melt value.",
+    description: "Determine the true intrinsic metal melt value of gold and silver items across karats (10k, 14k, 18k, 24k) and silver purities.",
+    calcTime: "Instant",
+    formula: "Melt Value = Weight in Grams x (Karat / 24) x Spot Price per Gram",
+    formulaDescription: "1 Troy Ounce equals 31.1035 grams. 14k gold contains 58.33% pure gold.",
+    example: "10 grams of 14k gold with a $75/gram spot price equals ~$437.50 melt value.",
+    faqs: Faqs.metalsAndPowerFaqs,
+    commonMistakes: ["Confusing Troy Ounces (31.1g) with standard Avoirdupois Ounces (28.35g)", "Expecting pawn shops to pay 100% of melt value"],
+    useCases: ["Jewelry valuation", "Scrap metal trading"],
+    tips: ["Scrap buyers typically pay 70%-90% of spot melt value."],
+    inputs: [
+      { id: "metalType", label: "Metal Type", type: "select", defaultValue: "gold", options: [{ value: "gold", label: "Gold" }, { value: "silver", label: "Silver" }] },
+      { id: "weightGrams", label: "Item Weight (Grams)", type: "number", defaultValue: 10, unit: "g" },
+      { id: "karatPurity", label: "Purity / Karat", type: "select", defaultValue: "14k", options: [{ value: "10k", label: "10K Gold (41.7%)" }, { value: "14k", label: "14K Gold (58.3%)" }, { value: "18k", label: "18K Gold (75.0%)" }, { value: "24k", label: "24K Pure Gold (99.9%)" }, { value: "sterling", label: "Sterling Silver (92.5%)" }] },
+      { id: "spotPricePerOz", label: "Spot Price ($ per Troy Oz)", type: "number", defaultValue: 2400, unit: "$/oz" }
+    ],
+    calculate: (inputs) => {
+      const weight = Number(inputs.weightGrams || 0);
+      const spotOz = Number(inputs.spotPricePerOz || 0);
+      const spotGram = spotOz / 31.1035;
+
+      let purity = 0.5833;
+      if (inputs.karatPurity === "10k") purity = 0.4167;
+      if (inputs.karatPurity === "14k") purity = 0.5833;
+      if (inputs.karatPurity === "18k") purity = 0.7500;
+      if (inputs.karatPurity === "24k") purity = 0.9999;
+      if (inputs.karatPurity === "sterling") purity = 0.9250;
+
+      const pureGrams = weight * purity;
+      const totalMeltValue = pureGrams * spotGram;
+      const typicalPayout80 = totalMeltValue * 0.8;
+
+      return {
+        meltValue: { value: `$${totalMeltValue.toFixed(2)}`, label: "Full Scrap Melt Value", unit: "" },
+        typicalPayout: { value: `$${typicalPayout80.toFixed(2)}`, label: "Estimated Pawn / Dealer Offer (~80%)", unit: "" },
+        pureMetalWeight: { value: `${pureGrams.toFixed(2)} g`, label: "Pure Metal Weight", unit: "" },
+        spotPriceGram: { value: `$${spotGram.toFixed(2)}/g`, label: "Spot Price per Gram", unit: "" }
+      };
+    }
+  },
+
+  // Power & Electricity Cost Calculator
+  "power-cost": {
+    slug: "power-cost",
+    name: "Power & Energy Bill Calculator",
+    category: "unit-converter",
+    categoryLabel: "Utilities & Power",
+    seoTitle: "Power Cost Calculator - Electricity Usage & Energy Bill",
+    metaDescription: "Calculate appliance wattage electricity consumption in kilowatt-hours (kWh) and monthly energy bill impact.",
+    keywords: ["power cost calculator", "energy bill calculator", "electricity cost calculator"],
+    hook: "Calculate home appliance electricity costs and monthly energy bill.",
+    description: "Determine exact electricity cost for running AC units, PCs, space heaters, or refrigerators based on wattage and local electric rates.",
+    calcTime: "Instant",
+    formula: "Monthly Cost = (Wattage x Daily Hours x 30 / 1000) x Rate per kWh",
+    formulaDescription: "Electricity is billed per kilowatt-hour (kWh), where 1 kWh = 1,000 Watts used for 1 hour.",
+    example: "Running a 1,500W space heater for 8 hours daily at $0.16/kWh costs ~$57.60/month.",
+    faqs: Faqs.metalsAndPowerFaqs,
+    commonMistakes: ["Using peak surge wattage instead of average running wattage", "Omitting utility delivery charges"],
+    useCases: ["Home energy audit", "Cryptocurrency & PC power budgeting"],
+    tips: ["Look up your utility bill's total kWh rate including distribution charges."],
+    inputs: [
+      { id: "applianceWatts", label: "Appliance Wattage (Watts)", type: "number", defaultValue: 1500, unit: "W" },
+      { id: "dailyHours", label: "Hours Used per Day", type: "number", defaultValue: 8, unit: "hrs/day" },
+      { id: "kwhRate", label: "Electricity Rate ($ per kWh)", type: "number", defaultValue: 0.16, unit: "$/kWh" }
+    ],
+    calculate: (inputs) => {
+      const watts = Number(inputs.applianceWatts || 0);
+      const hours = Number(inputs.dailyHours || 0);
+      const rate = Number(inputs.kwhRate || 0);
+
+      const dailyKwh = (watts * hours) / 1000;
+      const monthlyKwh = dailyKwh * 30;
+      const yearlyKwh = dailyKwh * 365;
+
+      const dailyCost = dailyKwh * rate;
+      const monthlyCost = monthlyKwh * rate;
+      const yearlyCost = yearlyKwh * rate;
+
+      return {
+        monthlyCost: { value: `$${monthlyCost.toFixed(2)}`, label: "Estimated Monthly Cost", unit: "" },
+        yearlyCost: { value: `$${yearlyCost.toFixed(2)}`, label: "Estimated Yearly Cost", unit: "" },
+        dailyCost: { value: `$${dailyCost.toFixed(2)}`, label: "Daily Operating Cost", unit: "" },
+        monthlyEnergy: { value: `${monthlyKwh.toFixed(1)} kWh`, label: "Monthly Electricity Usage", unit: "" }
+      };
+    }
+  },
+
+  // Digital SAT Score Calculator
+  "sat-score": {
+    slug: "sat-score",
+    name: "Digital SAT Score Calculator",
+    category: "education",
+    categoryLabel: "Academic & Testing",
+    seoTitle: "Digital SAT Score Calculator - Convert Raw Points to 1600 Scale",
+    metaDescription: "Convert raw correct answers from Digital SAT Reading & Writing and Math modules into composite 400-1600 scaled test scores.",
+    keywords: ["sat score calculator", "sat calculator", "digital sat score converter"],
+    hook: "Convert Digital SAT raw points into scaled section & composite 1600 scores.",
+    description: "Estimate your total SAT score on the 400-1600 scale based on raw correct responses across Reading & Writing and Math modules.",
+    calcTime: "Instant",
+    formula: "Total Score = Scaled Reading & Writing (200-800) + Scaled Math (200-800)",
+    formulaDescription: "The Digital SAT scales 54 Reading/Writing questions and 44 Math questions into standardized scores.",
+    example: "45/54 correct in Reading & Writing (~700) + 38/44 correct in Math (~720) = 1420 Composite SAT score.",
+    faqs: Faqs.academicAndEmulatorsFaqs,
+    commonMistakes: ["Assuming linear point conversion without test curve scaling"],
+    useCases: ["SAT practice test scoring", "College admissions target setting"],
+    tips: ["Aim for zero unanswered questions since there is no penalty for wrong answers on the SAT."],
+    inputs: [
+      { id: "rwCorrect", label: "Reading & Writing Correct Answers (out of 54)", type: "number", defaultValue: 45, min: 0, max: 54 },
+      { id: "mathCorrect", label: "Math Correct Answers (out of 44)", type: "number", defaultValue: 38, min: 0, max: 44 }
+    ],
+    calculate: (inputs) => {
+      const rw = Math.min(54, Math.max(0, Number(inputs.rwCorrect || 0)));
+      const math = Math.min(44, Math.max(0, Number(inputs.mathCorrect || 0)));
+
+      const rwScaled = Math.round(200 + (rw / 54) * 600);
+      const mathScaled = Math.round(200 + (math / 44) * 600);
+      const totalScore = rwScaled + mathScaled;
+
+      return {
+        totalSatScore: { value: `${totalScore} / 1600`, label: "Composite Digital SAT Score", unit: "" },
+        rwSectionScore: { value: `${rwScaled} / 800`, label: "Reading & Writing Score", unit: "" },
+        mathSectionScore: { value: `${mathScaled} / 800`, label: "Math Section Score", unit: "" },
+        percentileRank: { value: totalScore >= 1400 ? "95th+ Percentile" : totalScore >= 1200 ? "75th Percentile" : "50th Percentile", label: "Estimated SAT Percentile", unit: "" }
+      };
+    }
+  },
+
+  // TI-84 Scientific Emulator
+
+  "ti84-emulator": {
+    slug: "ti84-emulator",
+    name: "TI-84 Plus Scientific Calculator Emulator",
+    category: "math",
+    categoryLabel: "Scientific & Emulators",
+    seoTitle: "TI-84 Plus Scientific Calculator Emulator - Texas Instruments Math",
+    metaDescription: "Emulate Texas Instruments TI-84 Plus and TI-30XS scientific calculators for algebra, statistics, and trigonometry.",
+    keywords: ["ti-30x calculator", "ti 84 plus silver edition calculator", "texas instruments ti 30xs multiview scientific calculator", "non graphing calculator"],
+    hook: "Virtual scientific calculator emulator inspired by TI-84 and TI-30XS.",
+    description: "Perform advanced algebraic, logarithmic, and trigonometric computations matching Texas Instruments scientific calculator workflows.",
+    calcTime: "Instant",
+    formula: "Scientific Functions: sin(x), cos(x), tan(x), log(x), ln(x), nCr, nPr",
+    formulaDescription: "Computes permutations, combinations, and logarithmic base values.",
+    example: "5! (Factorial) = 120; Combination 5C2 = 10.",
+    faqs: Faqs.academicAndEmulatorsFaqs,
+    commonMistakes: ["Confusing permutations (nPr) with combinations (nCr)"],
+    useCases: ["AP Statistics & Calculus prep", "Physics & Chemistry homework"],
+    tips: ["Use standard TI-84 button combinations for quick evaluations."],
+    inputs: [
+      { id: "valN", label: "Total Items (n)", type: "number", defaultValue: 10, min: 0 },
+      { id: "valR", label: "Selected Items (r)", type: "number", defaultValue: 3, min: 0 }
+    ],
+    calculate: (inputs) => {
+      const n = Math.floor(Math.max(0, Number(inputs.valN || 0)));
+      const r = Math.floor(Math.max(0, Number(inputs.valR || 0)));
+
+      const fact = (num: number): number => (num <= 1 ? 1 : num * fact(num - 1));
+      const nFact = fact(Math.min(170, n));
+      const rFact = fact(Math.min(170, r));
+      const nMinusRFact = fact(Math.max(0, Math.min(170, n - r)));
+
+      const nCr = n >= r ? nFact / (rFact * nMinusRFact) : 0;
+      const nPr = n >= r ? nFact / nMinusRFact : 0;
+
+      return {
+        combinations: { value: nCr.toLocaleString(), label: "Combinations nCr (Order doesn't matter)", unit: "" },
+        permutations: { value: nPr.toLocaleString(), label: "Permutations nPr (Order matters)", unit: "" },
+        factorialN: { value: nFact.toExponential(4), label: "Factorial n!", unit: "" }
+      };
+    }
+  },
+
+  // Time Clocks That Calculate Hours
+  "time-clock": {
+    slug: "time-clock",
+    name: "Time Clocks That Calculate Hours & Paycheck",
+    category: "financial",
+    categoryLabel: "Payroll & Time Clocks",
+    seoTitle: "Time Clocks That Calculate Hours - Shift Hours & Overtime",
+    metaDescription: "Calculate total work shift hours, unpaid meal breaks, regular hours, and overtime pay with an intuitive time clock calculator.",
+    keywords: ["time clocks that calculate hours", "time card calculator", "work hours calculator"],
+    hook: "Calculate total shift hours, break deductions, and overtime gross pay.",
+    description: "Enter clock-in, clock-out, and break times to compute gross payable work hours and overtime compensation accurately.",
+    calcTime: "Instant",
+    formula: "Gross Hours = (Clock Out - Clock In) - Break Minutes; Overtime = Hours > 40",
+    formulaDescription: "Standard full-time workweek triggers 1.5x overtime rate after 40 hours.",
+    example: "Clock in 8:00 AM, Clock out 5:00 PM with 30 min break = 8.5 paid hours.",
+    faqs: Faqs.stateTaxAndPayrollFaqs,
+    commonMistakes: ["Forgetting to subtract unpaid lunch breaks", "Miscalculating AM/PM shift spans"],
+    useCases: ["Employee timesheet validation", "Freelance & hourly payroll auditing"],
+    tips: ["Log shift times in military format or standard 12-hour format with AM/PM."],
+    inputs: [
+      { id: "clockInHour", label: "Clock In Hour (8 for 8:00 AM)", type: "number", defaultValue: 8, min: 1, max: 12 },
+      { id: "clockOutHour", label: "Clock Out Hour (5 for 5:00 PM)", type: "number", defaultValue: 5, min: 1, max: 12 },
+      { id: "unpaidBreakMin", label: "Unpaid Break (Minutes)", type: "number", defaultValue: 30, unit: "min" },
+      { id: "hourlyPayRate", label: "Hourly Pay Rate ($)", type: "number", defaultValue: 20, unit: "$/hr" }
+    ],
+    calculate: (inputs) => {
+      const inHr = Number(inputs.clockInHour || 8);
+      const outHr = Number(inputs.clockOutHour || 5);
+      const breakMin = Number(inputs.unpaidBreakMin || 0);
+      const rate = Number(inputs.hourlyPayRate || 0);
+
+      const totalSpanHours = (outHr + 12 - inHr) % 12 || 9;
+      const netHours = Math.max(0, totalSpanHours - breakMin / 60);
+      const grossPay = netHours * rate;
+
+      return {
+        totalPaidHours: { value: `${netHours.toFixed(2)} hrs`, label: "Net Paid Work Hours", unit: "" },
+        grossPayAmount: { value: `$${grossPay.toFixed(2)}`, label: "Gross Shift Earnings", unit: "" },
+        breakDeduction: { value: `${breakMin} mins`, label: "Unpaid Break Deducted", unit: "" }
+      };
+    }
   }
 };
+
 
 

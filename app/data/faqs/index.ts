@@ -112,3 +112,5 @@ export { tanInverseFaqs } from "./generalFaqs";
 export { polynomialMultiplicationFaqs } from "./generalFaqs";
 export { faqs_4FunctionCalculator } from "./generalFaqs";
 export { faqs_3dPrintingCost } from "./generalFaqs";
+export * from "./expandedCalculatorsFaqs";
+

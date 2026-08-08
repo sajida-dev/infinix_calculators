@@ -68,9 +68,9 @@ export const defaultMetadata: Metadata = {
     creator: "@Infinix",
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://infinixcalculator.com",
     languages: {
-      en: "/",
+      en: "https://infinixcalculator.com",
     },
   },
 };

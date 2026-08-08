@@ -30,15 +30,15 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
   if (q) urlParams.set("q", q);
   if (page > 1) urlParams.set("page", page.toString());
 
-  const canonicalUrl = urlParams.toString() ? `${baseUrl}?${urlParams.toString()}` : baseUrl;
+  const canonicalUrl = baseUrl;
 
   const pageTitle = page > 1
     ? `Landscape & Finance Guides (Page ${page}) | Infinix Calculators`
     : "Landscape & Calculation Guides Blog - Infinix Calculator";
 
-  // Google Search Central directive: Block search queries (q) and alternative sort orders (sort != newest) from indexation to prevent duplicate content bloat
-  const hasSearchOrSortFilter = Boolean(q) || (params.sort && params.sort !== "newest");
-  const shouldIndex = !hasSearchOrSortFilter;
+  // Google Search Central directive: Block search queries (q), category filters, pagination, and alternative sort orders from indexation to prevent duplicate content bloat
+  const hasFilterOrQuery = Boolean(q) || Boolean(category && category !== "All") || (params.sort && params.sort !== "newest") || page > 1;
+  const shouldIndex = !hasFilterOrQuery;
 
   return {
     title: pageTitle,

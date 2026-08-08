@@ -185,7 +185,70 @@ export const grossUpKeywords: string[] = [
   "what is 70 percent of 2200"
 ];
 
+export const expandedSuiteKeywords: string[] = [
+  "mortgage calculator alabama", "mortgage calculator wi", "mortgage calculator ct", "mortgage calculator oklahoma", "mortgage calculator ga", "mortgage calculator georgia", "mortgage calculator washington state",
+  "mobile home mortgage calculator", "naca mortgage calculator", "parent plus loan calculator", "hecm calculator",
+  "interest only heloc calculator", "heloc payoff calculator", "heloc interest only calculator",
+  "mortgage recast calculator", "recast mortgage calculator", "mortgage comparison calculator",
+  "seller closing cost calculator", "closing cost calculator for seller", "rental profit calculator", "price per sqft calculator",
+  "pay off credit card calculator", "credit card calculator",
+  "money market rate calculator", "money market interest calculator", "cd calculator interest", "cd rate calculator", "cd interest rates calculator", "calculate cd interest", "normal cd calculator",
+  "edward jones retirement calculator", "roth vs traditional 401k calculator", "roth or 401k calculator", "roth 401k calculator", "72t calculator", "sep ira calculator", "deferred annuity calculator", "cash value life insurance calculator", "iul calculator",
+  "investment calculator with withdrawals", "lease buyout calculator", "fdic calculator", "stock price calculator", "price elasticity calculator", "pro rata calculator",
+  "tennessee tax calculator", "alabama tax calculator", "utah sales tax calculator", "tn sales tax calculator", "sales tax calculator missouri", "calculate missouri sales tax on car", "missouri auto sales tax calculator", "colorado tax calculator", "tax calculator michigan", "tax calculator colorado", "ohio sales tax calculator", "mn sales tax calculator", "massachusetts tax calculator", "mo sales tax calculator", "wisconsin tax calculator", "tax calculator maryland", "avalara sales tax calculator",
+  "take home pay calculator florida", "florida pay calculator", "gross up calculator", "schedule 1 calculator",
+  "ebay sales calculator", "square fee calculator", "affirm calculator", "cbm calculator", "gamestop trade in calculator",
+  "asphalt driveway cost calculator", "mulch calculator", "concrete calculator slab", "grout calculator",
+  "fence cost calculator", "wood fence calculator", "deck building calculator", "sheetrock calculator", "stairs run and rise calculator",
+  "roof calculator", "shingle roof calculator", "blown in insulation calculator", "air duct calculator", "air duct design calculator",
+  "pool gallons calculator", "pool chemical calculator", "screen dimension calculator", "house construction cost calculator",
+  "calculate starbucks calories", "starbucks calories calculator", "starbucks calorie calculator", "keto macro calculator", "keto meal calculator", "raw dog food calculator",
+  "bench 1 rep max calculator", "tdee calculator to lose weight", "infant weight percentile calculator", "abrathatfits calculator",
+  "alcohol calculator wedding", "party booze calculator",
+  "power cost calculator", "energy bill calculator", "energy cost calculator",
+  "silver scrap calculator", "silver price calculator", "silver calculator", "gold price per gram calculator", "gold calculator scrap",
+  "taxi tariff calculator", "taxi service calculator", "gear ratio calculator", "bike gear ratio calculator",
+  "sat score calculator", "sat calculator", "ap calculator",
+  "critical point calculator", "differential equations calculator", "least to greatest calculator",
+  "newegg power supply calculator", "computer power calculator newegg", "azure price calculator",
+  "pink calculator", "cute calculator", "smart calculator",
+  "ti-30x calculator", "ti 84 plus silver edition calculator", "texas instruments ti 30xs multiview scientific calculator", "ti-36x pro calculator", "titanium graphing calculator", "used ti 84 calculator", "calculator ti 84 used", "4-function calculator", "ten key calculator", "non graphing calculator", "walmart calculators", "calculator phone",
+  "time clocks that calculate hours", "cheating calculator", "calculate birth year from age", "bill calculator"
+];
+
+export const gscTopQueriesKeywords: string[] = [
+  "mortgagecalculatorgame", "mortgage calculator game", "mortgage calculator games",
+  "lsat", "how long is the lsat", "lsat raw score converter", "lsat raw score conversion", "lsat score predictor",
+  "aesthetic calculator online free", "pink online calculator", "pink calculator online", "tan inverse formula", "calculator aesthetic online", "aesthetic calculator website", "aesthetic online calculator", "aesthetic calculator online", "pink calculator", "cute calculator",
+  "avalara 94105 sales tax", "avalara sales tax calculator", "avalara tax calculator", "avalara 94105 sales tax rate", "avalara tax rate lookup", "avalara sales tax", "sales tax calculator avalara", "avalara tax rates", "avalara sales tax by state", "avalara sales tax lookup", "avalara sales tax calculator by address", "avalara us sales tax calculator", "avalara avatax pricing", "avalara sales tax rate 15204", "avalara sales tax rate lookup", "avalara calculator", "avalara pricing", "avatax pricing", "avalara tax rate calculator", "avalara sales tax pricing", "avalara tax calculator by address", "avalara 94105 sales tax rate 2026", "94105 sales tax rate avalara", "avalara sales tax rates", "avalara sales tax lookup by address",
+  "square invoice fee calculator", "square app fee calculator", "square calculator fee", "square fees calculator", "square credit card fee calculator", "square transaction fee", "how much does square charge", "how much does square charge per transaction", "what percentage does square charge", "square transaction fee calculator",
+  "how to calculate cbm from dimensions", "cbm calculator", "how to calculate cbm", "cm to cbm", "cbm calculation", "calculate cbm", "calculate cubic meters", "cbm calculator formula", "how to find cbm", "inches to cbm", "how to calculate cbm in inches", "calculate cubic metres", "cbm calculator in cm", "calculate the cbm", "cbm calculator in inches", "cbm to m3", "cbm formula", "how to calculate cbm in cm", "compute cubic meter", "cbm calculation formula", "inch to cbm formula", "cbm finder",
+  "infinix calculator", "kalkulator infinix", "calculadora infinix", "calculator infinix",
+  "laticrete epoxy grout calculator", "laticrete grout calculator",
+  "fence cost calculator", "post and rail fence cost calculator", "fence cost estimator", "fencing material calculator", "aluminum fence cost calculator",
+  "affirm interest calculator", "affirm calculator", "affirm payment calculator", "affirm loan calculator", "affirm estimate payment", "affirm monthly payment calculator", "free affirm calculator", "affirm estimate calculator", "affirm price calculator", "affirm down payment calculator",
+  "therapy productivity calculator with lunch", "productivity calculator", "productivity calculation", "therapy productivity calculator", "productivity calculator with lunch break", "therapist productivity calculator", "productivity calculator therapy", "ot productivity calculator", "calculate productivity", "productivity calc", "how to measure employee productivity", "how to calculate productivity", "team productivity: mon=45 units, tue=52 units, wed=38 units, thu=61 units, fri=44 units. what is the average daily output?",
+  "grossing up calculator", "gross up calculator", "gross up payroll calculator", "paycheck gross up calculator", "bonus gross up calculator", "gross up for taxes",
+  "printing cost calculator", "print quote calculator", "print cost per page calculator", "printer cost per page calculator", "calculate printing cost", "printing price calculator", "printing costs calculator", "printing quote calculator", "calculate printing costs", "what are typical setup and artwork fees for imprinting logos on pens?",
+  "drywall calculator", "sheetrock calculator",
+  "dinkytown calculators", "dinkytown calculator", "dinkytown financial calculator", "dinkytown financial calculators",
+  "balance transfer calculator", "balance transfer fee calculator", "calculate balance transfer", "calculate balance transfer fee", "work out balance transfer fee",
+  "topsoil calculator", "how much topsoil do i need", "top soil near me", "topsoil near me", "cost of top soil per yard", "top soil price per cubic yard", "how much is top soil per cubic yard", "top soil for sale near me", "top soil calculator", "topsoil cubic yard calculator", "topsoil for sale near me", "cost of topsoil per ton", "topsoil delivery near me", "top soil delivery", "how much is a yard of topsoil", "bulk topsoil near me", "cubic feet calculator soil", "topsoil cost calculator", "topsoil calculator for sod", "fill dirt vs topsoil what is the difference", "fill dirt vs topsoil",
+  "pro rata calculator", "pro-rata calculator",
+  "cubic meter calculator", "cubic meters calculator", "cubic metre calculator",
+  "concrete calculator", "how much is a yard of concrete", "concrete yard calculator", "concrete slab calculator", "how many bags of concrete do i need", "concrete quantity", "concrete calculator yards", "cost of concrete per yard", "concrete thickness calculator", "concrete yardage calculator", "concrete calculator by yard", "concrete price per yard", "concrete slab thickness calculator", "concrete cost per yard", "concrete delivery cost per yard",
+  "shingle calculator", "roof shingle calculator", "roof shingle estimator", "calculating roof shingles", "roof shingles calculator", "roof calculator for shingles", "davinci roof calculator", "square of shingles calculator", "shingles roofing calculator", "shingle cost calculator", "roofing-area-calculator.com", "roofing square calculator", "roofing shingles calculator", "roof area calculator",
+  "money market calculator", "money market account calculator", "how to calculate money market interest", "mma calculator", "calculate money market interest", "money market interest calculator",
+  "reverse sales tax calculator", "reverse tax calculator",
+  "google review calculator", "5 star review calculator", "5 star rating calculator", "google 5 star review calculator", "reviews calculator", "google review score calculator", "google star rating calculator", "google star calculator", "5 star calculator",
+  "cost estimate for asphalt paving", "asphalt parking lot cost calculator", "asphalt driveway cost calculator", "asphalt cost calculator", "asphalt driveway calculator", "asphalt driveway estimate", "asphalt cost", "tar and chip driveway cost calculator", "paving cost calculator",
+  "hecm for purchase calculator", "hecm loan calculator", "hecm calculator", "fha reverse mortgage calculator", "reverse mortgage purchase calculator", "hecm reverse mortgage calculator", "reverse mortgage for purchase calculator", "reverse mortgage purchase down payment calculator", "home equity conversion mortgage calculator",
+  "michigan income tax calculator", "michigan late fee calculator", "michigan tax calculator", "georgia payroll calculator", "georgia payroll tax calculator", "paycheck calculator georgia", "ga pay calculator",
+  "tan inverse 1 in radian", "arctan calculator", "tan inverse of -3", "no vig calculator", "property tax loan calculator", "home loan calculator alabama", "mortgage calculator alabama", "trs retirement calculator"
+];
+
 export const globalKeywords: string[] = [
+  ...gscTopQueriesKeywords,
   // Core Brand & Site Keywords (Google Search Console Top Queries)
   "infinix calculator",
   "infinix calculators",
@@ -357,9 +420,12 @@ export const globalKeywords: string[] = [
   "3d print pricing formula",
   "resin 3d printing cost",
 
-  // Gross-Up & Paycheck SEO Keywords
-  ...grossUpKeywords
+  // Expanded Calculators Suite SEO Keywords
+  ...expandedSuiteKeywords
 ];
+
+
+
 
 
 

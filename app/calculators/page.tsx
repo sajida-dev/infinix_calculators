@@ -10,74 +10,72 @@ import { categoriesList } from "../data/CategoryData";
 import CategoryCard from "../components/CategoryCard";
 
 interface PageProps {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string; cat?: string; page?: string }>;
 }
 
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const params = await searchParams;
+  const hasFilter = Boolean(params.q) || Boolean(params.cat) || Boolean(params.page);
+  const shouldIndex = !hasFilter;
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://infinixcalculator.com"),
-
-  title: "All Online Calculators | Free Business, Finance, Health & Construction Calculators",
-
-  description:
-    "Browse hundreds of free online calculators for business, finance, health, construction, math, landscaping, loans, taxes, unit conversions, and everyday calculations. Fast, accurate, and mobile-friendly.",
-
-  keywords: [
-    "online calculators",
-    "free calculators",
-    "calculator directory",
-    "business calculators",
-    "finance calculators",
-    "construction calculators",
-    "health calculators",
-    "math calculators",
-    "unit converters",
-    "percentage calculator",
-    "loan calculator",
-    "mortgage calculator",
-    "topsoil calculator",
-    "top soil calculator",
-    "concrete calculator",
-    "CBM calculator",
-    "affirm calculator",
-    "productivity calculator",
-    "cost calculators",
-    "estimators",
-    "calculation tools",
-    "lsat score calculator",
-    "lsat score converter",
-    "therapy productivity calculator",
-    "how to calculate productivity",
-    "law school predictor",
-    "good lsat score",
-    "lsat demon scholarship estimator",
-    "lsat raw score conversion",
-    "lsat top score",
-    "how long is lsat",
-    "how many questions are on the lsat",
-    "what's a good lsat score",
-    "lsat average score",
-    "normal lsat score",
-    "fill dirt calculator",
-    "how much fill dirt do i need"
-  ],
-
-  alternates: {
-    canonical: "https://infinixcalculator.com/calculators",
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
+  return {
+    metadataBase: new URL("https://infinixcalculator.com"),
+    title: "All Online Calculators | Free Business, Finance, Health & Construction Calculators",
+    description:
+      "Browse hundreds of free online calculators for business, finance, health, construction, math, landscaping, loans, taxes, unit conversions, and everyday calculations. Fast, accurate, and mobile-friendly.",
+    keywords: [
+      "online calculators",
+      "free calculators",
+      "calculator directory",
+      "business calculators",
+      "finance calculators",
+      "construction calculators",
+      "health calculators",
+      "math calculators",
+      "unit converters",
+      "percentage calculator",
+      "loan calculator",
+      "mortgage calculator",
+      "topsoil calculator",
+      "top soil calculator",
+      "concrete calculator",
+      "CBM calculator",
+      "affirm calculator",
+      "productivity calculator",
+      "cost calculators",
+      "estimators",
+      "calculation tools",
+      "lsat score calculator",
+      "lsat score converter",
+      "therapy productivity calculator",
+      "how to calculate productivity",
+      "law school predictor",
+      "good lsat score",
+      "lsat demon scholarship estimator",
+      "lsat raw score conversion",
+      "lsat top score",
+      "how long is lsat",
+      "how many questions are on the lsat",
+      "what's a good lsat score",
+      "lsat average score",
+      "normal lsat score",
+      "fill dirt calculator",
+      "how much fill dirt do i need"
+    ],
+    alternates: {
+      canonical: "https://infinixcalculator.com/calculators",
     },
-  },
+    robots: {
+      index: shouldIndex,
+      follow: true,
+      googleBot: {
+        index: shouldIndex,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
 
   openGraph: {
     title:
@@ -122,7 +120,8 @@ export const metadata: Metadata = {
 
   creator: "Infinix Calculators",
 
-};
+  };
+}
 
 export default async function CalculatorsPage(props: PageProps) {
   const searchParams = await props.searchParams;

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: ['calculators', 'financial calculator', 'construction calculator', 'topsoil calculator', 'CBM calculator', 'concrete calculator', 'business finance', 'free online calculators'],
   // Add more SEO parameters
   alternates: {
-    canonical: 'https://infinixcalculator.com/', // Replace with your actual domain
+    canonical: 'https://infinixcalculator.com',
   },
   openGraph: {
     title: 'Infinix Calculators – Professional Tools for Finance, Construction & Landscaping',
