@@ -19,7 +19,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn how to estimate topsoil for lawns, raised beds, and landscaping. Calculate cubic yards, feet, bag counts, and 10% compaction margins with precision.",
     "category": "Construction & Materials",
     "date": "2026-06-27",
-    "author": "Elena Rostova (Landscape Architect)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/topsoil-calculator.webp",
     "headings": [
       {
@@ -73,7 +73,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Discover the key differences between fill dirt and topsoil. Compare cost per yard, organic nutrients, lawn grading, and structural foundation stability.",
     "category": "Construction & Materials",
     "date": "2026-06-25",
-    "author": "Tom Harrison (Soil Scientist & Agronomist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/fill-dirt-vs-topsoil.webp",
     "headings": [
       {
@@ -126,7 +126,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Free topsoil cost breakdown for 2026. Calculate exact price per cubic yard ($20-$60/yd), truck delivery fees ($50-$150), and bag costs to budget landscaping projects.",
     "category": "Construction & Materials",
     "date": "2026-06-20",
-    "author": "Clara Adams (Residential Landscape Contractor)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/top-soil-calculator-rates-bag.webp",
     "headings": [
       {
@@ -175,7 +175,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Discover the ideal soil depth for new lawn seeding, sod prep, and top-dressing. Learn root penetration requirements to build thick, healthy green grass.",
     "category": "Construction & Materials",
     "date": "2026-06-15",
-    "author": "Elena Rostova (Landscape Architect)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/best-soil-depth-for-growing-grass-and-new-lawns.webp",
     "headings": [
       {
@@ -220,7 +220,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Planning a bulk soil delivery? Learn how to prepare your driveway, protect your property, and ensure a seamless delivery process using our checklist.",
     "category": "Construction & Materials",
     "date": "2026-07-13",
-    "author": "Elena Rostova (Landscape Architect)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/topsoil-calculator.webp",
     "headings": [
       {
@@ -266,7 +266,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Confused by how your raw LSAT correct answers translate to a scaled score out of 180? Read our 2026 guide to raw-to-scaled conversion, including 75% and 67% thresholds.",
     "category": "Education & GPA",
     "date": "2026-07-05",
-    "author": "Marcus Vance (LSAT Coach)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/lsat-score-conversion.webp",
     "headings": [
       {
@@ -309,7 +309,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Discover what counts as a good LSAT score for T14, top 50, and regional law schools. Explore score distribution curves, averages, and admissions odds.",
     "category": "Education & GPA",
     "date": "2026-07-05",
-    "author": "Dr. Abigail Sterling (Former Law School Admissions Officer)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/what-is-a-good-lsat-score.webp",
     "headings": [
       {
@@ -347,7 +347,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn how law school admission predictors and scholarship estimators work, how your academic index is calculated, and tips to maximize merit aid.",
     "category": "Education & GPA",
     "date": "2026-07-05",
-    "author": "Ethan Caldwell (Admissions Consultant)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/Law-School-Predictor-Using-Your-LSAT-and-GPA-to-Estimate-scholarships.webp",
     "headings": [
       {
@@ -385,7 +385,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "A complete breakdown of the LSAT exam length, section timings, question counts, and strategies for the modern 3-scored-section layout.",
     "category": "Education & GPA",
     "date": "2026-07-05",
-    "author": "Chloe Bennett (LSAT Tutor)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/how-long-is-the-lsat-exam.webp",
     "headings": [
       {
@@ -424,7 +424,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Choosing an LSAT prep course is a major financial and academic decision. Read our comprehensive review of 7Sage, Kaplan, Blueprint, and others to find the best fit.",
     "category": "Education & GPA",
     "date": "2026-07-05",
-    "author": "Marcus Vance (LSAT Prep Expert)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/Best-LSAT-prep-blogs-and-sites-to-help-you-study 2026.webp",
     "headings": [
       {
@@ -471,7 +471,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Should you retake the LSAT? Learn the statistics behind score improvements, how law schools view multiple scores, and how to make a data-backed decision.",
     "category": "Education & GPA",
     "date": "2026-07-05",
-    "author": "Jordan Lee (Pre-Law Counseling Director)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/should-i-retake-the-lsat-calculate-your-score-improvement-and-admissions-chances.webp",
     "headings": [
       {
@@ -510,7 +510,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn the standard formulas to calculate <a href=\"/calculators/productivity\">Employee Productivity Calculator</a>, DevOps DORA metrics, freelancer billing ratios, and labor efficiency.",
     "category": "Technology & Productivity",
     "date": "2026-07-05",
-    "author": "Sarah Jenkins (Operations Consultant)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/employee-productivity-guide.webp",
     "headings": [
       {
@@ -563,7 +563,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Master employee productivity calculations with simple business metrics and formulas. Measure revenue per employee, billable hours, and labor efficiency.",
     "category": "Technology & Productivity",
     "date": "2026-07-01",
-    "author": "Megan Rossi, OTR/L (Rehabilitation Director)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/snf-therapy-productivity-calculator.webp",
     "headings": [
       {
@@ -612,7 +612,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Compare free vs paid online productivity calculators for business finance and project estimation. Evaluate feature depth, ROI, and workflow automation.",
     "category": "Technology & Productivity",
     "date": "2026-07-13",
-    "author": "Liam Vance (Minimalist Tech Blogger)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/top-10-free-productivity-tools-for-you-and-your-teams.webp",
     "headings": [
       {
@@ -657,7 +657,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Calculate how many 5-star Google reviews you need to elevate your rating to 4.8 or 5.0. Explore mathematical weighted averages and reputation strategies.",
     "category": "Technology & Productivity",
     "date": "2026-07-05",
-    "author": "Devon Albright (Local SEO Specialist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/google-review-calculator-how-to-get-a-5-star-reviews.webp",
     "headings": [
       {
@@ -706,7 +706,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Convert your Logical Reasoning and Reading Comprehension raw scores to an estimated scaled score (120–180) and percentile under the new 2025 LSAT format.",
     "category": "Education & GPA",
     "date": "2026-07-18",
-    "author": "Chloe Bennett (LSAT Tutor)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/Lsat-score-calculator.webp",
     "headings": [
       {
@@ -753,7 +753,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn the math, strategies, and interactive games to pay down your mortgage faster. Compare prepaying vs. investing, and track your Savings Score.",
     "category": "Financial Calculators",
     "date": "2026-07-19",
-    "author": "Liam Vance (Financial Advisor)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/mortgage-calculator-game.webp",
     "headings": [
       {
@@ -795,7 +795,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Calculate sales tax rates by ZIP code with our Avalara tax guide. Explore state, county, and local rates for San Francisco 94105, Houston, and Chicago.",
     "category": "Tax & Payroll Calculators",
     "date": "2026-07-21",
-    "author": "Chloe Bennett (Tax Compliance Specialist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/avalara-sales-tax-calculator.webp",
     "headings": [
       {
@@ -837,7 +837,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Master California sales tax sourcing guidelines and local district surtaxes. Learn rules for ZIP code 94105, San Francisco county, and grocery food tax.",
     "category": "Tax & Payroll Calculators",
     "date": "2026-07-21",
-    "author": "Chloe Bennett (Tax Compliance Specialist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/california-sales-tax-by-zip-code-94105.webp",
     "headings": [
       {
@@ -879,7 +879,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Calculate how many 60lb and 80lb bags of concrete you need for slabs, post holes, and footings. Convert cubic yards to bag counts with simple formulas.",
     "category": "Construction & Materials",
     "date": "2026-07-21",
-    "author": "Marcus Vance (Civil Engineer)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/how-many-bags-of-concrete-do-i-need-Informational.webp",
     "headings": [
       {
@@ -921,7 +921,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Explore concrete prices per cubic yard, ready-mix delivery fees, and slab installation budgets. Learn how to estimate materials for driveways and patios.",
     "category": "Construction & Materials",
     "date": "2026-07-21",
-    "author": "Marcus Vance (Civil Engineer)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/concrete-price-per-yard-Informational.webp",
     "headings": [
       {
@@ -963,7 +963,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Master CBM calculations for ocean freight, air cargo, and Amazon FBA. Learn how to convert inches and cm to cubic meters and estimate container loading.",
     "category": "Logistics & Converters",
     "date": "2026-07-24",
-    "author": "Marcus Vance (Supply Chain Logistics Specialist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/how-to-calculate-cbm-shipping-volume-guide.webp",
     "headings": [
       {
@@ -1012,7 +1012,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn how to calculate Cubic Meters (CBM) from box dimensions in inches or centimeters. Convert shipping volume, volumetric weight, and carton limits.",
     "category": "Logistics & Converters",
     "date": "2026-07-24",
-    "author": "Marcus Vance (Supply Chain Logistics Specialist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/cbm-calculator.webp",
     "headings": [
       {
@@ -1057,7 +1057,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Calculate Square credit card processing fees for swiped, keyed, and invoice payments. Learn the reverse gross-up formula to net 100% of your invoice value.",
     "category": "Financial Calculators",
     "date": "2026-07-25",
-    "author": "Michael Vance (Fintech & Small Business Operations)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/square-fee-calculator.webp",
     "headings": [
       {
@@ -1128,7 +1128,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Discover the complete Infinix Calculator suite for business finance, construction materials, health metrics, and math. Free precision tools for fast decisions.",
     "category": "Financial Calculators",
     "date": "2026-07-25",
-    "author": "Elena Rostova & Infinix Engineering Team",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/calculators-infinix-calculators.webp",
     "headings": [
       {
@@ -1166,7 +1166,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Compare Affirm BNPL installment loans against revolving credit card debt. Explore fixed simple interest rates, credit score impacts, and payment control.",
     "category": "Financial Calculators",
     "date": "2026-07-26",
-    "author": "Samantha Vance (Senior Financial Analyst)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/why-use-affirm-instead-of-credit-card.webp",
     "headings": [
       {
@@ -1209,7 +1209,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn how Affirm affects your credit score. Understand soft credit inquiries, monthly loan reporting, payment history benefits, and hard pull risks.",
     "category": "Financial Calculators",
     "date": "2026-07-26",
-    "author": "Samantha Vance (Senior Financial Analyst)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/does-affirm-hurt-your-credit-score.webp",
     "headings": [
       {
@@ -1251,7 +1251,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Discover how Affirm works: 0% interest Pay-in-4 biweekly plans vs 3, 6, 12, or 24-month monthly installment loans. Learn approval rules and terms.",
     "category": "Financial Calculators",
     "date": "2026-07-26",
-    "author": "Marcus Vance (Consumer Credit Expert)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/how-does-affirm-work-pay-in-4-vs-monthly.webp",
     "headings": [
       {
@@ -1293,7 +1293,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn proven strategies to escape Buy Now Pay Later debt traps. Discover how early payoff works with zero prepayment penalties on Affirm installment loans.",
     "category": "Financial Calculators",
     "date": "2026-07-26",
-    "author": "Elena Rostova (Financial Coach)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/affirm-debt-trap-how-to-pay-off-bnpl.webp",
     "headings": [
       {
@@ -1331,7 +1331,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Explore the complete LSAT exam structure, section timing, break rules, and scoring scales. Learn pacing strategies for Logical Reasoning and Reading Comp.",
     "category": "Education & GPA",
     "date": "2026-07-26",
-    "author": "Marcus Vance (LSAT Coach)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/lsat-exam-breakdown-timing-sections-prep.webp",
     "headings": [
       {
@@ -1370,7 +1370,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Compare Affirm vs Klarna vs Afterpay BNPL apps. Explore 0% interest options, late fee policies, soft vs hard credit checks, and credit bureau reporting.",
     "category": "Financial Calculators",
     "date": "2026-07-26",
-    "author": "Samantha Vance (Senior Financial Analyst)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/affirm-vs-klarna-vs-afterpay.webp",
     "headings": [
       {
@@ -1417,7 +1417,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Explore Avalara AvaTax pricing tiers, transaction overage charges, and multi-year contract traps. Compare top alternatives like TaxJar, Anrok, and Numeral.",
     "category": "Tax & Payroll Calculators",
     "date": "2026-07-27",
-    "author": "Marcus Vance (Senior E-Commerce Tax Strategist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/avalara-pricing-hidden-fees-and-tax-calculator-alternatives.webp",
     "headings": [
       {
@@ -1463,7 +1463,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn how to calculate reverse sales tax with simple step-by-step formulas. Extract original pre-tax prices and sales tax from receipts and invoices.",
     "category": "Tax & Payroll Calculators",
     "date": "2026-07-27",
-    "author": "Elena Rostova (Accounting & Audit Specialist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/reverse-sales-tax-calculator.webp",
     "headings": [
       {
@@ -1504,7 +1504,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Explore 2026 state sales tax rates, local surtaxes, economic nexus rules, zero sales tax states (NOMAD), and city rates for CA, TX, FL, NY, CO, and IL.",
     "category": "Tax & Payroll Calculators",
     "date": "2026-07-27",
-    "author": "Marcus Vance (Tax & Compliance Strategist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/state-by-state-sales-tax-rates-by-zip-code-and-state-calculator-guide-2026.webp",
     "headings": [
       {
@@ -1553,7 +1553,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Technical sales tax integration guide for WooCommerce, NetSuite (SuiteTax vs Avalara), Odoo, and Shopify. Learn remote seller address validation math.",
     "category": "Tax & Payroll Calculators",
     "date": "2026-07-27",
-    "author": "Marcus Vance (Senior E-Commerce Tax Strategist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/woocommerce-netsuite-odoo-shopify-sales-tax-integration-guide.webp",
     "headings": [
       {
@@ -1594,7 +1594,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Discover the cheapest sales tax filing software for e-commerce. Compare TaxJar, Anrok, Numeral, Quaderno, open-source tax APIs, and CPA filing fees.",
     "category": "Tax & Payroll Calculators",
     "date": "2026-07-27",
-    "author": "Marcus Vance (Senior E-Commerce Tax Strategist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/cheapest-sales-tax-filing-software-and-cpa-pricing-guide.webp",
     "headings": [
       {
@@ -1635,7 +1635,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "An in-depth merchant cost breakdown evaluating whether Square's 2.6% + $0.10 flat rate processing fees are worth it compared to Stripe, Toast, Clover, and Interchange-Plus pricing.",
     "category": "Financial Calculators",
     "date": "July 28, 2026",
-    "author": "Financial Operations Team",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/are-square-processing-fees-worth-it-for-small-business.webp",
     "calculatorSlug": "square-fee",
     "relatedSlugs": [
@@ -1676,7 +1676,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn how small business owners pass Square fees to customers legally. Explore credit card surcharges, state legal restrictions, cash discounts, and compliance rules.",
     "category": "Financial Calculators",
     "date": "July 28, 2026",
-    "author": "Merchant Compliance Team",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/how-to-pass-square-fees-to-customers-legally.webp",
     "calculatorSlug": "square-fee",
     "relatedSlugs": [
@@ -1717,7 +1717,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Free Square processing fee calculator to compute exact credit card transaction fees (2.6% + $0.10 in-person, 2.9% + $0.30 online). Learn how to calculate net payouts.",
     "category": "Financial Calculators",
     "date": "July 28, 2026",
-    "author": "Payment Systems Specialist",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/square-credit-card-processing-fee-guide.webp",
     "calculatorSlug": "square-fee",
     "relatedSlugs": [
@@ -1750,7 +1750,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Discover top pink scientific and graphing calculators (Casio FX-9750GIII, TI-84 Rose Gold), Glossier desk aesthetics, cute large-display desktop models, and custom pink web tools.",
     "category": "Education & GPA",
     "date": "2026-07-28",
-    "author": "Sophia Lin (STEM Design Specialist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/pink-calculator-guide-aesthetic-stem-gear.webp",
     "headings": [
       {
@@ -1787,7 +1787,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Detect counterfeit Casio fx-991EX, ClassWiz, and TI-84 calculators online. Master QR code checks, SHIFT+7+ON diagnostic tests, solar panel checks, and smartphone secret calculator vault apps.",
     "category": "Education & GPA",
     "date": "2026-07-29",
-    "author": "Marcus Vance (Hardware Verification Specialist)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/how-to-spot-fake-casio-ti-calculators.webp",
     "headings": [
       {
@@ -1832,7 +1832,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "From Guinness World Record prodigies like Aaryan Shukla to the 1980s calculator debate vs modern LLMs—explore how mental math, digital tools, and AI compare in speed, logic, and accuracy.",
     "category": "Education & GPA",
     "date": "2026-07-29",
-    "author": "Dr. Aris Thorne (Mathematics Educator)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/human-calculator-mental-math-vs-digital-tools.webp",
     "headings": [
       {
@@ -1873,7 +1873,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Master FDM 3D printing cost estimation. Calculate PLA/PETG/ABS filament weight per gram, electricity power draw (kWh), nozzle wear depreciation, and failure rate markups.",
     "category": "Technology & Productivity",
     "date": "2026-07-30",
-    "author": "Marcus Vance (Additive Manufacturing Engineer)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/3d-printing-cost-calculator.webp",
     "headings": [
       {
@@ -1915,7 +1915,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Calculate liquid SLA/MSLA resin printing expenses. Factor in photopolymer cost per ml, Isopropyl Alcohol (IPA) wash bath consumption, UV curing, and FEP film depreciation.",
     "category": "Technology & Productivity",
     "date": "2026-07-30",
-    "author": "Elena Rostova (Industrial Designer)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/resin-3d-printing-cost-guide.webp",
     "headings": [
       {
@@ -1952,7 +1952,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn how commercial print farms and Etsy sellers price 3D printed products. Balance raw materials, machine hourly rates, labor, platform fees, and target profit markups.",
     "category": "Financial Calculators",
     "date": "2026-07-30",
-    "author": "David Sterling (Print Farm Owner)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/3d-print-pricing-formula-guide.webp",
     "headings": [
       {
@@ -1990,7 +1990,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Discover how Affirm calculates your spending power, why approved loan limits fluctuate, soft credit checks, and when down payments are required.",
     "category": "Financial Calculators",
     "date": "2026-07-31",
-    "author": "Samantha Vance (Senior Financial Analyst)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/how-affirm-purchasing-power-is-calculated-down-payment-guide.webp",
     "headings": [
       {
@@ -2029,7 +2029,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Demystify Affirm's interest calculation formula. Compare simple interest vs compounding credit card APR, 3 to 36 month loan terms, and total finance costs.",
     "category": "Financial Calculators",
     "date": "2026-07-31",
-    "author": "Marcus Vance (Consumer Credit Expert)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/how-affirm-calculates-interest-apr-vs-monthly-payment-math.webp",
     "headings": [
       {
@@ -2068,7 +2068,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Learn how paying off your Affirm loan early or making extra partial payments cancels future simple interest with zero prepayment penalties.",
     "category": "Financial Calculators",
     "date": "2026-07-31",
-    "author": "Elena Rostova (Financial Coach)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/paying-off-affirm-early-partial-payments-interest-savings.webp",
     "headings": [
       {
@@ -2106,7 +2106,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Uncover how merchant subsidies fund 0% APR promotional plans on Apple and Samsung products, down payment interest adjustments, and zero fee policies.",
     "category": "Financial Calculators",
     "date": "2026-07-31",
-    "author": "Samantha Vance (Senior Financial Analyst)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/affirm-percent-apr-hidden-fees-down-payment-truth.webp",
     "headings": [
       {
@@ -2144,7 +2144,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Detailed guide on stores accepting Affirm (Amazon, Walmart, Best Buy, Home Depot, eBay, Apple), plus rules for paying rent, utility bills, gift cards, and car rentals.",
     "category": "Financial Calculators",
     "date": "2026-07-31",
-    "author": "Marcus Vance (Consumer Credit Expert)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/where-can-you-use-affirm-stores-bills-rent-cars-gift-cards.webp",
     "headings": [
       {
@@ -2182,7 +2182,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Guía exhaustiva en español sobre el funcionamiento de Affirm BNPL: préstamos Pay in 4 al 0% APR, cuotas mensuales, revisiones de crédito y tarjeta de débito Affirm.",
     "category": "Financial Calculators",
     "date": "2026-07-31",
-    "author": "Elena Rostova (Financial Coach)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/que-es-affirm-como-funciona-en-espanol-guia-completa.webp",
     "headings": [
       {
@@ -2220,7 +2220,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Predict your law school admission odds and merit scholarship awards using your LSAT score and undergraduate GPA. Compare T14 percentiles and ABA 509 data.",
     "category": "Education & GPA",
     "date": "2026-07-31",
-    "author": "Marcus Vance (LSAT & Admissions Coach)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/law-school-predictor-gpa-lsat-guide.webp",
     "headings": [
       {
@@ -2259,7 +2259,7 @@ export const blogData: Record<string, BlogPost> = {
     "excerpt": "Master paycheck gross-up calculations for employee bonuses, relocation stipends, fringe benefits, and nanny salaries. Learn the reverse tax equation and state-by-state payroll rules.",
     "category": "Tax & Payroll",
     "date": "2026-08-01",
-    "author": "Marcus Vance (Certified Payroll Specialist & Financial Analyst)",
+    "author": "Infinix Calculators Editorial Team",
     "image": "/gross-up-calculator-guide-payroll-bonus-tax-formula.webp",
     "headings": [
       {

@@ -28,6 +28,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/"],
       },
+      {
+        userAgent: "Mediapartners-Google",
+        allow: "/",
+        disallow: ["/api/"],
+      },
     ],
     sitemap: "https://infinixcalculator.com/sitemap.xml",
   };

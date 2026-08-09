@@ -176,6 +176,13 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
           {/* Main Content (3/4 Width) */}
           <div className="lg:col-span-3 space-y-10">
+            {/* Brand Independence Notice */}
+            {calc.brandDisclaimer && (
+              <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed mb-6">
+                <span className="font-bold">Trademark &amp; Independence Disclaimer: </span>
+                {calc.brandDisclaimer}
+              </div>
+            )}
             {/* Hydrate dynamic calculation forms */}
             <div>
               <DynamicCalculator slug={slug} />

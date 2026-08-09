@@ -32,6 +32,7 @@ export default function Footer() {
   const legalLinks = [
     { name: "Terms of Service", href: "/terms" },
     { name: "Privacy Policy", href: "/privacy" },
+    { name: "Disclaimer", href: "/disclaimer" },
   ];
 
   return (
@@ -105,7 +106,7 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              {legalLinks.slice(0, 2).map((link) => (
+              {legalLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-400 transition-colors">
                     {link.name}

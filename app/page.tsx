@@ -63,7 +63,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Run business financial models, estimate construction materials, and assess health metrics instantly. No registration, no cookies, just pure calculations.
+              Run business financial models, estimate construction materials, and assess health metrics instantly. No registration required. Fast, accurate calculations on any device.
             </p>
 
             {/* Reusable Search Bar with Autocomplete Suggestions */}
@@ -86,7 +86,7 @@ export default function Home() {
               </div>
               <div>
                 <span className="block text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">100%</span>
-                <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider mt-1 block">AdSense Ready</span>
+                <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider mt-1 block">Free & Open</span>
               </div>
             </div>
 

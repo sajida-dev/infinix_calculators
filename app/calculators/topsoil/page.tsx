@@ -316,11 +316,12 @@ export default function TopsoilPage() {
               {/* SEO Topic Cluster Navigation Hub */}
               <CategoryClusterNav category="Construction" currentSlug="topsoil" />
 
-              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Related Calculators</h2>
+              <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Related Tools &amp; Guides</h2>
               <ul className="list-disc list-inside ml-5">
-                <li className="text-primary dark:text-sky-400"><Link href="/calculators/fill-dirt">Fill Dirt Calculator</Link></li>
-                <li className="text-primary dark:text-sky-400"><Link href="/calculators/ground-cover">Ground Cover Calculator</Link></li>
-                <li className="text-primary dark:text-sky-400"><Link href="/calculators/dirt-cubic-yard">Dirt Cubic Yard Calculator</Link></li>
+                <li className="text-primary dark:text-sky-400"><Link href="/calculators/concrete">Concrete Slab &amp; Bag Calculator</Link></li>
+                <li className="text-primary dark:text-sky-400"><Link href="/calculators/roof">Roof Shingle &amp; Pitch Estimator</Link></li>
+                <li className="text-primary dark:text-sky-400"><Link href="/blog/fill-dirt-vs-topsoil">Fill Dirt vs Topsoil Comparison Guide</Link></li>
+                <li className="text-primary dark:text-sky-400"><Link href="/blog/how-much-topsoil-do-i-need">Complete Topsoil Landscaping Guide</Link></li>
               </ul>
             </article>
           </div>

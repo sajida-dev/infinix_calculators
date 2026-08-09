@@ -58,9 +58,9 @@ export default function RootLayout({
         <JsonLd id="org-jsonld" data={organizationSchema} />
         <JsonLd id="website-jsonld" data={websiteSchema} />
         {/* Google AdSense */}
-        <script
-          async
+        <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869"
+          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
         {/* Google tag (gtag.js) */}

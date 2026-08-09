@@ -18,6 +18,7 @@ const generateSitemap = () => {
     { loc: "/contact", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.5" },
     { loc: "/privacy", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.3" },
     { loc: "/terms", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.3" },
+    { loc: "/disclaimer", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.3" },
   ];
 
   // Dynamic calculators

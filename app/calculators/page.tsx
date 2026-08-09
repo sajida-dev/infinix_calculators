@@ -129,12 +129,7 @@ export default async function CalculatorsPage(props: PageProps) {
   const popularSlugs = ["topsoil", "concrete", "cbm", "affirm"];
   const popularCalcs = popularSlugs.map(s => calculatorsData[s]).filter(Boolean);
 
-  const upcomingCalcs = [
-    { name: "Car Depreciation", desc: "Track resale value decay curves by brand." },
-    { name: "Commercial Lease", desc: "Net-triple rental escalation schedules." },
-    { name: "Deferred Annuity", desc: "Annuity future value growth factors." },
-    { name: "IUL Growth", desc: "Indexed universal life policy growth." }
-  ];
+
 
   const recentBlogs = Object.values(blogData).slice(0, 3);
 
@@ -289,20 +284,7 @@ export default async function CalculatorsPage(props: PageProps) {
                 </div>
               </div>
 
-              {/* Problems we're fixing */}
-              <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
-                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-4">
-                  Problems we're fixing
-                </h3>
-                <ul className="space-y-3.5">
-                  {upcomingCalcs.map((item) => (
-                    <li key={item.name} className="text-xs leading-normal">
-                      <span className="block font-bold text-slate-700 dark:text-slate-200">{item.name}</span>
-                      <span className="block text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">{item.desc}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
 
               {/* Sidebar Ad Unit 1 */}
               {/* <div className="py-4 text-center">
