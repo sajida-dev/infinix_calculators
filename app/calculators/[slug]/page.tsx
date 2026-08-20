@@ -8,6 +8,7 @@ import DynamicCalculator from "../../../app/components/DynamicCalculator";
 import CalculatorFaqs from "../../../app/components/CalculatorFaqs";
 import CategoryClusterNav from "../../../app/components/CategoryClusterNav";
 import CalculatorReviewBadge from "../../../app/components/CalculatorReviewBadge";
+import DisclaimerBox from "../../../app/components/DisclaimerBox";
 import AvalaraSeoContent from "../../../app/components/seo/AvalaraSeoContent";
 import ConcreteSeoContent from "../../../app/components/seo/ConcreteSeoContent";
 import RoofSeoContent from "../../../app/components/seo/RoofSeoContent";
@@ -248,10 +249,11 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
             {/* Brand Independence Notice */}
             {calc.brandDisclaimer && (
-              <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed mb-6">
-                <span className="font-bold">Trademark &amp; Independence Disclaimer: </span>
-                {calc.brandDisclaimer}
-              </div>
+              <DisclaimerBox
+                title="Disclaimer"
+                text={calc.brandDisclaimer}
+                className="mb-6"
+              />
             )}
             {/* Hydrate dynamic calculation forms */}
             <div>
@@ -677,6 +679,16 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
               )}
 
             </section>
+
+            {/* General Calculator Disclaimer */}
+            <DisclaimerBox
+              title="Disclaimer"
+              className="my-8"
+            >
+              <p>
+                This calculation tool is provided for educational and informational estimation purposes only. Results are based on mathematical formulas and user-supplied parameters. They do not constitute formal underwriting, financial, tax, engineering, or legal determinations.
+              </p>
+            </DisclaimerBox>
 
             {/* Reusable FAQs Section */}
             <CalculatorFaqs slug={slug} />

@@ -5,6 +5,7 @@ import TopsoilCalculator from "../../components/TopsoilCalculator";
 import CalculatorFaqs from "../../components/CalculatorFaqs";
 import CategoryClusterNav from "../../components/CategoryClusterNav";
 import CalculatorReviewBadge from "../../components/CalculatorReviewBadge";
+import DisclaimerBox from "../../components/DisclaimerBox";
 import { blogData } from "../../data/blogData";
 
 export const metadata: Metadata = {
@@ -311,6 +312,16 @@ export default function TopsoilPage() {
                 <li><strong>Unit conversion errors:</strong> Mixing feet and inches without proper conversion leads to large miscalculations.</li>
                 <li><strong>Skipping the buffer:</strong> Forgetting the 10 % buffer can leave you short on material when the project is complete.</li>
               </ul>
+
+              {/* General Calculator Disclaimer */}
+              <DisclaimerBox
+                title="Disclaimer"
+                className="my-8"
+              >
+                <p>
+                  This topsoil volume estimator is provided for general planning and material budgeting purposes only. Actual soil requirements may vary based on settling, moisture content, compaction, and site grading. Always consult with your bulk materials supplier or landscape contractor before placing final orders.
+                </p>
+              </DisclaimerBox>
 
               {/* FAQ component */}
               <CalculatorFaqs slug="topsoil" />

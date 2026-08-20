@@ -1,55 +1,82 @@
 import Link from "next/link";
-import { calculatorsData } from "./data/calculatorsData";
 import { blogData } from "./data/blogData";
 import SearchInput from "./components/SearchInput";
 import BlogCard from "./components/BlogCard";
 import TopsoilCalculator from "./components/TopsoilCalculator";
 import { categoriesList } from "./data/CategoryData";
 import CategoryCard from "./components/CategoryCard";
-import { Metadata } from 'next';
+import HomepageFaqs from "./components/HomepageFaqs";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Infinix Calculators – Professional Tools for Finance, Construction & Landscaping',
-  description: 'Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.',
-  keywords: ['calculators', 'financial calculator', 'construction calculator', 'topsoil calculator', 'CBM calculator', 'concrete calculator', 'business finance', 'free online calculators'],
-  // Add more SEO parameters
+  title: "Infinix Calculators – Professional Tools for Finance, Construction & Landscaping",
+  description: "Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.",
+  keywords: [
+    "calculators",
+    "financial calculator",
+    "construction calculator",
+    "topsoil calculator",
+    "CBM calculator",
+    "concrete calculator",
+    "business finance",
+    "free online calculators",
+  ],
   alternates: {
-    canonical: 'https://infinixcalculator.com',
+    canonical: "https://infinixcalculator.com",
   },
   openGraph: {
-    title: 'Infinix Calculators – Professional Tools for Finance, Construction & Landscaping',
-    description: 'Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.',
-    url: 'https://infinixcalculator.com/',
-    siteName: 'Infinix Calculators',
+    title: "Infinix Calculators – Professional Tools for Finance, Construction & Landscaping",
+    description: "Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.",
+    url: "https://infinixcalculator.com/",
+    siteName: "Infinix Calculators",
     images: [
       {
-        url: 'https://infinixcalculator.com/calculators-infinix-calculators.webp',
+        url: "https://infinixcalculator.com/calculators-infinix-calculators.webp",
         width: 1200,
         height: 630,
-        alt: 'Infinix Calculators Preview',
+        alt: "Infinix Calculators Preview",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Infinix Calculators – Professional Tools for Finance, Construction & Landscaping',
-    description: 'Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.',
-    images: ['https://infinixcalculator.com/calculators-infinix-calculators.webp'],
-    creator: '@yourtwitterhandle', // Optional: Add your Twitter handle
+    card: "summary_large_image",
+    title: "Infinix Calculators – Professional Tools for Finance, Construction & Landscaping",
+    description: "Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.",
+    images: ["https://infinixcalculator.com/calculators-infinix-calculators.webp"],
   },
 };
 
 export default function Home() {
+  const allBlogPosts = Object.values(blogData);
 
-  // Latest blog articles
-  const latestArticles = Object.values(blogData).slice(0, 3);
+  // Diverse high-intent articles across different topic categories
+  const featuredSlugs = [
+    "why-use-affirm-instead-of-credit-card",
+    "how-much-topsoil-do-i-need",
+    "lsat-raw-score-conversion-guide",
+    "avalara-sales-tax-calculator-guide",
+    "how-to-calculate-cbm-shipping-volume-guide",
+    "how-to-calculate-employee-productivity",
+  ];
+
+  const featuredArticles = featuredSlugs
+    .map((s) => blogData[s])
+    .filter(Boolean);
+
+  const displayArticles =
+    featuredArticles.length >= 6
+      ? featuredArticles
+      : [
+          ...featuredArticles,
+          ...allBlogPosts.filter((b) => !featuredArticles.some((f) => f.slug === b.slug)),
+        ].slice(0, 6);
 
   return (
     <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen transition-colors">
       {/* 1. SaaS Hero Section */}
-      <section className="relative bg-slate/50 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] overflow-hidden py-15 sm:py-28 transition-colors">
+      <section className="relative bg-slate-50/50 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] overflow-hidden py-16 sm:py-28 transition-colors">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -86,7 +113,7 @@ export default function Home() {
               </div>
               <div>
                 <span className="block text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">100%</span>
-                <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider mt-1 block">Free & Open</span>
+                <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider mt-1 block">Free &amp; Open</span>
               </div>
             </div>
 
@@ -114,7 +141,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Structured Directories categories block (Pinterest-style listing directly on Homepage) */}
+      {/* 2. Structured Directories categories block */}
       <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -144,15 +171,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Featured Guides Blog Section */}
+      {/* 3. Featured Guides Blog Section (Diverse 6 Articles) */}
       <section className="py-16 sm:py-24 bg-white dark:bg-[#22242A] transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Featured Guides & Cost Studies</h2>
+              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Featured Guides &amp; Cost Studies</h2>
               <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm sm:text-base">
-                In-depth articles and mathematical breakdowns compiled by our industry experts.
+                In-depth articles and mathematical breakdowns across finance, construction, admissions, and logistics.
               </p>
             </div>
             <Link
@@ -163,14 +190,17 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {latestArticles.map((article) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {displayArticles.map((article) => (
               <BlogCard key={article.slug} post={article} />
             ))}
           </div>
 
         </div>
       </section>
+
+      {/* 4. General Platform FAQs */}
+      <HomepageFaqs />
     </div>
   );
 }

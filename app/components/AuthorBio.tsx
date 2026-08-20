@@ -10,15 +10,15 @@ interface AuthorBioProps {
 }
 
 export default function AuthorBio({ authorSlug, category, className = "" }: AuthorBioProps) {
-  const author: Author = authorSlug 
-    ? getAuthorBySlug(authorSlug) 
-    : category 
-      ? getAuthorForCategory(category) 
+  const author: Author = authorSlug
+    ? getAuthorBySlug(authorSlug)
+    : category
+      ? getAuthorForCategory(category)
       : getAuthorBySlug("david-miller");
 
   return (
-    <div className={`rounded-xl border border-slate-200 dark:border-[#4D5156] bg-slate-50/50 dark:bg-[#22242A]/50 p-5 sm:p-6 transition-colors ${className}`}>
-      <div className="flex flex-col sm:flex-row items-start gap-4">
+    <div className={`rounded-2xl border border-slate-200 dark:border-[#4D5156] bg-slate-50/70 dark:bg-[#22242A]/60 p-5 sm:p-6 transition-colors ${className}`}>
+      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
         {/* Author Avatar Thumbnail */}
         <Link href={`/authors/${author.slug}`} className="shrink-0 group">
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-slate-200 dark:border-[#4D5156] group-hover:border-primary transition-colors">
@@ -36,13 +36,16 @@ export default function AuthorBio({ authorSlug, category, className = "" }: Auth
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-0.5">
+                Written by
+              </span>
               <Link href={`/authors/${author.slug}`} className="group">
                 <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">
                   {author.name}
                 </h3>
               </Link>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                {author.jobTitle} • {author.credentials}
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                {author.jobTitle}
               </p>
             </div>
 
@@ -50,11 +53,11 @@ export default function AuthorBio({ authorSlug, category, className = "" }: Auth
               href={`/authors/${author.slug}`}
               className="text-xs font-semibold text-primary dark:text-sky-400 hover:underline"
             >
-              Author Profile &amp; Articles →
+              View Profile &amp; Articles →
             </Link>
           </div>
 
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
             {author.bio}
           </p>
         </div>

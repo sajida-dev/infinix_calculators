@@ -1,4 +1,5 @@
 // Auto-generated synchronized FAQ registry
+export { homepageFaqs } from "./homepageFaqs";
 export { affirmFaqs } from "./affirmFaqs";
 export { topsoilFaqs } from "./topsoilFaqs";
 export { cbmFaqs } from "./cbmFaqs";
