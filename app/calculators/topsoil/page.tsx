@@ -4,6 +4,7 @@ import Image from "next/image";
 import TopsoilCalculator from "../../components/TopsoilCalculator";
 import CalculatorFaqs from "../../components/CalculatorFaqs";
 import CategoryClusterNav from "../../components/CategoryClusterNav";
+import CalculatorReviewBadge from "../../components/CalculatorReviewBadge";
 import { blogData } from "../../data/blogData";
 
 export const metadata: Metadata = {
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
       "Estimate topsoil volume in cubic yards, feet, tons, or bag counts instantly.",
     url: "https://infinixcalculator.com/calculators/topsoil",
     siteName: "Infinix Calculators",
-    images: [{ url: "/og-topsoil.png", width: 1200, height: 630, alt: "Topsoil Calculator" }],
+    images: [{ url: "/topsoil-calculator.webp", width: 1200, height: 630, alt: "Topsoil Calculator" }],
     locale: "en_US",
     type: "website",
   },
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Topsoil Calculator – Estimate Soil Volume",
     description: "Fast online calculator for topsoil, fill dirt, and compost.",
-    images: ["/og-topsoil.png"],
+    images: ["/topsoil-calculator.webp"],
     creator: "@Infinix",
   },
 };
@@ -170,6 +171,7 @@ export default function TopsoilPage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Main calculator area */}
           <div className="lg:col-span-3 space-y-8">
+            <CalculatorReviewBadge category="construction" />
             <TopsoilCalculator />
 
             {/* SEO Authority Article */}

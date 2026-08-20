@@ -96,6 +96,38 @@ const clusterHubs: Record<string, ClusterHub> = {
       { name: "Topsoil Volume Calculator", href: "/calculators/topsoil" },
       { name: "Concrete Slab Calculator", href: "/calculators/concrete" },
     ]
+  },
+  Productivity: {
+    categoryName: "Business & Productivity",
+    title: "Productivity & Operations Hub",
+    pillarCalc: { name: "Therapy Productivity Calculator", href: "/calculators/therapy-productivity", slug: "therapy-productivity" },
+    topArticles: [
+      { title: "How to Calculate Employee Productivity: Formulas & Metrics", href: "/blog/how-to-calculate-employee-productivity" },
+      { title: "Understanding SNF Therapy Productivity Metrics", href: "/blog/snf-therapy-productivity-guide" },
+      { title: "Free vs Paid Productivity Calculators & Tools", href: "/blog/free-vs-paid-productivity-tools" },
+      { title: "Google Review Math: How Many 5-Star Reviews to Reach 4.8?", href: "/blog/google-review-math-rating-boost" },
+    ],
+    siblingCalcs: [
+      { name: "Productivity Calculator", href: "/calculators/productivity" },
+      { name: "Google Review Calculator", href: "/calculators/google-review" },
+      { name: "Square Fee Calculator", href: "/calculators/square-fee" },
+    ]
+  },
+  Technology: {
+    categoryName: "Technology & 3D Printing",
+    title: "Technology & 3D Printing Hub",
+    pillarCalc: { name: "3D Printing Cost Calculator", href: "/calculators/3d-printing-cost", slug: "3d-printing-cost" },
+    topArticles: [
+      { title: "3D Printing Cost Calculator: Filament & Power Math", href: "/blog/3d-printing-cost-calculator-guide" },
+      { title: "Resin 3D Printing Cost Calculator: Photopolymer Guide", href: "/blog/resin-3d-printing-cost-guide" },
+      { title: "How to Price 3D Prints for Etsy & Commercial Sales", href: "/blog/3d-print-pricing-formula-guide" },
+      { title: "The Ultimate Pink Calculator Guide & STEM Gear", href: "/blog/pink-calculator-guide-aesthetic-stem-gear" },
+    ],
+    siblingCalcs: [
+      { name: "3D Printing Cost", href: "/calculators/3d-printing-cost" },
+      { name: "CBM Calculator", href: "/calculators/cbm" },
+      { name: "Aesthetic Calculator", href: "/calculators/aesthetic-calculator" },
+    ]
   }
 };
 
@@ -104,11 +136,13 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
   let hubKey = "Finance";
   if (category) {
     const catLower = category.toLowerCase();
-    if (catLower.includes("educat") || catLower.includes("lsat")) hubKey = "Education";
-    else if (catLower.includes("construct") || catLower.includes("landscaping")) hubKey = "Construction";
+    if (catLower.includes("educat") || catLower.includes("lsat") || catLower.includes("math") || catLower.includes("gpa")) hubKey = "Education";
+    else if (catLower.includes("construct") || catLower.includes("landscaping") || catLower.includes("material")) hubKey = "Construction";
     else if (catLower.includes("tax") || catLower.includes("payroll")) hubKey = "Tax";
-    else if (catLower.includes("logistics") || catLower.includes("shipping")) hubKey = "Logistics";
-    else if (catLower.includes("finance") || catLower.includes("credit")) hubKey = "Finance";
+    else if (catLower.includes("logistics") || catLower.includes("shipping") || catLower.includes("cbm")) hubKey = "Logistics";
+    else if (catLower.includes("productiv") || catLower.includes("therapy") || catLower.includes("business")) hubKey = "Productivity";
+    else if (catLower.includes("technolog") || catLower.includes("3d") || catLower.includes("print")) hubKey = "Technology";
+    else if (catLower.includes("finance") || catLower.includes("credit") || catLower.includes("mortgage") || catLower.includes("real estate")) hubKey = "Finance";
   }
 
   const hub = clusterHubs[hubKey] || clusterHubs.Finance;

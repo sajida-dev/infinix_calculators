@@ -4,14 +4,14 @@
     "description": "Free premium calculators for finance, construction, health, and more.",
     "icons": [
         {
-            "src": "/infinix-calculator-icon-blue.png",
+            "src": "/infinix-calculator-icon-blue.webp",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/webp"
         },
         {
-            "src": "/infinix-calculator-icon-blue.png",
+            "src": "/infinix-calculator-icon-blue.webp",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/webp"
         }
     ],
     "theme_color": "#0ea5e9",

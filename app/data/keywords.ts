@@ -244,11 +244,96 @@ export const gscTopQueriesKeywords: string[] = [
   "cost estimate for asphalt paving", "asphalt parking lot cost calculator", "asphalt driveway cost calculator", "asphalt cost calculator", "asphalt driveway calculator", "asphalt driveway estimate", "asphalt cost", "tar and chip driveway cost calculator", "paving cost calculator",
   "hecm for purchase calculator", "hecm loan calculator", "hecm calculator", "fha reverse mortgage calculator", "reverse mortgage purchase calculator", "hecm reverse mortgage calculator", "reverse mortgage for purchase calculator", "reverse mortgage purchase down payment calculator", "home equity conversion mortgage calculator",
   "michigan income tax calculator", "michigan late fee calculator", "michigan tax calculator", "georgia payroll calculator", "georgia payroll tax calculator", "paycheck calculator georgia", "ga pay calculator",
-  "tan inverse 1 in radian", "arctan calculator", "tan inverse of -3", "no vig calculator", "property tax loan calculator", "home loan calculator alabama", "mortgage calculator alabama", "trs retirement calculator"
+  "tan inverse 1 in radian", "arctan calculator", "tan inverse of -3", "no vig calculator", "property tax loan calculator", "home loan calculator alabama", "mortgage calculator alabama", "trs retirement calculator"]
+export const pinkAestheticKeywords: string[] = [
+  "aesthetic calculator online free",
+  "pink online calculator",
+  "calculator aesthetic online",
+  "aesthetic online calculator",
+  "pink calculator online",
+  "aesthetic calculator website",
+  "calculator pink online",
+  "cute online calculator",
+  "pink calculator",
+  "aesthetic stem calculator"
+];
+
+export const mortgageGameKeywords: string[] = [
+  "mortgage calculator games",
+  "mortgagecalculatorgame",
+  "mortgage calculator game",
+  "mortage calculator games",
+  "mortgage calculator juegos",
+  "interactive mortgage calculator games",
+  "mortgage simulator game",
+  "home loan games"
+];
+
+export const groutTileKeywords: string[] = [
+  "laticrete calculator",
+  "laticrete epoxy grout calculator",
+  "grout calculator laticrete",
+  "laticrete grout calculator",
+  "mapei grout calculator",
+  "mapei calculator",
+  "epoxy grout coverage calculator"
+];
+
+export const tanInverseKeywords: string[] = [
+  "tan inverse formula",
+  "tan inverse 1 in radian",
+  "arctan calculator",
+  "tan inverse -3",
+  "tan inverse 2 in radians",
+  "tan inverse of -3",
+  "tan inverse of 1 in radians",
+  "tan inverse calculator",
+  "tan 1 in radians",
+  "inverse tan 1",
+  "arctan1 in radians",
+  "tan inverse -1 in radian",
+  "arctan 1 in radians",
+  "inverse tan of 1",
+  "arctan formula radians to degrees"
+];
+
+export const searchConsoleEnrichedKeywords: string[] = [
+  "top soil near me", "cost of top soil per yard", "where can i buy dirt", "how much is a yard of dirt", "top soil for sale near me", "bulk topsoil near me", "screened topsoil near me", "top soil delivery", "topsoil price per cubic yard", "how much is a cubic yard of dirt", "how much is top soil per cubic yard", "what are the prices for topsoil per cubic yard",
+  "avalara 94105 sales tax", "avalara 94105 sales tax rate", "avalara 94105 sales tax rate 2026", "avalara tax rates by zip code", "avalara sales tax calculator by address", "avalara tax lookup", "avalara sales tax lookup by address", "avalara rate lookup", "avalara tax calculation",
+  "how to calculate cbm from dimensions", "cbm calculator formula", "0.4 cbm", "0.6 cbm", "5 cbm", "cbm in inches formula", "0.4cbm to kg", "inch to cbm formula", "cbm formula in inches",
+  "square app fee calculator", "square invoice fee calculator", "reverse square fee calculator", "square credit card fee calculator", "square transaction fee calculator", "what percentage does square charge", "what does square charge per transaction",
+  "therapy productivity calculator with lunch", "therapist productivity calculator", "productivity calculator with lunch break", "pt productivity calculator", "physical therapy productivity calculator", "ot productivity calculator", "pta productivity calculator",
+  "affirm monthly payment calculator", "affirm interest calculator", "affirm estimate payment", "affirm down payment calculator", "affirm financing calculator", "affirm price calculator", "free affirm calculator for customers",
+  "asphalt driveway cost calculator", "asphalt parking lot cost calculator", "tar and chip driveway cost calculator", "cost estimate for asphalt paving", "asphalt driveway estimate", "asphalt cost calculator",
+  "shingle calculator", "roof shingle calculator", "roof shingle estimator", "calculating roof shingles", "shingles roofing calculator", "shingle square calculator", "shingle replacement calculator",
+  "no vig calculator", "no vig fair odds calculator", "novig calculator", "no vig odds calculator", "no vig betting odds calculator",
+  "529 calculator", "529 growth calculator", "529 plan growth calculator", "529 college savings plan calculator",
+  "google review calculator", "5 star review calculator", "5 star rating calculator", "google 5 star review calculator", "how many google reviews do i need to increase my rating"
+];
+export const electricKeywords: string[] = [
+  "electric calculator",
+  "electricity cost calculator",
+  "appliance electricity cost",
+  "kwh cost calculator",
+  "calculate kwh cost",
+  "how much electricity does a space heater use",
+  "ac electricity cost calculator",
+  "refrigerator electricity cost",
+  "ev charging cost calculator",
+  "appliance energy usage calculator",
+  "electricity bill calculator",
+  "watt to kwh cost calculator",
+  "phantom load calculator",
+  "vampire power cost"
 ];
 
 export const globalKeywords: string[] = [
   ...gscTopQueriesKeywords,
+  ...pinkAestheticKeywords,
+  ...mortgageGameKeywords,
+  ...groutTileKeywords,
+  ...tanInverseKeywords,
+  ...searchConsoleEnrichedKeywords,
   // Core Brand & Site Keywords (Google Search Console Top Queries)
   "infinix calculator",
   "infinix calculators",
@@ -420,12 +505,12 @@ export const globalKeywords: string[] = [
   "3d print pricing formula",
   "resin 3d printing cost",
 
+  // Electric Energy & Power Usage SEO Keywords
+  ...electricKeywords,
+
   // Expanded Calculators Suite SEO Keywords
   ...expandedSuiteKeywords
 ];
-
-
-
 
 
 

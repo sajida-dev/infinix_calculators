@@ -351,21 +351,6 @@ export const sidingFaqs: FAQItem[] = [
   }
 ];
 
-export const dinkytownFaqs: FAQItem[] = [
-  {
-    "question": "What are Dinkytown Financial Calculators?",
-    "answer": "Dinkytown Financial Calculators are traditional financial web utilities widely licensed by banks, credit unions, and financial advisor websites for mortgage, loan, and retirement math."
-  },
-  {
-    "question": "Why use Infinix Calculators as a modern free Dinkytown alternative?",
-    "answer": "Infinix Calculators offers a fast, modern, mobile-first alternative to legacy Dinkytown calculators. Features include responsive glassmorphism UI, dark mode support, real-time interactive sliders, instant export calculations, and 100% free access without ads or registration wall."
-  },
-  {
-    "question": "Why compare debt payoff and savings goals together?",
-    "answer": "High-interest credit card debt (18–29% APR) drains wealth significantly faster than standard savings or money market accounts build interest. Comparing both side-by-side helps optimize your debt-avalanche or debt-snowball strategy while maintaining emergency liquidity."
-  }
-];
-
 export const metalRoofFaqs: FAQItem[] = [
   {
     "question": "How many screws do I need for a metal roof?",
@@ -454,17 +439,6 @@ export const calstrsFaqs: FAQItem[] = [
   }
 ];
 
-export const globalSurgeryFaqs: FAQItem[] = [
-  {
-    "question": "What is a global surgery period?",
-    "answer": "A global period is the timeframe during which routine post-operative care is bundled into the surgical procedure payment and cannot be billed separately."
-  },
-  {
-    "question": "What modifiers bypass global periods?",
-    "answer": "Modifiers like -24 (unrelated E/M), -58 (staged procedure), -78 (return to OR for complications), and -79 (unrelated procedure by same physician) are used to report services during global periods."
-  }
-];
-
 export const mortgageKentuckyFaqs: FAQItem[] = [
   {
     "question": "What is the average property tax rate in Kentucky?",
@@ -538,17 +512,6 @@ export const armMortgageFaqs: FAQItem[] = [
   {
     "question": "What is an ARM lifetime cap?",
     "answer": "The maximum amount the interest rate can increase over the life of the loan above the initial interest rate."
-  }
-];
-
-export const electricFaqs: FAQItem[] = [
-  {
-    "question": "What is a kWh?",
-    "answer": "A kilowatt-hour (kWh) is a unit of energy equivalent to using 1,000 watts of power for one hour."
-  },
-  {
-    "question": "Which home appliances use the most electricity?",
-    "answer": "Space heaters, air conditioners, water heaters, clothes dryers, and refrigerators are typically the largest energy consumers in a home."
   }
 ];
 

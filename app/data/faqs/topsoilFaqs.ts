@@ -16,5 +16,17 @@ export const topsoilFaqs: FAQItem[] = [
   {
     "question": "What is the best topsoil depth for lawn and grass seeding?",
     "answer": "For starting a new lawn from seed or laying sod, a minimum topsoil depth of 4 to 6 inches is recommended to allow healthy root penetration. Top-dressing an existing established lawn requires only a thin layer of 1/4 to 1/2 inch to improve soil structure without suffocating existing grass blades. Calculate exact depth requirements using our <a href=\"/calculators/topsoil\">Topsoil Depth Calculator</a> and read our <a href=\"/blog/best-soil-depth-for-grass\">best soil depth for grass guide</a>."
+  },
+  {
+    "question": "Where can I buy bulk topsoil or dirt near me and how much is delivery?",
+    "answer": "You can purchase bulk topsoil from local landscaping supply yards, nurseries, quarry depots, and mulch suppliers. Bulk delivery generally costs $40 to $120 per trip with typical tandem dump truck capacities between 5 and 15 cubic yards. Read our comprehensive <a href=\"/blog/topsoil-cost-per-yard-and-bulk-dirt-prices-near-me\">Topsoil Near Me & Bulk Dirt Buying Guide</a>."
+  },
+  {
+    "question": "How much does a yard of topsoil weigh in tons?",
+    "answer": "One cubic yard of dry screened topsoil weighs approximately 2,000 to 2,200 pounds (1.0 to 1.1 tons). If the topsoil is damp or rich in heavy loam and moisture, a single cubic yard can weigh up to 2,700 pounds (1.35 tons). Check our <a href=\"/calculators/topsoil\">Topsoil Calculator</a> to see instant cubic yards to ton conversions."
+  },
+  {
+    "question": "How many bags of topsoil equal 1 cubic yard?",
+    "answer": "One cubic yard equals 27 cubic feet. A standard 0.75 cu. ft. soil bag requires exactly 36 bags to make 1 cubic yard. If you are buying smaller 0.5 cu. ft. bags, you will need 54 bags. For projects requiring more than 2 cubic yards, bulk delivery is almost always 50% cheaper than bagged soil."
   }
 ];

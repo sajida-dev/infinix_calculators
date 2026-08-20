@@ -20,5 +20,13 @@ export const cbmFaqs: FAQItem[] = [
   {
     "question": "What is volumetric weight (chargeable weight) in CBM shipping?",
     "answer": "For air cargo, 1 CBM equals 167 kg of volumetric weight. For ocean freight (LCL), 1 CBM equals 1,000 kg. Freight carriers bill based on whichever is higher between actual gross weight and volumetric weight."
+  },
+  {
+    "question": "What does 0.4 CBM or 0.6 CBM mean for small freight shipments?",
+    "answer": "A 0.4 CBM shipment represents 0.4 cubic meters (approx 14.1 cubic feet, or about 8 to 10 medium courier boxes). For air shipping, 0.4 CBM equals roughly 66.8 kg of volumetric weight. A 0.6 CBM package represents ~21.2 cubic feet (or 100 kg volumetric weight). Calculate exact carton fits with our <a href=\"/calculators/cbm\">CBM Shipping Calculator</a>."
+  },
+  {
+    "question": "Is CBM the same as m³ (cubic meters)?",
+    "answer": "Yes. CBM is the global logistics abbreviation for cubic meters (m³). 1 CBM = 1 m³ = 35.3147 cubic feet = 61,024 cubic inches."
   }
 ];

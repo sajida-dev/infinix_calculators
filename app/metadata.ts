@@ -53,7 +53,7 @@ export const defaultMetadata: Metadata = {
     siteName: "Infinix Calculators",
     images: [
       {
-        url: "/og-image.png",
+        url: "/calculators-infinix-calculators.webp",
         width: 1200,
         height: 630,
         alt: "Infinix Calculators",
@@ -64,7 +64,7 @@ export const defaultMetadata: Metadata = {
     card: "summary_large_image",
     title: "Infinix Calculators",
     description: "Professional calculators for finance, construction, health, and more.",
-    images: ["/infinix-calculator-brand-logo.png"],
+    images: ["/infinix-calculator-brand-logo.webp"],
     creator: "@Infinix",
   },
   alternates: {

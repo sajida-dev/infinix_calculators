@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { calculatorsData } from "../app/data/calculatorsData";
 import { blogData } from "../app/data/blogData";
+import { authorsData } from "../app/data/authorsData";
 
 const baseUrl = "https://infinixcalculator.com";
 
@@ -14,12 +15,22 @@ const generateSitemap = () => {
     { loc: "/calculators", lastmod: new Date().toISOString(), changefreq: "daily", priority: "0.9" },
     { loc: "/calculators/topsoil", lastmod: new Date().toISOString(), changefreq: "daily", priority: "0.9" },
     { loc: "/blog", lastmod: new Date().toISOString(), changefreq: "weekly", priority: "0.8" },
-    { loc: "/about", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.5" },
+    { loc: "/authors", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.7" },
+    { loc: "/about", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.6" },
     { loc: "/contact", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.5" },
+    { loc: "/editorial-policy", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.5" },
     { loc: "/privacy", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.3" },
     { loc: "/terms", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.3" },
     { loc: "/disclaimer", lastmod: new Date().toISOString(), changefreq: "monthly", priority: "0.3" },
   ];
+
+  // Dynamic authors
+  const authorUrls = Object.values(authorsData).map((author) => ({
+    loc: `/authors/${author.slug}`,
+    lastmod: new Date().toISOString(),
+    changefreq: "monthly",
+    priority: "0.7",
+  }));
 
   // Dynamic calculators
   const calcUrls = Object.values(calculatorsData).map((calc) => ({
@@ -37,7 +48,7 @@ const generateSitemap = () => {
     priority: "0.7",
   }));
 
-  const allUrls = [...staticPages, ...calcUrls, ...blogUrls];
+  const allUrls = [...staticPages, ...authorUrls, ...calcUrls, ...blogUrls];
 
   const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

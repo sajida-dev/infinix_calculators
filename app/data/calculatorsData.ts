@@ -1,5 +1,5 @@
 import * as Faqs from "./faqs";
-import { grossUpKeywords } from "./keywords";
+import { grossUpKeywords, tanInverseKeywords, pinkAestheticKeywords, mortgageGameKeywords, groutTileKeywords, searchConsoleEnrichedKeywords, expandedSuiteKeywords, electricKeywords } from "./keywords";
 export interface CalculatorInput {
   id: string;
   label: string;
@@ -4402,19 +4402,33 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Electric Calculator",
     category: "math",
     categoryLabel: "Math & Business Productivity",
-    seoTitle: "Electric Energy Usage & Appliance Cost Calculator",
-    metaDescription: "Estimate electricity consumption and operating costs for household appliances. Convert wattage, hours of usage, and utility rates to dollar values.",
-    keywords: ["electric calculator", "energy usage calculator", "appliance electricity cost", "kwh cost calculator"],
-    hook: "Calculate operating costs for any electrical appliance.",
-    description: "Input appliance power rating and daily usage hours to estimate daily, monthly, and annual utility bills.",
+    seoTitle: "Electric Cost Calculator - Appliance Energy Usage & kWh Bill Estimator",
+    metaDescription: "Calculate appliance electricity consumption and power costs. Compute daily, monthly, and yearly kWh utility expenses with custom electric rates and duty cycles.",
+    keywords: electricKeywords,
+    hook: "Calculate Appliance Electricity Consumption, Kilowatt-Hours & Monthly Utility Bills Instantly.",
+    description: "Enter appliance wattage, daily usage hours, and your local electricity rate per kWh to estimate accurate daily, monthly, and annual operating costs.",
     calcTime: "1 min",
-    formula: "Cost = Power (kW) × Time (Hours) × Electricity Rate ($/kWh)",
-    formulaDescription: "Converts appliance wattage to kilowatts, calculates daily consumption in kilowatt-hours (kWh), and multiplies by standard electric utility rates.",
-    example: "A 1,000-watt space heater run for 8 hours daily at $0.16/kWh uses 8 kWh of energy, costing $1.28 per day, or $38.91 per month.",
+    formula: "Daily Energy (kWh) = (Watts × Hours Used) ÷ 1,000 | Total Cost ($) = kWh × Utility Rate ($/kWh)",
+    formulaDescription: "Converts rated appliance power draw in Watts to Kilowatts (kW), multiplies by daily operating runtime to calculate energy in Kilowatt-Hours (kWh), and multiplies by your total utility rate per kWh.",
+    example: "Running a 1,500W space heater for 6 hours daily at $0.1688/kWh consumes 9.0 kWh per day, costing $1.52 per day, $46.19 per month (30.4 days), or $554.35 per year.",
     faqs: Faqs.electricFaqs || [],
-    commonMistakes: ["Entering kilowatts instead of watts for the wattage input. (e.g. putting 1 instead of 1000 for a 1 kW heater)."],
-    useCases: ["Auditing high utility bills", "Estimating operating costs of new electronics", "Comparing appliance energy efficiency profiles"],
-    tips: ["Look for Energy Star labels on appliances for certified energy-efficient products that help reduce electricity costs."],
+    commonMistakes: [
+      "Using surge/starting wattage instead of continuous running wattage for motorized appliances.",
+      "Ignoring compressor duty cycles for refrigerators and air conditioners (which cycle on and off).",
+      "Entering total bill dollar amount instead of your utility rate per kWh ($/kWh).",
+      "Forgetting utility delivery and distribution fees, which typically add 4¢ to 10¢ per kWh above the base generation rate."
+    ],
+    useCases: [
+      "Auditing high winter heating or summer AC utility bills",
+      "Estimating Electric Vehicle (EV) Level 2 home charging costs",
+      "Budgeting high-power desktop PC, workstation, or home server running costs",
+      "Evaluating Energy Star appliance upgrades and payback periods"
+    ],
+    tips: [
+      "Find your true 'all-in' electricity rate by dividing your total electric bill dollar amount by total kWh consumed.",
+      "Appliances with cycling compressors (refrigerators, freezers, heat pumps) operate on an average 30% to 50% duty cycle rather than 100% continuous draw.",
+      "Look for Energy Star certified appliances to reduce continuous power draw by 15% to 40%."
+    ],
     inputs: [
       { id: "wattage", label: "Appliance Power Rating (Watts)", type: "number", defaultValue: 1000, unit: "W" },
       { id: "hoursPerDay", label: "Daily Usage (Hours)", type: "number", defaultValue: 8, unit: "hrs" },
@@ -4432,9 +4446,9 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
 
       return {
         kwhConsumption: { value: dailyKwh.toFixed(2), label: "Daily Energy Consumption", unit: "kWh" },
-        dailyCost: { value: dailyCost.toFixed(2), label: "Daily Operating Cost", unit: "$" },
-        monthlyCost: { value: monthlyCost.toFixed(2), label: "Monthly Operating Cost", unit: "$" },
-        annualCost: { value: annualCost.toFixed(2), label: "Annual Operating Cost", unit: "$" }
+        dailyCost: { value: `$${dailyCost.toFixed(2)}`, label: "Daily Operating Cost", unit: "" },
+        monthlyCost: { value: `$${monthlyCost.toFixed(2)}`, label: "Monthly Operating Cost (30.4 Days)", unit: "" },
+        annualCost: { value: `$${annualCost.toFixed(2)}`, label: "Annual Operating Cost (365 Days)", unit: "" }
       };
     }
   },
@@ -6922,72 +6936,72 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       };
     }
   },
-  "tan-inverse": {
-    slug: "tan-inverse",
-    name: "Tan Inverse Calculator (Arctan)",
-    category: "math",
-    categoryLabel: "Math & Business Productivity",
-    seoTitle: "Tan Inverse Calculator | Calculate Arctan (tan⁻¹) in Degrees & Radians",
-    metaDescription: "Free tan inverse calculator. Calculate arctan(x), arcsin(x), and arccos(x) in degrees and radians instantly with exact ratio output.",
-    keywords: [
-      "tan inverse calculator",
-      "tan inv calculator",
-      "inverse functions calculator",
-      "inverse trigonometric functions calculator",
-      "inverse equation calculator",
-      "exact value calculator",
-      "negative sign on calculator"
-    ],
-    hook: "Calculate Arctan (tan⁻¹) in Degrees & Radians Instantly.",
-    description: "Input any numeric value or ratio to calculate arctan, arcsin, and arccos in degrees and radians with exact geometric relations.",
-    calcTime: "1 min",
-    formula: "θ = arctan(x) = tan⁻¹(x)",
-    formulaDescription: "Finds the angle θ whose tangent is equal to ratio x. Range is between -90° and +90° (-π/2 to +π/2 radians).",
-    example: "For x = 1, arctan(1) = 45° (or π/4 rad ≈ 0.7854). For x = -1, arctan(-1) = -45°.",
-    faqs: Faqs.tanInverseFaqs || [],
-    commonMistakes: [
-      "Confusing tan⁻¹(x) with 1/tan(x) (cotangent).",
-      "Forgetting whether your calculator mode is in Degrees or Radians."
-    ],
-    useCases: [
-      "Roof slope and architectural angle measurement",
-      "Physics vector direction angle computation",
-      "Trigonometric inverse function homework"
-    ],
-    tips: [
-      "Use arctan(rise / run) to quickly determine slope pitch angles."
-    ],
-    inputs: [
-      { id: "x", label: "Ratio Value (x)", type: "number", defaultValue: 1 }
-    ],
-    calculate: (inputs) => {
-      const x = Number(inputs.x || 0);
+  // "tan-inverse": {
+  //   slug: "tan-inverse",
+  //   name: "Tan Inverse Calculator (Arctan)",
+  //   category: "math",
+  //   categoryLabel: "Math & Business Productivity",
+  //   seoTitle: "Tan Inverse Calculator | Calculate Arctan (tan⁻¹) in Degrees & Radians",
+  //   metaDescription: "Free tan inverse calculator. Calculate arctan(x), arcsin(x), and arccos(x) in degrees and radians instantly with exact ratio output.",
+  //   keywords: [
+  //     "tan inverse calculator",
+  //     "tan inv calculator",
+  //     "inverse functions calculator",
+  //     "inverse trigonometric functions calculator",
+  //     "inverse equation calculator",
+  //     "exact value calculator",
+  //     "negative sign on calculator"
+  //   ],
+  //   hook: "Calculate Arctan (tan⁻¹) in Degrees & Radians Instantly.",
+  //   description: "Input any numeric value or ratio to calculate arctan, arcsin, and arccos in degrees and radians with exact geometric relations.",
+  //   calcTime: "1 min",
+  //   formula: "θ = arctan(x) = tan⁻¹(x)",
+  //   formulaDescription: "Finds the angle θ whose tangent is equal to ratio x. Range is between -90° and +90° (-π/2 to +π/2 radians).",
+  //   example: "For x = 1, arctan(1) = 45° (or π/4 rad ≈ 0.7854). For x = -1, arctan(-1) = -45°.",
+  //   faqs: Faqs.tanInverseFaqs || [],
+  //   commonMistakes: [
+  //     "Confusing tan⁻¹(x) with 1/tan(x) (cotangent).",
+  //     "Forgetting whether your calculator mode is in Degrees or Radians."
+  //   ],
+  //   useCases: [
+  //     "Roof slope and architectural angle measurement",
+  //     "Physics vector direction angle computation",
+  //     "Trigonometric inverse function homework"
+  //   ],
+  //   tips: [
+  //     "Use arctan(rise / run) to quickly determine slope pitch angles."
+  //   ],
+  //   inputs: [
+  //     { id: "x", label: "Ratio Value (x)", type: "number", defaultValue: 1 }
+  //   ],
+  //   calculate: (inputs) => {
+  //     const x = Number(inputs.x || 0);
 
-      const rad = Math.atan(x);
-      const deg = rad * (180 / Math.PI);
+  //     const rad = Math.atan(x);
+  //     const deg = rad * (180 / Math.PI);
 
-      let asinStr = "N/A (|x| > 1)";
-      let acosStr = "N/A (|x| > 1)";
+  //     let asinStr = "N/A (|x| > 1)";
+  //     let acosStr = "N/A (|x| > 1)";
 
-      if (Math.abs(x) <= 1) {
-        const asinRad = Math.asin(x);
-        const asinDeg = asinRad * (180 / Math.PI);
-        const acosRad = Math.acos(x);
-        const acosDeg = acosRad * (180 / Math.PI);
+  //     if (Math.abs(x) <= 1) {
+  //       const asinRad = Math.asin(x);
+  //       const asinDeg = asinRad * (180 / Math.PI);
+  //       const acosRad = Math.acos(x);
+  //       const acosDeg = acosRad * (180 / Math.PI);
 
-        asinStr = `${asinDeg.toFixed(4)}° (${asinRad.toFixed(4)} rad)`;
-        acosStr = `${acosDeg.toFixed(4)}° (${acosRad.toFixed(4)} rad)`;
-      }
+  //       asinStr = `${asinDeg.toFixed(4)}° (${asinRad.toFixed(4)} rad)`;
+  //       acosStr = `${acosDeg.toFixed(4)}° (${acosRad.toFixed(4)} rad)`;
+  //     }
 
-      return {
-        arctanDegrees: { value: deg.toFixed(4) + "°", label: "Arctan Angle (Degrees)", unit: "deg" },
-        arctanRadians: { value: rad.toFixed(6), label: "Arctan Angle (Radians)", unit: "rad" },
-        piFraction: { value: (rad / Math.PI).toFixed(4) + " π rad", label: "Fraction of π Radians", unit: "π rad" },
-        arcsinValue: { value: asinStr, label: "Arcsin Reference (sin⁻¹)", unit: "" },
-        arccosValue: { value: acosStr, label: "Arccos Reference (cos⁻¹)", unit: "" }
-      };
-    }
-  },
+  //     return {
+  //       arctanDegrees: { value: deg.toFixed(4) + "°", label: "Arctan Angle (Degrees)", unit: "deg" },
+  //       arctanRadians: { value: rad.toFixed(6), label: "Arctan Angle (Radians)", unit: "rad" },
+  //       piFraction: { value: (rad / Math.PI).toFixed(4) + " π rad", label: "Fraction of π Radians", unit: "π rad" },
+  //       arcsinValue: { value: asinStr, label: "Arcsin Reference (sin⁻¹)", unit: "" },
+  //       arccosValue: { value: acosStr, label: "Arccos Reference (cos⁻¹)", unit: "" }
+  //     };
+  //   }
+  // },
   "polynomial-multiplication": {
     slug: "polynomial-multiplication",
     name: "Polynomial Multiplication Calculator",
@@ -7556,6 +7570,68 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
         totalPaidHours: { value: `${netHours.toFixed(2)} hrs`, label: "Net Paid Work Hours", unit: "" },
         grossPayAmount: { value: `$${grossPay.toFixed(2)}`, label: "Gross Shift Earnings", unit: "" },
         breakDeduction: { value: `${breakMin} mins`, label: "Unpaid Break Deducted", unit: "" }
+      };
+    }
+  },
+
+  // Tan Inverse / Arctan Trigonometry Calculator
+  "tan-inverse": {
+    slug: "tan-inverse",
+    name: "Tan Inverse Calculator (Arctan)",
+    category: "math",
+    categoryLabel: "Trigonometry & Mathematics",
+    seoTitle: "Tan Inverse Calculator - Calculate Arctan (Radians, Degrees & π)",
+    metaDescription: "Free online tan inverse (arctan) calculator. Calculate inverse tangent in radians, degrees, and exact π fractions with step-by-step angle formulas.",
+    keywords: tanInverseKeywords,
+    hook: "Calculate Tan Inverse (Arctan) in Radians, Degrees & Exact π Fractions Instantly.",
+    description: "Enter any numerical value x to calculate θ = arctan(x) in both degrees and radians with quadrant mapping and step-by-step trigonometry formulas.",
+    calcTime: "Instant",
+    formula: "θ = arctan(x) = tan⁻¹(x); Degrees = Radians × (180 / π)",
+    formulaDescription: "Calculates the angle whose tangent is equal to x. For x = 1, arctan(1) = 45° = π/4 rad. For negative values, arctan(-x) = -arctan(x).",
+    example: "For x = 1: arctan(1) = 0.7854 rad = 45° = π/4. For x = -3: arctan(-3) = -1.2490 rad = -71.57°.",
+    faqs: Faqs.tanInverseFaqs,
+    commonMistakes: [
+      "Confusing tan⁻¹(x) with 1/tan(x) (cotangent). Inverse tangent finds an angle, whereas cotangent is the reciprocal ratio.",
+      "Forgetting to check whether your calculation expects radians or degrees.",
+      "Ignoring the standard principal range of arctan, which is strictly between -90° and +90° (-π/2 to π/2)."
+    ],
+    useCases: [
+      "Physics & engineering vector angle calculations",
+      "Roof pitch, slope incline, and ramp gradient measurements",
+      "Calculus integration and differential equations",
+      "Robotics coordinate transformations"
+    ],
+    tips: [
+      "For x = 1, arctan is always exactly 45° (π/4 rad).",
+      "For very large positive values of x, arctan approaches +90° (π/2 rad).",
+      "Use atan2(y, x) if you are computing 2D vectors in Quadrants II or III."
+    ],
+    inputs: [
+      { id: "value", label: "Value (x)", type: "number", defaultValue: 1 },
+      {
+        id: "angleUnit",
+        label: "Primary Display Unit",
+        type: "select",
+        defaultValue: "both",
+        options: [
+          { value: "both", label: "Both (Degrees & Radians)" },
+          { value: "deg", label: "Degrees (°)" },
+          { value: "rad", label: "Radians (rad)" }
+        ]
+      }
+    ],
+    calculate: (inputs) => {
+      const x = Number(inputs.value || 0);
+      const rad = Math.atan(x);
+      const deg = (rad * 180) / Math.PI;
+      const piMultiple = (rad / Math.PI).toFixed(4);
+      const quadrant = rad > 0 ? "Quadrant I (0° to 90°)" : rad < 0 ? "Quadrant IV (-90° to 0°)" : "Origin (0°)";
+
+      return {
+        degrees: { value: `${deg.toFixed(4)}°`, label: "Angle in Degrees (°)", unit: "°" },
+        radians: { value: `${rad.toFixed(6)} rad`, label: "Angle in Radians (rad)", unit: "rad" },
+        piNotation: { value: `${piMultiple}π rad`, label: "π Radian Fraction", unit: "" },
+        quadrant: { value: quadrant, label: "Trigonometric Quadrant", unit: "" }
       };
     }
   }

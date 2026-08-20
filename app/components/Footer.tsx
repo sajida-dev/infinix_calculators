@@ -25,11 +25,13 @@ export default function Footer() {
   const companyLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
+    { name: "Editorial Board", href: "/authors" },
     { name: "Blog", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   const legalLinks = [
+    { name: "Editorial Policy", href: "/editorial-policy" },
     { name: "Terms of Service", href: "/terms" },
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Disclaimer", href: "/disclaimer" },
@@ -47,19 +49,19 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               {/* Light Mode Logo */}
               <Image
-                src="/infinix-calculator-brand-logo.webp"
+                src="/infinix-calculator-logo.webp"
                 alt="Infinix Calculators"
-                width={140}
-                height={35}
-                className="h-9 w-auto object-contain dark:hidden"
+                width={350}
+                height={170}
+                className="h-30 w-auto object-contain dark:hidden"
               />
               {/* Dark Mode Logo */}
               <Image
-                src="/infinix-calculator-brand-logo-dark.webp"
+                src="/infinix-calculator-logo-dark.webp"
                 alt="Infinix Calculators"
-                width={140}
-                height={35}
-                className="h-9 w-auto object-contain hidden dark:block"
+                width={350}
+                height={170}
+                className="h-30 w-auto object-contain hidden dark:block"
               />
             </Link>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-sm">

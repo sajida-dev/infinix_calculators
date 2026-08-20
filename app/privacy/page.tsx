@@ -171,29 +171,46 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              Our website may display advertisements provided by third-party ad networks such as Google AdSense.
-              These services may use cookies to show relevant ads based on your browsing behavior.
+              We use third-party advertising companies, including Google AdSense, to serve ads when you visit our website. These companies may use cookies, web beacons, and similar tracking technologies (such as the DoubleClick DART cookie) to serve ads based on your prior visits to our website or other websites on the Internet.
             </p>
 
             <div className="mt-6 grid md:grid-cols-2 gap-5">
               <div className="p-5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Third-Party Ads</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Google Advertising Cookies</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  Ads are served by external providers and are not controlled directly by us.
+                  Google&apos;s use of advertising cookies enables it and its certified partners to serve relevant ads to our visitors based on their browsing activity across the web.
                 </p>
               </div>
 
               <div className="p-5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Personalized Ads</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Opt-Out &amp; Privacy Controls</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  Some ads may be personalized using cookies and usage data.
+                  Users may opt out of personalized advertising at any time by managing their ad preferences in their Google account or through industry-standard consumer choice portals.
                 </p>
               </div>
             </div>
 
-            <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
-              You can disable personalized ads by adjusting your browser settings or visiting ad preference controls provided by the ad network.
-            </p>
+            <div className="mt-5 p-4 rounded-xl bg-slate-100 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] text-sm text-slate-700 dark:text-slate-300 space-y-2">
+              <p className="font-medium text-slate-900 dark:text-slate-100">Managing Your Ad Preferences:</p>
+              <ul className="list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300">
+                <li>
+                  Opt out of Google personalized advertising by visiting{" "}
+                  <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-sky-400 font-medium underline">
+                    Google Ads Settings
+                  </a>.
+                </li>
+                <li>
+                  Opt out of third-party vendor cookies for personalized advertising by visiting{" "}
+                  <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-sky-400 font-medium underline">
+                    www.aboutads.info
+                  </a>{" "}
+                  or{" "}
+                  <a href="https://www.networkadvertising.org/choices/" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-sky-400 font-medium underline">
+                    Network Advertising Initiative
+                  </a>.
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* SECURITY */}

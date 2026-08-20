@@ -5,6 +5,8 @@ import Script from "next/script";
 import { notFound } from "next/navigation";
 import { blogData } from "../../data/blogData";
 import { calculatorsData } from "../../data/calculatorsData";
+import { getAuthorBySlug, getAuthorForCategory } from "../../data/authorsData";
+import AuthorBio from "../../components/AuthorBio";
 import CalculatorFaqs from "../../components/CalculatorFaqs";
 import CategoryClusterNav from "../../components/CategoryClusterNav";
 import SearchInput from "../../components/SearchInput";
@@ -47,6 +49,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  // Author resolution for E-E-A-T
+  const author = post.authorSlug 
+    ? getAuthorBySlug(post.authorSlug) 
+    : getAuthorForCategory(post.category);
+
   // Find companion calculator
   const calculator = post.calculatorSlug ? calculatorsData[post.calculatorSlug] : null;
 
@@ -88,7 +95,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     { name: "Square Fee Calculator", href: "/calculators/square-fee", category: "Finance" },
   ];
 
-  // Schema Injection
+  // Schema Injection with author.url for Person schema linking
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -97,14 +104,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "datePublished": post.date,
     "author": {
       "@type": "Person",
-      "name": post.author,
+      "name": author.name,
+      "jobTitle": author.jobTitle,
+      "url": `https://infinixcalculator.com/authors/${author.slug}`,
     },
     "publisher": {
       "@type": "Organization",
       "name": "Infinix Calculators",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://infinixcalculator.com/infinix-calculator-brand-logo.png",
+        "url": "https://infinixcalculator.com/infinix-calculator-brand-logo.webp",
       },
     },
     "image": `https://infinixcalculator.com${post.image}`,
@@ -188,10 +197,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mt-4 tracking-tight leading-tight">
                   {post.title}
                 </h1>
-                <div className="mt-4 flex items-center gap-3 text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase tracking-wider">
-                  <span>By {post.author}</span>
-                  <span>|</span>
-                  <span>{post.date}</span>
+                <div className="mt-5 flex flex-wrap items-center justify-between gap-4 text-xs">
+                  <Link href={`/authors/${author.slug}`} className="group flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full overflow-hidden border border-primary/30 shrink-0">
+                      <Image
+                        src={author.avatar}
+                        alt={author.name}
+                        width={36}
+                        height={36}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <span className="block font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">
+                        {author.name}
+                      </span>
+                      <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+                        {author.credentials}
+                      </span>
+                    </div>
+                  </Link>
+
+                  <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 font-medium">
+                    <span>Published: {post.date}</span>
+                  </div>
                 </div>
               </header>
 
@@ -213,6 +242,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 className="blog-content mt-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base space-y-6"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
+
+              {/* Author Bio Box */}
+              <div className="mt-12">
+                <AuthorBio authorSlug={author.slug} category={post.category} />
+              </div>
 
               {/* Embedded Reusable FAQ Component for Related Calculator */}
               {targetFaqSlug && (

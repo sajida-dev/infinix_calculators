@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getAuthorBySlug, getAuthorForCategory } from "../data/authorsData";
 
 type BlogCardProps = {
   post: {
@@ -10,10 +11,17 @@ type BlogCardProps = {
     date: string;
     excerpt: string;
     author: string;
+    authorSlug?: string;
   };
 };
 
 export default function BlogCard({ post }: BlogCardProps) {
+  const author = post.authorSlug
+    ? getAuthorBySlug(post.authorSlug)
+    : post.author && post.author !== "Infinix Calculators Editorial Team"
+      ? { name: post.author, slug: "david-miller" }
+      : getAuthorForCategory(post.category);
+
   return (
     <article
       key={post.slug}
@@ -46,7 +54,12 @@ export default function BlogCard({ post }: BlogCardProps) {
           </p>
         </div>
         <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#4D5156]/80 flex items-center justify-between">
-          <span className="text-[10px] text-slate-400 dark:text-slate-500 font-semibold">By {post.author}</span>
+          <Link
+            href={`/authors/${author.slug}`}
+            className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold hover:text-primary transition-colors"
+          >
+            By {author.name}
+          </Link>
           <Link href={`/blog/${post.slug}`} className="text-xs font-bold text-primary hover:underline">
             Read Guide
           </Link>

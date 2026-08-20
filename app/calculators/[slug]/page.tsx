@@ -7,9 +7,76 @@ import { blogData } from "../../../app/data/blogData";
 import DynamicCalculator from "../../../app/components/DynamicCalculator";
 import CalculatorFaqs from "../../../app/components/CalculatorFaqs";
 import CategoryClusterNav from "../../../app/components/CategoryClusterNav";
+import CalculatorReviewBadge from "../../../app/components/CalculatorReviewBadge";
 import AvalaraSeoContent from "../../../app/components/seo/AvalaraSeoContent";
 import ConcreteSeoContent from "../../../app/components/seo/ConcreteSeoContent";
 import RoofSeoContent from "../../../app/components/seo/RoofSeoContent";
+import AffirmSeoContent from "../../../app/components/seo/AffirmSeoContent";
+import MortgageGameSeoContent from "../../../app/components/seo/MortgageGameSeoContent";
+import CbmSeoContent from "../../../app/components/seo/CbmSeoContent";
+import SquareFeeSeoContent from "../../../app/components/seo/SquareFeeSeoContent";
+import TherapyProductivitySeoContent from "../../../app/components/seo/TherapyProductivitySeoContent";
+import GoogleReviewSeoContent from "../../../app/components/seo/GoogleReviewSeoContent";
+import GrossUpSeoContent from "../../../app/components/seo/GrossUpSeoContent";
+import ProRataSeoContent from "../../../app/components/seo/ProRataSeoContent";
+import BalanceTransferSeoContent from "../../../app/components/seo/BalanceTransferSeoContent";
+import DrywallSeoContent from "../../../app/components/seo/DrywallSeoContent";
+import FenceCostSeoContent from "../../../app/components/seo/FenceCostSeoContent";
+import MulchSeoContent from "../../../app/components/seo/MulchSeoContent";
+import HecmSeoContent from "../../../app/components/seo/HecmSeoContent";
+import HelocPayoffSeoContent from "../../../app/components/seo/HelocPayoffSeoContent";
+import BmiSeoContent from "../../../app/components/seo/BmiSeoContent";
+import LsatSeoContent from "../../../app/components/seo/LsatSeoContent";
+import GeorgiaPayrollSeoContent from "../../../app/components/seo/GeorgiaPayrollSeoContent";
+import ReverseTaxSeoContent from "../../../app/components/seo/ReverseTaxSeoContent";
+import LosertownCalorieSeoContent from "../../../app/components/seo/LosertownCalorieSeoContent";
+import RothVsTraditionalIraSeoContent from "../../../app/components/seo/RothVsTraditionalIraSeoContent";
+import SellerFinancingSeoContent from "../../../app/components/seo/SellerFinancingSeoContent";
+import CreditCardPayoffSeoContent from "../../../app/components/seo/CreditCardPayoffSeoContent";
+import ProductivitySeoContent from "../../../app/components/seo/ProductivitySeoContent";
+import GrassSeedSeoContent from "../../../app/components/seo/GrassSeedSeoContent";
+import RentVsSellSeoContent from "../../../app/components/seo/RentVsSellSeoContent";
+import WeddingAlcoholSeoContent from "../../../app/components/seo/WeddingAlcoholSeoContent";
+import BridgeLoanSeoContent from "../../../app/components/seo/BridgeLoanSeoContent";
+import TvMountingHeightSeoContent from "../../../app/components/seo/TvMountingHeightSeoContent";
+import PondLinerSeoContent from "../../../app/components/seo/PondLinerSeoContent";
+import VectorProductSeoContent from "../../../app/components/seo/VectorProductSeoContent";
+import MortgageIdahoSeoContent from "../../../app/components/seo/MortgageIdahoSeoContent";
+import MortgageKansasSeoContent from "../../../app/components/seo/MortgageKansasSeoContent";
+import WeddingDrinkSeoContent from "../../../app/components/seo/WeddingDrinkSeoContent";
+import PuppyWeightSeoContent from "../../../app/components/seo/PuppyWeightSeoContent";
+import PuppyGrowthSeoContent from "../../../app/components/seo/PuppyGrowthSeoContent";
+import DogSizeSeoContent from "../../../app/components/seo/DogSizeSeoContent";
+import DogPregnancySeoContent from "../../../app/components/seo/DogPregnancySeoContent";
+import MortgageMaineSeoContent from "../../../app/components/seo/MortgageMaineSeoContent";
+import BrickSeoContent from "../../../app/components/seo/BrickSeoContent";
+import IftaSeoContent from "../../../app/components/seo/IftaSeoContent";
+import Retirement457SeoContent from "../../../app/components/seo/Retirement457SeoContent";
+import SidingSeoContent from "../../../app/components/seo/SidingSeoContent";
+import DinkytownSeoContent from "../../../app/components/seo/DinkytownSeoContent";
+import MetalRoofSeoContent from "../../../app/components/seo/MetalRoofSeoContent";
+import PawnSeoContent from "../../../app/components/seo/PawnSeoContent";
+import HardMoneySeoContent from "../../../app/components/seo/HardMoneySeoContent";
+import LeaseVsBuyCarSeoContent from "../../../app/components/seo/LeaseVsBuyCarSeoContent";
+import PointsVsCashSeoContent from "../../../app/components/seo/PointsVsCashSeoContent";
+import OklahomaTaxSeoContent from "../../../app/components/seo/OklahomaTaxSeoContent";
+import NovigSeoContent from "../../../app/components/seo/NovigSeoContent";
+import CalstrsSeoContent from "../../../app/components/seo/CalstrsSeoContent";
+import GlobalSurgerySeoContent from "../../../app/components/seo/GlobalSurgerySeoContent";
+import MortgageKentuckySeoContent from "../../../app/components/seo/MortgageKentuckySeoContent";
+import ReverseSalesTaxSeoContent from "../../../app/components/seo/ReverseSalesTaxSeoContent";
+import LaticreteGroutSeoContent from "../../../app/components/seo/LaticreteGroutSeoContent";
+import MortgageArkansasSeoContent from "../../../app/components/seo/MortgageArkansasSeoContent";
+import VirginiaSalarySeoContent from "../../../app/components/seo/VirginiaSalarySeoContent";
+import MichiganTaxSeoContent from "../../../app/components/seo/MichiganTaxSeoContent";
+import MortgageScSeoContent from "../../../app/components/seo/MortgageScSeoContent";
+import ArkansasSalesTaxSeoContent from "../../../app/components/seo/ArkansasSalesTaxSeoContent";
+import ArmMortgageSeoContent from "../../../app/components/seo/ArmMortgageSeoContent";
+import ElectricSeoContent from "../../../app/components/seo/ElectricSeoContent";
+import TileSqftSeoContent from "../../../app/components/seo/TileSqftSeoContent";
+import DynastyDaddySeoContent from "../../../app/components/seo/DynastyDaddySeoContent";
+import MapeiGroutSeoContent from "../../../app/components/seo/MapeiGroutSeoContent";
+import MarylandTaxSeoContent from "../../../app/components/seo/MarylandTaxSeoContent";
 
 interface CalculatorPageProps {
   params: Promise<{ slug: string }>;
@@ -176,6 +243,9 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
           {/* Main Content (3/4 Width) */}
           <div className="lg:col-span-3 space-y-10">
+            {/* E-E-A-T Reviewer Badge */}
+            <CalculatorReviewBadge category={calc.category} />
+
             {/* Brand Independence Notice */}
             {calc.brandDisclaimer && (
               <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed mb-6">
@@ -259,7 +329,37 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                 </div>
               )}
 
-              {/* Custom Premium SEO Article Content */}
+              {/* Custom Premium SEO Article Content for High-Impression Query Hubs */}
+              {slug === "affirm" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <AffirmSeoContent />
+                </div>
+              )}
+              {slug === "mortgage-calculator-game" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MortgageGameSeoContent />
+                </div>
+              )}
+              {slug === "cbm" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <CbmSeoContent />
+                </div>
+              )}
+              {slug === "square-fee" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <SquareFeeSeoContent />
+                </div>
+              )}
+              {slug === "therapy-productivity" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <TherapyProductivitySeoContent />
+                </div>
+              )}
+              {slug === "google-review" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <GoogleReviewSeoContent />
+                </div>
+              )}
               {slug === "avalara-sales-tax" && (
                 <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
                   <AvalaraSeoContent />
@@ -270,9 +370,309 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                   <ConcreteSeoContent />
                 </div>
               )}
+              {slug === "gross-up" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <GrossUpSeoContent />
+                </div>
+              )}
+              {slug === "pro-rata" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <ProRataSeoContent />
+                </div>
+              )}
+              {slug === "balance-transfer" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <BalanceTransferSeoContent />
+                </div>
+              )}
+              {slug === "drywall" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <DrywallSeoContent />
+                </div>
+              )}
+              {slug === "fence-cost" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <FenceCostSeoContent />
+                </div>
+              )}
+              {slug === "mulch" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MulchSeoContent />
+                </div>
+              )}
               {slug === "roof" && (
                 <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
                   <RoofSeoContent />
+                </div>
+              )}
+              {slug === "hecm" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <HecmSeoContent />
+                </div>
+              )}
+              {slug === "heloc-payoff" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <HelocPayoffSeoContent />
+                </div>
+              )}
+              {slug === "bmi" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <BmiSeoContent />
+                </div>
+              )}
+              {slug === "lsat-score-calculator" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <LsatSeoContent />
+                </div>
+              )}
+              {slug === "georgia-payroll" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <GeorgiaPayrollSeoContent />
+                </div>
+              )}
+              {slug === "reverse-tax" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <ReverseTaxSeoContent />
+                </div>
+              )}
+              {slug === "losertown-calorie" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <LosertownCalorieSeoContent />
+                </div>
+              )}
+              {slug === "roth-vs-traditional-ira" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <RothVsTraditionalIraSeoContent />
+                </div>
+              )}
+              {slug === "seller-financing" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <SellerFinancingSeoContent />
+                </div>
+              )}
+              {slug === "credit-card-payoff" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <CreditCardPayoffSeoContent />
+                </div>
+              )}
+              {slug === "productivity" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <ProductivitySeoContent />
+                </div>
+              )}
+              {slug === "grass-seed" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <GrassSeedSeoContent />
+                </div>
+              )}
+              {slug === "rent-vs-sell" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <RentVsSellSeoContent />
+                </div>
+              )}
+              {slug === "wedding-alcohol" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <WeddingAlcoholSeoContent />
+                </div>
+              )}
+              {slug === "bridge-loan" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <BridgeLoanSeoContent />
+                </div>
+              )}
+              {slug === "tv-mounting-height" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <TvMountingHeightSeoContent />
+                </div>
+              )}
+              {slug === "pond-liner" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <PondLinerSeoContent />
+                </div>
+              )}
+              {slug === "vector-product" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <VectorProductSeoContent />
+                </div>
+              )}
+              {slug === "mortgage-idaho" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MortgageIdahoSeoContent />
+                </div>
+              )}
+              {slug === "mortgage-kansas" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MortgageKansasSeoContent />
+                </div>
+              )}
+              {slug === "wedding-drink" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <WeddingDrinkSeoContent />
+                </div>
+              )}
+              {slug === "puppy-to-dog-weight" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <PuppyWeightSeoContent />
+                </div>
+              )}
+              {slug === "puppy-growth" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <PuppyGrowthSeoContent />
+                </div>
+              )}
+              {slug === "dog-size" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <DogSizeSeoContent />
+                </div>
+              )}
+              {slug === "dog-pregnancy" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <DogPregnancySeoContent />
+                </div>
+              )}
+              {slug === "mortgage-maine" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MortgageMaineSeoContent />
+                </div>
+              )}
+              {slug === "brick" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <BrickSeoContent />
+                </div>
+              )}
+              {slug === "ifta" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <IftaSeoContent />
+                </div>
+              )}
+              {slug === "457-retirement" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <Retirement457SeoContent />
+                </div>
+              )}
+              {slug === "siding" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <SidingSeoContent />
+                </div>
+              )}
+              {slug === "dinkytown" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <DinkytownSeoContent />
+                </div>
+              )}
+              {slug === "metal-roof" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MetalRoofSeoContent />
+                </div>
+              )}
+              {slug === "pawn" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <PawnSeoContent />
+                </div>
+              )}
+              {slug === "hard-money" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <HardMoneySeoContent />
+                </div>
+              )}
+              {slug === "lease-vs-buy-car" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <LeaseVsBuyCarSeoContent />
+                </div>
+              )}
+              {slug === "points-vs-cash" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <PointsVsCashSeoContent />
+                </div>
+              )}
+              {slug === "oklahoma-tax" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <OklahomaTaxSeoContent />
+                </div>
+              )}
+              {slug === "novig" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <NovigSeoContent />
+                </div>
+              )}
+              {slug === "calstrs" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <CalstrsSeoContent />
+                </div>
+              )}
+              {slug === "global-surgery" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <GlobalSurgerySeoContent />
+                </div>
+              )}
+              {slug === "mortgage-kentucky" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MortgageKentuckySeoContent />
+                </div>
+              )}
+              {slug === "reverse-sales-tax-calculator" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <ReverseSalesTaxSeoContent />
+                </div>
+              )}
+              {slug === "laticrete-grout" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <LaticreteGroutSeoContent />
+                </div>
+              )}
+              {slug === "mortgage-arkansas" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MortgageArkansasSeoContent />
+                </div>
+              )}
+              {slug === "virginia-salary" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <VirginiaSalarySeoContent />
+                </div>
+              )}
+              {slug === "michigan-tax" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MichiganTaxSeoContent />
+                </div>
+              )}
+              {slug === "mortgage-sc" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MortgageScSeoContent />
+                </div>
+              )}
+              {slug === "arkansas-sales-tax" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <ArkansasSalesTaxSeoContent />
+                </div>
+              )}
+              {slug === "arm-mortgage" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <ArmMortgageSeoContent />
+                </div>
+              )}
+              {slug === "electric" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <ElectricSeoContent />
+                </div>
+              )}
+              {slug === "tile-sqft" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <TileSqftSeoContent />
+                </div>
+              )}
+              {slug === "dynasty-daddy" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <DynastyDaddySeoContent />
+                </div>
+              )}
+              {slug === "mapei-grout" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MapeiGroutSeoContent />
+                </div>
+              )}
+              {slug === "maryland-tax" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <MarylandTaxSeoContent />
                 </div>
               )}
 

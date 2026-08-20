@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: 'Infinix Calculators',
     images: [
       {
-        url: 'https://infinixcalculator.com/og-image.png', // Optional: Add your OG image
+        url: 'https://infinixcalculator.com/calculators-infinix-calculators.webp',
         width: 1200,
         height: 630,
         alt: 'Infinix Calculators Preview',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Infinix Calculators – Professional Tools for Finance, Construction & Landscaping',
     description: 'Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.',
-    images: ['https://infinixcalculator.com/og-image.png'], // Optional: Add your Twitter image
+    images: ['https://infinixcalculator.com/calculators-infinix-calculators.webp'],
     creator: '@yourtwitterhandle', // Optional: Add your Twitter handle
   },
 };

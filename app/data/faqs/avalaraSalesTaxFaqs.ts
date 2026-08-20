@@ -3,7 +3,7 @@ import type { FAQItem } from "../calculatorsData";
 export const avalaraSalesTaxFaqs: FAQItem[] = [
   {
     "question": "What is the sales tax rate for ZIP code 94105?",
-    "answer": "The combined sales tax rate for ZIP code 94105 (San Francisco, California) is 8.625%. This comprises the California state tax of 6.00%, San Francisco County tax of 0.25%, and local district taxes of 2.375%."
+    "answer": "The combined sales tax rate for ZIP code 94105 (San Francisco, California) is 8.625%. This comprises the California state tax of 6.00%, San Francisco County tax of 0.25%, and local district taxes of 2.375%. For full breakdown and address lookups, read our <a href=\"/blog/avalara-94105-sales-tax-rate-and-address-lookup-guide\">Avalara 94105 Sales Tax & Address Lookup Guide</a> or test with our <a href=\"/calculators/avalara-sales-tax\">Avalara Sales Tax Calculator</a>."
   },
   {
     "question": "How does the Avalara tax calculator determine sales tax?",

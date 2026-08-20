@@ -198,7 +198,12 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-slate-100 dark:border-[#4D5156] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <span className="text-xs text-slate-400 dark:text-slate-500 font-semibold">By {featuredPost.author}</span>
+                  <Link
+                    href={`/authors/${featuredPost.authorSlug || 'david-miller'}`}
+                    className="text-xs text-slate-500 dark:text-slate-400 font-semibold hover:text-primary transition-colors"
+                  >
+                    By {featuredPost.author}
+                  </Link>
                   <div className="flex gap-4 items-center">
                     <Link
                       href={`/blog/${featuredPost.slug}`}

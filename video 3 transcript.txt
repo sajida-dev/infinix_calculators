@@ -1,0 +1,1379 @@
+Introduction
+
+0:00
+
+Swagnext
+
+0:01
+
+tuber-boom
+
+0:03
+
+beach7092 asks, "Can you make a video
+
+0:06
+
+about how to humanize chat GPT content?"
+
+0:09
+
+I can. I've been wanting to make this
+
+0:11
+
+for a while. Actually, I talk about it
+
+0:12
+
+sometimes, but I want to make a video
+
+0:14
+
+just about it. So, first I'm going to
+
+0:16
+
+give a high-level prompt to use to
+
+0:18
+
+humanize chat GPT content. Then, I'm
+
+0:21
+
+going to give my notes on how to
+
+0:23
+
+humanize chat GPT content because I use
+
+0:25
+
+chat GPT content sometimes for some
+
+0:27
+
+things. And then I'm gonna I'm gonna
+
+0:29
+
+read a LinkedIn post from Steven
+
+0:31
+
+Bartlett, the host of Diary of a CEO.
+
+0:34
+
+It's a LinkedIn post about Chachi PT
+
+0:37
+
+content, which I've wanted an excuse to
+
+0:39
+
+read, and I have that excuse. And so
+
+0:42
+
+that's what I got for you on this
+
+0:43
+
+episode of the show. So, first the
+
+High-Level Prompt for Humanizing ChatGPT Content
+
+0:45
+
+highle prompt, and this comes from
+
+0:47
+
+Justin Fineberg. Justin Fineberg all
+
+0:49
+
+over social media. He makes content
+
+0:51
+
+about AI and how to use AI. He has an AI
+
+0:54
+
+automation tool called Cassidy AI. I
+
+0:57
+
+want to give him a shout out because
+
+0:58
+
+he's super he's super cool with me on
+
+1:00
+
+social media and he put up a video about
+
+1:02
+
+how to humanize chatpt content and so
+
+1:05
+
+I'm going to share the prompt.
+
+1:06
+
+Everything that I share is going to be
+
+1:07
+
+in the description for this episode. But
+
+1:09
+
+his advice is in chat GPT go to settings
+
+1:13
+
+then go to personalization then custom
+
+1:15
+
+instructions and then under what traits
+
+1:18
+
+should chat GPT have use this prompt.
+
+1:21
+
+Very short prompt really simple. Write
+
+1:23
+
+like a human. Keep it professional but
+
+1:26
+
+conversational. Don't use m dashes or
+
+1:28
+
+buzzwords like streamlined. Avoid
+
+1:31
+
+sounding like a press release. Be clear,
+
+1:33
+
+direct, and natural like you're writing
+
+1:35
+
+to a smart friend. And that's it. Use
+
+1:37
+
+that prompt. That that prompt will be in
+
+1:39
+
+the description for this episode. That's
+
+1:41
+
+his advice. Put that prompt in. It will
+
+Personal Tips for Humanizing ChatGPT Content
+
+1:43
+
+help a lot. But what do I do? Because I
+
+1:45
+
+use chatpt all the time. So, first of
+
+1:47
+
+all, biggest thing, number one thing is
+
+1:49
+
+don't use m dashes. Don't use the long
+
+1:51
+
+dashes. You know, it's a shame because I
+
+1:53
+
+used to use m dashes sometimes. Now you
+
+1:56
+
+can't use them at all. If you use them,
+
+1:58
+
+they are just automatically seen as GPT
+
+2:00
+
+content. You can't you it's seen as
+
+2:02
+
+distrustw worthy. You can't use m
+
+2:05
+
+dashes. Such a shame. Such such a shame
+
+2:08
+
+because literally chachevt ruined the
+
+2:10
+
+mdash. So instead of an M dash cuz
+
+2:13
+
+ChachiPT will give a lot of M dashes in
+
+2:16
+
+content especially in copy in marketing
+
+2:18
+
+copy. What I do is I do a space then a
+
+2:21
+
+normal dash and then another space.
+
+2:23
+
+That's how I do M dashes. So when TachiP
+
+2:26
+
+gives me copy that has an M dash in it,
+
+2:28
+
+I just what I will literally do before I
+
+2:30
+
+will start editing anything is I will do
+
+2:32
+
+a search for every M dash and change
+
+2:35
+
+automatically every M dash with one
+
+2:37
+
+click. You can change change all nem- to
+
+2:40
+
+space dash space. Also, GPT40 puts out
+
+2:44
+
+fire copy. It is the best model to use
+
+2:47
+
+for chat GPT for writing copy. I have
+
+2:50
+
+found when I use chat GPT to generate
+
+2:52
+
+copy. I'm using 40. You can even just
+
+2:55
+
+copy and paste an entire page that you
+
+2:58
+
+want it to synthesize change into a
+
+3:01
+
+different style of copy. It will do a
+
+3:02
+
+great job doing that. I lit. You can
+
+3:04
+
+literally go to a page, copy all, paste
+
+3:06
+
+everything, including the footer,
+
+3:07
+
+including everything. You can just paste
+
+3:09
+
+it. Chat GPT can synthesize it into
+
+3:11
+
+copy. You still have to do the rest of
+
+3:14
+
+the things in in this podcast, like
+
+3:16
+
+remove the M dashes and take out words
+
+3:19
+
+that I'm going to talk about and test
+
+3:20
+
+your copy using GPT writing detectors to
+
+3:24
+
+make sure to make sure there's no parts
+
+3:26
+
+that are obviously AI written. But 40 is
+
+3:28
+
+a great starting point. All right, what
+
+Common ChatGPT Words to Avoid
+
+3:31
+
+about words? There's a lot of common
+
+3:32
+
+chat GPT words. I'm going to just read a
+
+3:34
+
+few of them, but there's if you're
+
+3:36
+
+watching on YouTube, I'm sharing a huge
+
+3:38
+
+block of common chat words. The biggest
+
+3:41
+
+ones that I see, I see everyone knows
+
+3:44
+
+Delve. Chat Ppt uses Delve all the time.
+
+3:47
+
+Underscores, enhance, unlock, that's a
+
+3:49
+
+big one. You see Chacht using unlock so
+
+3:52
+
+much. Foster, Groundbreaking,
+
+3:54
+
+Enlightening, Elevate, Empower.
+
+3:56
+
+Basically, if you're getting copy from
+
+3:59
+
+ChachiPT and you you have sentences that
+
+4:02
+
+has that have too many of these
+
+4:03
+
+copywriting words or buzzwords, remove
+
+4:06
+
+them. Take them out. You might have to
+
+4:08
+
+take them out yourself. You might be
+
+4:09
+
+able to tell Chat TBT to take them out.
+
+4:12
+
+That highle prompt from Justin Fineberg
+
+4:14
+
+should help. Take them out. Simplify.
+
+4:18
+
+Simplify your sentences. A lot of the
+
+4:20
+
+times, a lot of the time, Chachi PT will
+
+4:23
+
+give copy that is too verbose, that has
+
+4:25
+
+too many words. Verbose, that's a great
+
+4:27
+
+word. And you know what? I don't see
+
+4:28
+
+Chachi PT using it because it's not a
+
+4:30
+
+common copyrightiting word. But simplify
+
+4:33
+
+simplify your sentences. Simplify your
+
+Proofreading and AI Writing Detectors
+
+4:36
+
+your copy. Proofread and change a lot. I
+
+4:39
+
+proofread everything. I proofread things
+
+4:41
+
+normally two to three times. And I
+
+4:44
+
+change I change so much because I want
+
+4:46
+
+my copy to sound like a human. think you
+
+4:48
+
+kill trust when you have copy that
+
+4:50
+
+doesn't sound like it is human. I think
+
+4:53
+
+it really hurts trust and a lot of
+
+4:54
+
+people will just stop reading and then
+
+4:56
+
+that hurts for retention. That I think
+
+4:58
+
+Ran and I we were talking about that
+
+5:00
+
+actually Ran Fishkin OG SEO digital
+
+5:03
+
+marketing legend came on the show
+
+5:04
+
+yesterday such a great episode. I would
+
+5:06
+
+encourage everybody to watch or listen
+
+5:08
+
+to it and one of the things we were
+
+5:09
+
+talking about is how AI content kills
+
+5:12
+
+trust. It's like why am I even reading
+
+5:14
+
+this? Why am I going to come back to
+
+5:15
+
+this? I don't want to come back to this.
+
+5:17
+
+The other thing, the other thing worth
+
+5:19
+
+mentioning, if your content clearly
+
+5:21
+
+reads like AI and you're trying to do
+
+5:23
+
+SEO, you're trying to do search engine
+
+5:25
+
+optimization, it's going to hurt your
+
+5:27
+
+bounce rate. People are going to pogo
+
+5:28
+
+stick. They're going to go to your page.
+
+5:30
+
+They're going to they're going to leave
+
+5:32
+
+because it reads like AI. They're not
+
+5:34
+
+going to trust it. They're going to go
+
+5:35
+
+back to the search engine results page
+
+5:37
+
+and look for something that doesn't read
+
+5:38
+
+like clear AI. And Ran Fishkin and I, we
+
+5:41
+
+talked about yesterday about how
+
+5:43
+
+engagement is such a big signal for
+
+5:45
+
+Google. We I asked him engagement or
+
+5:47
+
+backlinks. He's like Google literally
+
+5:48
+
+said themselves engagement is the most
+
+5:50
+
+important thing. Having a short
+
+5:53
+
+introduction and then using lots of
+
+5:56
+
+images and videos, especially ones that
+
+5:59
+
+don't look AI generated to give examples
+
+6:02
+
+for what you are talking about in your
+
+6:04
+
+content. That humanizes trash content or
+
+6:07
+
+AI written content a lot. specific
+
+6:10
+
+images and videos. Giving examples,
+
+6:13
+
+specific examples to what you are
+
+6:14
+
+talking about and the videos and images,
+
+6:18
+
+they don't look AI generated. Humanizes
+
+6:20
+
+AI content a ton. But you really want to
+
+6:23
+
+avoid people noticing that the content
+
+6:25
+
+is AI because that's going to hurt
+
+6:27
+
+engagement. So if people are bouncing
+
+6:29
+
+because content reads like AI, it's
+
+6:32
+
+going to be really bad for SEO. It's
+
+6:34
+
+going to be bad for for developing a
+
+6:36
+
+brand and having people come back to
+
+6:38
+
+your content. So, because I know that
+
+6:40
+
+the consequences of getting caught using
+
+6:43
+
+AI content are so high, I really,
+
+6:45
+
+really, really proofread to make sure
+
+6:48
+
+that my content does not sound like AI
+
+6:50
+
+written content. And that's actually
+
+6:52
+
+what this Steven Bart Bartlett post from
+
+6:54
+
+LinkedIn is about. But before I go
+
+6:56
+
+there, I also want to recommend some AI
+
+6:58
+
+writing detectors. Use AI writing
+
+7:00
+
+detectors.
+
+7:01
+
+GPT0.me is my favorite.
+
+7:05
+
+ZeroGPT.com is a great runner up. And
+
+7:07
+
+then Grammarly has an AI writing
+
+7:10
+
+detector as well. I haven't really used
+
+7:12
+
+that, but it's Grammarly, so it's
+
+7:13
+
+probably pretty decent. Try AI writing
+
+7:16
+
+detectors, but overall really just
+
+7:18
+
+proofread things yourself. Try to make
+
+7:20
+
+things sound more simple. Personally, I
+
+7:24
+
+don't typically use entire pages or
+
+7:28
+
+posts written by AI, but I will use it
+
+7:31
+
+as a writing assistant to help me come
+
+7:33
+
+up with words or phrases, sometimes
+
+7:36
+
+entire sentences or even paragraphs
+
+7:38
+
+sometimes, but then I will change the
+
+7:40
+
+sentences. I will change the phrases. I
+
+7:42
+
+will use synonyms of the words that it
+
+7:44
+
+gives me. I personally prefer it as a
+
+7:46
+
+writing assistant, but sometimes it is
+
+7:48
+
+good for writing entire things, but even
+
+7:51
+
+then you have to change it. Even then
+
+7:53
+
+you have to proofread several times and
+
+7:55
+
+make changes. I want to just stress the
+
+7:57
+
+consequences if you are trying to
+
+7:58
+
+develop a brand. The consequences of
+
+8:01
+
+getting caught using chat tpt content.
+
+8:04
+
+It it's so bad for trust. It's so bad
+
+8:06
+
+for retention. People are going to be
+
+8:08
+
+like, "Okay, this person's just using
+
+8:09
+
+AI. Why am I going to keep reading or
+
+8:12
+
+engaging with this person?" Sometimes
+
+8:13
+
+you can get away with it. Here's
+
+Humanizing AI-Generated Video Scripts
+
+8:15
+
+actually I watched this video yesterday.
+
+8:17
+
+This person describing the Lower East
+
+8:18
+
+Side in New York City. I'm from New York
+
+8:20
+
+City. I'm from Brooklyn. spent so much
+
+8:22
+
+time in the Lower East Side and that
+
+8:23
+
+this person made this video about the
+
+8:25
+
+Lower East Side and and all the problems
+
+8:28
+
+with the Lower East Side, but all the
+
+8:29
+
+charm that the Lower East Side has.
+
+8:31
+
+Person just showed himself hanging
+
+8:33
+
+around different Lower East Side spots
+
+8:35
+
+as B-roll over the B-roll was an AI
+
+8:39
+
+generated voice. It's clearly AI
+
+8:41
+
+generated, but that was fine. And the
+
+8:43
+
+script was so it was so descriptive and
+
+8:45
+
+had so many analogies and metaphors of
+
+8:48
+
+the Lower East Side. And listening to
+
+8:50
+
+it, I could tell that it was written by
+
+8:52
+
+AI. I could tell that the script was
+
+8:54
+
+generated by AI. It was it was a good
+
+8:56
+
+script, but it was clearly generated by
+
+8:58
+
+AI. The voice was generated by AI, but
+
+9:00
+
+AI generated voices do fine, but the
+
+9:03
+
+script, and it was a long video,
+
+9:04
+
+generated by AI, but the person
+
+9:06
+
+humanized the script by putting himself
+
+9:09
+
+in the video as the B-roll, and that
+
+9:12
+
+humanized the AI, the AI generated
+
+9:14
+
+script. And so even though you were you
+
+9:17
+
+were listening to the script that was
+
+9:19
+
+written by AI, and I think if you just
+
+9:21
+
+read the script, I think if you read
+
+9:22
+
+that script on LinkedIn or on Facebook,
+
+9:25
+
+you would know that it was written by
+
+9:27
+
+AI. But having this person's face behind
+
+9:30
+
+it and having this person's video behind
+
+9:32
+
+it, that humanized the AI script and a
+
+9:34
+
+lot of people didn't notice and as a
+
+9:36
+
+result, the video went really viral
+
+9:38
+
+describing the Lower East Side in New
+
+9:40
+
+York City. And I thought that was a cool
+
+9:41
+
+story. So, here is a Steven Bartlett
+
+9:43
+
+post that I want to share and then I'm
+
+9:44
+
+going to wrap this episode because
+
+9:45
+
+yesterday I put out an hourong podcast
+
+9:48
+
+with Rand Fishkin, which again so good.
+
+9:50
+
+Thank you again to Rand. Can't believe I
+
+9:52
+
+got Rand Fishkin on my show. I learned
+
+9:54
+
+so much about SEO and digital marketing
+
+9:56
+
+from Rand Fishkin. Crazy that he came on
+
+9:58
+
+to the Edward show. That was such a
+
+9:59
+
+pleasure to have him. So, this is from
+
+Steven Bartlett's Perspective on AI and Authenticity
+
+10:02
+
+Steven Bartlett, host of Diary of a CEO,
+
+10:05
+
+and he said, "Is chat GPT making
+
+10:07
+
+everyone feel really inauthentic? Am I
+
+10:10
+
+speaking to you or your AI? Old emails
+
+10:13
+
+were, "Hi, mate. Quick one." New emails.
+
+10:16
+
+Greetings, Stephen. I trust this email
+
+10:18
+
+finds you well as we forge ahead. Same
+
+10:20
+
+sender, totally different planet. When I
+
+10:23
+
+can't hear your real voice, my brain
+
+10:25
+
+files the message under probably
+
+10:28
+
+autogenerated. So, if AI improves your
+
+10:30
+
+grammar but destroys your authenticity,
+
+10:33
+
+you're better off without it. Humans
+
+10:35
+
+make mistakes. They're imperfect,
+
+10:38
+
+unique, and distinct. That's what makes
+
+10:40
+
+them human. So, if you show up with
+
+10:43
+
+perfect AI made cookie cutter
+
+10:45
+
+communication, you're removing the
+
+10:47
+
+meaning from your message. By the way,
+
+10:48
+
+sometimes people will literally put in
+
+10:51
+
+typos into it. Not at the top when it's
+
+10:54
+
+most important to actually like look
+
+10:56
+
+professional, but you put in typos
+
+10:58
+
+throughout the body of the content. So,
+
+11:00
+
+that makes it seem less autogenerated.
+
+11:02
+
+But, okay. Then he then Stephen writes,
+
+11:05
+
+"The rise of the long dash." What I was
+
+11:07
+
+talking about, the M dash, the rise of
+
+11:09
+
+the long dash. People are frequently
+
+11:12
+
+using words and punctuation today that I
+
+11:14
+
+never heard 2 years ago. In 2025, the
+
+11:18
+
+simplest authenticity test for a
+
+11:20
+
+paragraph is its mash count. I don't
+
+11:22
+
+even know where that long dash lives on
+
+11:25
+
+a keyboard, but it seems to be in every
+
+11:27
+
+email I receive. And it's true. I've
+
+11:30
+
+received so many emails with it. People
+
+11:32
+
+weren't emailing me casually using words
+
+11:34
+
+like forge, paradigm, robust,
+
+11:36
+
+revolutionary to discuss trivial issues.
+
+11:39
+
+It's funny that we can spot AI in
+
+11:42
+
+someone else's words yet don't realize
+
+11:44
+
+everyone else can see it in ours. The
+
+11:47
+
+best communications will speak without
+
+11:50
+
+AI. If ChachiPT is turnurning out the
+
+11:53
+
+same perfect text on every email, post
+
+11:55
+
+and caption, then maybe the most
+
+11:58
+
+resonant, impactful, and powerful
+
+12:00
+
+writers will be those that break the
+
+12:02
+
+rules, get creative with grammar, and
+
+12:05
+
+embrace their typos. Human sounding text
+
+12:08
+
+will carry a premium because scarcity
+
+12:11
+
+drives value, and raw voices are fast
+
+12:14
+
+becoming the rarest commodity online. I
+
+12:17
+
+love that. Scarcity drives value. It's
+
+12:19
+
+true. And raw voices are becoming are
+
+12:22
+
+becoming rarer. Save AI for spellch
+
+12:25
+
+check. And when the message matters, the
+
+12:27
+
+pitch, the apology, the love note, spend
+
+12:30
+
+the extra energy and speak for yourself.
+
+12:32
+
+And that's from Steven Bartlett. I think
+
+Conclusion
+
+12:34
+
+that's a great way to wrap this episode.
+
+12:36
+
+Thank you everyone who watches and
+
+12:38
+
+listens to the Edward Show, my daily
+
+12:40
+
+digital marketing show. This is episode
+
+12:44
+
+675. 675 days in a row doing this
+
+12:48
+
+podcast. And that is that is how to
+
+12:49
+
+humanize chachi fat content. I will talk
+
+12:52
+
+to you again tomorrow.
