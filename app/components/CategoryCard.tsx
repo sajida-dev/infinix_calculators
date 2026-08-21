@@ -62,15 +62,18 @@ export default function CategoryCard({
         </div>
 
         {/* List of matching calculators */}
-        <ul className={isTwoCol ? "grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mt-5" : "space-y-3 mt-5"}>
+        <ul className={isTwoCol ? "grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 mt-4" : "space-y-1 mt-4"}>
           {displayedSlugs.map((slug) => {
             const calc = calculatorsData[slug];
             if (!calc) return null;
             return (
               <li key={slug} className="text-sm">
-                <Link href={`/calculators/${slug}`} className="group flex items-center gap-2 transition-all duration-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary/45 dark:bg-sky-400/60 group-hover:bg-primary dark:group-hover:bg-sky-300 shrink-0 transition-colors" />
-                  <span className="text-primary dark:text-sky-400 group-hover:text-primary-hover dark:group-hover:text-sky-300 transition-colors leading-snug font-medium truncate">
+                <Link
+                  href={`/calculators/${slug}`}
+                  className="group flex items-center gap-2.5 py-2 px-2 -mx-2 rounded-lg min-h-[44px] sm:min-h-[40px] hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-all duration-200"
+                >
+                  <span className="w-2 h-2 rounded-full bg-primary/60 dark:bg-sky-400 group-hover:bg-primary dark:group-hover:bg-sky-300 shrink-0 transition-colors" />
+                  <span className="text-primary dark:text-sky-400 group-hover:text-primary-hover dark:group-hover:text-sky-300 transition-colors leading-snug font-semibold truncate">
                     {calc.name}
                   </span>
                 </Link>
@@ -85,7 +88,8 @@ export default function CategoryCard({
         <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#4D5156] flex justify-end">
           <Link
             href={`/calculators#${category.id}`}
-            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-bold text-white transition-all duration-200 hover:bg-primary-hover shadow-sm shadow-primary/20 hover:shadow-md hover:-translate-y-[1px]"
+            aria-label={`View all ${category.title} calculators`}
+            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-primary px-4 py-2.5 min-h-[44px] text-xs font-bold text-white transition-all duration-200 hover:bg-primary-hover shadow-sm shadow-primary/20 hover:shadow-md hover:-translate-y-[1px]"
           >
             View All <span aria-hidden="true">→</span>
           </Link>

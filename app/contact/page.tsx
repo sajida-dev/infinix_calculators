@@ -14,14 +14,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 transition-colors">
-      <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        
+      <div className="max-w-4xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <header className="mb-10 text-center">
-          <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-sky-400 mb-3 inline-block">
-            Direct Support &amp; Inquiries
-          </span>
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
+        <header className="mb-8 text-center">
+
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
             Contact Our Team
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">

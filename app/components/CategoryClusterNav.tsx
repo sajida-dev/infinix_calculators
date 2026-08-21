@@ -170,9 +170,9 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
         {/* In-Depth Topic Articles */}
         <div>
-          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-3.5">
+          <p className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-3.5">
             In-Depth Topic Guides
-          </h4>
+          </p>
           <ul className="space-y-2.5">
             {hub.topArticles
               .filter((art) => art.href !== `/blog/${currentSlug}`)
@@ -195,9 +195,9 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
 
         {/* Related Category Tools */}
         <div>
-          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-3.5">
+          <p className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-3.5">
             Related Category Tools
-          </h4>
+          </p>
           <div className="flex flex-wrap gap-2">
             {hub.siblingCalcs
               .filter((calc) => calc.href !== `/calculators/${currentSlug}`)

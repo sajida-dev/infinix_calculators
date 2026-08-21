@@ -102,7 +102,7 @@ export default function SearchInput({
           />
           <button
             type="submit"
-            className="mr-2 rounded-xl bg-primary px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-white hover:bg-primary-hover transition-colors shadow-sm"
+            className="mr-2 rounded-xl bg-primary px-6 py-2.5 sm:py-3 min-h-[44px] text-xs sm:text-sm font-bold text-white hover:bg-primary-hover transition-colors shadow-sm inline-flex items-center justify-center"
           >
             Search
           </button>
@@ -117,7 +117,7 @@ export default function SearchInput({
                   <button
                     type="button"
                     onClick={() => selectSuggestion(calc.slug)}
-                    className="w-full text-left px-5 py-3 hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-colors flex flex-col"
+                    className="w-full text-left px-5 py-3 min-h-[44px] hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-colors flex flex-col justify-center"
                   >
                     <span className="text-xs font-bold text-slate-900 dark:text-slate-100">{calc.name}</span>
                     <span className="text-[10px] text-slate-400 dark:text-slate-400 mt-0.5">{calc.description}</span>

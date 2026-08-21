@@ -54,8 +54,8 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-semibold text-slate-600 dark:text-slate-300">
-          <Link href="/" className="hover:text-primary dark:hover:text-primary transition-colors py-2">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 text-sm font-semibold text-slate-700 dark:text-slate-200">
+          <Link href="/" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">
             Home
           </Link>
 
@@ -63,10 +63,10 @@ export default function Header() {
           <div className="relative group">
             <Link
               href="/calculators"
-              className="inline-flex items-center gap-1 hover:text-primary dark:hover:text-primary transition-colors py-2"
+              className="inline-flex items-center gap-1 hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px]"
             >
               <span>Calculators</span>
-              <svg className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 group-hover:text-primary transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-slate-400 dark:text-slate-400 group-hover:text-primary dark:group-hover:text-sky-300 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
               </svg>
             </Link>
@@ -75,7 +75,7 @@ export default function Header() {
               <ul className="space-y-1">
                 {categoriesList.map((cat) => (
                   <li key={cat.id}>
-                    <Link href={`/calculators#${cat.id}`} className="block rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary transition-colors">
+                    <Link href={`/calculators#${cat.id}`} className="block rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors min-h-[38px] flex items-center">
                       {cat.title}
                     </Link>
                   </li>
@@ -84,15 +84,15 @@ export default function Header() {
             </div>
           </div>
 
-          <Link href="/blog" className="hover:text-primary dark:hover:text-primary transition-colors py-2">
+          <Link href="/blog" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">
             Blog & Guides
           </Link>
 
-          <Link href="/about" className="hover:text-primary dark:hover:text-primary transition-colors py-2">
+          <Link href="/about" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">
             About Us
           </Link>
 
-          <Link href="/contact" className="hover:text-primary dark:hover:text-primary transition-colors py-2">
+          <Link href="/contact" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">
             Contact
           </Link>
         </nav>
@@ -103,14 +103,14 @@ export default function Header() {
 
           <Link
             href="/calculators"
-            className="hidden sm:inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 text-xs font-bold text-white transition-all duration-200 hover:bg-primary-hover shadow-md shadow-primary/10 hover:shadow-primary-lg"
+            className="hidden sm:inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2.5 min-h-[42px] text-xs font-bold text-white transition-all duration-200 hover:bg-primary-hover shadow-md shadow-primary/10 hover:shadow-primary-lg"
           >
             All Calculators
           </Link>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-xl hover:bg-slate-100/80 dark:hover:bg-[#191a1d] text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition"
+            className="md:hidden p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl hover:bg-slate-100/80 dark:hover:bg-[#191a1d] text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -127,28 +127,28 @@ export default function Header() {
 
       {/* Mobile Menu Expandable Drawer */}
       {open && (
-        <div className="md:hidden rounded-2xl border border-slate-200/80 dark:border-[#4D5156] bg-white/95 dark:bg-[#22242A]/95 backdrop-blur-md p-4 mt-2 shadow-lg flex flex-col gap-2 transition-all duration-300">
+        <div className="md:hidden rounded-2xl border border-slate-200/80 dark:border-[#4D5156] bg-white/95 dark:bg-[#22242A]/95 backdrop-blur-md p-4 mt-2 shadow-lg flex flex-col gap-1 transition-all duration-300">
           <Link
             href="/"
-            className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/calculators"
-            className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             Calculators
           </Link>
           {/* Collapsible/Indented list of categories for mobile */}
-          <div className="pl-4 flex flex-col gap-1 border-l border-slate-100 dark:border-[#4D5156] ml-3">
+          <div className="pl-4 flex flex-col gap-1 border-l border-slate-200 dark:border-[#4D5156] ml-3">
             {categoriesList.map((cat) => (
               <Link
                 key={cat.id}
                 href={`/calculators#${cat.id}`}
-                className="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-primary py-1"
+                className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 py-2 min-h-[38px] flex items-center"
                 onClick={() => setOpen(false)}
               >
                 {cat.title}
@@ -157,21 +157,21 @@ export default function Header() {
           </div>
           <Link
             href="/blog"
-            className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             Blog & Guides
           </Link>
           <Link
             href="/about"
-            className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             About Us
           </Link>
           <Link
             href="/contact"
-            className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             Contact

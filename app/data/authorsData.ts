@@ -1,3 +1,11 @@
+export interface AuthorSocials {
+  facebook?: string;
+  instagram?: string;
+  twitter?: string;
+  linkedin?: string;
+  email?: string;
+}
+
 export interface Author {
   slug: string;
   name: string;
@@ -11,6 +19,10 @@ export interface Author {
   reviewedCategories: string[];
   linkedinUrl?: string;
   email: string;
+  location?: string;
+  tagline?: string;
+  quote?: string;
+  socials?: AuthorSocials;
 }
 
 export const authorsData: Record<string, Author> = {
@@ -19,7 +31,10 @@ export const authorsData: Record<string, Author> = {
     name: "David Miller, CPA",
     jobTitle: "Lead Financial Analyst & Tax Technology Editor",
     credentials: "CPA, M.S. Finance (NYU Stern)",
-    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
+    location: "New York, NY",
+    tagline: "Financial Precision Crafting Growth",
+    quote: "Precision modeling is the bedrock of fiscal strategy. We turn volatile tax rules, APR structures, and merchant interchange equations into transparent, actionable calculators.",
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80",
     bio: "David is a Certified Public Accountant (CPA) with over 14 years of corporate tax, loan amortization modeling, and merchant processing cost accounting experience.",
     fullBio: [
       "David Miller is a Certified Public Accountant (CPA) and veteran financial modeler. Prior to joining Infinix Calculators as Lead Financial Editor, David spent over a decade advising e-commerce enterprises, multi-state retailers, and tech startups on sales tax nexus compliance, payroll gross-up structures, and credit card processing fee mitigation.",
@@ -43,14 +58,25 @@ export const authorsData: Record<string, Author> = {
       "Tax & Payroll Calculators",
       "Merchant & Invoicing Tools"
     ],
-    email: "david.miller@infinixcalculator.com"
+    email: "david.miller@infinixcalculator.com",
+    linkedinUrl: "https://www.linkedin.com",
+    socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://x.com",
+      linkedin: "https://linkedin.com",
+      email: "mailto:david.miller@infinixcalculator.com"
+    }
   },
   "elena-rostova": {
     slug: "elena-rostova",
     name: "Elena Rostova, P.E.",
     jobTitle: "Senior Construction Estimator & Materials Engineer",
     credentials: "P.E., M.S. Civil Engineering (Georgia Tech)",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    location: "Atlanta, GA",
+    tagline: "Architectural Precision Crafting Dreams",
+    quote: "Innovation is the lifeblood of our narrative, propelling us forward as we embrace cutting-edge technologies and methodologies to push the boundaries of what's possible.",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
     bio: "Elena is a licensed Professional Engineer (P.E.) specializing in structural volume estimation, soil compaction physics, and bulk materials logistics.",
     fullBio: [
       "Elena Rostova is a licensed Professional Engineer (P.E.) and construction cost consultant with 12+ years of field experience in civil infrastructure, commercial grading, and residential landscape engineering.",
@@ -74,14 +100,25 @@ export const authorsData: Record<string, Author> = {
       "Landscaping & Grading",
       "Logistics & Unit Converters"
     ],
-    email: "elena.rostova@infinixcalculator.com"
+    email: "elena.rostova@infinixcalculator.com",
+    linkedinUrl: "https://www.linkedin.com",
+    socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://x.com",
+      linkedin: "https://linkedin.com",
+      email: "mailto:elena.rostova@infinixcalculator.com"
+    }
   },
   "marcus-vance": {
     slug: "marcus-vance",
     name: "Dr. Marcus Vance, Ph.D.",
     jobTitle: "Lead Mathematician & Psychometric Systems Editor",
     credentials: "Ph.D. Applied Mathematics (MIT)",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    location: "Boston, MA",
+    tagline: "Mathematical Modeling Decoding Systems",
+    quote: "Rigorous quantitative formulation transforms raw uncertainty into predictable foresight, equipping educators, learners, and evaluators with trusted metrics.",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
     bio: "Dr. Vance is a research mathematician and psychometric modeler specializing in standardized test scoring distributions, inverse trigonometry, and algebraic weighted averages.",
     fullBio: [
       "Dr. Marcus Vance holds a doctorate in Applied Mathematics and has published numerous research papers on psychometric test equating, weighted rating distributions, and applied numerical analysis.",
@@ -104,14 +141,25 @@ export const authorsData: Record<string, Author> = {
       "Mathematics & Geometry",
       "Reputation & Rating Calculators"
     ],
-    email: "marcus.vance@infinixcalculator.com"
+    email: "marcus.vance@infinixcalculator.com",
+    linkedinUrl: "https://www.linkedin.com",
+    socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://x.com",
+      linkedin: "https://linkedin.com",
+      email: "mailto:marcus.vance@infinixcalculator.com"
+    }
   },
   "sarah-jenkins": {
     slug: "sarah-jenkins",
     name: "Sarah Jenkins, MS, OTR/L",
     jobTitle: "Clinical Operations Specialist & Productivity Lead",
     credentials: "MS, OTR/L, Healthcare Systems Management",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+    location: "Philadelphia, PA",
+    tagline: "Clinical Operations Empowering Care",
+    quote: "Sustainable healthcare systems thrive when operational metrics align with high clinical standards, empowering therapists to deliver uncompromised patient care.",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
     bio: "Sarah is a healthcare operations consultant with 11 years of experience optimizing Skilled Nursing Facility (SNF) clinical productivity metrics and time allocation.",
     fullBio: [
       "Sarah Jenkins is a licensed occupational therapist (OTR/L) and healthcare operations specialist. She has served as Director of Rehabilitation across multiple regional healthcare networks, managing clinical time allocations, CMS billing compliance, and staff productivity benchmarks.",
@@ -134,7 +182,15 @@ export const authorsData: Record<string, Author> = {
       "Operations & Time Management",
       "Fitness & Screening Tools"
     ],
-    email: "sarah.jenkins@infinixcalculator.com"
+    email: "sarah.jenkins@infinixcalculator.com",
+    linkedinUrl: "https://www.linkedin.com",
+    socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://x.com",
+      linkedin: "https://linkedin.com",
+      email: "mailto:sarah.jenkins@infinixcalculator.com"
+    }
   }
 };
 

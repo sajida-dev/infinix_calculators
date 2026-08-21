@@ -125,7 +125,7 @@ export default function Home() {
       <section className="py-12 sm:py-16 bg-white dark:bg-[#22242A] border-b border-slate-200 dark:border-[#4D5156] transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-10">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 dark:bg-primary/20 text-primary dark:text-sky-400 mb-3">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 dark:bg-blue-950/60 text-blue-900 dark:text-sky-300 border border-blue-200/80 dark:border-blue-800/60 mb-3 shadow-xs">
               Featured Tool
             </span>
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
@@ -152,7 +152,10 @@ export default function Home() {
                 Explore individual calculator utilities organized by functional industry.
               </p>
             </div>
-            <Link href="/calculators" className="text-primary font-bold text-xs sm:text-sm hover:underline">
+            <Link
+              href="/calculators"
+              className="text-primary dark:text-sky-400 font-bold text-xs sm:text-sm hover:underline py-2 inline-flex items-center min-h-[44px]"
+            >
               All Calculators →
             </Link>
           </div>
@@ -184,7 +187,7 @@ export default function Home() {
             </div>
             <Link
               href="/blog"
-              className="text-primary font-bold text-sm hover:underline mt-4 md:mt-0 flex items-center gap-1.5"
+              className="text-primary dark:text-sky-400 font-bold text-sm hover:underline mt-4 md:mt-0 flex items-center gap-1.5 py-2 min-h-[44px]"
             >
               Browse all articles <span aria-hidden="true">→</span>
             </Link>

@@ -18,23 +18,21 @@ type BlogCardProps = {
 export default function BlogCard({ post }: BlogCardProps) {
   const author = post.authorSlug
     ? getAuthorBySlug(post.authorSlug)
-    : post.author && post.author !== "Infinix Calculators Editorial Team"
-      ? { name: post.author, slug: "david-miller" }
-      : getAuthorForCategory(post.category);
+    : getAuthorForCategory(post.category);
 
   return (
     <article
       key={post.slug}
       className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200/80 dark:border-[#4D5156] shadow-xs overflow-hidden flex flex-col justify-between hover:shadow-md hover:border-slate-300 dark:hover:border-slate-500 transition-all duration-200"
     >
-      {/* Visual Cover Image */}
-      <div className="relative w-full h-64 bg-slate-100 dark:bg-[#191a1d]">
+      {/* Visual Cover Image with fixed aspect ratio */}
+      <div className="relative w-full aspect-[16/10] bg-slate-100 dark:bg-[#191a1d] overflow-hidden">
         <Image
           src={post.image}
           alt={post.title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 384px"
+          className="object-cover transition-transform duration-300 hover:scale-105"
         />
       </div>
       <div className="p-6 flex-1 flex flex-col justify-between">
@@ -45,22 +43,26 @@ export default function BlogCard({ post }: BlogCardProps) {
             <span>{post.date}</span>
           </div>
           <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mt-3 leading-snug">
-            <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
+            <Link href={`/blog/${post.slug}`} className="hover:text-primary dark:hover:text-sky-400 transition-colors">
               {post.title}
             </Link>
           </h3>
-          <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mt-2">
+          <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mt-2 line-clamp-3">
             {post.excerpt}
           </p>
         </div>
         <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#4D5156]/80 flex items-center justify-between">
           <Link
             href={`/authors/${author.slug}`}
-            className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold hover:text-primary transition-colors"
+            className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold hover:text-primary dark:hover:text-sky-400 transition-colors py-2 inline-flex items-center min-h-[44px]"
           >
             By {author.name}
           </Link>
-          <Link href={`/blog/${post.slug}`} className="text-xs font-bold text-primary hover:underline">
+          <Link
+            href={`/blog/${post.slug}`}
+            aria-label={`Read Guide: ${post.title}`}
+            className="text-xs font-bold text-primary dark:text-sky-400 hover:underline py-2 px-2 -mr-2 inline-flex items-center min-h-[44px]"
+          >
             Read Guide
           </Link>
         </div>

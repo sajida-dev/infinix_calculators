@@ -71,11 +71,11 @@ export default function Footer() {
 
           {/* Popular Calculators Column */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">Popular</h4>
-            <ul className="mt-4 space-y-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Popular</p>
+            <ul className="mt-3 space-y-1">
               {popularCalculators.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-400 transition-colors">
+                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-[38px] flex items-center">
                     {link.name}
                   </Link>
                 </li>
@@ -85,11 +85,11 @@ export default function Footer() {
 
           {/* Materials & Construction Column */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">Materials</h4>
-            <ul className="mt-4 space-y-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Materials</p>
+            <ul className="mt-3 space-y-1">
               {materialCalculators.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-400 transition-colors">
+                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-[38px] flex items-center">
                     {link.name}
                   </Link>
                 </li>
@@ -99,18 +99,18 @@ export default function Footer() {
 
           {/* Company & Legal Column */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">Resources</h4>
-            <ul className="mt-4 space-y-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Resources</p>
+            <ul className="mt-3 space-y-1">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-400 transition-colors">
+                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-[38px] flex items-center">
                     {link.name}
                   </Link>
                 </li>
               ))}
               {legalLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-400 transition-colors">
+                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-[38px] flex items-center">
                     {link.name}
                   </Link>
                 </li>

@@ -3,13 +3,24 @@ import type { NextRequest } from "next/server";
 
 export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
-  const host = request.headers.get("host") || "";
-  const proto = request.headers.get("x-forwarded-proto") || "https";
+  const rawHost =
+    request.headers.get("x-forwarded-host") ||
+    request.headers.get("host") ||
+    request.nextUrl.hostname ||
+    "";
+  const proto = request.headers.get("x-forwarded-proto") || request.nextUrl.protocol.replace(":", "");
 
-  // 1. Canonical Redirect: www to non-www and http to https in production
-  if (host.startsWith("www.") || (proto === "http" && process.env.NODE_ENV === "production")) {
-    const cleanHost = host.replace(/^www\./, "");
-    return NextResponse.redirect(`https://${cleanHost}${url.pathname}${url.search}`, 301);
+  // Strip optional port from host string (e.g. "www.infinixcalculator.com:443" -> "www.infinixcalculator.com")
+  const hostWithoutPort = rawHost.split(":")[0].toLowerCase();
+
+  // 1. Canonical Redirect: www to non-www and http to https
+  const isWww = hostWithoutPort.startsWith("www.");
+  const isHttp = proto === "http" && process.env.NODE_ENV === "production";
+
+  if (isWww || isHttp) {
+    const cleanHost = isWww ? hostWithoutPort.replace(/^www\./, "") : hostWithoutPort;
+    const targetDomain = cleanHost || "infinixcalculator.com";
+    return NextResponse.redirect(`https://${targetDomain}${url.pathname}${url.search}`, 301);
   }
 
   // 2. Trailing Slash Canonicalization: redirect /path/ to /path (excluding root "/")
@@ -20,6 +31,8 @@ export function proxy(request: NextRequest) {
 
   return NextResponse.next();
 }
+
+export default proxy;
 
 export const config = {
   matcher: [

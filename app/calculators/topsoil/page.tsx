@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import TopsoilCalculator from "../../components/TopsoilCalculator";
+import SocialShare from "../../components/SocialShare";
 import CalculatorFaqs from "../../components/CalculatorFaqs";
 import CategoryClusterNav from "../../components/CategoryClusterNav";
 import CalculatorReviewBadge from "../../components/CalculatorReviewBadge";
@@ -162,7 +163,7 @@ export default function TopsoilPage() {
         {/* HERO + CALCULATOR */}
         <header className="mb-10 max-w-4xl">
           <h1 className="text-3xl font-extrabold text-slate-900 dark:text-slate-100 sm:text-5xl tracking-tight">
-            Topsoil Calculator &amp; Estimator
+            Topsoil Calculator: Estimate Soil in Cubic Yards, Feet &amp; Bags
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
             Estimate how much topsoil you need in cubic yards instantly. Enter your project dimensions below to get accurate coverage for landscaping, gardening, or lawn installations.
@@ -174,6 +175,11 @@ export default function TopsoilPage() {
           <div className="lg:col-span-3 space-y-8">
             <CalculatorReviewBadge category="construction" />
             <TopsoilCalculator />
+            <SocialShare
+              title="Topsoil Calculator - Estimate Soil in Cubic Yards, Feet & Bags"
+              description="Free topsoil calculator to estimate cubic yards, cubic feet, tons and soil bags instantly."
+              className="my-6"
+            />
 
             {/* SEO Authority Article */}
             <article className="prose prose-slate max-w-none text-slate-800 dark:text-slate-200 leading-relaxed space-y-6">
@@ -343,9 +349,9 @@ export default function TopsoilPage() {
           <aside className="space-y-8">
             {topsoilBlogs.length > 0 && (
               <section className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
-                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">
+                <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">
                   You May Like
-                </h3>
+                </p>
                 <div className="space-y-5">
                   {topsoilBlogs.map((rel) => (
                     <Link
@@ -366,9 +372,9 @@ export default function TopsoilPage() {
                         <span className="block text-[9px] font-bold text-primary dark:text-sky-400 uppercase tracking-wider">
                           {rel.category}
                         </span>
-                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 leading-snug group-hover:text-primary dark:group-hover:text-sky-400 transition-colors mt-1 line-clamp-2">
+                        <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 leading-snug group-hover:text-primary dark:group-hover:text-sky-400 transition-colors mt-1 line-clamp-2">
                           {rel.title}
-                        </h4>
+                        </p>
                       </div>
                     </Link>
                   ))}
@@ -377,9 +383,9 @@ export default function TopsoilPage() {
             )}
 
             <section className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
-              <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">
+              <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">
                 Popular Tools
-              </h3>
+              </p>
               <ul className="space-y-3.5">
                 {relatedCalcs.map((calc) => (
                   <li key={calc.name}>
@@ -408,28 +414,28 @@ export default function TopsoilPage() {
             </section>
 
             <section className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
-              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-[#4D5156]">
+              <p className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-[#4D5156]">
                 Categories
-              </h3>
+              </p>
               <ul className="ml-5 space-y-2">
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
-                    Construction &amp; Materials
+                  <Link href="/calculators#construction" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
+                    Construction &amp; Building Materials
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
-                    Landscaping &amp; Gardening
+                  <Link href="/calculators#landscaping" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
+                    Landscaping &amp; Gardening Calculators
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
-                    Finance &amp; Payroll
+                  <Link href="/calculators#financial" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
+                    Finance &amp; Installment Loan Tools
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
-                    Health &amp; Fitness
+                  <Link href="/calculators#health" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
+                    Health &amp; Fitness Calculators
                   </Link>
                 </li>
               </ul>

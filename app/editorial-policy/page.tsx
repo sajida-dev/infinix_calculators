@@ -13,13 +13,10 @@ export const metadata: Metadata = {
 export default function EditorialPolicyPage() {
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 transition-colors">
-      <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        
+      <div className="max-w-5xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <header className="mb-10 text-center sm:text-left border-b border-slate-200 dark:border-[#4D5156] pb-8">
-          <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-sky-400 mb-3 inline-block">
-            Journalistic &amp; Computational Integrity
-          </span>
+        <header className="mb-4 text-center sm:text-left pb-8">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
             Editorial Standards &amp; Review Policy
           </h1>
@@ -28,10 +25,10 @@ export default function EditorialPolicyPage() {
           </p>
         </header>
 
-        <div className="space-y-10 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-          
+        <div className="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+
           {/* 1. Computational Mission */}
-          <section className="space-y-4 bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-3xl p-6 sm:p-8 shadow-xs">
+          <section className="space-y-4 p-4 sm:p-8 ">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
               1. Computational Accuracy &amp; Formula Rigor
             </h2>
@@ -44,12 +41,12 @@ export default function EditorialPolicyPage() {
           </section>
 
           {/* 2. Independence & Objectivity */}
-          <section className="space-y-4 bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-3xl p-6 sm:p-8 shadow-xs">
+          <section className="space-y-4 p-4 sm:p-6 ">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
               2. Independence &amp; Zero Affiliate Bias
             </h2>
             <p>
-              Our calculators are developed strictly as neutral, open utilities. We do not alter, skew, or inflate calculations to favor specific lenders, merchants, materials suppliers, or commercial partners. 
+              Our calculators are developed strictly as neutral, open utilities. We do not alter, skew, or inflate calculations to favor specific lenders, merchants, materials suppliers, or commercial partners.
             </p>
             <p>
               When comparing financing options (such as BNPL APR vs. credit card compounding) or merchant fee structures (such as Square in-person vs. manual keyed rates), formulas are derived purely from publicly published schedules without financial bias.
@@ -57,7 +54,7 @@ export default function EditorialPolicyPage() {
           </section>
 
           {/* 3. Discrepancy Reporting & Correction Protocol */}
-          <section className="space-y-4 bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-3xl p-6 sm:p-8 shadow-xs">
+          <section className="space-y-4 p-4 sm:p-6">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
               3. Formula Correction &amp; Discrepancy Resolution Protocol
             </h2>
@@ -76,7 +73,7 @@ export default function EditorialPolicyPage() {
           </section>
 
           {/* 4. Privacy & Client-Side Execution */}
-          <section className="space-y-4 bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-3xl p-6 sm:p-8 shadow-xs">
+          <section className="space-y-4 p-4 sm:p-6">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
               4. Client-Side Processing &amp; Data Ethics
             </h2>

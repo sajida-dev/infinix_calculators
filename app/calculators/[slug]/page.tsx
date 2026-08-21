@@ -320,9 +320,9 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
               {/* Professional Tips */}
               {calc.tips.length > 0 && (
                 <div className="bg-primary/5 dark:bg-[#22242A] rounded-2xl border border-primary/10 dark:border-[#4D5156] p-6 space-y-3">
-                  <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">
+                  <p className="text-sm font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">
                     Expert Tips
-                  </h4>
+                  </p>
                   <ul className="list-disc list-inside space-y-1.5 pl-1 text-slate-700 dark:text-slate-300">
                     {calc.tips.map((tip, idx) => (
                       <li key={idx}>{tip}</li>
@@ -703,7 +703,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
             {/* You May Like - Flat list of related articles (No outer card wrapper) */}
             {supportingBlogs.length > 0 && (
               <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
-                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-5">You May Like</h3>
+                <p className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-5">You May Like</p>
                 <div className="space-y-5">
                   {supportingBlogs.map((rel) => (
                     <Link
@@ -722,9 +722,9 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                       </div>
                       <div className="flex-1 min-w-0">
                         <span className="block text-[9px] font-bold text-primary dark:text-sky-400 uppercase tracking-wider">{rel.category}</span>
-                        <h4 className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug group-hover:text-primary transition-colors mt-1 line-clamp-2">
+                        <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug group-hover:text-primary transition-colors mt-1 line-clamp-2">
                           {rel.title}
-                        </h4>
+                        </p>
                       </div>
                     </Link>
                   ))}
@@ -734,28 +734,28 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
             {/* Internal Categories Directory Links */}
             <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
-              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-[#4D5156]">
+              <p className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-[#4D5156]">
                 Categories
-              </h3>
+              </p>
               <ul className="ml-5 space-y-2">
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
-                    Financial Calculators
+                  <Link href="/calculators#financial" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
+                    Financial &amp; Loan Calculators
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
-                    Tax & Payroll Calculators
+                  <Link href="/calculators#tax" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
+                    Tax &amp; Payroll Calculators
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
-                    Construction & Materials
+                  <Link href="/calculators#construction" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
+                    Construction &amp; Material Tools
                   </Link>
                 </li>
                 <li>
-                  <Link href="/calculators" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
-                    Health & Fitness Tools
+                  <Link href="/calculators#health" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 transition-colors block py-1">
+                    Health &amp; Fitness Calculators
                   </Link>
                 </li>
               </ul>

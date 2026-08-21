@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <section className="max-w-3xl mx-auto py-12 px-4 text-slate-800 dark:text-slate-100 transition-colors">
-      <h1 className="text-4xl font-extrabold text-primary dark:text-sky-400 mb-6">Terms and Conditions</h1>
+    <section className="max-w-4xl  mx-auto py-4 px-4 text-slate-800 dark:text-slate-100 transition-colors">
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-primary dark:text-sky-400 mb-6">Terms and Conditions</h1>
       <p className="text-slate-700 dark:text-slate-300">Welcome to Infinix Calculators. By accessing or using our website and services, you agree to comply with and be bound by the following terms:</p>
       <h2 className='text-2xl font-bold text-slate-900 dark:text-slate-100 mt-8 mb-4'>1. Acceptance of Terms</h2>
       <p className="text-slate-700 dark:text-slate-300">These Terms and Conditions constitute a legal agreement between you and Infinix Calculators. If you do not agree with any part of these terms, you must discontinue use of the site immediately.</p>
@@ -32,7 +32,7 @@ export default function TermsPage() {
       <h2 className='text-2xl font-bold text-slate-900 dark:text-slate-100 mt-8 mb-4'>6. Changes to Terms</h2>
       <p className="text-slate-700 dark:text-slate-300">We reserve the right to modify these terms at any time. Changes will be posted on this page with an updated revision date.</p>
       <h2 className='text-2xl font-bold text-slate-900 dark:text-slate-100 mt-8 mb-4'>7. Contact</h2>
-      <p className="text-slate-700 dark:text-slate-300">If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:support@infinixcalc.com" className="text-primary dark:text-sky-400 underline">support@infinixcalc.com</a>.</p>
+      <p className="text-slate-700 dark:text-slate-300">If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:support@infinixcalc.com" className="text-primary dark:text-sky-400 underline">support@infinixcalculator.com</a>.</p>
     </section>
   );
 }

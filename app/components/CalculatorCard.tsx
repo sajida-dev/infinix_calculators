@@ -42,7 +42,8 @@ export default function CalculatorCard({ calculator, variant = "default" }: Calc
       <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#4D5156]">
         <Link
           href={`/calculators/${calculator.slug}`}
-          className={`w-full inline-flex items-center justify-center rounded-lg py-2.5 text-xs font-bold transition-colors ${
+          aria-label={`Calculate with ${calculator.name}`}
+          className={`w-full min-h-[42px] inline-flex items-center justify-center rounded-lg py-2.5 text-xs font-bold transition-colors ${
             isFlat
               ? "bg-white dark:bg-[#22242A] border border-slate-300 dark:border-[#4D5156] text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d]"
               : "bg-primary text-white hover:bg-primary-hover shadow-xs"
