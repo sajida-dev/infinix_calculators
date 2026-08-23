@@ -2,31 +2,35 @@ import type { FAQItem } from "../calculatorsData";
 
 export const cbmFaqs: FAQItem[] = [
   {
-    "question": "What is CBM in shipping and how is it calculated?",
-    "answer": "CBM stands for Cubic Meter (m³), the international metric volume unit used to measure freight cargo for ocean and air shipping. It is calculated using the formula: <code>Length (m) × Width (m) × Height (m) × Quantity</code>. Estimate container volume easily with our <a href=\"/calculators/cbm\">CBM Shipping Calculator</a>."
+    question: "What is CBM in shipping and how is it calculated?",
+    answer: "CBM stands for <strong>Cubic Meter (m³)</strong>, the universal volumetric measurement unit used in ocean and air freight logistics to calculate cargo volume, container capacity, and chargeable dimensional weight. The core formula is: <code>Length (m) × Width (m) × Height (m) × Carton Quantity</code>. Easily convert any unit using our free <a href=\"/calculators/cbm\">CBM Shipping Calculator</a>."
   },
   {
-    "question": "How to calculate CBM from dimensions in centimeters (cm)?",
-    "answer": "To calculate CBM from centimeters, multiply Length (cm) × Width (cm) × Height (cm), then divide the total result by 1,000,000. For example, a box measuring 50 cm × 40 cm × 30 cm yields 60,000 ÷ 1,000,000 = 0.06 CBM."
+    question: "How do I calculate CBM from dimensions in centimeters (cm)?",
+    answer: "To calculate CBM from centimeter measurements, multiply Length (cm) × Width (cm) × Height (cm), then divide the result by <strong>1,000,000</strong>: <code>CBM = (L × W × H) ÷ 1,000,000</code>. For example, a box measuring 60 cm × 40 cm × 50 cm equals 120,000 ÷ 1,000,000 = <strong>0.12 CBM</strong>."
   },
   {
-    "question": "How to calculate CBM from dimensions in inches?",
-    "answer": "To convert dimensions in inches directly to CBM, multiply Length (in) × Width (in) × Height (in), then divide the result by 61,023.74 (cubic inches per cubic meter). For example, a 20 in × 15 in × 12 in box equals 3,600 ÷ 61,023.74 = 0.059 CBM."
+    question: "How do I calculate CBM from dimensions in inches?",
+    answer: "To calculate CBM from inches directly, multiply Length (in) × Width (in) × Height (in), then divide by <strong>61,023.74</strong> (cubic inches in 1 cubic meter): <code>CBM = (L × W × H) ÷ 61,023.74</code>. For example, a standard 24″ × 18″ × 16″ carton equals 6,912 ÷ 61,023.74 = <strong>0.113 CBM</strong>."
   },
   {
-    "question": "How many CBM fit into standard 20ft and 40ft ocean shipping containers?",
-    "answer": "A standard 20ft ocean container has a usable capacity of ~28 to 30 CBM. A 40ft container holds ~56 to 58 CBM, while a 40ft High Cube (HC) container fits up to ~65 to 68 CBM."
+    question: "How many kilograms (kg) is 1 CBM in sea freight vs. air freight?",
+    answer: "In ocean freight (LCL shipping), the standard rule is <strong>1 CBM = 1,000 kg (1 metric ton)</strong> of volumetric chargeable weight. In standard air cargo, the IATA volumetric ratio is <strong>1 CBM = 167 kg</strong> (calculated as cubic cm ÷ 6,000 or cubic inches ÷ 366). For express couriers (DHL, FedEx, UPS), the ratio is <strong>1 CBM = 200 kg</strong> (cubic cm ÷ 5,000)."
   },
   {
-    "question": "What is volumetric weight (chargeable weight) in CBM shipping?",
-    "answer": "For air cargo, 1 CBM equals 167 kg of volumetric weight. For ocean freight (LCL), 1 CBM equals 1,000 kg. Freight carriers bill based on whichever is higher between actual gross weight and volumetric weight."
+    question: "What does 0.4 CBM or 0.6 CBM mean and how much weight does it represent?",
+    answer: "A <strong>0.4 CBM</strong> shipment represents 0.4 cubic meters (approx 14.12 cubic feet). In sea freight, 0.4 CBM equals a maximum volumetric chargeable threshold of <strong>400 kg</strong>; in air cargo, it equals <strong>66.8 kg</strong>. A <strong>0.6 CBM</strong> shipment represents 21.19 cubic feet (600 kg sea freight / 100.2 kg air freight). Calculate your exact carton fits with our <a href=\"/calculators/cbm\">CBM Shipping Calculator</a>."
   },
   {
-    "question": "What does 0.4 CBM or 0.6 CBM mean for small freight shipments?",
-    "answer": "A 0.4 CBM shipment represents 0.4 cubic meters (approx 14.1 cubic feet, or about 8 to 10 medium courier boxes). For air shipping, 0.4 CBM equals roughly 66.8 kg of volumetric weight. A 0.6 CBM package represents ~21.2 cubic feet (or 100 kg volumetric weight). Calculate exact carton fits with our <a href=\"/calculators/cbm\">CBM Shipping Calculator</a>."
+    question: "How many CBM fit into standard 20ft, 40ft, and 40ft High Cube ocean containers?",
+    answer: "A standard 20ft container (20GP) has a maximum capacity of 33.2 CBM, with a <strong>practical usable volume of 28 to 30 CBM</strong>. A 40ft container (40GP) has a total of 67.6 CBM (usable <strong>58 to 62 CBM</strong>), and a 40ft High Cube container (40HQ) holds 76.2 CBM (usable <strong>68 to 70 CBM</strong>)."
   },
   {
-    "question": "Is CBM the same as m³ (cubic meters)?",
-    "answer": "Yes. CBM is the global logistics abbreviation for cubic meters (m³). 1 CBM = 1 m³ = 35.3147 cubic feet = 61,024 cubic inches."
+    question: "What is the formula for converting CBM to cubic feet (cu ft) and cubic inches (cu in)?",
+    answer: "1 CBM = <strong>35.3147 cubic feet</strong> = <strong>61,023.74 cubic inches</strong> = <strong>1.30795 cubic yards</strong>. To convert CBM to cubic feet, multiply CBM by 35.3147. To convert cubic feet to CBM, divide cubic feet by 35.3147."
+  },
+  {
+    question: "Is CBM the same as m³ (cubic meters)?",
+    answer: "Yes. CBM and m³ are identical measurements. 'CBM' is the standard freight forwarding commercial acronym, while 'm³' is the international SI metric symbol for cubic meters."
   }
 ];

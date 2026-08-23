@@ -7,13 +7,13 @@ export default function CbmSeoContent() {
       {/* Overview */}
       <section className="border-t border-slate-200 dark:border-[#4D5156] pt-8 space-y-4">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-          CBM Freight Shipping &amp; Container Volume Calculation Guide
+          CBM Freight Shipping, Weight Conversion &amp; Container Volume Guide
         </h2>
         <p>
-          In international ocean and air freight logistics, <strong>CBM (Cubic Meters / m³)</strong> is the primary unit of measurement used to calculate cargo volume, determine container space utilization, and establish chargeable dimensional freight weight.
+          In international ocean and air freight logistics, <strong>CBM (Cubic Meters / m³)</strong> is the primary unit of measurement used to calculate cargo volume, container capacity utilization, and chargeable dimensional freight weight.
         </p>
         <p>
-          Whether you are shipping Less than Container Load (LCL), Full Container Load (FCL), or palletized air cargo, use our <Link href="/calculators/cbm" className="text-primary dark:text-sky-400 font-semibold underline underline-offset-2 hover:text-primary/80">CBM Shipping Calculator</Link> to compute volume across centimeters, inches, feet, and total carton counts.
+          Whether you are shipping Less than Container Load (LCL), Full Container Load (FCL), or palletized air cargo, use our free <Link href="/calculators/cbm" className="text-primary dark:text-sky-400 font-semibold underline underline-offset-2 hover:text-primary/80">CBM Shipping Calculator</Link> to compute volume across centimeters, inches, feet, and total carton counts.
         </p>
       </section>
 
@@ -37,7 +37,7 @@ export default function CbmSeoContent() {
             <p className="text-primary dark:text-sky-400 font-bold">
               CBM = (L × W × H) ÷ 61,023.74
             </p>
-            <span className="text-[11px] text-slate-400 mt-2 block">Example: 48×40×51 in = 1.60 CBM</span>
+            <span className="text-[11px] text-slate-400 mt-2 block">Example: 48×40×51 in = 1.605 CBM</span>
           </div>
 
           <div className="p-4 bg-white dark:bg-[#191a1d] rounded-xl border border-slate-200 dark:border-[#4D5156]">
@@ -45,15 +45,57 @@ export default function CbmSeoContent() {
             <p className="text-primary dark:text-sky-400 font-bold">
               CBM = (L × W × H) ÷ 35.3147
             </p>
-            <span className="text-[11px] text-slate-400 mt-2 block">Example: 4×4×4 ft = 1.81 CBM</span>
+            <span className="text-[11px] text-slate-400 mt-2 block">Example: 4×4×4 ft = 1.812 CBM</span>
           </div>
+        </div>
+      </section>
+
+      {/* Sea Freight vs Air Freight Chargeable Weight Ratio */}
+      <section className="space-y-4">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
+          CBM to Kilograms (KG) Chargeable Weight Rules
+        </h3>
+        <p className="text-sm">
+          Freight carriers calculate shipping costs based on <strong>Chargeable Weight</strong>, which is the higher number between actual gross scale weight and dimensional volumetric weight:
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156] text-xs sm:text-sm">
+            <thead>
+              <tr className="bg-slate-100 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 font-bold">
+                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Shipping Mode</th>
+                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">1 CBM Weight Equivalent</th>
+                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">0.4 CBM Chargeable Weight</th>
+                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">0.6 CBM Chargeable Weight</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-[#4D5156]">
+              <tr>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-semibold">Ocean LCL Freight</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono font-bold text-primary dark:text-sky-400">1 CBM = 1,000 kg (1 Ton)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">400 kg</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">600 kg</td>
+              </tr>
+              <tr>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-semibold">Standard Air Cargo (IATA)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">1 CBM = 167 kg (1:6)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">66.8 kg</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">100.2 kg</td>
+              </tr>
+              <tr>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-semibold">Express Courier (DHL/FedEx)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono font-bold text-amber-600 dark:text-amber-400">1 CBM = 200 kg (1:5)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">80.0 kg</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">120.0 kg</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
       {/* Common Pallet & Cargo Dimension Benchmarks */}
       <section className="space-y-4">
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
-          Standard Pallet &amp; Crate Inch-to-CBM Reference
+          Standard Pallet &amp; Crate Dimension Reference Table
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156] text-xs sm:text-sm">

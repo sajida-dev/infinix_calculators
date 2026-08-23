@@ -6,11 +6,59 @@ export default function AffirmSeoContent() {
     <article className="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
       <div className="border-t border-slate-200 dark:border-[#4D5156] pt-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
-          How Affirm Loan Interest &amp; Payment Calculations Work
+          How Affirm Loan Interest, Down Payments &amp; Pay-in-4 Work
         </h2>
         <p>
-          Buy Now, Pay Later (BNPL) platforms like Affirm provide consumer installment loans at point-of-sale. Unlike traditional revolving credit cards that calculate interest using compound daily balances, Affirm calculates interest using <strong>simple fixed interest</strong> on the starting loan principal balance.
+          Buy Now, Pay Later (BNPL) platforms like Affirm provide consumer installment financing at point-of-sale. Unlike traditional revolving credit cards that calculate interest using daily compound balances, Affirm calculates interest using <strong>fixed simple interest</strong> on the starting financed balance, with no compounding interest, late fees, or prepayment penalties.
         </p>
+      </div>
+
+      {/* Pay in 4 Schedule Matrix */}
+      <div className="space-y-3">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+          Affirm Pay in 4 Schedule Breakdown ($375 Order Example)
+        </h3>
+        <p className="text-sm">
+          For eligible purchases between $50 and $400, Affirm offers a 0% APR Pay in 4 plan splitting the total into 4 equal bi-weekly payments:
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156] text-xs sm:text-sm">
+            <thead>
+              <tr className="bg-slate-100 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100">
+                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Payment Milestone</th>
+                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Due Date</th>
+                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Amount Due</th>
+                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Interest / Fees</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-[#4D5156]">
+              <tr>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-semibold">Payment 1 (Down Payment)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3">Today (Checkout)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono font-bold text-primary dark:text-sky-400">$93.75</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono text-emerald-600">$0.00 (0% APR)</td>
+              </tr>
+              <tr>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-semibold">Payment 2</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3">2 Weeks Later (Day 14)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono font-bold text-primary dark:text-sky-400">$93.75</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono text-emerald-600">$0.00 (0% APR)</td>
+              </tr>
+              <tr>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-semibold">Payment 3</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3">4 Weeks Later (Day 28)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono font-bold text-primary dark:text-sky-400">$93.75</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono text-emerald-600">$0.00 (0% APR)</td>
+              </tr>
+              <tr>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-semibold">Payment 4 (Final)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3">6 Weeks Later (Day 42)</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono font-bold text-primary dark:text-sky-400">$93.75</td>
+                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono text-emerald-600">$0.00 (0% APR)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-6 rounded-2xl space-y-3">
@@ -30,7 +78,7 @@ export default function AffirmSeoContent() {
 
       <div className="space-y-4">
         <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
-          Affirm APR Tier Comparison Table
+          Affirm Monthly APR Tier Comparison Table
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156] text-xs sm:text-sm">

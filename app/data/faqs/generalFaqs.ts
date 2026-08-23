@@ -2,8 +2,16 @@ import type { FAQItem } from "../calculatorsData";
 
 export const proRataFaqs: FAQItem[] = [
   {
-    "question": "What is proration?",
-    "answer": "The proportional division of rental or payroll costs based on actual days active."
+    "question": "What is proration and how is a pro-rata calculation performed?",
+    "answer": "Proration is the proportional allocation of costs (like rent, salary, insurance, or property taxes) based on the actual number of days used during a billing cycle. The standard formula is: <code>Daily Rate = Monthly Total ÷ Total Days in Month</code>, and <code>Prorated Amount = Daily Rate × Days Active</code>. For example, moving into a $1,500/month apartment on June 16th (15 active days out of 30): <code>($1,500 ÷ 30) × 15 = $750.00</code>. Calculate your exact move-in or salary proration using our free <a href=\"/calculators/pro-rata\">Pro Rata Calculator</a>."
+  },
+  {
+    "question": "How is pro-rata salary calculated for starting or leaving a job mid-month?",
+    "answer": "To calculate prorated salary: 1) Find the annual working days (typically 260 days for a 5-day work week) or working days in the month (e.g., 22 days). 2) Divide monthly salary by working days to determine daily wage. 3) Multiply daily wage by actual days worked."
+  },
+  {
+    "question": "What is the 365-day vs. 360-day (banker's year) proration method?",
+    "answer": "The 365-day method calculates exact calendar days (using actual month lengths of 28, 30, or 31 days). The 360-day method assumes every month has 30 days (12 × 30 = 360), commonly used in commercial real estate leases and municipal bond interest calculations."
   }
 ];
 
@@ -30,8 +38,12 @@ export const helocPayoffFaqs: FAQItem[] = [
 
 export const balanceTransferFaqs: FAQItem[] = [
   {
-    "question": "Is a balance transfer worth it?",
-    "answer": "Yes, if the interest saved exceeds the upfront transfer fee."
+    "question": "Is a credit card balance transfer worth it?",
+    "answer": "Yes, if the interest saved during the 0% intro APR promotional window exceeds the upfront transfer fee (typically 3% to 5%). For example, transferring a $5,000 balance from a 22% APR card to an 18-month 0% card with a 3% fee ($150) saves over $1,200 in interest charges if paid off during the intro period. Calculate your exact net savings with our <a href=\"/calculators/balance-transfer\">Balance Transfer Calculator</a>."
+  },
+  {
+    "question": "How do you calculate the balance transfer fee?",
+    "answer": "Multiply the transferred debt balance by the fee percentage (usually 3% or 5%): <code>Fee = Transferred Amount × (Fee Rate ÷ 100)</code>. On a $10,000 balance with a 3% fee, the fee is $300, bringing your starting transferred loan balance to $10,300."
   }
 ];
 
@@ -212,8 +224,16 @@ export const rentVsSellFaqs: FAQItem[] = [
 
 export const mortgageCalculatorGameFaqs: FAQItem[] = [
   {
-    "question": "How does the Savings Score work?",
-    "answer": "It represents the percentage of total mortgage interest saved, scaled out of 1000 possible points."
+    "question": "What is the Mortgage Calculator Game and how do you play?",
+    "answer": "The Mortgage Calculator Game is an interactive financial simulation that gamifies the homebuying and debt-payoff process. You test different loan terms (15 vs. 30 years), down payment amounts, and extra monthly principal payments to optimize your 'Interest Saved Score' and unlock debt-free badges. Try the simulation now with our free <a href=\"/calculators/mortgage-calculator-game\">Mortgage Calculator Game</a> or read our guide on <a href=\"/blog/mortgage-calculator-games-guide\">how to simulate homebuying scenarios</a>."
+  },
+  {
+    "question": "How does the Savings Score and Level Progression work in the game?",
+    "answer": "The game awards points based on the percentage of lifetime mortgage interest eliminated through smart refinancing, lump-sum bonuses, and recurring monthly principal buffers. Scaling out of 1,000 points, scores above 800 achieve 'Mortgage Master' status by cutting total interest costs by over 40%."
+  },
+  {
+    "question": "How much faster can you pay off a 30-year mortgage by making 1 extra payment per year?",
+    "answer": "Making just 1 extra monthly payment per year (or switching to bi-weekly payments) shortens a standard 30-year mortgage by <strong>4 to 6 years</strong> and saves between <strong>$30,000 and $65,000 in interest</strong> on a median-priced home."
   }
 ];
 
@@ -419,12 +439,16 @@ export const oklahomaTaxFaqs: FAQItem[] = [
 
 export const novigFaqs: FAQItem[] = [
   {
-    "question": "What is 'vig' in sports betting?",
-    "answer": "Vig (short for vigorish, juice, or margin) is the fee the sportsbook charges for taking a bet. It is built directly into the odds."
+    "question": "What is 'vig' (juice) in sports betting and why remove it?",
+    "answer": "Vig (short for vigorish, juice, or bookmaker overround) is the hidden fee sportsbooks bake into betting lines. For a standard 50/50 point spread, sportsbooks price both sides at -110 instead of +100, creating an implied probability sum of 104.76% (a 4.76% house edge). Removing the vig reveals the 'true fair win probability' and 'true fair odds' of each outcome. Calculate zero-margin lines with our free <a href=\"/calculators/novig\">No-Vig Fair Odds Calculator</a>."
   },
   {
-    "question": "How does a no-vig calculator help?",
-    "answer": "It allows you to compare different sportsbooks' odds against a 'fair' baseline, helping you identify positive expected value (+EV) opportunities."
+    "question": "How do you calculate no-vig fair win probability?",
+    "answer": "1) Convert both American odds into implied probabilities: <code>Implied Prob = -Odds / (-Odds + 100)</code> for negatives, or <code>100 / (Odds + 100)</code> for positives. 2) Sum the two probabilities (e.g., 52.38% + 52.38% = 104.76%). 3) Divide each implied probability by the total sum to find the true no-vig fair probability (52.38% ÷ 104.76% = 50.00%)."
+  },
+  {
+    "question": "How does a no-vig calculator find Positive Expected Value (+EV) bets?",
+    "answer": "By inputting the sharpest market odds (such as Pinnacle or Circa) into a no-vig calculator, you obtain the true fair price. If another commercial sportsbook (like DraftKings or FanDuel) offers higher odds than the true no-vig line, the wager has Positive Expected Value (+EV) and long-term mathematical profitability."
   }
 ];
 

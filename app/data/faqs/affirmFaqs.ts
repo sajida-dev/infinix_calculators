@@ -54,6 +54,14 @@ export const affirmFaqs: FAQItem[] = [
     "answer": "Affirm does not enforce a rigid minimum credit score requirement. While applicants with FICO scores of 640 or higher generally receive higher purchasing power and lower APR tiers (including 0% APR), applicants with limited credit or scores as low as 550 can be approved based on checking account history and income. Pre-qualifying triggers a soft pull with no score impact. Read our analysis in <a href=\"/blog/does-affirm-hurt-your-credit-score\">Affirm credit score requirements & bureau reporting</a>."
   },
   {
+    "question": "How much would I pay on an Affirm Pay in 4 plan on a $375 order?",
+    "answer": "On an Affirm Pay in 4 plan for a $375 purchase, you pay exactly <strong>4 bi-weekly payments of $93.75</strong> at <strong>0% APR with $0 fees</strong>. The first payment of $93.75 is charged immediately at checkout, with the remaining 3 payments scheduled every 14 days (Week 2, Week 4, and Week 6). There are no interest charges or compounding fees provided payments are made on time. Model your order total using our <a href=\"/calculators/affirm\">Affirm Payment Calculator</a>."
+  },
+  {
+    "question": "What are Affirm's typical interest rates and loan APR tiers?",
+    "answer": "Affirm offers simple interest rates ranging from <strong>0% APR promotional financing up to 36% APR</strong>, depending on the merchant partner, loan duration (3, 6, 12, 24, or 36 months), and applicant credit profile. Popular merchant partners (like Peloton, Samsung, and Apple) frequently offer 0% APR, while standard retail loans average 15% to 30% APR simple interest with zero late fees or prepayment penalties."
+  },
+  {
     "question": "¿Qué es Affirm y cómo funciona en español?",
     "answer": "Affirm es un servicio de financiamiento en el punto de venta que permite a los compradores dividir sus compras en pagos quincenales (Pay in 4 al 0% APR) o préstamos mensuales de 3 a 36 meses con interés simple fijo sin cargos por mora ni comisiones ocultas. Para ver la guía completa en español, lea nuestro artículo <a href=\"/blog/que-es-affirm-como-funciona-en-espanol-guia-completa\">¿Qué es Affirm y cómo funciona en español?</a>."
   }
