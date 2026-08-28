@@ -30,7 +30,7 @@ export { vectorProductFaqs } from "./generalFaqs";
 export { grassSeedFaqs } from "./generalFaqs";
 export { gearRatioFaqs } from "./generalFaqs";
 export { rentVsSellFaqs } from "./generalFaqs";
-export { mortgageCalculatorGameFaqs } from "./generalFaqs";
+export { mortgageCalculatorGameFaqs } from "./mortgageCalculatorGameFaqs";
 export { weddingAlcoholFaqs } from "./generalFaqs";
 export { bridgeLoanFaqs } from "./generalFaqs";
 export { tvMountingHeightFaqs } from "./generalFaqs";

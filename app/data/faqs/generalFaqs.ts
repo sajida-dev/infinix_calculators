@@ -222,20 +222,7 @@ export const rentVsSellFaqs: FAQItem[] = [
   }
 ];
 
-export const mortgageCalculatorGameFaqs: FAQItem[] = [
-  {
-    "question": "What is the Mortgage Calculator Game and how do you play?",
-    "answer": "The Mortgage Calculator Game is an interactive financial simulation that gamifies the homebuying and debt-payoff process. You test different loan terms (15 vs. 30 years), down payment amounts, and extra monthly principal payments to optimize your 'Interest Saved Score' and unlock debt-free badges. Try the simulation now with our free <a href=\"/calculators/mortgage-calculator-game\">Mortgage Calculator Game</a> or read our guide on <a href=\"/blog/mortgage-calculator-games-guide\">how to simulate homebuying scenarios</a>."
-  },
-  {
-    "question": "How does the Savings Score and Level Progression work in the game?",
-    "answer": "The game awards points based on the percentage of lifetime mortgage interest eliminated through smart refinancing, lump-sum bonuses, and recurring monthly principal buffers. Scaling out of 1,000 points, scores above 800 achieve 'Mortgage Master' status by cutting total interest costs by over 40%."
-  },
-  {
-    "question": "How much faster can you pay off a 30-year mortgage by making 1 extra payment per year?",
-    "answer": "Making just 1 extra monthly payment per year (or switching to bi-weekly payments) shortens a standard 30-year mortgage by <strong>4 to 6 years</strong> and saves between <strong>$30,000 and $65,000 in interest</strong> on a median-priced home."
-  }
-];
+export { mortgageCalculatorGameFaqs } from "./mortgageCalculatorGameFaqs";
 
 export const weddingAlcoholFaqs: FAQItem[] = [
   {

@@ -7,6 +7,12 @@ import { globalKeywords } from "./data/keywords";
 // Base URL for canonical links – set via environment variable or fallback to production domain.
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://infinixcalculator.com";
 
+// Google Adsense Publisher ID used in Meta verification + site verification meta tag.
+// IMPORTANT: Replace with your actual verification codes to pass Google Search Console
+// and Google AdSense site ownership verification. These placeholders MUST be updated.
+const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "";
+const BING_SITE_VERIFICATION = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || "";
+
 export const defaultMetadata: Metadata = {
   title: {
     default: "Infinix Calculators",
@@ -38,9 +44,9 @@ export const defaultMetadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   verification: {
-    google: "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
+    google: GOOGLE_SITE_VERIFICATION,
     other: {
-      "msvalidate.01": "YOUR_BING_SITE_VERIFICATION_CODE",
+      "msvalidate.01": BING_SITE_VERIFICATION,
     },
   },
   other: {

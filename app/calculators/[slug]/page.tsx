@@ -19,6 +19,7 @@ import SquareFeeSeoContent from "../../../app/components/seo/SquareFeeSeoContent
 import TherapyProductivitySeoContent from "../../../app/components/seo/TherapyProductivitySeoContent";
 import GoogleReviewSeoContent from "../../../app/components/seo/GoogleReviewSeoContent";
 import GrossUpSeoContent from "../../../app/components/seo/GrossUpSeoContent";
+import TanInverseSeoContent from "../../../app/components/seo/TanInverseSeoContent";
 import ProRataSeoContent from "../../../app/components/seo/ProRataSeoContent";
 import BalanceTransferSeoContent from "../../../app/components/seo/BalanceTransferSeoContent";
 import DrywallSeoContent from "../../../app/components/seo/DrywallSeoContent";
@@ -375,6 +376,11 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
               {slug === "gross-up" && (
                 <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
                   <GrossUpSeoContent />
+                </div>
+              )}
+              {slug === "tan-inverse" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                  <TanInverseSeoContent />
                 </div>
               )}
               {slug === "pro-rata" && (
