@@ -29,16 +29,16 @@ export default function AdBanner({
           ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
         }
       } catch (err) {
-        // Retry failsafe for asynchronous script loading latency
+        // Retry failsafe for lazy script loading latency
         setTimeout(() => {
           try {
             if (typeof window !== "undefined") {
               ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
             }
-          } catch (retryErr) {
-            console.error("AdSense push failed:", retryErr);
+          } catch {
+            // Silently ignore if blocked or unavailable
           }
-        }, 750);
+        }, 1000);
       }
     };
 

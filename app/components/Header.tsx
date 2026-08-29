@@ -47,7 +47,6 @@ export default function Header() {
               alt="Infinix Calculators"
               width={140}
               height={36}
-              priority
               className="h-9 w-auto object-contain hidden dark:block"
             />
           </Link>

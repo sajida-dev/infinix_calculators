@@ -15,8 +15,12 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import JsonLd from "./components/JsonLd";
 import ThemeScript from "./components/ThemeScript";
-import CookieConsent from "./components/CookieConsent";
+import ThirdPartyScripts from "./components/ThirdPartyScripts";
 import { ThemeProvider } from "./components/ThemeProvider";
+import dynamic from "next/dynamic";
+
+const CookieConsent = dynamic(() => import("./components/CookieConsent"));
+
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -54,12 +58,23 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
+      <head>
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fundingchoicesmessages.google.com" />
+        <link rel="preconnect" href="https://ep1.adtrafficquality.google" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://fundingchoicesmessages.google.com" />
+        <link rel="dns-prefetch" href="https://ep1.adtrafficquality.google" />
+        <link rel="dns-prefetch" href="https://ep2.adtrafficquality.google" />
+      </head>
       <body className="min-h-full bg-white dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-200" suppressHydrationWarning>
         <ThemeScript />
         <JsonLd id="org-jsonld" data={organizationSchema} />
         <JsonLd id="website-jsonld" data={websiteSchema} />
 
-        {/* Google Consent Mode v2 Initialization */}
+        {/* Google Consent Mode v2 Initialization (Lightweight inline) */}
         <Script
           id="google-consent-mode"
           strategy="beforeInteractive"
@@ -78,13 +93,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google AdSense Verification Script */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869"
-          crossOrigin="anonymous"
-        />
-
         <ThemeProvider>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 left-0 w-full bg-primary text-white text-center py-2">Skip to main content</a>
           <Header />
@@ -93,21 +101,8 @@ export default function RootLayout({
           <CookieConsent />
         </ThemeProvider>
 
-        {/* Google tag (gtag.js) */}
-        <Script
-          id="google-tag-manager"
-          src="https://www.googletagmanager.com/gtag/js?id=G-7NSE8Q4RBL"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-7NSE8Q4RBL');
-          `}
-        </Script>
+        {/* High-Performance Interaction/Idle Script Loader */}
+        <ThirdPartyScripts />
       </body>
     </html>
   );

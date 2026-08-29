@@ -18,8 +18,10 @@ export default function CookieConsent() {
   useEffect(() => {
     const consent = localStorage.getItem("infinix_cookie_consent");
     if (!consent) {
-      const timer = setTimeout(() => setShowBanner(true), 800);
-      return () => clearTimeout(timer);
+      const bannerTimer = setTimeout(() => {
+        setShowBanner(true);
+      }, 1500);
+      return () => clearTimeout(bannerTimer);
     } else {
       try {
         const parsed = JSON.parse(consent);
@@ -89,27 +91,36 @@ export default function CookieConsent() {
         <aside
           role="region"
           aria-label="Cookie consent banner"
-          className="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#1e2025] border-t border-slate-200 dark:border-[#4D5156] shadow-[0_-8px_30px_rgba(0,0,0,0.12)] animate-in fade-in slide-in-from-bottom-5 duration-300 transition-colors"
+          style={{ contain: "layout style" }}
+          className="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#1e2025] border-t border-slate-200 dark:border-[#4D5156] shadow-[0_-8px_30px_rgba(0,0,0,0.12)] animate-in fade-in slide-in-from-bottom-5 duration-200 transition-colors"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 lg:gap-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-5">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 lg:gap-8">
 
-              {/* Left Column: Legal Text & Disclosures */}
+              {/* Left Column: Legal Text & Disclosures (Responsive mobile vs desktop) */}
               <div className="flex-1 text-slate-700 dark:text-slate-300 text-xs sm:text-[13px] leading-relaxed">
-                <p>
-                  We and our partners use cookies on this website for different purposes. We use strictly necessary cookies that are essential for basic website functionality, computational tools, and cannot be switched off. We also use other cookies such as preference, performance, and marketing cookies to provide you with the best possible digital experience, enhance the performance of this website, optimize our calculation engines, and to show you relevant information. Accept all cookies allows us to use cookies for the purposes stated above. Customize your preferences to choose which cookies you want us to enable. Discover more in our{" "}
+                {/* Mobile Concise Notice (Minimal vertical height) */}
+                <p className="sm:hidden">
+                  We use cookies and device identifiers to ensure accurate calculator calculations, analyze site performance, and improve your experience. Choose your preferences or accept all cookies. Discover more in our{" "}
                   <Link href="/privacy" className="font-bold text-primary dark:text-sky-400 hover:underline">
                     Cookies Notice
-                  </Link>
-                  . Learn how we collect, use, and share your personal data in our{" "}
+                  </Link>{" "}
+                  and{" "}
                   <Link href="/privacy" className="font-bold text-primary dark:text-sky-400 hover:underline">
                     Privacy Policy
+                  </Link>.
+                </p>
+
+                {/* Desktop Full Enterprise Notice */}
+                <p className="hidden sm:block">
+                  We and our partners use cookies and computational storage on this website to optimize calculation engines, enhance navigation, analyze site usage, and deliver relevant information. Accept all cookies allows us to provide the best digital experience, or customize your preferences to choose which categories to enable. Discover more in our{" "}
+                  <Link href="/privacy" className="font-bold text-primary dark:text-sky-400 hover:underline">
+                    Cookies Notice
                   </Link>{" "}
-                  and about the conditions to use our site in our{" "}
-                  <Link href="/terms" className="font-bold text-primary dark:text-sky-400 hover:underline">
-                    Terms of Use
-                  </Link>
-                  .
+                  and{" "}
+                  <Link href="/privacy" className="font-bold text-primary dark:text-sky-400 hover:underline">
+                    Privacy Policy
+                  </Link>.
                 </p>
               </div>
 
