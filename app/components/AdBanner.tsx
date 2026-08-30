@@ -45,20 +45,34 @@ export default function AdBanner({
     pushAd();
   }, [pathname, adSlot]);
 
+  // Determine reserved minimum height to guarantee zero CLS
+  const minHeightClass =
+    adFormat === "horizontal"
+      ? "min-h-[90px] sm:min-h-[100px]"
+      : adFormat === "vertical"
+      ? "min-h-[600px]"
+      : "min-h-[250px] sm:min-h-[280px]";
+
   return (
-    <div className={`ad-container overflow-hidden text-center my-4 ${className}`}>
-      <span className="block text-[9px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">
+    <div
+      style={{ contain: "layout" }}
+      className={`ad-container relative overflow-hidden text-center my-6 py-2 rounded-xl bg-slate-50/50 dark:bg-[#1e2025]/50 border border-slate-100/80 dark:border-[#4D5156]/30 flex flex-col justify-center items-center ${minHeightClass} ${className}`}
+    >
+      <span className="block text-[9px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1 select-none">
         Advertisement
       </span>
-      <ins
-        key={`${pathname}-${adSlot || "auto"}`}
-        className="adsbygoogle"
-        style={style}
-        data-ad-client={clientId}
-        {...(adSlot ? { "data-ad-slot": adSlot } : {})}
-        data-ad-format={adFormat}
-        data-full-width-responsive={fullWidthResponsive ? "true" : "false"}
-      />
+      <div className="w-full flex-1 flex items-center justify-center">
+        <ins
+          key={`${pathname}-${adSlot || "auto"}`}
+          className="adsbygoogle w-full"
+          style={style}
+          data-ad-client={clientId}
+          {...(adSlot ? { "data-ad-slot": adSlot } : {})}
+          data-ad-format={adFormat}
+          data-full-width-responsive={fullWidthResponsive ? "true" : "false"}
+        />
+      </div>
     </div>
   );
 }
+

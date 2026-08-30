@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { calculatorsData } from "../data/calculatorsData";
+import { searchIndex, SearchIndexItem } from "../data/searchIndex";
 
 interface SearchInputProps {
   placeholder?: string;
@@ -20,7 +20,7 @@ export default function SearchInput({
 }: SearchInputProps) {
   const router = useRouter();
   const [query, setQuery] = useState(defaultValue);
-  const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [suggestions, setSuggestions] = useState<SearchIndexItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -49,7 +49,7 @@ export default function SearchInput({
       return;
     }
 
-    const matches = Object.values(calculatorsData)
+    const matches = searchIndex
       .filter(
         (calc) =>
           calc.name.toLowerCase().includes(normalized) ||

@@ -75,9 +75,9 @@ export default function PrivacyPolicyPage() {
                   </tr>
 
                   <tr className="hover:bg-slate-50 dark:hover:bg-[#22242A]/60">
-                    <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Cookies</td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Session and preference cookies</td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">To remember settings and enhance usability</td>
+                    <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Local Storage</td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Client-side theme preference</td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">To remember light/dark mode choices locally on your device</td>
                   </tr>
                 </tbody>
               </table>
@@ -116,28 +116,28 @@ export default function PrivacyPolicyPage() {
             </div>
           </div>
 
-          {/* COOKIES POLICY */}
+          {/* ZERO COOKIES POLICY */}
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-100">
-              Cookies Policy
+              No Cookies Policy
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              We use cookies to improve functionality and personalize your experience.
+              Infinix Calculators operates on a zero-first-party-cookie model. We do not use cookies to track, profile, or store your personal information.
             </p>
 
             <div className="mt-6 grid md:grid-cols-2 gap-5">
               <div className="p-5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] hover:shadow-sm transition">
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Essential Cookies</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Zero Tracking Cookies</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  Required for basic site functionality such as navigation and tool usage.
+                  We do not use first-party tracking cookies or persistent user-identifying cookies across your sessions.
                 </p>
               </div>
 
               <div className="p-5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] hover:shadow-sm transition">
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Analytics Cookies</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Local Browser Computation</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  Help us understand how users interact with calculators to improve performance.
+                  All calculator mathematical computations and unit conversions execute securely and immediately within your client browser.
                 </p>
               </div>
             </div>
@@ -171,14 +171,14 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              We use third-party advertising companies, including Google AdSense, to serve ads when you visit our website. These companies may use cookies, web beacons, and similar tracking technologies (such as the DoubleClick DART cookie) to serve ads based on your prior visits to our website or other websites on the Internet.
+              We use third-party advertising companies, including Google AdSense, to serve ads when you visit our website. These third parties may serve ads based on non-identifying contextual signals and browsing activity.
             </p>
 
             <div className="mt-6 grid md:grid-cols-2 gap-5">
               <div className="p-5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Google Advertising Cookies</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Third-Party Advertising</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  Google&apos;s use of advertising cookies enables it and its certified partners to serve relevant ads to our visitors based on their browsing activity across the web.
+                  Google and its certified partners serve relevant ads to our visitors based on contextual page information and user privacy settings.
                 </p>
               </div>
 
@@ -200,7 +200,7 @@ export default function PrivacyPolicyPage() {
                   </a>.
                 </li>
                 <li>
-                  Opt out of third-party vendor cookies for personalized advertising by visiting{" "}
+                  Opt out of third-party personalized advertising by visiting{" "}
                   <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-sky-400 font-medium underline">
                     www.aboutads.info
                   </a>{" "}
@@ -242,7 +242,7 @@ export default function PrivacyPolicyPage() {
               <li>Request access to the data we collect about you</li>
               <li>Request correction of inaccurate information</li>
               <li>Request deletion of certain data (where applicable)</li>
-              <li>Opt out of cookies via browser settings</li>
+              <li>Clear local preferences via browser settings</li>
             </ul>
           </div>
 

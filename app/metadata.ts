@@ -50,6 +50,7 @@ export const defaultMetadata: Metadata = {
     },
   },
   other: {
+    "google-adsense-account": "ca-pub-3431842904505869",
     "bingbot": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   },
   openGraph: {

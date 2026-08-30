@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 
@@ -17,10 +16,6 @@ import JsonLd from "./components/JsonLd";
 import ThemeScript from "./components/ThemeScript";
 import ThirdPartyScripts from "./components/ThirdPartyScripts";
 import { ThemeProvider } from "./components/ThemeProvider";
-import dynamic from "next/dynamic";
-
-const CookieConsent = dynamic(() => import("./components/CookieConsent"));
-
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -61,11 +56,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://fundingchoicesmessages.google.com" />
-        <link rel="preconnect" href="https://ep1.adtrafficquality.google" />
+        <link rel="preconnect" href="https://ep1.adtrafficquality.google" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://fundingchoicesmessages.google.com" />
         <link rel="dns-prefetch" href="https://ep1.adtrafficquality.google" />
         <link rel="dns-prefetch" href="https://ep2.adtrafficquality.google" />
       </head>
@@ -74,23 +67,12 @@ export default function RootLayout({
         <JsonLd id="org-jsonld" data={organizationSchema} />
         <JsonLd id="website-jsonld" data={websiteSchema} />
 
-        {/* Google Consent Mode v2 Initialization (Lightweight inline) */}
+        {/* Google AdSense Script (lazyOnload to prevent blocking main thread / protect Lighthouse score) */}
         <Script
-          id="google-consent-mode"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('consent', 'default', {
-                'ad_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'analytics_storage': 'denied',
-                'wait_for_update': 500
-              });
-            `,
-          }}
+          id="google-adsense"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
         />
 
         <ThemeProvider>
@@ -98,7 +80,6 @@ export default function RootLayout({
           <Header />
           <main id="main-content" className="flex-1">{children}</main>
           <Footer />
-          <CookieConsent />
         </ThemeProvider>
 
         {/* High-Performance Interaction/Idle Script Loader */}

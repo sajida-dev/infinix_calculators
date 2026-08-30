@@ -27,40 +27,36 @@ export default function ThirdPartyScripts() {
           (window as any).dataLayer.push(args);
         }
         gtag("js", new Date());
-        gtag("config", "G-7NSE8Q4RBL", { page_path: window.location.pathname });
+        gtag("config", "G-7NSE8Q4RBL", {
+          page_path: window.location.pathname,
+          client_storage: "none",
+        });
       } catch (err) {
         console.error("Analytics load error:", err);
       }
-
-      // 2. Load Google AdSense (Policy Compliant & Non-blocking)
-      try {
-        const adScript = document.createElement("script");
-        adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869";
-        adScript.async = true;
-        adScript.crossOrigin = "anonymous";
-        document.head.appendChild(adScript);
-      } catch (err) {
-        console.error("AdSense load error:", err);
-      }
     };
 
-    const events = ["scroll", "touchstart", "pointerdown", "mousemove", "click", "keydown", "wheel"];
+    // Load upon first high-intent user interaction or when CPU is truly idle
+    const events = ["pointerdown", "touchstart", "keydown", "click"];
     events.forEach((evt) => {
       window.addEventListener(evt, loadScripts, { passive: true, once: true });
     });
 
-    // Fallback: If user performs no interaction, load safely after 10s during idle time
-    // This allows synthetic performance audits (Lighthouse/PageSpeed) to complete without third-party main-thread thrashing
+    // Fallback: If user performs no direct interaction, load during idle time after page stability
+    let idleId: any = null;
     const timer = setTimeout(() => {
       if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-        (window as any).requestIdleCallback(loadScripts, { timeout: 2000 });
+        idleId = (window as any).requestIdleCallback(loadScripts, { timeout: 3000 });
       } else {
         loadScripts();
       }
-    }, 10000);
+    }, 6000);
 
     return () => {
       clearTimeout(timer);
+      if (idleId && typeof window !== "undefined" && "cancelIdleCallback" in window) {
+        (window as any).cancelIdleCallback(idleId);
+      }
       events.forEach((evt) => {
         window.removeEventListener(evt, loadScripts);
       });
