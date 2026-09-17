@@ -13,7 +13,7 @@ export default function RoofSeoContent() {
         </p>
       </section>
 
-      <section className="bg-primary/5 dark:bg-[#22242A] rounded-2xl border border-primary/10 dark:border-[#4D5156] p-6 sm:p-8 space-y-4">
+      <section className="bg-primary/5 dark:bg-dark-card rounded-2xl border border-primary/10 dark:border-dark-border p-6 sm:p-8 space-y-4">
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
           <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary shrink-0" />
           The Roofing Industry Standards: Squares &amp; Bundles
@@ -36,38 +36,38 @@ export default function RoofSeoContent() {
           Roof pitch represents the vertical rise in inches for every 12 inches of horizontal run. As the slope steepens, the multiplier increases, meaning a steep roof requires more shingles than a flat roof covering the same ground footprint:
         </p>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-[#4D5156]">
-            <thead className="bg-slate-100 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] font-bold text-slate-900 dark:text-slate-100">
+          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-dark-border">
+            <thead className="bg-slate-100 dark:bg-dark-bg border-b border-slate-200 dark:border-dark-border font-bold text-slate-900 dark:text-slate-100">
               <tr>
-                <th className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Roof Pitch (Rise / 12)</th>
-                <th className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Roof Category</th>
+                <th className="p-3 border-r border-slate-200 dark:border-dark-border">Roof Pitch (Rise / 12)</th>
+                <th className="p-3 border-r border-slate-200 dark:border-dark-border">Roof Category</th>
                 <th className="p-3">Slope Pitch Factor (Multiplier)</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-[#4D5156] text-slate-600 dark:text-slate-300">
+            <tbody className="divide-y divide-slate-100 dark:divide-dark-border text-slate-600 dark:text-slate-300">
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">3/12 rise</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Low Slope / Shed Roof</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">3/12 rise</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">Low Slope / Shed Roof</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-mono font-bold">1.030</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">4/12 rise</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Standard Ranch Roof</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">4/12 rise</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">Standard Ranch Roof</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-mono font-bold">1.054</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">6/12 rise</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Average Suburban Slope</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">6/12 rise</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">Average Suburban Slope</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-mono font-bold">1.118</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">8/12 rise</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Steep Slope</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">8/12 rise</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">Steep Slope</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-mono font-bold">1.202</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">12/12 rise</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Very Steep / A-Frame (45°)</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">12/12 rise</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">Very Steep / A-Frame (45°)</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-mono font-bold">1.414</td>
               </tr>
             </tbody>

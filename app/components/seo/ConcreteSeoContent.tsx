@@ -15,7 +15,7 @@ export default function ConcreteSeoContent() {
         </p>
       </section>
 
-      <section className="bg-primary/5 dark:bg-[#22242A] rounded-2xl border border-primary/10 dark:border-[#4D5156] p-6 sm:p-8 space-y-4">
+      <section className="bg-primary/5 dark:bg-dark-card rounded-2xl border border-primary/10 dark:border-dark-border p-6 sm:p-8 space-y-4">
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
           <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary shrink-0" />
           Concrete Bags to Cubic Yards Quick Lookup Chart
@@ -24,28 +24,28 @@ export default function ConcreteSeoContent() {
           How many bags of concrete do you need to equal a cubic yard? Use this reference table for standard pre-mix bag yields:
         </p>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-[#4D5156]">
-            <thead className="bg-slate-100 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] font-bold text-slate-900 dark:text-slate-100">
+          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-dark-border">
+            <thead className="bg-slate-100 dark:bg-dark-bg border-b border-slate-200 dark:border-dark-border font-bold text-slate-900 dark:text-slate-100">
               <tr>
-                <th className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Bag Weight (lbs)</th>
-                <th className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Volume Yield (cu ft)</th>
+                <th className="p-3 border-r border-slate-200 dark:border-dark-border">Bag Weight (lbs)</th>
+                <th className="p-3 border-r border-slate-200 dark:border-dark-border">Volume Yield (cu ft)</th>
                 <th className="p-3">Bags per Cubic Yard (27 cu ft)</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-[#4D5156] text-slate-600 dark:text-slate-300">
+            <tbody className="divide-y divide-slate-100 dark:divide-dark-border text-slate-600 dark:text-slate-300">
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">80 lb bag</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-mono">0.60 cu ft</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">80 lb bag</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-mono">0.60 cu ft</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-bold">45 Bags</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">60 lb bag</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-mono">0.45 cu ft</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">60 lb bag</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-mono">0.45 cu ft</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-bold">60 Bags</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">40 lb bag</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-mono">0.30 cu ft</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">40 lb bag</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-mono">0.30 cu ft</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-bold">90 Bags</td>
               </tr>
             </tbody>
@@ -57,9 +57,9 @@ export default function ConcreteSeoContent() {
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="border border-slate-200 dark:border-[#4D5156] bg-white dark:bg-[#22242A] rounded-xl p-5 space-y-3">
+        <div className="border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card rounded-xl p-5 space-y-3">
           <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base">Rectangular Slabs Formula</h4>
-          <p className="text-xs text-slate-600 dark:text-slate-300 font-mono bg-slate-50 dark:bg-[#191a1d] p-2.5 rounded-lg border border-slate-100 dark:border-[#4D5156]">
+          <p className="text-xs text-slate-600 dark:text-slate-300 font-mono bg-slate-50 dark:bg-dark-bg p-2.5 rounded-lg border border-slate-100 dark:border-dark-border">
             Volume (cu ft) = Length (ft) × Width (ft) × [Thickness (in) ÷ 12]
           </p>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
@@ -67,9 +67,9 @@ export default function ConcreteSeoContent() {
           </p>
         </div>
 
-        <div className="border border-slate-200 dark:border-[#4D5156] bg-white dark:bg-[#22242A] rounded-xl p-5 space-y-3">
+        <div className="border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card rounded-xl p-5 space-y-3">
           <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base">Circular Columns &amp; Piers Formula</h4>
-          <p className="text-xs text-slate-600 dark:text-slate-300 font-mono bg-slate-50 dark:bg-[#191a1d] p-2.5 rounded-lg border border-slate-100 dark:border-[#4D5156]">
+          <p className="text-xs text-slate-600 dark:text-slate-300 font-mono bg-slate-50 dark:bg-dark-bg p-2.5 rounded-lg border border-slate-100 dark:border-dark-border">
             Volume (cu ft) = π × Radius² (ft) × Height/Depth (ft)
           </p>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
@@ -102,31 +102,31 @@ export default function ConcreteSeoContent() {
           Understanding <strong>concrete slab cost</strong> helps you budget accurately. Here are current national average prices for concrete installation:
         </p>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-[#4D5156]">
-            <thead className="bg-slate-100 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] font-bold text-slate-900 dark:text-slate-100">
+          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-dark-border">
+            <thead className="bg-slate-100 dark:bg-dark-bg border-b border-slate-200 dark:border-dark-border font-bold text-slate-900 dark:text-slate-100">
               <tr>
-                <th className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Project Type</th>
-                <th className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Thickness</th>
-                <th className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Cost per Sq Ft</th>
+                <th className="p-3 border-r border-slate-200 dark:border-dark-border">Project Type</th>
+                <th className="p-3 border-r border-slate-200 dark:border-dark-border">Thickness</th>
+                <th className="p-3 border-r border-slate-200 dark:border-dark-border">Cost per Sq Ft</th>
                 <th className="p-3">Typical Total Cost</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-[#4D5156] text-slate-600 dark:text-slate-300">
+            <tbody className="divide-y divide-slate-100 dark:divide-dark-border text-slate-600 dark:text-slate-300">
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">Patio / Walkway</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">4 inches</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">Patio / Walkway</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">4 inches</td>
                 <td className="p-3 font-mono">$6 - $9</td>
                 <td className="p-3 font-mono">$600 - $1,800 (200 sq ft)</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">Driveway</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">5-6 inches</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">Driveway</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">5-6 inches</td>
                 <td className="p-3 font-mono">$8 - $12</td>
                 <td className="p-3 font-mono">$2,400 - $6,000 (600 sq ft)</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">Foundation Slab</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">6 inches</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">Foundation Slab</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">6 inches</td>
                 <td className="p-3 font-mono">$10 - $15</td>
                 <td className="p-3 font-mono">$10,000 - $18,000 (1,200 sq ft)</td>
               </tr>
@@ -139,7 +139,7 @@ export default function ConcreteSeoContent() {
       </section>
 
       {/* Step-by-Step Example */}
-      <section className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-2xl p-6 sm:p-8 space-y-4">
+      <section className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-2xl p-6 sm:p-8 space-y-4">
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
           <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary shrink-0" />
           Step-by-Step: Calculating Concrete for a 20×24 ft Driveway

@@ -145,7 +145,7 @@ export default async function CalculatorsPage(props: PageProps) {
   });
 
   return (
-    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen py-12 sm:py-16 transition-colors">
+    <div className="bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-screen py-12 sm:py-16 transition-colors">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Prominent Header block with Search */}
@@ -181,7 +181,7 @@ export default async function CalculatorsPage(props: PageProps) {
                 ))}
               </div>
             ) : (
-              <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] p-12 text-center max-w-md mx-auto">
+              <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border p-12 text-center max-w-md mx-auto">
                 <p className="text-sm text-slate-500 dark:text-slate-400 font-semibold">No calculator matches found.</p>
                 <Link
                   href="/calculators"
@@ -199,7 +199,7 @@ export default async function CalculatorsPage(props: PageProps) {
 
             {/* Left Column (8 cols on desktop): Browse help topics list */}
             <div className="lg:col-span-8 space-y-12">
-              <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-[#4D5156] pb-4">
+              <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-dark-border pb-4">
                 All Calculators
               </h2>
 
@@ -229,7 +229,7 @@ export default async function CalculatorsPage(props: PageProps) {
               </div>
 
               {/* Popular Tools */}
-              <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+              <div className="pb-6 border-b border-slate-200/80 dark:border-dark-border">
                 <h3 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-4">
                   Popular Tools
                 </h3>
@@ -251,7 +251,7 @@ export default async function CalculatorsPage(props: PageProps) {
               </div>
 
               {/* Guides & Cost Reports (With thumbnail images like blog detail sidebar) */}
-              <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+              <div className="pb-6 border-b border-slate-200/80 dark:border-dark-border">
                 <h3 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-5">
                   Guides & Cost Reports
                 </h3>
@@ -262,7 +262,7 @@ export default async function CalculatorsPage(props: PageProps) {
                       href={`/blog/${post.slug}`}
                       className="group flex gap-4 hover:text-primary transition-colors"
                     >
-                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-[#191a1d] rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-[#4D5156]/50">
+                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-dark-bg rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-dark-border/50">
                         <Image
                           src={post.image}
                           alt={post.title}

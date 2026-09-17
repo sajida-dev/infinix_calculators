@@ -110,13 +110,13 @@ export default function TopsoilCalculator() {
   ];
 
   return (
-    <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] shadow-sm overflow-hidden transition-colors">
-      <div className="p-4 sm:p-6 border-b flex justify-center border-slate-100 dark:border-[#4D5156]">
+    <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm overflow-hidden transition-colors">
+      <div className="p-4 sm:p-6 border-b flex justify-center border-slate-100 dark:border-dark-border">
 
-        <div className="relative inline-flex items-center w-full max-w-[512px] p-1.5 h-14 bg-slate-200/80 dark:bg-[#191a1d] rounded-full transition-colors">
-          <span className={`absolute left-1.5 w-[calc(50%-6px)] h-11 bg-primary text-white rounded-full shadow-md border border-slate-100 dark:border-[#4D5156] transform transition-transform ${shape === "rectangle" ? "translate-x-0" : "translate-x-full"}`}></span>
-          <button type="button" onClick={() => setShape("rectangle")} className={`relative w-1/2 h-full text-center text-xs sm:text-sm font-bold capitalize transition-colors min-h-[44px] flex items-center justify-center ${shape === "rectangle" ? "text-white" : "text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"}`}>RECTANGLE</button>
-          <button type="button" onClick={() => setShape("circle")} className={`relative w-1/2 text-center h-full text-xs sm:text-sm font-bold capitalize transition-colors min-h-[44px] flex items-center justify-center ${shape === "circle" ? "text-white" : "text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"}`}>CIRCLE</button>
+        <div className="relative inline-flex items-center w-full max-w-[512px] p-1.5 h-14 bg-slate-200/80 dark:bg-dark-bg rounded-full transition-colors">
+          <span className={`absolute left-1.5 w-[calc(50%-6px)] h-11 bg-primary text-white rounded-full shadow-md border border-slate-100 dark:border-dark-border transform transition-transform ${shape === "rectangle" ? "translate-x-0" : "translate-x-full"}`}></span>
+          <button type="button" onClick={() => setShape("rectangle")} className={`relative w-1/2 h-full text-center text-xs sm:text-sm font-bold capitalize transition-colors min-h-11 flex items-center justify-center ${shape === "rectangle" ? "text-white" : "text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"}`}>RECTANGLE</button>
+          <button type="button" onClick={() => setShape("circle")} className={`relative w-1/2 text-center h-full text-xs sm:text-sm font-bold capitalize transition-colors min-h-11 flex items-center justify-center ${shape === "circle" ? "text-white" : "text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"}`}>CIRCLE</button>
         </div>
       </div>
       <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -137,16 +137,16 @@ export default function TopsoilCalculator() {
                     step="any"
                     value={length}
                     onChange={(e) => setLength(parseFloat(e.target.value) || 0)}
-                    className="flex-1 min-h-[48px] rounded-l-lg border border-slate-300 dark:border-[#4D5156] px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-[#191a1d] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="flex-1 min-h-[48px] rounded-l-lg border border-slate-300 dark:border-dark-border px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-dark-bg focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                   <select
                     value={lengthUnit}
                     onChange={(e) => setLengthUnit(e.target.value as DimensionUnit)}
                     aria-label="Select length unit"
-                    className="min-h-[48px] rounded-r-lg border-y border-r border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#22242A] px-3.5 py-3 text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="min-h-[48px] rounded-r-lg border-y border-r border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-card px-3.5 py-3 text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                   >
                     {unitOptions.map((opt) => (
-                      <option key={opt.value} value={opt.value} className="dark:bg-[#22242A] dark:text-slate-100">{opt.label}</option>
+                      <option key={opt.value} value={opt.value} className="dark:bg-dark-card dark:text-slate-100">{opt.label}</option>
                     ))}
                   </select>
                 </div>
@@ -163,16 +163,16 @@ export default function TopsoilCalculator() {
                     step="any"
                     value={width}
                     onChange={(e) => setWidth(parseFloat(e.target.value) || 0)}
-                    className="flex-1 min-h-[48px] rounded-l-lg border border-slate-300 dark:border-[#4D5156] px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-[#191a1d] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="flex-1 min-h-[48px] rounded-l-lg border border-slate-300 dark:border-dark-border px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-dark-bg focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                   <select
                     value={widthUnit}
                     onChange={(e) => setWidthUnit(e.target.value as DimensionUnit)}
                     aria-label="Select width unit"
-                    className="min-h-[48px] rounded-r-lg border-y border-r border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#22242A] px-3.5 py-3 text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="min-h-[48px] rounded-r-lg border-y border-r border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-card px-3.5 py-3 text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                   >
                     {unitOptions.map((opt) => (
-                      <option key={opt.value} value={opt.value} className="dark:bg-[#22242A] dark:text-slate-100">{opt.label}</option>
+                      <option key={opt.value} value={opt.value} className="dark:bg-dark-card dark:text-slate-100">{opt.label}</option>
                     ))}
                   </select>
                 </div>
@@ -190,16 +190,16 @@ export default function TopsoilCalculator() {
                   step="any"
                   value={diameter}
                   onChange={(e) => setDiameter(parseFloat(e.target.value) || 0)}
-                  className="flex-1 min-h-[48px] rounded-l-lg border border-slate-300 dark:border-[#4D5156] px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-[#191a1d] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  className="flex-1 min-h-[48px] rounded-l-lg border border-slate-300 dark:border-dark-border px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-dark-bg focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                 />
                 <select
                   value={diameterUnit}
                   onChange={(e) => setDiameterUnit(e.target.value as DimensionUnit)}
                   aria-label="Select diameter unit"
-                  className="min-h-[48px] rounded-r-lg border-y border-r border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#22242A] px-3.5 py-3 text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  className="min-h-[48px] rounded-r-lg border-y border-r border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-card px-3.5 py-3 text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                 >
                   {unitOptions.map((opt) => (
-                    <option key={opt.value} value={opt.value} className="dark:bg-[#22242A] dark:text-slate-100">{opt.label}</option>
+                    <option key={opt.value} value={opt.value} className="dark:bg-dark-card dark:text-slate-100">{opt.label}</option>
                   ))}
                 </select>
               </div>
@@ -217,16 +217,16 @@ export default function TopsoilCalculator() {
                 step="any"
                 value={depth}
                 onChange={(e) => setDepth(parseFloat(e.target.value) || 0)}
-                className="flex-1 min-h-[48px] rounded-l-lg border border-slate-300 dark:border-[#4D5156] px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-[#191a1d] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                className="flex-1 min-h-[48px] rounded-l-lg border border-slate-300 dark:border-dark-border px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-dark-bg focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               />
               <select
                 value={depthUnit}
                 onChange={(e) => setDepthUnit(e.target.value as DimensionUnit)}
                 aria-label="Select depth unit"
-                className="min-h-[48px] rounded-r-lg border-y border-r border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#22242A] px-3.5 py-3 text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                className="min-h-[48px] rounded-r-lg border-y border-r border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-card px-3.5 py-3 text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               >
                 {unitOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value} className="dark:bg-[#22242A] dark:text-slate-100">{opt.label}</option>
+                  <option key={opt.value} value={opt.value} className="dark:bg-dark-card dark:text-slate-100">{opt.label}</option>
                 ))}
               </select>
             </div>
@@ -238,12 +238,12 @@ export default function TopsoilCalculator() {
               id="ts-soil-type"
               value={soilType}
               onChange={(e) => setSoilType(e.target.value as SoilType)}
-              className="mt-2 w-full min-h-[48px] rounded-lg border border-slate-300 dark:border-[#4D5156] px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-[#191a1d] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
+              className="mt-2 w-full min-h-[48px] rounded-lg border border-slate-300 dark:border-dark-border px-4 py-3 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-dark-bg focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
             >
-              <option value="standard" className="dark:bg-[#22242A] dark:text-slate-100">Standard Topsoil (dry, average mix)</option>
-              <option value="compost" className="dark:bg-[#22242A] dark:text-slate-100">Compost / Organic mulch (lightweight)</option>
-              <option value="clay" className="dark:bg-[#22242A] dark:text-slate-100">Heavy Clay / Topsoil mix (dense)</option>
-              <option value="wet" className="dark:bg-[#22242A] dark:text-slate-100">Wet Topsoil / Muddy dirt (heavy)</option>
+              <option value="standard" className="dark:bg-dark-card dark:text-slate-100">Standard Topsoil (dry, average mix)</option>
+              <option value="compost" className="dark:bg-dark-card dark:text-slate-100">Compost / Organic mulch (lightweight)</option>
+              <option value="clay" className="dark:bg-dark-card dark:text-slate-100">Heavy Clay / Topsoil mix (dense)</option>
+              <option value="wet" className="dark:bg-dark-card dark:text-slate-100">Wet Topsoil / Muddy dirt (heavy)</option>
             </select>
           </div>
 
@@ -260,24 +260,24 @@ export default function TopsoilCalculator() {
 
 
         {/* Right Side: Outputs */}
-        <div className="bg-slate-50/60 dark:bg-[#191a1d] p-6 rounded-xl border border-slate-100 dark:border-[#4D5156] flex flex-col justify-between space-y-6">
+        <div className="bg-slate-50/60 dark:bg-dark-bg p-6 rounded-xl border border-slate-100 dark:border-dark-border flex flex-col justify-between space-y-6">
           <div>
             <p className="text-base font-bold text-slate-900 dark:text-slate-100 mb-4">2. Material Required</p>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white dark:bg-[#22242A] p-4 rounded-lg border border-slate-200/60 dark:border-[#4D5156] shadow-sm">
+              <div className="bg-white dark:bg-dark-card p-4 rounded-lg border border-slate-200/60 dark:border-dark-border shadow-sm">
                 <span className="block text-xs font-semibold text-slate-400 dark:text-slate-400">Cubic Yards (yd³)</span>
                 <span className="block text-xl font-extrabold text-primary dark:text-sky-400 mt-1">
                   {cubicYards.toFixed(2)}
                 </span>
               </div>
-              <div className="bg-white dark:bg-[#22242A] p-4 rounded-lg border border-slate-200/60 dark:border-[#4D5156] shadow-sm">
+              <div className="bg-white dark:bg-dark-card p-4 rounded-lg border border-slate-200/60 dark:border-dark-border shadow-sm">
                 <span className="block text-xs font-semibold text-slate-400 dark:text-slate-400">Cubic Feet (ft³)</span>
                 <span className="block text-xl font-extrabold text-slate-800 dark:text-slate-100 mt-1">
                   {cubicFeet.toFixed(2)}
                 </span>
               </div>
-              <div className="bg-white dark:bg-[#22242A] p-4 rounded-lg border border-slate-200/60 dark:border-[#4D5156] shadow-sm col-span-2">
+              <div className="bg-white dark:bg-dark-card p-4 rounded-lg border border-slate-200/60 dark:border-dark-border shadow-sm col-span-2">
                 <span className="block text-xs font-semibold text-slate-400 dark:text-slate-400">Estimated Weight (Tons)</span>
                 <span className="block text-xl font-extrabold text-slate-800 dark:text-slate-100 mt-1">
                   {tons.toFixed(2)} Tons <span className="text-xs font-medium text-slate-500 dark:text-slate-400">({(tons * 2000).toLocaleString(undefined, { maximumFractionDigits: 0 })} lbs)</span>
@@ -286,7 +286,7 @@ export default function TopsoilCalculator() {
             </div>
           </div>
 
-          <div className="border-t border-slate-200/80 dark:border-[#4D5156] pt-6">
+          <div className="border-t border-slate-200/80 dark:border-dark-border pt-6">
             <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">Bag Estimates</p>
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
@@ -304,7 +304,7 @@ export default function TopsoilCalculator() {
             </div>
           </div>
 
-          <div className="border-t border-slate-200/80 dark:border-[#4D5156] pt-6">
+          <div className="border-t border-slate-200/80 dark:border-dark-border pt-6">
             <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Metric Volumes</p>
             <div className="grid grid-cols-2 gap-2 text-xs">
               <div>

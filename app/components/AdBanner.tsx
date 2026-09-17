@@ -56,7 +56,7 @@ export default function AdBanner({
   return (
     <div
       style={{ contain: "layout" }}
-      className={`ad-container relative overflow-hidden text-center my-6 py-2 rounded-xl bg-slate-50/50 dark:bg-[#1e2025]/50 border border-slate-100/80 dark:border-[#4D5156]/30 flex flex-col justify-center items-center ${minHeightClass} ${className}`}
+      className={`ad-container relative overflow-hidden text-center my-6 py-2 rounded-xl bg-slate-50/50 dark:bg-[#1e2025]/50 border border-slate-100/80 dark:border-dark-border/30 flex flex-col justify-center items-center ${minHeightClass} ${className}`}
     >
       <span className="block text-[9px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1 select-none">
         Advertisement

@@ -5,10 +5,13 @@ import { notFound } from "next/navigation";
 import { calculatorsData } from "../../../app/data/calculatorsData";
 import { blogData } from "../../../app/data/blogData";
 import DynamicCalculator from "../../../app/components/DynamicCalculator";
+import PinkCalculator from "../../../app/components/PinkCalculator";
+import MortgageCalculatorGame from "../../../app/components/MortgageCalculatorGame";
 import CalculatorFaqs from "../../../app/components/CalculatorFaqs";
 import CategoryClusterNav from "../../../app/components/CategoryClusterNav";
 import CalculatorReviewBadge from "../../../app/components/CalculatorReviewBadge";
 import DisclaimerBox from "../../../app/components/DisclaimerBox";
+import PinkCalculatorSeoContent from "../../../app/components/seo/PinkCalculatorSeoContent";
 import AvalaraSeoContent from "../../../app/components/seo/AvalaraSeoContent";
 import ConcreteSeoContent from "../../../app/components/seo/ConcreteSeoContent";
 import RoofSeoContent from "../../../app/components/seo/RoofSeoContent";
@@ -79,6 +82,19 @@ import TileSqftSeoContent from "../../../app/components/seo/TileSqftSeoContent";
 import DynastyDaddySeoContent from "../../../app/components/seo/DynastyDaddySeoContent";
 import MapeiGroutSeoContent from "../../../app/components/seo/MapeiGroutSeoContent";
 import MarylandTaxSeoContent from "../../../app/components/seo/MarylandTaxSeoContent";
+import CdRatesSeoContent from "../../../app/components/seo/CdRatesSeoContent";
+import SantylSeoContent from "../../../app/components/seo/SantylSeoContent";
+import GoldScrapSeoContent from "../../../app/components/seo/GoldScrapSeoContent";
+import PowerCostSeoContent from "../../../app/components/seo/PowerCostSeoContent";
+import SatScoreSeoContent from "../../../app/components/seo/SatScoreSeoContent";
+import SatTestSeoContent from "../../../app/components/seo/SatTestSeoContent";
+import Ti84EmulatorSeoContent from "../../../app/components/seo/Ti84EmulatorSeoContent";
+import Ti84BatterySeoContent from "../../../app/components/seo/Ti84BatterySeoContent";
+import TimeClockSeoContent from "../../../app/components/seo/TimeClockSeoContent";
+import MortgageNevadaSeoContent from "../../../app/components/seo/MortgageNevadaSeoContent";
+import MortgageRecastSeoContent from "../../../app/components/seo/MortgageRecastSeoContent";
+import SellerClosingCostSeoContent from "../../../app/components/seo/SellerClosingCostSeoContent";
+import BuildersRiskInsuranceSeoContent from "../../../app/components/seo/BuildersRiskInsuranceSeoContent";
 
 interface CalculatorPageProps {
   params: Promise<{ slug: string }>;
@@ -186,7 +202,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
   } : null;
 
   return (
-    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen py-8 sm:py-12 transition-colors">
+    <div className="bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-screen py-8 sm:py-12 transition-colors">
       {/* Schema Injection */}
       <script
         type="application/ld+json"
@@ -258,7 +274,13 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
             )}
             {/* Hydrate dynamic calculation forms */}
             <div>
-              <DynamicCalculator slug={slug} />
+              {slug === "pink-calculator" ? (
+                <PinkCalculator />
+              ) : slug === "mortgage-calculator-game" ? (
+                <MortgageCalculatorGame />
+              ) : (
+                <DynamicCalculator slug={slug} />
+              )}
             </div>
 
             {/* In-depth content block (Server Rendered) */}
@@ -270,7 +292,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                   How to Calculate: Formula & Steps
                 </h2>
                 <p>{calc.formulaDescription}</p>
-                <div className="bg-white dark:bg-[#22242A] border border-slate-100 dark:border-[#4D5156] p-5 rounded-2xl space-y-2">
+                <div className="bg-white dark:bg-dark-card border border-slate-100 dark:border-dark-border p-5 rounded-2xl space-y-2">
                   <span className="block font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-wider">Formula Used:</span>
                   <code className="block text-primary dark:text-sky-400 font-mono text-xs sm:text-sm">
                     {calc.formula}
@@ -286,7 +308,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                 <p>{calc.example}</p>
               </div>
 
-              <hr className="border-slate-100 dark:border-[#4D5156]" />
+              <hr className="border-slate-100 dark:border-dark-border" />
 
               {/* Common Mistakes */}
               {calc.commonMistakes.length > 0 && (
@@ -302,7 +324,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                 </div>
               )}
 
-              <hr className="border-slate-100 dark:border-[#4D5156]" />
+              <hr className="border-slate-100 dark:border-dark-border" />
 
               {/* Use Cases */}
               {calc.useCases.length > 0 && (
@@ -320,7 +342,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
               {/* Professional Tips */}
               {calc.tips.length > 0 && (
-                <div className="bg-primary/5 dark:bg-[#22242A] rounded-2xl border border-primary/10 dark:border-[#4D5156] p-6 space-y-3">
+                <div className="bg-primary/5 dark:bg-dark-card rounded-2xl border border-primary/10 dark:border-dark-border p-6 space-y-3">
                   <p className="text-sm font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">
                     Expert Tips
                   </p>
@@ -333,354 +355,424 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
               )}
 
               {/* Custom Premium SEO Article Content for High-Impression Query Hubs */}
+              {slug === "pink-calculator" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <PinkCalculatorSeoContent />
+                </div>
+              )}
               {slug === "affirm" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <AffirmSeoContent />
                 </div>
               )}
               {slug === "mortgage-calculator-game" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MortgageGameSeoContent />
                 </div>
               )}
               {slug === "cbm" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <CbmSeoContent />
                 </div>
               )}
               {slug === "square-fee" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <SquareFeeSeoContent />
                 </div>
               )}
               {slug === "therapy-productivity" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <TherapyProductivitySeoContent />
                 </div>
               )}
               {slug === "google-review" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <GoogleReviewSeoContent />
                 </div>
               )}
               {slug === "avalara-sales-tax" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <AvalaraSeoContent />
                 </div>
               )}
               {slug === "concrete" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <ConcreteSeoContent />
                 </div>
               )}
               {slug === "gross-up" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <GrossUpSeoContent />
                 </div>
               )}
               {slug === "tan-inverse" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <TanInverseSeoContent />
                 </div>
               )}
               {slug === "pro-rata" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <ProRataSeoContent />
                 </div>
               )}
               {slug === "balance-transfer" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <BalanceTransferSeoContent />
                 </div>
               )}
               {slug === "drywall" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <DrywallSeoContent />
                 </div>
               )}
               {slug === "fence-cost" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <FenceCostSeoContent />
                 </div>
               )}
               {slug === "mulch" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MulchSeoContent />
                 </div>
               )}
               {slug === "roof" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <RoofSeoContent />
                 </div>
               )}
               {slug === "hecm" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <HecmSeoContent />
                 </div>
               )}
               {slug === "heloc-payoff" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <HelocPayoffSeoContent />
                 </div>
               )}
               {slug === "bmi" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <BmiSeoContent />
                 </div>
               )}
               {slug === "lsat-score-calculator" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <LsatSeoContent />
                 </div>
               )}
               {slug === "georgia-payroll" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <GeorgiaPayrollSeoContent />
                 </div>
               )}
               {slug === "reverse-tax" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <ReverseTaxSeoContent />
                 </div>
               )}
               {slug === "losertown-calorie" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <LosertownCalorieSeoContent />
                 </div>
               )}
               {slug === "roth-vs-traditional-ira" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <RothVsTraditionalIraSeoContent />
                 </div>
               )}
               {slug === "seller-financing" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <SellerFinancingSeoContent />
                 </div>
               )}
               {slug === "credit-card-payoff" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <CreditCardPayoffSeoContent />
                 </div>
               )}
               {slug === "productivity" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <ProductivitySeoContent />
                 </div>
               )}
               {slug === "grass-seed" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <GrassSeedSeoContent />
                 </div>
               )}
               {slug === "rent-vs-sell" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <RentVsSellSeoContent />
                 </div>
               )}
               {slug === "wedding-alcohol" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <WeddingAlcoholSeoContent />
                 </div>
               )}
               {slug === "bridge-loan" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <BridgeLoanSeoContent />
                 </div>
               )}
               {slug === "tv-mounting-height" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <TvMountingHeightSeoContent />
                 </div>
               )}
               {slug === "pond-liner" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <PondLinerSeoContent />
                 </div>
               )}
               {slug === "vector-product" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <VectorProductSeoContent />
                 </div>
               )}
               {slug === "mortgage-idaho" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MortgageIdahoSeoContent />
                 </div>
               )}
               {slug === "mortgage-kansas" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MortgageKansasSeoContent />
                 </div>
               )}
               {slug === "wedding-drink" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <WeddingDrinkSeoContent />
                 </div>
               )}
               {slug === "puppy-to-dog-weight" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <PuppyWeightSeoContent />
                 </div>
               )}
               {slug === "puppy-growth" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <PuppyGrowthSeoContent />
                 </div>
               )}
               {slug === "dog-size" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <DogSizeSeoContent />
                 </div>
               )}
               {slug === "dog-pregnancy" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <DogPregnancySeoContent />
                 </div>
               )}
               {slug === "mortgage-maine" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MortgageMaineSeoContent />
                 </div>
               )}
               {slug === "brick" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <BrickSeoContent />
                 </div>
               )}
               {slug === "ifta" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <IftaSeoContent />
                 </div>
               )}
               {slug === "457-retirement" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <Retirement457SeoContent />
                 </div>
               )}
               {slug === "siding" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <SidingSeoContent />
                 </div>
               )}
               {slug === "dinkytown" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <DinkytownSeoContent />
                 </div>
               )}
               {slug === "metal-roof" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MetalRoofSeoContent />
                 </div>
               )}
               {slug === "pawn" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <PawnSeoContent />
                 </div>
               )}
               {slug === "hard-money" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <HardMoneySeoContent />
                 </div>
               )}
               {slug === "lease-vs-buy-car" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <LeaseVsBuyCarSeoContent />
                 </div>
               )}
               {slug === "points-vs-cash" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <PointsVsCashSeoContent />
                 </div>
               )}
               {slug === "oklahoma-tax" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <OklahomaTaxSeoContent />
                 </div>
               )}
               {slug === "novig" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <NovigSeoContent />
                 </div>
               )}
               {slug === "calstrs" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <CalstrsSeoContent />
                 </div>
               )}
               {slug === "global-surgery" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <GlobalSurgerySeoContent />
                 </div>
               )}
               {slug === "mortgage-kentucky" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MortgageKentuckySeoContent />
                 </div>
               )}
               {slug === "reverse-sales-tax-calculator" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <ReverseSalesTaxSeoContent />
                 </div>
               )}
               {slug === "laticrete-grout" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <LaticreteGroutSeoContent />
                 </div>
               )}
               {slug === "mortgage-arkansas" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MortgageArkansasSeoContent />
                 </div>
               )}
               {slug === "virginia-salary" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <VirginiaSalarySeoContent />
                 </div>
               )}
               {slug === "michigan-tax" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MichiganTaxSeoContent />
                 </div>
               )}
               {slug === "mortgage-sc" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MortgageScSeoContent />
                 </div>
               )}
               {slug === "arkansas-sales-tax" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <ArkansasSalesTaxSeoContent />
                 </div>
               )}
               {slug === "arm-mortgage" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <ArmMortgageSeoContent />
                 </div>
               )}
               {slug === "electric" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <ElectricSeoContent />
                 </div>
               )}
               {slug === "tile-sqft" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <TileSqftSeoContent />
                 </div>
               )}
               {slug === "dynasty-daddy" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <DynastyDaddySeoContent />
                 </div>
               )}
               {slug === "mapei-grout" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MapeiGroutSeoContent />
                 </div>
               )}
               {slug === "maryland-tax" && (
-                <div className="pt-6 border-t border-slate-200/50 dark:border-[#4D5156]/50">
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
                   <MarylandTaxSeoContent />
+                </div>
+              )}
+              {(slug === "cd-rates" || slug === "cd-interest-rate" || slug === "cd-ladder") && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <CdRatesSeoContent />
+                </div>
+              )}
+              {slug === "santyl" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <SantylSeoContent />
+                </div>
+              )}
+              {slug === "gold-scrap" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <GoldScrapSeoContent />
+                </div>
+              )}
+              {slug === "power-cost" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <PowerCostSeoContent />
+                </div>
+              )}
+              {slug === "sat-score" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <SatScoreSeoContent />
+                </div>
+              )}
+              {slug === "sat-test" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <SatTestSeoContent />
+                </div>
+              )}
+              {slug === "ti84-emulator" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <Ti84EmulatorSeoContent />
+                </div>
+              )}
+              {slug === "ti84-battery" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <Ti84BatterySeoContent />
+                </div>
+              )}
+              {slug === "time-clock" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <TimeClockSeoContent />
+                </div>
+              )}
+              {slug === "mortgage-nevada" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <MortgageNevadaSeoContent />
+                </div>
+              )}
+              {slug === "mortgage-recast" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <MortgageRecastSeoContent />
+                </div>
+              )}
+              {slug === "seller-closing-cost" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <SellerClosingCostSeoContent />
+                </div>
+              )}
+              {slug === "builders-risk-insurance" && (
+                <div className="pt-6 border-t border-slate-200/50 dark:border-dark-border/50">
+                  <BuildersRiskInsuranceSeoContent />
                 </div>
               )}
 
@@ -708,7 +800,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
             {/* You May Like - Flat list of related articles (No outer card wrapper) */}
             {supportingBlogs.length > 0 && (
-              <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+              <div className="pb-6 border-b border-slate-200/80 dark:border-dark-border">
                 <p className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-5">You May Like</p>
                 <div className="space-y-5">
                   {supportingBlogs.map((rel) => (
@@ -717,7 +809,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                       href={`/blog/${rel.slug}`}
                       className="group flex gap-4 hover:text-primary transition-colors"
                     >
-                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-[#191a1d] rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-[#4D5156]/50">
+                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-dark-bg rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-dark-border/50">
                         <Image
                           src={rel.image}
                           alt={rel.title}
@@ -739,8 +831,8 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
             )}
 
             {/* Internal Categories Directory Links */}
-            <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
-              <p className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-[#4D5156]">
+            <div className="pb-6 border-b border-slate-200/80 dark:border-dark-border">
+              <p className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-dark-border">
                 Categories
               </p>
               <ul className="ml-5 space-y-2">

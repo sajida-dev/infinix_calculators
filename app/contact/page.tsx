@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 transition-colors">
+    <main className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 transition-colors">
       <div className="max-w-4xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -29,7 +29,7 @@ export default function ContactPage() {
 
         {/* Department Contact Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] text-center shadow-xs flex flex-col justify-between">
+          <div className="p-6 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-center shadow-xs flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,7 +44,7 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] text-center shadow-xs flex flex-col justify-between">
+          <div className="p-6 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-center shadow-xs flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] text-center shadow-xs flex flex-col justify-between">
+          <div className="p-6 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-center shadow-xs flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,7 +85,7 @@ export default function ContactPage() {
         </div>
 
         {/* Interactive Contact Form */}
-        <div className="bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-3xl p-6 sm:p-10 shadow-xs">
+        <div className="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl p-6 sm:p-10 shadow-xs">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">
             Send an Inquiry or Formula Suggestion
           </h2>

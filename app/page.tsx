@@ -9,24 +9,29 @@ import HomepageFaqs from "./components/HomepageFaqs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Infinix Calculators – Professional Tools for Finance, Construction & Landscaping",
-  description: "Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.",
+  title: "Infinix Calculators – Online Suite for Finance, Mortgage Games, Math & Construction",
+  description: "Run business financial models, mortgage simulation games, aesthetic pink calculators, CBM freight estimates, and 30+ professional tools instantly. 100% free.",
   keywords: [
-    "calculators",
-    "financial calculator",
-    "construction calculator",
+    "infinix calculator",
+    "infinix calculators",
+    "calculator infinix",
+    "kalkulator infinix",
+    "calculadora de infinix",
+    "calculadora infinix",
+    "pink calculator online",
+    "mortgage calculator games",
+    "affirm calculator",
     "topsoil calculator",
     "CBM calculator",
     "concrete calculator",
-    "business finance",
     "free online calculators",
   ],
   alternates: {
     canonical: "https://infinixcalculator.com",
   },
   openGraph: {
-    title: "Infinix Calculators – Professional Tools for Finance, Construction & Landscaping",
-    description: "Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.",
+    title: "Infinix Calculators – Online Suite for Finance, Mortgage Games, Math & Construction",
+    description: "Run business financial models, mortgage simulation games, aesthetic pink calculators, CBM freight estimates, and 30+ professional tools instantly. 100% free.",
     url: "https://infinixcalculator.com/",
     siteName: "Infinix Calculators",
     images: [
@@ -42,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Infinix Calculators – Professional Tools for Finance, Construction & Landscaping",
-    description: "Run business financial models, construction material estimates, health metrics, and 30+ professional calculators instantly. No registration required.",
+    title: "Infinix Calculators – Online Suite for Finance, Mortgage Games, Math & Construction",
+    description: "Run business financial models, mortgage simulation games, aesthetic pink calculators, CBM freight estimates, and 30+ professional tools instantly. 100% free.",
     images: ["https://infinixcalculator.com/calculators-infinix-calculators.webp"],
   },
 };
@@ -53,12 +58,14 @@ export default function Home() {
 
   // Diverse high-intent articles across different topic categories
   const featuredSlugs = [
+    "mortgage-calculator-game-simulator-how-to-beat-housing-market",
+    "why-online-mortgage-calculators-seem-crazy-true-cost-guide",
+    "aesthetic-pink-calculator-online-study-productivity-guide",
+    "how-to-calculate-team-employee-productivity-formula-guide",
     "why-use-affirm-instead-of-credit-card",
     "how-much-topsoil-do-i-need",
-    "lsat-raw-score-conversion-guide",
     "avalara-sales-tax-calculator-guide",
     "how-to-calculate-cbm-shipping-volume-guide",
-    "how-to-calculate-employee-productivity",
   ];
 
   const featuredArticles = featuredSlugs
@@ -69,14 +76,14 @@ export default function Home() {
     featuredArticles.length >= 6
       ? featuredArticles
       : [
-          ...featuredArticles,
-          ...allBlogPosts.filter((b) => !featuredArticles.some((f) => f.slug === b.slug)),
-        ].slice(0, 6);
+        ...featuredArticles,
+        ...allBlogPosts.filter((b) => !featuredArticles.some((f) => f.slug === b.slug)),
+      ].slice(0, 6);
 
   return (
-    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen transition-colors">
+    <div className="bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-screen transition-colors">
       {/* 1. SaaS Hero Section */}
-      <section className="relative bg-slate-50/50 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] overflow-hidden py-16 sm:py-28 transition-colors">
+      <section className="relative bg-slate-50/50 dark:bg-dark-bg border-b border-slate-200 dark:border-dark-border overflow-hidden py-16 sm:py-28 transition-colors">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -102,12 +109,12 @@ export default function Home() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="mt-12 pt-8 border-t border-slate-100 dark:border-[#4D5156] grid grid-cols-3 gap-y-4 max-w-2xl mx-auto text-center">
+            <div className="mt-12 pt-8 border-t border-slate-100 dark:border-dark-border grid grid-cols-3 gap-y-4 max-w-2xl mx-auto text-center">
               <div>
                 <span className="block text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">30+</span>
                 <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider mt-1 block">Precision Tools</span>
               </div>
-              <div className="border-x border-slate-100 dark:border-[#4D5156]">
+              <div className="border-x border-slate-100 dark:border-dark-border">
                 <span className="block text-2xl sm:text-3xl font-extrabold text-primary">Instant</span>
                 <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider mt-1 block">Results On-Screen</span>
               </div>
@@ -122,10 +129,10 @@ export default function Home() {
       </section>
 
       {/* 1.5. Featured Topsoil Calculator Showcase */}
-      <section className="py-12 sm:py-16 bg-white dark:bg-[#22242A] border-b border-slate-200 dark:border-[#4D5156] transition-colors">
+      <section className="py-12 sm:py-16 bg-white dark:bg-dark-card border-b border-slate-200 dark:border-dark-border transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-10">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 dark:bg-blue-950/60 text-blue-900 dark:text-sky-300 border border-blue-200/80 dark:border-blue-800/60 mb-3 shadow-xs">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 dark:bg-dark-card text-blue-900 dark:text-sky-300 border border-blue-200/80 dark:border-blue-800/60 mb-3 shadow-xs">
               Featured Tool
             </span>
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
@@ -142,10 +149,10 @@ export default function Home() {
       </section>
 
       {/* 2. Structured Directories categories block */}
-      <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] transition-colors">
+      <section className="py-16 sm:py-24 bg-slate-50 dark:bg-dark-bg border-b border-slate-200 dark:border-dark-border transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          <div className="mb-12 border-b border-slate-200 dark:border-[#4D5156] pb-4 flex items-end justify-between">
+          <div className="mb-12 border-b border-slate-200 dark:border-dark-border pb-4 flex items-end justify-between">
             <div>
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Browse Calculator Topics</h2>
               <p className="text-slate-500 dark:text-slate-400 mt-2 text-xs sm:text-sm">
@@ -154,7 +161,7 @@ export default function Home() {
             </div>
             <Link
               href="/calculators"
-              className="text-primary dark:text-sky-400 font-bold text-xs sm:text-sm hover:underline py-2 inline-flex items-center min-h-[44px]"
+              className="text-primary dark:text-sky-400 font-bold text-xs sm:text-sm hover:underline py-2 inline-flex items-center min-h-11"
             >
               All Calculators →
             </Link>
@@ -175,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* 3. Featured Guides Blog Section (Diverse 6 Articles) */}
-      <section className="py-16 sm:py-24 bg-white dark:bg-[#22242A] transition-colors">
+      <section className="py-16 sm:py-24 bg-white dark:bg-dark-card transition-colors">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -187,7 +194,7 @@ export default function Home() {
             </div>
             <Link
               href="/blog"
-              className="text-primary dark:text-sky-400 font-bold text-sm hover:underline mt-4 md:mt-0 flex items-center gap-1.5 py-2 min-h-[44px]"
+              className="text-primary dark:text-sky-400 font-bold text-sm hover:underline mt-4 md:mt-0 flex items-center gap-1.5 py-2 min-h-11"
             >
               Browse all articles <span aria-hidden="true">→</span>
             </Link>

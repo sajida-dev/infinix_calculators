@@ -23,10 +23,10 @@ export default function BlogCard({ post }: BlogCardProps) {
   return (
     <article
       key={post.slug}
-      className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200/80 dark:border-[#4D5156] shadow-xs overflow-hidden flex flex-col justify-between hover:shadow-md hover:border-slate-300 dark:hover:border-slate-500 transition-all duration-200"
+      className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200/80 dark:border-dark-border shadow-xs overflow-hidden flex flex-col justify-between hover:shadow-md hover:border-slate-300 dark:hover:border-slate-500 transition-all duration-200"
     >
       {/* Visual Cover Image with fixed aspect ratio */}
-      <div className="relative w-full aspect-[16/10] bg-slate-100 dark:bg-[#191a1d] overflow-hidden">
+      <div className="relative w-full aspect-[16/10] bg-slate-100 dark:bg-dark-bg overflow-hidden">
         <Image
           src={post.image}
           alt={post.title}
@@ -51,17 +51,17 @@ export default function BlogCard({ post }: BlogCardProps) {
             {post.excerpt}
           </p>
         </div>
-        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#4D5156]/80 flex items-center justify-between">
+        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-dark-border/80 flex items-center justify-between">
           <Link
             href={`/authors/${author.slug}`}
-            className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold hover:text-primary dark:hover:text-sky-400 transition-colors py-2 inline-flex items-center min-h-[44px]"
+            className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold hover:text-primary dark:hover:text-sky-400 transition-colors py-2 inline-flex items-center min-h-11"
           >
             By {author.name}
           </Link>
           <Link
             href={`/blog/${post.slug}`}
             aria-label={`Read Guide: ${post.title}`}
-            className="text-xs font-bold text-primary dark:text-sky-400 hover:underline py-2 px-2 -mr-2 inline-flex items-center min-h-[44px]"
+            className="text-xs font-bold text-primary dark:text-sky-400 hover:underline py-2 px-2 -mr-2 inline-flex items-center min-h-11"
           >
             Read Guide
           </Link>

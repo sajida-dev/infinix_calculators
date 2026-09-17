@@ -81,7 +81,7 @@ export default function SocialShare({
 
   return (
     <aside
-      className={`bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs transition-colors ${className}`}
+      className={`bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs transition-colors ${className}`}
       aria-label="Share this calculator"
     >
       <div className="flex items-center gap-2.5 text-center sm:text-left">
@@ -110,7 +110,7 @@ export default function SocialShare({
             rel="noopener noreferrer nofollow"
             aria-label={`Share on ${item.name}`}
             title={`Share on ${item.name}`}
-            className={`w-9 h-9 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-[#191a1d] border border-slate-200/80 dark:border-[#4D5156] transition-all duration-200 hover:scale-105 ${item.bgHover}`}
+            className={`w-9 h-9 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-dark-bg border border-slate-200/80 dark:border-dark-border transition-all duration-200 hover:scale-105 ${item.bgHover}`}
           >
             {item.icon}
           </a>
@@ -124,7 +124,7 @@ export default function SocialShare({
           className={`h-9 px-3.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all duration-200 border ${
             copied
               ? "bg-emerald-500 text-white border-emerald-600 scale-95"
-              : "bg-slate-100 dark:bg-[#191a1d] text-slate-700 dark:text-slate-300 border-slate-200/80 dark:border-[#4D5156] hover:border-primary/50 hover:text-primary dark:hover:text-sky-400"
+              : "bg-slate-100 dark:bg-dark-bg text-slate-700 dark:text-slate-300 border-slate-200/80 dark:border-dark-border hover:border-primary/50 hover:text-primary dark:hover:text-sky-400"
           }`}
         >
           {copied ? (

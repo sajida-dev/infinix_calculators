@@ -3,7 +3,7 @@ import React from "react";
 export default function ProductivitySeoContent() {
   return (
     <article className="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-      <div className="border-t border-slate-200 dark:border-[#4D5156] pt-8">
+      <div className="border-t border-slate-200 dark:border-dark-border pt-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
           Measuring Employee Output, Quotas &amp; Labor Efficiency Ratios
         </h2>
@@ -13,7 +13,7 @@ export default function ProductivitySeoContent() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-5">
-        <div className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+        <div className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
           <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-2">Target Efficiency Quota Formula</h3>
           <p className="font-mono text-primary dark:text-sky-400 text-xs sm:text-sm mb-2">
             Efficiency (%) = (Actual Units Completed ÷ Target Benchmark Units) × 100
@@ -23,7 +23,7 @@ export default function ProductivitySeoContent() {
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+        <div className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
           <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-2">Labor Productivity (Revenue / Hr)</h3>
           <p className="font-mono text-emerald-600 dark:text-emerald-400 text-xs sm:text-sm mb-2">
             Labor Productivity = Total Revenue Generated ÷ Total Direct Hours Worked

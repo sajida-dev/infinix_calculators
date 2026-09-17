@@ -3,7 +3,7 @@ import React from "react";
 export default function HecmSeoContent() {
   return (
     <article className="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-      <div className="border-t border-slate-200 dark:border-[#4D5156] pt-8">
+      <div className="border-t border-slate-200 dark:border-dark-border pt-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
           FHA HECM Reverse Mortgage Rules, Principal Limit Factors &amp; Payout Formulas
         </h2>
@@ -12,7 +12,7 @@ export default function HecmSeoContent() {
         </p>
       </div>
 
-      <div className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-6 rounded-2xl space-y-3">
+      <div className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl space-y-3">
         <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
           The HECM Principal Limit (Borrowing Capacity) Equation
         </h3>
@@ -25,14 +25,14 @@ export default function HecmSeoContent() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-5">
-        <div className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+        <div className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
           <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-2">Age-Based Proceeds Progression</h3>
           <p className="text-xs text-slate-600 dark:text-slate-400">
             Older borrowers receive higher borrowing percentages because of shorter actuarial life expectancies. A 62-year-old typically accesses ~35-42% of home value, while an 82-year-old may access 60-65%+.
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+        <div className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
           <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-2">Mandatory Lien Payoffs</h3>
           <p className="text-xs text-slate-600 dark:text-slate-400">
             HUD requires any existing primary mortgage, HELOC, or tax liens to be paid off in full at closing using HECM proceeds before any remaining net cash is disbursed to the homeowner.

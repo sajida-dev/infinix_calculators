@@ -5,7 +5,7 @@ export default function TanInverseSeoContent() {
     return (
         <article className="space-y-10 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
             {/* Overview */}
-            <section className="border-t border-slate-200 dark:border-[#4D5156] pt-8 space-y-4">
+            <section className="border-t border-slate-200 dark:border-dark-border pt-8 space-y-4">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
                     Tan Inverse (Arctan) Formula, Unit Circle Values & Real-World Applications
                 </h2>
@@ -21,23 +21,23 @@ export default function TanInverseSeoContent() {
             </section>
 
             {/* Domain & Range */}
-            <section className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-6 sm:p-8 rounded-2xl space-y-4">
+            <section className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 sm:p-8 rounded-2xl space-y-4">
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
                     <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary shrink-0" />
                     Domain, Range & Mathematical Properties
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
-                    <div className="p-4 bg-white dark:bg-[#191a1d] rounded-xl border border-slate-200 dark:border-[#4D5156]">
+                    <div className="p-4 bg-white dark:bg-dark-bg rounded-xl border border-slate-200 dark:border-dark-border">
                         <span className="text-slate-500 font-bold block mb-1">Domain (Input x)</span>
                         <p className="font-mono text-primary dark:text-sky-400 font-bold">All Real Numbers (-∞, ∞)</p>
                         <span className="text-[11px] text-slate-400 mt-2 block">Any real value is accepted as a tangent ratio.</span>
                     </div>
-                    <div className="p-4 bg-white dark:bg-[#191a1d] rounded-xl border border-slate-200 dark:border-[#4D5156]">
+                    <div className="p-4 bg-white dark:bg-dark-bg rounded-xl border border-slate-200 dark:border-dark-border">
                         <span className="text-slate-500 font-bold block mb-1">Range (Output θ)</span>
                         <p className="font-mono text-primary dark:text-sky-400 font-bold">(-π/2, π/2) or (-90°, 90°)</p>
                         <span className="text-[11px] text-slate-400 mt-2 block">Excludes exactly ±90° where tangent is undefined.</span>
                     </div>
-                    <div className="p-4 bg-white dark:bg-[#191a1d] rounded-xl border border-slate-200 dark:border-[#4D5156]">
+                    <div className="p-4 bg-white dark:bg-dark-bg rounded-xl border border-slate-200 dark:border-dark-border">
                         <span className="text-slate-500 font-bold block mb-1">Odd Symmetry</span>
                         <p className="font-mono text-primary dark:text-sky-400 font-bold">arctan(-x) = -arctan(x)</p>
                         <span className="text-[11px] text-slate-400 mt-2 block">Arctan is an odd function — negative inputs give negative angles.</span>
@@ -51,69 +51,69 @@ export default function TanInverseSeoContent() {
                     Key Tan Inverse Values: Unit Circle Reference Table
                 </h3>
                 <div className="overflow-x-auto">
-                    <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156] text-xs sm:text-sm">
+                    <table className="w-full border-collapse border border-slate-200 dark:border-dark-border text-xs sm:text-sm">
                         <thead>
-                            <tr className="bg-slate-100 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 font-bold">
-                                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Input Value (x)</th>
-                                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Exact Radians</th>
-                                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Decimal Radians</th>
-                                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Degrees</th>
+                            <tr className="bg-slate-100 dark:bg-dark-bg text-slate-900 dark:text-slate-100 font-bold">
+                                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">Input Value (x)</th>
+                                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">Exact Radians</th>
+                                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">Decimal Radians</th>
+                                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">Degrees</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-200 dark:divide-[#4D5156]">
+                        <tbody className="divide-y divide-slate-200 dark:divide-dark-border">
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-√3 ≈ -1.732</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-π/3</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-1.04720</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-60°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-√3 ≈ -1.732</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-π/3</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-1.04720</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-60°</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-1</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-π/4</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-0.78540</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-45°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-1</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-π/4</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-0.78540</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-45°</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-1/√3 ≈ -0.577</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-π/6</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-0.52360</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-30°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-1/√3 ≈ -0.577</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-π/6</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-0.52360</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-30°</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">0</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">0</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">0</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">0°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">0</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">0</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">0</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">0°</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">1/√3 ≈ 0.577</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">π/6</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">0.52360</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">30°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">1/√3 ≈ 0.577</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">π/6</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">0.52360</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">30°</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">1</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">π/4</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">0.78540</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">45°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">1</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">π/4</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">0.78540</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">45°</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">√3 ≈ 1.732</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">π/3</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">1.04720</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">60°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">√3 ≈ 1.732</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">π/3</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">1.04720</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">60°</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-3</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">≈ -1.24905</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">-1.24905</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">≈ -71.57°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-3</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">≈ -1.24905</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">-1.24905</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">≈ -71.57°</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">2</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">≈ 1.10715</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">1.10715</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">≈ 63.43°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">2</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">≈ 1.10715</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">1.10715</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">≈ 63.43°</td>
                             </tr>
                         </tbody>
                     </table>
@@ -129,12 +129,12 @@ export default function TanInverseSeoContent() {
                     Scientific calculators, Python, JavaScript, and Excel all compute arctan in <strong>radians</strong> by default. Use these two formulas to convert between angular units:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs sm:text-sm">
-                    <div className="p-4 bg-slate-50 dark:bg-[#22242A] rounded-xl border border-slate-200 dark:border-[#4D5156]">
+                    <div className="p-4 bg-slate-50 dark:bg-dark-card rounded-xl border border-slate-200 dark:border-dark-border">
                         <span className="text-slate-500 font-bold block mb-1">Radians → Degrees</span>
                         <p className="text-primary dark:text-sky-400 font-bold">Degrees = Radians × (180 / π)</p>
                         <span className="text-[11px] text-slate-400 mt-2 block">Example: 0.7854 × 57.2958 = 45°</span>
                     </div>
-                    <div className="p-4 bg-slate-50 dark:bg-[#22242A] rounded-xl border border-slate-200 dark:border-[#4D5156]">
+                    <div className="p-4 bg-slate-50 dark:bg-dark-card rounded-xl border border-slate-200 dark:border-dark-border">
                         <span className="text-slate-500 font-bold block mb-1">Degrees → Radians</span>
                         <p className="text-primary dark:text-sky-400 font-bold">Radians = Degrees × (π / 180)</p>
                         <span className="text-[11px] text-slate-400 mt-2 block">Example: 45° × 0.0174533 = 0.7854 rad</span>
@@ -154,34 +154,34 @@ export default function TanInverseSeoContent() {
                     The <code className="text-primary dark:text-sky-400 font-mono">Math.atan2(y, x)</code> function inspects the individual signs of y and x to return the correct angle across all four quadrants, from <code className="text-primary dark:text-sky-400 font-mono">-180°</code> to <code className="text-primary dark:text-sky-400 font-mono">+180°</code>:
                 </p>
                 <div className="overflow-x-auto">
-                    <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156] text-xs sm:text-sm">
+                    <table className="w-full border-collapse border border-slate-200 dark:border-dark-border text-xs sm:text-sm">
                         <thead>
-                            <tr className="bg-slate-100 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 font-bold">
-                                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">atan(y/x)</th>
-                                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">atan2(y, x) Result</th>
-                                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Quadrant</th>
+                            <tr className="bg-slate-100 dark:bg-dark-bg text-slate-900 dark:text-slate-100 font-bold">
+                                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">atan(y/x)</th>
+                                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">atan2(y, x) Result</th>
+                                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">Quadrant</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-200 dark:divide-[#4D5156]">
+                        <tbody className="divide-y divide-slate-200 dark:divide-dark-border">
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">atan(1/1) = 45°</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">atan2(1, 1) = 45°</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3">Quadrant I (+x, +y)</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">atan(1/1) = 45°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">atan2(1, 1) = 45°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3">Quadrant I (+x, +y)</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">atan(-1/1) = -45°</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">atan2(-1, 1) = -45°</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3">Quadrant IV (+x, -y)</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">atan(-1/1) = -45°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">atan2(-1, 1) = -45°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3">Quadrant IV (+x, -y)</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">atan(1/-1) = -45° (WRONG)</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono text-emerald-600 dark:text-emerald-400 font-bold">atan2(1, -1) = 135°</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-bold text-rose-500">Quadrant II (-x, +y)</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">atan(1/-1) = -45° (WRONG)</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono text-emerald-600 dark:text-emerald-400 font-bold">atan2(1, -1) = 135°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-bold text-rose-500">Quadrant II (-x, +y)</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono">atan(-1/-1) = 45° (WRONG)</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono text-emerald-600 dark:text-emerald-400 font-bold">atan2(-1, -1) = -135°</td>
-                                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-bold text-rose-500">Quadrant III (-x, -y)</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono">atan(-1/-1) = 45° (WRONG)</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono text-emerald-600 dark:text-emerald-400 font-bold">atan2(-1, -1) = -135°</td>
+                                <td className="border border-slate-200 dark:border-dark-border p-3 font-bold text-rose-500">Quadrant III (-x, -y)</td>
                             </tr>
                         </tbody>
                     </table>

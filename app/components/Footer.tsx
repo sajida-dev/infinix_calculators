@@ -38,7 +38,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-slate-50 dark:bg-[#191a1d] border-t border-slate-200 dark:border-[#4D5156] transition-colors">
+    <footer className="w-full bg-slate-50 dark:bg-dark-bg border-t border-slate-200 dark:border-dark-border transition-colors">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
 
         {/* Link Columns Grid */}
@@ -75,7 +75,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-1">
               {popularCalculators.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-[38px] flex items-center">
+                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-9.5 flex items-center">
                     {link.name}
                   </Link>
                 </li>
@@ -89,7 +89,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-1">
               {materialCalculators.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-[38px] flex items-center">
+                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-9.5 flex items-center">
                     {link.name}
                   </Link>
                 </li>
@@ -103,14 +103,14 @@ export default function Footer() {
             <ul className="mt-3 space-y-1">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-[38px] flex items-center">
+                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-9.5 flex items-center">
                     {link.name}
                   </Link>
                 </li>
               ))}
               {legalLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-[38px] flex items-center">
+                  <Link href={link.href} className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 transition-colors py-1.5 min-h-9.5 flex items-center">
                     {link.name}
                   </Link>
                 </li>
@@ -121,7 +121,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom Row */}
-        <div className="pt-8 border-t border-slate-200 dark:border-[#4D5156]/80 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-slate-200 dark:border-dark-border/80 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-400 dark:text-slate-500">
             © {currentYear} Infinix Calculators. All rights reserved. Built with precision.
           </p>

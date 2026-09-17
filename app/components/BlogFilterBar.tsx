@@ -90,7 +90,7 @@ export default function BlogFilterBar({
     Boolean(searchQuery);
 
   return (
-    <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200/80 dark:border-[#4D5156] p-5 sm:p-7 shadow-xs mb-10 space-y-6 transition-colors">
+    <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200/80 dark:border-dark-border p-5 sm:p-7 shadow-xs mb-10 space-y-6 transition-colors">
       {/* Top Search Bar Row */}
       <form onSubmit={handleSearchSubmit} className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
@@ -112,7 +112,7 @@ export default function BlogFilterBar({
             value={localQuery}
             onChange={(e) => setLocalQuery(e.target.value)}
             placeholder="Search guides by keyword, topic, author, or formula..."
-            className="w-full pl-11 pr-9 py-3 bg-slate-50 dark:bg-[#191a1d] border border-slate-200/90 dark:border-[#4D5156] rounded-xl text-xs sm:text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 font-medium"
+            className="w-full pl-11 pr-9 py-3 bg-slate-50 dark:bg-dark-bg border border-slate-200/90 dark:border-dark-border rounded-xl text-xs sm:text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 font-medium"
           />
           {localQuery && (
             <button
@@ -168,12 +168,12 @@ export default function BlogFilterBar({
                 onClick={() => updateFilters({ category: cat })}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${isActive
                   ? "bg-primary text-white shadow-sm ring-2 ring-primary/20"
-                  : "bg-slate-100/80 dark:bg-[#191a1d] text-slate-600 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white border border-transparent dark:border-[#4D5156]/50"
+                  : "bg-slate-100/80 dark:bg-dark-bg text-slate-600 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white border border-transparent dark:border-dark-border/50"
                   }`}
               >
                 <span>{cat}</span>
                 <span
-                  className={`px-1.5 py-0.5 rounded-full text-[10px] font-extrabold ${isActive ? "bg-white/20 text-white" : "bg-slate-200/80 dark:bg-[#22242A] text-slate-500 dark:text-slate-400"
+                  className={`px-1.5 py-0.5 rounded-full text-[10px] font-extrabold ${isActive ? "bg-white/20 text-white" : "bg-slate-200/80 dark:bg-dark-card text-slate-500 dark:text-slate-400"
                     }`}
                 >
                   {count}
@@ -185,7 +185,7 @@ export default function BlogFilterBar({
       </div>
 
       {/* Secondary Controls: Author, Sort & Active Filter Chips */}
-      <div className="pt-4 border-t border-slate-100 dark:border-[#4D5156] flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="pt-4 border-t border-slate-100 dark:border-dark-border flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-4">
           {/* Author Filter Dropdown */}
           <div className="flex items-center gap-2">
@@ -196,10 +196,10 @@ export default function BlogFilterBar({
               id="author-select"
               value={selectedAuthor}
               onChange={(e) => updateFilters({ author: e.target.value })}
-              className="bg-slate-50 dark:bg-[#191a1d] border border-slate-200/90 dark:border-[#4D5156] rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-bold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary cursor-pointer w-44 sm:w-81"
+              className="bg-slate-50 dark:bg-dark-bg border border-slate-200/90 dark:border-dark-border rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-bold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary cursor-pointer w-44 sm:w-81"
             >
               {authors.map((auth) => (
-                <option key={auth} value={auth} className="dark:bg-[#22242A] dark:text-slate-200">
+                <option key={auth} value={auth} className="dark:bg-dark-card dark:text-slate-200">
                   {auth}
                 </option>
               ))}
@@ -215,11 +215,11 @@ export default function BlogFilterBar({
               id="sort-select"
               value={selectedSort}
               onChange={(e) => updateFilters({ sort: e.target.value })}
-              className="bg-slate-50 dark:bg-[#191a1d] border border-slate-200/90 dark:border-[#4D5156] rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-bold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary cursor-pointer w-44 sm:w-81"
+              className="bg-slate-50 dark:bg-dark-bg border border-slate-200/90 dark:border-dark-border rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-bold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary cursor-pointer w-44 sm:w-81"
             >
-              <option value="newest" className="dark:bg-[#22242A] dark:text-slate-200">Newest First</option>
-              <option value="oldest" className="dark:bg-[#22242A] dark:text-slate-200">Oldest First</option>
-              <option value="title" className="dark:bg-[#22242A] dark:text-slate-200">Title (A-Z)</option>
+              <option value="newest" className="dark:bg-dark-card dark:text-slate-200">Newest First</option>
+              <option value="oldest" className="dark:bg-dark-card dark:text-slate-200">Oldest First</option>
+              <option value="title" className="dark:bg-dark-card dark:text-slate-200">Title (A-Z)</option>
             </select>
           </div>
         </div>

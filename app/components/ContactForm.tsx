@@ -17,16 +17,14 @@ export default function ContactForm() {
     if (!formData.name || !formData.email || !formData.message) return;
 
     setStatus("submitting");
-
-    // Simulate form submission
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", subject: "General Inquiry", message: "" });
-    }, 800);
+    const subject = `[${formData.subject}] Infinix Calculators inquiry`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+    window.location.href = `mailto:support@infinixcalculator.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus("success");
   };
 
   return (
-    <div className="bg-white dark:bg-[#22242A] p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-[#4D5156] shadow-xs">
+    <div className="bg-white dark:bg-dark-card p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-dark-border shadow-xs">
       <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Send Us a Message</h2>
       <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">
         Have a question about a calculation, feedback on our tools, or a business inquiry? Fill out the form below.
@@ -34,7 +32,7 @@ export default function ContactForm() {
 
       {status === "success" && (
         <div className="mb-6 p-4 rounded-xl bg-green-50 dark:bg-emerald-950/40 border border-green-200 dark:border-emerald-800 text-green-800 dark:text-emerald-200 text-sm">
-          Thank you! Your message has been sent successfully. Our support team will get back to you at <strong>support@infinixcalculator.com</strong>.
+          Your email application should open with this message prefilled. Send it there to contact <strong>support@infinixcalculator.com</strong>.
         </div>
       )}
 
@@ -50,7 +48,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="e.g. John Doe"
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary text-sm"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary text-sm"
             />
           </div>
 
@@ -64,7 +62,7 @@ export default function ContactForm() {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="e.g. john@example.com"
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary text-sm"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary text-sm"
             />
           </div>
         </div>
@@ -76,7 +74,7 @@ export default function ContactForm() {
           <select
             value={formData.subject}
             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary text-sm"
+            className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary text-sm"
           >
             <option value="General Inquiry">General Inquiry</option>
             <option value="Calculation Formula Question">Calculation Formula Question</option>
@@ -96,7 +94,7 @@ export default function ContactForm() {
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             placeholder="Please detail your question, feedback, or suggestion..."
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary text-sm"
+            className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary text-sm"
           />
         </div>
 

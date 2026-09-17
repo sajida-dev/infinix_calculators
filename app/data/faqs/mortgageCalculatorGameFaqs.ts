@@ -32,5 +32,13 @@ export const mortgageCalculatorGameFaqs: FAQItem[] = [
   {
     "question": "Can you play the Mortgage Calculator Game online unblocked for classroom education?",
     "answer": "Yes! The Infinix <a href=\"/calculators/mortgage-calculator-game\">Mortgage Calculator Game</a> is 100% free, browser-based, mobile-friendly, and accessible across school networks and Chromebooks without account creation or downloads. It is widely used by high school personal finance teachers, university economics professors, and real estate pre-licensing students."
+  },
+  {
+    "question": "How does the F1 Debt Speedrun & Racing mode work in the Mortgage Calculator Game?",
+    "answer": "In the F1 Debt Speedrun mode (often searched as <strong>mortgage calculator games F1</strong> or <strong>formula racer mortgage calculator</strong>), your vehicle races down the 30-year amortization track against compounding interest. Entering extra monthly principal payments acts as a 'Nitrous Boost', instantly cutting down the lap time from 30 years to under 15 years and visibly denying the bank over $95,000 in finance charges."
+  },
+  {
+    "question": "What is the Real Estate Tycoon mode and how do you avoid bankruptcy?",
+    "answer": "The Tycoon mode simulates 30 years of property investing starting with $60,000 in cash. Players acquire condos, suburban houses, and duplexes, collect rental yield, and navigate real-world random events such as HVAC repairs and interest rate hikes while building a $1,000,000+ net worth portfolio."
   }
 ];

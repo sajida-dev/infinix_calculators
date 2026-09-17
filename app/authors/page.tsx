@@ -16,7 +16,7 @@ export default function AuthorsIndexPage() {
   const authors = getAllAuthors();
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 py-12 transition-colors">
+    <main className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 py-12 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header className="mb-12 text-center max-w-3xl mx-auto">
@@ -33,11 +33,11 @@ export default function AuthorsIndexPage() {
           {authors.map((author) => (
             <div
               key={author.slug}
-              className="bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-primary transition-all shadow-xs"
+              className="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-primary transition-all shadow-xs"
             >
               <div>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border border-slate-200 dark:border-[#4D5156] shrink-0">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border border-slate-200 dark:border-dark-border shrink-0">
                     <Image
                       src={author.avatar}
                       alt={author.name}
@@ -71,7 +71,7 @@ export default function AuthorsIndexPage() {
                     {author.expertise.slice(0, 3).map((exp, idx) => (
                       <span
                         key={idx}
-                        className="text-[10px] bg-slate-100 dark:bg-[#191a1d] px-2 py-0.5 rounded-md text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-[#4D5156]"
+                        className="text-[10px] bg-slate-100 dark:bg-dark-bg px-2 py-0.5 rounded-md text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-dark-border"
                       >
                         {exp}
                       </span>
@@ -80,7 +80,7 @@ export default function AuthorsIndexPage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 dark:border-[#4D5156] flex items-center justify-end">
+              <div className="pt-4 border-t border-slate-100 dark:border-dark-border flex items-center justify-end">
                 <Link
                   href={`/authors/${author.slug}`}
                   className="text-xs font-semibold text-primary dark:text-sky-400 hover:underline inline-flex items-center gap-1"

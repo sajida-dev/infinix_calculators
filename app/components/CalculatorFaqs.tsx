@@ -34,11 +34,11 @@ export default function CalculatorFaqs({ slug, title }: CalculatorFaqsProps) {
           __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-slate-100 mb-6 pb-3 border-b border-slate-200/80 dark:border-[#4D5156]">
+      <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-slate-100 mb-6 pb-3 border-b border-slate-200/80 dark:border-dark-border">
         {title || `Frequently Asked Questions About ${calc.name}`}
       </h2>
 
-      <div className="divide-y divide-slate-200/80 dark:divide-[#4D5156]">
+      <div className="divide-y divide-slate-200/80 dark:divide-dark-border">
         {calc.faqs.map((faq, index) => (
           <details key={index} className="group py-4" open={index === 0}>
             <summary className="flex cursor-pointer items-center gap-3 text-slate-900 dark:text-slate-100 font-bold text-sm sm:text-base list-none focus:outline-none">

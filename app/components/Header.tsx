@@ -24,13 +24,13 @@ export default function Header() {
     <header className="sticky top-4 z-50 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-6">
       <div
         className={`rounded-2xl border transition-all duration-300 px-5 py-3 flex items-center justify-between ${scrolled
-          ? "bg-white/95 dark:bg-[#22242A]/95 border-slate-300/90 dark:border-[#4D5156] shadow-xl shadow-slate-900/5 backdrop-blur-lg"
-          : "bg-white/80 dark:bg-[#22242A]/80 border-slate-200/80 dark:border-[#4D5156]/80 backdrop-blur-md shadow-sm hover:shadow-md"
+          ? "bg-white/95 dark:bg-dark-card/95 border-slate-300/90 dark:border-dark-border shadow-xl shadow-slate-900/5 backdrop-blur-lg"
+          : "bg-white/80 dark:bg-dark-card/80 border-slate-200/80 dark:border-dark-border/80 backdrop-blur-md shadow-sm hover:shadow-md"
           }`}
       >
 
         {/* Logo Branding */}
-        <div className="flex flex-shrink-0 items-center">
+        <div className="flex shrink-0 items-center">
           <Link href="/" className="flex items-center">
             {/* Light Mode Logo */}
             <Image
@@ -39,6 +39,7 @@ export default function Header() {
               width={140}
               height={36}
               priority
+              style={{ height: "auto" }}
               className="h-9 w-auto object-contain dark:hidden"
             />
             {/* Dark Mode Logo */}
@@ -47,6 +48,7 @@ export default function Header() {
               alt="Infinix Calculators"
               width={140}
               height={36}
+              style={{ height: "auto" }}
               className="h-9 w-auto object-contain hidden dark:block"
             />
           </Link>
@@ -54,7 +56,7 @@ export default function Header() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 text-sm font-semibold text-slate-700 dark:text-slate-200">
-          <Link href="/" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">
+          <Link href="/" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-11 inline-flex items-center">
             Home
           </Link>
 
@@ -62,7 +64,7 @@ export default function Header() {
           <div className="relative group">
             <Link
               href="/calculators"
-              className="inline-flex items-center gap-1 hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px]"
+              className="inline-flex items-center gap-1 hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-11"
             >
               <span>Calculators</span>
               <svg className="w-3.5 h-3.5 text-slate-400 dark:text-slate-400 group-hover:text-primary dark:group-hover:text-sky-300 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,11 +72,11 @@ export default function Header() {
               </svg>
             </Link>
             {/* Pure CSS Hover Dropdown */}
-            <div className="absolute left-0 mt-1 w-56 rounded-xl border border-slate-200 dark:border-[#4D5156] bg-white dark:bg-[#22242A] p-3 shadow-lg hidden group-hover:block z-50">
+            <div className="absolute left-0 mt-1 w-56 rounded-xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card p-3 shadow-lg hidden group-hover:block z-50">
               <ul className="space-y-1">
                 {categoriesList.map((cat) => (
                   <li key={cat.id}>
-                    <Link href={`/calculators#${cat.id}`} className="block rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors min-h-[38px] flex items-center">
+                    <Link href={`/calculators#${cat.id}`} className=" rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-dark-bg hover:text-primary dark:hover:text-sky-300 transition-colors min-h-9.5 flex items-center">
                       {cat.title}
                     </Link>
                   </li>
@@ -83,15 +85,15 @@ export default function Header() {
             </div>
           </div>
 
-          <Link href="/blog" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">
+          <Link href="/blog" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-11 inline-flex items-center">
             Blog & Guides
           </Link>
 
-          <Link href="/about" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">
+          <Link href="/about" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-11 inline-flex items-center">
             About Us
           </Link>
 
-          <Link href="/contact" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">
+          <Link href="/contact" className="hover:text-primary dark:hover:text-sky-300 transition-colors py-2 px-1 min-h-11 inline-flex items-center">
             Contact
           </Link>
         </nav>
@@ -102,14 +104,14 @@ export default function Header() {
 
           <Link
             href="/calculators"
-            className="hidden sm:inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2.5 min-h-[42px] text-xs font-bold text-white transition-all duration-200 hover:bg-primary-hover shadow-md shadow-primary/10 hover:shadow-primary-lg"
+            className="hidden sm:inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2.5 min-h-10.5 text-xs font-bold text-white transition-all duration-200 hover:bg-primary-hover shadow-md shadow-primary/10 hover:shadow-primary-lg"
           >
             All Calculators
           </Link>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl hover:bg-slate-100/80 dark:hover:bg-[#191a1d] text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
+            className="md:hidden p-2.5 min-h-11 min-w-11 flex items-center justify-center rounded-xl hover:bg-slate-100/80 dark:hover:bg-dark-bg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -126,28 +128,28 @@ export default function Header() {
 
       {/* Mobile Menu Expandable Drawer */}
       {open && (
-        <div className="md:hidden rounded-2xl border border-slate-200/80 dark:border-[#4D5156] bg-white/95 dark:bg-[#22242A]/95 backdrop-blur-md p-4 mt-2 shadow-lg flex flex-col gap-1 transition-all duration-300">
+        <div className="md:hidden rounded-2xl border border-slate-200/80 dark:border-dark-border bg-white/95 dark:bg-dark-card/95 backdrop-blur-md p-4 mt-2 shadow-lg flex flex-col gap-1 transition-all duration-300">
           <Link
             href="/"
-            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-11 flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-dark-bg hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/calculators"
-            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-11 flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-dark-bg hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             Calculators
           </Link>
           {/* Collapsible/Indented list of categories for mobile */}
-          <div className="pl-4 flex flex-col gap-1 border-l border-slate-200 dark:border-[#4D5156] ml-3">
+          <div className="pl-4 flex flex-col gap-1 border-l border-slate-200 dark:border-dark-border ml-3">
             {categoriesList.map((cat) => (
               <Link
                 key={cat.id}
                 href={`/calculators#${cat.id}`}
-                className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 py-2 min-h-[38px] flex items-center"
+                className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-sky-300 py-2 min-h-9.5 flex items-center"
                 onClick={() => setOpen(false)}
               >
                 {cat.title}
@@ -156,21 +158,21 @@ export default function Header() {
           </div>
           <Link
             href="/blog"
-            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-11 flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-dark-bg hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             Blog & Guides
           </Link>
           <Link
             href="/about"
-            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-11 flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-dark-bg hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             About Us
           </Link>
           <Link
             href="/contact"
-            className="rounded-lg px-3.5 py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#191a1d] hover:text-primary dark:hover:text-sky-300 transition-colors"
+            className="rounded-lg px-3.5 py-2.5 min-h-11 flex items-center text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-dark-bg hover:text-primary dark:hover:text-sky-300 transition-colors"
             onClick={() => setOpen(false)}
           >
             Contact

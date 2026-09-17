@@ -14,6 +14,10 @@ export const cbmFaqs: FAQItem[] = [
     answer: "To calculate CBM from inches directly, multiply Length (in) × Width (in) × Height (in), then divide by <strong>61,023.74</strong> (cubic inches in 1 cubic meter): <code>CBM = (L × W × H) ÷ 61,023.74</code>. For example, a standard 24″ × 18″ × 16″ carton equals 6,912 ÷ 61,023.74 = <strong>0.113 CBM</strong>."
   },
   {
+    question: "How do I calculate CBM from millimeters (mm)?",
+    answer: "Multiply Length (mm) × Width (mm) × Height (mm), then divide by <strong>1,000,000,000</strong>: <code>CBM = (L × W × H) ÷ 1,000,000,000</code>. For example, 500 mm × 400 mm × 300 mm equals 0.06 CBM. You can also convert each measurement to meters by dividing by 1,000 before multiplying."
+  },
+  {
     question: "How many kilograms (kg) is 1 CBM in sea freight vs. air freight?",
     answer: "In ocean freight (LCL shipping), the standard rule is <strong>1 CBM = 1,000 kg (1 metric ton)</strong> of volumetric chargeable weight. In standard air cargo, the IATA volumetric ratio is <strong>1 CBM = 167 kg</strong> (calculated as cubic cm ÷ 6,000 or cubic inches ÷ 366). For express couriers (DHL, FedEx, UPS), the ratio is <strong>1 CBM = 200 kg</strong> (cubic cm ÷ 5,000)."
   },
@@ -32,5 +36,9 @@ export const cbmFaqs: FAQItem[] = [
   {
     question: "Is CBM the same as m³ (cubic meters)?",
     answer: "Yes. CBM and m³ are identical measurements. 'CBM' is the standard freight forwarding commercial acronym, while 'm³' is the international SI metric symbol for cubic meters."
+  },
+  {
+    question: "Does CBM include the weight of my shipment?",
+    answer: "No. CBM measures the physical space occupied by cargo, not its actual weight. Freight providers may compare actual weight with a dimensional-weight rule to set the chargeable weight, and their divisor, minimum charges, and rounding rules vary. Use the <a href=\"/calculators/cbm\">CBM Shipping Calculator</a> for volume, then confirm the billing method with your carrier or forwarder."
   }
 ];

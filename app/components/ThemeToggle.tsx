@@ -7,7 +7,7 @@ export default function ThemeToggle() {
 
   return (
     <div
-      className="inline-flex items-center p-1 rounded-full bg-slate-100 dark:bg-[#191a1d] border border-slate-200 dark:border-[#4D5156] shadow-inner transition-colors"
+      className="inline-flex items-center p-1 rounded-full bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border shadow-inner transition-colors"
       role="radiogroup"
       aria-label="Color theme selection"
     >

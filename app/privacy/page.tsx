@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-[#191a1d] text-slate-800 dark:text-slate-100 transition-colors">
+    <main className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-800 dark:text-slate-100 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* HERO SECTION */}
@@ -46,8 +46,8 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <div className="mt-6 overflow-x-auto">
-              <table className="w-full border border-slate-300 dark:border-[#4D5156] rounded-xl overflow-hidden text-sm md:text-base">
-                <thead className="bg-slate-50 dark:bg-[#22242A] text-left text-slate-700 dark:text-slate-200">
+              <table className="w-full border border-slate-300 dark:border-dark-border rounded-xl overflow-hidden text-sm md:text-base">
+                <thead className="bg-slate-50 dark:bg-dark-card text-left text-slate-700 dark:text-slate-200">
                   <tr>
                     <th className="px-4 py-3 font-semibold">Category</th>
                     <th className="px-4 py-3 font-semibold">What We Collect</th>
@@ -55,26 +55,26 @@ export default function PrivacyPolicyPage() {
                   </tr>
                 </thead>
 
-                <tbody className="divide-y divide-slate-300 dark:divide-[#4D5156]">
-                  <tr className="hover:bg-slate-50 dark:hover:bg-[#22242A]/60">
+                <tbody className="divide-y divide-slate-300 dark:divide-dark-border">
+                  <tr className="hover:bg-slate-50 dark:hover:bg-dark-card/60">
                     <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Calculator Inputs</td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Values entered in tools (e.g., area, soil depth)</td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">To generate accurate results in real-time</td>
                   </tr>
 
-                  <tr className="hover:bg-slate-50 dark:hover:bg-[#22242A]/60">
+                  <tr className="hover:bg-slate-50 dark:hover:bg-dark-card/60">
                     <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Device Information</td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Browser type, device type, screen size</td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">To improve UI responsiveness and performance</td>
                   </tr>
 
-                  <tr className="hover:bg-slate-50 dark:hover:bg-[#22242A]/60">
+                  <tr className="hover:bg-slate-50 dark:hover:bg-dark-card/60">
                     <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Usage Data</td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Pages visited, tool usage frequency</td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">To improve features and user experience</td>
                   </tr>
 
-                  <tr className="hover:bg-slate-50 dark:hover:bg-[#22242A]/60">
+                  <tr className="hover:bg-slate-50 dark:hover:bg-dark-card/60">
                     <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Local Storage</td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Client-side theme preference</td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">To remember light/dark mode choices locally on your device</td>
@@ -116,25 +116,25 @@ export default function PrivacyPolicyPage() {
             </div>
           </div>
 
-          {/* ZERO COOKIES POLICY */}
+          {/* Cookies and similar technologies */}
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-100">
-              No Cookies Policy
+              Cookies and Similar Technologies
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              Infinix Calculators operates on a zero-first-party-cookie model. We do not use cookies to track, profile, or store your personal information.
+              We use local storage to remember your theme preference. Google AdSense and Google Analytics, when enabled, and their partners may use cookies, web beacons, IP addresses, and similar identifiers to serve, measure, limit, and personalize ads or to measure site use, subject to your privacy choices and applicable law.
             </p>
 
             <div className="mt-6 grid md:grid-cols-2 gap-5">
-              <div className="p-5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] hover:shadow-sm transition">
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Zero Tracking Cookies</h3>
+              <div className="p-5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border hover:shadow-sm transition">
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Third-Party Services</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  We do not use first-party tracking cookies or persistent user-identifying cookies across your sessions.
+                  Third-party providers may collect and process identifiers as described in their own privacy notices when their services load on this site.
                 </p>
               </div>
 
-              <div className="p-5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] hover:shadow-sm transition">
+              <div className="p-5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border hover:shadow-sm transition">
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100">Local Browser Computation</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                   All calculator mathematical computations and unit conversions execute securely and immediately within your client browser.
@@ -150,7 +150,7 @@ export default function PrivacyPolicyPage() {
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
               We may use third-party analytics tools to understand how users interact with our calculators and improve performance.
-              These tools collect anonymized and aggregated data only.
+              Analytics providers may process technical and usage information in accordance with their own policies.
             </p>
 
             <ul className="mt-5 space-y-3 text-slate-600 dark:text-slate-300 list-disc pl-5">
@@ -159,7 +159,7 @@ export default function PrivacyPolicyPage() {
               <li>Device and browser performance metrics</li>
             </ul>
 
-            <div className="mt-5 p-5 rounded-xl bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] text-sm text-slate-600 dark:text-slate-300">
+            <div className="mt-5 p-5 rounded-xl bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border text-sm text-slate-600 dark:text-slate-300">
               We do not use analytics to personally identify users.
             </div>
           </div>
@@ -175,14 +175,14 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <div className="mt-6 grid md:grid-cols-2 gap-5">
-              <div className="p-5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+              <div className="p-5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100">Third-Party Advertising</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                   Google and its certified partners serve relevant ads to our visitors based on contextual page information and user privacy settings.
                 </p>
               </div>
 
-              <div className="p-5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+              <div className="p-5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100">Opt-Out &amp; Privacy Controls</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                   Users may opt out of personalized advertising at any time by managing their ad preferences in their Google account or through industry-standard consumer choice portals.
@@ -190,9 +190,15 @@ export default function PrivacyPolicyPage() {
               </div>
             </div>
 
-            <div className="mt-5 p-4 rounded-xl bg-slate-100 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] text-sm text-slate-700 dark:text-slate-300 space-y-2">
+            <div className="mt-5 p-4 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-dark-border text-sm text-slate-700 dark:text-slate-300 space-y-2">
               <p className="font-medium text-slate-900 dark:text-slate-100">Managing Your Ad Preferences:</p>
               <ul className="list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300">
+                <li>
+                  Learn how Google uses information from sites and apps that use its services by visiting{" "}
+                  <a href="https://www.google.com/policies/privacy/partners/" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-sky-400 font-medium underline">
+                    How Google uses data when you use our partners&apos; sites or apps
+                  </a>.
+                </li>
                 <li>
                   Opt out of Google personalized advertising by visiting{" "}
                   <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-sky-400 font-medium underline">
@@ -273,13 +279,13 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <div className="mt-5 text-sm text-slate-500 dark:text-slate-400">
-              We encourage users to review this page periodically.
+              Effective date: September 17, 2026. We encourage users to review this page periodically.
             </div>
           </div>
 
 
           {/* FINAL NOTE */}
-          <div className="text-center pt-6 border-t border-slate-200 dark:border-[#4D5156]">
+          <div className="text-center pt-6 border-t border-slate-200 dark:border-dark-border">
             <p className="text-sm text-slate-500 dark:text-slate-400">
               By using Infinix Calculators, you agree to this Privacy Policy.
             </p>

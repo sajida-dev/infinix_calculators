@@ -5,7 +5,7 @@ export default function DinkytownSeoContent() {
   return (
     <article className="space-y-10 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
       {/* Overview */}
-      <section className="border-t border-slate-200 dark:border-[#4D5156] pt-8 space-y-4">
+      <section className="border-t border-slate-200 dark:border-dark-border pt-8 space-y-4">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
           Financial Decision Modeling: Savings Yields vs. High-Interest Debt Amortization
         </h2>
@@ -18,7 +18,7 @@ export default function DinkytownSeoContent() {
       </section>
 
       {/* The Mathematics of Negative Arbitrage */}
-      <section className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-6 sm:p-8 rounded-2xl space-y-4">
+      <section className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 sm:p-8 rounded-2xl space-y-4">
         <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
           <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary shrink-0" />
           The Guaranteed Return Principle: Debt Payoff vs. Savings APY
@@ -26,7 +26,7 @@ export default function DinkytownSeoContent() {
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
           Paying down a credit card balance with an <strong>18% to 24.99% APR</strong> delivers an immediate, risk-free, tax-free return equal to the interest avoided:
         </p>
-        <div className="p-4 bg-white dark:bg-[#191a1d] rounded-xl border border-slate-200 dark:border-[#4D5156] font-mono text-xs sm:text-sm space-y-2">
+        <div className="p-4 bg-white dark:bg-dark-bg rounded-xl border border-slate-200 dark:border-dark-border font-mono text-xs sm:text-sm space-y-2">
           <p className="text-primary dark:text-sky-400 font-bold">
             Net Arbitrage (%) = Savings APY % - Debt APR %
           </p>
@@ -45,27 +45,27 @@ export default function DinkytownSeoContent() {
           Debt Payoff Strategies: Avalanche vs. Snowball
         </h3>
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156] text-xs sm:text-sm">
+          <table className="w-full border-collapse border border-slate-200 dark:border-dark-border text-xs sm:text-sm">
             <thead>
-              <tr className="bg-slate-100 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 font-bold">
-                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Strategy</th>
-                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Target Order</th>
-                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Primary Advantage</th>
-                <th className="border border-slate-200 dark:border-[#4D5156] p-3 text-left">Mathematical Efficiency</th>
+              <tr className="bg-slate-100 dark:bg-dark-bg text-slate-900 dark:text-slate-100 font-bold">
+                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">Strategy</th>
+                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">Target Order</th>
+                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">Primary Advantage</th>
+                <th className="border border-slate-200 dark:border-dark-border p-3 text-left">Mathematical Efficiency</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200 dark:divide-[#4D5156]">
+            <tbody className="divide-y divide-slate-200 dark:divide-dark-border">
               <tr>
-                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-semibold text-primary dark:text-sky-400">Debt Avalanche</td>
-                <td className="border border-slate-200 dark:border-[#4D5156] p-3">Highest APR to Lowest APR</td>
-                <td className="border border-slate-200 dark:border-[#4D5156] p-3">Minimizes total lifetime interest paid</td>
-                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">Optimal (Saves most $)</td>
+                <td className="border border-slate-200 dark:border-dark-border p-3 font-semibold text-primary dark:text-sky-400">Debt Avalanche</td>
+                <td className="border border-slate-200 dark:border-dark-border p-3">Highest APR to Lowest APR</td>
+                <td className="border border-slate-200 dark:border-dark-border p-3">Minimizes total lifetime interest paid</td>
+                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">Optimal (Saves most $)</td>
               </tr>
               <tr>
-                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-semibold text-amber-600 dark:text-amber-400">Debt Snowball</td>
-                <td className="border border-slate-200 dark:border-[#4D5156] p-3">Smallest Balance to Largest Balance</td>
-                <td className="border border-slate-200 dark:border-[#4D5156] p-3">Fast psychological wins by closing accounts</td>
-                <td className="border border-slate-200 dark:border-[#4D5156] p-3 font-mono text-slate-600 dark:text-slate-400">Behavioral focus</td>
+                <td className="border border-slate-200 dark:border-dark-border p-3 font-semibold text-amber-600 dark:text-amber-400">Debt Snowball</td>
+                <td className="border border-slate-200 dark:border-dark-border p-3">Smallest Balance to Largest Balance</td>
+                <td className="border border-slate-200 dark:border-dark-border p-3">Fast psychological wins by closing accounts</td>
+                <td className="border border-slate-200 dark:border-dark-border p-3 font-mono text-slate-600 dark:text-slate-400">Behavioral focus</td>
               </tr>
             </tbody>
           </table>
@@ -81,17 +81,17 @@ export default function DinkytownSeoContent() {
           Because mortgage and loan interest is calculated against the remaining principal balance, even small extra monthly payments dramatically compress loan timelines:
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="p-4 bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-xl">
+          <div className="p-4 bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-xl">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wide">Base 30-Year Loan</span>
             <p className="text-xl font-extrabold text-slate-900 dark:text-slate-100 mt-1 font-mono">$350k @ 6.5%</p>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Total Interest: $446,450 (360 mos)</p>
           </div>
-          <div className="p-4 bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-xl">
+          <div className="p-4 bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-xl">
             <span className="text-xs font-bold text-primary dark:text-sky-400 uppercase tracking-wide">+$100 / Month</span>
             <p className="text-xl font-extrabold text-slate-900 dark:text-slate-100 mt-1 font-mono">Payoff: 25.5 Years</p>
             <p className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold mt-1">Saves $65,200 in interest</p>
           </div>
-          <div className="p-4 bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-xl">
+          <div className="p-4 bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-xl">
             <span className="text-xs font-bold text-emerald-500 uppercase tracking-wide">+$250 / Month</span>
             <p className="text-xl font-extrabold text-slate-900 dark:text-slate-100 mt-1 font-mono">Payoff: 21.3 Years</p>
             <p className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold mt-1">Saves $134,800 in interest</p>

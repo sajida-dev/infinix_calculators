@@ -138,7 +138,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   if (params.sort) searchParamsObj.sort = params.sort;
 
   return (
-    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen py-12 sm:py-16 transition-colors">
+    <div className="bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-screen py-12 sm:py-16 transition-colors">
       <div className="mx-auto max-w-7xl px-1 lg:px-2">
 
         {/* Header Section */}
@@ -165,10 +165,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         {/* Featured Post Card (Default Page 1 view) */}
         {featuredPost && (
           <section className="mb-16">
-            <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] shadow-xs overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 hover:shadow-md transition-shadow duration-200">
+            <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-xs overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 hover:shadow-md transition-shadow duration-200">
 
               {/* Left Column (Image): 5 cols on desktop */}
-              <div className="lg:col-span-5 relative min-h-[250px] lg:min-h-full bg-slate-100 dark:bg-[#191a1d]">
+              <div className="lg:col-span-5 relative min-h-62.5 lg:min-h-full bg-slate-100 dark:bg-dark-bg">
                 <Image
                   src={featuredPost.image}
                   alt={featuredPost.title}
@@ -197,7 +197,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-slate-100 dark:border-[#4D5156] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="mt-8 pt-6 border-t border-slate-100 dark:border-dark-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <Link
                     href={`/authors/${featuredPost.authorSlug || 'david-miller'}`}
                     className="text-xs text-slate-500 dark:text-slate-400 font-semibold hover:text-primary transition-colors"
@@ -220,7 +220,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
         {/* Paginated Articles Grid Section */}
         <section className="mb-16">
-          <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#4D5156] pb-4 mb-8">
+          <div className="flex items-center justify-between border-b border-slate-200 dark:border-dark-border pb-4 mb-8">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               {q || selectedCategory !== "All" || selectedAuthor !== "All"
                 ? `Filtered Articles (${totalPosts})`
@@ -248,7 +248,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               />
             </>
           ) : (
-            <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] p-12 text-center my-8 shadow-xs">
+            <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border p-12 text-center my-8 shadow-xs">
               <svg className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -267,7 +267,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         </section>
 
         {/* Bottom CTA Card */}
-        <section className="bg-primary/5 dark:bg-[#22242A] rounded-2xl border border-primary/10 dark:border-[#4D5156] py-8 sm:py-12 text-center max-w-4xl mx-auto shadow-xs transition-colors">
+        <section className="bg-primary/5 dark:bg-dark-card rounded-2xl border border-primary/10 dark:border-dark-border py-8 sm:py-12 text-center max-w-4xl mx-auto shadow-xs transition-colors">
           <span className="text-xs font-bold text-primary dark:text-sky-400 uppercase tracking-widest">
             Free Interactive Estimators
           </span>
@@ -286,9 +286,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             </Link>
             <Link
               href="/calculators"
-              className="rounded-xl bg-white dark:bg-[#191a1d] border border-slate-200 dark:border-[#4D5156] px-6 py-3 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-[#22242A] transition-all shadow-xs"
+              className="rounded-xl bg-white dark:bg-dark-bg border border-slate-200 dark:border-dark-border px-6 py-3 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-dark-card transition-all shadow-xs"
             >
-              View All 100+ Calculators
+              View All 30+ Calculators
             </Link>
           </div>
         </section>

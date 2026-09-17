@@ -1,5 +1,5 @@
 //  {/* Social Media Links Row */}
-//               <div className="flex items-center gap-3 pt-6 sm:pt-8 mt-4 border-t border-slate-100 dark:border-[#4D5156]/60">
+//               <div className="flex items-center gap-3 pt-6 sm:pt-8 mt-4 border-t border-slate-100 dark:border-dark-border/60">
 //                 {/* Facebook */}
 //                 {author.socials?.facebook && (
 //                   <a

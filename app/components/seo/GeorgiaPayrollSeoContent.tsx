@@ -3,7 +3,7 @@ import React from "react";
 export default function GeorgiaPayrollSeoContent() {
   return (
     <article className="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-      <div className="border-t border-slate-200 dark:border-[#4D5156] pt-8">
+      <div className="border-t border-slate-200 dark:border-dark-border pt-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
           Georgia State Paycheck Calculations &amp; Flat Income Tax Transition
         </h2>
@@ -12,7 +12,7 @@ export default function GeorgiaPayrollSeoContent() {
         </p>
       </div>
 
-      <div className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-6 rounded-2xl space-y-3">
+      <div className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl space-y-3">
         <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
           The Georgia Net Paycheck Equation
         </h3>
@@ -25,14 +25,14 @@ export default function GeorgiaPayrollSeoContent() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-5">
-        <div className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+        <div className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
           <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-2">Form G-4 Allowances</h3>
           <p className="text-xs text-slate-600 dark:text-slate-400">
             Employees in Georgia complete State Form G-4 to establish marital status and dependent allowances, which reduce taxable gross wages before state tax is applied.
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+        <div className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
           <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-2">Pre-Tax Benefits Impact</h3>
           <p className="text-xs text-slate-600 dark:text-slate-400">
             Contributions to traditional 401(k) retirement accounts, HSA/FSA medical plans, and Section 125 cafeteria plans reduce both federal and state taxable income.

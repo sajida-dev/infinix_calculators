@@ -3,7 +3,7 @@ import React from "react";
 export default function GoogleReviewSeoContent() {
   return (
     <article className="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-      <div className="border-t border-slate-200 dark:border-[#4D5156] pt-8">
+      <div className="border-t border-slate-200 dark:border-dark-border pt-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
           Google Review Recovery Math: The Formula to Reach 4.8+ Stars
         </h2>
@@ -12,7 +12,7 @@ export default function GoogleReviewSeoContent() {
         </p>
       </div>
 
-      <div className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-6 rounded-2xl space-y-3">
+      <div className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl space-y-3">
         <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
           The 5-Star Reviews Required Formula
         </h3>

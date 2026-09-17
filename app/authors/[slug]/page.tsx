@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { authorsData, getAllAuthors } from "../../data/authorsData";
 import { blogData } from "../../data/blogData";
+import { calculatorsData } from "../../data/calculatorsData";
 import BlogCard from "../../components/BlogCard";
 
 interface AuthorPageProps {
@@ -62,6 +63,22 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
   // Filter posts strictly authored by this author
   const authorPosts = Object.values(blogData).filter((post) => post.authorSlug === slug);
 
+  // Filter calculators reviewed by this author
+  const reviewedCalculators = Object.values(calculatorsData).filter((calc) => {
+    const cat = calc.category.toLowerCase();
+    const catLabel = (calc.categoryLabel || "").toLowerCase();
+    if (slug === "elena-rostova") {
+      return cat.includes("construction") || catLabel.includes("materials") || catLabel.includes("landscaping") || calc.slug === "cbm" || calc.slug === "topsoil";
+    }
+    if (slug === "marcus-vance") {
+      return cat.includes("math") || cat.includes("education") || calc.slug.includes("lsat") || calc.slug.includes("review") || calc.slug === "tan-inverse";
+    }
+    if (slug === "sarah-jenkins") {
+      return cat.includes("health") || calc.slug.includes("productivity") || calc.slug === "santyl" || calc.slug.includes("dog") || calc.slug.includes("calorie");
+    }
+    return cat.includes("financial") || cat.includes("tax") || calc.slug.includes("affirm") || calc.slug.includes("square") || calc.slug.includes("gross-up");
+  }).slice(0, 8);
+
   // Schema.org Person & ProfilePage
   const personSchema = {
     "@context": "https://schema.org",
@@ -100,7 +117,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
   const quote = author.quote || "Innovation is the lifeblood of our narrative, propelling us forward as we embrace cutting-edge technologies and methodologies to push the boundaries of what's possible.";
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 transition-colors">
+    <main className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 transition-colors">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replace(/</g, "\\u003c") }}
@@ -175,7 +192,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
           <div className="flex flex-col md:flex-row items-start gap-8 lg:gap-12">
 
             {/* Author Portrait Image */}
-            <div className="w-full sm:w-80 md:w-72 lg:w-80 aspect-square sm:aspect-[4/4.8] rounded-2xl overflow-hidden relative shadow-sm shrink-0 bg-slate-100 dark:bg-[#191a1d] border border-slate-200 dark:border-[#4D5156]/60">
+            <div className="w-full sm:w-80 md:w-72 lg:w-80 aspect-square sm:aspect-[4/4.8] rounded-2xl overflow-hidden relative shadow-sm shrink-0 bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border/60">
               <Image
                 src={author.avatar}
                 alt={author.name}
@@ -247,7 +264,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
               {author.expertise.map((item, idx) => (
                 <span
                   key={idx}
-                  className="text-xs font-medium bg-slate-100 dark:bg-[#191a1d] text-slate-700 dark:text-slate-300 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-[#4D5156]"
+                  className="text-xs font-medium bg-slate-100 dark:bg-dark-bg text-slate-700 dark:text-slate-300 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-dark-border"
                 >
                   {item}
                 </span>
@@ -256,9 +273,53 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
           </div>
         </section>
 
+        {/* Reviewed Calculators Section */}
+        {reviewedCalculators.length > 0 && (
+          <section className="mb-16">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-dark-border pb-5 mb-8">
+              <div>
+                <span className="text-xs font-bold text-primary dark:text-sky-400 uppercase tracking-widest block mb-1">
+                  Formula Verification
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">
+                  Calculators &amp; Formulas Verified by {author.name}
+                </h2>
+              </div>
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-dark-card px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-dark-border self-start sm:self-auto shadow-2xs">
+                {reviewedCalculators.length} Tools
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {reviewedCalculators.map((calc) => (
+                <Link
+                  key={calc.slug}
+                  href={`/calculators/${calc.slug}`}
+                  className="group p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border hover:border-primary dark:hover:border-sky-400 hover:shadow-md transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-primary dark:text-sky-400 block mb-1">
+                      {calc.categoryLabel}
+                    </span>
+                    <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-sky-400 transition-colors line-clamp-2">
+                      {calc.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+                      {calc.description || calc.metaDescription}
+                    </p>
+                  </div>
+                  <span className="text-xs font-bold text-primary dark:text-sky-400 mt-4 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    Launch Calculator &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Author's Blog Articles Section (Using exact BlogCard design) */}
         <section className="mb-16">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-[#4D5156] pb-5 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-dark-border pb-5 mb-8">
             <div>
               <span className="text-xs font-bold text-primary dark:text-sky-400 uppercase tracking-widest block mb-1">
                 Published Knowledge
@@ -267,7 +328,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
                 Articles &amp; Guides by {author.name}
               </h2>
             </div>
-            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-[#22242A] px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-[#4D5156] self-start sm:self-auto shadow-2xs">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-dark-card px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-dark-border self-start sm:self-auto shadow-2xs">
               {authorPosts.length} {authorPosts.length === 1 ? "Article" : "Articles"}
             </span>
           </div>
@@ -279,7 +340,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
               ))}
             </div>
           ) : (
-            <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] p-12 text-center shadow-xs">
+            <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border p-12 text-center shadow-xs">
               <h3 className="text-base font-bold text-slate-800 dark:text-slate-200 mb-2">No Articles Listed</h3>
               <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto mb-6">
                 Check back soon for newly published calculation breakdowns and guide posts by {author.name}.

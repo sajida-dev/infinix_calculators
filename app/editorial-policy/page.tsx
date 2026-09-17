@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function EditorialPolicyPage() {
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 transition-colors">
+    <main className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 transition-colors">
       <div className="max-w-5xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -36,7 +36,7 @@ export default function EditorialPolicyPage() {
               At <strong>Infinix Calculators</strong>, our core priority is mathematical precision. We believe that tools utilized by contractors, small business founders, students, and healthcare professionals must be reliable, unbiased, and mathematically sound.
             </p>
             <p>
-              Every formula implemented on our platform is authored and reviewed by credentialed subject-matter specialists (such as Certified Public Accountants, Professional Civil Engineers, and Applied Mathematicians). Calculations are cross-checked against standard academic sources, IRS tax publications, ASTM engineering specifications, and municipal tax grids.
+              We document formulas, assumptions, and examples for each tool. For topics with changing rules or rates, such as tax and financial products, users should confirm current terms with authoritative sources before relying on an estimate.
             </p>
           </section>
 
@@ -59,13 +59,13 @@ export default function EditorialPolicyPage() {
               3. Formula Correction &amp; Discrepancy Resolution Protocol
             </h2>
             <p>
-              We maintain an open-door policy for formula corrections, tax rate adjustments, and boundary-condition reports. When a discrepancy is reported by a user or discovered by our internal audit team:
+              We welcome reports of formula corrections, rate adjustments, and boundary-condition issues. When a discrepancy is reported:
             </p>
             <ol className="list-decimal list-inside space-y-2 pl-2 text-xs sm:text-sm">
-              <li><strong>Initial Investigation:</strong> The relevant domain editor investigates the source code within 24 hours.</li>
-              <li><strong>Mathematical Re-Verification:</strong> The calculation is validated against two independent benchmark sources.</li>
-              <li><strong>Code Deployment:</strong> Updates are unit-tested and deployed across our global CDN.</li>
-              <li><strong>Changelog Logging:</strong> Meaningful formula or tax rate updates are documented in the respective tool notes.</li>
+              <li><strong>Review:</strong> We review the reported inputs, formula, and supporting context.</li>
+              <li><strong>Validation:</strong> We compare the calculation with applicable source material or independently worked examples.</li>
+              <li><strong>Correction:</strong> When an issue is confirmed, we update the calculator and related explanation.</li>
+              <li><strong>Communication:</strong> We may publish material corrections in the relevant tool notes.</li>
             </ol>
             <p className="pt-2 text-xs">
               To report a discrepancy, contact our editorial team directly at <a href="mailto:editorial@infinixcalculator.com" className="text-primary font-bold hover:underline">editorial@infinixcalculator.com</a>.
@@ -87,10 +87,10 @@ export default function EditorialPolicyPage() {
             <Link href="/authors" className="px-5 py-2.5 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-colors text-xs sm:text-sm">
               Meet Our Editorial Board &rarr;
             </Link>
-            <Link href="/about" className="px-5 py-2.5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] font-bold hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-colors text-xs sm:text-sm">
+            <Link href="/about" className="px-5 py-2.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border font-bold hover:bg-slate-50 dark:hover:bg-dark-bg transition-colors text-xs sm:text-sm">
               About Infinix Calculators
             </Link>
-            <Link href="/contact" className="px-5 py-2.5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] font-bold hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-colors text-xs sm:text-sm">
+            <Link href="/contact" className="px-5 py-2.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border font-bold hover:bg-slate-50 dark:hover:bg-dark-bg transition-colors text-xs sm:text-sm">
               Submit Feedback
             </Link>
           </div>

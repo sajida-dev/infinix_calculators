@@ -14,11 +14,11 @@ export default function AboutPage() {
   const authors = getAllAuthors();
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 transition-colors">
+    <main className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 transition-colors">
       <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <header className="mb-12 border-b border-slate-200 dark:border-[#4D5156] pb-8 text-center sm:text-left">
+        <header className="mb-12 border-b border-slate-200 dark:border-dark-border pb-8 text-center sm:text-left">
           <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-sky-400 mb-3 inline-block">
             About Infinix Calculators
           </span>
@@ -26,14 +26,14 @@ export default function AboutPage() {
             Computational Rigor &amp; Transparent Utilities
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
-            Empowering homeowners, business founders, contractors, students, and clinical professionals with instant, mathematically precise calculation utilities—tested and peer-reviewed by certified industry specialists.
+            Practical calculation utilities for homeowners, business owners, contractors, students, and clinical professionals, with formulas and assumptions explained in plain language.
           </p>
         </header>
 
         <div className="space-y-12 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
           
           {/* Mission */}
-          <section className="space-y-4 bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-3xl p-6 sm:p-8">
+          <section className="space-y-4 bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl p-6 sm:p-8">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Our Mission</h2>
             <p>
               Founded in 2026, <strong>Infinix Calculators</strong> was developed with a simple conviction: essential computational tools—whether for calculating topsoil cubic yardage for a lawn, estimating credit card processing fees, or forecasting monthly financing installment costs—should be <strong>free, instant, transparent, and completely ad-uncluttered</strong> on any device.
@@ -45,10 +45,10 @@ export default function AboutPage() {
 
           {/* Meet Our Editorial Board */}
           <section className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-[#4D5156] pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-dark-border pb-4">
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Our Editorial &amp; Review Board</h2>
-                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Every calculator formula and editorial guide is overseen by credentialed professionals.</p>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Learn about the contributors and the subjects covered by our guides.</p>
               </div>
               <Link href="/authors" className="text-xs font-bold text-primary dark:text-sky-400 hover:underline">
                 View All Profiles &rarr;
@@ -59,7 +59,7 @@ export default function AboutPage() {
               {authors.map((author) => (
                 <div
                   key={author.slug}
-                  className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] flex gap-4 items-center hover:border-primary transition-all"
+                  className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border flex gap-4 items-center hover:border-primary transition-all"
                 >
                   <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0 border border-primary/30">
                     <Image
@@ -90,12 +90,12 @@ export default function AboutPage() {
           </section>
 
           {/* 5-Stage Verification Standard */}
-          <section className="space-y-6 bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] rounded-3xl p-6 sm:p-8">
+          <section className="space-y-6 bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl p-6 sm:p-8">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               The 5-Stage Computational Verification Standard
             </h2>
             <p className="text-slate-600 dark:text-slate-300">
-              To guarantee that users and professionals can rely on our results for financial planning, contractor bids, and academic work, all tools undergo a rigorous 5-stage verification process:
+              We aim to make each calculator understandable by documenting its formula, inputs, examples, and limitations. Important financial, tax, health, legal, and construction decisions should be confirmed with a qualified professional.
             </p>
 
             <div className="space-y-4 pt-2">
@@ -134,8 +134,8 @@ export default function AboutPage() {
               <div className="flex gap-4 items-start">
                 <span className="w-8 h-8 rounded-full bg-primary/10 text-primary dark:text-sky-400 font-extrabold flex items-center justify-center shrink-0 text-sm">5</span>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm">Annual Regulatory &amp; Rate Review</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Tax thresholds, postal rate changes, and merchant processing percentages are audited periodically to maintain real-world currency.</p>
+                  <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm">Updates and Corrections</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">When a formula or rate needs correction, we update the relevant tool and its explanatory content.</p>
                 </div>
               </div>
             </div>
@@ -150,16 +150,16 @@ export default function AboutPage() {
           </section>
 
           {/* Get in Touch & Operating Transparency */}
-          <section className="space-y-4 pt-6 border-t border-slate-200 dark:border-[#4D5156]">
+          <section className="space-y-4 pt-6 border-t border-slate-200 dark:border-dark-border">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Corporate Transparency &amp; Contact</h2>
             <p>
-              Have a question about a calculation formula, spotted a municipal rate change, or want to suggest a new tool? Our editorial team reviews user feedback within 24 to 48 business hours.
+              Have a question about a calculation formula, spotted a rate change, or want to suggest a new tool? Contact us with the details so we can review the feedback.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Link href="/contact" className="px-5 py-2.5 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-colors text-xs sm:text-sm">
                 Contact Support &amp; Editorial
               </Link>
-              <Link href="/disclaimer" className="px-5 py-2.5 rounded-xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] font-bold hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-colors text-xs sm:text-sm">
+              <Link href="/disclaimer" className="px-5 py-2.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border font-bold hover:bg-slate-50 dark:hover:bg-dark-bg transition-colors text-xs sm:text-sm">
                 Read Legal &amp; YMYL Disclaimers
               </Link>
             </div>

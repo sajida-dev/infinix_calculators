@@ -17,11 +17,11 @@ export default function AuthorBio({ authorSlug, category, className = "" }: Auth
       : getAuthorBySlug("david-miller");
 
   return (
-    <div className={`rounded-2xl border border-slate-200 dark:border-[#4D5156] bg-slate-50/70 dark:bg-[#22242A]/60 p-5 sm:p-6 transition-colors ${className}`}>
+    <div className={`rounded-2xl border border-slate-200 dark:border-dark-border bg-slate-50/70 dark:bg-dark-card/60 p-5 sm:p-6 transition-colors ${className}`}>
       <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
         {/* Author Avatar Thumbnail */}
         <Link href={`/authors/${author.slug}`} className="shrink-0 group">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-slate-200 dark:border-[#4D5156] group-hover:border-primary transition-colors">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-slate-200 dark:border-dark-border group-hover:border-primary transition-colors">
             <Image
               src={author.avatar}
               alt={author.name}

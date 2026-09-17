@@ -3,7 +3,7 @@ import React from "react";
 export default function BridgeLoanSeoContent() {
   return (
     <article className="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-      <div className="border-t border-slate-200 dark:border-[#4D5156] pt-8">
+      <div className="border-t border-slate-200 dark:border-dark-border pt-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
           Transitional Bridge Financing: LTV Calculations &amp; Carrying Costs
         </h2>
@@ -12,7 +12,7 @@ export default function BridgeLoanSeoContent() {
         </p>
       </div>
 
-      <div className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-6 rounded-2xl space-y-3">
+      <div className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl space-y-3">
         <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
           Maximum Bridge Loan Borrowing Equation
         </h3>
@@ -28,7 +28,7 @@ export default function BridgeLoanSeoContent() {
         <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
           Interest-Only Carrying Costs Case Study
         </h3>
-        <div className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] text-xs sm:text-sm space-y-2">
+        <div className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-xs sm:text-sm space-y-2">
           <p><strong>Property:</strong> $500,000 value with a $250,000 primary mortgage at 80% maximum CLTV.</p>
           <ul className="list-disc list-inside space-y-1 text-slate-600 dark:text-slate-400">
             <li>Max Combined Lending Limit: $500,000 × 0.80 = $400,000</li>

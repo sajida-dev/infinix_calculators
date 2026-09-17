@@ -12,7 +12,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
 
   if (!calculator) {
     return (
-      <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] p-8 text-center shadow-sm">
+      <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border p-8 text-center shadow-sm">
         <p className="text-slate-500 dark:text-slate-400 font-medium">Calculator utility configuration not found.</p>
       </div>
     );
@@ -70,9 +70,9 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
   };
 
   return (
-    <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200 dark:border-[#4D5156] shadow-sm overflow-hidden transition-colors">
+    <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm overflow-hidden transition-colors">
       {/* Title Header */}
-      <div className="bg-slate-50/50 dark:bg-[#191a1d] border-b border-slate-100 dark:border-[#4D5156] px-6 py-4">
+      <div className="bg-slate-50/50 dark:bg-dark-bg border-b border-slate-100 dark:border-dark-border px-6 py-4">
         <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">
           Interactive Calculator
         </h3>
@@ -98,13 +98,13 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                       id={uniqueId}
                       value={inputsState[input.id] || ""}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
-                      className={`mt-2 w-full rounded-lg border border-slate-300 dark:border-[#4D5156] px-4 py-2.5 text-sm shadow-sm transition-colors ${input.readOnly
-                        ? "bg-gray-100 dark:bg-[#191a1d] text-slate-500 dark:text-slate-400 cursor-not-allowed"
-                        : "bg-white dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      className={`mt-2 w-full rounded-lg border border-slate-300 dark:border-dark-border px-4 py-2.5 text-sm shadow-sm transition-colors ${input.readOnly
+                        ? "bg-gray-100 dark:bg-dark-bg text-slate-500 dark:text-slate-400 cursor-not-allowed"
+                        : "bg-white dark:bg-dark-bg text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                         }`}
                     >
                       {input.options?.map((opt) => (
-                        <option key={opt.value} value={opt.value} className="dark:bg-[#22242A] dark:text-slate-100">
+                        <option key={opt.value} value={opt.value} className="dark:bg-dark-card dark:text-slate-100">
                           {opt.label}
                         </option>
                       ))}
@@ -123,7 +123,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                       value={inputsState[input.id] || ""}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
                       readOnly={input.readOnly}
-                      className={`mt-2 w-full rounded-lg border ${input.readOnly ? "bg-gray-200 dark:bg-[#191a1d]" : "bg-white dark:bg-[#191a1d]"} border-slate-300 dark:border-[#4D5156] px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm`}
+                      className={`mt-2 w-full rounded-lg border ${input.readOnly ? "bg-gray-200 dark:bg-dark-bg" : "bg-white dark:bg-dark-bg"} border-slate-300 dark:border-dark-border px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm`}
                     />
                   </div>
                 );
@@ -142,10 +142,10 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                       step="any"
                       value={inputsState[input.id] === undefined ? "" : inputsState[input.id]}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
-                      className="flex-1 rounded-l-lg border border-slate-300 dark:border-[#4D5156] px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-[#191a1d] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="flex-1 rounded-l-lg border border-slate-300 dark:border-dark-border px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-dark-bg focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                     {input.unit && (
-                      <span className="inline-flex items-center rounded-r-lg border-y border-r border-slate-300 dark:border-[#4D5156] bg-slate-50 dark:bg-[#22242A] px-3.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                      <span className="inline-flex items-center rounded-r-lg border-y border-r border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-card px-3.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
                         {input.unit}
                       </span>
                     )}
@@ -166,7 +166,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
         </div>
 
         {/* Right: Results Outputs */}
-        <div className="bg-slate-50/60 dark:bg-[#191a1d] p-6 rounded-xl border border-slate-100 dark:border-[#4D5156] flex flex-col justify-between space-y-6">
+        <div className="bg-slate-50/60 dark:bg-dark-bg p-6 rounded-xl border border-slate-100 dark:border-dark-border flex flex-col justify-between space-y-6">
           <div>
             <h4 className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-widest mb-4">
               2. Output Results
@@ -179,7 +179,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                 return (
                   <div
                     key={key}
-                    className={`bg-white dark:bg-[#22242A] p-4 rounded-lg border border-slate-200/60 dark:border-[#4D5156] shadow-sm ${isPrimary ? "sm:col-span-2 border-primary/20 dark:border-sky-500/30" : ""
+                    className={`bg-white dark:bg-dark-card p-4 rounded-lg border border-slate-200/60 dark:border-dark-border shadow-sm ${isPrimary ? "sm:col-span-2 border-primary/20 dark:border-sky-500/30" : ""
                       }`}
                   >
                     <span className="block text-xs font-semibold text-slate-400 dark:text-slate-400">

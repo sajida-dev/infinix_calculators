@@ -3,7 +3,7 @@ import React from "react";
 export default function VectorProductSeoContent() {
   return (
     <article className="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-      <div className="border-t border-slate-200 dark:border-[#4D5156] pt-8">
+      <div className="border-t border-slate-200 dark:border-dark-border pt-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
           3D Vector Algebra: Dot Product, Cross Product &amp; Orthogonality
         </h2>
@@ -13,7 +13,7 @@ export default function VectorProductSeoContent() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-5">
-        <div className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+        <div className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
           <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-2">Dot Product (Scalar Output)</h3>
           <p className="font-mono text-primary dark:text-sky-400 text-xs sm:text-sm mb-2">
             A · B = AxBx + AyBy + AzBz = |A||B| cos(θ)
@@ -23,7 +23,7 @@ export default function VectorProductSeoContent() {
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-white dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156]">
+        <div className="p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
           <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-2">Cross Product (3D Vector Output)</h3>
           <p className="font-mono text-emerald-600 dark:text-emerald-400 text-xs sm:text-sm mb-2">
             A × B = [AyBz - AzBy, AzBx - AxBz, AxBy - AyBx]
@@ -38,7 +38,7 @@ export default function VectorProductSeoContent() {
         <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
           Angle Between Two 3D Vectors Formula
         </h3>
-        <div className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-5 rounded-xl space-y-2">
+        <div className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border p-5 rounded-xl space-y-2">
           <p className="font-mono text-primary dark:text-sky-400 font-bold text-sm sm:text-base">
             θ = arccos[ (A · B) ÷ (|A| × |B|) ]
           </p>

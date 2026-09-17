@@ -3,7 +3,7 @@ import React from "react";
 export default function PawnSeoContent() {
   return (
     <article className="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-      <div className="border-t border-slate-200 dark:border-[#4D5156] pt-8">
+      <div className="border-t border-slate-200 dark:border-dark-border pt-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
           Pawn Shop Collateral Loans: Valuation Rules &amp; APR Economics
         </h2>
@@ -12,7 +12,7 @@ export default function PawnSeoContent() {
         </p>
       </div>
 
-      <div className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-6 rounded-2xl space-y-3">
+      <div className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl space-y-3">
         <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
           The 30% to 50% Valuation Rule
         </h3>
@@ -25,7 +25,7 @@ export default function PawnSeoContent() {
         <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
           Total Repayment &amp; Annualized APR Formula
         </h3>
-        <div className="bg-slate-50 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] p-5 rounded-xl space-y-2">
+        <div className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border p-5 rounded-xl space-y-2">
           <p className="font-mono text-primary dark:text-sky-400 font-bold text-sm sm:text-base">
             Total Repayment = Loan Principal + (Loan Principal × Monthly Finance Rate × Term Months)
           </p>

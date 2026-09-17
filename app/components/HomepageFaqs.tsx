@@ -16,7 +16,7 @@ export default function HomepageFaqs() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#191a1d] border-t border-slate-200 dark:border-[#4D5156] transition-colors">
+    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-dark-bg border-t border-slate-200 dark:border-dark-border transition-colors">
       {/* JSON-LD Schema for Google Rich Snippets */}
       <script
         type="application/ld+json"
@@ -36,7 +36,7 @@ export default function HomepageFaqs() {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200/80 dark:border-[#4D5156] p-6 sm:p-8 shadow-xs divide-y divide-slate-200/80 dark:divide-[#4D5156]">
+        <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200/80 dark:border-dark-border p-6 sm:p-8 shadow-xs divide-y divide-slate-200/80 dark:divide-dark-border">
           {homepageFaqs.map((faq, index) => (
             <details key={index} className="group py-4.5 first:pt-0 last:pb-0" open={index === 0}>
               <summary className="flex cursor-pointer items-center justify-between gap-4 text-slate-900 dark:text-slate-100 font-bold text-sm sm:text-base list-none focus:outline-none select-none">

@@ -1,5 +1,4 @@
 import "./globals.css";
-import Script from "next/script";
 
 const geistSans = { variable: "--font-geist-sans" };
 const geistMono = { variable: "--font-geist-mono" };
@@ -61,19 +60,24 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://ep1.adtrafficquality.google" />
         <link rel="dns-prefetch" href="https://ep2.adtrafficquality.google" />
+        {/* Google AdSense Script: plain native tag (Google's official snippet) avoids the data-nscript attribute next/script adds */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869"
+          crossOrigin="anonymous"
+        />
+       
+        {/* Monetag Multitag */}
+        <script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="279393"
+          async data-cfasync="false"
+        />
       </head>
-      <body className="min-h-full bg-white dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-200" suppressHydrationWarning>
+      <body className="min-h-full bg-white dark:bg-dark-bg text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-200" suppressHydrationWarning>
         <ThemeScript />
         <JsonLd id="org-jsonld" data={organizationSchema} />
         <JsonLd id="website-jsonld" data={websiteSchema} />
-
-        {/* Google AdSense Script (lazyOnload to prevent blocking main thread / protect Lighthouse score) */}
-        <Script
-          id="google-adsense"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
 
         <ThemeProvider>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 left-0 w-full bg-primary text-white text-center py-2">Skip to main content</a>

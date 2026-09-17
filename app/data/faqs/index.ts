@@ -94,7 +94,7 @@ export { mortgageNevadaFaqs } from "./generalFaqs";
 export { faqs_529Growth } from "./generalFaqs";
 export { sterlingSilverFaqs } from "./generalFaqs";
 export { manufacturedHomeMortgageFaqs } from "./generalFaqs";
-export { pinkCalculatorFaqs } from "./generalFaqs";
+export { pinkCalculatorFaqs } from "./pinkCalculatorFaqs";
 export { starbucksCalorieCalculatorFaqs } from "./generalFaqs";
 export { strsCalculatorFaqs } from "./generalFaqs";
 export { asphaltDrivewayCostFaqs } from "./generalFaqs";

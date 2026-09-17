@@ -148,9 +148,9 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
   const hub = clusterHubs[hubKey] || clusterHubs.Finance;
 
   return (
-    <nav className="my-10 bg-white dark:bg-[#22242A] rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-[#4D5156] shadow-xs transition-colors" aria-label="Related Topics and Calculators">
+    <nav className="my-10 bg-white dark:bg-dark-card rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-dark-border shadow-xs transition-colors" aria-label="Related Topics and Calculators">
       {/* Header section matching clean site design */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-[#4D5156]">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-dark-border">
         <div>
           <span className="text-[10px] font-bold uppercase tracking-widest text-primary dark:text-sky-400 bg-primary/10 dark:bg-primary/20 px-2.5 py-1 rounded-md">
             {hub.categoryName} Topic Hub
@@ -205,7 +205,7 @@ export default function CategoryClusterNav({ category, currentSlug }: CategoryCl
                 <Link
                   key={calc.href}
                   href={calc.href}
-                  className="text-xs font-semibold bg-slate-50 dark:bg-[#191a1d] hover:bg-primary/5 text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 px-3 py-1.5 rounded-lg transition-colors border border-slate-200/80 dark:border-[#4D5156] hover:border-primary/20"
+                  className="text-xs font-semibold bg-slate-50 dark:bg-dark-bg hover:bg-primary/5 text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-sky-400 px-3 py-1.5 rounded-lg transition-colors border border-slate-200/80 dark:border-dark-border hover:border-primary/20"
                 >
                   {calc.name}
                 </Link>

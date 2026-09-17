@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-[#191a1d] text-slate-800 dark:text-slate-100 transition-colors">
+    <main className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-800 dark:text-slate-100 transition-colors">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <header className="mb-10 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
@@ -25,7 +25,7 @@ export default function DisclaimerPage() {
           </p>
         </header>
 
-        <div className="space-y-8 bg-white dark:bg-[#22242A] p-6 sm:p-10 rounded-2xl border border-slate-200 dark:border-[#4D5156] shadow-xs leading-relaxed text-sm sm:text-base text-slate-600 dark:text-slate-300">
+        <div className="space-y-8 bg-white dark:bg-dark-card p-6 sm:p-10 rounded-2xl border border-slate-200 dark:border-dark-border shadow-xs leading-relaxed text-sm sm:text-base text-slate-600 dark:text-slate-300">
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
               1. General Estimation Purpose
@@ -38,7 +38,7 @@ export default function DisclaimerPage() {
             </p>
           </section>
 
-          <hr className="border-slate-200 dark:border-[#4D5156]" />
+          <hr className="border-slate-200 dark:border-dark-border" />
 
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
@@ -52,7 +52,7 @@ export default function DisclaimerPage() {
             </p>
           </section>
 
-          <hr className="border-slate-200 dark:border-[#4D5156]" />
+          <hr className="border-slate-200 dark:border-dark-border" />
 
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
@@ -66,7 +66,7 @@ export default function DisclaimerPage() {
             </p>
           </section>
 
-          <hr className="border-slate-200 dark:border-[#4D5156]" />
+          <hr className="border-slate-200 dark:border-dark-border" />
 
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
@@ -80,7 +80,7 @@ export default function DisclaimerPage() {
             </p>
           </section>
 
-          <hr className="border-slate-200 dark:border-[#4D5156]" />
+          <hr className="border-slate-200 dark:border-dark-border" />
 
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
@@ -91,7 +91,7 @@ export default function DisclaimerPage() {
             </p>
           </section>
 
-          <hr className="border-slate-200 dark:border-[#4D5156]" />
+          <hr className="border-slate-200 dark:border-dark-border" />
 
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
@@ -105,7 +105,7 @@ export default function DisclaimerPage() {
             </p>
           </section>
 
-          <hr className="border-slate-200 dark:border-[#4D5156]" />
+          <hr className="border-slate-200 dark:border-dark-border" />
 
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">

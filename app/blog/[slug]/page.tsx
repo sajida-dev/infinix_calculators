@@ -7,7 +7,6 @@ import { blogData } from "../../data/blogData";
 import { calculatorsData } from "../../data/calculatorsData";
 import { getAuthorBySlug, getAuthorForCategory } from "../../data/authorsData";
 import AuthorBio from "../../components/AuthorBio";
-import CalculatorFaqs from "../../components/CalculatorFaqs";
 import CategoryClusterNav from "../../components/CategoryClusterNav";
 import SearchInput from "../../components/SearchInput";
 
@@ -56,20 +55,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // Find companion calculator
   const calculator = post.calculatorSlug ? calculatorsData[post.calculatorSlug] : null;
-
-  // Derive target calculator slug for companion FAQs
-  const targetFaqSlug = post.calculatorSlug || (
-    slug.includes("affirm") ? "affirm" :
-      slug.includes("lsat") ? "lsat-score-calculator" :
-        (slug.includes("topsoil") || slug.includes("soil") || slug.includes("dirt")) ? "topsoil" :
-          slug.includes("concrete") ? "concrete" :
-            (slug.includes("cbm") || slug.includes("shipping")) ? "cbm" :
-              (slug.includes("productivity") || slug.includes("therapy")) ? "therapy-productivity" :
-                (slug.includes("avalara") || slug.includes("sales-tax")) ? "avalara-sales-tax" :
-                  slug.includes("square") ? "square-fee" :
-                    slug.includes("google-review") ? "google-review" :
-                      slug.includes("mortgage") ? "mortgage-calculator-game" : null
-  );
 
   // Find related posts (min 6 items for sidebar)
   let relatedPosts = post.relatedSlugs
@@ -149,7 +134,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   };
 
   return (
-    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen py-8 sm:py-12 transition-colors">
+    <div className="bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-screen py-8 sm:py-12 transition-colors">
       {/* Schema Injection */}
       <Script
         id="blog-posting-schema"
@@ -177,7 +162,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <span>/</span>
               <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
             </li>
-            <li className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300 truncate max-w-[200px] sm:max-w-none" aria-current="page">
+            <li className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300 truncate max-w-50 sm:max-w-none" aria-current="page">
               <span>/</span>
               <span>{post.title}</span>
             </li>
@@ -190,7 +175,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Main Content Column (8 cols on desktop, no borders or shadows) */}
           <div className="lg:col-span-8">
             <article>
-              <header className="pb-5 border-b border-slate-200 dark:border-[#4D5156] mb-6">
+              <header className="pb-5 border-b border-slate-200 dark:border-dark-border mb-6">
                 <span className="text-xs font-bold text-primary dark:text-sky-400 uppercase tracking-widest bg-primary/5 dark:bg-primary/20 px-2.5 py-1 rounded">
                   {post.category}
                 </span>
@@ -225,7 +210,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </header>
 
               {/* Large Responsive Article Image */}
-              <div className="relative w-full h-64 sm:h-96 md:h-[450px] rounded-xl overflow-hidden mb-8 shadow-xs border border-slate-200/50 dark:border-[#4D5156]/50">
+              <div className="relative w-full h-64 sm:h-96 md:h-112.5 rounded-xl overflow-hidden mb-8 shadow-xs border border-slate-200/50 dark:border-dark-border/50">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -248,13 +233,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <AuthorBio authorSlug={author.slug} category={post.category} />
               </div>
 
-              {/* Embedded Reusable FAQ Component for Related Calculator */}
-              {targetFaqSlug && (
-                <div className="mt-12 pt-8 border-t border-slate-200 dark:border-[#4D5156]">
-                  <CalculatorFaqs slug={targetFaqSlug} />
-                </div>
-              )}
-
               {/* Topic Cluster Navigation Hub */}
               <CategoryClusterNav category={post.category} currentSlug={slug} />
             </article>
@@ -270,7 +248,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             {/* Popular Topics / Calculators (No card bg/border) */}
-            <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+            <div className="pb-6 border-b border-slate-200/80 dark:border-dark-border">
               <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">Popular Calculators</h3>
               <ul className="space-y-3.5">
                 {popularCalculators.map((calc) => (
@@ -291,7 +269,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             {/* You May Like - Flat list of related articles (No outer card wrapper) */}
             {relatedPosts.length > 0 && (
-              <div className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+              <div className="pb-6 border-b border-slate-200/80 dark:border-dark-border">
                 <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">You May Like</h3>
                 <div className="space-y-5">
                   {relatedPosts.map((rel) => (
@@ -300,7 +278,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       href={`/blog/${rel.slug}`}
                       className="group flex gap-4 hover:text-primary dark:hover:text-sky-400 transition-colors"
                     >
-                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-[#22242A] rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-[#4D5156]">
+                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-dark-card rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-dark-border">
                         <Image
                           src={rel.image}
                           alt={rel.title}

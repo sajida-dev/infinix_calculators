@@ -15,7 +15,7 @@ export default function AvalaraSeoContent() {
         </p>
       </section>
 
-      <section className="bg-primary/5 dark:bg-[#22242A] rounded-2xl border border-primary/10 dark:border-[#4D5156] p-6 sm:p-8 space-y-4">
+      <section className="bg-primary/5 dark:bg-dark-card rounded-2xl border border-primary/10 dark:border-dark-border p-6 sm:p-8 space-y-4">
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
           <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary shrink-0" />
           Featured Lookup: What is the Sales Tax Rate for ZIP Code 94105?
@@ -27,33 +27,33 @@ export default function AvalaraSeoContent() {
           Sales tax is rarely a single flat rate. Instead, it is a combination of multiple tax layers. Here is how the 94105 rate is compiled:
         </p>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-[#4D5156]">
-            <thead className="bg-slate-100/80 dark:bg-[#191a1d] border-b border-slate-200 dark:border-[#4D5156] font-bold text-slate-900 dark:text-slate-100">
+          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-dark-border">
+            <thead className="bg-slate-100/80 dark:bg-dark-bg border-b border-slate-200 dark:border-dark-border font-bold text-slate-900 dark:text-slate-100">
               <tr>
-                <th className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Tax Layer Type</th>
-                <th className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Governing Body</th>
+                <th className="p-3 border-r border-slate-200 dark:border-dark-border">Tax Layer Type</th>
+                <th className="p-3 border-r border-slate-200 dark:border-dark-border">Governing Body</th>
                 <th className="p-3">Rate Contribution</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-[#4D5156] text-slate-600 dark:text-slate-300">
+            <tbody className="divide-y divide-slate-100 dark:divide-dark-border text-slate-600 dark:text-slate-300">
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">State Tax</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">State of California</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">State Tax</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">State of California</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-bold">6.000%</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">County Tax</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">San Francisco County</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">County Tax</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">San Francisco County</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-bold">0.250%</td>
               </tr>
               <tr>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156] font-semibold text-slate-800 dark:text-slate-200">Local District Surcharges</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">City / District Agencies</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border font-semibold text-slate-800 dark:text-slate-200">Local District Surcharges</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">City / District Agencies</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-bold">2.375%</td>
               </tr>
-              <tr className="bg-slate-50 dark:bg-[#191a1d] font-semibold text-slate-900 dark:text-slate-100">
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">Combined Rate</td>
-                <td className="p-3 border-r border-slate-200 dark:border-[#4D5156]">ZIP 94105 Total</td>
+              <tr className="bg-slate-50 dark:bg-dark-bg font-semibold text-slate-900 dark:text-slate-100">
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">Combined Rate</td>
+                <td className="p-3 border-r border-slate-200 dark:border-dark-border">ZIP 94105 Total</td>
                 <td className="p-3 text-primary dark:text-sky-400 font-extrabold text-base">8.625%</td>
               </tr>
             </tbody>
@@ -69,49 +69,49 @@ export default function AvalaraSeoContent() {
           To help with your invoice audits, here is a lookup table matching common high-traffic business ZIP codes to their corresponding combined tax rates:
         </p>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-[#4D5156]">
-            <thead className="bg-slate-100 dark:bg-[#191a1d] font-bold text-slate-900 dark:text-slate-100">
+          <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-dark-border">
+            <thead className="bg-slate-100 dark:bg-dark-bg font-bold text-slate-900 dark:text-slate-100">
               <tr>
-                <th className="p-2.5 border border-slate-200 dark:border-[#4D5156]">ZIP Code</th>
-                <th className="p-2.5 border border-slate-200 dark:border-[#4D5156]">City / State</th>
-                <th className="p-2.5 border border-slate-200 dark:border-[#4D5156] text-center">Combined Sales Tax Rate</th>
+                <th className="p-2.5 border border-slate-200 dark:border-dark-border">ZIP Code</th>
+                <th className="p-2.5 border border-slate-200 dark:border-dark-border">City / State</th>
+                <th className="p-2.5 border border-slate-200 dark:border-dark-border text-center">Combined Sales Tax Rate</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-[#4D5156] text-slate-600 dark:text-slate-300">
+            <tbody className="divide-y divide-slate-100 dark:divide-dark-border text-slate-600 dark:text-slate-300">
               <tr>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] font-mono font-bold text-slate-800 dark:text-slate-200">94105</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156]">San Francisco, CA</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] text-center text-primary dark:text-sky-400 font-bold">8.625%</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border font-mono font-bold text-slate-800 dark:text-slate-200">94105</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border">San Francisco, CA</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border text-center text-primary dark:text-sky-400 font-bold">8.625%</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] font-mono font-bold text-slate-800 dark:text-slate-200">10001</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156]">New York, NY</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] text-center text-primary dark:text-sky-400 font-bold">8.875%</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border font-mono font-bold text-slate-800 dark:text-slate-200">10001</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border">New York, NY</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border text-center text-primary dark:text-sky-400 font-bold">8.875%</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] font-mono font-bold text-slate-800 dark:text-slate-200">90210</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156]">Beverly Hills, CA</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] text-center text-primary dark:text-sky-400 font-bold">9.500%</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border font-mono font-bold text-slate-800 dark:text-slate-200">90210</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border">Beverly Hills, CA</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border text-center text-primary dark:text-sky-400 font-bold">9.500%</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] font-mono font-bold text-slate-800 dark:text-slate-200">60601</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156]">Chicago, IL</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] text-center text-primary dark:text-sky-400 font-bold">10.250%</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border font-mono font-bold text-slate-800 dark:text-slate-200">60601</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border">Chicago, IL</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border text-center text-primary dark:text-sky-400 font-bold">10.250%</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] font-mono font-bold text-slate-800 dark:text-slate-200">77001</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156]">Houston, TX</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] text-center text-primary dark:text-sky-400 font-bold">8.250%</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border font-mono font-bold text-slate-800 dark:text-slate-200">77001</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border">Houston, TX</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border text-center text-primary dark:text-sky-400 font-bold">8.250%</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] font-mono font-bold text-slate-800 dark:text-slate-200">98101</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156]">Seattle, WA</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] text-center text-primary dark:text-sky-400 font-bold">10.250%</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border font-mono font-bold text-slate-800 dark:text-slate-200">98101</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border">Seattle, WA</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border text-center text-primary dark:text-sky-400 font-bold">10.250%</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] font-mono font-bold text-slate-800 dark:text-slate-200">30301</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156]">Atlanta, GA</td>
-                <td className="p-2.5 border border-slate-200 dark:border-[#4D5156] text-center text-primary dark:text-sky-400 font-bold">8.900%</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border font-mono font-bold text-slate-800 dark:text-slate-200">30301</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border">Atlanta, GA</td>
+                <td className="p-2.5 border border-slate-200 dark:border-dark-border text-center text-primary dark:text-sky-400 font-bold">8.900%</td>
               </tr>
             </tbody>
           </table>

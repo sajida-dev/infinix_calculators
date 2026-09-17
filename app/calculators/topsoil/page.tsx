@@ -67,7 +67,7 @@ export default function TopsoilPage() {
   ];
 
   return (
-    <div className="bg-slate-50 dark:bg-[#191a1d] text-slate-900 dark:text-slate-100 min-h-screen py-8 sm:py-12 transition-colors">
+    <div className="bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-screen py-8 sm:py-12 transition-colors">
       {/* JSON‑LD schemas */}
       <script
         type="application/ld+json"
@@ -196,9 +196,9 @@ export default function TopsoilPage() {
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">Once you submit these numbers, the tool multiplies length × width × (depth ÷ 12) to get cubic feet, then divides by 27 to convert to cubic yards – the standard unit for bulk soil orders. The calculator can also show you the equivalent weight in tons and how many 40‑lb bags you would need.</p>
 
               <h2 className="font-bold text-3xl mt-4 text-slate-900 dark:text-slate-100">Formula Used</h2>
-              <pre className="ml-5 bg-slate-200 dark:bg-[#22242A] text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-[#4D5156] p-3 w-full rounded-md text-xs sm:text-sm">
+              <pre className="ml-5 bg-slate-200 dark:bg-dark-card text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-dark-border p-3 w-full rounded-md text-xs sm:text-sm">
                 <code>Volume (Cubic Feet) = Length (ft) × Width (ft) × [Depth (in) ÷ 12]</code></pre>
-              <pre className="ml-5 m-1 bg-slate-200 dark:bg-[#22242A] text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-[#4D5156] p-3 w-full rounded-md text-xs sm:text-sm">
+              <pre className="ml-5 m-1 bg-slate-200 dark:bg-dark-card text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-dark-border p-3 w-full rounded-md text-xs sm:text-sm">
                 <code>Volume (Cubic Yards) = Volume (Cubic Feet) ÷ 27</code></pre>
 
               <h2 className="font-bold text-3xl mt-4 text-slate-900 dark:text-slate-100">How to Calculate Manually</h2>
@@ -222,57 +222,57 @@ export default function TopsoilPage() {
               </ul>
 
               <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Soil Depth Reference Table</h2>
-              <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156]">
-                <thead className="bg-slate-100 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] m-1 text-slate-900 dark:text-slate-100">
+              <table className="w-full border-collapse border border-slate-200 dark:border-dark-border">
+                <thead className="bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-dark-border m-1 text-slate-900 dark:text-slate-100">
                   <tr>
-                    <th className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Application</th>
-                    <th className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Recommended Depth (inches)</th>
-                    <th className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Typical Use</th>
+                    <th className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Application</th>
+                    <th className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Recommended Depth (inches)</th>
+                    <th className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Typical Use</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-[#4D5156] text-slate-600 dark:text-slate-300">
+                <tbody className="divide-y divide-slate-100 dark:divide-dark-border text-slate-600 dark:text-slate-300">
                   <tr>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Lawn (new sod)</td>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">4‑6</td>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Residential lawns, sports fields</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Lawn (new sod)</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">4‑6</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Residential lawns, sports fields</td>
                   </tr>
                   <tr>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Vegetable garden</td>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">8‑12</td>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Fruit‑bearing beds, raised beds</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Vegetable garden</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">8‑12</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Fruit‑bearing beds, raised beds</td>
                   </tr>
                   <tr>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Landscape grading</td>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">2‑4</td>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Foundation leveling, slope correction</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Landscape grading</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">2‑4</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Foundation leveling, slope correction</td>
                   </tr>
                   <tr>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Flower beds</td>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">6‑8</td>
-                    <td className="p-2 border border-slate-200 dark:border-[#4D5156] text-sm sm:text-base">Perennial borders, ornamental gardens</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Flower beds</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">6‑8</td>
+                    <td className="p-2 border border-slate-200 dark:border-dark-border text-sm sm:text-base">Perennial borders, ornamental gardens</td>
                   </tr>
                 </tbody>
               </table>
 
               <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Conversion Table</h2>
-              <table className="w-full border-collapse border border-slate-200 dark:border-[#4D5156]">
-                <thead className="bg-slate-100 dark:bg-[#22242A] border border-slate-200 dark:border-[#4D5156] m-1 text-slate-900 dark:text-slate-100">
+              <table className="w-full border-collapse border border-slate-200 dark:border-dark-border">
+                <thead className="bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-dark-border m-1 text-slate-900 dark:text-slate-100">
                   <tr>
-                    <th className="p-2 border border-slate-200 dark:border-[#4D5156]">Unit</th>
-                    <th className="p-2 border border-slate-200 dark:border-[#4D5156]">Conversion</th>
+                    <th className="p-2 border border-slate-200 dark:border-dark-border">Unit</th>
+                    <th className="p-2 border border-slate-200 dark:border-dark-border">Conversion</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-[#4D5156] text-slate-600 dark:text-slate-300">
-                  <tr><td className="p-2 border border-slate-200 dark:border-[#4D5156]">1 foot</td><td className="p-2 border border-slate-200 dark:border-[#4D5156]">12 inches</td></tr>
-                  <tr><td className="p-2 border border-slate-200 dark:border-[#4D5156]">1 yard</td><td className="p-2 border border-slate-200 dark:border-[#4D5156]">3 feet</td></tr>
-                  <tr><td className="p-2 border border-slate-200 dark:border-[#4D5156]">1 cubic yard</td><td className="p-2 border border-slate-200 dark:border-[#4D5156]">27 cubic feet</td></tr>
-                  <tr><td className="p-2 border border-slate-200 dark:border-[#4D5156]">1 cubic foot</td><td className="p-2 border border-slate-200 dark:border-[#4D5156]">0.037 cubic yards</td></tr>
+                <tbody className="divide-y divide-slate-100 dark:divide-dark-border text-slate-600 dark:text-slate-300">
+                  <tr><td className="p-2 border border-slate-200 dark:border-dark-border">1 foot</td><td className="p-2 border border-slate-200 dark:border-dark-border">12 inches</td></tr>
+                  <tr><td className="p-2 border border-slate-200 dark:border-dark-border">1 yard</td><td className="p-2 border border-slate-200 dark:border-dark-border">3 feet</td></tr>
+                  <tr><td className="p-2 border border-slate-200 dark:border-dark-border">1 cubic yard</td><td className="p-2 border border-slate-200 dark:border-dark-border">27 cubic feet</td></tr>
+                  <tr><td className="p-2 border border-slate-200 dark:border-dark-border">1 cubic foot</td><td className="p-2 border border-slate-200 dark:border-dark-border">0.037 cubic yards</td></tr>
                 </tbody>
               </table>
 
               <h2 className="font-bold text-3xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Real Calculation Examples</h2>
               <h3 className="font-bold text-xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Small Garden (10 ft × 8 ft × 4 in depth)</h3>
-              <p className="text-slate-600 dark:text-slate-300">Area = 80 sq ft. <br /> Depth = 0.333 ft. <br /> Volume = 80 × 0.333 ≈ 26.7 cu ft → 0.99 cu yd. <br /> Rounded up, you’d order 1 cubic yard (or 2 bags of 40 lb each for a safety buffer).</p>
+              <p className="text-slate-600 dark:text-slate-300">Area = 80 sq ft. <br /> Depth = 0.333 ft. <br /> Volume = 80 x 0.333 = approximately 26.7 cu ft, or 0.99 cu yd. <br /> Rounded up, order 1 cubic yard in bulk, or about 36 bags when each bag contains 0.75 cu ft.</p>
 
               <h3 className="font-bold text-xl mt-4 mb-4 text-slate-900 dark:text-slate-100">Medium Lawn (30 ft × 20 ft × 5 in depth)</h3>
               <p className="text-slate-600 dark:text-slate-300">Area = 600 sq ft. <br /> Depth = 0.417 ft. <br /> Volume = 600 × 0.417 ≈ 250 cu ft → 9.26 cu yd. <br /> Add 10 % buffer → 10.2 cu yd (order 11 cubic yards).</p>
@@ -348,7 +348,7 @@ export default function TopsoilPage() {
           {/* Sidebar */}
           <aside className="space-y-8">
             {topsoilBlogs.length > 0 && (
-              <section className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+              <section className="pb-6 border-b border-slate-200/80 dark:border-dark-border">
                 <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">
                   You May Like
                 </p>
@@ -359,7 +359,7 @@ export default function TopsoilPage() {
                       href={`/blog/${rel.slug}`}
                       className="group flex gap-4 hover:text-primary transition-colors"
                     >
-                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-[#22242A] rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-[#4D5156]">
+                      <div className="relative w-16 h-16 bg-slate-100 dark:bg-dark-card rounded-lg overflow-hidden shrink-0 shadow-xs border border-slate-200/50 dark:border-dark-border">
                         <Image
                           src={rel.image}
                           alt={rel.title}
@@ -382,7 +382,7 @@ export default function TopsoilPage() {
               </section>
             )}
 
-            <section className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
+            <section className="pb-6 border-b border-slate-200/80 dark:border-dark-border">
               <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">
                 Popular Tools
               </p>
@@ -413,8 +413,8 @@ export default function TopsoilPage() {
               </ul>
             </section>
 
-            <section className="pb-6 border-b border-slate-200/80 dark:border-[#4D5156]">
-              <p className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-[#4D5156]">
+            <section className="pb-6 border-b border-slate-200/80 dark:border-dark-border">
+              <p className="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider pb-3 border-b border-slate-100 dark:border-dark-border">
                 Categories
               </p>
               <ul className="ml-5 space-y-2">

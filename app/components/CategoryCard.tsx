@@ -43,11 +43,11 @@ export default function CategoryCard({
   return (
     <div
       id={id}
-      className="bg-white dark:bg-[#22242A] rounded-2xl border border-slate-200/80 dark:border-[#4D5156] p-6 shadow-sm hover:shadow-md hover:border-slate-300 dark:hover:border-slate-500 transition-all duration-300 flex flex-col justify-between h-full scroll-mt-20"
+      className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200/80 dark:border-dark-border p-6 shadow-sm hover:shadow-md hover:border-slate-300 dark:hover:border-slate-500 transition-all duration-300 flex flex-col justify-between h-full scroll-mt-20"
     >
       <div>
         {/* Category Header */}
-        <div className="flex items-center gap-4 pb-4 border-b border-slate-100 dark:border-[#4D5156]">
+        <div className="flex items-center gap-4 pb-4 border-b border-slate-100 dark:border-dark-border">
           <div className={`w-10 h-10 rounded-xl ${getCategoryIconBg(category.id)} flex items-center justify-center shadow-sm shrink-0`}>
             {category.icon}
           </div>
@@ -70,7 +70,7 @@ export default function CategoryCard({
               <li key={slug} className="text-sm">
                 <Link
                   href={`/calculators/${slug}`}
-                  className="group flex items-center gap-2.5 py-2 px-2 -mx-2 rounded-lg min-h-[44px] sm:min-h-[40px] hover:bg-slate-50 dark:hover:bg-[#191a1d] transition-all duration-200"
+                  className="group flex items-center gap-2.5 py-2 px-2 -mx-2 rounded-lg min-h-11 sm:min-h-[40px] hover:bg-slate-50 dark:hover:bg-dark-bg transition-all duration-200"
                 >
                   <span className="w-2 h-2 rounded-full bg-primary/60 dark:bg-sky-400 group-hover:bg-primary dark:group-hover:bg-sky-300 shrink-0 transition-colors" />
                   <span className="text-primary dark:text-sky-400 group-hover:text-primary-hover dark:group-hover:text-sky-300 transition-colors leading-snug font-semibold truncate">
@@ -85,11 +85,11 @@ export default function CategoryCard({
 
       {/* Card Action Button */}
       {showViewAllButton && (
-        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#4D5156] flex justify-end">
+        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-dark-border flex justify-end">
           <Link
             href={`/calculators#${category.id}`}
             aria-label={`View all ${category.title} calculators`}
-            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-primary px-4 py-2.5 min-h-[44px] text-xs font-bold text-white transition-all duration-200 hover:bg-primary-hover shadow-sm shadow-primary/20 hover:shadow-md hover:-translate-y-[1px]"
+            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-primary px-4 py-2.5 min-h-11 text-xs font-bold text-white transition-all duration-200 hover:bg-primary-hover shadow-sm shadow-primary/20 hover:shadow-md hover:-translate-y-[1px]"
           >
             View All <span aria-hidden="true">→</span>
           </Link>
