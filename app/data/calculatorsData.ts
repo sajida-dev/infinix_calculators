@@ -1734,24 +1734,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Productivity Calculator",
     category: "math",
     categoryLabel: "Math & Business Productivity",
-    seoTitle: "Productivity Calculator - Employee Output & Therapy Hours (With Lunch)",
-    metaDescription: "Free productivity calculator for employees, teams & therapy clinics. Calculate daily average output, billable hours, target percentages & lunch breaks.",
+    seoTitle: "Productivity Calculator - Employee Output and Efficiency Rate",
+    metaDescription: "Calculate employee or team productivity from actual output and a standard target. Review the formula, assumptions, and efficiency rate for planning purposes.",
     keywords: [
       "productivity calculator",
-      "therapy productivity calculator with lunch",
       "productivity calculation",
-      "therapy productivity calculator",
-      "productivity calculator with lunch break",
-      "therapist productivity calculator",
-      "productivity calculator therapy",
-      "ot productivity calculator",
       "calculate productivity",
       "productivity calc",
       "how to measure employee productivity",
       "how to calculate productivity",
       "productivity calculator with lunch",
-      "therapy productivity calculator lunch break",
-      "ot productivity calculator with lunch",
       "labor productivity calculator",
       "calculate employee productivity",
       "employee productivity calculator",
@@ -1769,8 +1761,6 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       "how do you measure employee productivity",
       "calculate percentage increase productivity formula",
       "calculate productivity increase percentage formula",
-      "healthcare productivity calculator",
-      "pta productivity calculator",
       "free vs paid productivity tools",
       "how to calculate team employee productivity formula guide"
     ],
@@ -2167,7 +2157,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       { id: "conversionAmount", label: "Traditional Balance to Convert to Roth ($)", type: "number", defaultValue: 0, unit: "$" }
     ],
     calculate: (inputs) => {
-      const type = inputs.accountType || "ira";
+      const type = String(inputs.accountType || "ira");
       const c = Number(inputs.contribution || 6500);
       const match = Number(inputs.employerMatch || 0) / 100;
       const n = Number(inputs.years || 25);
@@ -3653,7 +3643,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     ],
     calculate: (inputs) => {
       const totalDist = Number(inputs.totalDistance || 0);
-      const totalFl = Number(inputs.totalFuel || 1);
+      const totalFl = Number(inputs.totalFuel || 0);
       const stateId = inputs.state || "NY";
       const stateDist = Number(inputs.stateDistance || 0);
       const stateFuelPur = Number(inputs.stateFuelPurchased || 0);
@@ -3667,6 +3657,9 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       };
 
       const rate = rates[stateId] || 0.30;
+      if (totalDist <= 0 || totalFl <= 0 || stateDist < 0 || stateFuelPur < 0) {
+        throw new Error("Trip distance and fuel values must be positive, and state values cannot be negative.");
+      }
       const mpg = totalDist / totalFl;
       const stateConsumed = stateDist / mpg;
       const taxDue = (stateConsumed - stateFuelPur) * rate;
@@ -7864,13 +7857,22 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     ],
     calculate: (inputs) => {
       const balance = Number(inputs.currentBalance || 0);
-      const rate = Number(inputs.interestRate || 0) / 100 / 12;
+      const annualRate = Number(inputs.interestRate || 0);
+      const rate = annualRate / 100 / 12;
       const months = Number(inputs.remainingYears || 0) * 12;
       const lump = Number(inputs.lumpSum || 0);
 
-      const oldPayment = (balance * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+      if (balance < 0 || annualRate < 0 || months <= 0 || lump < 0) {
+        throw new Error("Loan balance, rate, term, and lump sum must be valid non-negative values.");
+      }
+
+      const oldPayment = rate === 0
+        ? balance / months
+        : (balance * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
       const newBalance = Math.max(0, balance - lump);
-      const newPayment = (newBalance * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+      const newPayment = rate === 0
+        ? newBalance / months
+        : (newBalance * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
       const monthlySavings = oldPayment - newPayment;
 
       return {

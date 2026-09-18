@@ -6,20 +6,20 @@ export const mortgageCalculatorGameFaqs: FAQItem[] = [
     "answer": "The Mortgage Calculator Game is an interactive financial simulation that gamifies the homebuying and debt-payoff process. You test different loan terms (15 vs. 30 years), down payment amounts, and extra monthly principal payments to optimize your 'Interest Saved Score' and unlock debt-free badges. Try the simulation now with our free <a href=\"/calculators/mortgage-calculator-game\">Mortgage Calculator Game</a> or read our deep-dive guide on <a href=\"/blog/mortgage-calculator-game-simulator-how-to-beat-housing-market\">how to beat the Mortgage Calculator Game simulation</a>."
   },
   {
-    "question": "Why is the Mortgage Calculator Game going viral across finance communities?",
-    "answer": "The game went viral because it reveals the brutal, counter-intuitive math of 30-year amortized mortgages. Over 80% of first-time players go 'bankrupt' in the simulation when faced with 7%+ interest rates, property tax escalation, and phantom maintenance costs. By making interest visible through gamified scorecards and dynamic payoff meters, players learn how small biweekly buffers can eliminate over $150,000 in lifetime bank interest."
+    "question": "What can the Mortgage Calculator Game help me understand?",
+    "answer": "The simulation illustrates how loan term, interest rate, down payment, taxes, insurance, maintenance, and extra principal payments can affect a hypothetical household budget. Results are educational estimates, not a prediction of your approval, costs, or financial outcome."
   },
   {
     "question": "What is the winning strategy to beat the Mortgage Calculator Game simulator?",
-    "answer": "To achieve a maximum score of 1,000 ('Mortgage Master'), combine 4 core mathematical mechanics: 1) Put down at least 20% to eliminate Private Mortgage Insurance (PMI); 2) Switch to accelerated biweekly payments (making 26 half-payments = 13 full payments yearly); 3) Add an automated $150–$300 monthly principal buffer; and 4) Model refinancing or recasting when interest rates drop by 100+ basis points. Learn the complete math in our <a href=\"/blog/mortgage-calculator-game-simulator-how-to-beat-housing-market\">housing market survival guide</a>."
+    "answer": "There is no universal winning strategy. You can compare a larger down payment, different loan terms, extra principal, and possible refinancing scenarios, but the best choice depends on rates, fees, cash reserves, taxes, insurance, and lender rules. Learn the assumptions in our <a href=\"/blog/mortgage-calculator-game-simulator-how-to-beat-housing-market\">mortgage simulation guide</a>."
   },
   {
     "question": "How does the Savings Score and Level Progression work in the game?",
-    "answer": "The game awards points based on the percentage of lifetime mortgage interest eliminated through smart down payments, lump-sum bonuses, and recurring monthly principal buffers. Scaling out of 1,000 points, scores above 800 achieve 'Mortgage Master' status by cutting total interest costs by over 40% and shortening loan payoff terms by 7+ years."
+    "answer": "The game score is an illustrative comparison based on the assumptions and choices inside the simulation. It is not a credit score, affordability assessment, lender decision, or recommendation to make a particular payment."
   },
   {
     "question": "How much faster can you pay off a 30-year mortgage by making 1 extra payment per year?",
-    "answer": "Making just 1 extra monthly payment per year (or switching to bi-weekly payments) shortens a standard 30-year mortgage by <strong>4 to 6 years</strong> and saves between <strong>$30,000 and $65,000 in interest</strong> on a median-priced home ($400,000 balance at 7% APR)."
+    "answer": "An extra payment can shorten the payoff period and reduce interest, but the effect depends on the balance, rate, term, payment timing, and lender treatment of extra payments. Enter your own assumptions in the simulator instead of relying on a general example."
   },
   {
     "question": "What are 'phantom homeownership costs' in the simulator?",
@@ -27,18 +27,18 @@ export const mortgageCalculatorGameFaqs: FAQItem[] = [
   },
   {
     "question": "How does a 7.5% interest rate compare to a 3.5% rate in total interest paid?",
-    "answer": "On a $400,000 30-year loan, a 3.5% interest rate results in <strong>$246,624</strong> in total lifetime interest. At a 7.5% interest rate, total lifetime interest explodes to <strong>$606,857</strong>—a difference of over <strong>$360,233</strong> in unrecoverable bank finance charges. Simulate your exact amortization curve with our <a href=\"/calculators/mortgage-calculator-game\">Mortgage Calculator Simulator</a>."
+    "answer": "A higher rate generally increases the scheduled payment and total interest for the same balance and term. The exact difference depends on principal, term, payment timing, fees, and assumptions, so compare both scenarios with the same inputs in our <a href=\"/calculators/mortgage-calculator-game\">Mortgage Calculator Simulator</a>."
   },
   {
     "question": "Can you play the Mortgage Calculator Game online unblocked for classroom education?",
-    "answer": "Yes! The Infinix <a href=\"/calculators/mortgage-calculator-game\">Mortgage Calculator Game</a> is 100% free, browser-based, mobile-friendly, and accessible across school networks and Chromebooks without account creation or downloads. It is widely used by high school personal finance teachers, university economics professors, and real estate pre-licensing students."
+    "answer": "The Infinix <a href=\"/calculators/mortgage-calculator-game\">Mortgage Calculator Game</a> is a free browser-based educational simulation that does not require an account or download. Network access can vary by school or workplace, so confirm that the site is permitted on the network you use."
   },
   {
     "question": "How does the F1 Debt Speedrun & Racing mode work in the Mortgage Calculator Game?",
-    "answer": "In the F1 Debt Speedrun mode (often searched as <strong>mortgage calculator games F1</strong> or <strong>formula racer mortgage calculator</strong>), your vehicle races down the 30-year amortization track against compounding interest. Entering extra monthly principal payments acts as a 'Nitrous Boost', instantly cutting down the lap time from 30 years to under 15 years and visibly denying the bank over $95,000 in finance charges."
+    "answer": "In the F1 Debt Speedrun mode (also searched as <strong>mortgage calculator games F1</strong> or <strong>formula racer mortgage calculator</strong>), the visual race represents progress through a hypothetical amortization schedule. Extra principal can shorten the simulated payoff timeline, but the result changes with the entered balance, rate, term, and payment amount."
   },
   {
     "question": "What is the Real Estate Tycoon mode and how do you avoid bankruptcy?",
-    "answer": "The Tycoon mode simulates 30 years of property investing starting with $60,000 in cash. Players acquire condos, suburban houses, and duplexes, collect rental yield, and navigate real-world random events such as HVAC repairs and interest rate hikes while building a $1,000,000+ net worth portfolio."
+    "answer": "The Tycoon mode is a fictional planning scenario with configurable property, cash-flow, repair, and rate assumptions. Any simulated portfolio value is for gameplay and financial-literacy practice only; it is not a forecast or investment advice."
   }
 ];

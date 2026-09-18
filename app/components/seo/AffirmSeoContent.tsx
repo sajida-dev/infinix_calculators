@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 export default function AffirmSeoContent() {
   return (
@@ -9,7 +8,7 @@ export default function AffirmSeoContent() {
           How Affirm Loan Interest, Down Payments &amp; Pay-in-4 Work
         </h2>
         <p>
-          Buy Now, Pay Later (BNPL) platforms like Affirm provide consumer installment financing at point-of-sale. Unlike traditional revolving credit cards that calculate interest using daily compound balances, Affirm calculates interest using <strong>fixed simple interest</strong> on the starting financed balance, with no compounding interest, late fees, or prepayment penalties.
+          Buy Now, Pay Later (BNPL) platforms like Affirm provide consumer installment financing at point-of-sale. Plan terms, APR, fees, payment timing, and eligibility can vary by merchant, product, borrower, and offer. Use this page as an independent estimate and review the lender's actual disclosure before accepting an offer.
         </p>
       </div>
 
@@ -19,7 +18,7 @@ export default function AffirmSeoContent() {
           Affirm Pay in 4 Schedule Breakdown ($375 Order Example)
         </h3>
         <p className="text-sm">
-          For eligible purchases between $50 and $400, Affirm offers a 0% APR Pay in 4 plan splitting the total into 4 equal bi-weekly payments:
+          This $375 example illustrates four equal payments under a hypothetical 0% APR Pay in 4 offer. Eligibility, minimums, payment timing, and available terms can vary, so confirm the offer shown at checkout:
         </p>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-slate-200 dark:border-dark-border text-xs sm:text-sm">
@@ -72,7 +71,7 @@ export default function AffirmSeoContent() {
           Monthly Payment = (Principal + Total Interest) ÷ Term in Months
         </p>
         <p className="text-xs text-slate-500 dark:text-slate-400">
-          *Note: Affirm does not charge late fees, prepayment penalties, or hidden origination compounding fees.
+          *Note: This is a simplified estimate. Review the actual offer disclosure for APR, fees, payment schedule, late-payment treatment, and prepayment terms.
         </p>
       </div>
 
@@ -123,7 +122,7 @@ export default function AffirmSeoContent() {
           Does Paying Off Affirm Early Save You Money on Interest?
         </h3>
         <p>
-          <strong>Yes.</strong> Because Affirm uses simple uncompounded interest, if you make early partial payments or pay off the entire outstanding loan balance before the final scheduled date, you only pay interest accrued during the time the loan was open. There are zero early repayment penalties.
+          Early payoff may change the interest you pay, but the result depends on the specific agreement and payment schedule. Check the actual offer disclosure for payoff terms and do not assume every plan uses the same calculation.
         </p>
       </div>
 

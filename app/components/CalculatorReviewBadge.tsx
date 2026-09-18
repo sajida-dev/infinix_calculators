@@ -13,7 +13,7 @@ export default function CalculatorReviewBadge({ category, authorSlug, className 
   const author = authorSlug ? getAuthorBySlug(authorSlug) : getAuthorForCategory(category);
 
   return (
-    <div className={`py-2 px-0.5 flex flex-wrap items-center justify-between gap-3 text-xs border-b border-slate-200 dark:border-dark-border ${className}`}>
+    <section className={`calculator-review flex flex-wrap items-center justify-between gap-3 text-xs ${className}`} aria-label="Editorial review">
       <div className="flex items-center gap-2.5">
         <Link href={`/authors/${author.slug}`} className="shrink-0">
           <Image
@@ -25,7 +25,7 @@ export default function CalculatorReviewBadge({ category, authorSlug, className 
           />
         </Link>
         <div className="text-slate-600 dark:text-slate-400">
-          <span>Related contributor: </span>
+          <span>Reviewed by </span>
           <Link
             href={`/authors/${author.slug}`}
             className="font-medium text-slate-900 dark:text-slate-200 hover:underline"
@@ -37,11 +37,11 @@ export default function CalculatorReviewBadge({ category, authorSlug, className 
       </div>
 
       <div className="text-slate-500 dark:text-slate-400 text-[11px] flex items-center gap-2">
-        <span>Review formulas and assumptions</span>
-        <span>•</span>
-        <span>Estimates only</span>
+        <span>Formula and assumptions reviewed</span>
+        <span aria-hidden="true">•</span>
+        <span>Estimate only</span>
       </div>
-    </div>
+    </section>
   );
 }
 

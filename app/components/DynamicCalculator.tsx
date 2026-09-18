@@ -1,7 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { calculatorsData } from "../data/calculatorsData";
+
+type InputValue = number | string;
+type CalculatorOutput = { value: string | number; label: string; unit?: string };
 
 interface DynamicCalculatorProps {
   slug: string;
@@ -9,6 +12,27 @@ interface DynamicCalculatorProps {
 
 export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
   const calculator = calculatorsData[slug];
+
+  const [inputsState, setInputsState] = useState<Record<string, InputValue>>(() => {
+    const initial: Record<string, InputValue> = {};
+    if (calculator) {
+      calculator.inputs.forEach((input) => {
+        initial[input.id] = input.defaultValue;
+      });
+    }
+    return initial;
+  });
+  const [outputs, setOutputs] = useState<Record<string, CalculatorOutput>>(() => {
+    if (!calculator) return {};
+
+    try {
+      return calculator.calculate(inputsState);
+    } catch (err) {
+      console.error("Initial calculation error:", err);
+      return {};
+    }
+  });
+  const [error, setError] = useState<string | null>(null);
 
   if (!calculator) {
     return (
@@ -18,55 +42,58 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
     );
   }
 
-  // Initialize state based on default values of inputs
-  const [inputsState, setInputsState] = useState<Record<string, any>>(() => {
-    const initial: Record<string, any> = {};
-    calculator.inputs.forEach((input) => {
-      initial[input.id] = input.defaultValue;
-    });
-    return initial;
-  });
-
-  const [outputs, setOutputs] = useState<Record<string, { value: string | number; label: string; unit?: string }>>(() => {
-    try {
-      const initial: Record<string, any> = {};
-      calculator.inputs.forEach((input) => {
-        initial[input.id] = input.defaultValue;
-      });
-      return calculator.calculate(initial);
-    } catch (err) {
-      console.error("Initial calculation error:", err);
-      return {};
-    }
-  });
-  const [shouldCalculate, setShouldCalculate] = useState(false);
-
-  // Perform calculation when user clicks Calculate button
-  useEffect(() => {
-    if (!shouldCalculate) return;
-    try {
-      const results = calculator.calculate(inputsState);
-      setOutputs(results);
-    } catch (err) {
-      console.error("Calculation error:", err);
-    } finally {
-      setShouldCalculate(false);
-    }
-  }, [shouldCalculate, inputsState, calculator]);
-
-  const handleInputChange = (id: string, value: any) => {
-    // Attempt parsing numerical inputs
-    let parsedValue = value;
-    const inputDef = calculator.inputs.find((i) => i.id === id);
-    if (inputDef && inputDef.type === "number") {
-      parsedValue = parseFloat(value);
-      if (isNaN(parsedValue)) parsedValue = 0;
-    }
-
+  const handleInputChange = (id: string, value: string) => {
     setInputsState((prev) => ({
       ...prev,
-      [id]: parsedValue,
+      [id]: value,
     }));
+    setError(null);
+  };
+
+  const handleCalculate = () => {
+    const parsedInputs: Record<string, InputValue> = {};
+
+    for (const input of calculator.inputs) {
+      const rawValue = inputsState[input.id];
+
+      if (input.type === "number") {
+        const value = typeof rawValue === "number" ? rawValue : Number(rawValue);
+        if (rawValue === "" || !Number.isFinite(value)) {
+          setError(`${input.label} must be a valid number.`);
+          return;
+        }
+        if (input.min !== undefined && value < input.min) {
+          setError(`${input.label} must be at least ${input.min}.`);
+          return;
+        }
+        if (input.max !== undefined && value > input.max) {
+          setError(`${input.label} must be no more than ${input.max}.`);
+          return;
+        }
+        parsedInputs[input.id] = value;
+        continue;
+      }
+
+      if (input.type === "select") {
+        const value = String(rawValue ?? "");
+        if (input.options && !input.options.some((option) => option.value === value)) {
+          setError(`Choose a valid option for ${input.label}.`);
+          return;
+        }
+        parsedInputs[input.id] = value;
+        continue;
+      }
+
+      parsedInputs[input.id] = String(rawValue ?? "");
+    }
+
+    try {
+      setOutputs(calculator.calculate(parsedInputs));
+      setError(null);
+    } catch (err) {
+      console.error("Calculation error:", err);
+      setError("Check the inputs and try again.");
+    }
   };
 
   return (
@@ -96,7 +123,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                     </label>
                     <select
                       id={uniqueId}
-                      value={inputsState[input.id] || ""}
+                      value={inputsState[input.id] ?? ""}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
                       className={`mt-2 w-full rounded-lg border border-slate-300 dark:border-dark-border px-4 py-2.5 text-sm shadow-sm transition-colors ${input.readOnly
                         ? "bg-gray-100 dark:bg-dark-bg text-slate-500 dark:text-slate-400 cursor-not-allowed"
@@ -120,7 +147,7 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                     <input
                       id={uniqueId}
                       type="text"
-                      value={inputsState[input.id] || ""}
+                      value={inputsState[input.id] ?? ""}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
                       readOnly={input.readOnly}
                       className={`mt-2 w-full rounded-lg border ${input.readOnly ? "bg-gray-200 dark:bg-dark-bg" : "bg-white dark:bg-dark-bg"} border-slate-300 dark:border-dark-border px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm`}
@@ -142,6 +169,9 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
                       step="any"
                       value={inputsState[input.id] === undefined ? "" : inputsState[input.id]}
                       onChange={(e) => handleInputChange(input.id, e.target.value)}
+                      min={input.min}
+                      max={input.max}
+                      readOnly={input.readOnly}
                       className="flex-1 rounded-l-lg border border-slate-300 dark:border-dark-border px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-dark-bg focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                     {input.unit && (
@@ -157,11 +187,16 @@ export default function DynamicCalculator({ slug }: DynamicCalculatorProps) {
           <div className="mt-4">
             <button
               type="button"
-              onClick={() => setShouldCalculate(true)}
+              onClick={handleCalculate}
               className="w-full bg-primary text-white font-bold py-3 px-4 rounded-xl hover:bg-primary-hover transition shadow-sm"
             >
               Calculate
             </button>
+            {error && (
+              <p role="alert" className="mt-3 text-sm font-medium text-red-600 dark:text-red-400">
+                {error}
+              </p>
+            )}
           </div>
         </div>
 

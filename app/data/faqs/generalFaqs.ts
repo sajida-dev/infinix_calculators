@@ -349,7 +349,16 @@ export const iftaFaqs: FAQItem[] = [
   }
 ];
 
-export const faqs_457Retirement: FAQItem[] = [];
+export const faqs_457Retirement: FAQItem[] = [
+  {
+    "question": "What does a 457(b) calculator estimate?",
+    "answer": "It projects a possible future account value from your current balance, monthly contribution, estimated annual return, and time period. The result is an estimate, not a guaranteed investment return or plan balance."
+  },
+  {
+    "question": "Does this calculator include taxes and plan rules?",
+    "answer": "No. The projection is a growth estimate and does not determine your tax bill, contribution eligibility, employer plan rules, fees, or withdrawal treatment. Confirm current rules with your plan administrator or a qualified tax professional."
+  }
+];
 
 export const sidingFaqs: FAQItem[] = [
   {
@@ -778,7 +787,16 @@ export const mortgageNevadaFaqs: FAQItem[] = [
   }
 ];
 
-export const faqs_529Growth: FAQItem[] = [];
+export const faqs_529Growth: FAQItem[] = [
+  {
+    "question": "What does the 529 growth calculator show?",
+    "answer": "It estimates future savings from an initial deposit, recurring contributions, an assumed return, and the number of years. Actual results vary with investment performance, fees, contributions, and withdrawals."
+  },
+  {
+    "question": "Are 529 tax benefits the same in every state?",
+    "answer": "No. State deductions, credits, qualified-expense rules, and recapture provisions vary. Treat the tax figure as an illustrative estimate and check current guidance for your plan and state."
+  }
+];
 
 export const sterlingSilverFaqs: FAQItem[] = [
   {
@@ -957,6 +975,24 @@ export const polynomialMultiplicationFaqs: FAQItem[] = [
   }
 ];
 
-export const faqs_4FunctionCalculator: FAQItem[] = [];
+export const faqs_4FunctionCalculator: FAQItem[] = [
+  {
+    "question": "What operations does the 4-function calculator support?",
+    "answer": "It supports addition, subtraction, multiplication, division, and percentage calculations with a digital tape for reviewing the entered operations."
+  },
+  {
+    "question": "What happens when I divide by zero?",
+    "answer": "Division by zero is undefined. Enter a nonzero divisor before calculating."
+  }
+];
 
-export const faqs_3dPrintingCost: FAQItem[] = [];
+export const faqs_3dPrintingCost: FAQItem[] = [
+  {
+    "question": "What costs can the 3D printing calculator include?",
+    "answer": "It estimates filament, electricity, machine depreciation, a failed-print buffer, and an optional markup from the values you enter."
+  },
+  {
+    "question": "Is the 3D printing cost estimate exact?",
+    "answer": "No. Power draw, printer lifespan, material waste, labor, packaging, maintenance, and local electricity prices can differ from the assumptions. Replace the defaults with measured or quoted values for a better estimate."
+  }
+];

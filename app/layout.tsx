@@ -67,12 +67,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
        
-        {/* Monetag Multitag */}
-        <script
-          src="https://quge5.com/88/tag.min.js"
-          data-zone="279393"
-          async data-cfasync="false"
-        />
       </head>
       <body className="min-h-full bg-white dark:bg-dark-bg text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-200" suppressHydrationWarning>
         <ThemeScript />

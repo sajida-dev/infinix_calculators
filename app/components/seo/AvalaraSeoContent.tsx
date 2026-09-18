@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function AvalaraSeoContent() {
   return (
     <article className="prose prose-slate max-w-none text-slate-800 dark:text-slate-200 leading-relaxed space-y-6">
@@ -21,7 +19,7 @@ export default function AvalaraSeoContent() {
           Featured Lookup: What is the Sales Tax Rate for ZIP Code 94105?
         </h3>
         <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
-          The combined sales tax rate for <strong>ZIP code 94105</strong> (located in the heart of San Francisco, California) is <strong>8.625%</strong>. 
+          The <strong>8.625%</strong> figure shown for <strong>ZIP code 94105</strong> is an illustrative example from the calculator's static reference data, not a live rate quote. Tax rates and applicability can change by date, address, product, and transaction type.
         </p>
         <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
           Sales tax is rarely a single flat rate. Instead, it is a combination of multiple tax layers. Here is how the 94105 rate is compiled:
@@ -66,7 +64,7 @@ export default function AvalaraSeoContent() {
           Popular US ZIP Codes &amp; Combined Sales Tax Rates
         </h2>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-          To help with your invoice audits, here is a lookup table matching common high-traffic business ZIP codes to their corresponding combined tax rates:
+          The following static examples are provided for explaining combined-rate math. Verify any rate with an official state or local tax authority, or a current tax-rate service, before filing or collecting tax:
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 dark:border-dark-border">
@@ -126,7 +124,7 @@ export default function AvalaraSeoContent() {
           Under South Dakota v. Wayfair (2018), businesses must collect sales tax in states where they meet certain economic sales thresholds (typically $100,000 in sales or 200 individual transactions, though thresholds vary by state). This is known as **Economic Nexus**.
         </p>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-          Once nexus is established, e-commerce sellers are obligated to calculate, collect, and remit transaction taxes on every shipping address within that state. Our free tool replicates these destination tax calculations, offering immediate auditing insights for your ledger entries without registering for paid enterprise platforms.
+          Once nexus is established, e-commerce sellers may need to calculate, collect, and remit tax according to the applicable rules. This free tool provides a simplified estimate for planning and learning; it does not replace a current tax service, professional advice, registration, filing, or remittance process.
         </p>
       </section>
     </article>

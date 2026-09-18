@@ -147,11 +147,6 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     .filter((b, idx, self) => self.findIndex((t) => t.slug === b.slug) === idx)
     .slice(0, 6);
 
-  // Filter other calculators for sidebar (min 6 items)
-  const otherCalculators = Object.values(calculatorsData)
-    .filter((c) => c.slug !== slug && c.slug !== "topsoil")
-    .slice(0, 6);
-
   // Schema Injection
   const webAppSchema = {
     "@context": "https://schema.org",
@@ -188,19 +183,6 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     ],
   };
 
-  const faqSchema = calc.faqs && calc.faqs.length > 0 ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": calc.faqs.map((faq) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  } : null;
-
   return (
     <div className="bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-screen py-8 sm:py-12 transition-colors">
       {/* Schema Injection */}
@@ -216,15 +198,6 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
-          }}
-        />
-      )}
-
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Trail */}
         <nav className="flex mb-8 text-xs font-semibold text-slate-400 dark:text-slate-500" aria-label="Breadcrumb">
@@ -261,9 +234,6 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
           {/* Main Content (3/4 Width) */}
           <div className="lg:col-span-3 space-y-10">
-            {/* E-E-A-T Reviewer Badge */}
-            <CalculatorReviewBadge category={calc.category} />
-
             {/* Brand Independence Notice */}
             {calc.brandDisclaimer && (
               <DisclaimerBox
@@ -284,7 +254,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
             </div>
 
             {/* In-depth content block (Server Rendered) */}
-            <section className="p-6 sm:p-10 space-y-8 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+            <section className="calculator-content p-6 sm:p-10 space-y-8 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
 
               {/* Formula & Explanation */}
               <div className="space-y-4">
@@ -308,7 +278,30 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                 <p>{calc.example}</p>
               </div>
 
-              <hr className="border-slate-100 dark:border-dark-border" />
+              {/* Make each calculator's assumptions explicit instead of hiding them in the form. */}
+              <div className="space-y-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
+                  Inputs and Assumptions
+                </h2>
+                <p>
+                  Enter values that match your project or situation. The calculator uses the following fields and defaults; update them before relying on the estimate.
+                </p>
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {calc.inputs.map((input) => (
+                    <div key={input.id} className="rounded-lg border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card p-4">
+                      <dt className="font-semibold text-slate-800 dark:text-slate-100">{input.label}</dt>
+                      <dd className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                        Default: {String(input.defaultValue)}{input.unit ? ` ${input.unit}` : ""}
+                        {input.min !== undefined || input.max !== undefined ? " (" : ""}
+                        {input.min !== undefined ? `minimum ${input.min}` : ""}
+                        {input.min !== undefined && input.max !== undefined ? ", " : ""}
+                        {input.max !== undefined ? `maximum ${input.max}` : ""}
+                        {input.min !== undefined || input.max !== undefined ? ")" : ""}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
 
               {/* Common Mistakes */}
               {calc.commonMistakes.length > 0 && (
@@ -323,8 +316,6 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
                   </ul>
                 </div>
               )}
-
-              <hr className="border-slate-100 dark:border-dark-border" />
 
               {/* Use Cases */}
               {calc.useCases.length > 0 && (
@@ -793,6 +784,9 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
             {/* SEO Topic Cluster Navigation Hub */}
             <CategoryClusterNav category={calc.categoryLabel} currentSlug={slug} />
+
+            {/* Editorial review appears after the tool and supporting information. */}
+            <CalculatorReviewBadge category={calc.category} className="border-t border-slate-200 dark:border-dark-border pt-5" />
           </div>
 
           {/* Sidebar Area (1/4 width) */}

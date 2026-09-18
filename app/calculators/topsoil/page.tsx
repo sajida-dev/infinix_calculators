@@ -98,57 +98,6 @@ export default function TopsoilPage() {
           }).replace(/</g, "\\u003c")
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "How do I calculate how much topsoil I will need?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Measure length and width in feet, multiply for area, multiply by desired depth (inches ÷ 12) for cubic feet, then divide by 27 for cubic yards."
-                }
-              },
-              {
-                "@type": "Question",
-                name: "What is 1 cubic yard of topsoil?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "One cubic yard equals 27 cubic feet, roughly 2,000–2,200 lb of screened topsoil."
-                }
-              },
-              {
-                "@type": "Question",
-                name: "How deep should topsoil be for a lawn or garden?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "For new lawn installations or sod prep, 4 to 6 inches of topsoil is recommended. For raised garden beds or vegetables, a depth of 8 to 12 inches is suggested to accommodate roots and water retention."
-                }
-              },
-              {
-                "@type": "Question",
-                name: "How many bags of topsoil are in a cubic yard?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "A standard 40 lb bag of topsoil contains approximately 0.75 cubic feet of soil. It takes 36 bags of 0.75 cu ft or 27 bags of 1.0 cu ft to equal one cubic yard (27 cubic feet)."
-                }
-              },
-              {
-                "@type": "Question",
-                name: "Is fill dirt the same as topsoil?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "No. Fill dirt is structural subsoil that contains rocks, sand, and clay, lacking rich organic material. Topsoil is the nutrient-dense top layer of soil screened of debris, ideal for landscaping and growing plants."
-                }
-              }
-            ],
-          }).replace(/</g, "\\u003c")
-        }}
-      />
       {/* Page container */}
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}

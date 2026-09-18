@@ -9,7 +9,7 @@
     "indexnow": "npx tsx scripts/submit-indexnow.ts",
     "images:webp": "npx tsx scripts/convert-images-to-webp.ts",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "engines": {
     "node": ">=18"
