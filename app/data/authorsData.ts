@@ -45,7 +45,7 @@ export const authorsData: Record<string, Author> = {
     name: "Ellison Grant",
     jobTitle: "Technology & 3D Printing Editorial",
     credentials: "",
-    avatar: "/authors/Gemini_Generated_Image_xplw38xplw38xplw.jpg",
+    avatar: "/authors/ellison-grant.webp",
     bio: "Ellison Grant's editorial scope covers Infinix technology guides, calculator hardware, digital tools, and 3D printing cost estimates.",
     fullBio: [
       "Ellison Grant is the named editorial contact for technology and 3D printing content, including calculator hardware, digital-tool comparisons, print materials, electricity costs, and pricing assumptions. This profile describes assigned topic coverage, not an engineering credential or manufacturer affiliation.",
@@ -63,7 +63,7 @@ export const authorsData: Record<string, Author> = {
     name: "Vaughn Mercer",
     jobTitle: "Finance & Tax Editorial",
     credentials: "",
-    avatar: "/authors/Gemini_Generated_Image_qz8kvjqz8kvjqz8k.jpg",
+    avatar: "/authors/vaughn-mercer.webp",
     bio: "Vaughn Mercer's editorial scope covers Infinix finance, tax, payroll, and payment-fee content. Estimates are educational and do not constitute financial or tax advice.",
     fullBio: [
       "Vaughn Mercer is the named editorial contact for loan payment scenarios, borrowing costs, sales tax, payroll estimates, and merchant fees. The role is editorial; this profile does not claim CPA licensing, financial-adviser registration, or lender affiliation.",
@@ -81,7 +81,7 @@ export const authorsData: Record<string, Author> = {
     name: "Atlas Keller",
     jobTitle: "Construction & Materials Editorial",
     credentials: "",
-    avatar: "/authors/Gemini_Generated_Image_oxoig3oxoig3oxoi.jpg",
+    avatar: "/authors/atlas-keller.webp",
     bio: "Atlas Keller's editorial scope covers Infinix material-volume, coverage, and construction planning content. Quantities and costs are estimates, not engineering specifications or supplier quotes.",
     fullBio: [
       "Atlas Keller is the named editorial contact for topsoil, concrete, roofing, material coverage, and freight-volume explanations. This editorial role does not imply professional engineering licensure or contractor certification.",
@@ -99,7 +99,7 @@ export const authorsData: Record<string, Author> = {
     name: "Rowan Vance",
     jobTitle: "Mathematics & Education Editorial",
     credentials: "",
-    avatar: "/authors/Gemini_Generated_Image_43lzf243lzf243lz.jpg",
+    avatar: "/authors/rowan-vance.webp",
     bio: "Rowan Vance's editorial scope covers Infinix mathematics, unit conversions, ratings, and educational scoring guides. No university or testing-agency affiliation is claimed.",
     fullBio: [
       "Rowan Vance is the named editorial contact for formulas, conversions, averages, rating scenarios, and educational score estimates. This profile describes topic coverage, not an academic degree or research career.",
@@ -117,7 +117,7 @@ export const authorsData: Record<string, Author> = {
     name: "Orion Mercer",
     jobTitle: "Health & Productivity Editorial",
     credentials: "",
-    avatar: "/authors/Gemini_Generated_Image_ax1zmoax1zmoax1z.jpg",
+    avatar: "/authors/orion-mercer.webp",
     bio: "Orion Mercer's editorial scope covers Infinix health-related estimates, time allocation, and productivity guides. The role is editorial, not clinical care or medical advice.",
     fullBio: [
       "Orion Mercer is the named editorial contact for work time, billable-time ratios, lunch deductions, and health-related planning estimates. This profile does not claim an occupational-therapy license, clinical practice, or healthcare consulting history.",

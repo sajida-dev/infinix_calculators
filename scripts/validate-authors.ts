@@ -22,11 +22,11 @@ for (const [slug, author] of Object.entries(authorsData)) {
 assert.deepEqual(
     Object.fromEntries(Object.entries(authorsData).map(([slug, author]) => [slug, author.avatar])),
     {
-        "ellison-grant": "/authors/Gemini_Generated_Image_xplw38xplw38xplw.jpg",
-        "vaughn-mercer": "/authors/Gemini_Generated_Image_qz8kvjqz8kvjqz8k.jpg",
-        "atlas-keller": "/authors/Gemini_Generated_Image_oxoig3oxoig3oxoi.jpg",
-        "rowan-vance": "/authors/Gemini_Generated_Image_43lzf243lzf243lz.jpg",
-        "orion-mercer": "/authors/Gemini_Generated_Image_ax1zmoax1zmoax1z.jpg",
+        "ellison-grant": "/authors/ellison-grant.webp",
+        "vaughn-mercer": "/authors/vaughn-mercer.webp",
+        "atlas-keller": "/authors/atlas-keller.webp",
+        "rowan-vance": "/authors/rowan-vance.webp",
+        "orion-mercer": "/authors/orion-mercer.webp",
     },
 );
 for (const [legacy, canonical] of Object.entries(legacyAuthorSlugs)) {
