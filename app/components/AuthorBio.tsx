@@ -24,9 +24,10 @@ export default function AuthorBio({ authorSlug, category, className = "" }: Auth
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-slate-200 dark:border-dark-border group-hover:border-primary transition-colors">
             <Image
               src={author.avatar}
-              alt="Infinix Calculators brand mark"
+              alt={`${author.name} portrait`}
               width={64}
               height={64}
+              unoptimized
               className="w-full h-full object-cover object-center"
             />
           </div>

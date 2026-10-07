@@ -182,10 +182,11 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
             <div className="w-32 sm:w-40 aspect-square rounded-lg overflow-hidden relative shrink-0 bg-white dark:bg-dark-bg border border-slate-200 dark:border-dark-border/60">
               <Image
                 src={author.avatar}
-                alt="Infinix Calculators brand mark, not an author portrait"
+                alt={`${author.name} portrait`}
                 fill
                 sizes="160px"
                 priority
+                unoptimized
                 className="object-contain p-3"
               />
             </div>

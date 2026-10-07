@@ -44,6 +44,30 @@ const nextConfig = {
     async redirects() {
         return [];
     },
+    async rewrites() {
+        return [
+            {
+                source: "/authors/Gemini_Generated_Image_xplw38xplw38xplw.jpg",
+                destination: "/authors/ellison-grant.webp",
+            },
+            {
+                source: "/authors/Gemini_Generated_Image_qz8kvjqz8kvjqz8k.jpg",
+                destination: "/authors/vaughn-mercer.webp",
+            },
+            {
+                source: "/authors/Gemini_Generated_Image_oxoig3oxoig3oxoi.jpg",
+                destination: "/authors/atlas-keller.webp",
+            },
+            {
+                source: "/authors/Gemini_Generated_Image_43lzf243lzf243lz.jpg",
+                destination: "/authors/rowan-vance.webp",
+            },
+            {
+                source: "/authors/Gemini_Generated_Image_ax1zmoax1zmoax1z.jpg",
+                destination: "/authors/orion-mercer.webp",
+            },
+        ];
+    },
     async headers() {
         return [
             {

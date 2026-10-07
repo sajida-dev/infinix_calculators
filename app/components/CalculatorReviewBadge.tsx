@@ -19,9 +19,10 @@ export default function CalculatorReviewBadge({ category, calculatorSlug, author
         <Link href={`/authors/${author.slug}`} className="shrink-0">
           <Image
             src={author.avatar}
-            alt="Infinix Calculators brand mark"
+            alt={`${author.name} portrait`}
             width={28}
             height={28}
+            unoptimized
             className="w-7 h-7 rounded-full object-cover"
           />
         </Link>
@@ -44,4 +45,3 @@ export default function CalculatorReviewBadge({ category, calculatorSlug, author
     </section>
   );
 }
-

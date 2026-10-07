@@ -40,9 +40,10 @@ export default function AuthorsIndexPage() {
                   <div className="w-16 h-16 rounded-full overflow-hidden border border-slate-200 dark:border-dark-border shrink-0">
                     <Image
                       src={author.avatar}
-                      alt="Infinix Calculators brand mark"
+                      alt={`${author.name} portrait`}
                       width={64}
                       height={64}
+                      unoptimized
                       className="w-full h-full object-cover"
                     />
                   </div>
