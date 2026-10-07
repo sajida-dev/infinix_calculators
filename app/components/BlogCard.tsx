@@ -56,7 +56,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             href={`/authors/${author.slug}`}
             className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold hover:text-primary dark:hover:text-sky-400 transition-colors py-2 inline-flex items-center min-h-11"
           >
-            By {author.name}
+            Editorial: {author.name}
           </Link>
           <Link
             href={`/blog/${post.slug}`}

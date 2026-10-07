@@ -3,7 +3,7 @@ import type { FAQItem } from "../calculatorsData";
 export const roofFaqs: FAQItem[] = [
   {
     question: "How many shingle bundles are in a roofing square?",
-    answer: "There are exactly <strong>3 bundles of standard 3-tab or architectural laminate shingles in 1 roofing square</strong>. One roofing square covers <strong>100 square feet</strong> of roof surface. For heavyweight designer shingles, some specialty manufacturers package 4 to 5 bundles per square. Calculate your exact bundles and costs with our free <a href=\"/calculators/roof\">Roof Shingle Calculator</a>."
+    answer: "A roofing square is <strong>100 square feet</strong> of roof surface. Many standard asphalt shingles are estimated at about three bundles per square, but coverage varies by product. Check the exact package label or manufacturer data before ordering. Our <a href=\"/calculators/roof\">Roof Shingle Calculator</a> uses a three-bundle-per-square assumption for its estimate."
   },
   {
     question: "What is a roofing square and how do I calculate total squares?",
@@ -24,5 +24,21 @@ export const roofFaqs: FAQItem[] = [
   {
     question: "How many bundles of shingles are needed for a 2,000 sq ft roof?",
     answer: "A 2,000 sq ft roof equals 20 roofing squares. Adding a 10% waste factor requires 22 squares (2,200 sq ft). Because there are 3 bundles per square, you will need <strong>66 bundles of shingles</strong> (22 × 3 = 66 bundles)."
+  },
+  {
+    question: "How do I compare asphalt shingle brands and product lines?",
+    answer: "Compare the exact product models, not just brand names. Check published coverage, roof-slope compatibility, wind and impact information, installation instructions, warranty conditions, and the contractor's full scope of work. There is no single shingle that is best for every roof."
+  },
+  {
+    question: "Do shingles advertised with a 25-year or longer life last that long?",
+    answer: "A stated service life or warranty period is not a guarantee for every roof. Performance depends on the product, installation, ventilation, roof design, weather exposure, maintenance, and warranty terms. Read the current warranty for the exact product and ask what conditions and exclusions apply."
+  },
+  {
+    question: "Why might roof shingles blow off in strong wind?",
+    answer: "Possible factors include wind exposure, roof-edge details, fastening, deck condition, installation temperature, and whether the shingles were installed according to the product instructions. A photo or isolated loose shingle usually cannot identify the cause; ask a qualified roofing professional to inspect the roof safely."
+  },
+  {
+    question: "Can a roofer install new shingles over an existing layer?",
+    answer: "It depends on local code, the number and condition of existing layers, roof structure, and product instructions. An overlay can conceal damaged decking or flashing and adds weight. Ask the contractor to document the existing layers and proposed tear-off scope, and confirm permit requirements with your local building department."
   }
 ];

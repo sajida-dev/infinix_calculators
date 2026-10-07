@@ -15,27 +15,6 @@ export const proRataFaqs: FAQItem[] = [
   }
 ];
 
-export const bmiFaqs: FAQItem[] = [
-  {
-    "question": "What is a normal BMI score?",
-    "answer": "A healthy adult score is between 18.5 and 24.9."
-  }
-];
-
-export const hecmFaqs: FAQItem[] = [
-  {
-    "question": "What is HECM?",
-    "answer": "HECM is a Home Equity Conversion Mortgage, the official HUD reverse mortgage."
-  }
-];
-
-export const helocPayoffFaqs: FAQItem[] = [
-  {
-    "question": "What is draw period?",
-    "answer": "The initial 5-10 year period where you draw funds and pay only interest."
-  }
-];
-
 export const balanceTransferFaqs: FAQItem[] = [
   {
     "question": "Is a credit card balance transfer worth it?",

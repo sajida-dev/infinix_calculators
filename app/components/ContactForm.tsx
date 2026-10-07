@@ -10,40 +10,41 @@ export default function ContactForm() {
     message: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "ready">("idle");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
-    setStatus("submitting");
+    setStatus("ready");
     const subject = `[${formData.subject}] Infinix Calculators inquiry`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
     window.location.href = `mailto:support@infinixcalculator.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setStatus("success");
+    setStatus("ready");
   };
 
   return (
     <div className="bg-white dark:bg-dark-card p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-dark-border shadow-xs">
-      <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Send Us a Message</h2>
+      <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Message details</h3>
       <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">
         Have a question about a calculation, feedback on our tools, or a business inquiry? Fill out the form below.
       </p>
 
-      {status === "success" && (
+      {status === "ready" && (
         <div className="mb-6 p-4 rounded-xl bg-green-50 dark:bg-emerald-950/40 border border-green-200 dark:border-emerald-800 text-green-800 dark:text-emerald-200 text-sm">
-          Your email application should open with this message prefilled. Send it there to contact <strong>support@infinixcalculator.com</strong>.
+          Your email application should open with this message filled in. It has not been sent yet; send it from your email application or use <a className="font-bold underline" href="mailto:support@infinixcalculator.com">support@infinixcalculator.com</a>.
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+            <label htmlFor="contact-name" className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
               Your Name *
             </label>
             <input
               type="text"
+              id="contact-name"
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -53,11 +54,12 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+            <label htmlFor="contact-email" className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
               Email Address *
             </label>
             <input
               type="email"
+              id="contact-email"
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -68,10 +70,11 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+          <label htmlFor="contact-subject" className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
             Inquiry Topic
           </label>
           <select
+            id="contact-subject"
             value={formData.subject}
             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
             className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-dark-border bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary text-sm"
@@ -85,11 +88,12 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+          <label htmlFor="contact-message" className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
             Message *
           </label>
           <textarea
             required
+            id="contact-message"
             rows={5}
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -100,10 +104,9 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          disabled={status === "submitting"}
           className="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-white font-bold text-sm hover:bg-primary-hover transition-colors shadow-xs disabled:opacity-50 cursor-pointer"
         >
-          {status === "submitting" ? "Sending..." : "Submit Message"}
+          Prepare Email
         </button>
       </form>
     </div>

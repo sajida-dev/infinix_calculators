@@ -786,7 +786,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
             <CategoryClusterNav category={calc.categoryLabel} currentSlug={slug} />
 
             {/* Editorial review appears after the tool and supporting information. */}
-            <CalculatorReviewBadge category={calc.category} className="border-t border-slate-200 dark:border-dark-border pt-5" />
+            <CalculatorReviewBadge category={calc.category} calculatorSlug={calc.slug} className="border-t border-slate-200 dark:border-dark-border pt-5" />
           </div>
 
           {/* Sidebar Area (1/4 width) */}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { blogData } from "../data/blogData";
+import { getAuthorBySlug, getAuthorForCategory } from "../data/authorsData";
 import { blogKeywords } from "../data/keywords";
 import BlogCard from "../components/BlogCard";
 import BlogFilterBar from "../components/BlogFilterBar";
@@ -37,12 +38,12 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
     : "Landscape & Calculation Guides Blog - Infinix Calculator";
 
   // Google Search Central directive: Block search queries (q), category filters, pagination, and alternative sort orders from indexation to prevent duplicate content bloat
-  const hasFilterOrQuery = Boolean(q) || Boolean(category && category !== "All") || (params.sort && params.sort !== "newest") || page > 1;
+  const hasFilterOrQuery = Boolean(q) || Boolean(category && category !== "All") || Boolean(params.author && params.author !== "All") || (params.sort && params.sort !== "newest") || page > 1;
   const shouldIndex = !hasFilterOrQuery;
 
   return {
     title: pageTitle,
-    description: "Read detailed guides, mathematical breakdowns, material estimating instructions, and calculator advice from our landscape and finance experts.",
+    description: "Read Infinix editorial guides, mathematical breakdowns, material estimates, and calculator explanations across finance, construction, and other planning topics.",
     keywords: blogKeywords,
     alternates: {
       canonical: canonicalUrl,
@@ -68,7 +69,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const selectedSort = params.sort || "newest";
   const currentPage = Math.max(1, parseInt(params.page || "1", 10));
 
-  const allPosts = Object.values(blogData);
+  const allPosts = Object.values(blogData).map((post) => {
+    const author = post.authorSlug ? getAuthorBySlug(post.authorSlug) : getAuthorForCategory(post.category);
+    return { ...post, author: author.name, authorSlug: author.slug };
+  });
 
   // Derive unique categories and authors dynamically
   const categories = ["All", ...Array.from(new Set(allPosts.map((p) => p.category).filter(Boolean)))];
@@ -85,7 +89,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   });
 
   // Apply filtering
-  let filtered = allPosts.filter((post) => {
+  const filtered = allPosts.filter((post) => {
     if (selectedCategory !== "All" && post.category.toLowerCase() !== selectedCategory.toLowerCase()) {
       return false;
     }
@@ -147,7 +151,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             Featured Guides &amp; Articles
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-            In-depth guides, calculation breakdowns, and expert estimating advice across finance, construction, landscaping, and business tools.
+            In-depth guides and calculation breakdowns across finance, construction, landscaping, and business tools.
           </p>
         </div>
 
@@ -199,10 +203,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
                 <div className="mt-8 pt-6 border-t border-slate-100 dark:border-dark-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <Link
-                    href={`/authors/${featuredPost.authorSlug || 'david-miller'}`}
+                    href={`/authors/${featuredPost.authorSlug}`}
                     className="text-xs text-slate-500 dark:text-slate-400 font-semibold hover:text-primary transition-colors"
                   >
-                    By {featuredPost.author}
+                    Editorial: {featuredPost.author}
                   </Link>
                   <div className="flex gap-4 items-center">
                     <Link

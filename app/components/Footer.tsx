@@ -32,7 +32,7 @@ export default function Footer() {
 
   const legalLinks = [
     { name: "Editorial Policy", href: "/editorial-policy" },
-    { name: "Terms of Service", href: "/terms" },
+    { name: "Terms and Conditions", href: "/terms" },
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Disclaimer", href: "/disclaimer" },
   ];

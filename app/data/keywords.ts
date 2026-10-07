@@ -231,7 +231,7 @@ export const expandedSuiteKeywords: string[] = [
 ];
 
 export const gscTopQueriesKeywords: string[] = [
-  "mortgagecalculatorgame", "mortgage calculator game", "mortgage calculator games", "mortage calculator games", "morgage calculator game", "mortage calculater games", "mortgage calculator games football", "mortgage calculator games f1", "mortgage calculator juegos", "mortgage calc games", "mortgage calculator game simulator", "mortgage game simulator", "mortgage calculator games unblocked", "mortgage calculator games unblocked 76", "mortgage calculator online game", "how to beat mortgage calculator game", "homebuying simulation game", "mortgage calculator games classroom",
+  "mortgage calculator game", "mortgage calculator games", "mortgage calculator game simulator", "mortgage game simulator", "mortgage payoff simulator", "extra payment mortgage simulator", "mortgage calculator games classroom",
   "lsat", "how long is the lsat", "lsat raw score converter", "lsat raw score conversion", "lsat score predictor", "lsat score calculator", "lsat raw score calculator", "calculate lsat score", "score conversion lsat", "what is an elite lsat score",
   "aesthetic calculator online free", "pink online calculator", "pink calculator online", "tan inverse formula", "calculator aesthetic online", "aesthetic calculator website", "aesthetic online calculator", "aesthetic calculator online", "pink calculator", "cute calculator", "calculator pink online",
   "avalara 94105 sales tax", "avalara sales tax calculator", "avalara tax calculator", "avalara 94105 sales tax rate", "avalara tax rate lookup", "avalara sales tax", "sales tax calculator avalara", "avalara tax rates", "avalara sales tax by state", "avalara sales tax lookup", "avalara sales tax calculator by address", "avalara us sales tax calculator", "avalara avatax pricing", "avalara sales tax rate 15204", "avalara sales tax rate lookup", "avalara calculator", "avalara pricing", "avatax pricing", "avalara tax rate calculator", "avalara sales tax pricing", "avalara tax calculator by address", "avalara 94105 sales tax rate 2026", "94105 sales tax rate avalara", "avalara sales tax rates", "avalara sales tax lookup by address", "how much does avalara cost",
@@ -287,29 +287,16 @@ export const pinkAestheticKeywords: string[] = [
 
 export const mortgageGameKeywords: string[] = [
   "mortgage calculator games",
-  "mortgagecalculatorgame",
   "mortgage calculator game",
-  "mortage calculator games",
-  "morgage caculator games",
-  "morgage calculator games",
-  "mortage calculater games",
-  "mortage calculator game",
-  "mortgage calculater games",
-  "morgage calculator game",
-  "morgagecalculator games",
-  "mortgage calculatorgame",
-  "mortgage calculator games f1",
-  "mortgage calculator games soccer",
-  "mortgage calculator games drift",
-  "mortgage calculator games car",
-  "mortgage calculator unblocked games",
-  "games on mortgage calculator",
-  "formula racer mortgage calculator",
-  "formula racers mortgage calculator",
-  "mortgage calculator juegos",
-  "interactive mortgage calculator games",
+  "mortgage calculator game simulator",
+  "mortgage calculator games classroom",
+  "interactive mortgage simulator",
   "mortgage simulator game",
-  "home loan games"
+  "mortgage payoff simulator",
+  "extra payment mortgage calculator game",
+  "extra payment mortgage simulator",
+  "15 vs 30 year mortgage comparison",
+  "rental portfolio simulation"
 ];
 
 export const groutTileKeywords: string[] = [
@@ -348,7 +335,7 @@ export const searchConsoleEnrichedKeywords: string[] = [
   "therapy productivity calculator with lunch", "therapist productivity calculator", "productivity calculator with lunch break", "pt productivity calculator", "physical therapy productivity calculator", "ot productivity calculator", "pta productivity calculator",
   "affirm monthly payment calculator", "affirm interest calculator", "affirm estimate payment", "affirm down payment calculator", "affirm financing calculator", "affirm price calculator", "free affirm calculator for customers",
   "asphalt driveway cost calculator", "asphalt parking lot cost calculator", "tar and chip driveway cost calculator", "cost estimate for asphalt paving", "asphalt driveway estimate", "asphalt cost calculator",
-  "shingle calculator", "roof shingle calculator", "roof shingle estimator", "calculating roof shingles", "shingles roofing calculator", "shingle square calculator", "shingle replacement calculator",
+  "shingle calculator", "roof shingle calculator", "roof shingle estimator", "calculating roof shingles", "shingles roofing calculator", "shingle square calculator", "shingle replacement calculator", "best asphalt shingles", "asphalt shingle brands", "compare roofing shingles", "roof shingle warranty", "asphalt shingle lifespan", "why shingles blow off", "roof replacement inspection checklist", "roof tear off vs overlay", "how many layers of shingles can be installed",
   "no vig calculator", "no vig fair odds calculator", "novig calculator", "no vig odds calculator", "no vig betting odds calculator",
   "529 calculator", "529 growth calculator", "529 plan growth calculator", "529 college savings plan calculator",
   "google review calculator", "5 star review calculator", "5 star rating calculator", "google 5 star review calculator", "how many google reviews do i need to increase my rating"
@@ -566,6 +553,20 @@ export const blogKeywords: string[] = [
   "calculating material costs",
   "square transaction breakdown",
   "buy now pay later comparison"
+];
+
+export const buildersRiskInsuranceKeywords: string[] = [
+  "builders risk insurance cost calculator",
+  "how much does builders risk insurance cost",
+  "builders risk insurance rate per 1000",
+  "builders risk insurance minimum premium",
+  "new construction vs renovation insurance cost",
+  "course of construction insurance cost",
+  "builders risk insurance for new construction",
+  "builders risk insurance requirements for construction loan",
+  "how to lower builders risk insurance premium",
+  "builders risk insurance deductible",
+  "builders risk insurance term length"
 ];
 
 /**

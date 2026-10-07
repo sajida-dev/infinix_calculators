@@ -1,65 +1,66 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
+
+const ADSENSE_CLIENT_ID = "ca-pub-3431842904505869";
+type IdleCallback = (callback: () => void, options?: { timeout?: number }) => number;
+type BrowserWindow = Window & {
+  gtag?: (...args: unknown[]) => void;
+  adsbygoogle?: unknown[];
+  requestIdleCallback?: IdleCallback;
+  cancelIdleCallback?: (handle: number) => void;
+};
 
 export default function ThirdPartyScripts() {
+  const pathname = usePathname();
+  const isFirstRender = useRef(true);
+
+  // Re-fire page_view on every client-side route change — gtag.js only auto-tracks
+  // the hard initial load, so App Router navigations were never being recorded.
+  // Skip the first render: gtag('config', ...) below already sends that page_view.
   useEffect(() => {
-    let initialized = false;
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    const browserWindow = window as BrowserWindow;
+    if (typeof browserWindow.gtag !== "function") return;
+    browserWindow.gtag("event", "page_view", {
+      page_path: pathname,
+      page_location: window.location.href,
+    });
+  }, [pathname]);
 
-    const loadScripts = () => {
-      if (initialized) return;
-      initialized = true;
+  // Load AdSense as soon as the browser is idle after first paint, independent of user
+  // interaction (ads must render for users who never interact), moved out of <head> to
+  // avoid blocking the critical rendering path.
+  useEffect(() => {
+    if (!document.querySelector(".adsbygoogle")) return;
+    if (document.querySelector('script[src*="adsbygoogle.js"]')) return;
 
-      // Clean up gesture event listeners once loaded
-      events.forEach((evt) => {
-        window.removeEventListener(evt, loadScripts);
-      });
-
-      // 1. Load Google Tag Manager / Analytics (Non-blocking async)
-      try {
-        const gaScript = document.createElement("script");
-        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-7NSE8Q4RBL";
-        gaScript.async = true;
-        document.head.appendChild(gaScript);
-
-        (window as any).dataLayer = (window as any).dataLayer || [];
-        function gtag(...args: any[]) {
-          (window as any).dataLayer.push(args);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-7NSE8Q4RBL", {
-          page_path: window.location.pathname,
-          client_storage: "none",
-        });
-      } catch (err) {
-        console.error("Analytics load error:", err);
-      }
+    let idleId: number | null = null;
+    const loadAdsense = () => {
+      if (document.querySelector('script[src*="adsbygoogle.js"]')) return;
+      const adScript = document.createElement("script");
+      adScript.async = true;
+      adScript.crossOrigin = "anonymous";
+      adScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`;
+      document.head.appendChild(adScript);
     };
 
-    // Load upon first high-intent user interaction or when CPU is truly idle
-    const events = ["pointerdown", "touchstart", "keydown", "click"];
-    events.forEach((evt) => {
-      window.addEventListener(evt, loadScripts, { passive: true, once: true });
-    });
-
-    // Fallback: If user performs no direct interaction, load during idle time after page stability
-    let idleId: any = null;
-    const timer = setTimeout(() => {
-      if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-        idleId = (window as any).requestIdleCallback(loadScripts, { timeout: 3000 });
-      } else {
-        loadScripts();
-      }
-    }, 6000);
+    const browserWindow = window as BrowserWindow;
+    if (typeof browserWindow.requestIdleCallback === "function") {
+      idleId = browserWindow.requestIdleCallback(loadAdsense, { timeout: 2000 });
+    } else {
+      const t = setTimeout(loadAdsense, 300);
+      return () => clearTimeout(t);
+    }
 
     return () => {
-      clearTimeout(timer);
-      if (idleId && typeof window !== "undefined" && "cancelIdleCallback" in window) {
-        (window as any).cancelIdleCallback(idleId);
+      if (idleId !== null && typeof browserWindow.cancelIdleCallback === "function") {
+        browserWindow.cancelIdleCallback(idleId);
       }
-      events.forEach((evt) => {
-        window.removeEventListener(evt, loadScripts);
-      });
     };
   }, []);
 

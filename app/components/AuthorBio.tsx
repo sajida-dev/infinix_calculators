@@ -14,7 +14,7 @@ export default function AuthorBio({ authorSlug, category, className = "" }: Auth
     ? getAuthorBySlug(authorSlug)
     : category
       ? getAuthorForCategory(category)
-      : getAuthorBySlug("david-miller");
+      : getAuthorBySlug();
 
   return (
     <div className={`rounded-2xl border border-slate-200 dark:border-dark-border bg-slate-50/70 dark:bg-dark-card/60 p-5 sm:p-6 transition-colors ${className}`}>
@@ -24,7 +24,7 @@ export default function AuthorBio({ authorSlug, category, className = "" }: Auth
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-slate-200 dark:border-dark-border group-hover:border-primary transition-colors">
             <Image
               src={author.avatar}
-              alt={author.name}
+              alt="Infinix Calculators brand mark"
               width={64}
               height={64}
               className="w-full h-full object-cover object-center"
@@ -37,7 +37,7 @@ export default function AuthorBio({ authorSlug, category, className = "" }: Auth
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-0.5">
-                Written by
+                Editorial contact
               </span>
               <Link href={`/authors/${author.slug}`} className="group">
                 <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">

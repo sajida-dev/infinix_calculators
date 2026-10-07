@@ -1,5 +1,6 @@
 import * as Faqs from "./faqs";
-import { grossUpKeywords, tanInverseKeywords, pinkAestheticKeywords, mortgageGameKeywords, groutTileKeywords, searchConsoleEnrichedKeywords, expandedSuiteKeywords, electricKeywords } from "./keywords";
+import { calculateMortgagePayoff } from "../lib/mortgageSimulation";
+import { grossUpKeywords, tanInverseKeywords, pinkAestheticKeywords, mortgageGameKeywords, groutTileKeywords, searchConsoleEnrichedKeywords, expandedSuiteKeywords, electricKeywords, buildersRiskInsuranceKeywords } from "./keywords";
 export interface CalculatorInput {
   id: string;
   label: string;
@@ -307,9 +308,9 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Affirm Calculator",
     category: "financial",
     categoryLabel: "Financial Calculators",
-    seoTitle: "Affirm Payment Calculator: Monthly Payments, APR & Pay in 4",
+    seoTitle: "Affirm Calculator - Free Instant Monthly Payment & Pay-in-4 Estimate",
     brandDisclaimer: "This calculator is an independent estimation tool and is not affiliated with, sponsored by, or endorsed by Affirm, Inc. All product trademarks belong to their respective owners.",
-    metaDescription: "Estimate Affirm monthly payments, Pay in 4 installments, interest cost, down payment, and total paid. Compare 0% APR and interest-bearing payment scenarios before checkout.",
+    metaDescription: "Enter your purchase price and term to instantly estimate Affirm monthly payments, Pay in 4 installments, interest cost, and total paid — free, no signup, no login required.",
     keywords: [
       "affirm calculator",
       "affirm payment calculator",
@@ -546,7 +547,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       "shingles roof calculator",
       "figuring shingles",
       "calculating shingles",
-      "roof estimate calculator"
+      "roof estimate calculator",
+      "best asphalt shingles",
+      "asphalt shingle brands",
+      "compare roofing shingles",
+      "roof shingle warranty",
+      "asphalt shingle lifespan",
+      "why shingles blow off",
+      "roof replacement inspection checklist",
+      "roof tear off vs overlay",
+      "how many layers of shingles can be installed"
     ],
     hook: "Estimate Roof Area & Shingle Bundles in Seconds.",
     description: "Input house length, width, overhangs, pitch slope, shingle cost, and waste factor to estimate roof area and shingles needed.",
@@ -743,7 +753,7 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     category: "health",
     categoryLabel: "Health & Fitness Tools",
     seoTitle: "BMI Calculator - Calculate Body Mass Index",
-    metaDescription: "Free online BMI calculator. Calculate your Body Mass Index (BMI) instantly.",
+    metaDescription: "Free BMI calculator using height and weight. Get your Body Mass Index, weight category, and healthy-range context based on WHO adult screening standards.",
     keywords: ["bmi calculator", "body mass index calculator"],
     hook: "Calculate Your Body Mass Index & Health Category Instantly.",
     description: "Enter height and weight to assess your body composition based on World Health Organization standards.",
@@ -789,7 +799,19 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Financial Calculators",
     seoTitle: "HECM Calculator - Reverse Mortgage Payout Estimator",
     metaDescription: "Calculate Home Equity Conversion Mortgage (HECM) borrow limits. Estimate payouts based on home value, age, and mortgage balances.",
-    keywords: ["hecm calculator", "reverse mortgage calculator", "hud limit estimator"],
+    keywords: [
+      "hecm calculator",
+      "reverse mortgage calculator",
+      "hud limit estimator",
+      "hecm for purchase calculator",
+      "hecm loan calculator",
+      "fha reverse mortgage calculator",
+      "reverse mortgage purchase calculator",
+      "hecm reverse mortgage calculator",
+      "reverse mortgage for purchase calculator",
+      "reverse mortgage purchase down payment calculator",
+      "home equity conversion mortgage calculator"
+    ],
     hook: "Estimate Your Reverse Mortgage Borrowing Limit.",
     description: "Model FHA HECM proceeds based on age thresholds and appraisal valuation.",
     calcTime: "2 mins",
@@ -834,7 +856,15 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Financial Calculators",
     seoTitle: "HELOC Payoff Calculator - Principal & Interest Planner",
     metaDescription: "Calculate Home Equity Line of Credit (HELOC) payment changes. Plan principal repayment timelines to avoid balloon payments.",
-    keywords: ["heloc payoff calculator", "heloc interest calculator", "home equity line payoff"],
+    keywords: [
+      "heloc payoff calculator",
+      "heloc interest calculator",
+      "home equity line payoff",
+      "heloc to pay off mortgage calculator",
+      "home equity line of credit payoff calculator",
+      "interest only heloc calculator",
+      "heloc interest only calculator"
+    ],
     hook: "Map Your HELOC Repayment & Payoff Milestones.",
     description: "Determine interest-only payments during draw periods and subsequent fully amortizing rates.",
     calcTime: "2 mins",
@@ -1045,9 +1075,9 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Avalara Sales Tax Calculator",
     category: "tax",
     categoryLabel: "Tax & Payroll Calculators",
-    seoTitle: "Avalara Sales Tax Calculator: ZIP Code Rate & Total Price Estimate",
+    seoTitle: "Avalara Sales Tax Calculator - Free Instant ZIP Code Rate Lookup",
     brandDisclaimer: "This calculator is an independent reference tool for calculating combined sales tax estimates. It is not affiliated with, sponsored by, or endorsed by Avalara, Inc.",
-    metaDescription: "Estimate sales tax by ZIP code, calculate tax-inclusive checkout totals, or reverse sales tax from a total. Review the rate before purchase because local rates can change.",
+    metaDescription: "Enter a ZIP code for an instant combined state + local sales tax rate, a tax-inclusive checkout total, or a reverse tax breakdown — free, no signup required.",
     keywords: [
       "avalara sales tax calculator",
       "avalara tax calculator",
@@ -1177,7 +1207,18 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Tax & Payroll Calculators",
     seoTitle: "Reverse Tax Calculator - Extract Base Price & Sales Tax",
     metaDescription: "Extract the original base price and tax portions from any retail gross total invoice. Instant breakdowns by rate.",
-    keywords: ["reverse tax calculator", "extract sales tax", "vat deduction finder"],
+    keywords: [
+      "reverse tax calculator",
+      "extract sales tax",
+      "vat deduction finder",
+      "reverse calculator tax",
+      "tax calculator reverse",
+      "tax reverse calculation",
+      "reverse calculation of service tax",
+      "calculation service tax reverse charge basis",
+      "inverse tax calculator",
+      "calculate reverse tax"
+    ],
     hook: "Extract Sales Tax & Base Price from Receipt Totals.",
     description: "Input receipt totals to find exactly how much was tax and how much was the product base cost.",
     calcTime: "1 min",
@@ -1214,7 +1255,19 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Tax & Payroll Calculators",
     seoTitle: "Georgia Payroll Calculator - Net Paycheck Estimator",
     metaDescription: "Calculate Georgia state payroll tax withholdings and net check sizes. Accounts for GA state brackets, federal deductions, and FICA.",
-    keywords: ["georgia payroll calculator", "ga paycheck calculator", "state payroll estimator"],
+    keywords: [
+      "georgia payroll calculator",
+      "ga paycheck calculator",
+      "state payroll estimator",
+      "georgia payroll tax calculator",
+      "paycheck calculator georgia",
+      "ga pay calculator",
+      "payroll calculator ga",
+      "paycheck calculator ga",
+      "georgia paycheck calculator hourly",
+      "georgia paycheck calculator",
+      "payroll calculator georgia"
+    ],
     hook: "Estimate Georgia State Paychecks & Deductions.",
     description: "Determine GA withholding, federal income tax, social security, and final check payouts.",
     calcTime: "2 mins",
@@ -1599,7 +1652,14 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Construction & Materials",
     seoTitle: "Mulch Calculator - Estimate Cubic Yards & Landscape Soil",
     metaDescription: "Calculate yard mulch volumes in cubic yards and standard bags. Input bed dimensions to plan landscape yard details.",
-    keywords: ["mulch calculator", "mulch estimator", "landscaping mulch yards"],
+    keywords: [
+      "mulch calculator",
+      "mulch estimator",
+      "landscaping mulch yards",
+      "mulch calculation",
+      "playground mulch calculator",
+      "how to calculate yards of mulch"
+    ],
     hook: "Calculate Mulch Volume & Bag Counts for Flower Beds.",
     description: "Determine cubic yards of mulch and bag packages for plant beds and ground covers.",
     calcTime: "1 min",
@@ -1639,7 +1699,13 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Construction & Materials",
     seoTitle: "Drywall Calculator - Wall Sheets, Tape & Compound",
     metaDescription: "Estimate drywall sheet counts (4x8 or 4x12) and screw requirements for wall and ceiling framing layouts.",
-    keywords: ["drywall calculator", "sheetrock calculator", "wall board estimator"],
+    keywords: [
+      "drywall calculator",
+      "sheetrock calculator",
+      "wall board estimator",
+      "gypsum board calculator",
+      "drywall material calculator"
+    ],
     hook: "Calculate Sheetrock Boards & Framing Mud.",
     description: "Calculate drywall panel requirements, screws, joint compounds, and tape budgets.",
     calcTime: "2 mins",
@@ -1689,7 +1755,18 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Construction & Materials",
     seoTitle: "Fence Cost Calculator - Post, Rail, & Picket Estimator",
     metaDescription: "Estimate fencing materials and project pricing. Calculate total posts, rails, pickets, and fasteners needed.",
-    keywords: ["fence cost calculator", "wood fence estimator", "fencing builder planner"],
+    keywords: [
+      "fence cost calculator",
+      "wood fence estimator",
+      "fencing builder planner",
+      "aluminum fence cost calculator",
+      "post and rail fence cost calculator",
+      "fence cost estimator",
+      "fencing material calculator",
+      "picket fence cost estimator",
+      "fence pricing calculator",
+      "slipfence cost calculator"
+    ],
     hook: "Calculate Fencing Materials & Installation Budgets.",
     description: "Determine wood or vinyl fence posts, rails, picket spacing, and average construction costs.",
     calcTime: "2 mins",
@@ -2787,43 +2864,19 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     name: "Mortgage Calculator Game",
     category: "education",
     categoryLabel: "Education & GPA",
-    seoTitle: "Mortgage Calculator Games: Play Free F1 Racing & Home Loan Challenges",
-    metaDescription: "Play free mortgage calculator games with F1-style racing, home-loan choices, and 15-vs-30-year payment challenges. See how interest and extra payments change a loan.",
-    keywords: [
-      "mortgage calculator games",
-      "mortgage calculator game",
-      "mortgagecalculatorgame",
-      "mortage calculator games",
-      "morgage caculator games",
-      "morgage calculator games",
-      "mortage calculater games",
-      "mortage calculator game",
-      "mortgage calculater games",
-      "morgage calculator game",
-      "morgagecalculator games",
-      "mortgage calculatorgame",
-      "mortgage calculator games f1",
-      "mortgage calculator games soccer",
-      "mortgage calculator games drift",
-      "mortgage calculator games car",
-      "mortgage calculator unblocked games",
-      "games on mortgage calculator",
-      "formula racer mortgage calculator",
-      "formula racers mortgage calculator",
-      "mortgage game simulator",
-      "interactive mortgage simulator",
-      "extra payment mortgage calculator game"
-    ],
-    hook: "Play the extra payment challenge to save thousands in interest.",
-    description: "Input mortgage details and model custom extra monthly payments to calculate your financial Savings Score.",
+    seoTitle: "Mortgage Calculator Games - Free Payoff & Portfolio Simulator",
+    metaDescription: "Try free mortgage calculator games: compare extra payments, 15- vs. 30-year loans, and a fictional rental portfolio. See payoff estimates with no signup.",
+    keywords: mortgageGameKeywords,
+    hook: "Compare mortgage payoff choices and explore a fictional rental portfolio.",
+    description: "Estimate principal-and-interest payments, extra-payment savings, and 15- versus 30-year loan costs. Educational simulation, not a racing game or lender quote.",
     calcTime: "2 mins",
     formula: "P&I = P × [r(1+r)^n] ÷ [(1+r)^n - 1]; Score = (Interest Saved ÷ Base Interest) × 1000",
-    formulaDescription: "Simulates mortgage amortization month-by-month and calculates savings multipliers based on extra cash payments.",
-    example: "Adding $150/mo to a standard 30-year mortgage saves $36,000 and scores a 280 point Savings rating.",
+    formulaDescription: "Uses monthly amortization at a fixed annual rate. At 0% APR, payment equals principal divided by months and the interest Savings Score is zero. Taxes, insurance, fees, and penalties are excluded.",
+    example: "A $360,000 loan at 0% APR over 30 years costs $1,000/month in principal. Adding $1,000/month pays it off in 15 years, with no interest savings.",
     faqs: Faqs.mortgageCalculatorGameFaqs || [],
     commonMistakes: ["Failing to confirm whether your mortgage lender charges pre-payment penalty fees."],
     useCases: ["Financial literacy training", "Mortgage payoff optimization planning"],
-    tips: ["Making a single extra mortgage payment each year can shave 4-5 years off your loan term."],
+    tips: ["Confirm that extra payments are applied to principal, and check lender fees and prepayment rules. Savings depend on your balance, rate, term, and payment timing."],
     inputs: [
       { id: "homePrice", label: "Home Purchase Price ($)", type: "number", defaultValue: 300000, unit: "$" },
       { id: "downPayment", label: "Down Payment ($)", type: "number", defaultValue: 60000, unit: "$" },
@@ -2832,46 +2885,26 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
       { id: "extraPayment", label: "Extra Monthly Payment ($)", type: "number", defaultValue: 150, unit: "$" }
     ],
     calculate: (inputs): Record<string, { value: string | number; label: string; unit?: string }> => {
-      const price = Number(inputs.homePrice || 0);
-      const down = Number(inputs.downPayment || 0);
-      const rate = Number(inputs.rate || 6.5);
-      const term = Number(inputs.term || 30);
-      const extra = Number(inputs.extraPayment || 0);
-
-      const principal = price - down;
-      const r = (rate / 100) / 12;
-      const n = term * 12;
-
-      if (r <= 0 || n <= 0 || principal <= 0) {
+      const price = Number(inputs.homePrice ?? 0);
+      const down = Number(inputs.downPayment ?? 0);
+      if (!Number.isFinite(price) || !Number.isFinite(down) || down < 0) {
         return { error: { value: "Invalid Inputs", label: "Please check inputs." } };
       }
-
-      const monthlyBase = (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-      const normalInterest = (monthlyBase * n) - principal;
-
-      let monthsWithExtra = 0;
-      let remaining = principal;
-      let interestWithExtra = 0;
-
-      while (remaining > 0 && monthsWithExtra < 600) {
-        const interest = remaining * r;
-        interestWithExtra += interest;
-        const payment = Math.min(remaining + interest, monthlyBase + extra);
-        remaining = remaining + interest - payment;
-        monthsWithExtra++;
+      try {
+        const result = calculateMortgagePayoff(
+          price - down, Number(inputs.rate ?? 6.5),
+          Number(inputs.term ?? 30), Number(inputs.extraPayment ?? 0),
+        );
+        return {
+          normalMonthly: { value: result.monthlyPayment.toFixed(2), label: "Normal Monthly Payment (P&I)", unit: "$" },
+          normalTotalInterest: { value: result.baseInterest.toFixed(2), label: "Total Base Interest Cost", unit: "$" },
+          interestSaved: { value: result.interestSaved.toFixed(2), label: "Interest Cash Saved", unit: "$" },
+          yearsSaved: { value: result.yearsSaved.toFixed(1), label: "Years Cut Off Loan Term", unit: "years" },
+          gameScore: { value: result.score, label: "Your Savings Score", unit: "pts" }
+        };
+      } catch {
+        return { error: { value: "Invalid Inputs", label: "Please check inputs." } };
       }
-
-      const savedInterest = normalInterest - interestWithExtra;
-      const yearsSaved = (n - monthsWithExtra) / 12;
-      const score = normalInterest > 0 ? (savedInterest / normalInterest) * 1000 : 0;
-
-      return {
-        normalMonthly: { value: monthlyBase.toFixed(2), label: "Normal Monthly Payment (P&I)", unit: "$" },
-        normalTotalInterest: { value: normalInterest.toFixed(2), label: "Total Base Interest Cost", unit: "$" },
-        interestSaved: { value: Math.max(0, savedInterest).toFixed(2), label: "Interest Cash Saved", unit: "$" },
-        yearsSaved: { value: Math.max(0, yearsSaved).toFixed(1), label: "Years Cut Off Loan Term", unit: "years" },
-        gameScore: { value: Math.round(score), label: "Your Savings Score (Beat the Bank!)", unit: "pts" }
-      };
     }
   },
   // 23. Wedding Alcohol
@@ -3010,7 +3043,13 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Construction & Materials",
     seoTitle: "Pond Liner Calculator - Sheet Dimensions & Area Finder",
     metaDescription: "Calculate required pond liner sheet lengths, widths, and total square footage. Accounts for depth and border overlap zones.",
-    keywords: ["pond liner calculator", "pond sheet size estimator", "liner dimensions"],
+    keywords: [
+      "pond liner calculator",
+      "pond sheet size estimator",
+      "liner dimensions",
+      "pond liner size calculator",
+      "how much pond liner do i need"
+    ],
     hook: "Calculate liner sheet requirements for garden ponds.",
     description: "Input pond length, width, and depth to figure out the exact liner sheet dimensions you need to order.",
     calcTime: "1 min",
@@ -4501,7 +4540,20 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Construction & Materials",
     seoTitle: "Laticrete Grout Weight & Coverage Calculator - Tile Joint Estimator",
     metaDescription: "Calculate the weight of Laticrete grout needed for tiling. Inputs tile dimensions, joint width, and total area.",
-    keywords: ["laticrete grout calculator", "grout weight calculator", "tile grout coverage estimator", "how much grout do i need"],
+    keywords: [
+      "laticrete grout calculator",
+      "grout weight calculator",
+      "tile grout coverage estimator",
+      "how much grout do i need",
+      "laticrete calculator",
+      "laticrete epoxy grout calculator",
+      "laticrete grout calculator square feet",
+      "grout calculator laticrete",
+      "mapei grout calculator",
+      "mapei calculator",
+      "mapei epoxy grout calculator",
+      "mapei grout calculator square feet"
+    ],
     hook: "Estimate grout weights and joint volumes instantly.",
     description: "Input tile length, width, thickness, and joint width to calculate the grout bags required for construction layouts.",
     calcTime: "2 mins",
@@ -4852,7 +4904,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Financial Calculators",
     seoTitle: "ARM Mortgage Calculator - Adjustable Rate Loan Estimator",
     metaDescription: "Estimate monthly payments for Adjustable Rate Mortgages (ARM). Compare initial fixed-rate payments with worst-case lifetime caps.",
-    keywords: ["arm mortgage calculator", "adjustable rate mortgage calculator", "5/1 arm calculator", "hybrid arm payments"],
+    keywords: [
+      "arm mortgage calculator",
+      "adjustable rate mortgage calculator",
+      "5/1 arm calculator",
+      "hybrid arm payments",
+      "arm calculator",
+      "arm payment calculator",
+      "calculate arm mortgage payment",
+      "how to calculate fully indexed rate"
+    ],
     hook: "Calculate initial and worst-case payments for ARMs.",
     description: "Input initial loan amounts, teaser interest rates, fixed periods, and lifetime caps to estimate future mortgage volatility.",
     calcTime: "2 mins",
@@ -4977,7 +5038,16 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Construction & Materials",
     seoTitle: "Tile Sq Ft Calculator - Tile Quantity & Waste Estimator",
     metaDescription: "Calculate the exact number of tiles and boxes needed for floors or backsplashes. Accounts for tile dimensions and custom waste factors.",
-    keywords: ["tile sq ft calculator", "how many tiles do i need", "tile area calculator", "floor tile coverage estimator"],
+    keywords: [
+      "tile sq ft calculator",
+      "how many tiles do i need",
+      "tile area calculator",
+      "floor tile coverage estimator",
+      "tile square footage calculator",
+      "square footage calculator tile",
+      "tile overage calculator",
+      "tile calculator for square feet"
+    ],
     hook: "Calculate tiles and boxes needed for any flooring layout.",
     description: "Input room dimensions and tile sizing parameters to instantly calculate raw tile count, waste buffers, and total boxes to order.",
     calcTime: "2 mins",
@@ -5344,7 +5414,22 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Financial Calculators",
     seoTitle: "Builders Risk Insurance Cost Calculator - Construction Coverage Estimator",
     metaDescription: "Estimate builders risk insurance premiums for residential or commercial construction projects. Quick coverage budget finder.",
-    keywords: ["builders risk insurance cost calculator", "construction insurance cost", "builders risk premium finder", "renovation insurance calculator"],
+    keywords: [
+      "builders risk insurance cost calculator",
+      "construction insurance cost",
+      "builders risk premium finder",
+      "renovation insurance calculator",
+      "builders risk insurance cost",
+      "average cost of builders risk insurance",
+      "cost of builders risk insurance",
+      "builders risk insurance cost estimate",
+      "builder's risk insurance cost",
+      "how much does builders risk insurance cost",
+      "builders risk insurance average cost",
+      "how much is builders risk insurance",
+      "builders risk insurance policy cost",
+      ...buildersRiskInsuranceKeywords
+    ],
     hook: "Calculate construction builders risk insurance premiums.",
     description: "Input construction budget, project length, and risk factor to estimate total policy pricing.",
     calcTime: "1 min",
@@ -5451,7 +5536,21 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Math & Business Productivity",
     seoTitle: "Commercial Printing Cost & Pricing Calculator",
     metaDescription: "Estimate custom commercial printing costs and retail pricing for booklets, catalogs, and brochures. Adjust for paper, color, and binding.",
-    keywords: ["printing calculator", "booklet printing cost", "print shop pricing calculator", "print markup estimator"],
+    keywords: [
+      "printing calculator",
+      "booklet printing cost",
+      "print shop pricing calculator",
+      "print markup estimator",
+      "printing cost calculator",
+      "print quote calculator",
+      "print cost per page calculator",
+      "printer cost per page calculator",
+      "calculate printing cost",
+      "printing price calculator",
+      "printing costs calculator",
+      "printing quote calculator",
+      "calculate printing costs"
+    ],
     hook: "Calculate commercial printing job costs and client pricing.",
     description: "Input paper specifications, binding styles, and print quantities to compute production costs and recommended customer price points.",
     calcTime: "2 mins",
@@ -6887,7 +6986,22 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Construction & Materials",
     seoTitle: "Asphalt Driveway Cost Calculator - Paving Materials & Labor Estimator",
     metaDescription: "Calculate total asphalt driveway paving costs, square footage, and required asphalt tonnage for new installs or replacements.",
-    keywords: ["asphalt driveway cost calculator", "asphalt cost calculator", "driveway paving cost", "asphalt tonnage calculator"],
+    keywords: [
+      "asphalt driveway cost calculator",
+      "asphalt cost calculator",
+      "driveway paving cost",
+      "asphalt tonnage calculator",
+      "asphalt driveway calculator",
+      "asphalt driveway estimate",
+      "asphalt cost",
+      "cost estimate for asphalt paving",
+      "tar and chip driveway cost calculator",
+      "driveway cost calculator",
+      "paving cost calculator",
+      "asphalt paving cost calculator",
+      "asphalt vs concrete driveway cost calculator",
+      "asphalt parking lot cost calculator"
+    ],
     hook: "Estimate total paving costs, asphalt tons, and base gravel required for your driveway.",
     description: "Calculate total driveway square footage, tons of hot mix asphalt required (based on compacted thickness), and estimated professional paving job cost.",
     calcTime: "2 mins",
@@ -7190,7 +7304,17 @@ export const calculatorsData: Record<string, CalculatorInfo> = {
     categoryLabel: "Financial Calculators",
     seoTitle: "Money Market Interest Calculator - Account Yield & Growth Planner",
     metaDescription: "Calculate money market account (MMA) interest earnings, compounding growth, and ending balance with monthly deposits.",
-    keywords: ["money market rate calculator", "money market interest calculator", "mma yield calculator", "money market account calculator"],
+    keywords: [
+      "money market rate calculator",
+      "money market interest calculator",
+      "mma yield calculator",
+      "money market account calculator",
+      "money market calculator",
+      "how to calculate money market interest",
+      "mma calculator",
+      "calculate money market interest",
+      "money market accounts calculator"
+    ],
     hook: "Calculate money market account interest growth with compounding interest and monthly deposits.",
     description: "Calculate returns on Money Market Accounts (MMA). Models compound interest growth, annual percentage yield (APY), and recurring monthly contributions.",
     calcTime: "2 mins",

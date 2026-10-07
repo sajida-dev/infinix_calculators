@@ -6,10 +6,10 @@ export default function MortgageGameSeoContent() {
     <article className="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
       <div className="border-t border-slate-200 dark:border-slate-800 pt-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
-          Mastering Mortgage Math: Interactive Amortization, Racing Games &amp; Financial Simulation
+          Mortgage Payoff and Portfolio Simulation
         </h2>
         <p>
-          Mortgage calculator games and interactive simulators turn complex home loan amortization mathematics into intuitive, visual decision models. By simulating down payments, interest rate fluctuations, and extra principal prepayments through structured models and tycoon simulations, homebuyers and students can see firsthand how minor monthly adjustments save tens of thousands of dollars in lifetime interest.
+          Compare fixed-rate mortgage scenarios using a loan balance, APR, and extra monthly principal payment. The payoff estimates show how your assumptions affect interest and repayment time. The rental portfolio is a separate fictional scenario, not a lender quote or investment forecast.
         </p>
       </div>
 
@@ -19,10 +19,10 @@ export default function MortgageGameSeoContent() {
           Educational Background
         </span>
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-          Why Are Millions Searching for &quot;Mortgage Calculator Games&quot;?
+          Educational Simulations, Not Driving Games
         </h3>
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-          Over the past several years, classic personal finance websites embedded interactive games and real estate simulations alongside their loan calculators to teach students the power of compounding interest. Many students and budgeters search for terms like <strong>mortgage calculator games f1</strong>, <strong>mortgage calculator drift</strong>, and <strong>mortgage calculator unblocked games</strong> to access educational tools that visually demonstrate how extra principal payments act against 30-year compounding debt.
+          This page offers mortgage payoff, loan-term comparison, and rental-portfolio simulations. It does not host F1, Formula Racers, drift, or sports games. Access on school and workplace networks depends on their policies.
         </p>
       </div>
 
@@ -32,7 +32,7 @@ export default function MortgageGameSeoContent() {
             The Power of Extra Monthly Payments
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-            Adding just <strong>$150 to $250 per month</strong> towards your loan principal on a $380,000 30-year fixed mortgage at 6.8% interest reduces your payoff timeline by over <strong>5.5 years</strong> and saves more than <strong>$95,000 in compounding interest</strong>.
+            Extra payments reduce the outstanding balance before future monthly interest is calculated. Savings depend on the principal, rate, term, and payment timing. This model assumes a fixed rate and extra principal every month, without fees or penalties.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function MortgageGameSeoContent() {
             15-Year vs. 30-Year Loan Mechanics
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-            A 15-year fixed loan carries higher monthly obligations but drastically lowers lifetime borrowing costs. On a $400,000 loan, a 15-year term typically incurs less than <strong>half the total cumulative interest</strong> of a 30-year mortgage while building equity faster.
+            The comparison holds the principal and APR constant, with no extra payments on either term. A shorter term increases the scheduled monthly payment and reduces interest at a positive rate. Actual offers may have different rates and fees.
           </p>
         </div>
       </div>
@@ -58,9 +58,10 @@ export default function MortgageGameSeoContent() {
           <ul className="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 list-disc list-inside">
             <li><strong>M:</strong> Total monthly mortgage payment (principal + interest).</li>
             <li><strong>P:</strong> Principal loan amount (Home Purchase Price − Down Payment).</li>
-            <li><strong>r:</strong> Monthly interest rate (Annual Interest Rate / 12).</li>
+            <li><strong>r:</strong> Monthly interest rate (Annual APR Percentage / 100 / 12).</li>
             <li><strong>n:</strong> Total number of monthly payments (Loan Term in Years × 12).</li>
             <li><strong>Savings Score:</strong> Score = min(1000, (Interest Saved / Base Total Interest) × 1000).</li>
+            <li><strong>Zero APR:</strong> M = P / n; the interest Savings Score is zero.</li>
           </ul>
         </div>
       </div>
@@ -73,15 +74,15 @@ export default function MortgageGameSeoContent() {
         <div className="grid sm:grid-cols-3 gap-4 text-xs">
           <div className="p-4 rounded-xl bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-slate-800 space-y-1.5">
             <span className="font-bold text-slate-900 dark:text-slate-100 block text-sm">1. Cash Buffer First</span>
-            <p className="text-slate-600 dark:text-slate-400">Never exhaust 100% of liquid cash on down payments. Maintain at least $10,000 in emergency reserves for maintenance emergencies.</p>
+            <p className="text-slate-600 dark:text-slate-400">The fictional portfolio starts with $60,000. Buying a property deducts its preset down payment; later cash events can add or subtract funds.</p>
           </div>
           <div className="p-4 rounded-xl bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-slate-800 space-y-1.5">
             <span className="font-bold text-slate-900 dark:text-slate-100 block text-sm">2. Focus on Cash Flow</span>
-            <p className="text-slate-600 dark:text-slate-400">Choose multi-unit properties with positive net cash flows exceeding $800/month after principal, interest, taxes, and insurance.</p>
+            <p className="text-slate-600 dark:text-slate-400">Displayed cash flow is preset rent minus mortgage payments. It is not net income after taxes, insurance, vacancy, and all operating costs.</p>
           </div>
           <div className="p-4 rounded-xl bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-slate-800 space-y-1.5">
             <span className="font-bold text-slate-900 dark:text-slate-100 block text-sm">3. Equity Snowball</span>
-            <p className="text-slate-600 dark:text-slate-400">As property values appreciate and tenant rents pay down principal balances, accumulated equity can be redeployed into future assets.</p>
+            <p className="text-slate-600 dark:text-slate-400">Yearly equity gains use fictional appreciation and paydown percentages. Equity cannot be withdrawn in this simulation, and values are not forecasts.</p>
           </div>
         </div>
       </div>

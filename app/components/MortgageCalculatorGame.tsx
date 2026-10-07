@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import { calculateMortgagePayoff } from "../lib/mortgageSimulation";
 
 type GameMode = "speedrun" | "tycoon" | "quest";
 
@@ -22,59 +23,21 @@ export default function MortgageCalculatorGame() {
   const [downPaymentPercent, setDownPaymentPercent] = useState<number>(20);
   const [interestRate, setInterestRate] = useState<number>(6.8);
   const [extraPayment, setExtraPayment] = useState<number>(250);
-  const [carType, setCarType] = useState<"f1" | "drift" | "supercar">("f1");
 
   // Calculate Speedrun Math
   const speedrunResults = useMemo(() => {
     const downAmount = (homePrice * downPaymentPercent) / 100;
     const principal = homePrice - downAmount;
-    const r = interestRate / 100 / 12;
-    const n = 30 * 12; // 360 months
-
-    if (r <= 0 || principal <= 0) {
-      return {
-        baseMonthly: 0,
-        baseTotalInterest: 0,
-        boostedTotalInterest: 0,
-        interestSaved: 0,
-        yearsSaved: 0,
-        finalPayoffYears: 30,
-        savingsPercent: 0,
-        score: 0,
-      };
-    }
-
-    const baseMonthly = (principal * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1);
-    const baseTotalInterest = baseMonthly * n - principal;
-
-    // Simulation with extra monthly payments
-    let balance = principal;
-    let monthsElapsed = 0;
-    let totalInterestPaidWithExtra = 0;
-
-    while (balance > 0 && monthsElapsed < 360) {
-      const interestForMonth = balance * r;
-      totalInterestPaidWithExtra += interestForMonth;
-      const principalPaid = baseMonthly - interestForMonth + extraPayment;
-      balance -= principalPaid;
-      monthsElapsed++;
-    }
-
-    const finalPayoffYears = parseFloat((monthsElapsed / 12).toFixed(1));
-    const yearsSaved = parseFloat((30 - finalPayoffYears).toFixed(1));
-    const interestSaved = Math.max(0, baseTotalInterest - totalInterestPaidWithExtra);
-    const savingsPercent = Math.min(100, Math.round((interestSaved / baseTotalInterest) * 100));
-    const score = Math.round(savingsPercent * 10);
+    const result = calculateMortgagePayoff(principal, interestRate, 30, extraPayment);
 
     return {
-      baseMonthly: Math.round(baseMonthly),
-      baseTotalInterest: Math.round(baseTotalInterest),
-      boostedTotalInterest: Math.round(totalInterestPaidWithExtra),
-      interestSaved: Math.round(interestSaved),
-      yearsSaved,
-      finalPayoffYears,
-      savingsPercent,
-      score,
+      baseMonthly: Math.round(result.monthlyPayment),
+      baseTotalPayments: Math.round(result.monthlyPayment * 360),
+      baseTotalInterest: Math.round(result.baseInterest),
+      interestSaved: Math.round(result.interestSaved),
+      yearsSaved: Number(result.yearsSaved.toFixed(1)),
+      finalPayoffYears: Number((result.payoffMonths / 12).toFixed(1)),
+      score: result.score,
     };
   }, [homePrice, downPaymentPercent, interestRate, extraPayment]);
 
@@ -100,7 +63,7 @@ export default function MortgageCalculatorGame() {
 
     setCashBalance((prev) => prev - prop.downPayment);
     const newProp: TycoonProperty = {
-      id: `${prop.name}-${Date.now()}`,
+      id: `${prop.name}-${properties.length}`,
       name: prop.name,
       price: prop.price,
       downPayment: prop.downPayment,
@@ -160,12 +123,11 @@ export default function MortgageCalculatorGame() {
   const totalTycoonNetWorth = cashBalance + properties.reduce((acc, p) => acc + p.equity, 0);
 
   // 15-year fixed comparison calculations
-  const loan15Principal = homePrice * 0.8;
-  const r15 = 0.06 / 12;
-  const n15 = 180;
-  const monthly15 = Math.round((loan15Principal * (r15 * Math.pow(1 + r15, n15))) / (Math.pow(1 + r15, n15) - 1));
-  const totalPaid15 = monthly15 * n15;
-  const totalInterest15 = Math.max(0, totalPaid15 - loan15Principal);
+  const loan15Principal = homePrice * (1 - downPaymentPercent / 100);
+  const comparison15 = calculateMortgagePayoff(loan15Principal, interestRate, 15);
+  const monthly15 = Math.round(comparison15.monthlyPayment);
+  const totalPaid15 = Math.round(comparison15.monthlyPayment * 180);
+  const totalInterest15 = Math.round(comparison15.baseInterest);
   const totalSavings15 = Math.max(0, speedrunResults.baseTotalInterest - totalInterest15);
 
   return (
@@ -183,9 +145,10 @@ export default function MortgageCalculatorGame() {
           </div>
 
           {/* Mode Tabs */}
-          <div className="flex rounded-lg bg-slate-200/80 dark:bg-dark-card p-1 border border-slate-300/80 dark:border-dark-border text-xs">
+          <div className="flex flex-wrap gap-1 rounded-lg bg-slate-200/80 dark:bg-dark-card p-1 border border-slate-300/80 dark:border-dark-border text-xs" role="group" aria-label="Mortgage simulation mode">
             <button
               type="button"
+              aria-pressed={activeMode === "speedrun"}
               onClick={() => setActiveMode("speedrun")}
               className={`px-3 py-1.5 rounded-md font-medium transition ${activeMode === "speedrun"
                 ? "bg-white dark:bg-primary text-slate-900 dark:text-white shadow-xs"
@@ -196,6 +159,7 @@ export default function MortgageCalculatorGame() {
             </button>
             <button
               type="button"
+              aria-pressed={activeMode === "tycoon"}
               onClick={() => setActiveMode("tycoon")}
               className={`px-3 py-1.5 rounded-md font-medium transition ${activeMode === "tycoon"
                 ? "bg-white dark:bg-primary text-slate-900 dark:text-white shadow-xs"
@@ -206,6 +170,7 @@ export default function MortgageCalculatorGame() {
             </button>
             <button
               type="button"
+              aria-pressed={activeMode === "quest"}
               onClick={() => setActiveMode("quest")}
               className={`px-3 py-1.5 rounded-md font-medium transition ${activeMode === "quest"
                 ? "bg-white dark:bg-primary text-slate-900 dark:text-white shadow-xs"
@@ -232,23 +197,6 @@ export default function MortgageCalculatorGame() {
                 </p>
               </div>
 
-              {/* Model Selector */}
-              <div className="flex items-center gap-1.5">
-                <span className="text-xs text-slate-500 dark:text-slate-400">Profile:</span>
-                {(["f1", "drift", "supercar"] as const).map((c) => (
-                  <button
-                    key={c}
-                    type="button"
-                    onClick={() => setCarType(c)}
-                    className={`px-2.5 py-1 rounded text-xs font-medium border transition ${carType === c
-                      ? "bg-dark-card dark:bg-dark-card text-white border-slate-900 dark:border-primary shadow-xs"
-                      : "bg-white dark:bg-dark-bg text-slate-700 dark:text-slate-300 border-slate-200 dark:border-dark-border hover:bg-slate-50 dark:hover:bg-dark-card"
-                      }`}
-                  >
-                    {c === "f1" ? "Standard" : c === "drift" ? "Accelerated" : "Aggressive"}
-                  </button>
-                ))}
-              </div>
             </div>
 
             {/* Visual Progress Track */}
@@ -312,6 +260,7 @@ export default function MortgageCalculatorGame() {
                 </div>
                 <input
                   type="range"
+                  aria-label="Home purchase price"
                   min={150000}
                   max={900000}
                   step={10000}
@@ -329,6 +278,7 @@ export default function MortgageCalculatorGame() {
                 </div>
                 <input
                   type="range"
+                  aria-label="Down payment percentage"
                   min={3}
                   max={40}
                   step={1}
@@ -346,8 +296,9 @@ export default function MortgageCalculatorGame() {
                 </div>
                 <input
                   type="range"
-                  min={4.0}
-                  max={9.5}
+                  aria-label="Mortgage APR percentage"
+                  min={0}
+                  max={12}
                   step={0.1}
                   value={interestRate}
                   onChange={(e) => setInterestRate(Number(e.target.value))}
@@ -358,11 +309,12 @@ export default function MortgageCalculatorGame() {
               {/* Extra Payment Nitrous Boost */}
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
-                  <span>Extra Monthly Nitrous Boost</span>
+                  <span>Extra Monthly Principal Payment</span>
                   <span className="text-emerald-600 dark:text-emerald-400 font-mono font-extrabold">+${extraPayment}/mo</span>
                 </div>
                 <input
                   type="range"
+                  aria-label="Extra monthly principal payment"
                   min={0}
                   max={1500}
                   step={25}
@@ -469,7 +421,7 @@ export default function MortgageCalculatorGame() {
                 15-Year vs. 30-Year Mortgage Comparison
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Comparison of lower monthly obligations (30-year) versus radical lifetime interest savings (15-year).
+                Both terms use a ${loan15Principal.toLocaleString()} loan at {interestRate}% APR, with no extra payments.
               </p>
             </div>
 
@@ -488,7 +440,7 @@ export default function MortgageCalculatorGame() {
                 <div className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
                   <div className="flex justify-between">
                     <span>Total Payments (360 mos):</span>
-                    <strong>${(speedrunResults.baseMonthly * 360).toLocaleString()}</strong>
+                    <strong>${speedrunResults.baseTotalPayments.toLocaleString()}</strong>
                   </div>
                   <div className="flex justify-between text-rose-600 dark:text-rose-400 font-medium">
                     <span>Lifetime Interest Paid:</span>
@@ -500,7 +452,7 @@ export default function MortgageCalculatorGame() {
                   </div>
                 </div>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-dark-border">
-                  Over 50% of the initial 5 years of payments go exclusively toward bank interest charges.
+                  Principal and interest only. Taxes, insurance, HOA fees, and closing costs are excluded.
                 </p>
               </div>
 
@@ -536,6 +488,9 @@ export default function MortgageCalculatorGame() {
           </div>
         )}
       </div>
+      <p className="px-5 sm:px-7 pb-5 text-xs text-slate-500 dark:text-slate-400">
+        Educational estimates only. Payoff calculations assume a fixed rate and extra payments applied to principal each month, with no fees or prepayment penalties. Portfolio values and events are fictional.
+      </p>
     </div>
   );
 }

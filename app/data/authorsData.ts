@@ -7,6 +7,7 @@ export interface AuthorSocials {
 }
 
 export interface Author {
+  schemaType: "Person";
   slug: string;
   name: string;
   jobTitle: string;
@@ -25,194 +26,140 @@ export interface Author {
   socials?: AuthorSocials;
 }
 
-export const authorsData: Record<string, Author> = {
-  "david-miller": {
-    slug: "david-miller",
-    name: "David Miller, CPA",
-    jobTitle: "Lead Financial Analyst & Tax Technology Editor",
-    credentials: "CPA, M.S. Finance (NYU Stern)",
-    location: "New York, NY",
-    tagline: "Financial Precision Crafting Growth",
-    quote: "Precision modeling is the bedrock of fiscal strategy. We turn volatile tax rules, APR structures, and merchant interchange equations into transparent, actionable calculators.",
-    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80",
-    bio: "David is a Certified Public Accountant (CPA) with over 14 years of corporate tax, loan amortization modeling, and merchant processing cost accounting experience.",
-    fullBio: [
-      "David Miller is a Certified Public Accountant (CPA) and veteran financial modeler. Prior to joining Infinix Calculators as Lead Financial Editor, David spent over a decade advising e-commerce enterprises, multi-state retailers, and tech startups on sales tax nexus compliance, payroll gross-up structures, and credit card processing fee mitigation.",
-      "At Infinix Calculators, David oversees the mathematical accuracy of all financial calculators, including Buy Now Pay Later (BNPL) installment interest engines, reverse merchant processing fee equations, and mortgage amortization algorithms.",
-      "His technical articles on sales tax sourcing, payroll bonus withholding formulas, and payment processor interchange math have helped thousands of small business owners protect their profit margins."
-    ],
-    education: [
-      "M.S. in Accounting & Taxation – NYU Stern School of Business",
-      "B.S. in Corporate Finance – University of Illinois Urbana-Champaign",
-      "Certified Public Accountant (CPA) – Licensed in Illinois & New York"
-    ],
-    expertise: [
-      "Loan Amortization & BNPL APR Modeling",
-      "Payment Processing Interchange & Gross-Up Math",
-      "US Multi-State Sales Tax (Origin vs Destination)",
-      "Payroll Tax Withholding & Bonus Gross-Ups",
-      "Commercial Mortgage & HELOC Payoff Structures"
-    ],
-    reviewedCategories: [
-      "Financial Calculators",
-      "Tax & Payroll Calculators",
-      "Merchant & Invoicing Tools"
-    ],
-    email: "david.miller@infinixcalculator.com",
-    linkedinUrl: "https://www.linkedin.com",
-    socials: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      twitter: "https://x.com",
-      linkedin: "https://linkedin.com",
-      email: "mailto:david.miller@infinixcalculator.com"
-    }
-  },
-  "elena-rostova": {
-    slug: "elena-rostova",
-    name: "Elena Rostova, P.E.",
-    jobTitle: "Senior Construction Estimator & Materials Engineer",
-    credentials: "P.E., M.S. Civil Engineering (Georgia Tech)",
-    location: "Atlanta, GA",
-    tagline: "Architectural Precision Crafting Dreams",
-    quote: "Innovation is the lifeblood of our narrative, propelling us forward as we embrace cutting-edge technologies and methodologies to push the boundaries of what's possible.",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-    bio: "Elena is a licensed Professional Engineer (P.E.) specializing in structural volume estimation, soil compaction physics, and bulk materials logistics.",
-    fullBio: [
-      "Elena Rostova is a licensed Professional Engineer (P.E.) and construction cost consultant with 12+ years of field experience in civil infrastructure, commercial grading, and residential landscape engineering.",
-      "Elena leads the Engineering & Materials calculation desk at Infinix Calculators. She formulates and peer-verifies our algorithms for topsoil cubic yardage, concrete slab load volume, roof rafter pitch coverage, and ocean freight CBM volumetric weight conversions.",
-      "She is passionate about eliminating material waste on construction sites by providing contractors and DIY homeowners with mathematically precise volume, waste-factor, and bag-count estimators."
-    ],
-    education: [
-      "M.S. in Civil & Environmental Engineering – Georgia Institute of Technology",
-      "B.S. in Structural Engineering – Purdue University",
-      "Licensed Professional Engineer (P.E.) – National Council of Examiners (NCEES)"
-    ],
-    expertise: [
-      "Topsoil & Aggregates Volumetric Calculations",
-      "Soil Compaction & Settling Margins (10-15% Buffers)",
-      "Concrete Slab, Footing & Bag Estimations",
-      "Roofing Slope, Pitch & Shingle Square Conversions",
-      "CBM Logistics & Freight Density Weight Math"
-    ],
-    reviewedCategories: [
-      "Construction & Materials",
-      "Landscaping & Grading",
-      "Logistics & Unit Converters"
-    ],
-    email: "elena.rostova@infinixcalculator.com",
-    linkedinUrl: "https://www.linkedin.com",
-    socials: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      twitter: "https://x.com",
-      linkedin: "https://linkedin.com",
-      email: "mailto:elena.rostova@infinixcalculator.com"
-    }
-  },
-  "marcus-vance": {
-    slug: "marcus-vance",
-    name: "Dr. Marcus Vance, Ph.D.",
-    jobTitle: "Lead Mathematician & Psychometric Systems Editor",
-    credentials: "Ph.D. Applied Mathematics (MIT)",
-    location: "Boston, MA",
-    tagline: "Mathematical Modeling Decoding Systems",
-    quote: "Rigorous quantitative formulation transforms raw uncertainty into predictable foresight, equipping educators, learners, and evaluators with trusted metrics.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-    bio: "Dr. Vance is a research mathematician and psychometric modeler specializing in standardized test scoring distributions, inverse trigonometry, and algebraic weighted averages.",
-    fullBio: [
-      "Dr. Marcus Vance holds a doctorate in Applied Mathematics and has published numerous research papers on psychometric test equating, weighted rating distributions, and applied numerical analysis.",
-      "At Infinix Calculators, Dr. Vance oversees the algorithmic architecture of our educational and mathematical tools, including the LSAT raw-to-scaled score conversion engines, law school admissions prediction algorithms, and online rating recovery formulas.",
-      "He ensures all formula derivations, boundary condition limits, and conversion constants strictly adhere to published peer-reviewed mathematical standards."
-    ],
-    education: [
-      "Ph.D. in Applied Mathematics – Massachusetts Institute of Technology (MIT)",
-      "B.S. in Mathematics & Statistics – University of Michigan, Ann Arbor"
-    ],
-    expertise: [
-      "Psychometric Equating & LSAT Scoring Curves",
-      "Weighted Star Rating Math (Google Review Calculus)",
-      "Inverse Trigonometric Algorithms & Radians",
-      "Probabilistic Admissions Predictor Models",
-      "Logarithmic & Exponential Growth Math"
-    ],
-    reviewedCategories: [
-      "Education & Admissions",
-      "Mathematics & Geometry",
-      "Reputation & Rating Calculators"
-    ],
-    email: "marcus.vance@infinixcalculator.com",
-    linkedinUrl: "https://www.linkedin.com",
-    socials: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      twitter: "https://x.com",
-      linkedin: "https://linkedin.com",
-      email: "mailto:marcus.vance@infinixcalculator.com"
-    }
-  },
-  "sarah-jenkins": {
-    slug: "sarah-jenkins",
-    name: "Sarah Jenkins, MS, OTR/L",
-    jobTitle: "Clinical Operations Specialist & Productivity Lead",
-    credentials: "MS, OTR/L, Healthcare Systems Management",
-    location: "Philadelphia, PA",
-    tagline: "Clinical Operations Empowering Care",
-    quote: "Sustainable healthcare systems thrive when operational metrics align with high clinical standards, empowering therapists to deliver uncompromised patient care.",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
-    bio: "Sarah is a healthcare operations consultant with 11 years of experience optimizing Skilled Nursing Facility (SNF) clinical productivity metrics and time allocation.",
-    fullBio: [
-      "Sarah Jenkins is a licensed occupational therapist (OTR/L) and healthcare operations specialist. She has served as Director of Rehabilitation across multiple regional healthcare networks, managing clinical time allocations, CMS billing compliance, and staff productivity benchmarks.",
-      "Sarah created the standardized clinical productivity framework used in Infinix's Therapy Productivity Calculator. She writes and reviews guides on ethical productivity targets, non-billable documentation management, and SNF operational efficiency.",
-      "Her work advocates for sustainable clinical workflows that balance high therapy standards with regulatory documentation requirements."
-    ],
-    education: [
-      "M.S. in Occupational Therapy & Healthcare Systems – Boston University",
-      "B.S. in Kinesiology & Exercise Science – Penn State University"
-    ],
-    expertise: [
-      "SNF Clinical Productivity Benchmarks",
-      "Direct Care vs Non-Billable Time Calculations",
-      "Lunch Break & Documentation Time Deductions",
-      "Body Mass Index (BMI) Clinical Screening Indicators",
-      "Staff Utilization & Efficiency Modeling"
-    ],
-    reviewedCategories: [
-      "Health & Clinical Productivity",
-      "Operations & Time Management",
-      "Fitness & Screening Tools"
-    ],
-    email: "sarah.jenkins@infinixcalculator.com",
-    linkedinUrl: "https://www.linkedin.com",
-    socials: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      twitter: "https://x.com",
-      linkedin: "https://linkedin.com",
-      email: "mailto:sarah.jenkins@infinixcalculator.com"
-    }
-  }
+export const legacyAuthorSlugs: Record<string, string> = {
+  "david-miller": "vaughn-mercer",
+  "elena-rostova": "atlas-keller",
+  "marcus-vance": "rowan-vance",
+  "sarah-jenkins": "orion-mercer",
+  "infinix-editorial-team": "ellison-grant",
+  "finance-editorial-team": "vaughn-mercer",
+  "construction-editorial-team": "atlas-keller",
+  "math-editorial-team": "rowan-vance",
+  "health-editorial-team": "orion-mercer",
 };
 
-export function getAuthorBySlug(slug?: string): Author {
-  if (slug && authorsData[slug]) {
-    return authorsData[slug];
-  }
-  return authorsData["david-miller"]; // Default authoritative fallback
+export const authorsData: Record<string, Author> = {
+  "ellison-grant": {
+    schemaType: "Person",
+    slug: "ellison-grant",
+    name: "Ellison Grant",
+    jobTitle: "Technology & 3D Printing Editorial",
+    credentials: "",
+    avatar: "/authors/Gemini_Generated_Image_xplw38xplw38xplw.jpg",
+    bio: "Ellison Grant's editorial scope covers Infinix technology guides, calculator hardware, digital tools, and 3D printing cost estimates.",
+    fullBio: [
+      "Ellison Grant is the named editorial contact for technology and 3D printing content, including calculator hardware, digital-tool comparisons, print materials, electricity costs, and pricing assumptions. This profile describes assigned topic coverage, not an engineering credential or manufacturer affiliation.",
+      "Printing estimates depend on material consumption, machine time, electricity prices, labor, and any failure allowance. Hardware features, testing rules, and product prices should be confirmed with the manufacturer or relevant official source.",
+      "Editorial attribution does not establish independent product testing or professional certification. Questions and correction reports can be submitted through the contact page with the relevant article or calculator link.",
+    ],
+    education: [],
+    expertise: ["Calculator hardware and digital tools", "3D printing material costs", "Electricity and machine-time estimates", "Print pricing assumptions"],
+    reviewedCategories: [],
+    email: "",
+  },
+  "vaughn-mercer": {
+    schemaType: "Person",
+    slug: "vaughn-mercer",
+    name: "Vaughn Mercer",
+    jobTitle: "Finance & Tax Editorial",
+    credentials: "",
+    avatar: "/authors/Gemini_Generated_Image_qz8kvjqz8kvjqz8k.jpg",
+    bio: "Vaughn Mercer's editorial scope covers Infinix finance, tax, payroll, and payment-fee content. Estimates are educational and do not constitute financial or tax advice.",
+    fullBio: [
+      "Vaughn Mercer is the named editorial contact for loan payment scenarios, borrowing costs, sales tax, payroll estimates, and merchant fees. The role is editorial; this profile does not claim CPA licensing, financial-adviser registration, or lender affiliation.",
+      "Financial results depend on the balance, rate, term, fees, and other assumptions entered. Tax and payment-provider rules can change; an estimate should be checked against official terms and the rules that apply to your situation.",
+      "A category attribution is not a completed professional review. No degree, license, employer history, or individual endorsement is claimed here.",
+    ],
+    education: [],
+    expertise: ["Loan payment scenarios", "Tax and payroll estimates", "Merchant processing fees", "Savings and retirement assumptions"],
+    reviewedCategories: [],
+    email: "",
+  },
+  "atlas-keller": {
+    schemaType: "Person",
+    slug: "atlas-keller",
+    name: "Atlas Keller",
+    jobTitle: "Construction & Materials Editorial",
+    credentials: "",
+    avatar: "/authors/Gemini_Generated_Image_oxoig3oxoig3oxoi.jpg",
+    bio: "Atlas Keller's editorial scope covers Infinix material-volume, coverage, and construction planning content. Quantities and costs are estimates, not engineering specifications or supplier quotes.",
+    fullBio: [
+      "Atlas Keller is the named editorial contact for topsoil, concrete, roofing, material coverage, and freight-volume explanations. This editorial role does not imply professional engineering licensure or contractor certification.",
+      "Material estimates depend on measured dimensions, units, depth, density, and any waste or settling allowance. Product instructions, site conditions, supplier packaging, and local prices can change the quantity or cost needed.",
+      "The calculators do not replace structural design, a site inspection, or an approved project specification. Listing a tool in this editorial category does not claim that its formula has received professional engineering review.",
+    ],
+    education: [],
+    expertise: ["Topsoil and aggregate volumes", "Concrete quantity estimates", "Roofing coverage", "Freight volume and unit conversions"],
+    reviewedCategories: [],
+    email: "",
+  },
+  "rowan-vance": {
+    schemaType: "Person",
+    slug: "rowan-vance",
+    name: "Rowan Vance",
+    jobTitle: "Mathematics & Education Editorial",
+    credentials: "",
+    avatar: "/authors/Gemini_Generated_Image_43lzf243lzf243lz.jpg",
+    bio: "Rowan Vance's editorial scope covers Infinix mathematics, unit conversions, ratings, and educational scoring guides. No university or testing-agency affiliation is claimed.",
+    fullBio: [
+      "Rowan Vance is the named editorial contact for formulas, conversions, averages, rating scenarios, and educational score estimates. This profile describes topic coverage, not an academic degree or research career.",
+      "Check the formula, units, rounding, and boundary conditions used by each tool. Test score conversions may depend on an exam-specific scale, while admissions estimates cannot predict an individual decision.",
+      "No academic affiliation, research publication history, testing-agency endorsement, or independent specialist review is implied by the profile.",
+    ],
+    education: [],
+    expertise: ["Mathematical formulas", "Unit conversions", "Averages and rating scenarios", "Educational score estimates"],
+    reviewedCategories: [],
+    email: "",
+  },
+  "orion-mercer": {
+    schemaType: "Person",
+    slug: "orion-mercer",
+    name: "Orion Mercer",
+    jobTitle: "Health & Productivity Editorial",
+    credentials: "",
+    avatar: "/authors/Gemini_Generated_Image_ax1zmoax1zmoax1z.jpg",
+    bio: "Orion Mercer's editorial scope covers Infinix health-related estimates, time allocation, and productivity guides. The role is editorial, not clinical care or medical advice.",
+    fullBio: [
+      "Orion Mercer is the named editorial contact for work time, billable-time ratios, lunch deductions, and health-related planning estimates. This profile does not claim an occupational-therapy license, clinical practice, or healthcare consulting history.",
+      "Productivity calculations depend on how worked time, breaks, billable activity, and documentation are defined. A calculated ratio is not a clinical standard, billing approval, or recommendation for patient care.",
+      "Health-related outputs are educational estimates and must not be used as diagnosis or treatment advice. No clinical license, medical review, or professional practice history is claimed.",
+    ],
+    education: [],
+    expertise: ["Work-time calculations", "Billable-time ratios", "Break and documentation assumptions", "Health estimate limitations"],
+    reviewedCategories: [],
+    email: "",
+  },
+};
+
+export function getCanonicalAuthorSlug(slug?: string): string | undefined {
+  if (!slug) return undefined;
+  if (Object.hasOwn(authorsData, slug)) return slug;
+  if (Object.hasOwn(legacyAuthorSlugs, slug)) return legacyAuthorSlugs[slug];
+  return undefined;
 }
 
-export function getAuthorForCategory(category: string): Author {
-  const cat = category.toLowerCase();
-  if (cat.includes("construction") || cat.includes("landscaping") || cat.includes("material") || cat.includes("logistics") || cat.includes("cbm")) {
-    return authorsData["elena-rostova"];
+export function getAuthorBySlug(slug?: string): Author {
+  return authorsData[getCanonicalAuthorSlug(slug) ?? "ellison-grant"];
+}
+
+export function getAuthorForCategory(category: string, calculatorSlug?: string): Author {
+  const cat = `${category} ${calculatorSlug ?? ""}`.toLowerCase();
+  if (/technology|3d.print|calculator-hardware/.test(cat)) {
+    return authorsData["ellison-grant"];
   }
-  if (cat.includes("education") || cat.includes("lsat") || cat.includes("math") || cat.includes("review")) {
-    return authorsData["marcus-vance"];
+  if (/construction|landscap|material|logistic|cbm/.test(cat)) {
+    return authorsData["atlas-keller"];
   }
-  if (cat.includes("health") || cat.includes("productivity") || cat.includes("therapy")) {
-    return authorsData["sarah-jenkins"];
+  if (/health|productivity|therapy/.test(cat)) {
+    return authorsData["orion-mercer"];
   }
-  return authorsData["david-miller"];
+  if (/education|lsat|math|review|unit-converter/.test(cat)) {
+    return authorsData["rowan-vance"];
+  }
+  if (/financ|tax|payroll|merchant/.test(cat)) {
+    return authorsData["vaughn-mercer"];
+  }
+  return authorsData["ellison-grant"];
 }
 
 export function getAllAuthors(): Author[] {

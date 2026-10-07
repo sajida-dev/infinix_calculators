@@ -24,8 +24,10 @@ const clusterHubs: Record<string, ClusterHub> = {
       { title: "Does Affirm Hurt Your Credit Score?", href: "/blog/does-affirm-hurt-your-credit-score" },
       { title: "How Does Affirm Work? Pay in 4 vs. Monthly", href: "/blog/how-does-affirm-work-pay-in-4-vs-monthly" },
       { title: "How to Escape the Affirm Debt Trap Early", href: "/blog/affirm-debt-trap-how-to-pay-off-bnpl" },
+      { title: "Balance Transfer Calculator Guide: Fees vs. Interest Savings", href: "/blog/balance-transfer-calculator-guide" },
     ],
     siblingCalcs: [
+      { name: "Balance Transfer Calculator", href: "/calculators/balance-transfer" },
       { name: "Square Fee Calculator", href: "/calculators/square-fee" },
       { name: "Mortgage Payoff Game", href: "/calculators/mortgage-calculator-game" },
       { name: "Pro Rata Calculator", href: "/calculators/pro-rata" },
@@ -66,6 +68,7 @@ const clusterHubs: Record<string, ClusterHub> = {
       { name: "Roofing Pitch & Square", href: "/calculators/roof" },
       { name: "Mulch Calculator", href: "/calculators/mulch" },
       { name: "Drywall Estimator", href: "/calculators/drywall" },
+      { name: "CBM Shipping Calculator", href: "/calculators/cbm" },
     ]
   },
   Tax: {

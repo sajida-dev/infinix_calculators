@@ -15,6 +15,7 @@ import JsonLd from "./components/JsonLd";
 import ThemeScript from "./components/ThemeScript";
 import ThirdPartyScripts from "./components/ThirdPartyScripts";
 import { ThemeProvider } from "./components/ThemeProvider";
+import Script from "next/script";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -55,19 +56,39 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://nap5k.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://n6wxm.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://ep1.adtrafficquality.google" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://nap5k.com" />
+        <link rel="dns-prefetch" href="https://n6wxm.com" />
         <link rel="dns-prefetch" href="https://ep1.adtrafficquality.google" />
         <link rel="dns-prefetch" href="https://ep2.adtrafficquality.google" />
-        {/* Google AdSense Script: plain native tag (Google's official snippet) avoids the data-nscript attribute next/script adds */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3431842904505869"
-          crossOrigin="anonymous"
+        <Script id="google-analytics-init" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-R64FRFS4GV', { page_path: window.location.pathname });
+          `}
+        </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-R64FRFS4GV"
+          strategy="afterInteractive"
         />
-       
-      </head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "(function(s){s.dataset.zone='11895918',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))"
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "(function(s){s.dataset.zone='11896861',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))"
+          }}
+        />
+      </head> 
       <body className="min-h-full bg-white dark:bg-dark-bg text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-200" suppressHydrationWarning>
         <ThemeScript />
         <JsonLd id="org-jsonld" data={organizationSchema} />

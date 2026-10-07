@@ -72,10 +72,22 @@ export default function EditorialPolicyPage() {
             </p>
           </section>
 
+          <section className="space-y-4 p-4 sm:p-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
+              4. Editorial Attribution &amp; Profile Details
+            </h2>
+            <p>
+              Named editorial profiles identify the contacts assigned to content categories. Their biographies describe editorial scope. Category listings and editorial-contact labels do not establish individual authorship of every guide, a professional qualification, or an independent review of a calculator.
+            </p>
+            <p>
+              Professional credentials, education, personal portraits, and social profiles should appear only when supplied and confirmed for the contributor. The Infinix brand mark is not an author portrait. A completed specialist review should be credited separately, with its scope and date, rather than inferred from a category assignment.
+            </p>
+          </section>
+
           {/* 4. Privacy & Client-Side Execution */}
           <section className="space-y-4 p-4 sm:p-6">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
-              4. Client-Side Processing &amp; Data Ethics
+              5. Client-Side Processing &amp; Data Ethics
             </h2>
             <p>
               We believe user numerical inputs—whether sensitive payroll numbers, business turnover, or personal loan amounts—should remain strictly private. Our computational engines run locally in the client browser through optimized JavaScript. We do not store, track, or sell your calculation inputs.
@@ -85,7 +97,7 @@ export default function EditorialPolicyPage() {
           {/* Navigation links */}
           <div className="flex flex-wrap gap-4 pt-4">
             <Link href="/authors" className="px-5 py-2.5 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-colors text-xs sm:text-sm">
-              Meet Our Editorial Board &rarr;
+              Meet Our Editorial Contacts &rarr;
             </Link>
             <Link href="/about" className="px-5 py-2.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border font-bold hover:bg-slate-50 dark:hover:bg-dark-bg transition-colors text-xs sm:text-sm">
               About Infinix Calculators

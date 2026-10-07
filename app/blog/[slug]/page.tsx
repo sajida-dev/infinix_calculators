@@ -80,7 +80,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     { name: "Square Fee Calculator", href: "/calculators/square-fee", category: "Finance" },
   ];
 
-  // Schema Injection with author.url for Person schema linking
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -88,7 +87,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "description": post.excerpt,
     "datePublished": post.date,
     "author": {
-      "@type": "Person",
+      "@type": "Organization",
+      "name": "Infinix Calculators",
+      "url": "https://infinixcalculator.com",
+    },
+    "editor": {
+      "@type": author.schemaType,
       "name": author.name,
       "jobTitle": author.jobTitle,
       "url": `https://infinixcalculator.com/authors/${author.slug}`,
@@ -187,7 +191,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <div className="w-9 h-9 rounded-full overflow-hidden border border-primary/30 shrink-0">
                       <Image
                         src={author.avatar}
-                        alt={author.name}
+                        alt="Infinix Calculators brand mark"
                         width={36}
                         height={36}
                         className="w-full h-full object-cover"
@@ -198,7 +202,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         {author.name}
                       </span>
                       <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
-                        {author.credentials}
+                        Editorial contact
                       </span>
                     </div>
                   </Link>

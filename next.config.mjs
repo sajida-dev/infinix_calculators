@@ -1,11 +1,11 @@
 const cspHeader = `
   default-src 'self';
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://www.google-analytics.com;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://www.google-analytics.com https://*.google-analytics.com https://nap5k.com https://n6wxm.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  img-src 'self' data: blob: https: https://images.unsplash.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.google-analytics.com;
+    img-src 'self' data: blob: https: https://images.unsplash.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.google-analytics.com https://nap5k.com https://n6wxm.com;
   font-src 'self' data: https://fonts.gstatic.com;
-  connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com;
-  frame-src 'self' https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://www.google.com;
+    connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://nap5k.com https://n6wxm.com;
+        frame-src 'self' https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://www.google.com https://nap5k.com https://n6wxm.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
@@ -42,19 +42,7 @@ const nextConfig = {
         ],
     },
     async redirects() {
-        return [
-            {
-                source: "/:path*",
-                has: [
-                    {
-                        type: "host",
-                        value: "www.infinixcalculator.com",
-                    },
-                ],
-                destination: "https://infinixcalculator.com/:path*",
-                permanent: true,
-            },
-        ];
+        return [];
     },
     async headers() {
         return [

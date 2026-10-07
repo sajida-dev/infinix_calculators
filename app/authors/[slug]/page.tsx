@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { authorsData, getAllAuthors } from "../../data/authorsData";
+import { authorsData, getAllAuthors, getAuthorForCategory, getCanonicalAuthorSlug, legacyAuthorSlugs } from "../../data/authorsData";
 import { blogData } from "../../data/blogData";
 import { calculatorsData } from "../../data/calculatorsData";
 import BlogCard from "../../components/BlogCard";
@@ -12,14 +12,14 @@ interface AuthorPageProps {
 }
 
 export async function generateStaticParams() {
-  return getAllAuthors().map((author) => ({
-    slug: author.slug,
-  }));
+  return [...getAllAuthors().map((author) => author.slug), ...Object.keys(legacyAuthorSlugs)]
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: AuthorPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const author = authorsData[slug];
+  const canonicalSlug = getCanonicalAuthorSlug(slug);
+  const author = canonicalSlug ? authorsData[canonicalSlug] : undefined;
 
   if (!author) {
     return {
@@ -31,20 +31,21 @@ export async function generateMetadata({ params }: AuthorPageProps): Promise<Met
   return {
     title: `${author.name} – Author Profile & Articles | Infinix Calculators`,
     description: author.bio,
+    robots: { index: slug === author.slug, follow: true },
     alternates: {
-      canonical: `https://infinixcalculator.com/authors/${slug}`,
+      canonical: `https://infinixcalculator.com/authors/${author.slug}`,
     },
     openGraph: {
       title: `${author.name} – Infinix Calculators`,
       description: author.bio,
-      url: `https://infinixcalculator.com/authors/${slug}`,
+      url: `https://infinixcalculator.com/authors/${author.slug}`,
       siteName: "Infinix Calculators",
       images: [
         {
           url: author.avatar,
           width: 600,
           height: 600,
-          alt: author.name,
+          alt: "Infinix Calculators brand mark",
         },
       ],
       type: "profile",
@@ -54,52 +55,36 @@ export async function generateMetadata({ params }: AuthorPageProps): Promise<Met
 
 export default async function AuthorPage({ params }: AuthorPageProps) {
   const { slug } = await params;
-  const author = authorsData[slug];
+  const canonicalSlug = getCanonicalAuthorSlug(slug);
+  const author = canonicalSlug ? authorsData[canonicalSlug] : undefined;
 
   if (!author) {
     notFound();
   }
 
-  // Filter posts strictly authored by this author
-  const authorPosts = Object.values(blogData).filter((post) => post.authorSlug === slug);
-
-  // Filter calculators reviewed by this author
-  const reviewedCalculators = Object.values(calculatorsData).filter((calc) => {
-    const cat = calc.category.toLowerCase();
-    const catLabel = (calc.categoryLabel || "").toLowerCase();
-    if (slug === "elena-rostova") {
-      return cat.includes("construction") || catLabel.includes("materials") || catLabel.includes("landscaping") || calc.slug === "cbm" || calc.slug === "topsoil";
-    }
-    if (slug === "marcus-vance") {
-      return cat.includes("math") || cat.includes("education") || calc.slug.includes("lsat") || calc.slug.includes("review") || calc.slug === "tan-inverse";
-    }
-    if (slug === "sarah-jenkins") {
-      return cat.includes("health") || calc.slug.includes("productivity") || calc.slug === "santyl" || calc.slug.includes("dog") || calc.slug.includes("calorie");
-    }
-    return cat.includes("financial") || cat.includes("tax") || calc.slug.includes("affirm") || calc.slug.includes("square") || calc.slug.includes("gross-up");
-  }).slice(0, 8);
+  const authorPosts = Object.values(blogData).filter((post) =>
+    (post.authorSlug ? getCanonicalAuthorSlug(post.authorSlug) : getAuthorForCategory(post.category).slug) === author.slug
+  );
+  const categoryCalculators = Object.values(calculatorsData)
+    .filter((calc) => getAuthorForCategory(calc.category, calc.slug).slug === author.slug)
+    .slice(0, 8);
 
   // Schema.org Person & ProfilePage
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "mainEntity": {
-      "@type": "Person",
+      "@type": author.schemaType,
       "name": author.name,
       "jobTitle": author.jobTitle,
       "description": author.bio,
-      "image": author.avatar,
       "worksFor": {
         "@type": "Organization",
         "name": "Infinix Calculators",
         "url": "https://infinixcalculator.com",
       },
-      "alumniOf": author.education.map((edu) => ({
-        "@type": "EducationalOrganization",
-        "name": edu,
-      })),
       "knowsAbout": author.expertise,
-      "url": `https://infinixcalculator.com/authors/${slug}`,
+      "url": `https://infinixcalculator.com/authors/${author.slug}`,
     },
   };
 
@@ -109,12 +94,9 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
     "itemListElement": [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://infinixcalculator.com" },
       { "@type": "ListItem", position: 2, name: "Authors", item: "https://infinixcalculator.com/authors" },
-      { "@type": "ListItem", position: 3, name: author.name, item: `https://infinixcalculator.com/authors/${slug}` },
+      { "@type": "ListItem", position: 3, name: author.name, item: `https://infinixcalculator.com/authors/${author.slug}` },
     ],
   };
-
-  const tagline = author.tagline || `${author.name} — Specialist & Author`;
-  const quote = author.quote || "Innovation is the lifeblood of our narrative, propelling us forward as we embrace cutting-edge technologies and methodologies to push the boundaries of what's possible.";
 
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 transition-colors">
@@ -138,13 +120,13 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
             sizes="100vw"
             className="object-cover object-center opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-900/80" />
+          <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-950/90 to-slate-900/80" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb Navigation */}
           <nav className="flex mb-4 text-xs font-semibold text-slate-300" aria-label="Breadcrumb">
-            <ol className="inline-flex items-center space-x-1.5 md:space-x-2">
+            <ol className="flex flex-wrap items-center gap-1.5 md:gap-2">
               <li>
                 <Link href="/" className="hover:text-primary dark:hover:text-sky-400 transition-colors">Home</Link>
               </li>
@@ -160,20 +142,25 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
           </nav>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-            Blog Author Details
+            {author.name}
           </h1>
         </div>
       </section>
 
       {/* Main Content Area */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        {slug !== author.slug && (
+          <p className="mb-8 border-l-2 border-primary pl-4 text-sm text-slate-600 dark:text-slate-300">
+            This legacy URL is retained for existing links. It now shows the current category editorial contact, not a continuation of the former individual biography. See the <Link href={`/authors/${author.slug}`} className="text-primary underline">current editorial profile</Link>.
+          </p>
+        )}
 
         {/* Headline & Philosophy/Quote Split Section */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
           {/* Left: Bold Catchy Headline */}
           <div className="lg:col-span-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-[1.15]">
-              {tagline}
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+              Editorial Scope
             </h2>
           </div>
 
@@ -181,7 +168,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
           <div className="lg:col-span-6">
             <div className="border-l-[3px] border-primary dark:border-l-sky-400 pl-5 sm:pl-6 py-1">
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                {quote}
+                {author.bio}
               </p>
             </div>
           </div>
@@ -192,19 +179,19 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
           <div className="flex flex-col md:flex-row items-start gap-8 lg:gap-12">
 
             {/* Author Portrait Image */}
-            <div className="w-full sm:w-80 md:w-72 lg:w-80 aspect-square sm:aspect-[4/4.8] rounded-2xl overflow-hidden relative shadow-sm shrink-0 bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border/60">
+            <div className="w-32 sm:w-40 aspect-square rounded-lg overflow-hidden relative shrink-0 bg-white dark:bg-dark-bg border border-slate-200 dark:border-dark-border/60">
               <Image
                 src={author.avatar}
-                alt={author.name}
+                alt="Infinix Calculators brand mark, not an author portrait"
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 320px, 360px"
+                sizes="160px"
                 priority
-                className="object-cover object-center"
+                className="object-contain p-3"
               />
             </div>
 
             {/* Author Details & Bio Content */}
-            <div className="flex-1 flex flex-col justify-between">
+            <div className="flex-1 min-w-0 flex flex-col justify-between">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
                   {author.name}
@@ -237,7 +224,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
         {/* Education & Expertise Details Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16">
           {/* Education & Credentials */}
-          <div className=" p-6 sm:p-7 ">
+          {author.education.length > 0 && <div className=" p-6 sm:p-7 ">
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary dark:bg-sky-400"></span>
               Education &amp; Credentials
@@ -252,13 +239,13 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
                 </li>
               ))}
             </ul>
-          </div>
+          </div>}
 
           {/* Areas of Expertise */}
           <div className=" p-6 sm:p-7">
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary dark:bg-sky-400"></span>
-              Areas of Expertise &amp; Research
+              Topics Covered
             </h3>
             <div className="flex flex-wrap gap-2">
               {author.expertise.map((item, idx) => (
@@ -274,24 +261,24 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
         </section>
 
         {/* Reviewed Calculators Section */}
-        {reviewedCalculators.length > 0 && (
+        {categoryCalculators.length > 0 && (
           <section className="mb-16">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-dark-border pb-5 mb-8">
               <div>
                 <span className="text-xs font-bold text-primary dark:text-sky-400 uppercase tracking-widest block mb-1">
-                  Formula Verification
+                  Category Tools
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">
-                  Calculators &amp; Formulas Verified by {author.name}
+                  Calculators in this Editorial Category
                 </h2>
               </div>
               <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-dark-card px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-dark-border self-start sm:self-auto shadow-2xs">
-                {reviewedCalculators.length} Tools
+                {categoryCalculators.length} Tools
               </span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {reviewedCalculators.map((calc) => (
+              {categoryCalculators.map((calc) => (
                 <Link
                   key={calc.slug}
                   href={`/calculators/${calc.slug}`}
@@ -325,7 +312,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
                 Published Knowledge
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">
-                Articles &amp; Guides by {author.name}
+                Guides in this Editorial Category
               </h2>
             </div>
             <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-dark-card px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-dark-border self-start sm:self-auto shadow-2xs">
@@ -343,7 +330,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
             <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border p-12 text-center shadow-xs">
               <h3 className="text-base font-bold text-slate-800 dark:text-slate-200 mb-2">No Articles Listed</h3>
               <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto mb-6">
-                Check back soon for newly published calculation breakdowns and guide posts by {author.name}.
+                No guides are currently assigned to this editorial profile.
               </p>
               <Link
                 href="/blog"
@@ -354,6 +341,11 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
             </div>
           )}
         </section>
+
+        <nav className="flex flex-wrap gap-4 border-t border-slate-200 dark:border-dark-border pt-6 text-sm" aria-label="Editorial information">
+          <Link href="/editorial-policy" className="text-primary dark:text-sky-400 underline">Editorial and correction policy</Link>
+          <Link href="/contact" className="text-primary dark:text-sky-400 underline">Report a correction</Link>
+        </nav>
 
       </div>
     </main>

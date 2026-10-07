@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy – Infinix Calculators",
   description:
-    "Learn how Infinix Calculators collects, uses, and protects your data across all calculator tools and services.",
+    "Learn what information Infinix Calculators and its analytics and advertising providers may process, how calculator inputs are handled, and how to contact us about privacy.",
   robots: "index, follow",
 
   alternates: {
@@ -26,8 +26,7 @@ export default function PrivacyPolicyPage() {
           </h1>
 
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            We value transparency. This page explains how Infinix Calculators
-            collects, uses, and protects your information when you use our tools.
+            This policy describes how calculator inputs, website analytics, advertising services, and messages to us are handled.
           </p>
         </section>
 
@@ -41,8 +40,7 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              We collect minimal and necessary information to provide accurate calculator results and improve user experience.
-              Most tools can be used without creating an account.
+              You can use the calculators without creating an account. The information involved depends on how you use the site and on which third-party services load in your browser.
             </p>
 
             <div className="mt-6 overflow-x-auto">
@@ -57,21 +55,21 @@ export default function PrivacyPolicyPage() {
 
                 <tbody className="divide-y divide-slate-300 dark:divide-dark-border">
                   <tr className="hover:bg-slate-50 dark:hover:bg-dark-card/60">
-                    <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Calculator Inputs</td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Values entered in tools (e.g., area, soil depth)</td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">To generate accurate results in real-time</td>
+                    <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Calculator inputs</td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Values you enter, such as dimensions or amounts</td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Browser-based tools use these values to calculate a result. We do not intentionally send them to a calculation server.</td>
                   </tr>
 
                   <tr className="hover:bg-slate-50 dark:hover:bg-dark-card/60">
-                    <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Device Information</td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Browser type, device type, screen size</td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">To improve UI responsiveness and performance</td>
+                    <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Technical and usage information</td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Information such as pages viewed, browser or device details, and interactions</td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Google Analytics and advertising providers may process it to measure site use and deliver or measure ads.</td>
                   </tr>
 
                   <tr className="hover:bg-slate-50 dark:hover:bg-dark-card/60">
-                    <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Usage Data</td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Pages visited, tool usage frequency</td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">To improve features and user experience</td>
+                    <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">Messages you choose to send</td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Name, email address, topic, and message content</td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">If you use the contact form, these details are placed in an email for you to send to us.</td>
                   </tr>
 
                   <tr className="hover:bg-slate-50 dark:hover:bg-dark-card/60">
@@ -90,14 +88,14 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              We use collected data strictly to operate, improve, and maintain our calculator services. We do not sell personal data to third parties.
+              Website and third-party services process information to deliver pages, measure site use, serve or measure advertisements, and respond to messages you send. The analytics and advertising providers operate under their own privacy policies.
             </p>
 
             <ul className="mt-5 space-y-3 text-slate-600 dark:text-slate-300 list-disc pl-5">
-              <li>To provide accurate calculator outputs in real time</li>
-              <li>To improve performance, speed, and UI responsiveness</li>
-              <li>To analyze usage patterns and fix technical issues</li>
-              <li>To enhance user experience across devices</li>
+              <li>To calculate results from the values you enter in browser-based tools</li>
+              <li>To measure page visits and site interactions through Google Analytics</li>
+              <li>To display and measure advertisements through Google AdSense and other ad providers</li>
+              <li>To reply when you contact us</li>
             </ul>
           </div>
 
@@ -108,11 +106,11 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              All calculator inputs are processed locally in your browser whenever possible. We do not permanently store sensitive calculation inputs on our servers.
+              Calculator tools use browser code to process their inputs and display results. We do not intentionally transmit those values to a calculation server. Advertising, analytics, and other page services are separate from the calculation itself and may receive technical information about your browser or visit. Avoid entering information that identifies you or that you would not want processed in your browser.
             </p>
 
             <div className="mt-5 p-5 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-800/50 text-blue-800 dark:text-blue-200 text-sm leading-relaxed">
-              In most cases, calculations are performed instantly in your browser without being sent to a backend server.
+              Browser-based calculations do not require an account. This does not prevent analytics or advertising services from processing information about the page visit.
             </div>
           </div>
 
@@ -123,21 +121,21 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              We use local storage to remember your theme preference. Google AdSense and Google Analytics, when enabled, and their partners may use cookies, web beacons, IP addresses, and similar identifiers to serve, measure, limit, and personalize ads or to measure site use, subject to your privacy choices and applicable law.
+              The site uses browser local storage to remember your theme preference. Google Analytics, Google AdSense, and advertising scripts from nap5k.com and n6wxm.com are included on the site. These services and their partners may use cookies or similar technologies and process identifiers or browsing information to measure visits or deliver and measure ads. Their practices depend on their own settings and policies.
             </p>
 
             <div className="mt-6 grid md:grid-cols-2 gap-5">
               <div className="p-5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border hover:shadow-sm transition">
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100">Third-Party Services</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  Third-party providers may collect and process identifiers as described in their own privacy notices when their services load on this site.
+                  Analytics and advertising services can receive technical information when they load or are used. Review the providers&apos; own privacy notices and controls for details about their practices.
                 </p>
               </div>
 
               <div className="p-5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border hover:shadow-sm transition">
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100">Local Browser Computation</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  All calculator mathematical computations and unit conversions execute securely and immediately within your client browser.
+                  Calculator inputs are used by browser-based tools to produce results. This is separate from analytics and advertising requests made by the page.
                 </p>
               </div>
             </div>
@@ -149,18 +147,17 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              We may use third-party analytics tools to understand how users interact with our calculators and improve performance.
-              Analytics providers may process technical and usage information in accordance with their own policies.
+              Google Analytics is loaded on the site to measure page views and site interactions. Google may process technical and usage information under its own policies.
             </p>
 
             <ul className="mt-5 space-y-3 text-slate-600 dark:text-slate-300 list-disc pl-5">
-              <li>Page views and session duration</li>
-              <li>Tool usage frequency and interaction patterns</li>
-              <li>Device and browser performance metrics</li>
+              <li>Page views and page paths</li>
+              <li>Browser and device information</li>
+              <li>Interactions with pages and tools</li>
             </ul>
 
             <div className="mt-5 p-5 rounded-xl bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-dark-border text-sm text-slate-600 dark:text-slate-300">
-              We do not use analytics to personally identify users.
+              Analytics data is handled by Google. See Google&apos;s privacy information for details about how it processes data.
             </div>
           </div>
 
@@ -171,21 +168,21 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              We use third-party advertising companies, including Google AdSense, to serve ads when you visit our website. These third parties may serve ads based on non-identifying contextual signals and browsing activity.
+              Google AdSense and advertising scripts from nap5k.com and n6wxm.com are included on this site. These providers and their partners may use cookies or similar technologies and process information such as IP address, browser identifiers, and pages visited to deliver, limit, or measure ads. We do not control their independent data practices.
             </p>
 
             <div className="mt-6 grid md:grid-cols-2 gap-5">
               <div className="p-5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100">Third-Party Advertising</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  Google and its certified partners serve relevant ads to our visitors based on contextual page information and user privacy settings.
+                  Ad content and personalization may depend on provider settings, your location, and your available privacy choices.
                 </p>
               </div>
 
               <div className="p-5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border">
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100">Opt-Out &amp; Privacy Controls</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  Users may opt out of personalized advertising at any time by managing their ad preferences in their Google account or through industry-standard consumer choice portals.
+                  You can manage some Google ad personalization through Google Ads Settings. Browser settings and regional advertising choice tools may also offer controls; these controls may not apply to every provider or every type of ad.
                 </p>
               </div>
             </div>
@@ -226,11 +223,11 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              We implement reasonable technical and organizational measures to protect user data from unauthorized access, misuse, or disclosure.
+              We take reasonable steps to protect information handled by the site. No website or electronic transmission can be guaranteed completely secure.
             </p>
 
             <div className="mt-6 p-5 rounded-xl bg-green-50 dark:bg-emerald-950/40 border border-green-100 dark:border-emerald-800/50 text-green-800 dark:text-emerald-200 text-sm leading-relaxed">
-              Our calculators are designed with privacy-first principles, minimizing data collection wherever possible.
+              Do not include sensitive information in a message unless it is necessary for your request.
             </div>
           </div>
 
@@ -241,14 +238,13 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-              Depending on your location, you may have rights regarding your personal data, including access, correction, or deletion requests.
+              Depending on where you live, applicable privacy laws may give you rights to request access to, correction of, or deletion of personal information. You can contact us to make a request. Some information may be held or processed by third-party providers, and requests concerning that information may need to be made directly to them.
             </p>
 
             <ul className="mt-5 space-y-3 text-slate-600 dark:text-slate-300 list-disc pl-5">
-              <li>Request access to the data we collect about you</li>
-              <li>Request correction of inaccurate information</li>
-              <li>Request deletion of certain data (where applicable)</li>
-              <li>Clear local preferences via browser settings</li>
+              <li>Contact us at <a href="mailto:privacy@infinixcalculator.com" className="text-primary underline dark:text-sky-400">privacy@infinixcalculator.com</a> about a privacy request</li>
+              <li>Clear the saved theme preference by clearing this site&apos;s local storage in your browser</li>
+              <li>Use provider controls to manage analytics or advertising choices where available</li>
             </ul>
           </div>
 
@@ -279,7 +275,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <div className="mt-5 text-sm text-slate-500 dark:text-slate-400">
-              Effective date: September 17, 2026. We encourage users to review this page periodically.
+              Last updated: September 30, 2026.
             </div>
           </div>
 
@@ -287,7 +283,7 @@ export default function PrivacyPolicyPage() {
           {/* FINAL NOTE */}
           <div className="text-center pt-6 border-t border-slate-200 dark:border-dark-border">
             <p className="text-sm text-slate-500 dark:text-slate-400">
-              By using Infinix Calculators, you agree to this Privacy Policy.
+              For the terms that apply to use of this site, see our <a href="/terms" className="font-medium text-primary underline dark:text-sky-400">Terms and Conditions</a>. For questions, visit the <a href="/contact" className="font-medium text-primary underline dark:text-sky-400">Contact page</a>.
             </p>
           </div>
         </section>

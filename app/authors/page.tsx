@@ -5,8 +5,8 @@ import { getAllAuthors } from "../data/authorsData";
 
 export const metadata: Metadata = {
   title: "Authors & Editorial Contributors – Infinix Calculators",
-  description: "Meet the certified public accountants, civil engineers, applied mathematicians, and clinical specialists who author guides and research on Infinix Calculators.",
-  keywords: ["editorial team", "infinix authors", "cpa finance lead", "licensed civil engineer", "applied mathematics"],
+  description: "Meet the named editorial contacts for Infinix finance, construction, mathematics, health, and general calculator content, with topic coverage and limitations.",
+  keywords: ["infinix authors", "editorial profiles", "calculator guides", "editorial policy"],
   alternates: {
     canonical: "https://infinixcalculator.com/authors",
   },
@@ -24,7 +24,7 @@ export default function AuthorsIndexPage() {
             Our Authors &amp; Contributors
           </h1>
           <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-            Meet the writers, engineers, and financial analysts behind our articles, cost studies, and calculation guides.
+            Explore the editorial contacts and topic coverage for our calculator guides. Category assignments describe editorial scope, not professional qualifications or completed independent reviews.
           </p>
         </header>
 
@@ -33,29 +33,27 @@ export default function AuthorsIndexPage() {
           {authors.map((author) => (
             <div
               key={author.slug}
-              className="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-primary transition-all shadow-xs"
+              className="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-lg p-6 sm:p-8 flex flex-col justify-between hover:border-primary transition-all shadow-xs"
             >
               <div>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden border border-slate-200 dark:border-dark-border shrink-0">
                     <Image
                       src={author.avatar}
-                      alt={author.name}
+                      alt="Infinix Calculators brand mark"
                       width={64}
                       height={64}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                       {author.name}
                     </h2>
                     <p className="text-xs font-medium text-slate-600 dark:text-slate-300">
                       {author.jobTitle}
                     </p>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                      {author.credentials}
-                    </p>
+                    {author.credentials && <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">{author.credentials}</p>}
                   </div>
                 </div>
 
